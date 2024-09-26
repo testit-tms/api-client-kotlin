@@ -45,8 +45,8 @@ Add global attributes to project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -93,8 +93,8 @@ Configure Bearer or PrivateToken:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val projectPostModel : ProjectPostModel =  // ProjectPostModel | 
@@ -140,8 +140,8 @@ Archive project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the project
@@ -186,8 +186,8 @@ Get failure classes
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the project
@@ -235,8 +235,8 @@ Mark Project as favorite
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -283,8 +283,8 @@ Get Project filters
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -332,8 +332,8 @@ See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Unique or global Id of project
@@ -380,8 +380,8 @@ Purge the project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the project
@@ -426,8 +426,8 @@ Restore archived project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the project
@@ -474,8 +474,8 @@ Delete attribute from project&#39;s test plans
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -524,8 +524,8 @@ Update attribute of project&#39;s test plans
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -574,8 +574,8 @@ Get active Project TestRuns
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -623,8 +623,8 @@ Get Project TestRuns full models
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -698,8 +698,8 @@ Configure Bearer or PrivateToken:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val name : kotlin.String = name_example // kotlin.String | 
@@ -745,8 +745,8 @@ Purge multiple projects
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val projectSelectModel : ProjectSelectModel =  // ProjectSelectModel | 
@@ -792,8 +792,8 @@ Restore multiple projects
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val projectSelectModel : ProjectSelectModel =  // ProjectSelectModel | 
@@ -839,8 +839,8 @@ Search for projects
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
@@ -896,8 +896,8 @@ Import project from JSON file in background job
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val file : java.io.File = BINARY_DATA_HERE // java.io.File | 
@@ -943,8 +943,8 @@ Import project from Zip file in background job
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val file : java.io.File = BINARY_DATA_HERE // java.io.File | 
@@ -992,8 +992,8 @@ Import project from JSON file
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val includeAttachments : kotlin.Boolean = true // kotlin.Boolean | Enables attachment import.
@@ -1042,8 +1042,8 @@ Create project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val projectPostModel : ProjectPostModel =  // ProjectPostModel | 
@@ -1089,8 +1089,8 @@ Delete all autotests from project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the project
@@ -1137,8 +1137,8 @@ Get all projects
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val isDeleted : kotlin.Boolean = true // kotlin.Boolean | If result must consist of only actual/deleted parameters
@@ -1198,8 +1198,8 @@ Get namespaces of autotests in project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -1247,8 +1247,8 @@ Get project by ID
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -1296,8 +1296,8 @@ Get project test plans
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -1347,8 +1347,8 @@ Get project test runs
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -1420,8 +1420,8 @@ Update project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
 val projectPutModel : ProjectPutModel =  // ProjectPutModel | 

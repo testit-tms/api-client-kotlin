@@ -37,8 +37,8 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
@@ -95,8 +95,8 @@ See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Global Id of auto test
@@ -145,8 +145,8 @@ Get test results history for autotest
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest identifier
@@ -206,8 +206,8 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
@@ -255,8 +255,8 @@ User permissions for project:  - Read only  - Execute  - Write  - Full control
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
@@ -303,8 +303,8 @@ Search for autotests
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
@@ -362,8 +362,8 @@ Create autotest
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val autoTestPostModel : AutoTestPostModel =  // AutoTestPostModel | 
@@ -411,8 +411,8 @@ Create multiple autotests
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val autoTestPostModel : kotlin.collections.List<AutoTestPostModel> =  // kotlin.collections.List<AutoTestPostModel> | 
@@ -460,8 +460,8 @@ Delete autotest
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
@@ -508,8 +508,8 @@ Unlink autotest from work item
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
@@ -556,8 +556,8 @@ Configure Bearer or PrivateToken:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val projectId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Project internal ID
@@ -655,8 +655,8 @@ Get average autotest duration
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
@@ -704,8 +704,8 @@ Get autotest by internal or global ID
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
@@ -753,8 +753,8 @@ Get autotest chronology
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
@@ -802,8 +802,8 @@ Get completed tests runs for autotests
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
@@ -849,8 +849,8 @@ Configure Bearer or PrivateToken:
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | 
@@ -926,8 +926,8 @@ Get work items linked to autotest
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Specifies the autotest entity ID.   You can copy it from the address bar in your web browser or use autotest GUID.
@@ -979,8 +979,8 @@ Link autotest with work items
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
@@ -1029,8 +1029,8 @@ Update autotest
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val autoTestPutModel : AutoTestPutModel =  // AutoTestPutModel | 
@@ -1077,8 +1077,8 @@ Update multiple autotests
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = AutoTestsApi()
 val autoTestPutModel : kotlin.collections.List<AutoTestPutModel> =  // kotlin.collections.List<AutoTestPutModel> | 

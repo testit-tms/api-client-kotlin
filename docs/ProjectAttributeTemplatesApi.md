@@ -18,8 +18,8 @@ Search for custom attributes templates
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributeTemplatesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | 
@@ -79,8 +79,8 @@ Delete CustomAttributeTemplate from Project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributeTemplatesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -129,8 +129,8 @@ Add CustomAttributeTemplate to Project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributeTemplatesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier

@@ -16,8 +16,8 @@ All URIs are relative to *http://localhost*
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = SearchApi()
 val globalSearchRequest : GlobalSearchRequest =  // GlobalSearchRequest | 

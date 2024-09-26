@@ -18,8 +18,8 @@ Import project from JSON file into existing project in background job
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectImportApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -67,8 +67,8 @@ Import project from Zip file into existing project in background job
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectImportApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -118,8 +118,8 @@ Import project from JSON file into existing project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectImportApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier

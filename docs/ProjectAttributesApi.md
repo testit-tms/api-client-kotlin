@@ -23,8 +23,8 @@ Create project attribute
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -74,8 +74,8 @@ Delete project attribute
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -124,8 +124,8 @@ Get project attribute
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -175,8 +175,8 @@ Get project attributes
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier
@@ -224,8 +224,8 @@ Search for attributes used in the project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Unique or global project ID
@@ -283,8 +283,8 @@ Edit attribute of the project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributesApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Unique or global project ID

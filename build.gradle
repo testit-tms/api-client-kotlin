@@ -1,4 +1,4 @@
-group 'org.openapitools'
+group 'ru.testit'
 version '1.0.0'
 
 wrapper {

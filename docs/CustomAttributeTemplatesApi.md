@@ -25,8 +25,8 @@ Exclude CustomAttributes from CustomAttributeTemplate
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Attribute template internal (UUID) identifier
@@ -75,8 +75,8 @@ Include CustomAttributes to CustomAttributeTemplate
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Attribute template internal (UUID) identifier
@@ -125,8 +125,8 @@ Delete CustomAttributeTemplate
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Attribute template internal (UUID) identifier
@@ -173,8 +173,8 @@ Get CustomAttributeTemplate by ID
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | CustomAttributeTemplate internal (UUID) identifier
@@ -222,8 +222,8 @@ Get CustomAttributeTemplate by name
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val name : kotlin.String = name_example // kotlin.String | CustomAttributeTemplate name for search
@@ -271,8 +271,8 @@ Create CustomAttributeTemplate
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val customAttributeTemplatePostModel : CustomAttributeTemplatePostModel =  // CustomAttributeTemplatePostModel | 
@@ -318,8 +318,8 @@ Update custom attributes template
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val customAttributeTemplatePutModel : CustomAttributeTemplatePutModel =  // CustomAttributeTemplatePutModel | 
@@ -366,8 +366,8 @@ Search CustomAttributeTemplates
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = CustomAttributeTemplatesApi()
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)

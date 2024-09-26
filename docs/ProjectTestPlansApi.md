@@ -23,8 +23,8 @@ Get TestPlans analytics
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlansApi()
 val projectId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Project internal (UUID) identifier
@@ -84,8 +84,8 @@ Delete multiple test plans
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlansApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Unique or global ID of the project
@@ -135,8 +135,8 @@ Checks if TestPlan exists with the specified name exists for the project
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlansApi()
 val projectId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Project internal (UUID) or global (integer) identifier
@@ -184,8 +184,8 @@ Permanently delete multiple archived test plans
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlansApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Unique or global ID of the project
@@ -232,8 +232,8 @@ Restore multiple test plans
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlansApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Unique or global ID of the project
@@ -283,8 +283,8 @@ Get Project TestPlans with analytics
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlansApi()
 val projectId : kotlin.String = projectId_example // kotlin.String | Project internal (UUID) or global (integer) identifier

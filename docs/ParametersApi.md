@@ -32,8 +32,8 @@ Create multiple parameters
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val parameterPostModel : kotlin.collections.List<ParameterPostModel> =  // kotlin.collections.List<ParameterPostModel> | 
@@ -81,8 +81,8 @@ Update multiple parameters
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val parameterPutModel : kotlin.collections.List<ParameterPutModel> =  // kotlin.collections.List<ParameterPutModel> | 
@@ -129,8 +129,8 @@ Get parameters as group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val isDeleted : kotlin.Boolean = true // kotlin.Boolean | 
@@ -190,8 +190,8 @@ Check existence parameter key in system
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val name : kotlin.String = name_example // kotlin.String | 
@@ -239,8 +239,8 @@ Get all parameter key values
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val key : kotlin.String = SomeKey // kotlin.String | Parameter key (string format)
@@ -288,8 +288,8 @@ Get all parameter keys
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 try {
@@ -332,8 +332,8 @@ Search for parameters as group
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
@@ -389,8 +389,8 @@ Search for parameters
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
@@ -448,8 +448,8 @@ Create parameter
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val parameterPostModel : ParameterPostModel =  // ParameterPostModel | 
@@ -497,8 +497,8 @@ Deletes parameter and all it&#39;s values
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val name : kotlin.String = name_example // kotlin.String | Name of the parameter
@@ -545,8 +545,8 @@ Deletes parameter and all it&#39;s values by parameter key identifier
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val keyId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Identifier of the parameter key
@@ -593,8 +593,8 @@ Delete parameter
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Parameter internal (UUID) identifier
@@ -641,8 +641,8 @@ Get all parameters
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val isDeleted : kotlin.Boolean = true // kotlin.Boolean | If result must consist of only actual/deleted parameters
@@ -700,8 +700,8 @@ Get parameter by ID
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Parameter internal (UUID) identifier
@@ -749,8 +749,8 @@ Update parameter
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
 val parameterPutModel : ParameterPutModel =  // ParameterPutModel | 

@@ -21,8 +21,8 @@ Delete WorkItem comment
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsCommentsApi()
 val commentId : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | Comment internal (guid format) identifier
@@ -69,8 +69,8 @@ Create WorkItem comment
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsCommentsApi()
 val workItemCommentPostModel : WorkItemCommentPostModel =  // WorkItemCommentPostModel | 
@@ -116,8 +116,8 @@ Update work item comment
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsCommentsApi()
 val workItemCommentPutModel : WorkItemCommentPutModel =  // WorkItemCommentPutModel | 
@@ -162,8 +162,8 @@ Get work item comments
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsCommentsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the work item

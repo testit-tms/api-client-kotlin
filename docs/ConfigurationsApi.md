@@ -27,8 +27,8 @@ Create configurations by parameters
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val configurationByParametersModel : ConfigurationByParametersModel =  // ConfigurationByParametersModel | 
@@ -74,8 +74,8 @@ Delete multiple configurations
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val configurationSelectModel : ConfigurationSelectModel =  // ConfigurationSelectModel | 
@@ -121,8 +121,8 @@ Delete configuration
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the configuration
@@ -169,8 +169,8 @@ See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Unique ID of the configuration
@@ -217,8 +217,8 @@ Permanently delete configuration from archive
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the configuration
@@ -263,8 +263,8 @@ Restore configuration from the archive
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the configuration
@@ -309,8 +309,8 @@ Permanently delete multiple archived configurations
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val configurationSelectModel : ConfigurationSelectModel =  // ConfigurationSelectModel | 
@@ -355,8 +355,8 @@ Edit configuration
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val configurationPutModel : ConfigurationPutModel =  // ConfigurationPutModel | 
@@ -401,8 +401,8 @@ Restore multiple configurations from the archive
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val configurationSelectModel : ConfigurationSelectModel =  // ConfigurationSelectModel | 
@@ -448,8 +448,8 @@ Search for configurations
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
@@ -507,8 +507,8 @@ Create Configuration
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val configurationPostModel : ConfigurationPostModel =  // ConfigurationPostModel | 
@@ -556,8 +556,8 @@ Get configuration by internal or global ID
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
 val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Configuration internal (guid format) or global (integer format) identifier
