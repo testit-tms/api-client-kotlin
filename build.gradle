@@ -52,11 +52,22 @@ test {
     useJUnitPlatform()
 }
 
+task copyJarToBin {
+    assemble
+    copy {
+        from 'build/libs/testit-api-kotlin-client-1.0.0.jar'
+        into "../adapters-kotlin/vendor"
+    }
+}
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     implementation "com.squareup.moshi:moshi-kotlin:1.15.1"
     implementation "com.squareup.moshi:moshi-adapters:1.15.1"
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3"
+
     testImplementation "io.kotlintest:kotlintest-runner-junit5:3.4.2"
+
 }

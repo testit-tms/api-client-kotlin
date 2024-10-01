@@ -46,7 +46,9 @@ import ru.testit.kotlin.client.infrastructure.RequestConfig
 import ru.testit.kotlin.client.infrastructure.RequestMethod
 import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
+import kotlinx.serialization.Serializable
 
+@Serializable
 class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic

@@ -50,11 +50,11 @@ data class AutotestFilterModel (
 
     /* Specifies an autotest projects IDs to search for */
     @Json(name = "projectIds")
-    val projectIds: kotlin.collections.Set<java.util.UUID>? = null,
+    var projectIds: kotlin.collections.Set<java.util.UUID>? = null,
 
     /* Specifies an autotest external IDs to search for */
     @Json(name = "externalIds")
-    val externalIds: kotlin.collections.Set<kotlin.String>? = null,
+    var externalIds: kotlin.collections.Set<kotlin.String>? = null,
 
     /* Specifies an autotest global IDs to search for */
     @Json(name = "globalIds")
@@ -94,7 +94,7 @@ data class AutotestFilterModel (
 
     /* Specifies an autotest deleted status to search for */
     @Json(name = "isDeleted")
-    val isDeleted: kotlin.Boolean? = null,
+    var isDeleted: kotlin.Boolean? = null,
 
     /* Specifies an autotest namespace to search for */
     @Json(name = "namespace")

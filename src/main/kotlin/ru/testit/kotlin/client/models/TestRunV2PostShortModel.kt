@@ -20,6 +20,7 @@ import ru.testit.kotlin.client.models.LinkPostModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import java.util.UUID
 
 /**
  * 
@@ -37,10 +38,10 @@ data class TestRunV2PostShortModel (
 
     /* This property is to link test run with a project */
     @Json(name = "projectId")
-    val projectId: java.util.UUID,
+    var projectId: java.util.UUID,
 
     @Json(name = "name")
-    val name: kotlin.String? = null,
+    var name: kotlin.String? = null,
 
     @Json(name = "description")
     val description: kotlin.String? = null,
@@ -55,6 +56,17 @@ data class TestRunV2PostShortModel (
     val links: kotlin.collections.List<LinkPostModel>? = null
 
 ) {
+
+    constructor() : this(
+        projectId = UUID.randomUUID(),
+        name = null,
+        description = null,
+        launchSource = null,
+        attachments = emptyList(),
+        links = emptyList()
+    )
+
+
 
 
 }

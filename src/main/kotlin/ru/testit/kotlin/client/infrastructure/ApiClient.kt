@@ -32,6 +32,16 @@ import com.squareup.moshi.adapter
 val EMPTY_REQUEST: RequestBody = ByteArray(0).toRequestBody()
 
 open class ApiClient(val baseUrl: String, val client: OkHttpClient = defaultClient) {
+
+
+    var apiKey: MutableMap<String, String> = mutableMapOf()
+    var apiKeyPrefix: MutableMap<String, String> = mutableMapOf()
+    var username: String? = null
+    var password: String? = null
+    var accessToken: String? = null
+    var verifyingSsl: Boolean = false
+
+
     companion object {
         protected const val ContentType = "Content-Type"
         protected const val Accept = "Accept"
@@ -42,11 +52,7 @@ open class ApiClient(val baseUrl: String, val client: OkHttpClient = defaultClie
         protected const val XmlMediaType = "application/xml"
         protected const val OctetMediaType = "application/octet-stream"
 
-        val apiKey: MutableMap<String, String> = mutableMapOf()
-        val apiKeyPrefix: MutableMap<String, String> = mutableMapOf()
-        var username: String? = null
-        var password: String? = null
-        var accessToken: String? = null
+
         const val baseUrlKey = "ru.testit.kotlin.client.baseUrl"
 
         @JvmStatic
@@ -57,6 +63,36 @@ open class ApiClient(val baseUrl: String, val client: OkHttpClient = defaultClie
         @JvmStatic
         val builder: OkHttpClient.Builder = OkHttpClient.Builder()
     }
+
+//    /**
+//     * Helper method to set API key value for the first API key authentication.
+//     *
+//     * @param apiKey API key
+//     */
+//    fun setApiKey(apiKey: String) {
+//        for (auth in authentications.values()) {
+//            if (auth is ApiKeyAuth) {
+//                auth.apiKey = apiKey
+//                return
+//            }
+//        }
+//        throw RuntimeException("No API key authentication configured!")
+//    }
+//
+//    /**
+//     * Helper method to set API key prefix for the first API key authentication.
+//     *
+//     * @param apiKeyPrefix API key prefix
+//     */
+//    fun setApiKeyPrefix(apiKeyPrefix: String) {
+//        for (auth in authentications.values()) {
+//            if (auth is ApiKeyAuth) {
+//                auth.apiKeyPrefix = apiKeyPrefix
+//                return
+//            }
+//        }
+//        throw RuntimeException("No API key authentication configured!")
+//    }
 
     /**
      * Guess Content-Type header from the given file (defaults to "application/octet-stream").
