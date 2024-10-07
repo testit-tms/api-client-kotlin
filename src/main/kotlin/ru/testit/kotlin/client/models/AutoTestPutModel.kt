@@ -48,66 +48,66 @@ data class AutoTestPutModel (
 
     /* External ID of the autotest */
     @Json(name = "externalId")
-    val externalId: kotlin.String,
+    var externalId: kotlin.String,
 
     /* Unique ID of the autotest project */
     @Json(name = "projectId")
-    val projectId: java.util.UUID,
+    var projectId: java.util.UUID,
 
     /* Name of the autotest */
     @Json(name = "name")
-    val name: kotlin.String,
+    var name: kotlin.String,
 
-    /* Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId */
+    /* Used for search autotest. If varue is null or equals Guid mask filled with zeros, search will be executed using ExternalId */
     @Json(name = "id")
-    val id: java.util.UUID? = null,
+    var id: java.util.UUID? = null,
 
     @Json(name = "workItemIdsForLinkWithAutoTest")
-    val workItemIdsForLinkWithAutoTest: kotlin.collections.Set<java.util.UUID>? = null,
+    var workItemIdsForLinkWithAutoTest: kotlin.collections.Set<java.util.UUID>? = null,
 
     /* Collection of the autotest links */
     @Json(name = "links")
-    val links: kotlin.collections.List<LinkPutModel>? = null,
+    var links: kotlin.collections.List<LinkPutModel>? = null,
 
     /* Name of the autotest namespace */
     @Json(name = "namespace")
-    val namespace: kotlin.String? = null,
+    var namespace: kotlin.String? = null,
 
     /* Name of the autotest class */
     @Json(name = "classname")
-    val classname: kotlin.String? = null,
+    var classname: kotlin.String? = null,
 
     /* Collection of the autotest steps */
     @Json(name = "steps")
-    val steps: kotlin.collections.List<AutoTestStepModel>? = null,
+    var steps: kotlin.collections.List<AutoTestStepModel>? = null,
 
     /* Collection of the autotest setup steps */
     @Json(name = "setup")
-    val setup: kotlin.collections.List<AutoTestStepModel>? = null,
+    var setup: kotlin.collections.List<AutoTestStepModel>? = null,
 
     /* Collection of the autotest teardown steps */
     @Json(name = "teardown")
-    val teardown: kotlin.collections.List<AutoTestStepModel>? = null,
+    var teardown: kotlin.collections.List<AutoTestStepModel>? = null,
 
     /* Name of the autotest in autotest's card */
     @Json(name = "title")
-    val title: kotlin.String? = null,
+    var title: kotlin.String? = null,
 
     /* Description of the autotest in autotest's card */
     @Json(name = "description")
-    val description: kotlin.String? = null,
+    var description: kotlin.String? = null,
 
     /* Collection of the autotest labels */
     @Json(name = "labels")
-    val labels: kotlin.collections.List<LabelPostModel>? = null,
+    var labels: kotlin.collections.List<LabelPostModel>? = null,
 
     /* Indicates if the autotest is marked as flaky */
     @Json(name = "isFlaky")
-    val isFlaky: kotlin.Boolean? = null,
+    var isFlaky: kotlin.Boolean? = null,
 
     /* External key of the autotest */
     @Json(name = "externalKey")
-    val externalKey: kotlin.String? = null
+    var externalKey: kotlin.String? = null
 
 ) {
 

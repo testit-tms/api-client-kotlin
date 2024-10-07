@@ -47,44 +47,44 @@ import com.squareup.moshi.JsonClass
 data class TestResultUpdateModel (
 
     @Json(name = "failureClassIds")
-    val failureClassIds: kotlin.collections.List<java.util.UUID>? = null,
+    var failureClassIds: kotlin.collections.List<java.util.UUID>? = null,
 
     @Json(name = "outcome")
-    val outcome: TestResultOutcome? = null,
+    var outcome: TestResultOutcome? = null,
 
     @Json(name = "comment")
-    val comment: kotlin.String? = null,
+    var comment: kotlin.String? = null,
 
     @Json(name = "links")
-    val links: kotlin.collections.List<LinkModel>? = null,
+    var links: kotlin.collections.List<LinkModel>? = null,
 
     @Json(name = "stepResults")
-    val stepResults: kotlin.collections.List<StepResultModel>? = null,
+    var stepResults: kotlin.collections.List<StepResultModel>? = null,
 
     @Json(name = "attachments")
-    val attachments: kotlin.collections.List<AttachmentPutModel>? = null,
+    var attachments: kotlin.collections.List<AttachmentPutModel>? = null,
 
     @Json(name = "durationInMs")
     @Deprecated(message = "This property is deprecated.")
-    val durationInMs: kotlin.Long? = null,
+    var durationInMs: kotlin.Long? = null,
 
     @Json(name = "duration")
-    val duration: kotlin.Long? = null,
+    var duration: kotlin.Long? = null,
 
     @Json(name = "stepComments")
-    val stepComments: kotlin.collections.List<TestResultStepCommentPutModel>? = null,
+    var stepComments: kotlin.collections.List<TestResultStepCommentPutModel>? = null,
 
     @Json(name = "setupResults")
-    val setupResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
+    var setupResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
 
     @Json(name = "teardownResults")
-    val teardownResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
+    var teardownResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
 
     @Json(name = "message")
-    val message: kotlin.String? = null,
+    var message: kotlin.String? = null,
 
     @Json(name = "trace")
-    val trace: kotlin.String? = null
+    var trace: kotlin.String? = null
 
 ) {
 

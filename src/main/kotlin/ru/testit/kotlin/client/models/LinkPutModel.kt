@@ -36,25 +36,25 @@ data class LinkPutModel (
 
     /* Address can be specified without protocol, but necessarily with the domain. */
     @Json(name = "url")
-    val url: kotlin.String,
+    var url: kotlin.String,
 
     @Json(name = "hasInfo")
-    val hasInfo: kotlin.Boolean,
+    var hasInfo: kotlin.Boolean,
 
     @Json(name = "id")
-    val id: java.util.UUID? = null,
+    var id: java.util.UUID? = null,
 
     /* Link name. */
     @Json(name = "title")
-    val title: kotlin.String? = null,
+    var title: kotlin.String? = null,
 
     /* Link description. */
     @Json(name = "description")
-    val description: kotlin.String? = null,
+    var description: kotlin.String? = null,
 
     /* Specifies the type of the link. */
     @Json(name = "type")
-    val type: ru.testit.kotlin.client.models.LinkType? = null
+    var type: ru.testit.kotlin.client.models.LinkType? = null
 
 ) {
 

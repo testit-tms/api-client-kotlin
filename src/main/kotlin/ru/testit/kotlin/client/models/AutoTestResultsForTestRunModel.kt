@@ -50,67 +50,67 @@ data class AutoTestResultsForTestRunModel (
 
     /* Specifies the GUID of the autotest configuration, which was specified when the test run was created. */
     @Json(name = "configurationId")
-    val configurationId: java.util.UUID,
+    var configurationId: java.util.UUID,
 
     /* Specifies the external ID of the autotest, which was specified when the test run was created. */
     @Json(name = "autoTestExternalId")
-    val autoTestExternalId: kotlin.String,
+    var autoTestExternalId: kotlin.String,
 
     /* Specifies the result of the autotest execution. */
     @Json(name = "outcome")
-    val outcome: AvailableTestResultOutcome,
+    var outcome: AvailableTestResultOutcome,
 
     /* Specifies the links in the autotest. */
     @Json(name = "links")
-    val links: kotlin.collections.List<LinkPostModel>? = null,
+    var links: kotlin.collections.List<LinkPostModel>? = null,
 
     /* Specifies the cause of autotest failure. */
     @Json(name = "failureReasonNames")
-    val failureReasonNames: kotlin.collections.List<FailureCategoryModel>? = null,
+    var failureReasonNames: kotlin.collections.List<FailureCategoryModel>? = null,
 
     /* A comment for the result. */
     @Json(name = "message")
-    val message: kotlin.String? = null,
+    var message: kotlin.String? = null,
 
     /* An extended comment or a stack trace. */
     @Json(name = "traces")
-    val traces: kotlin.String? = null,
+    var traces: kotlin.String? = null,
 
     /* Test run start date. */
     @Json(name = "startedOn")
-    val startedOn: java.time.OffsetDateTime? = null,
+    var startedOn: java.time.OffsetDateTime? = null,
 
     /* Test run end date. */
     @Json(name = "completedOn")
-    val completedOn: java.time.OffsetDateTime? = null,
+    var completedOn: java.time.OffsetDateTime? = null,
 
     /* Expected or actual duration of the test run execution in milliseconds. */
     @Json(name = "duration")
-    val duration: kotlin.Long? = null,
+    var duration: kotlin.Long? = null,
 
-    /* Specifies an attachment GUID. Multiple values can be sent. */
+    /* Specifies an attachment GUID. Multiple varues can be sent. */
     @Json(name = "attachments")
-    val attachments: kotlin.collections.List<AttachmentPutModel>? = null,
+    var attachments: kotlin.collections.List<AttachmentPutModel>? = null,
 
-    /* \"<b>parameter</b>\": \"<b>value</b>\" pair with arbitrary custom parameters. Multiple parameters can be sent. */
+    /* \"<b>parameter</b>\": \"<b>varue</b>\" pair with arbitrary custom parameters. Multiple parameters can be sent. */
     @Json(name = "parameters")
-    val parameters: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+    var parameters: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
 
-    /* \"<b>property</b>\": \"<b>value</b>\" pair with arbitrary custom properties. Multiple properties can be sent. */
+    /* \"<b>property</b>\": \"<b>varue</b>\" pair with arbitrary custom properties. Multiple properties can be sent. */
     @Json(name = "properties")
-    val properties: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+    var properties: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
 
     /* Specifies the results of individual steps. */
     @Json(name = "stepResults")
-    val stepResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
+    var stepResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
 
-    /* Specifies the results of setup steps. For information on supported values, see the `stepResults` parameter above. */
+    /* Specifies the results of setup steps. For information on supported varues, see the `stepResults` parameter above. */
     @Json(name = "setupResults")
-    val setupResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
+    var setupResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
 
-    /* Specifies the results of the teardown steps. For information on supported values, see the `stepResults` parameter above. */
+    /* Specifies the results of the teardown steps. For information on supported varues, see the `stepResults` parameter above. */
     @Json(name = "teardownResults")
-    val teardownResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null
+    var teardownResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null
 
 ) {
 

@@ -52,8 +52,7 @@ test {
     useJUnitPlatform()
 }
 
-task copyJarToBin {
-    assemble
+task copyJar {
     copy {
         from 'build/libs/testit-api-kotlin-client-1.0.0.jar'
         into "../adapters-kotlin/vendor"
