@@ -32,6 +32,12 @@ import com.squareup.moshi.adapter
 val EMPTY_REQUEST: RequestBody = ByteArray(0).toRequestBody()
 
 open class ApiClient(val baseUrl: String, val client: OkHttpClient = defaultClient) {
+    var apiKey: MutableMap<String, String> = mutableMapOf()
+    var apiKeyPrefix: MutableMap<String, String> = mutableMapOf()
+    var username: String? = null
+    var password: String? = null
+    var accessToken: String? = null
+    var verifyingSsl: Boolean = false
     companion object {
         protected const val ContentType = "Content-Type"
         protected const val Accept = "Accept"
@@ -42,11 +48,6 @@ open class ApiClient(val baseUrl: String, val client: OkHttpClient = defaultClie
         protected const val XmlMediaType = "application/xml"
         protected const val OctetMediaType = "application/octet-stream"
 
-        val apiKey: MutableMap<String, String> = mutableMapOf()
-        val apiKeyPrefix: MutableMap<String, String> = mutableMapOf()
-        var username: String? = null
-        var password: String? = null
-        var accessToken: String? = null
         const val baseUrlKey = "ru.testit.kotlin.client.baseUrl"
 
         @JvmStatic
