@@ -1,7 +1,7 @@
 ## How to reproduce api installation?
-### TMS-28606
 
-1. Install openapi-generator using scoop https://scoop.sh for powershell (Note Dmitry E: js version unfortunately had bad log with broken cyrillic) :
+
+1. Install openapi-generator using scoop https://scoop.sh for powershell (Note: js version unfortunately had bad log with broken cyrillic) :
 ```
     scoop install openapi-generator-cli
     scoop bucket add java

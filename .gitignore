@@ -1,4 +1,7 @@
 *.class
+secring.gpg
+.gradle.properties
+.build.gradle.kts
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -24,7 +27,7 @@ build
 
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
+
 !**/src/main/**/build/
 !**/src/test/**/build/
 
@@ -69,3 +72,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+!gradle/wrapper/gradle-wrapper.jar

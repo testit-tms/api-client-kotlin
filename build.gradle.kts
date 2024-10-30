@@ -1,4 +1,4 @@
-group "ru.testit"
+group = "ru.testit"
 
 
 plugins {
@@ -9,6 +9,11 @@ plugins {
 }
 
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
@@ -16,6 +21,7 @@ repositories {
 
 
 val kotlin_version = "1.9.23"
+
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
@@ -25,11 +31,16 @@ dependencies {
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 }
 
+val sonaUsername = providers.gradleProperty("sonatypeAccessToken")
+val sonaPassword = providers.gradleProperty("sonatypeAccessPassword")
+
 nexusPublishing {
     repositories {
         sonatype {
             nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+            username = sonaUsername.get()
+            password =  sonaPassword.get()
         }
     }
 }
@@ -37,17 +48,15 @@ nexusPublishing {
 publishing {
     repositories {
         maven {
-        name = "OSSRH"
-        url = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-        credentials {
-            username = System.getenv("MAVEN_USERNAME")
-            password = System.getenv("MAVEN_PASSWORD")
-        }
+            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
+            credentials {
+                username = sonaUsername.get()
+                password =  sonaPassword.get()
+            }
         }
     }
     publications {
         create<MavenPublication>("maven") {
-            suppressAllPomMetadataWarnings()
             versionMapping {
                 allVariants {
                     fromResolutionResult()
@@ -55,7 +64,7 @@ publishing {
             }
             pom {
                 name.set(project.name)
-                description.set("Java API client for TestIT.")
+                description.set("Kotlin API client for TestIT.")
                 url.set("https://github.com/testit-tms/api-client-kotlin")
                 licenses {
                     license {
@@ -105,10 +114,9 @@ tasks.jar {
     }
 }
 
-
 publishing.publications.named<MavenPublication>("maven") {
     pom {
-        from(components["kotlin"])
+        from(components["java"])
     }
 }
 
