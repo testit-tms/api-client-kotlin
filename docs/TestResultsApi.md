@@ -4,11 +4,14 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost**](TestResultsApi.md#apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost) | **POST** /api/v2/testResults/external-projects/{externalProjectId}/defects/external-forms |  |
+| [**apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost**](TestResultsApi.md#apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost) | **POST** /api/v2/testResults/external-projects/{externalProjectId}/defects |  |
 | [**apiV2TestResultsIdAggregatedGet**](TestResultsApi.md#apiV2TestResultsIdAggregatedGet) | **GET** /api/v2/testResults/{id}/aggregated | Get test result by ID aggregated with previous results |
 | [**apiV2TestResultsIdAttachmentsAttachmentIdPut**](TestResultsApi.md#apiV2TestResultsIdAttachmentsAttachmentIdPut) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} | Attach file to the test result |
 | [**apiV2TestResultsIdAttachmentsInfoGet**](TestResultsApi.md#apiV2TestResultsIdAttachmentsInfoGet) | **GET** /api/v2/testResults/{id}/attachments/info | Get test result attachments meta-information |
 | [**apiV2TestResultsIdGet**](TestResultsApi.md#apiV2TestResultsIdGet) | **GET** /api/v2/testResults/{id} | Get test result by ID |
 | [**apiV2TestResultsIdPut**](TestResultsApi.md#apiV2TestResultsIdPut) | **PUT** /api/v2/testResults/{id} | Edit test result by ID |
+| [**apiV2TestResultsIdRerunsGet**](TestResultsApi.md#apiV2TestResultsIdRerunsGet) | **GET** /api/v2/testResults/{id}/reruns | Get reruns |
 | [**apiV2TestResultsSearchPost**](TestResultsApi.md#apiV2TestResultsSearchPost) | **POST** /api/v2/testResults/search | Search for test results |
 | [**apiV2TestResultsStatisticsFilterPost**](TestResultsApi.md#apiV2TestResultsStatisticsFilterPost) | **POST** /api/v2/testResults/statistics/filter | Search for test results and extract statistics |
 | [**createAttachment**](TestResultsApi.md#createAttachment) | **POST** /api/v2/testResults/{id}/attachments | Upload and link attachment to TestResult |
@@ -18,9 +21,107 @@ All URIs are relative to *http://localhost*
 | [**getAttachments**](TestResultsApi.md#getAttachments) | **GET** /api/v2/testResults/{id}/attachments | Get all attachments of TestResult |
 
 
+<a id="apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost"></a>
+# **apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost**
+> GetExternalFormApiResult apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId, testResultsSelectApiModel)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestResultsApi()
+val externalProjectId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
+val testResultsSelectApiModel : TestResultsSelectApiModel =  // TestResultsSelectApiModel | 
+try {
+    val result : GetExternalFormApiResult = apiInstance.apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId, testResultsSelectApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TestResultsApi#apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestResultsApi#apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **externalProjectId** | **java.util.UUID**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **testResultsSelectApiModel** | [**TestResultsSelectApiModel**](TestResultsSelectApiModel.md)|  | [optional] |
+
+### Return type
+
+[**GetExternalFormApiResult**](GetExternalFormApiResult.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost"></a>
+# **apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost**
+> DefectApiModel apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId, createDefectApiModel)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestResultsApi()
+val externalProjectId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
+val createDefectApiModel : CreateDefectApiModel =  // CreateDefectApiModel | 
+try {
+    val result : DefectApiModel = apiInstance.apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId, createDefectApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TestResultsApi#apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestResultsApi#apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **externalProjectId** | **java.util.UUID**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createDefectApiModel** | [**CreateDefectApiModel**](CreateDefectApiModel.md)|  | [optional] |
+
+### Return type
+
+[**DefectApiModel**](DefectApiModel.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a id="apiV2TestResultsIdAggregatedGet"></a>
 # **apiV2TestResultsIdAggregatedGet**
-> TestResultModel apiV2TestResultsIdAggregatedGet(id)
+> TestResultResponse apiV2TestResultsIdAggregatedGet(id)
 
 Get test result by ID aggregated with previous results
 
@@ -33,7 +134,7 @@ Get test result by ID aggregated with previous results
 val apiInstance = TestResultsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test result unique ID
 try {
-    val result : TestResultModel = apiInstance.apiV2TestResultsIdAggregatedGet(id)
+    val result : TestResultResponse = apiInstance.apiV2TestResultsIdAggregatedGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsIdAggregatedGet")
@@ -51,7 +152,7 @@ try {
 
 ### Return type
 
-[**TestResultModel**](TestResultModel.md)
+[**TestResultResponse**](TestResultResponse.md)
 
 ### Authorization
 
@@ -162,7 +263,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestResultsIdGet"></a>
 # **apiV2TestResultsIdGet**
-> TestResultModel apiV2TestResultsIdGet(id)
+> TestResultResponse apiV2TestResultsIdGet(id)
 
 Get test result by ID
 
@@ -175,7 +276,7 @@ Get test result by ID
 val apiInstance = TestResultsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test result unique ID
 try {
-    val result : TestResultModel = apiInstance.apiV2TestResultsIdGet(id)
+    val result : TestResultResponse = apiInstance.apiV2TestResultsIdGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsIdGet")
@@ -193,7 +294,7 @@ try {
 
 ### Return type
 
-[**TestResultModel**](TestResultModel.md)
+[**TestResultResponse**](TestResultResponse.md)
 
 ### Authorization
 
@@ -209,7 +310,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestResultsIdPut"></a>
 # **apiV2TestResultsIdPut**
-> apiV2TestResultsIdPut(id, testResultUpdateModel)
+> apiV2TestResultsIdPut(id, testResultUpdateV2Request)
 
 Edit test result by ID
 
@@ -221,9 +322,9 @@ Edit test result by ID
 
 val apiInstance = TestResultsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test result unique ID
-val testResultUpdateModel : TestResultUpdateModel =  // TestResultUpdateModel | 
+val testResultUpdateV2Request : TestResultUpdateV2Request =  // TestResultUpdateV2Request | 
 try {
-    apiInstance.apiV2TestResultsIdPut(id, testResultUpdateModel)
+    apiInstance.apiV2TestResultsIdPut(id, testResultUpdateV2Request)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsIdPut")
     e.printStackTrace()
@@ -237,7 +338,7 @@ try {
 | **id** | **java.util.UUID**| Test result unique ID | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testResultUpdateModel** | [**TestResultUpdateModel**](TestResultUpdateModel.md)|  | [optional] |
+| **testResultUpdateV2Request** | [**TestResultUpdateV2Request**](TestResultUpdateV2Request.md)|  | [optional] |
 
 ### Return type
 
@@ -255,9 +356,56 @@ Configure Bearer or PrivateToken:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a id="apiV2TestResultsIdRerunsGet"></a>
+# **apiV2TestResultsIdRerunsGet**
+> RerunsModel apiV2TestResultsIdRerunsGet(id)
+
+Get reruns
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestResultsApi()
+val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test result unique ID
+try {
+    val result : RerunsModel = apiInstance.apiV2TestResultsIdRerunsGet(id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TestResultsApi#apiV2TestResultsIdRerunsGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestResultsApi#apiV2TestResultsIdRerunsGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **java.util.UUID**| Test result unique ID | |
+
+### Return type
+
+[**RerunsModel**](RerunsModel.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a id="apiV2TestResultsSearchPost"></a>
 # **apiV2TestResultsSearchPost**
-> kotlin.collections.List&lt;TestResultShortGetModel&gt; apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterModel)
+> kotlin.collections.List&lt;TestResultShortResponse&gt; apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterRequest)
 
 Search for test results
 
@@ -273,9 +421,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val testResultsFilterModel : TestResultsFilterModel =  // TestResultsFilterModel | 
+val testResultsFilterRequest : TestResultsFilterRequest =  // TestResultsFilterRequest | 
 try {
-    val result : kotlin.collections.List<TestResultShortGetModel> = apiInstance.apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterModel)
+    val result : kotlin.collections.List<TestResultShortResponse> = apiInstance.apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterRequest)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsSearchPost")
@@ -294,11 +442,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testResultsFilterModel** | [**TestResultsFilterModel**](TestResultsFilterModel.md)|  | [optional] |
+| **testResultsFilterRequest** | [**TestResultsFilterRequest**](TestResultsFilterRequest.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestResultShortGetModel&gt;**](TestResultShortGetModel.md)
+[**kotlin.collections.List&lt;TestResultShortResponse&gt;**](TestResultShortResponse.md)
 
 ### Authorization
 
@@ -314,7 +462,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestResultsStatisticsFilterPost"></a>
 # **apiV2TestResultsStatisticsFilterPost**
-> TestResultsStatisticsGetModel apiV2TestResultsStatisticsFilterPost(testResultsFilterModel)
+> TestResultsStatisticsResponse apiV2TestResultsStatisticsFilterPost(testResultsFilterRequest)
 
 Search for test results and extract statistics
 
@@ -325,9 +473,9 @@ Search for test results and extract statistics
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestResultsApi()
-val testResultsFilterModel : TestResultsFilterModel =  // TestResultsFilterModel | 
+val testResultsFilterRequest : TestResultsFilterRequest =  // TestResultsFilterRequest | 
 try {
-    val result : TestResultsStatisticsGetModel = apiInstance.apiV2TestResultsStatisticsFilterPost(testResultsFilterModel)
+    val result : TestResultsStatisticsResponse = apiInstance.apiV2TestResultsStatisticsFilterPost(testResultsFilterRequest)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsStatisticsFilterPost")
@@ -341,11 +489,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testResultsFilterModel** | [**TestResultsFilterModel**](TestResultsFilterModel.md)|  | [optional] |
+| **testResultsFilterRequest** | [**TestResultsFilterRequest**](TestResultsFilterRequest.md)|  | [optional] |
 
 ### Return type
 
-[**TestResultsStatisticsGetModel**](TestResultsStatisticsGetModel.md)
+[**TestResultsStatisticsResponse**](TestResultsStatisticsResponse.md)
 
 ### Authorization
 

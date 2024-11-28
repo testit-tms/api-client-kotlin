@@ -16,13 +16,14 @@
 package ru.testit.kotlin.client.apis
 
 import java.io.IOException
-import okhttp3.OkHttpClient
+import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.CustomAttributeTemplateModel
 import ru.testit.kotlin.client.models.CustomAttributeTemplatePostModel
 import ru.testit.kotlin.client.models.CustomAttributeTemplatePutModel
 import ru.testit.kotlin.client.models.CustomAttributeTemplateSearchQueryModel
+import ru.testit.kotlin.client.models.CustomAttributeTemplateValidationResult
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.SearchCustomAttributeTemplateGetModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
@@ -43,12 +44,88 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
             System.getProperties().getProperty(ApiClient.baseUrlKey, "http://localhost")
         }
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (optional)
+     * @return CustomAttributeTemplateValidationResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2CustomAttributesTemplatesExistsGet(name: kotlin.String? = null) : CustomAttributeTemplateValidationResult {
+        val localVarResponse = apiV2CustomAttributesTemplatesExistsGetWithHttpInfo(name = name)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CustomAttributeTemplateValidationResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param name  (optional)
+     * @return ApiResponse<CustomAttributeTemplateValidationResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2CustomAttributesTemplatesExistsGetWithHttpInfo(name: kotlin.String?) : ApiResponse<CustomAttributeTemplateValidationResult?> {
+        val localVariableConfig = apiV2CustomAttributesTemplatesExistsGetRequestConfig(name = name)
+
+        return request<Unit, CustomAttributeTemplateValidationResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2CustomAttributesTemplatesExistsGet
+     *
+     * @param name  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2CustomAttributesTemplatesExistsGetRequestConfig(name: kotlin.String?) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                if (name != null) {
+                    put("name", listOf(name.toString()))
+                }
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/api/v2/customAttributes/templates/exists",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
     }
 
     /**

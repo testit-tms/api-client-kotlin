@@ -24,7 +24,7 @@
 | **duration** | **kotlin.Int** | Duration of the test point |  |
 | **sectionId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of section where work item the test point represents is located |  |
 | **projectId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the test point project |  |
-| **lastTestResult** | [**LastTestResultModel**](LastTestResultModel.md) | Model of the test point last test result |  |
+| **lastTestResult** | [**LastTestResultModel**](LastTestResultModel.md) |  |  |
 | **iterationId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of work item iteration the test point represents |  |
 | **workItemState** | [**WorkItemState**](WorkItemState.md) | Work item state |  |
 | **workItemCreatedById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the work item creator |  |

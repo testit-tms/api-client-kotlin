@@ -11,6 +11,7 @@
 | **attachments** | [**kotlin.collections.List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  |  |
 | **links** | [**kotlin.collections.List&lt;LinkModel&gt;**](LinkModel.md) |  |  |
 | **webhooks** | [**kotlin.collections.List&lt;NamedEntityModel&gt;**](NamedEntityModel.md) |  |  |
+| **runCount** | **kotlin.Int** |  |  |
 | **id** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **name** | **kotlin.String** |  |  |
 | **startedOn** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |

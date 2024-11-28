@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.TestStatusModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,6 +25,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param iterationId 
  * @param testSuiteId 
+ * @param statusModel 
  * @param id Unique ID of the entity
  * @param isDeleted Indicates if the entity is deleted
  * @param testerId 
@@ -41,6 +43,9 @@ data class TestPointPutModel (
 
     @Json(name = "testSuiteId")
     val testSuiteId: java.util.UUID,
+
+    @Json(name = "statusModel")
+    val statusModel: TestStatusModel,
 
     /* Unique ID of the entity */
     @Json(name = "id")
@@ -60,6 +65,7 @@ data class TestPointPutModel (
     val configurationId: java.util.UUID? = null,
 
     @Json(name = "status")
+    @Deprecated(message = "This property is deprecated.")
     val status: kotlin.String? = null,
 
     @Json(name = "lastTestResultId")

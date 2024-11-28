@@ -12,14 +12,16 @@
 | **configurationId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **configurationName** | **kotlin.String** |  |  |
 | **outcome** | [**AutotestResultOutcome**](AutotestResultOutcome.md) |  |  |
-| **testRunName** | **kotlin.String** |  |  [optional] |
-| **launchSource** | **kotlin.String** |  |  [optional] |
+| **rerunCount** | **kotlin.Int** |  |  |
+| **rerunTestResults** | [**kotlin.collections.List&lt;RerunTestResultModel&gt;**](RerunTestResultModel.md) |  |  |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **testPlanId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **testPlanGlobalId** | **kotlin.Long** |  |  [optional] |
 | **testPlanName** | **kotlin.String** |  |  [optional] |
 | **duration** | **kotlin.Long** |  |  [optional] |
+| **testRunName** | **kotlin.String** |  |  [optional] |
+| **launchSource** | **kotlin.String** |  |  [optional] |
 
 
 

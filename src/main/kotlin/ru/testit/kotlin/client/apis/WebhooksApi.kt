@@ -16,7 +16,7 @@
 package ru.testit.kotlin.client.apis
 
 import java.io.IOException
-import okhttp3.OkHttpClient
+import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ProblemDetails
@@ -28,6 +28,9 @@ import ru.testit.kotlin.client.models.WebHookPostModel
 import ru.testit.kotlin.client.models.WebHookTestModel
 import ru.testit.kotlin.client.models.WebhookResponse
 import ru.testit.kotlin.client.models.WebhookVariablesType
+import ru.testit.kotlin.client.models.WebhooksDeleteRequest
+import ru.testit.kotlin.client.models.WebhooksUpdateRequest
+import ru.testit.kotlin.client.models.WebhooksUpdateResponse
 
 import com.squareup.moshi.Json
 
@@ -45,12 +48,82 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
             System.getProperties().getProperty(ApiClient.baseUrlKey, "http://localhost")
         }
+    }
+
+    /**
+     * 
+     * 
+     * @param webhooksDeleteRequest  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WebhooksDelete(webhooksDeleteRequest: WebhooksDeleteRequest? = null) : Unit {
+        val localVarResponse = apiV2WebhooksDeleteWithHttpInfo(webhooksDeleteRequest = webhooksDeleteRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param webhooksDeleteRequest  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WebhooksDeleteWithHttpInfo(webhooksDeleteRequest: WebhooksDeleteRequest?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2WebhooksDeleteRequestConfig(webhooksDeleteRequest = webhooksDeleteRequest)
+
+        return request<WebhooksDeleteRequest, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WebhooksDelete
+     *
+     * @param webhooksDeleteRequest  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WebhooksDeleteRequestConfig(webhooksDeleteRequest: WebhooksDeleteRequest?) : RequestConfig<WebhooksDeleteRequest> {
+        val localVariableBody = webhooksDeleteRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.DELETE,
+            path = "/api/v2/webhooks",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
     }
 
     /**
@@ -408,6 +481,78 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
 
         return RequestConfig(
             method = RequestMethod.POST,
+            path = "/api/v2/webhooks",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * 
+     * 
+     * @param webhooksUpdateRequest  (optional)
+     * @return WebhooksUpdateResponse
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WebhooksPut(webhooksUpdateRequest: WebhooksUpdateRequest? = null) : WebhooksUpdateResponse {
+        val localVarResponse = apiV2WebhooksPutWithHttpInfo(webhooksUpdateRequest = webhooksUpdateRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WebhooksUpdateResponse
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param webhooksUpdateRequest  (optional)
+     * @return ApiResponse<WebhooksUpdateResponse?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WebhooksPutWithHttpInfo(webhooksUpdateRequest: WebhooksUpdateRequest?) : ApiResponse<WebhooksUpdateResponse?> {
+        val localVariableConfig = apiV2WebhooksPutRequestConfig(webhooksUpdateRequest = webhooksUpdateRequest)
+
+        return request<WebhooksUpdateRequest, WebhooksUpdateResponse>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WebhooksPut
+     *
+     * @param webhooksUpdateRequest  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WebhooksPutRequestConfig(webhooksUpdateRequest: WebhooksUpdateRequest?) : RequestConfig<WebhooksUpdateRequest> {
+        val localVariableBody = webhooksUpdateRequest
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PUT,
             path = "/api/v2/webhooks",
             query = localVariableQuery,
             headers = localVariableHeaders,

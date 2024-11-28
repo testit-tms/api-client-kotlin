@@ -16,6 +16,7 @@
 | **testResultsOutcome** | [**kotlin.collections.List&lt;TestResultOutcome&gt;**](TestResultOutcome.md) | Specifies test results outcomes |  [optional] |
 | **failureCategory** | [**kotlin.collections.List&lt;FailureCategoryModel&gt;**](FailureCategoryModel.md) | Specifies failure categories |  [optional] |
 | **completedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test run range of completed date to search for |  [optional] |
+| **testResultsConfigurationIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a test result configuration IDs to search for |  [optional] |
 
 
 

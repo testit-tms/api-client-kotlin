@@ -16,17 +16,22 @@
 package ru.testit.kotlin.client.apis
 
 import java.io.IOException
-import okhttp3.OkHttpClient
+import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.AttachmentModel
+import ru.testit.kotlin.client.models.CreateDefectApiModel
+import ru.testit.kotlin.client.models.DefectApiModel
+import ru.testit.kotlin.client.models.GetExternalFormApiResult
 import ru.testit.kotlin.client.models.ImageResizeType
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.TestResultModel
-import ru.testit.kotlin.client.models.TestResultShortGetModel
-import ru.testit.kotlin.client.models.TestResultUpdateModel
-import ru.testit.kotlin.client.models.TestResultsFilterModel
-import ru.testit.kotlin.client.models.TestResultsStatisticsGetModel
+import ru.testit.kotlin.client.models.RerunsModel
+import ru.testit.kotlin.client.models.TestResultResponse
+import ru.testit.kotlin.client.models.TestResultShortResponse
+import ru.testit.kotlin.client.models.TestResultUpdateV2Request
+import ru.testit.kotlin.client.models.TestResultsFilterRequest
+import ru.testit.kotlin.client.models.TestResultsSelectApiModel
+import ru.testit.kotlin.client.models.TestResultsStatisticsResponse
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -45,7 +50,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -54,10 +59,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
     }
 
     /**
-     * Get test result by ID aggregated with previous results
      * 
-     * @param id Test result unique ID
-     * @return TestResultModel
+     * 
+     * @param externalProjectId 
+     * @param testResultsSelectApiModel  (optional)
+     * @return GetExternalFormApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -66,11 +72,160 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsIdAggregatedGet(id: java.util.UUID) : TestResultModel {
+    fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel? = null) : GetExternalFormApiResult {
+        val localVarResponse = apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId = externalProjectId, testResultsSelectApiModel = testResultsSelectApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GetExternalFormApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param externalProjectId 
+     * @param testResultsSelectApiModel  (optional)
+     * @return ApiResponse<GetExternalFormApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel?) : ApiResponse<GetExternalFormApiResult?> {
+        val localVariableConfig = apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequestConfig(externalProjectId = externalProjectId, testResultsSelectApiModel = testResultsSelectApiModel)
+
+        return request<TestResultsSelectApiModel, GetExternalFormApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost
+     *
+     * @param externalProjectId 
+     * @param testResultsSelectApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequestConfig(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel?) : RequestConfig<TestResultsSelectApiModel> {
+        val localVariableBody = testResultsSelectApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/testResults/external-projects/{externalProjectId}/defects/external-forms".replace("{"+"externalProjectId"+"}", encodeURIComponent(externalProjectId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * 
+     * 
+     * @param externalProjectId 
+     * @param createDefectApiModel  (optional)
+     * @return DefectApiModel
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel? = null) : DefectApiModel {
+        val localVarResponse = apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId = externalProjectId, createDefectApiModel = createDefectApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DefectApiModel
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param externalProjectId 
+     * @param createDefectApiModel  (optional)
+     * @return ApiResponse<DefectApiModel?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel?) : ApiResponse<DefectApiModel?> {
+        val localVariableConfig = apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequestConfig(externalProjectId = externalProjectId, createDefectApiModel = createDefectApiModel)
+
+        return request<CreateDefectApiModel, DefectApiModel>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost
+     *
+     * @param externalProjectId 
+     * @param createDefectApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequestConfig(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel?) : RequestConfig<CreateDefectApiModel> {
+        val localVariableBody = createDefectApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/testResults/external-projects/{externalProjectId}/defects".replace("{"+"externalProjectId"+"}", encodeURIComponent(externalProjectId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Get test result by ID aggregated with previous results
+     * 
+     * @param id Test result unique ID
+     * @return TestResultResponse
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestResultsIdAggregatedGet(id: java.util.UUID) : TestResultResponse {
         val localVarResponse = apiV2TestResultsIdAggregatedGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -88,16 +243,16 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * Get test result by ID aggregated with previous results
      * 
      * @param id Test result unique ID
-     * @return ApiResponse<TestResultModel?>
+     * @return ApiResponse<TestResultResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsIdAggregatedGetWithHttpInfo(id: java.util.UUID) : ApiResponse<TestResultModel?> {
+    fun apiV2TestResultsIdAggregatedGetWithHttpInfo(id: java.util.UUID) : ApiResponse<TestResultResponse?> {
         val localVariableConfig = apiV2TestResultsIdAggregatedGetRequestConfig(id = id)
 
-        return request<Unit, TestResultModel>(
+        return request<Unit, TestResultResponse>(
             localVariableConfig
         )
     }
@@ -271,7 +426,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * Get test result by ID
      * 
      * @param id Test result unique ID
-     * @return TestResultModel
+     * @return TestResultResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -280,11 +435,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsIdGet(id: java.util.UUID) : TestResultModel {
+    fun apiV2TestResultsIdGet(id: java.util.UUID) : TestResultResponse {
         val localVarResponse = apiV2TestResultsIdGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -302,16 +457,16 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * Get test result by ID
      * 
      * @param id Test result unique ID
-     * @return ApiResponse<TestResultModel?>
+     * @return ApiResponse<TestResultResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsIdGetWithHttpInfo(id: java.util.UUID) : ApiResponse<TestResultModel?> {
+    fun apiV2TestResultsIdGetWithHttpInfo(id: java.util.UUID) : ApiResponse<TestResultResponse?> {
         val localVariableConfig = apiV2TestResultsIdGetRequestConfig(id = id)
 
-        return request<Unit, TestResultModel>(
+        return request<Unit, TestResultResponse>(
             localVariableConfig
         )
     }
@@ -342,7 +497,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * Edit test result by ID
      * 
      * @param id Test result unique ID
-     * @param testResultUpdateModel  (optional)
+     * @param testResultUpdateV2Request  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -351,8 +506,8 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsIdPut(id: java.util.UUID, testResultUpdateModel: TestResultUpdateModel? = null) : Unit {
-        val localVarResponse = apiV2TestResultsIdPutWithHttpInfo(id = id, testResultUpdateModel = testResultUpdateModel)
+    fun apiV2TestResultsIdPut(id: java.util.UUID, testResultUpdateV2Request: TestResultUpdateV2Request? = null) : Unit {
+        val localVarResponse = apiV2TestResultsIdPutWithHttpInfo(id = id, testResultUpdateV2Request = testResultUpdateV2Request)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -373,16 +528,16 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * Edit test result by ID
      * 
      * @param id Test result unique ID
-     * @param testResultUpdateModel  (optional)
+     * @param testResultUpdateV2Request  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsIdPutWithHttpInfo(id: java.util.UUID, testResultUpdateModel: TestResultUpdateModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2TestResultsIdPutRequestConfig(id = id, testResultUpdateModel = testResultUpdateModel)
+    fun apiV2TestResultsIdPutWithHttpInfo(id: java.util.UUID, testResultUpdateV2Request: TestResultUpdateV2Request?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestResultsIdPutRequestConfig(id = id, testResultUpdateV2Request = testResultUpdateV2Request)
 
-        return request<TestResultUpdateModel, Unit>(
+        return request<TestResultUpdateV2Request, Unit>(
             localVariableConfig
         )
     }
@@ -391,11 +546,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * To obtain the request config of the operation apiV2TestResultsIdPut
      *
      * @param id Test result unique ID
-     * @param testResultUpdateModel  (optional)
+     * @param testResultUpdateV2Request  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestResultsIdPutRequestConfig(id: java.util.UUID, testResultUpdateModel: TestResultUpdateModel?) : RequestConfig<TestResultUpdateModel> {
-        val localVariableBody = testResultUpdateModel
+    fun apiV2TestResultsIdPutRequestConfig(id: java.util.UUID, testResultUpdateV2Request: TestResultUpdateV2Request?) : RequestConfig<TestResultUpdateV2Request> {
+        val localVariableBody = testResultUpdateV2Request
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -412,15 +567,10 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
     }
 
     /**
-     * Search for test results
+     * Get reruns
      * 
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @param testResultsFilterModel  (optional)
-     * @return kotlin.collections.List<TestResultShortGetModel>
+     * @param id Test result unique ID
+     * @return RerunsModel
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -429,11 +579,87 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testResultsFilterModel: TestResultsFilterModel? = null) : kotlin.collections.List<TestResultShortGetModel> {
-        val localVarResponse = apiV2TestResultsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterModel = testResultsFilterModel)
+    fun apiV2TestResultsIdRerunsGet(id: java.util.UUID) : RerunsModel {
+        val localVarResponse = apiV2TestResultsIdRerunsGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestResultShortGetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RerunsModel
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Get reruns
+     * 
+     * @param id Test result unique ID
+     * @return ApiResponse<RerunsModel?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestResultsIdRerunsGetWithHttpInfo(id: java.util.UUID) : ApiResponse<RerunsModel?> {
+        val localVariableConfig = apiV2TestResultsIdRerunsGetRequestConfig(id = id)
+
+        return request<Unit, RerunsModel>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestResultsIdRerunsGet
+     *
+     * @param id Test result unique ID
+     * @return RequestConfig
+     */
+    fun apiV2TestResultsIdRerunsGetRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/api/v2/testResults/{id}/reruns".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Search for test results
+     * 
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
+     * @param testResultsFilterRequest  (optional)
+     * @return kotlin.collections.List<TestResultShortResponse>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestResultsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testResultsFilterRequest: TestResultsFilterRequest? = null) : kotlin.collections.List<TestResultShortResponse> {
+        val localVarResponse = apiV2TestResultsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterRequest = testResultsFilterRequest)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestResultShortResponse>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -455,17 +681,17 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testResultsFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<TestResultShortGetModel>?>
+     * @param testResultsFilterRequest  (optional)
+     * @return ApiResponse<kotlin.collections.List<TestResultShortResponse>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterModel: TestResultsFilterModel?) : ApiResponse<kotlin.collections.List<TestResultShortGetModel>?> {
-        val localVariableConfig = apiV2TestResultsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterModel = testResultsFilterModel)
+    fun apiV2TestResultsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterRequest: TestResultsFilterRequest?) : ApiResponse<kotlin.collections.List<TestResultShortResponse>?> {
+        val localVariableConfig = apiV2TestResultsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterRequest = testResultsFilterRequest)
 
-        return request<TestResultsFilterModel, kotlin.collections.List<TestResultShortGetModel>>(
+        return request<TestResultsFilterRequest, kotlin.collections.List<TestResultShortResponse>>(
             localVariableConfig
         )
     }
@@ -478,11 +704,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testResultsFilterModel  (optional)
+     * @param testResultsFilterRequest  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestResultsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterModel: TestResultsFilterModel?) : RequestConfig<TestResultsFilterModel> {
-        val localVariableBody = testResultsFilterModel
+    fun apiV2TestResultsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterRequest: TestResultsFilterRequest?) : RequestConfig<TestResultsFilterRequest> {
+        val localVariableBody = testResultsFilterRequest
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -518,8 +744,8 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
     /**
      * Search for test results and extract statistics
      * 
-     * @param testResultsFilterModel  (optional)
-     * @return TestResultsStatisticsGetModel
+     * @param testResultsFilterRequest  (optional)
+     * @return TestResultsStatisticsResponse
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -528,11 +754,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsStatisticsFilterPost(testResultsFilterModel: TestResultsFilterModel? = null) : TestResultsStatisticsGetModel {
-        val localVarResponse = apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterModel = testResultsFilterModel)
+    fun apiV2TestResultsStatisticsFilterPost(testResultsFilterRequest: TestResultsFilterRequest? = null) : TestResultsStatisticsResponse {
+        val localVarResponse = apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterRequest = testResultsFilterRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultsStatisticsGetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultsStatisticsResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -549,17 +775,17 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
     /**
      * Search for test results and extract statistics
      * 
-     * @param testResultsFilterModel  (optional)
-     * @return ApiResponse<TestResultsStatisticsGetModel?>
+     * @param testResultsFilterRequest  (optional)
+     * @return ApiResponse<TestResultsStatisticsResponse?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterModel: TestResultsFilterModel?) : ApiResponse<TestResultsStatisticsGetModel?> {
-        val localVariableConfig = apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterModel = testResultsFilterModel)
+    fun apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterRequest: TestResultsFilterRequest?) : ApiResponse<TestResultsStatisticsResponse?> {
+        val localVariableConfig = apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterRequest = testResultsFilterRequest)
 
-        return request<TestResultsFilterModel, TestResultsStatisticsGetModel>(
+        return request<TestResultsFilterRequest, TestResultsStatisticsResponse>(
             localVariableConfig
         )
     }
@@ -567,11 +793,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpCl
     /**
      * To obtain the request config of the operation apiV2TestResultsStatisticsFilterPost
      *
-     * @param testResultsFilterModel  (optional)
+     * @param testResultsFilterRequest  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterModel: TestResultsFilterModel?) : RequestConfig<TestResultsFilterModel> {
-        val localVariableBody = testResultsFilterModel
+    fun apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterRequest: TestResultsFilterRequest?) : RequestConfig<TestResultsFilterRequest> {
+        val localVariableBody = testResultsFilterRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

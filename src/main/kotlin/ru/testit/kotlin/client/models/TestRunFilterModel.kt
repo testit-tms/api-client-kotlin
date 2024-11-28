@@ -39,6 +39,7 @@ import com.squareup.moshi.JsonClass
  * @param testResultsOutcome Specifies test results outcomes
  * @param failureCategory Specifies failure categories
  * @param completedDate Specifies a test run range of completed date to search for
+ * @param testResultsConfigurationIds Specifies a test result configuration IDs to search for
  */
 
 
@@ -90,7 +91,11 @@ data class TestRunFilterModel (
 
     /* Specifies a test run range of completed date to search for */
     @Json(name = "completedDate")
-    val completedDate: DateTimeRangeSelectorModel? = null
+    val completedDate: DateTimeRangeSelectorModel? = null,
+
+    /* Specifies a test result configuration IDs to search for */
+    @Json(name = "testResultsConfigurationIds")
+    val testResultsConfigurationIds: kotlin.collections.List<java.util.UUID>? = null
 
 ) {
 

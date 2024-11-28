@@ -19,7 +19,6 @@ All URIs are relative to *http://localhost*
 | [**getAutoTestById**](AutoTestsApi.md#getAutoTestById) | **GET** /api/v2/autoTests/{id} | Get autotest by internal or global ID |
 | [**getAutoTestChronology**](AutoTestsApi.md#getAutoTestChronology) | **GET** /api/v2/autoTests/{id}/chronology | Get autotest chronology |
 | [**getTestRuns**](AutoTestsApi.md#getTestRuns) | **GET** /api/v2/autoTests/{id}/testRuns | Get completed tests runs for autotests |
-| [**getWorkItemResults**](AutoTestsApi.md#getWorkItemResults) | **GET** /api/v2/autoTests/{id}/testResultHistory |  |
 | [**getWorkItemsLinkedToAutoTest**](AutoTestsApi.md#getWorkItemsLinkedToAutoTest) | **GET** /api/v2/autoTests/{id}/workItems | Get work items linked to autotest |
 | [**linkAutoTestToWorkItem**](AutoTestsApi.md#linkAutoTestToWorkItem) | **POST** /api/v2/autoTests/{id}/workItems | Link autotest with work items |
 | [**updateAutoTest**](AutoTestsApi.md#updateAutoTest) | **PUT** /api/v2/autoTests | Update autotest |
@@ -827,81 +826,6 @@ try {
 ### Return type
 
 [**kotlin.collections.List&lt;TestRunShortModel&gt;**](TestRunShortModel.md)
-
-### Authorization
-
-
-Configure Bearer or PrivateToken:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="getWorkItemResults"></a>
-# **getWorkItemResults**
-> kotlin.collections.List&lt;TestResultHistoryReportModel&gt; getWorkItemResults(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import ru.testit.kotlin.client.infrastructure.*
-//import ru.testit.kotlin.client.models.*
-
-val apiInstance = AutoTestsApi()
-val id : kotlin.String = id_example // kotlin.String | 
-val from : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Take results from this date
-val to : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Take results until this date
-val configurationIds : kotlin.collections.List<java.util.UUID> =  // kotlin.collections.List<java.util.UUID> | Identifiers of test result configurations
-val testPlanIds : kotlin.collections.List<java.util.UUID> =  // kotlin.collections.List<java.util.UUID> | Identifiers of test plans which contain test results
-val userIds : kotlin.collections.List<java.util.UUID> =  // kotlin.collections.List<java.util.UUID> | Identifiers of users who set test results
-val outcomes : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | List of outcomes of test results
-val isAutomated : kotlin.Boolean = true // kotlin.Boolean | OBSOLETE: Use `Automated` instead
-val automated : kotlin.Boolean = true // kotlin.Boolean | If result must consist of only manual/automated test results
-val testRunIds : kotlin.collections.List<java.util.UUID> =  // kotlin.collections.List<java.util.UUID> | Identifiers of test runs which contain test results
-val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
-val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
-val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
-val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
-val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-try {
-    val result : kotlin.collections.List<TestResultHistoryReportModel> = apiInstance.getWorkItemResults(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling AutoTestsApi#getWorkItemResults")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling AutoTestsApi#getWorkItemResults")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **id** | **kotlin.String**|  | |
-| **from** | **java.time.OffsetDateTime**| Take results from this date | [optional] |
-| **to** | **java.time.OffsetDateTime**| Take results until this date | [optional] |
-| **configurationIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md)| Identifiers of test result configurations | [optional] |
-| **testPlanIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md)| Identifiers of test plans which contain test results | [optional] |
-| **userIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md)| Identifiers of users who set test results | [optional] |
-| **outcomes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| List of outcomes of test results | [optional] |
-| **isAutomated** | **kotlin.Boolean**| OBSOLETE: Use &#x60;Automated&#x60; instead | [optional] |
-| **automated** | **kotlin.Boolean**| If result must consist of only manual/automated test results | [optional] |
-| **testRunIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md)| Identifiers of test runs which contain test results | [optional] |
-| **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
-| **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
-| **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
-| **searchField** | **kotlin.String**| Property name for searching | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **searchValue** | **kotlin.String**| Value for searching | [optional] |
-
-### Return type
-
-[**kotlin.collections.List&lt;TestResultHistoryReportModel&gt;**](TestResultHistoryReportModel.md)
 
 ### Authorization
 

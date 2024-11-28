@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.ConfigurationShortModel
 import ru.testit.kotlin.client.models.TestResultsStatisticsGetModel
 import ru.testit.kotlin.client.models.TestRunState
 
@@ -32,6 +33,7 @@ import com.squareup.moshi.JsonClass
  * @param isDeleted Is the test run is deleted
  * @param autoTestsCount Number of AutoTests run in the test run
  * @param statistics Statistics of the test run
+ * @param testResultsConfigurations Test results configurations
  * @param startedDate Date when the test run was started
  * @param completedDate Completion date of the test run
  * @param modifiedById Unique ID of user who modified the test run last time
@@ -71,6 +73,10 @@ data class TestRunShortGetModel (
     /* Statistics of the test run */
     @Json(name = "statistics")
     val statistics: TestResultsStatisticsGetModel,
+
+    /* Test results configurations */
+    @Json(name = "testResultsConfigurations")
+    val testResultsConfigurations: kotlin.collections.List<ConfigurationShortModel>,
 
     /* Date when the test run was started */
     @Json(name = "startedDate")

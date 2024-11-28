@@ -23,6 +23,7 @@ import ru.testit.kotlin.client.models.StepCommentModel
 import ru.testit.kotlin.client.models.StepResultModel
 import ru.testit.kotlin.client.models.TestPointPutModel
 import ru.testit.kotlin.client.models.TestResultOutcome
+import ru.testit.kotlin.client.models.TestStatusModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -59,6 +60,7 @@ import com.squareup.moshi.JsonClass
  * @param modifiedById 
  * @param stepComments 
  * @param outcome 
+ * @param status 
  * @param comment 
  * @param links 
  * @param stepResults 
@@ -153,7 +155,11 @@ data class TestResultModel (
     val stepComments: kotlin.collections.List<StepCommentModel>? = null,
 
     @Json(name = "outcome")
+    @Deprecated(message = "This property is deprecated.")
     val outcome: TestResultOutcome? = null,
+
+    @Json(name = "status")
+    val status: TestStatusModel? = null,
 
     @Json(name = "comment")
     val comment: kotlin.String? = null,

@@ -16,7 +16,7 @@
 package ru.testit.kotlin.client.apis
 
 import java.io.IOException
-import okhttp3.OkHttpClient
+import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.AutoTestAverageDurationModel
@@ -30,7 +30,6 @@ import ru.testit.kotlin.client.models.FlakyBulkModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TestResultChronologyModel
-import ru.testit.kotlin.client.models.TestResultHistoryReportModel
 import ru.testit.kotlin.client.models.TestRunShortModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemIdModel
@@ -52,7 +51,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -1387,168 +1386,6 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/api/v2/autoTests/{id}/testRuns".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * 
-     * 
-     * @param id 
-     * @param from Take results from this date (optional)
-     * @param to Take results until this date (optional)
-     * @param configurationIds Identifiers of test result configurations (optional)
-     * @param testPlanIds Identifiers of test plans which contain test results (optional)
-     * @param userIds Identifiers of users who set test results (optional)
-     * @param outcomes List of outcomes of test results (optional)
-     * @param isAutomated OBSOLETE: Use &#x60;Automated&#x60; instead (optional)
-     * @param automated If result must consist of only manual/automated test results (optional)
-     * @param testRunIds Identifiers of test runs which contain test results (optional)
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<TestResultHistoryReportModel>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun getWorkItemResults(id: kotlin.String, from: java.time.OffsetDateTime? = null, to: java.time.OffsetDateTime? = null, configurationIds: kotlin.collections.List<java.util.UUID>? = null, testPlanIds: kotlin.collections.List<java.util.UUID>? = null, userIds: kotlin.collections.List<java.util.UUID>? = null, outcomes: kotlin.collections.List<kotlin.String>? = null, isAutomated: kotlin.Boolean? = null, automated: kotlin.Boolean? = null, testRunIds: kotlin.collections.List<java.util.UUID>? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestResultHistoryReportModel> {
-        @Suppress("DEPRECATION")
-        val localVarResponse = getWorkItemResultsWithHttpInfo(id = id, from = from, to = to, configurationIds = configurationIds, testPlanIds = testPlanIds, userIds = userIds, outcomes = outcomes, isAutomated = isAutomated, automated = automated, testRunIds = testRunIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestResultHistoryReportModel>
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * 
-     * 
-     * @param id 
-     * @param from Take results from this date (optional)
-     * @param to Take results until this date (optional)
-     * @param configurationIds Identifiers of test result configurations (optional)
-     * @param testPlanIds Identifiers of test plans which contain test results (optional)
-     * @param userIds Identifiers of users who set test results (optional)
-     * @param outcomes List of outcomes of test results (optional)
-     * @param isAutomated OBSOLETE: Use &#x60;Automated&#x60; instead (optional)
-     * @param automated If result must consist of only manual/automated test results (optional)
-     * @param testRunIds Identifiers of test runs which contain test results (optional)
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<TestResultHistoryReportModel>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun getWorkItemResultsWithHttpInfo(id: kotlin.String, from: java.time.OffsetDateTime?, to: java.time.OffsetDateTime?, configurationIds: kotlin.collections.List<java.util.UUID>?, testPlanIds: kotlin.collections.List<java.util.UUID>?, userIds: kotlin.collections.List<java.util.UUID>?, outcomes: kotlin.collections.List<kotlin.String>?, isAutomated: kotlin.Boolean?, automated: kotlin.Boolean?, testRunIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestResultHistoryReportModel>?> {
-        @Suppress("DEPRECATION")
-        val localVariableConfig = getWorkItemResultsRequestConfig(id = id, from = from, to = to, configurationIds = configurationIds, testPlanIds = testPlanIds, userIds = userIds, outcomes = outcomes, isAutomated = isAutomated, automated = automated, testRunIds = testRunIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
-
-        return request<Unit, kotlin.collections.List<TestResultHistoryReportModel>>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation getWorkItemResults
-     *
-     * @param id 
-     * @param from Take results from this date (optional)
-     * @param to Take results until this date (optional)
-     * @param configurationIds Identifiers of test result configurations (optional)
-     * @param testPlanIds Identifiers of test plans which contain test results (optional)
-     * @param userIds Identifiers of users who set test results (optional)
-     * @param outcomes List of outcomes of test results (optional)
-     * @param isAutomated OBSOLETE: Use &#x60;Automated&#x60; instead (optional)
-     * @param automated If result must consist of only manual/automated test results (optional)
-     * @param testRunIds Identifiers of test runs which contain test results (optional)
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @return RequestConfig
-     */
-    @Deprecated(message = "This operation is deprecated.")
-    fun getWorkItemResultsRequestConfig(id: kotlin.String, from: java.time.OffsetDateTime?, to: java.time.OffsetDateTime?, configurationIds: kotlin.collections.List<java.util.UUID>?, testPlanIds: kotlin.collections.List<java.util.UUID>?, userIds: kotlin.collections.List<java.util.UUID>?, outcomes: kotlin.collections.List<kotlin.String>?, isAutomated: kotlin.Boolean?, automated: kotlin.Boolean?, testRunIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (from != null) {
-                    put("from", listOf(parseDateToQueryString(from)))
-                }
-                if (to != null) {
-                    put("to", listOf(parseDateToQueryString(to)))
-                }
-                if (configurationIds != null) {
-                    put("configurationIds", toMultiValue(configurationIds.toList(), "multi"))
-                }
-                if (testPlanIds != null) {
-                    put("testPlanIds", toMultiValue(testPlanIds.toList(), "multi"))
-                }
-                if (userIds != null) {
-                    put("userIds", toMultiValue(userIds.toList(), "multi"))
-                }
-                if (outcomes != null) {
-                    put("outcomes", toMultiValue(outcomes.toList(), "multi"))
-                }
-                if (isAutomated != null) {
-                    put("isAutomated", listOf(isAutomated.toString()))
-                }
-                if (automated != null) {
-                    put("automated", listOf(automated.toString()))
-                }
-                if (testRunIds != null) {
-                    put("testRunIds", toMultiValue(testRunIds.toList(), "multi"))
-                }
-                if (skip != null) {
-                    put("Skip", listOf(skip.toString()))
-                }
-                if (take != null) {
-                    put("Take", listOf(take.toString()))
-                }
-                if (orderBy != null) {
-                    put("OrderBy", listOf(orderBy.toString()))
-                }
-                if (searchField != null) {
-                    put("SearchField", listOf(searchField.toString()))
-                }
-                if (searchValue != null) {
-                    put("SearchValue", listOf(searchValue.toString()))
-                }
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/api/v2/autoTests/{id}/testResultHistory".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

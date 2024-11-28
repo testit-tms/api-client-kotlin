@@ -26,6 +26,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param configurationIds Specifies a test result configuration IDs to search for
  * @param outcomes Specifies a test result outcomes to search for
+ * @param statusCodes Specifies a test result status codes to search for
  * @param failureCategories Specifies a test result failure categories to search for
  * @param namespace Specifies a test result namespace to search for
  * @param className Specifies a test result class name to search for
@@ -40,7 +41,12 @@ data class TestResultsLocalFilterModel (
 
     /* Specifies a test result outcomes to search for */
     @Json(name = "outcomes")
+    @Deprecated(message = "This property is deprecated.")
     val outcomes: kotlin.collections.List<TestResultOutcome>? = null,
+
+    /* Specifies a test result status codes to search for */
+    @Json(name = "statusCodes")
+    val statusCodes: kotlin.collections.List<kotlin.String>? = null,
 
     /* Specifies a test result failure categories to search for */
     @Json(name = "failureCategories")

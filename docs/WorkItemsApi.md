@@ -385,7 +385,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkItemsIdTestResultsHistoryGet"></a>
 # **apiV2WorkItemsIdTestResultsHistoryGet**
-> kotlin.collections.List&lt;TestResultHistoryReportModel&gt; apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;TestResultHistoryResponse&gt; apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
 
 Get test results history of WorkItem
 
@@ -414,7 +414,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<TestResultHistoryReportModel> = apiInstance.apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<TestResultHistoryResponse> = apiInstance.apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkItemsApi#apiV2WorkItemsIdTestResultsHistoryGet")
@@ -446,7 +446,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestResultHistoryReportModel&gt;**](TestResultHistoryReportModel.md)
+[**kotlin.collections.List&lt;TestResultHistoryResponse&gt;**](TestResultHistoryResponse.md)
 
 ### Authorization
 

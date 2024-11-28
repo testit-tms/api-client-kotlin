@@ -34,6 +34,7 @@ import com.squareup.moshi.JsonClass
  * @param attachments 
  * @param links 
  * @param webhooks 
+ * @param runCount 
  * @param id 
  * @param name 
  * @param startedOn 
@@ -72,6 +73,9 @@ data class TestRunV2GetModel (
 
     @Json(name = "webhooks")
     val webhooks: kotlin.collections.List<NamedEntityModel>,
+
+    @Json(name = "runCount")
+    val runCount: kotlin.Int,
 
     @Json(name = "id")
     val id: java.util.UUID,

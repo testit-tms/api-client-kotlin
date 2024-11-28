@@ -16,7 +16,7 @@
 package ru.testit.kotlin.client.apis
 
 import java.io.IOException
-import okhttp3.OkHttpClient
+import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ConfigurationModel
@@ -29,6 +29,7 @@ import ru.testit.kotlin.client.models.TestPlanModel
 import ru.testit.kotlin.client.models.TestPlanPostModel
 import ru.testit.kotlin.client.models.TestPlanPutModel
 import ru.testit.kotlin.client.models.TestPlanShortModel
+import ru.testit.kotlin.client.models.TestPlanSummaryModel
 import ru.testit.kotlin.client.models.TestPlanWithTestSuiteTreeModel
 import ru.testit.kotlin.client.models.TestPointAnalyticResult
 import ru.testit.kotlin.client.models.TestPointSelectModel
@@ -55,7 +56,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -860,6 +861,77 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClie
         return RequestConfig(
             method = RequestMethod.PATCH,
             path = "/api/v2/testPlans/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Get summary by TestPlan
+     *  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
+     * @return TestPlanSummaryModel
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestPlansIdSummariesGet(id: kotlin.String) : TestPlanSummaryModel {
+        val localVarResponse = apiV2TestPlansIdSummariesGetWithHttpInfo(id = id)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestPlanSummaryModel
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Get summary by TestPlan
+     *  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
+     * @return ApiResponse<TestPlanSummaryModel?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestPlansIdSummariesGetWithHttpInfo(id: kotlin.String) : ApiResponse<TestPlanSummaryModel?> {
+        val localVariableConfig = apiV2TestPlansIdSummariesGetRequestConfig(id = id)
+
+        return request<Unit, TestPlanSummaryModel>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestPlansIdSummariesGet
+     *
+     * @param id Test plan internal (guid format) or global (int  format) identifier
+     * @return RequestConfig
+     */
+    fun apiV2TestPlansIdSummariesGetRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/api/v2/testPlans/{id}/summaries".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

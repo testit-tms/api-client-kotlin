@@ -21,9 +21,6 @@ All URIs are relative to *http://localhost*
 | [**apiV2ProjectsPurgeBulkPost**](ProjectsApi.md#apiV2ProjectsPurgeBulkPost) | **POST** /api/v2/projects/purge/bulk | Purge multiple projects |
 | [**apiV2ProjectsRestoreBulkPost**](ProjectsApi.md#apiV2ProjectsRestoreBulkPost) | **POST** /api/v2/projects/restore/bulk | Restore multiple projects |
 | [**apiV2ProjectsSearchPost**](ProjectsApi.md#apiV2ProjectsSearchPost) | **POST** /api/v2/projects/search | Search for projects |
-| [**backgroundImportProject**](ProjectsApi.md#backgroundImportProject) | **POST** /api/v2/projects/import/json | Import project from JSON file in background job |
-| [**backgroundImportZipProject**](ProjectsApi.md#backgroundImportZipProject) | **POST** /api/v2/projects/import/zip | Import project from Zip file in background job |
-| [**callImport**](ProjectsApi.md#callImport) | **POST** /api/v2/projects/import | Import project from JSON file |
 | [**createProject**](ProjectsApi.md#createProject) | **POST** /api/v2/projects | Create project |
 | [**deleteProjectAutoTests**](ProjectsApi.md#deleteProjectAutoTests) | **DELETE** /api/v2/projects/{id}/autoTests | Delete all autotests from project |
 | [**getAllProjects**](ProjectsApi.md#getAllProjects) | **GET** /api/v2/projects | Get all projects |
@@ -832,7 +829,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsSearchPost"></a>
 # **apiV2ProjectsSearchPost**
-> kotlin.collections.List&lt;ProjectModel&gt; apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
+> kotlin.collections.List&lt;ProjectShortModel&gt; apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
 
 Search for projects
 
@@ -850,7 +847,7 @@ val searchField : kotlin.String = searchField_example // kotlin.String | Propert
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 val projectsFilterModel : ProjectsFilterModel =  // ProjectsFilterModel | 
 try {
-    val result : kotlin.collections.List<ProjectModel> = apiInstance.apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
+    val result : kotlin.collections.List<ProjectShortModel> = apiInstance.apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#apiV2ProjectsSearchPost")
@@ -873,7 +870,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;ProjectModel&gt;**](ProjectModel.md)
+[**kotlin.collections.List&lt;ProjectShortModel&gt;**](ProjectShortModel.md)
 
 ### Authorization
 
@@ -885,150 +882,6 @@ Configure Bearer or PrivateToken:
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="backgroundImportProject"></a>
-# **backgroundImportProject**
-> java.util.UUID backgroundImportProject(file)
-
-Import project from JSON file in background job
-
-### Example
-```kotlin
-// Import classes:
-//import ru.testit.kotlin.client.infrastructure.*
-//import ru.testit.kotlin.client.models.*
-
-val apiInstance = ProjectsApi()
-val file : java.io.File = BINARY_DATA_HERE // java.io.File | 
-try {
-    val result : java.util.UUID = apiInstance.backgroundImportProject(file)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProjectsApi#backgroundImportProject")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProjectsApi#backgroundImportProject")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **file** | **java.io.File**|  | [optional] |
-
-### Return type
-
-[**java.util.UUID**](java.util.UUID.md)
-
-### Authorization
-
-
-Configure Bearer or PrivateToken:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-<a id="backgroundImportZipProject"></a>
-# **backgroundImportZipProject**
-> java.util.UUID backgroundImportZipProject(file)
-
-Import project from Zip file in background job
-
-### Example
-```kotlin
-// Import classes:
-//import ru.testit.kotlin.client.infrastructure.*
-//import ru.testit.kotlin.client.models.*
-
-val apiInstance = ProjectsApi()
-val file : java.io.File = BINARY_DATA_HERE // java.io.File | 
-try {
-    val result : java.util.UUID = apiInstance.backgroundImportZipProject(file)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProjectsApi#backgroundImportZipProject")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProjectsApi#backgroundImportZipProject")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **file** | **java.io.File**|  | [optional] |
-
-### Return type
-
-[**java.util.UUID**](java.util.UUID.md)
-
-### Authorization
-
-
-Configure Bearer or PrivateToken:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: application/json
-
-<a id="callImport"></a>
-# **callImport**
-> callImport(includeAttachments, file)
-
-Import project from JSON file
-
-     &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;     This method imports a &#x60;.json&#x60; file with a project to the test management system.   In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:       &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;                   In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                 Test plan execution history from the first instance of TMS cannot be transferred.
-
-### Example
-```kotlin
-// Import classes:
-//import ru.testit.kotlin.client.infrastructure.*
-//import ru.testit.kotlin.client.models.*
-
-val apiInstance = ProjectsApi()
-val includeAttachments : kotlin.Boolean = true // kotlin.Boolean | Enables attachment import.
-val file : java.io.File = BINARY_DATA_HERE // java.io.File | Select file
-try {
-    apiInstance.callImport(includeAttachments, file)
-} catch (e: ClientException) {
-    println("4xx response calling ProjectsApi#callImport")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProjectsApi#callImport")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **includeAttachments** | **kotlin.Boolean**| Enables attachment import. | [optional] [default to false] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **file** | **java.io.File**| Select file | [optional] |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure Bearer or PrivateToken:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 <a id="createProject"></a>
@@ -1128,7 +981,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getAllProjects"></a>
 # **getAllProjects**
-> kotlin.collections.List&lt;ProjectModel&gt; getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;ProjectShortModel&gt; getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
 
 Get all projects
 
@@ -1149,7 +1002,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<ProjectModel> = apiInstance.getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<ProjectShortModel> = apiInstance.getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#getAllProjects")
@@ -1173,7 +1026,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;ProjectModel&gt;**](ProjectModel.md)
+[**kotlin.collections.List&lt;ProjectShortModel&gt;**](ProjectShortModel.md)
 
 ### Authorization
 
