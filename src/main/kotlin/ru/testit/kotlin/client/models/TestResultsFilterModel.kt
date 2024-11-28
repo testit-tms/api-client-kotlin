@@ -26,80 +26,71 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param testRunIds Specifies a test result test run IDs to search for
- * @param autoTestGlobalIds Specifies an autotest global IDs to search results for
- * @param name Specifies an autotest name to search results for
- * @param createdDate Specifies a test result creation date and time range to search for
- * @param modifiedDate Specifies a test result modified date and time range to search for
- * @param startedOn Specifies a test result started on date and time range to search for
- * @param completedOn Specifies a test result completed on date and time range to search for
- * @param duration Specifies a test result duration range to search for
- * @param resultReasons Specifies result reasons for searching test results
- * @param configurationIds Specifies a test result configuration IDs to search for
- * @param outcomes Specifies a test result outcomes to search for
- * @param failureCategories Specifies a test result failure categories to search for
- * @param namespace Specifies a test result namespace to search for
- * @param className Specifies a test result class name to search for
+ * @param configurationIds 
+ * @param outcomes 
+ * @param statusCodes 
+ * @param failureCategories 
+ * @param namespace 
+ * @param className 
+ * @param autoTestGlobalIds 
+ * @param name 
+ * @param createdDate 
+ * @param modifiedDate 
+ * @param startedOn 
+ * @param completedOn 
+ * @param duration 
+ * @param resultReasons 
+ * @param testRunIds 
  */
 
 
 data class TestResultsFilterModel (
 
-    /* Specifies a test result test run IDs to search for */
-    @Json(name = "testRunIds")
-    val testRunIds: kotlin.collections.List<java.util.UUID>? = null,
-
-    /* Specifies an autotest global IDs to search results for */
-    @Json(name = "autoTestGlobalIds")
-    val autoTestGlobalIds: kotlin.collections.List<kotlin.Long>? = null,
-
-    /* Specifies an autotest name to search results for */
-    @Json(name = "name")
-    val name: kotlin.String? = null,
-
-    /* Specifies a test result creation date and time range to search for */
-    @Json(name = "createdDate")
-    val createdDate: DateTimeRangeSelectorModel? = null,
-
-    /* Specifies a test result modified date and time range to search for */
-    @Json(name = "modifiedDate")
-    val modifiedDate: DateTimeRangeSelectorModel? = null,
-
-    /* Specifies a test result started on date and time range to search for */
-    @Json(name = "startedOn")
-    val startedOn: DateTimeRangeSelectorModel? = null,
-
-    /* Specifies a test result completed on date and time range to search for */
-    @Json(name = "completedOn")
-    val completedOn: DateTimeRangeSelectorModel? = null,
-
-    /* Specifies a test result duration range to search for */
-    @Json(name = "duration")
-    val duration: Int64RangeSelectorModel? = null,
-
-    /* Specifies result reasons for searching test results */
-    @Json(name = "resultReasons")
-    val resultReasons: kotlin.collections.List<kotlin.String>? = null,
-
-    /* Specifies a test result configuration IDs to search for */
     @Json(name = "configurationIds")
     val configurationIds: kotlin.collections.List<java.util.UUID>? = null,
 
-    /* Specifies a test result outcomes to search for */
     @Json(name = "outcomes")
+    @Deprecated(message = "This property is deprecated.")
     val outcomes: kotlin.collections.List<TestResultOutcome>? = null,
 
-    /* Specifies a test result failure categories to search for */
+    @Json(name = "statusCodes")
+    val statusCodes: kotlin.collections.List<kotlin.String>? = null,
+
     @Json(name = "failureCategories")
     val failureCategories: kotlin.collections.List<FailureCategoryModel>? = null,
 
-    /* Specifies a test result namespace to search for */
     @Json(name = "namespace")
     val namespace: kotlin.String? = null,
 
-    /* Specifies a test result class name to search for */
     @Json(name = "className")
-    val className: kotlin.String? = null
+    val className: kotlin.String? = null,
+
+    @Json(name = "autoTestGlobalIds")
+    val autoTestGlobalIds: kotlin.collections.List<kotlin.Long>? = null,
+
+    @Json(name = "name")
+    val name: kotlin.String? = null,
+
+    @Json(name = "createdDate")
+    val createdDate: DateTimeRangeSelectorModel? = null,
+
+    @Json(name = "modifiedDate")
+    val modifiedDate: DateTimeRangeSelectorModel? = null,
+
+    @Json(name = "startedOn")
+    val startedOn: DateTimeRangeSelectorModel? = null,
+
+    @Json(name = "completedOn")
+    val completedOn: DateTimeRangeSelectorModel? = null,
+
+    @Json(name = "duration")
+    val duration: Int64RangeSelectorModel? = null,
+
+    @Json(name = "resultReasons")
+    val resultReasons: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "testRunIds")
+    val testRunIds: kotlin.collections.List<java.util.UUID>? = null
 
 ) {
 

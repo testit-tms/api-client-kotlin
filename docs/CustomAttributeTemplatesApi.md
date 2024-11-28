@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**apiV2CustomAttributesTemplatesExistsGet**](CustomAttributeTemplatesApi.md#apiV2CustomAttributesTemplatesExistsGet) | **GET** /api/v2/customAttributes/templates/exists |  |
 | [**apiV2CustomAttributesTemplatesIdCustomAttributesExcludePost**](CustomAttributeTemplatesApi.md#apiV2CustomAttributesTemplatesIdCustomAttributesExcludePost) | **POST** /api/v2/customAttributes/templates/{id}/customAttributes/exclude | Exclude CustomAttributes from CustomAttributeTemplate |
 | [**apiV2CustomAttributesTemplatesIdCustomAttributesIncludePost**](CustomAttributeTemplatesApi.md#apiV2CustomAttributesTemplatesIdCustomAttributesIncludePost) | **POST** /api/v2/customAttributes/templates/{id}/customAttributes/include | Include CustomAttributes to CustomAttributeTemplate |
 | [**apiV2CustomAttributesTemplatesIdDelete**](CustomAttributeTemplatesApi.md#apiV2CustomAttributesTemplatesIdDelete) | **DELETE** /api/v2/customAttributes/templates/{id} | Delete CustomAttributeTemplate |
@@ -13,6 +14,53 @@ All URIs are relative to *http://localhost*
 | [**apiV2CustomAttributesTemplatesPut**](CustomAttributeTemplatesApi.md#apiV2CustomAttributesTemplatesPut) | **PUT** /api/v2/customAttributes/templates | Update custom attributes template |
 | [**apiV2CustomAttributesTemplatesSearchPost**](CustomAttributeTemplatesApi.md#apiV2CustomAttributesTemplatesSearchPost) | **POST** /api/v2/customAttributes/templates/search | Search CustomAttributeTemplates |
 
+
+<a id="apiV2CustomAttributesTemplatesExistsGet"></a>
+# **apiV2CustomAttributesTemplatesExistsGet**
+> CustomAttributeTemplateValidationResult apiV2CustomAttributesTemplatesExistsGet(name)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = CustomAttributeTemplatesApi()
+val name : kotlin.String = name_example // kotlin.String | 
+try {
+    val result : CustomAttributeTemplateValidationResult = apiInstance.apiV2CustomAttributesTemplatesExistsGet(name)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomAttributeTemplatesApi#apiV2CustomAttributesTemplatesExistsGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomAttributeTemplatesApi#apiV2CustomAttributesTemplatesExistsGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **name** | **kotlin.String**|  | [optional] |
+
+### Return type
+
+[**CustomAttributeTemplateValidationResult**](CustomAttributeTemplateValidationResult.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a id="apiV2CustomAttributesTemplatesIdCustomAttributesExcludePost"></a>
 # **apiV2CustomAttributesTemplatesIdCustomAttributesExcludePost**

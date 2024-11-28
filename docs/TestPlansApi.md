@@ -14,6 +14,7 @@ All URIs are relative to *http://localhost*
 | [**apiV2TestPlansIdHistoryGet**](TestPlansApi.md#apiV2TestPlansIdHistoryGet) | **GET** /api/v2/testPlans/{id}/history | Get TestPlan history |
 | [**apiV2TestPlansIdLinksGet**](TestPlansApi.md#apiV2TestPlansIdLinksGet) | **GET** /api/v2/testPlans/{id}/links | Get Links of TestPlan |
 | [**apiV2TestPlansIdPatch**](TestPlansApi.md#apiV2TestPlansIdPatch) | **PATCH** /api/v2/testPlans/{id} | Patch test plan |
+| [**apiV2TestPlansIdSummariesGet**](TestPlansApi.md#apiV2TestPlansIdSummariesGet) | **GET** /api/v2/testPlans/{id}/summaries | Get summary by TestPlan |
 | [**apiV2TestPlansIdTestPointsLastResultsGet**](TestPlansApi.md#apiV2TestPlansIdTestPointsLastResultsGet) | **GET** /api/v2/testPlans/{id}/testPoints/lastResults | Get TestPoints with last result from TestPlan |
 | [**apiV2TestPlansIdTestPointsResetPost**](TestPlansApi.md#apiV2TestPlansIdTestPointsResetPost) | **POST** /api/v2/testPlans/{id}/testPoints/reset | Reset TestPoints status of TestPlan |
 | [**apiV2TestPlansIdTestPointsTesterDelete**](TestPlansApi.md#apiV2TestPlansIdTestPointsTesterDelete) | **DELETE** /api/v2/testPlans/{id}/testPoints/tester | Unassign users from multiple test points |
@@ -551,6 +552,55 @@ Configure Bearer or PrivateToken:
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="apiV2TestPlansIdSummariesGet"></a>
+# **apiV2TestPlansIdSummariesGet**
+> TestPlanSummaryModel apiV2TestPlansIdSummariesGet(id)
+
+Get summary by TestPlan
+
+ Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestPlansApi()
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+try {
+    val result : TestPlanSummaryModel = apiInstance.apiV2TestPlansIdSummariesGet(id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TestPlansApi#apiV2TestPlansIdSummariesGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestPlansApi#apiV2TestPlansIdSummariesGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+
+### Return type
+
+[**TestPlanSummaryModel**](TestPlanSummaryModel.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a id="apiV2TestPlansIdTestPointsLastResultsGet"></a>

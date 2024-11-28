@@ -16,7 +16,7 @@
 package ru.testit.kotlin.client.apis
 
 import java.io.IOException
-import okhttp3.OkHttpClient
+import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.AutoTestNamespaceModel
@@ -29,6 +29,7 @@ import ru.testit.kotlin.client.models.ProjectModel
 import ru.testit.kotlin.client.models.ProjectPostModel
 import ru.testit.kotlin.client.models.ProjectPutModel
 import ru.testit.kotlin.client.models.ProjectSelectModel
+import ru.testit.kotlin.client.models.ProjectShortModel
 import ru.testit.kotlin.client.models.ProjectsFilterModel
 import ru.testit.kotlin.client.models.PublicTestRunModel
 import ru.testit.kotlin.client.models.TestPlanModel
@@ -52,7 +53,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -1311,7 +1312,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param projectsFilterModel  (optional)
-     * @return kotlin.collections.List<ProjectModel>
+     * @return kotlin.collections.List<ProjectShortModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1320,11 +1321,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ProjectsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, projectsFilterModel: ProjectsFilterModel? = null) : kotlin.collections.List<ProjectModel> {
+    fun apiV2ProjectsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, projectsFilterModel: ProjectsFilterModel? = null) : kotlin.collections.List<ProjectShortModel> {
         val localVarResponse = apiV2ProjectsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, projectsFilterModel = projectsFilterModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ProjectModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ProjectShortModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1347,16 +1348,16 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param projectsFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<ProjectModel>?>
+     * @return ApiResponse<kotlin.collections.List<ProjectShortModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ProjectsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, projectsFilterModel: ProjectsFilterModel?) : ApiResponse<kotlin.collections.List<ProjectModel>?> {
+    fun apiV2ProjectsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, projectsFilterModel: ProjectsFilterModel?) : ApiResponse<kotlin.collections.List<ProjectShortModel>?> {
         val localVariableConfig = apiV2ProjectsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, projectsFilterModel = projectsFilterModel)
 
-        return request<ProjectsFilterModel, kotlin.collections.List<ProjectModel>>(
+        return request<ProjectsFilterModel, kotlin.collections.List<ProjectShortModel>>(
             localVariableConfig
         )
     }
@@ -1399,233 +1400,6 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/v2/projects/search",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * Import project from JSON file in background job
-     * 
-     * @param file  (optional)
-     * @return java.util.UUID
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun backgroundImportProject(file: java.io.File? = null) : java.util.UUID {
-        val localVarResponse = backgroundImportProjectWithHttpInfo(file = file)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as java.util.UUID
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * Import project from JSON file in background job
-     * 
-     * @param file  (optional)
-     * @return ApiResponse<java.util.UUID?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun backgroundImportProjectWithHttpInfo(file: java.io.File?) : ApiResponse<java.util.UUID?> {
-        val localVariableConfig = backgroundImportProjectRequestConfig(file = file)
-
-        return request<Map<String, PartConfig<*>>, java.util.UUID>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation backgroundImportProject
-     *
-     * @param file  (optional)
-     * @return RequestConfig
-     */
-    fun backgroundImportProjectRequestConfig(file: java.io.File?) : RequestConfig<Map<String, PartConfig<*>>> {
-        val localVariableBody = mapOf(
-            "file" to PartConfig(body = file, headers = mutableMapOf()),)
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "multipart/form-data")
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/projects/import/json",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * Import project from Zip file in background job
-     * 
-     * @param file  (optional)
-     * @return java.util.UUID
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun backgroundImportZipProject(file: java.io.File? = null) : java.util.UUID {
-        val localVarResponse = backgroundImportZipProjectWithHttpInfo(file = file)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as java.util.UUID
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * Import project from Zip file in background job
-     * 
-     * @param file  (optional)
-     * @return ApiResponse<java.util.UUID?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun backgroundImportZipProjectWithHttpInfo(file: java.io.File?) : ApiResponse<java.util.UUID?> {
-        val localVariableConfig = backgroundImportZipProjectRequestConfig(file = file)
-
-        return request<Map<String, PartConfig<*>>, java.util.UUID>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation backgroundImportZipProject
-     *
-     * @param file  (optional)
-     * @return RequestConfig
-     */
-    fun backgroundImportZipProjectRequestConfig(file: java.io.File?) : RequestConfig<Map<String, PartConfig<*>>> {
-        val localVariableBody = mapOf(
-            "file" to PartConfig(body = file, headers = mutableMapOf()),)
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "multipart/form-data")
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/projects/import/zip",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * Import project from JSON file
-     *      &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;     This method imports a &#x60;.json&#x60; file with a project to the test management system.   In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:       &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;                   In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                 Test plan execution history from the first instance of TMS cannot be transferred.
-     * @param includeAttachments Enables attachment import. (optional, default to false)
-     * @param file Select file (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun callImport(includeAttachments: kotlin.Boolean? = false, file: java.io.File? = null) : Unit {
-        @Suppress("DEPRECATION")
-        val localVarResponse = callImportWithHttpInfo(includeAttachments = includeAttachments, file = file)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * Import project from JSON file
-     *      &lt;b&gt;A project can only be exported to another TMS instance, different from the one it was imported from.&lt;/b&gt;     This method imports a &#x60;.json&#x60; file with a project to the test management system.   In the body of the request, send the &#x60;.json&#x60; file received by the &#x60;POST /api/v2/projects/export&#x60; method:       &#x60;&#x60;&#x60;              curl -X POST \&quot;http://{domain.com}/api/v2/projects/import\&quot; \\              -H \&quot;accept: /\&quot; -H \&quot;Authorization: PrivateToken {token}\&quot; -H \&quot;Content-Type: multipart/form-data\&quot; \\              -F \&quot;file&#x3D;@import.txt;type&#x3D;text/plain\&quot;              &#x60;&#x60;&#x60;                   In the second instance, a project with the name of the imported one is created.              User attributes and the test library (along with content and structure) are imported.                 Test plan execution history from the first instance of TMS cannot be transferred.
-     * @param includeAttachments Enables attachment import. (optional, default to false)
-     * @param file Select file (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun callImportWithHttpInfo(includeAttachments: kotlin.Boolean?, file: java.io.File?) : ApiResponse<Unit?> {
-        @Suppress("DEPRECATION")
-        val localVariableConfig = callImportRequestConfig(includeAttachments = includeAttachments, file = file)
-
-        return request<Map<String, PartConfig<*>>, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation callImport
-     *
-     * @param includeAttachments Enables attachment import. (optional, default to false)
-     * @param file Select file (optional)
-     * @return RequestConfig
-     */
-    @Deprecated(message = "This operation is deprecated.")
-    fun callImportRequestConfig(includeAttachments: kotlin.Boolean?, file: java.io.File?) : RequestConfig<Map<String, PartConfig<*>>> {
-        val localVariableBody = mapOf(
-            "file" to PartConfig(body = file, headers = mutableMapOf()),)
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (includeAttachments != null) {
-                    put("includeAttachments", listOf(includeAttachments.toString()))
-                }
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "multipart/form-data")
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/projects/import",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -1784,7 +1558,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<ProjectModel>
+     * @return kotlin.collections.List<ProjectShortModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1794,12 +1568,12 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun getAllProjects(isDeleted: kotlin.Boolean? = null, projectName: kotlin.String? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ProjectModel> {
+    fun getAllProjects(isDeleted: kotlin.Boolean? = null, projectName: kotlin.String? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ProjectShortModel> {
         @Suppress("DEPRECATION")
         val localVarResponse = getAllProjectsWithHttpInfo(isDeleted = isDeleted, projectName = projectName, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ProjectModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ProjectShortModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1823,18 +1597,18 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<ProjectModel>?>
+     * @return ApiResponse<kotlin.collections.List<ProjectShortModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun getAllProjectsWithHttpInfo(isDeleted: kotlin.Boolean?, projectName: kotlin.String?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ProjectModel>?> {
+    fun getAllProjectsWithHttpInfo(isDeleted: kotlin.Boolean?, projectName: kotlin.String?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ProjectShortModel>?> {
         @Suppress("DEPRECATION")
         val localVariableConfig = getAllProjectsRequestConfig(isDeleted = isDeleted, projectName = projectName, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<ProjectModel>>(
+        return request<Unit, kotlin.collections.List<ProjectShortModel>>(
             localVariableConfig
         )
     }

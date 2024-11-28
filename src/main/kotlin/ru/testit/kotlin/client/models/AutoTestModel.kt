@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AutoTestStepModel
+import ru.testit.kotlin.client.models.ConfigurationShortModel
 import ru.testit.kotlin.client.models.LabelShortModel
 import ru.testit.kotlin.client.models.LinkPutModel
 
@@ -39,6 +40,7 @@ import com.squareup.moshi.JsonClass
  * @param lastTestRunId Unique ID of the autotest last test run
  * @param lastTestRunName Name of the autotest last test run
  * @param lastTestResultId Unique ID of the autotest last test result
+ * @param lastTestResultConfiguration Configuration of the autotest last test result
  * @param lastTestResultOutcome Outcome of the autotest last test result
  * @param stabilityPercentage Stability percentage of the autotest
  * @param links Collection of the autotest links
@@ -112,6 +114,10 @@ data class AutoTestModel (
     /* Unique ID of the autotest last test result */
     @Json(name = "lastTestResultId")
     val lastTestResultId: java.util.UUID? = null,
+
+    /* Configuration of the autotest last test result */
+    @Json(name = "lastTestResultConfiguration")
+    val lastTestResultConfiguration: ConfigurationShortModel? = null,
 
     /* Outcome of the autotest last test result */
     @Json(name = "lastTestResultOutcome")

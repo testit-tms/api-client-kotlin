@@ -4,15 +4,63 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**apiV2WebhooksDelete**](WebhooksApi.md#apiV2WebhooksDelete) | **DELETE** /api/v2/webhooks |  |
 | [**apiV2WebhooksGet**](WebhooksApi.md#apiV2WebhooksGet) | **GET** /api/v2/webhooks | Get all webhooks |
 | [**apiV2WebhooksIdDelete**](WebhooksApi.md#apiV2WebhooksIdDelete) | **DELETE** /api/v2/webhooks/{id} | Delete webhook by ID |
 | [**apiV2WebhooksIdGet**](WebhooksApi.md#apiV2WebhooksIdGet) | **GET** /api/v2/webhooks/{id} | Get webhook by ID |
 | [**apiV2WebhooksIdPut**](WebhooksApi.md#apiV2WebhooksIdPut) | **PUT** /api/v2/webhooks/{id} | Edit webhook by ID |
 | [**apiV2WebhooksPost**](WebhooksApi.md#apiV2WebhooksPost) | **POST** /api/v2/webhooks | Create webhook |
+| [**apiV2WebhooksPut**](WebhooksApi.md#apiV2WebhooksPut) | **PUT** /api/v2/webhooks |  |
 | [**apiV2WebhooksSearchPost**](WebhooksApi.md#apiV2WebhooksSearchPost) | **POST** /api/v2/webhooks/search | Search for webhooks |
 | [**apiV2WebhooksSpecialVariablesGet**](WebhooksApi.md#apiV2WebhooksSpecialVariablesGet) | **GET** /api/v2/webhooks/specialVariables | Get special variables for webhook event type |
 | [**apiV2WebhooksTestPost**](WebhooksApi.md#apiV2WebhooksTestPost) | **POST** /api/v2/webhooks/test | Test webhook&#39;s url |
 
+
+<a id="apiV2WebhooksDelete"></a>
+# **apiV2WebhooksDelete**
+> apiV2WebhooksDelete(webhooksDeleteRequest)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = WebhooksApi()
+val webhooksDeleteRequest : WebhooksDeleteRequest =  // WebhooksDeleteRequest | 
+try {
+    apiInstance.apiV2WebhooksDelete(webhooksDeleteRequest)
+} catch (e: ClientException) {
+    println("4xx response calling WebhooksApi#apiV2WebhooksDelete")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebhooksApi#apiV2WebhooksDelete")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **webhooksDeleteRequest** | [**WebhooksDeleteRequest**](WebhooksDeleteRequest.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a id="apiV2WebhooksGet"></a>
 # **apiV2WebhooksGet**
@@ -237,6 +285,53 @@ try {
 ### Return type
 
 [**WebHookModel**](WebHookModel.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="apiV2WebhooksPut"></a>
+# **apiV2WebhooksPut**
+> WebhooksUpdateResponse apiV2WebhooksPut(webhooksUpdateRequest)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = WebhooksApi()
+val webhooksUpdateRequest : WebhooksUpdateRequest =  // WebhooksUpdateRequest | 
+try {
+    val result : WebhooksUpdateResponse = apiInstance.apiV2WebhooksPut(webhooksUpdateRequest)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WebhooksApi#apiV2WebhooksPut")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WebhooksApi#apiV2WebhooksPut")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **webhooksUpdateRequest** | [**WebhooksUpdateRequest**](WebhooksUpdateRequest.md)|  | [optional] |
+
+### Return type
+
+[**WebhooksUpdateResponse**](WebhooksUpdateResponse.md)
 
 ### Authorization
 

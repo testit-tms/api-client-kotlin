@@ -18,6 +18,7 @@
 | **lastTestRunId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest last test run |  [optional] |
 | **lastTestRunName** | **kotlin.String** | Name of the autotest last test run |  [optional] |
 | **lastTestResultId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest last test result |  [optional] |
+| **lastTestResultConfiguration** | [**ConfigurationShortModel**](ConfigurationShortModel.md) | Configuration of the autotest last test result |  [optional] |
 | **lastTestResultOutcome** | **kotlin.String** | Outcome of the autotest last test result |  [optional] |
 | **stabilityPercentage** | **kotlin.Int** | Stability percentage of the autotest |  [optional] |
 | **links** | [**kotlin.collections.List&lt;LinkPutModel&gt;**](LinkPutModel.md) | Collection of the autotest links |  [optional] |

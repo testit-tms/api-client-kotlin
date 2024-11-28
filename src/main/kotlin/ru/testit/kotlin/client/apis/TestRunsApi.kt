@@ -16,10 +16,13 @@
 package ru.testit.kotlin.client.apis
 
 import java.io.IOException
-import okhttp3.OkHttpClient
+import okhttp3.Call
 import okhttp3.HttpUrl
 
+import ru.testit.kotlin.client.models.AutoTestNamespacesCountResponse
 import ru.testit.kotlin.client.models.AutoTestResultsForTestRunModel
+import ru.testit.kotlin.client.models.ManualRerunResultModel
+import ru.testit.kotlin.client.models.ManualRerunSelectModel
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TestPointResultModel
 import ru.testit.kotlin.client.models.TestResultsLocalFilterModel
@@ -53,7 +56,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClient = ApiClient.defaultClient) : ApiClient(basePath, client) {
+class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -126,6 +129,77 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
         return RequestConfig(
             method = RequestMethod.DELETE,
             path = "/api/v2/testRuns",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Get autotest classes and namespaces in test run
+     * 
+     * @param id 
+     * @return AutoTestNamespacesCountResponse
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestRunsIdAutoTestsNamespacesGet(id: java.util.UUID) : AutoTestNamespacesCountResponse {
+        val localVarResponse = apiV2TestRunsIdAutoTestsNamespacesGetWithHttpInfo(id = id)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestNamespacesCountResponse
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Get autotest classes and namespaces in test run
+     * 
+     * @param id 
+     * @return ApiResponse<AutoTestNamespacesCountResponse?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestRunsIdAutoTestsNamespacesGetWithHttpInfo(id: java.util.UUID) : ApiResponse<AutoTestNamespacesCountResponse?> {
+        val localVariableConfig = apiV2TestRunsIdAutoTestsNamespacesGetRequestConfig(id = id)
+
+        return request<Unit, AutoTestNamespacesCountResponse>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestRunsIdAutoTestsNamespacesGet
+     *
+     * @param id 
+     * @return RequestConfig
+     */
+    fun apiV2TestRunsIdAutoTestsNamespacesGetRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/api/v2/testRuns/{id}/autoTestsNamespaces".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -264,6 +338,81 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: OkHttpClien
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/v2/testRuns/{id}/purge".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * Manual autotests rerun in test run
+     * 
+     * @param id 
+     * @param manualRerunSelectModel  (optional)
+     * @return ManualRerunResultModel
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestRunsIdRerunsPost(id: java.util.UUID, manualRerunSelectModel: ManualRerunSelectModel? = null) : ManualRerunResultModel {
+        val localVarResponse = apiV2TestRunsIdRerunsPostWithHttpInfo(id = id, manualRerunSelectModel = manualRerunSelectModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ManualRerunResultModel
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Manual autotests rerun in test run
+     * 
+     * @param id 
+     * @param manualRerunSelectModel  (optional)
+     * @return ApiResponse<ManualRerunResultModel?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestRunsIdRerunsPostWithHttpInfo(id: java.util.UUID, manualRerunSelectModel: ManualRerunSelectModel?) : ApiResponse<ManualRerunResultModel?> {
+        val localVariableConfig = apiV2TestRunsIdRerunsPostRequestConfig(id = id, manualRerunSelectModel = manualRerunSelectModel)
+
+        return request<ManualRerunSelectModel, ManualRerunResultModel>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestRunsIdRerunsPost
+     *
+     * @param id 
+     * @param manualRerunSelectModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2TestRunsIdRerunsPostRequestConfig(id: java.util.UUID, manualRerunSelectModel: ManualRerunSelectModel?) : RequestConfig<ManualRerunSelectModel> {
+        val localVariableBody = manualRerunSelectModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/testRuns/{id}/reruns".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

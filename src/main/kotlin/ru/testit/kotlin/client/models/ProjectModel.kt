@@ -81,6 +81,7 @@ data class ProjectModel (
 
     /* Indicates if the status \"Flaky/Stable\" sets automatically */
     @Json(name = "isFlakyAuto")
+    @Deprecated(message = "This property is deprecated.")
     val isFlakyAuto: kotlin.Boolean,
 
     /* Description of the project */

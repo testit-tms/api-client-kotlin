@@ -20,7 +20,6 @@ import ru.testit.kotlin.client.models.BooleanNullableChangedFieldViewModel
 import ru.testit.kotlin.client.models.CustomAttributeChangeModel
 import ru.testit.kotlin.client.models.PeriodViewModelChangedFieldViewModel
 import ru.testit.kotlin.client.models.StringArrayChangedFieldViewModel
-import ru.testit.kotlin.client.models.StringChangedFieldViewModel
 import ru.testit.kotlin.client.models.StringChangedFieldWithDiffsViewModel
 import ru.testit.kotlin.client.models.TestPointChangeViewModelChangedFieldViewModel
 import ru.testit.kotlin.client.models.TestResultChangeViewModelChangedFieldViewModel
@@ -57,16 +56,16 @@ data class TestPlanChangedFieldsViewModel (
     val description: StringChangedFieldWithDiffsViewModel? = null,
 
     @Json(name = "productName")
-    val productName: StringChangedFieldViewModel? = null,
+    val productName: StringChangedFieldWithDiffsViewModel? = null,
 
     @Json(name = "build")
-    val build: StringChangedFieldViewModel? = null,
+    val build: StringChangedFieldWithDiffsViewModel? = null,
 
     @Json(name = "period")
     val period: PeriodViewModelChangedFieldViewModel? = null,
 
     @Json(name = "status")
-    val status: StringChangedFieldViewModel? = null,
+    val status: StringChangedFieldWithDiffsViewModel? = null,
 
     @Json(name = "tags")
     val tags: StringArrayChangedFieldViewModel? = null,

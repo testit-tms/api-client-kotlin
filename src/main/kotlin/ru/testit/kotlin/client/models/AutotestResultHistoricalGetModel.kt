@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AutotestResultOutcome
+import ru.testit.kotlin.client.models.RerunTestResultModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -31,14 +32,16 @@ import com.squareup.moshi.JsonClass
  * @param configurationId 
  * @param configurationName 
  * @param outcome 
- * @param testRunName 
- * @param launchSource 
+ * @param rerunCount 
+ * @param rerunTestResults 
  * @param modifiedDate 
  * @param modifiedById 
  * @param testPlanId 
  * @param testPlanGlobalId 
  * @param testPlanName 
  * @param duration 
+ * @param testRunName 
+ * @param launchSource 
  */
 
 
@@ -68,11 +71,11 @@ data class AutotestResultHistoricalGetModel (
     @Json(name = "outcome")
     val outcome: AutotestResultOutcome,
 
-    @Json(name = "testRunName")
-    val testRunName: kotlin.String? = null,
+    @Json(name = "rerunCount")
+    val rerunCount: kotlin.Int,
 
-    @Json(name = "launchSource")
-    val launchSource: kotlin.String? = null,
+    @Json(name = "rerunTestResults")
+    val rerunTestResults: kotlin.collections.List<RerunTestResultModel>,
 
     @Json(name = "modifiedDate")
     val modifiedDate: java.time.OffsetDateTime? = null,
@@ -90,7 +93,13 @@ data class AutotestResultHistoricalGetModel (
     val testPlanName: kotlin.String? = null,
 
     @Json(name = "duration")
-    val duration: kotlin.Long? = null
+    val duration: kotlin.Long? = null,
+
+    @Json(name = "testRunName")
+    val testRunName: kotlin.String? = null,
+
+    @Json(name = "launchSource")
+    val launchSource: kotlin.String? = null
 
 ) {
 

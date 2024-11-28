@@ -46,7 +46,7 @@ import com.squareup.moshi.JsonClass
  * @param duration Duration of the test point
  * @param sectionId Unique ID of section where work item the test point represents is located
  * @param projectId Unique ID of the test point project
- * @param lastTestResult Model of the test point last test result
+ * @param lastTestResult 
  * @param iterationId Unique ID of work item iteration the test point represents
  * @param workItemState Work item state
  * @param workItemCreatedById Unique ID of the work item creator
@@ -144,7 +144,6 @@ data class TestPointShortGetModel (
     @Json(name = "projectId")
     val projectId: java.util.UUID,
 
-    /* Model of the test point last test result */
     @Json(name = "lastTestResult")
     val lastTestResult: LastTestResultModel,
 

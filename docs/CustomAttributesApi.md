@@ -4,12 +4,62 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**apiV2CustomAttributesExistsGet**](CustomAttributesApi.md#apiV2CustomAttributesExistsGet) | **GET** /api/v2/customAttributes/exists |  |
 | [**apiV2CustomAttributesGlobalIdDelete**](CustomAttributesApi.md#apiV2CustomAttributesGlobalIdDelete) | **DELETE** /api/v2/customAttributes/global/{id} | Delete global attribute |
 | [**apiV2CustomAttributesGlobalIdPut**](CustomAttributesApi.md#apiV2CustomAttributesGlobalIdPut) | **PUT** /api/v2/customAttributes/global/{id} | Edit global attribute |
 | [**apiV2CustomAttributesGlobalPost**](CustomAttributesApi.md#apiV2CustomAttributesGlobalPost) | **POST** /api/v2/customAttributes/global | Create global attribute |
 | [**apiV2CustomAttributesIdGet**](CustomAttributesApi.md#apiV2CustomAttributesIdGet) | **GET** /api/v2/customAttributes/{id} | Get attribute |
 | [**apiV2CustomAttributesSearchPost**](CustomAttributesApi.md#apiV2CustomAttributesSearchPost) | **POST** /api/v2/customAttributes/search | Search for attributes |
 
+
+<a id="apiV2CustomAttributesExistsGet"></a>
+# **apiV2CustomAttributesExistsGet**
+> CustomAttributeValidationResult apiV2CustomAttributesExistsGet(name, isGlobal)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = CustomAttributesApi()
+val name : kotlin.String = name_example // kotlin.String | 
+val isGlobal : kotlin.Boolean = true // kotlin.Boolean | 
+try {
+    val result : CustomAttributeValidationResult = apiInstance.apiV2CustomAttributesExistsGet(name, isGlobal)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling CustomAttributesApi#apiV2CustomAttributesExistsGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling CustomAttributesApi#apiV2CustomAttributesExistsGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **name** | **kotlin.String**|  | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **isGlobal** | **kotlin.Boolean**|  | [optional] |
+
+### Return type
+
+[**CustomAttributeValidationResult**](CustomAttributeValidationResult.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a id="apiV2CustomAttributesGlobalIdDelete"></a>
 # **apiV2CustomAttributesGlobalIdDelete**

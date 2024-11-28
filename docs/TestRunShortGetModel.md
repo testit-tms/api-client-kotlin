@@ -12,6 +12,7 @@
 | **isDeleted** | **kotlin.Boolean** | Is the test run is deleted |  |
 | **autoTestsCount** | **kotlin.Int** | Number of AutoTests run in the test run |  |
 | **statistics** | [**TestResultsStatisticsGetModel**](TestResultsStatisticsGetModel.md) | Statistics of the test run |  |
+| **testResultsConfigurations** | [**kotlin.collections.List&lt;ConfigurationShortModel&gt;**](ConfigurationShortModel.md) | Test results configurations |  |
 | **startedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test run was started |  [optional] |
 | **completedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Completion date of the test run |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of user who modified the test run last time |  [optional] |

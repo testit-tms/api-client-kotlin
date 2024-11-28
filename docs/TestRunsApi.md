@@ -5,8 +5,10 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**apiV2TestRunsDelete**](TestRunsApi.md#apiV2TestRunsDelete) | **DELETE** /api/v2/testRuns | Delete multiple test runs |
+| [**apiV2TestRunsIdAutoTestsNamespacesGet**](TestRunsApi.md#apiV2TestRunsIdAutoTestsNamespacesGet) | **GET** /api/v2/testRuns/{id}/autoTestsNamespaces | Get autotest classes and namespaces in test run |
 | [**apiV2TestRunsIdDelete**](TestRunsApi.md#apiV2TestRunsIdDelete) | **DELETE** /api/v2/testRuns/{id} | Delete test run |
 | [**apiV2TestRunsIdPurgePost**](TestRunsApi.md#apiV2TestRunsIdPurgePost) | **POST** /api/v2/testRuns/{id}/purge | Permanently delete test run from archive |
+| [**apiV2TestRunsIdRerunsPost**](TestRunsApi.md#apiV2TestRunsIdRerunsPost) | **POST** /api/v2/testRuns/{id}/reruns | Manual autotests rerun in test run |
 | [**apiV2TestRunsIdRestorePost**](TestRunsApi.md#apiV2TestRunsIdRestorePost) | **POST** /api/v2/testRuns/{id}/restore | Restore test run from the archive |
 | [**apiV2TestRunsIdStatisticsFilterPost**](TestRunsApi.md#apiV2TestRunsIdStatisticsFilterPost) | **POST** /api/v2/testRuns/{id}/statistics/filter | Search for the test run test results and build statistics |
 | [**apiV2TestRunsIdTestPointsResultsGet**](TestRunsApi.md#apiV2TestRunsIdTestPointsResultsGet) | **GET** /api/v2/testRuns/{id}/testPoints/results | Get test results from the test run grouped by test points |
@@ -75,6 +77,53 @@ Configure Bearer or PrivateToken:
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="apiV2TestRunsIdAutoTestsNamespacesGet"></a>
+# **apiV2TestRunsIdAutoTestsNamespacesGet**
+> AutoTestNamespacesCountResponse apiV2TestRunsIdAutoTestsNamespacesGet(id)
+
+Get autotest classes and namespaces in test run
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestRunsApi()
+val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
+try {
+    val result : AutoTestNamespacesCountResponse = apiInstance.apiV2TestRunsIdAutoTestsNamespacesGet(id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TestRunsApi#apiV2TestRunsIdAutoTestsNamespacesGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestRunsApi#apiV2TestRunsIdAutoTestsNamespacesGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **java.util.UUID**|  | |
+
+### Return type
+
+[**AutoTestNamespacesCountResponse**](AutoTestNamespacesCountResponse.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a id="apiV2TestRunsIdDelete"></a>
@@ -171,6 +220,55 @@ Configure Bearer or PrivateToken:
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="apiV2TestRunsIdRerunsPost"></a>
+# **apiV2TestRunsIdRerunsPost**
+> ManualRerunResultModel apiV2TestRunsIdRerunsPost(id, manualRerunSelectModel)
+
+Manual autotests rerun in test run
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestRunsApi()
+val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
+val manualRerunSelectModel : ManualRerunSelectModel =  // ManualRerunSelectModel | 
+try {
+    val result : ManualRerunResultModel = apiInstance.apiV2TestRunsIdRerunsPost(id, manualRerunSelectModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TestRunsApi#apiV2TestRunsIdRerunsPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestRunsApi#apiV2TestRunsIdRerunsPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **id** | **java.util.UUID**|  | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **manualRerunSelectModel** | [**ManualRerunSelectModel**](ManualRerunSelectModel.md)|  | [optional] |
+
+### Return type
+
+[**ManualRerunResultModel**](ManualRerunResultModel.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a id="apiV2TestRunsIdRestorePost"></a>

@@ -33,6 +33,7 @@
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **stepComments** | [**kotlin.collections.List&lt;StepCommentModel&gt;**](StepCommentModel.md) |  |  [optional] |
 | **outcome** | [**TestResultOutcome**](TestResultOutcome.md) |  |  [optional] |
+| **status** | [**TestStatusModel**](TestStatusModel.md) |  |  [optional] |
 | **comment** | **kotlin.String** |  |  [optional] |
 | **links** | [**kotlin.collections.List&lt;LinkModel&gt;**](LinkModel.md) |  |  [optional] |
 | **stepResults** | [**kotlin.collections.List&lt;StepResultModel&gt;**](StepResultModel.md) |  |  [optional] |

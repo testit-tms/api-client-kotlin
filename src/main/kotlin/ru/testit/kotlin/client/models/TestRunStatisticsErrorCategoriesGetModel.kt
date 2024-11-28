@@ -22,8 +22,6 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param noAnalytics Number of test results which outcomes were not analyzed
- * @param noDefect Number of test results which outcomes were not caused by any defect
  * @param infrastructureDefect Number of test results which outcomes were caused by some infrastructure defect
  * @param productDefect Number of test results which outcomes were caused by some tested product defect
  * @param testDefect Number of test results which outcomes were caused by test itself
@@ -31,14 +29,6 @@ import com.squareup.moshi.JsonClass
 
 
 data class TestRunStatisticsErrorCategoriesGetModel (
-
-    /* Number of test results which outcomes were not analyzed */
-    @Json(name = "noAnalytics")
-    val noAnalytics: kotlin.Int,
-
-    /* Number of test results which outcomes were not caused by any defect */
-    @Json(name = "noDefect")
-    val noDefect: kotlin.Int,
 
     /* Number of test results which outcomes were caused by some infrastructure defect */
     @Json(name = "infrastructureDefect")

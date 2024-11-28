@@ -31,7 +31,7 @@ import com.squareup.moshi.adapter
 
 val EMPTY_REQUEST: RequestBody = ByteArray(0).toRequestBody()
 
-open class ApiClient(val baseUrl: String, val client: OkHttpClient = defaultClient) {
+open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClient) {
     var apiKey: MutableMap<String, String> = mutableMapOf()
     var apiKeyPrefix: MutableMap<String, String> = mutableMapOf()
     var username: String? = null
@@ -126,8 +126,11 @@ open class ApiClient(val baseUrl: String, val client: OkHttpClient = defaultClie
         val body = response.body
         if(body == null) {
             return null
-        }
-        if (T::class.java == File::class.java) {
+        } else if (T::class.java == Unit::class.java) {
+            // No need to parse the body when we're not interested in the body
+            // Useful when API is returning other Content-Type
+            return null
+        } else if (T::class.java == File::class.java) {
             // return tempFile
             val contentDisposition = response.header("Content-Disposition")
 

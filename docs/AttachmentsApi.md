@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost*
 | ------------- | ------------- | ------------- |
 | [**apiV2AttachmentsIdDelete**](AttachmentsApi.md#apiV2AttachmentsIdDelete) | **DELETE** /api/v2/attachments/{id} | Delete attachment file |
 | [**apiV2AttachmentsIdGet**](AttachmentsApi.md#apiV2AttachmentsIdGet) | **GET** /api/v2/attachments/{id} | Download attachment file |
+| [**apiV2AttachmentsIdMetadataGet**](AttachmentsApi.md#apiV2AttachmentsIdMetadataGet) | **GET** /api/v2/attachments/{id}/metadata | Get attachment metadata |
 | [**apiV2AttachmentsOccupiedFileStorageSizeGet**](AttachmentsApi.md#apiV2AttachmentsOccupiedFileStorageSizeGet) | **GET** /api/v2/attachments/occupiedFileStorageSize | Get size of attachments storage in bytes |
 | [**apiV2AttachmentsPost**](AttachmentsApi.md#apiV2AttachmentsPost) | **POST** /api/v2/attachments | Upload new attachment file |
 
@@ -99,6 +100,53 @@ try {
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="apiV2AttachmentsIdMetadataGet"></a>
+# **apiV2AttachmentsIdMetadataGet**
+> AttachmentModel apiV2AttachmentsIdMetadataGet(id)
+
+Get attachment metadata
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = AttachmentsApi()
+val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
+try {
+    val result : AttachmentModel = apiInstance.apiV2AttachmentsIdMetadataGet(id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AttachmentsApi#apiV2AttachmentsIdMetadataGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AttachmentsApi#apiV2AttachmentsIdMetadataGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **java.util.UUID**|  | |
+
+### Return type
+
+[**AttachmentModel**](AttachmentModel.md)
 
 ### Authorization
 

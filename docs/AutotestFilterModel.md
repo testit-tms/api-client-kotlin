@@ -22,6 +22,7 @@
 | **isEmptyClassName** | **kotlin.Boolean** | Specifies an autotest class name presence status to search for |  [optional] |
 | **lastTestResultOutcome** | [**AutotestResultOutcome**](AutotestResultOutcome.md) | Specifies an autotest outcome of the last test result to search for |  [optional] |
 | **externalKey** | **kotlin.String** | Specifies an autotest external key to search for |  [optional] |
+| **lastTestResultConfigurationIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies an autotest configuration IDs of the last test result to search for |  [optional] |
 
 
 

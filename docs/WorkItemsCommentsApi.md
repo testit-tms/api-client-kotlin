@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**apiV2WorkItemsCommentsCommentIdDelete**](WorkItemsCommentsApi.md#apiV2WorkItemsCommentsCommentIdDelete) | **DELETE** /api/v2/workItems/comments/{commentId} | Delete WorkItem comment |
 | [**apiV2WorkItemsCommentsPost**](WorkItemsCommentsApi.md#apiV2WorkItemsCommentsPost) | **POST** /api/v2/workItems/comments | Create WorkItem comment |
 | [**apiV2WorkItemsCommentsPut**](WorkItemsCommentsApi.md#apiV2WorkItemsCommentsPut) | **PUT** /api/v2/workItems/comments | Update work item comment |
+| [**apiV2WorkItemsIdCommentsCountGet**](WorkItemsCommentsApi.md#apiV2WorkItemsIdCommentsCountGet) | **GET** /api/v2/workItems/{id}/comments/count | Get work item comments count |
 | [**apiV2WorkItemsIdCommentsGet**](WorkItemsCommentsApi.md#apiV2WorkItemsIdCommentsGet) | **GET** /api/v2/workItems/{id}/comments | Get work item comments |
 
 
@@ -151,6 +152,53 @@ Configure Bearer or PrivateToken:
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="apiV2WorkItemsIdCommentsCountGet"></a>
+# **apiV2WorkItemsIdCommentsCountGet**
+> kotlin.Int apiV2WorkItemsIdCommentsCountGet(id)
+
+Get work item comments count
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = WorkItemsCommentsApi()
+val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the work item
+try {
+    val result : kotlin.Int = apiInstance.apiV2WorkItemsIdCommentsCountGet(id)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WorkItemsCommentsApi#apiV2WorkItemsIdCommentsCountGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WorkItemsCommentsApi#apiV2WorkItemsIdCommentsCountGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **kotlin.String**| Unique or global ID of the work item | |
+
+### Return type
+
+**kotlin.Int**
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a id="apiV2WorkItemsIdCommentsGet"></a>
