@@ -23,13 +23,12 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param ids Extraction parameters for autotests
+ * @param ids 
  */
 
 
-data class AutotestsExtractionModel (
+data class AutoTestsExtractionModel (
 
-    /* Extraction parameters for autotests */
     @Json(name = "ids")
     val ids: GuidExtractionModel? = null
 

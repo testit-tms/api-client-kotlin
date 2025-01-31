@@ -19,14 +19,17 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
+import ru.testit.kotlin.client.models.AutoTestApiResult
 import ru.testit.kotlin.client.models.AutoTestAverageDurationModel
+import ru.testit.kotlin.client.models.AutoTestBulkDeleteApiModel
+import ru.testit.kotlin.client.models.AutoTestBulkDeleteApiResult
+import ru.testit.kotlin.client.models.AutoTestFlakyBulkApiModel
 import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.AutoTestPostModel
 import ru.testit.kotlin.client.models.AutoTestPutModel
+import ru.testit.kotlin.client.models.AutoTestSearchApiModel
 import ru.testit.kotlin.client.models.AutotestHistoricalResultSelectModel
 import ru.testit.kotlin.client.models.AutotestResultHistoricalGetModel
-import ru.testit.kotlin.client.models.AutotestsSelectModel
-import ru.testit.kotlin.client.models.FlakyBulkModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TestResultChronologyModel
@@ -60,6 +63,78 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * Delete autotests
+     * 
+     * @param autoTestBulkDeleteApiModel  (optional)
+     * @return AutoTestBulkDeleteApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2AutoTestsDelete(autoTestBulkDeleteApiModel: AutoTestBulkDeleteApiModel? = null) : AutoTestBulkDeleteApiResult {
+        val localVarResponse = apiV2AutoTestsDeleteWithHttpInfo(autoTestBulkDeleteApiModel = autoTestBulkDeleteApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestBulkDeleteApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * Delete autotests
+     * 
+     * @param autoTestBulkDeleteApiModel  (optional)
+     * @return ApiResponse<AutoTestBulkDeleteApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2AutoTestsDeleteWithHttpInfo(autoTestBulkDeleteApiModel: AutoTestBulkDeleteApiModel?) : ApiResponse<AutoTestBulkDeleteApiResult?> {
+        val localVariableConfig = apiV2AutoTestsDeleteRequestConfig(autoTestBulkDeleteApiModel = autoTestBulkDeleteApiModel)
+
+        return request<AutoTestBulkDeleteApiModel, AutoTestBulkDeleteApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2AutoTestsDelete
+     *
+     * @param autoTestBulkDeleteApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2AutoTestsDeleteRequestConfig(autoTestBulkDeleteApiModel: AutoTestBulkDeleteApiModel?) : RequestConfig<AutoTestBulkDeleteApiModel> {
+        val localVariableBody = autoTestBulkDeleteApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.DELETE,
+            path = "/api/v2/autoTests",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * Set \&quot;Flaky\&quot; status for multiple autotests
      * User permissions for project:  - Read only  - Execute  - Write  - Full control
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -67,7 +142,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param flakyBulkModel  (optional)
+     * @param autoTestFlakyBulkApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -76,8 +151,8 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2AutoTestsFlakyBulkPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, flakyBulkModel: FlakyBulkModel? = null) : Unit {
-        val localVarResponse = apiV2AutoTestsFlakyBulkPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, flakyBulkModel = flakyBulkModel)
+    fun apiV2AutoTestsFlakyBulkPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, autoTestFlakyBulkApiModel: AutoTestFlakyBulkApiModel? = null) : Unit {
+        val localVarResponse = apiV2AutoTestsFlakyBulkPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autoTestFlakyBulkApiModel = autoTestFlakyBulkApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -102,16 +177,16 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param flakyBulkModel  (optional)
+     * @param autoTestFlakyBulkApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2AutoTestsFlakyBulkPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, flakyBulkModel: FlakyBulkModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2AutoTestsFlakyBulkPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, flakyBulkModel = flakyBulkModel)
+    fun apiV2AutoTestsFlakyBulkPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autoTestFlakyBulkApiModel: AutoTestFlakyBulkApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2AutoTestsFlakyBulkPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autoTestFlakyBulkApiModel = autoTestFlakyBulkApiModel)
 
-        return request<FlakyBulkModel, Unit>(
+        return request<AutoTestFlakyBulkApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -124,11 +199,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param flakyBulkModel  (optional)
+     * @param autoTestFlakyBulkApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2AutoTestsFlakyBulkPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, flakyBulkModel: FlakyBulkModel?) : RequestConfig<FlakyBulkModel> {
-        val localVariableBody = flakyBulkModel
+    fun apiV2AutoTestsFlakyBulkPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autoTestFlakyBulkApiModel: AutoTestFlakyBulkApiModel?) : RequestConfig<AutoTestFlakyBulkApiModel> {
+        val localVariableBody = autoTestFlakyBulkApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -492,8 +567,8 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param autotestsSelectModel  (optional)
-     * @return kotlin.collections.List<AutoTestModel>
+     * @param autoTestSearchApiModel  (optional)
+     * @return kotlin.collections.List<AutoTestApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -502,11 +577,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2AutoTestsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, autotestsSelectModel: AutotestsSelectModel? = null) : kotlin.collections.List<AutoTestModel> {
-        val localVarResponse = apiV2AutoTestsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autotestsSelectModel = autotestsSelectModel)
+    fun apiV2AutoTestsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, autoTestSearchApiModel: AutoTestSearchApiModel? = null) : kotlin.collections.List<AutoTestApiResult> {
+        val localVarResponse = apiV2AutoTestsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autoTestSearchApiModel = autoTestSearchApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AutoTestModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AutoTestApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -528,17 +603,17 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param autotestsSelectModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<AutoTestModel>?>
+     * @param autoTestSearchApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<AutoTestApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2AutoTestsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autotestsSelectModel: AutotestsSelectModel?) : ApiResponse<kotlin.collections.List<AutoTestModel>?> {
-        val localVariableConfig = apiV2AutoTestsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autotestsSelectModel = autotestsSelectModel)
+    fun apiV2AutoTestsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autoTestSearchApiModel: AutoTestSearchApiModel?) : ApiResponse<kotlin.collections.List<AutoTestApiResult>?> {
+        val localVariableConfig = apiV2AutoTestsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autoTestSearchApiModel = autoTestSearchApiModel)
 
-        return request<AutotestsSelectModel, kotlin.collections.List<AutoTestModel>>(
+        return request<AutoTestSearchApiModel, kotlin.collections.List<AutoTestApiResult>>(
             localVariableConfig
         )
     }
@@ -551,11 +626,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param autotestsSelectModel  (optional)
+     * @param autoTestSearchApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2AutoTestsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autotestsSelectModel: AutotestsSelectModel?) : RequestConfig<AutotestsSelectModel> {
-        val localVariableBody = autotestsSelectModel
+    fun apiV2AutoTestsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autoTestSearchApiModel: AutoTestSearchApiModel?) : RequestConfig<AutoTestSearchApiModel> {
+        val localVariableBody = autoTestSearchApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {

@@ -21,23 +21,23 @@ import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.AutoTestNamespacesCountResponse
 import ru.testit.kotlin.client.models.AutoTestResultsForTestRunModel
-import ru.testit.kotlin.client.models.ManualRerunResultModel
-import ru.testit.kotlin.client.models.ManualRerunSelectModel
+import ru.testit.kotlin.client.models.CreateEmptyTestRunApiModel
+import ru.testit.kotlin.client.models.CreateTestRunAndFillByAutoTestsApiModel
+import ru.testit.kotlin.client.models.CreateTestRunAndFillByConfigurationsApiModel
+import ru.testit.kotlin.client.models.CreateTestRunAndFillByWorkItemsApiModel
+import ru.testit.kotlin.client.models.ManualRerunApiResult
+import ru.testit.kotlin.client.models.ManualRerunSelectApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TestPointResultModel
-import ru.testit.kotlin.client.models.TestResultsLocalFilterModel
-import ru.testit.kotlin.client.models.TestResultsStatisticsGetModel
-import ru.testit.kotlin.client.models.TestRunFillByAutoTestsPostModel
-import ru.testit.kotlin.client.models.TestRunFillByConfigurationsPostModel
-import ru.testit.kotlin.client.models.TestRunFillByWorkItemsPostModel
-import ru.testit.kotlin.client.models.TestRunFilterModel
-import ru.testit.kotlin.client.models.TestRunSelectModel
-import ru.testit.kotlin.client.models.TestRunShortGetModel
+import ru.testit.kotlin.client.models.TestResultsStatisticsApiResult
+import ru.testit.kotlin.client.models.TestRunFilterApiModel
+import ru.testit.kotlin.client.models.TestRunSelectApiModel
+import ru.testit.kotlin.client.models.TestRunShortApiResult
+import ru.testit.kotlin.client.models.TestRunStatisticsFilterApiModel
 import ru.testit.kotlin.client.models.TestRunTestResultsPartialBulkSetModel
-import ru.testit.kotlin.client.models.TestRunUpdateMultipleModel
-import ru.testit.kotlin.client.models.TestRunV2GetModel
-import ru.testit.kotlin.client.models.TestRunV2PostShortModel
-import ru.testit.kotlin.client.models.TestRunV2PutModel
+import ru.testit.kotlin.client.models.TestRunV2ApiResult
+import ru.testit.kotlin.client.models.UpdateEmptyTestRunApiModel
+import ru.testit.kotlin.client.models.UpdateMultipleTestRunsApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -67,7 +67,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Delete multiple test runs
      *  Use case   User sets selection parameters of test runs   System search and delete collection of test runs   System returns the number of deleted test runs
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -77,8 +77,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsDelete(testRunSelectModel: TestRunSelectModel? = null) : kotlin.Int {
-        val localVarResponse = apiV2TestRunsDeleteWithHttpInfo(testRunSelectModel = testRunSelectModel)
+    fun apiV2TestRunsDelete(testRunSelectApiModel: TestRunSelectApiModel? = null) : kotlin.Int {
+        val localVarResponse = apiV2TestRunsDeleteWithHttpInfo(testRunSelectApiModel = testRunSelectApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Int
@@ -98,17 +98,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Delete multiple test runs
      *  Use case   User sets selection parameters of test runs   System search and delete collection of test runs   System returns the number of deleted test runs
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsDeleteWithHttpInfo(testRunSelectModel: TestRunSelectModel?) : ApiResponse<kotlin.Int?> {
-        val localVariableConfig = apiV2TestRunsDeleteRequestConfig(testRunSelectModel = testRunSelectModel)
+    fun apiV2TestRunsDeleteWithHttpInfo(testRunSelectApiModel: TestRunSelectApiModel?) : ApiResponse<kotlin.Int?> {
+        val localVariableConfig = apiV2TestRunsDeleteRequestConfig(testRunSelectApiModel = testRunSelectApiModel)
 
-        return request<TestRunSelectModel, kotlin.Int>(
+        return request<TestRunSelectApiModel, kotlin.Int>(
             localVariableConfig
         )
     }
@@ -116,11 +116,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation apiV2TestRunsDelete
      *
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsDeleteRequestConfig(testRunSelectModel: TestRunSelectModel?) : RequestConfig<TestRunSelectModel> {
-        val localVariableBody = testRunSelectModel
+    fun apiV2TestRunsDeleteRequestConfig(testRunSelectApiModel: TestRunSelectApiModel?) : RequestConfig<TestRunSelectApiModel> {
+        val localVariableBody = testRunSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -349,8 +349,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Manual autotests rerun in test run
      * 
      * @param id 
-     * @param manualRerunSelectModel  (optional)
-     * @return ManualRerunResultModel
+     * @param manualRerunSelectApiModel  (optional)
+     * @return ManualRerunApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -359,11 +359,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsIdRerunsPost(id: java.util.UUID, manualRerunSelectModel: ManualRerunSelectModel? = null) : ManualRerunResultModel {
-        val localVarResponse = apiV2TestRunsIdRerunsPostWithHttpInfo(id = id, manualRerunSelectModel = manualRerunSelectModel)
+    fun apiV2TestRunsIdRerunsPost(id: java.util.UUID, manualRerunSelectApiModel: ManualRerunSelectApiModel? = null) : ManualRerunApiResult {
+        val localVarResponse = apiV2TestRunsIdRerunsPostWithHttpInfo(id = id, manualRerunSelectApiModel = manualRerunSelectApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ManualRerunResultModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ManualRerunApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -381,17 +381,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Manual autotests rerun in test run
      * 
      * @param id 
-     * @param manualRerunSelectModel  (optional)
-     * @return ApiResponse<ManualRerunResultModel?>
+     * @param manualRerunSelectApiModel  (optional)
+     * @return ApiResponse<ManualRerunApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsIdRerunsPostWithHttpInfo(id: java.util.UUID, manualRerunSelectModel: ManualRerunSelectModel?) : ApiResponse<ManualRerunResultModel?> {
-        val localVariableConfig = apiV2TestRunsIdRerunsPostRequestConfig(id = id, manualRerunSelectModel = manualRerunSelectModel)
+    fun apiV2TestRunsIdRerunsPostWithHttpInfo(id: java.util.UUID, manualRerunSelectApiModel: ManualRerunSelectApiModel?) : ApiResponse<ManualRerunApiResult?> {
+        val localVariableConfig = apiV2TestRunsIdRerunsPostRequestConfig(id = id, manualRerunSelectApiModel = manualRerunSelectApiModel)
 
-        return request<ManualRerunSelectModel, ManualRerunResultModel>(
+        return request<ManualRerunSelectApiModel, ManualRerunApiResult>(
             localVariableConfig
         )
     }
@@ -400,11 +400,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation apiV2TestRunsIdRerunsPost
      *
      * @param id 
-     * @param manualRerunSelectModel  (optional)
+     * @param manualRerunSelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsIdRerunsPostRequestConfig(id: java.util.UUID, manualRerunSelectModel: ManualRerunSelectModel?) : RequestConfig<ManualRerunSelectModel> {
-        val localVariableBody = manualRerunSelectModel
+    fun apiV2TestRunsIdRerunsPostRequestConfig(id: java.util.UUID, manualRerunSelectApiModel: ManualRerunSelectApiModel?) : RequestConfig<ManualRerunSelectApiModel> {
+        val localVariableBody = manualRerunSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -493,8 +493,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Search for the test run test results and build statistics
      * 
      * @param id Test run unique ID
-     * @param testResultsLocalFilterModel  (optional)
-     * @return TestResultsStatisticsGetModel
+     * @param testRunStatisticsFilterApiModel  (optional)
+     * @return TestResultsStatisticsApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -503,11 +503,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsIdStatisticsFilterPost(id: java.util.UUID, testResultsLocalFilterModel: TestResultsLocalFilterModel? = null) : TestResultsStatisticsGetModel {
-        val localVarResponse = apiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id = id, testResultsLocalFilterModel = testResultsLocalFilterModel)
+    fun apiV2TestRunsIdStatisticsFilterPost(id: java.util.UUID, testRunStatisticsFilterApiModel: TestRunStatisticsFilterApiModel? = null) : TestResultsStatisticsApiResult {
+        val localVarResponse = apiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id = id, testRunStatisticsFilterApiModel = testRunStatisticsFilterApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultsStatisticsGetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultsStatisticsApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -525,17 +525,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Search for the test run test results and build statistics
      * 
      * @param id Test run unique ID
-     * @param testResultsLocalFilterModel  (optional)
-     * @return ApiResponse<TestResultsStatisticsGetModel?>
+     * @param testRunStatisticsFilterApiModel  (optional)
+     * @return ApiResponse<TestResultsStatisticsApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id: java.util.UUID, testResultsLocalFilterModel: TestResultsLocalFilterModel?) : ApiResponse<TestResultsStatisticsGetModel?> {
-        val localVariableConfig = apiV2TestRunsIdStatisticsFilterPostRequestConfig(id = id, testResultsLocalFilterModel = testResultsLocalFilterModel)
+    fun apiV2TestRunsIdStatisticsFilterPostWithHttpInfo(id: java.util.UUID, testRunStatisticsFilterApiModel: TestRunStatisticsFilterApiModel?) : ApiResponse<TestResultsStatisticsApiResult?> {
+        val localVariableConfig = apiV2TestRunsIdStatisticsFilterPostRequestConfig(id = id, testRunStatisticsFilterApiModel = testRunStatisticsFilterApiModel)
 
-        return request<TestResultsLocalFilterModel, TestResultsStatisticsGetModel>(
+        return request<TestRunStatisticsFilterApiModel, TestResultsStatisticsApiResult>(
             localVariableConfig
         )
     }
@@ -544,11 +544,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation apiV2TestRunsIdStatisticsFilterPost
      *
      * @param id Test run unique ID
-     * @param testResultsLocalFilterModel  (optional)
+     * @param testRunStatisticsFilterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsIdStatisticsFilterPostRequestConfig(id: java.util.UUID, testResultsLocalFilterModel: TestResultsLocalFilterModel?) : RequestConfig<TestResultsLocalFilterModel> {
-        val localVariableBody = testResultsLocalFilterModel
+    fun apiV2TestRunsIdStatisticsFilterPostRequestConfig(id: java.util.UUID, testRunStatisticsFilterApiModel: TestRunStatisticsFilterApiModel?) : RequestConfig<TestRunStatisticsFilterApiModel> {
+        val localVariableBody = testRunStatisticsFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -782,7 +782,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Permanently delete multiple test runs from archive
      *  Use case   User sets selection parameters of archived test runs   System search and delete collection of archived test runs   System returns the number of deleted archived test runs
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -792,8 +792,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsPurgeBulkPost(testRunSelectModel: TestRunSelectModel? = null) : kotlin.Int {
-        val localVarResponse = apiV2TestRunsPurgeBulkPostWithHttpInfo(testRunSelectModel = testRunSelectModel)
+    fun apiV2TestRunsPurgeBulkPost(testRunSelectApiModel: TestRunSelectApiModel? = null) : kotlin.Int {
+        val localVarResponse = apiV2TestRunsPurgeBulkPostWithHttpInfo(testRunSelectApiModel = testRunSelectApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Int
@@ -813,17 +813,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Permanently delete multiple test runs from archive
      *  Use case   User sets selection parameters of archived test runs   System search and delete collection of archived test runs   System returns the number of deleted archived test runs
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsPurgeBulkPostWithHttpInfo(testRunSelectModel: TestRunSelectModel?) : ApiResponse<kotlin.Int?> {
-        val localVariableConfig = apiV2TestRunsPurgeBulkPostRequestConfig(testRunSelectModel = testRunSelectModel)
+    fun apiV2TestRunsPurgeBulkPostWithHttpInfo(testRunSelectApiModel: TestRunSelectApiModel?) : ApiResponse<kotlin.Int?> {
+        val localVariableConfig = apiV2TestRunsPurgeBulkPostRequestConfig(testRunSelectApiModel = testRunSelectApiModel)
 
-        return request<TestRunSelectModel, kotlin.Int>(
+        return request<TestRunSelectApiModel, kotlin.Int>(
             localVariableConfig
         )
     }
@@ -831,11 +831,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation apiV2TestRunsPurgeBulkPost
      *
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsPurgeBulkPostRequestConfig(testRunSelectModel: TestRunSelectModel?) : RequestConfig<TestRunSelectModel> {
-        val localVariableBody = testRunSelectModel
+    fun apiV2TestRunsPurgeBulkPostRequestConfig(testRunSelectApiModel: TestRunSelectApiModel?) : RequestConfig<TestRunSelectApiModel> {
+        val localVariableBody = testRunSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -854,7 +854,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Restore multiple test runs from the archive
      *  Use case   User sets selection parameters of archived test runs   System search and restore collection of archived test runs   System returns the number of restored test runs
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -864,8 +864,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsRestoreBulkPost(testRunSelectModel: TestRunSelectModel? = null) : kotlin.Int {
-        val localVarResponse = apiV2TestRunsRestoreBulkPostWithHttpInfo(testRunSelectModel = testRunSelectModel)
+    fun apiV2TestRunsRestoreBulkPost(testRunSelectApiModel: TestRunSelectApiModel? = null) : kotlin.Int {
+        val localVarResponse = apiV2TestRunsRestoreBulkPostWithHttpInfo(testRunSelectApiModel = testRunSelectApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Int
@@ -885,17 +885,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Restore multiple test runs from the archive
      *  Use case   User sets selection parameters of archived test runs   System search and restore collection of archived test runs   System returns the number of restored test runs
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsRestoreBulkPostWithHttpInfo(testRunSelectModel: TestRunSelectModel?) : ApiResponse<kotlin.Int?> {
-        val localVariableConfig = apiV2TestRunsRestoreBulkPostRequestConfig(testRunSelectModel = testRunSelectModel)
+    fun apiV2TestRunsRestoreBulkPostWithHttpInfo(testRunSelectApiModel: TestRunSelectApiModel?) : ApiResponse<kotlin.Int?> {
+        val localVariableConfig = apiV2TestRunsRestoreBulkPostRequestConfig(testRunSelectApiModel = testRunSelectApiModel)
 
-        return request<TestRunSelectModel, kotlin.Int>(
+        return request<TestRunSelectApiModel, kotlin.Int>(
             localVariableConfig
         )
     }
@@ -903,11 +903,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation apiV2TestRunsRestoreBulkPost
      *
-     * @param testRunSelectModel  (optional)
+     * @param testRunSelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsRestoreBulkPostRequestConfig(testRunSelectModel: TestRunSelectModel?) : RequestConfig<TestRunSelectModel> {
-        val localVariableBody = testRunSelectModel
+    fun apiV2TestRunsRestoreBulkPostRequestConfig(testRunSelectApiModel: TestRunSelectApiModel?) : RequestConfig<TestRunSelectApiModel> {
+        val localVariableBody = testRunSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -931,8 +931,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testRunFilterModel  (optional)
-     * @return kotlin.collections.List<TestRunShortGetModel>
+     * @param testRunFilterApiModel  (optional)
+     * @return kotlin.collections.List<TestRunShortApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -941,11 +941,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testRunFilterModel: TestRunFilterModel? = null) : kotlin.collections.List<TestRunShortGetModel> {
-        val localVarResponse = apiV2TestRunsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testRunFilterModel = testRunFilterModel)
+    fun apiV2TestRunsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testRunFilterApiModel: TestRunFilterApiModel? = null) : kotlin.collections.List<TestRunShortApiResult> {
+        val localVarResponse = apiV2TestRunsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testRunFilterApiModel = testRunFilterApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunShortGetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunShortApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -967,17 +967,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testRunFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<TestRunShortGetModel>?>
+     * @param testRunFilterApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<TestRunShortApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testRunFilterModel: TestRunFilterModel?) : ApiResponse<kotlin.collections.List<TestRunShortGetModel>?> {
-        val localVariableConfig = apiV2TestRunsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testRunFilterModel = testRunFilterModel)
+    fun apiV2TestRunsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testRunFilterApiModel: TestRunFilterApiModel?) : ApiResponse<kotlin.collections.List<TestRunShortApiResult>?> {
+        val localVariableConfig = apiV2TestRunsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testRunFilterApiModel = testRunFilterApiModel)
 
-        return request<TestRunFilterModel, kotlin.collections.List<TestRunShortGetModel>>(
+        return request<TestRunFilterApiModel, kotlin.collections.List<TestRunShortApiResult>>(
             localVariableConfig
         )
     }
@@ -990,11 +990,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testRunFilterModel  (optional)
+     * @param testRunFilterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testRunFilterModel: TestRunFilterModel?) : RequestConfig<TestRunFilterModel> {
-        val localVariableBody = testRunFilterModel
+    fun apiV2TestRunsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testRunFilterApiModel: TestRunFilterApiModel?) : RequestConfig<TestRunFilterApiModel> {
+        val localVariableBody = testRunFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -1030,7 +1030,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Update multiple test runs
      * 
-     * @param testRunUpdateMultipleModel  (optional)
+     * @param updateMultipleTestRunsApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1039,8 +1039,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsUpdateMultiplePost(testRunUpdateMultipleModel: TestRunUpdateMultipleModel? = null) : Unit {
-        val localVarResponse = apiV2TestRunsUpdateMultiplePostWithHttpInfo(testRunUpdateMultipleModel = testRunUpdateMultipleModel)
+    fun apiV2TestRunsUpdateMultiplePost(updateMultipleTestRunsApiModel: UpdateMultipleTestRunsApiModel? = null) : Unit {
+        val localVarResponse = apiV2TestRunsUpdateMultiplePostWithHttpInfo(updateMultipleTestRunsApiModel = updateMultipleTestRunsApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -1060,16 +1060,16 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Update multiple test runs
      * 
-     * @param testRunUpdateMultipleModel  (optional)
+     * @param updateMultipleTestRunsApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsUpdateMultiplePostWithHttpInfo(testRunUpdateMultipleModel: TestRunUpdateMultipleModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2TestRunsUpdateMultiplePostRequestConfig(testRunUpdateMultipleModel = testRunUpdateMultipleModel)
+    fun apiV2TestRunsUpdateMultiplePostWithHttpInfo(updateMultipleTestRunsApiModel: UpdateMultipleTestRunsApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestRunsUpdateMultiplePostRequestConfig(updateMultipleTestRunsApiModel = updateMultipleTestRunsApiModel)
 
-        return request<TestRunUpdateMultipleModel, Unit>(
+        return request<UpdateMultipleTestRunsApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -1077,11 +1077,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation apiV2TestRunsUpdateMultiplePost
      *
-     * @param testRunUpdateMultipleModel  (optional)
+     * @param updateMultipleTestRunsApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsUpdateMultiplePostRequestConfig(testRunUpdateMultipleModel: TestRunUpdateMultipleModel?) : RequestConfig<TestRunUpdateMultipleModel> {
-        val localVariableBody = testRunUpdateMultipleModel
+    fun apiV2TestRunsUpdateMultiplePostRequestConfig(updateMultipleTestRunsApiModel: UpdateMultipleTestRunsApiModel?) : RequestConfig<UpdateMultipleTestRunsApiModel> {
+        val localVariableBody = updateMultipleTestRunsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1169,8 +1169,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create test runs based on autotests and configurations
      * This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
-     * @param testRunFillByAutoTestsPostModel  (optional)
-     * @return TestRunV2GetModel
+     * @param createTestRunAndFillByAutoTestsApiModel  (optional)
+     * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1179,11 +1179,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createAndFillByAutoTests(testRunFillByAutoTestsPostModel: TestRunFillByAutoTestsPostModel? = null) : TestRunV2GetModel {
-        val localVarResponse = createAndFillByAutoTestsWithHttpInfo(testRunFillByAutoTestsPostModel = testRunFillByAutoTestsPostModel)
+    fun createAndFillByAutoTests(createTestRunAndFillByAutoTestsApiModel: CreateTestRunAndFillByAutoTestsApiModel? = null) : TestRunV2ApiResult {
+        val localVarResponse = createAndFillByAutoTestsWithHttpInfo(createTestRunAndFillByAutoTestsApiModel = createTestRunAndFillByAutoTestsApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2GetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2ApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1200,17 +1200,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create test runs based on autotests and configurations
      * This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
-     * @param testRunFillByAutoTestsPostModel  (optional)
-     * @return ApiResponse<TestRunV2GetModel?>
+     * @param createTestRunAndFillByAutoTestsApiModel  (optional)
+     * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createAndFillByAutoTestsWithHttpInfo(testRunFillByAutoTestsPostModel: TestRunFillByAutoTestsPostModel?) : ApiResponse<TestRunV2GetModel?> {
-        val localVariableConfig = createAndFillByAutoTestsRequestConfig(testRunFillByAutoTestsPostModel = testRunFillByAutoTestsPostModel)
+    fun createAndFillByAutoTestsWithHttpInfo(createTestRunAndFillByAutoTestsApiModel: CreateTestRunAndFillByAutoTestsApiModel?) : ApiResponse<TestRunV2ApiResult?> {
+        val localVariableConfig = createAndFillByAutoTestsRequestConfig(createTestRunAndFillByAutoTestsApiModel = createTestRunAndFillByAutoTestsApiModel)
 
-        return request<TestRunFillByAutoTestsPostModel, TestRunV2GetModel>(
+        return request<CreateTestRunAndFillByAutoTestsApiModel, TestRunV2ApiResult>(
             localVariableConfig
         )
     }
@@ -1218,11 +1218,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation createAndFillByAutoTests
      *
-     * @param testRunFillByAutoTestsPostModel  (optional)
+     * @param createTestRunAndFillByAutoTestsApiModel  (optional)
      * @return RequestConfig
      */
-    fun createAndFillByAutoTestsRequestConfig(testRunFillByAutoTestsPostModel: TestRunFillByAutoTestsPostModel?) : RequestConfig<TestRunFillByAutoTestsPostModel> {
-        val localVariableBody = testRunFillByAutoTestsPostModel
+    fun createAndFillByAutoTestsRequestConfig(createTestRunAndFillByAutoTestsApiModel: CreateTestRunAndFillByAutoTestsApiModel?) : RequestConfig<CreateTestRunAndFillByAutoTestsApiModel> {
+        val localVariableBody = createTestRunAndFillByAutoTestsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1241,8 +1241,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create test runs picking the needed test points
      * This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
-     * @param testRunFillByConfigurationsPostModel  (optional)
-     * @return TestRunV2GetModel
+     * @param createTestRunAndFillByConfigurationsApiModel  (optional)
+     * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1251,11 +1251,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createAndFillByConfigurations(testRunFillByConfigurationsPostModel: TestRunFillByConfigurationsPostModel? = null) : TestRunV2GetModel {
-        val localVarResponse = createAndFillByConfigurationsWithHttpInfo(testRunFillByConfigurationsPostModel = testRunFillByConfigurationsPostModel)
+    fun createAndFillByConfigurations(createTestRunAndFillByConfigurationsApiModel: CreateTestRunAndFillByConfigurationsApiModel? = null) : TestRunV2ApiResult {
+        val localVarResponse = createAndFillByConfigurationsWithHttpInfo(createTestRunAndFillByConfigurationsApiModel = createTestRunAndFillByConfigurationsApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2GetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2ApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1272,17 +1272,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create test runs picking the needed test points
      * This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
-     * @param testRunFillByConfigurationsPostModel  (optional)
-     * @return ApiResponse<TestRunV2GetModel?>
+     * @param createTestRunAndFillByConfigurationsApiModel  (optional)
+     * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createAndFillByConfigurationsWithHttpInfo(testRunFillByConfigurationsPostModel: TestRunFillByConfigurationsPostModel?) : ApiResponse<TestRunV2GetModel?> {
-        val localVariableConfig = createAndFillByConfigurationsRequestConfig(testRunFillByConfigurationsPostModel = testRunFillByConfigurationsPostModel)
+    fun createAndFillByConfigurationsWithHttpInfo(createTestRunAndFillByConfigurationsApiModel: CreateTestRunAndFillByConfigurationsApiModel?) : ApiResponse<TestRunV2ApiResult?> {
+        val localVariableConfig = createAndFillByConfigurationsRequestConfig(createTestRunAndFillByConfigurationsApiModel = createTestRunAndFillByConfigurationsApiModel)
 
-        return request<TestRunFillByConfigurationsPostModel, TestRunV2GetModel>(
+        return request<CreateTestRunAndFillByConfigurationsApiModel, TestRunV2ApiResult>(
             localVariableConfig
         )
     }
@@ -1290,11 +1290,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation createAndFillByConfigurations
      *
-     * @param testRunFillByConfigurationsPostModel  (optional)
+     * @param createTestRunAndFillByConfigurationsApiModel  (optional)
      * @return RequestConfig
      */
-    fun createAndFillByConfigurationsRequestConfig(testRunFillByConfigurationsPostModel: TestRunFillByConfigurationsPostModel?) : RequestConfig<TestRunFillByConfigurationsPostModel> {
-        val localVariableBody = testRunFillByConfigurationsPostModel
+    fun createAndFillByConfigurationsRequestConfig(createTestRunAndFillByConfigurationsApiModel: CreateTestRunAndFillByConfigurationsApiModel?) : RequestConfig<CreateTestRunAndFillByConfigurationsApiModel> {
+        val localVariableBody = createTestRunAndFillByConfigurationsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1313,8 +1313,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create test run based on configurations and work items
      * This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
-     * @param testRunFillByWorkItemsPostModel  (optional)
-     * @return TestRunV2GetModel
+     * @param createTestRunAndFillByWorkItemsApiModel  (optional)
+     * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1323,11 +1323,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createAndFillByWorkItems(testRunFillByWorkItemsPostModel: TestRunFillByWorkItemsPostModel? = null) : TestRunV2GetModel {
-        val localVarResponse = createAndFillByWorkItemsWithHttpInfo(testRunFillByWorkItemsPostModel = testRunFillByWorkItemsPostModel)
+    fun createAndFillByWorkItems(createTestRunAndFillByWorkItemsApiModel: CreateTestRunAndFillByWorkItemsApiModel? = null) : TestRunV2ApiResult {
+        val localVarResponse = createAndFillByWorkItemsWithHttpInfo(createTestRunAndFillByWorkItemsApiModel = createTestRunAndFillByWorkItemsApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2GetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2ApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1344,17 +1344,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create test run based on configurations and work items
      * This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
-     * @param testRunFillByWorkItemsPostModel  (optional)
-     * @return ApiResponse<TestRunV2GetModel?>
+     * @param createTestRunAndFillByWorkItemsApiModel  (optional)
+     * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createAndFillByWorkItemsWithHttpInfo(testRunFillByWorkItemsPostModel: TestRunFillByWorkItemsPostModel?) : ApiResponse<TestRunV2GetModel?> {
-        val localVariableConfig = createAndFillByWorkItemsRequestConfig(testRunFillByWorkItemsPostModel = testRunFillByWorkItemsPostModel)
+    fun createAndFillByWorkItemsWithHttpInfo(createTestRunAndFillByWorkItemsApiModel: CreateTestRunAndFillByWorkItemsApiModel?) : ApiResponse<TestRunV2ApiResult?> {
+        val localVariableConfig = createAndFillByWorkItemsRequestConfig(createTestRunAndFillByWorkItemsApiModel = createTestRunAndFillByWorkItemsApiModel)
 
-        return request<TestRunFillByWorkItemsPostModel, TestRunV2GetModel>(
+        return request<CreateTestRunAndFillByWorkItemsApiModel, TestRunV2ApiResult>(
             localVariableConfig
         )
     }
@@ -1362,11 +1362,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation createAndFillByWorkItems
      *
-     * @param testRunFillByWorkItemsPostModel  (optional)
+     * @param createTestRunAndFillByWorkItemsApiModel  (optional)
      * @return RequestConfig
      */
-    fun createAndFillByWorkItemsRequestConfig(testRunFillByWorkItemsPostModel: TestRunFillByWorkItemsPostModel?) : RequestConfig<TestRunFillByWorkItemsPostModel> {
-        val localVariableBody = testRunFillByWorkItemsPostModel
+    fun createAndFillByWorkItemsRequestConfig(createTestRunAndFillByWorkItemsApiModel: CreateTestRunAndFillByWorkItemsApiModel?) : RequestConfig<CreateTestRunAndFillByWorkItemsApiModel> {
+        val localVariableBody = createTestRunAndFillByWorkItemsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1385,8 +1385,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create empty TestRun
      *  Use case   User sets test run model (listed in the request example)   User runs method execution   System creates test run   System returns test run model
-     * @param testRunV2PostShortModel  (optional)
-     * @return TestRunV2GetModel
+     * @param createEmptyTestRunApiModel  (optional)
+     * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1395,11 +1395,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createEmpty(testRunV2PostShortModel: TestRunV2PostShortModel? = null) : TestRunV2GetModel {
-        val localVarResponse = createEmptyWithHttpInfo(testRunV2PostShortModel = testRunV2PostShortModel)
+    fun createEmpty(createEmptyTestRunApiModel: CreateEmptyTestRunApiModel? = null) : TestRunV2ApiResult {
+        val localVarResponse = createEmptyWithHttpInfo(createEmptyTestRunApiModel = createEmptyTestRunApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2GetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2ApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1416,17 +1416,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Create empty TestRun
      *  Use case   User sets test run model (listed in the request example)   User runs method execution   System creates test run   System returns test run model
-     * @param testRunV2PostShortModel  (optional)
-     * @return ApiResponse<TestRunV2GetModel?>
+     * @param createEmptyTestRunApiModel  (optional)
+     * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createEmptyWithHttpInfo(testRunV2PostShortModel: TestRunV2PostShortModel?) : ApiResponse<TestRunV2GetModel?> {
-        val localVariableConfig = createEmptyRequestConfig(testRunV2PostShortModel = testRunV2PostShortModel)
+    fun createEmptyWithHttpInfo(createEmptyTestRunApiModel: CreateEmptyTestRunApiModel?) : ApiResponse<TestRunV2ApiResult?> {
+        val localVariableConfig = createEmptyRequestConfig(createEmptyTestRunApiModel = createEmptyTestRunApiModel)
 
-        return request<TestRunV2PostShortModel, TestRunV2GetModel>(
+        return request<CreateEmptyTestRunApiModel, TestRunV2ApiResult>(
             localVariableConfig
         )
     }
@@ -1434,11 +1434,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation createEmpty
      *
-     * @param testRunV2PostShortModel  (optional)
+     * @param createEmptyTestRunApiModel  (optional)
      * @return RequestConfig
      */
-    fun createEmptyRequestConfig(testRunV2PostShortModel: TestRunV2PostShortModel?) : RequestConfig<TestRunV2PostShortModel> {
-        val localVariableBody = testRunV2PostShortModel
+    fun createEmptyRequestConfig(createEmptyTestRunApiModel: CreateEmptyTestRunApiModel?) : RequestConfig<CreateEmptyTestRunApiModel> {
+        val localVariableBody = createEmptyTestRunApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1458,7 +1458,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get TestRun by Id
      *  Use case   User sets test run identifier   User runs method execution   System finds test run   System returns test run
      * @param id Test Run internal identifier (GUID format)
-     * @return TestRunV2GetModel
+     * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1467,11 +1467,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getTestRunById(id: java.util.UUID) : TestRunV2GetModel {
+    fun getTestRunById(id: java.util.UUID) : TestRunV2ApiResult {
         val localVarResponse = getTestRunByIdWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2GetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2ApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1489,16 +1489,16 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get TestRun by Id
      *  Use case   User sets test run identifier   User runs method execution   System finds test run   System returns test run
      * @param id Test Run internal identifier (GUID format)
-     * @return ApiResponse<TestRunV2GetModel?>
+     * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getTestRunByIdWithHttpInfo(id: java.util.UUID) : ApiResponse<TestRunV2GetModel?> {
+    fun getTestRunByIdWithHttpInfo(id: java.util.UUID) : ApiResponse<TestRunV2ApiResult?> {
         val localVariableConfig = getTestRunByIdRequestConfig(id = id)
 
-        return request<Unit, TestRunV2GetModel>(
+        return request<Unit, TestRunV2ApiResult>(
             localVariableConfig
         )
     }
@@ -1741,7 +1741,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Update empty TestRun
      *  Use case   User sets test run properties (listed in the request example)   User runs method execution   System updates test run   System returns returns no content response
-     * @param testRunV2PutModel  (optional)
+     * @param updateEmptyTestRunApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1750,8 +1750,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateEmpty(testRunV2PutModel: TestRunV2PutModel? = null) : Unit {
-        val localVarResponse = updateEmptyWithHttpInfo(testRunV2PutModel = testRunV2PutModel)
+    fun updateEmpty(updateEmptyTestRunApiModel: UpdateEmptyTestRunApiModel? = null) : Unit {
+        val localVarResponse = updateEmptyWithHttpInfo(updateEmptyTestRunApiModel = updateEmptyTestRunApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -1771,16 +1771,16 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * Update empty TestRun
      *  Use case   User sets test run properties (listed in the request example)   User runs method execution   System updates test run   System returns returns no content response
-     * @param testRunV2PutModel  (optional)
+     * @param updateEmptyTestRunApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun updateEmptyWithHttpInfo(testRunV2PutModel: TestRunV2PutModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateEmptyRequestConfig(testRunV2PutModel = testRunV2PutModel)
+    fun updateEmptyWithHttpInfo(updateEmptyTestRunApiModel: UpdateEmptyTestRunApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = updateEmptyRequestConfig(updateEmptyTestRunApiModel = updateEmptyTestRunApiModel)
 
-        return request<TestRunV2PutModel, Unit>(
+        return request<UpdateEmptyTestRunApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -1788,11 +1788,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation updateEmpty
      *
-     * @param testRunV2PutModel  (optional)
+     * @param updateEmptyTestRunApiModel  (optional)
      * @return RequestConfig
      */
-    fun updateEmptyRequestConfig(testRunV2PutModel: TestRunV2PutModel?) : RequestConfig<TestRunV2PutModel> {
-        val localVariableBody = testRunV2PutModel
+    fun updateEmptyRequestConfig(updateEmptyTestRunApiModel: UpdateEmptyTestRunApiModel?) : RequestConfig<UpdateEmptyTestRunApiModel> {
+        val localVariableBody = updateEmptyTestRunApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

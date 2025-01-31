@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.TestStatus
+import ru.testit.kotlin.client.models.TestStatusApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -66,7 +66,7 @@ data class TestPoint (
     val status: kotlin.String? = null,
 
     @Json(name = "statusModel")
-    val statusModel: TestStatus? = null,
+    val statusModel: TestStatusApiResult? = null,
 
     @Json(name = "lastTestResultId")
     val lastTestResultId: java.util.UUID? = null

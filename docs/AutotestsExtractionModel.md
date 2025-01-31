@@ -1,10 +1,10 @@
 
-# AutotestsExtractionModel
+# AutoTestsExtractionModel
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **ids** | [**GuidExtractionModel**](GuidExtractionModel.md) | Extraction parameters for autotests |  [optional] |
+| **ids** | [**GuidExtractionModel**](GuidExtractionModel.md) |  |  [optional] |
 
 
 

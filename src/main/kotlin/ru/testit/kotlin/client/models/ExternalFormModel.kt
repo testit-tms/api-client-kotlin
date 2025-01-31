@@ -17,7 +17,6 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.ExternalFormAllowedValueModel
 import ru.testit.kotlin.client.models.ExternalFormFieldModel
-import ru.testit.kotlin.client.models.ExternalFormLinkModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -27,7 +26,6 @@ import com.squareup.moshi.JsonClass
  *
  * @param fields 
  * @param possibleValues 
- * @param links 
  */
 
 
@@ -37,10 +35,7 @@ data class ExternalFormModel (
     val fields: kotlin.collections.List<ExternalFormFieldModel>,
 
     @Json(name = "possibleValues")
-    val possibleValues: kotlin.collections.Map<kotlin.String, kotlin.collections.List<ExternalFormAllowedValueModel>>,
-
-    @Json(name = "links")
-    val links: kotlin.collections.List<ExternalFormLinkModel>
+    val possibleValues: kotlin.collections.Map<kotlin.String, kotlin.collections.List<ExternalFormAllowedValueModel>>
 
 ) {
 

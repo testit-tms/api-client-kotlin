@@ -32,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param workItemMedianDuration Specifies a test point work item median duration range to search for
  * @param workItemIsDeleted Specifies a test point work item is deleted flag to search for
  * @param statuses Specifies a test point statuses to search for
+ * @param statusCodes Specifies a test point status codes to search for
  * @param priorities Specifies a test point priorities to search for
  * @param isAutomated Specifies a test point automation status to search for
  * @param name Specifies a test point name to search for
@@ -76,7 +77,12 @@ data class TestPointFilterModel (
 
     /* Specifies a test point statuses to search for */
     @Json(name = "statuses")
+    @Deprecated(message = "This property is deprecated.")
     val statuses: kotlin.collections.List<TestPointStatus>? = null,
+
+    /* Specifies a test point status codes to search for */
+    @Json(name = "statusCodes")
+    val statusCodes: kotlin.collections.List<kotlin.String>? = null,
 
     /* Specifies a test point priorities to search for */
     @Json(name = "priorities")

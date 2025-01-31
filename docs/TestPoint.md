@@ -12,7 +12,7 @@
 | **workItemId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **configurationId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **status** | **kotlin.String** |  |  [optional] |
-| **statusModel** | [**TestStatus**](TestStatus.md) |  |  [optional] |
+| **statusModel** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |
 | **lastTestResultId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 
 

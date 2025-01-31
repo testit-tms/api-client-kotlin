@@ -33,8 +33,8 @@ import ru.testit.kotlin.client.models.ProjectShortModel
 import ru.testit.kotlin.client.models.ProjectsFilterModel
 import ru.testit.kotlin.client.models.PublicTestRunModel
 import ru.testit.kotlin.client.models.TestPlanModel
-import ru.testit.kotlin.client.models.TestRunModel
-import ru.testit.kotlin.client.models.TestRunV2GetModel
+import ru.testit.kotlin.client.models.TestRunApiResult
+import ru.testit.kotlin.client.models.TestRunV2ApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -935,8 +935,8 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get Project TestRuns full models
      *  Use case   User sets project internal or global identifier    User sets query params    User runs method execution   System returns project test runs full models
      * @param id Project internal (UUID) or global (integer) identifier
-     * @param includeTestResults  (optional, default to false)
-     * @param mustAggregateTestResults  (optional, default to true)
+     * @param includeTestResults  (optional)
+     * @param mustAggregateTestResults  (optional)
      * @param notStarted  (optional)
      * @param inProgress  (optional)
      * @param stopped  (optional)
@@ -949,7 +949,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<TestRunModel>
+     * @return kotlin.collections.List<TestRunApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -958,11 +958,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ProjectsIdTestRunsFullGet(id: kotlin.String, includeTestResults: kotlin.Boolean? = false, mustAggregateTestResults: kotlin.Boolean? = true, notStarted: kotlin.Boolean? = null, inProgress: kotlin.Boolean? = null, stopped: kotlin.Boolean? = null, completed: kotlin.Boolean? = null, createdDateFrom: java.time.OffsetDateTime? = null, createdDateTo: java.time.OffsetDateTime? = null, testPlanId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestRunModel> {
+    fun apiV2ProjectsIdTestRunsFullGet(id: kotlin.String, includeTestResults: kotlin.Boolean? = null, mustAggregateTestResults: kotlin.Boolean? = null, notStarted: kotlin.Boolean? = null, inProgress: kotlin.Boolean? = null, stopped: kotlin.Boolean? = null, completed: kotlin.Boolean? = null, createdDateFrom: java.time.OffsetDateTime? = null, createdDateTo: java.time.OffsetDateTime? = null, testPlanId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestRunApiResult> {
         val localVarResponse = apiV2ProjectsIdTestRunsFullGetWithHttpInfo(id = id, includeTestResults = includeTestResults, mustAggregateTestResults = mustAggregateTestResults, notStarted = notStarted, inProgress = inProgress, stopped = stopped, completed = completed, createdDateFrom = createdDateFrom, createdDateTo = createdDateTo, testPlanId = testPlanId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -980,8 +980,8 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get Project TestRuns full models
      *  Use case   User sets project internal or global identifier    User sets query params    User runs method execution   System returns project test runs full models
      * @param id Project internal (UUID) or global (integer) identifier
-     * @param includeTestResults  (optional, default to false)
-     * @param mustAggregateTestResults  (optional, default to true)
+     * @param includeTestResults  (optional)
+     * @param mustAggregateTestResults  (optional)
      * @param notStarted  (optional)
      * @param inProgress  (optional)
      * @param stopped  (optional)
@@ -994,16 +994,16 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<TestRunModel>?>
+     * @return ApiResponse<kotlin.collections.List<TestRunApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ProjectsIdTestRunsFullGetWithHttpInfo(id: kotlin.String, includeTestResults: kotlin.Boolean?, mustAggregateTestResults: kotlin.Boolean?, notStarted: kotlin.Boolean?, inProgress: kotlin.Boolean?, stopped: kotlin.Boolean?, completed: kotlin.Boolean?, createdDateFrom: java.time.OffsetDateTime?, createdDateTo: java.time.OffsetDateTime?, testPlanId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestRunModel>?> {
+    fun apiV2ProjectsIdTestRunsFullGetWithHttpInfo(id: kotlin.String, includeTestResults: kotlin.Boolean?, mustAggregateTestResults: kotlin.Boolean?, notStarted: kotlin.Boolean?, inProgress: kotlin.Boolean?, stopped: kotlin.Boolean?, completed: kotlin.Boolean?, createdDateFrom: java.time.OffsetDateTime?, createdDateTo: java.time.OffsetDateTime?, testPlanId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestRunApiResult>?> {
         val localVariableConfig = apiV2ProjectsIdTestRunsFullGetRequestConfig(id = id, includeTestResults = includeTestResults, mustAggregateTestResults = mustAggregateTestResults, notStarted = notStarted, inProgress = inProgress, stopped = stopped, completed = completed, createdDateFrom = createdDateFrom, createdDateTo = createdDateTo, testPlanId = testPlanId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<TestRunModel>>(
+        return request<Unit, kotlin.collections.List<TestRunApiResult>>(
             localVariableConfig
         )
     }
@@ -1012,8 +1012,8 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation apiV2ProjectsIdTestRunsFullGet
      *
      * @param id Project internal (UUID) or global (integer) identifier
-     * @param includeTestResults  (optional, default to false)
-     * @param mustAggregateTestResults  (optional, default to true)
+     * @param includeTestResults  (optional)
+     * @param mustAggregateTestResults  (optional)
      * @param notStarted  (optional)
      * @param inProgress  (optional)
      * @param stopped  (optional)
@@ -1890,10 +1890,10 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get project test runs
      *  Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all test runs related to project   System returns array of found test runs (listed in response model)
      * @param id Project internal (UUID) or global (integer) identifier
-     * @param notStarted  (optional)
-     * @param inProgress  (optional)
-     * @param stopped  (optional)
-     * @param completed  (optional)
+     * @param notStarted 
+     * @param inProgress 
+     * @param stopped 
+     * @param completed 
      * @param createdDateFrom  (optional)
      * @param createdDateTo  (optional)
      * @param testPlanId  (optional)
@@ -1902,7 +1902,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<TestRunV2GetModel>
+     * @return kotlin.collections.List<TestRunV2ApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1911,11 +1911,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getTestRunsByProjectId(id: kotlin.String, notStarted: kotlin.Boolean? = null, inProgress: kotlin.Boolean? = null, stopped: kotlin.Boolean? = null, completed: kotlin.Boolean? = null, createdDateFrom: java.time.OffsetDateTime? = null, createdDateTo: java.time.OffsetDateTime? = null, testPlanId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestRunV2GetModel> {
+    fun getTestRunsByProjectId(id: kotlin.String, notStarted: kotlin.Boolean, inProgress: kotlin.Boolean, stopped: kotlin.Boolean, completed: kotlin.Boolean, createdDateFrom: java.time.OffsetDateTime? = null, createdDateTo: java.time.OffsetDateTime? = null, testPlanId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestRunV2ApiResult> {
         val localVarResponse = getTestRunsByProjectIdWithHttpInfo(id = id, notStarted = notStarted, inProgress = inProgress, stopped = stopped, completed = completed, createdDateFrom = createdDateFrom, createdDateTo = createdDateTo, testPlanId = testPlanId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunV2GetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunV2ApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1933,10 +1933,10 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get project test runs
      *  Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all test runs related to project   System returns array of found test runs (listed in response model)
      * @param id Project internal (UUID) or global (integer) identifier
-     * @param notStarted  (optional)
-     * @param inProgress  (optional)
-     * @param stopped  (optional)
-     * @param completed  (optional)
+     * @param notStarted 
+     * @param inProgress 
+     * @param stopped 
+     * @param completed 
      * @param createdDateFrom  (optional)
      * @param createdDateTo  (optional)
      * @param testPlanId  (optional)
@@ -1945,16 +1945,16 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<TestRunV2GetModel>?>
+     * @return ApiResponse<kotlin.collections.List<TestRunV2ApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getTestRunsByProjectIdWithHttpInfo(id: kotlin.String, notStarted: kotlin.Boolean?, inProgress: kotlin.Boolean?, stopped: kotlin.Boolean?, completed: kotlin.Boolean?, createdDateFrom: java.time.OffsetDateTime?, createdDateTo: java.time.OffsetDateTime?, testPlanId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestRunV2GetModel>?> {
+    fun getTestRunsByProjectIdWithHttpInfo(id: kotlin.String, notStarted: kotlin.Boolean, inProgress: kotlin.Boolean, stopped: kotlin.Boolean, completed: kotlin.Boolean, createdDateFrom: java.time.OffsetDateTime?, createdDateTo: java.time.OffsetDateTime?, testPlanId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestRunV2ApiResult>?> {
         val localVariableConfig = getTestRunsByProjectIdRequestConfig(id = id, notStarted = notStarted, inProgress = inProgress, stopped = stopped, completed = completed, createdDateFrom = createdDateFrom, createdDateTo = createdDateTo, testPlanId = testPlanId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<TestRunV2GetModel>>(
+        return request<Unit, kotlin.collections.List<TestRunV2ApiResult>>(
             localVariableConfig
         )
     }
@@ -1963,10 +1963,10 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation getTestRunsByProjectId
      *
      * @param id Project internal (UUID) or global (integer) identifier
-     * @param notStarted  (optional)
-     * @param inProgress  (optional)
-     * @param stopped  (optional)
-     * @param completed  (optional)
+     * @param notStarted 
+     * @param inProgress 
+     * @param stopped 
+     * @param completed 
      * @param createdDateFrom  (optional)
      * @param createdDateTo  (optional)
      * @param testPlanId  (optional)
@@ -1977,22 +1977,14 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
-    fun getTestRunsByProjectIdRequestConfig(id: kotlin.String, notStarted: kotlin.Boolean?, inProgress: kotlin.Boolean?, stopped: kotlin.Boolean?, completed: kotlin.Boolean?, createdDateFrom: java.time.OffsetDateTime?, createdDateTo: java.time.OffsetDateTime?, testPlanId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
+    fun getTestRunsByProjectIdRequestConfig(id: kotlin.String, notStarted: kotlin.Boolean, inProgress: kotlin.Boolean, stopped: kotlin.Boolean, completed: kotlin.Boolean, createdDateFrom: java.time.OffsetDateTime?, createdDateTo: java.time.OffsetDateTime?, testPlanId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (notStarted != null) {
-                    put("notStarted", listOf(notStarted.toString()))
-                }
-                if (inProgress != null) {
-                    put("inProgress", listOf(inProgress.toString()))
-                }
-                if (stopped != null) {
-                    put("stopped", listOf(stopped.toString()))
-                }
-                if (completed != null) {
-                    put("completed", listOf(completed.toString()))
-                }
+                put("notStarted", listOf(notStarted.toString()))
+                put("inProgress", listOf(inProgress.toString()))
+                put("stopped", listOf(stopped.toString()))
+                put("completed", listOf(completed.toString()))
                 if (createdDateFrom != null) {
                     put("createdDateFrom", listOf(parseDateToQueryString(createdDateFrom)))
                 }
