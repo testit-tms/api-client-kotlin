@@ -16,7 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.TestResultsExtractionApiModel
-import ru.testit.kotlin.client.models.TestResultsFilterRequest
+import ru.testit.kotlin.client.models.TestResultsFilterApiModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -33,7 +33,7 @@ data class TestResultsSelectApiModel (
 
     /* Test result filters */
     @Json(name = "filter")
-    val filter: TestResultsFilterRequest,
+    val filter: TestResultsFilterApiModel,
 
     /* Test results extraction model */
     @Json(name = "extractionModel")

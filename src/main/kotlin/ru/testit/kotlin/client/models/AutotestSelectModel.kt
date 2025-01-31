@@ -15,8 +15,8 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.AutotestFilterModel
-import ru.testit.kotlin.client.models.AutotestsExtractionModel
+import ru.testit.kotlin.client.models.AutoTestFilterModel
+import ru.testit.kotlin.client.models.AutoTestsExtractionModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -29,13 +29,13 @@ import com.squareup.moshi.JsonClass
  */
 
 
-data class AutotestSelectModel (
+data class AutoTestSelectModel (
 
     @Json(name = "filter")
-    val filter: AutotestFilterModel,
+    val filter: AutoTestFilterModel,
 
     @Json(name = "extractionModel")
-    val extractionModel: AutotestsExtractionModel
+    val extractionModel: AutoTestsExtractionModel? = null
 
 ) {
 

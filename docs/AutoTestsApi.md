@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**apiV2AutoTestsDelete**](AutoTestsApi.md#apiV2AutoTestsDelete) | **DELETE** /api/v2/autoTests | Delete autotests |
 | [**apiV2AutoTestsFlakyBulkPost**](AutoTestsApi.md#apiV2AutoTestsFlakyBulkPost) | **POST** /api/v2/autoTests/flaky/bulk | Set \&quot;Flaky\&quot; status for multiple autotests |
 | [**apiV2AutoTestsIdPatch**](AutoTestsApi.md#apiV2AutoTestsIdPatch) | **PATCH** /api/v2/autoTests/{id} | Patch auto test |
 | [**apiV2AutoTestsIdTestResultsSearchPost**](AutoTestsApi.md#apiV2AutoTestsIdTestResultsSearchPost) | **POST** /api/v2/autoTests/{id}/testResults/search | Get test results history for autotest |
@@ -25,9 +26,56 @@ All URIs are relative to *http://localhost*
 | [**updateMultiple**](AutoTestsApi.md#updateMultiple) | **PUT** /api/v2/autoTests/bulk | Update multiple autotests |
 
 
+<a id="apiV2AutoTestsDelete"></a>
+# **apiV2AutoTestsDelete**
+> AutoTestBulkDeleteApiResult apiV2AutoTestsDelete(autoTestBulkDeleteApiModel)
+
+Delete autotests
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = AutoTestsApi()
+val autoTestBulkDeleteApiModel : AutoTestBulkDeleteApiModel =  // AutoTestBulkDeleteApiModel | 
+try {
+    val result : AutoTestBulkDeleteApiResult = apiInstance.apiV2AutoTestsDelete(autoTestBulkDeleteApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling AutoTestsApi#apiV2AutoTestsDelete")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling AutoTestsApi#apiV2AutoTestsDelete")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **autoTestBulkDeleteApiModel** | [**AutoTestBulkDeleteApiModel**](AutoTestBulkDeleteApiModel.md)|  | [optional] |
+
+### Return type
+
+[**AutoTestBulkDeleteApiResult**](AutoTestBulkDeleteApiResult.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a id="apiV2AutoTestsFlakyBulkPost"></a>
 # **apiV2AutoTestsFlakyBulkPost**
-> apiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, flakyBulkModel)
+> apiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, autoTestFlakyBulkApiModel)
 
 Set \&quot;Flaky\&quot; status for multiple autotests
 
@@ -45,9 +93,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val flakyBulkModel : FlakyBulkModel =  // FlakyBulkModel | 
+val autoTestFlakyBulkApiModel : AutoTestFlakyBulkApiModel =  // AutoTestFlakyBulkApiModel | 
 try {
-    apiInstance.apiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, flakyBulkModel)
+    apiInstance.apiV2AutoTestsFlakyBulkPost(skip, take, orderBy, searchField, searchValue, autoTestFlakyBulkApiModel)
 } catch (e: ClientException) {
     println("4xx response calling AutoTestsApi#apiV2AutoTestsFlakyBulkPost")
     e.printStackTrace()
@@ -65,7 +113,7 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **flakyBulkModel** | [**FlakyBulkModel**](FlakyBulkModel.md)|  | [optional] |
+| **autoTestFlakyBulkApiModel** | [**AutoTestFlakyBulkApiModel**](AutoTestFlakyBulkApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -295,7 +343,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2AutoTestsSearchPost"></a>
 # **apiV2AutoTestsSearchPost**
-> kotlin.collections.List&lt;AutoTestModel&gt; apiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, autotestsSelectModel)
+> kotlin.collections.List&lt;AutoTestApiResult&gt; apiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, autoTestSearchApiModel)
 
 Search for autotests
 
@@ -311,9 +359,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val autotestsSelectModel : AutotestsSelectModel =  // AutotestsSelectModel | 
+val autoTestSearchApiModel : AutoTestSearchApiModel =  // AutoTestSearchApiModel | 
 try {
-    val result : kotlin.collections.List<AutoTestModel> = apiInstance.apiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, autotestsSelectModel)
+    val result : kotlin.collections.List<AutoTestApiResult> = apiInstance.apiV2AutoTestsSearchPost(skip, take, orderBy, searchField, searchValue, autoTestSearchApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AutoTestsApi#apiV2AutoTestsSearchPost")
@@ -332,11 +380,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **autotestsSelectModel** | [**AutotestsSelectModel**](AutotestsSelectModel.md)|  | [optional] |
+| **autoTestSearchApiModel** | [**AutoTestSearchApiModel**](AutoTestSearchApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;AutoTestModel&gt;**](AutoTestModel.md)
+[**kotlin.collections.List&lt;AutoTestApiResult&gt;**](AutoTestApiResult.md)
 
 ### Authorization
 

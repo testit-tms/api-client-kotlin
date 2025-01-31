@@ -16,7 +16,7 @@
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **stepComments** | [**kotlin.collections.List&lt;StepComment&gt;**](StepComment.md) |  |  [optional] |
 | **outcome** | [**TestResultOutcome**](TestResultOutcome.md) |  |  [optional] |
-| **status** | [**TestStatus**](TestStatus.md) |  |  [optional] |
+| **status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |
 | **comment** | **kotlin.String** |  |  [optional] |
 | **links** | [**kotlin.collections.List&lt;Link&gt;**](Link.md) |  |  [optional] |
 | **stepResults** | [**kotlin.collections.List&lt;StepResult&gt;**](StepResult.md) |  |  [optional] |

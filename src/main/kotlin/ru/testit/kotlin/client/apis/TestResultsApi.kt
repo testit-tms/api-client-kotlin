@@ -29,9 +29,9 @@ import ru.testit.kotlin.client.models.RerunsModel
 import ru.testit.kotlin.client.models.TestResultResponse
 import ru.testit.kotlin.client.models.TestResultShortResponse
 import ru.testit.kotlin.client.models.TestResultUpdateV2Request
-import ru.testit.kotlin.client.models.TestResultsFilterRequest
+import ru.testit.kotlin.client.models.TestResultsFilterApiModel
 import ru.testit.kotlin.client.models.TestResultsSelectApiModel
-import ru.testit.kotlin.client.models.TestResultsStatisticsResponse
+import ru.testit.kotlin.client.models.TestResultsStatisticsApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -645,7 +645,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testResultsFilterRequest  (optional)
+     * @param testResultsFilterApiModel  (optional)
      * @return kotlin.collections.List<TestResultShortResponse>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -655,8 +655,8 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testResultsFilterRequest: TestResultsFilterRequest? = null) : kotlin.collections.List<TestResultShortResponse> {
-        val localVarResponse = apiV2TestResultsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterRequest = testResultsFilterRequest)
+    fun apiV2TestResultsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testResultsFilterApiModel: TestResultsFilterApiModel? = null) : kotlin.collections.List<TestResultShortResponse> {
+        val localVarResponse = apiV2TestResultsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterApiModel = testResultsFilterApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestResultShortResponse>
@@ -681,17 +681,17 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testResultsFilterRequest  (optional)
+     * @param testResultsFilterApiModel  (optional)
      * @return ApiResponse<kotlin.collections.List<TestResultShortResponse>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterRequest: TestResultsFilterRequest?) : ApiResponse<kotlin.collections.List<TestResultShortResponse>?> {
-        val localVariableConfig = apiV2TestResultsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterRequest = testResultsFilterRequest)
+    fun apiV2TestResultsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterApiModel: TestResultsFilterApiModel?) : ApiResponse<kotlin.collections.List<TestResultShortResponse>?> {
+        val localVariableConfig = apiV2TestResultsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testResultsFilterApiModel = testResultsFilterApiModel)
 
-        return request<TestResultsFilterRequest, kotlin.collections.List<TestResultShortResponse>>(
+        return request<TestResultsFilterApiModel, kotlin.collections.List<TestResultShortResponse>>(
             localVariableConfig
         )
     }
@@ -704,11 +704,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testResultsFilterRequest  (optional)
+     * @param testResultsFilterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestResultsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterRequest: TestResultsFilterRequest?) : RequestConfig<TestResultsFilterRequest> {
-        val localVariableBody = testResultsFilterRequest
+    fun apiV2TestResultsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testResultsFilterApiModel: TestResultsFilterApiModel?) : RequestConfig<TestResultsFilterApiModel> {
+        val localVariableBody = testResultsFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -744,8 +744,8 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * Search for test results and extract statistics
      * 
-     * @param testResultsFilterRequest  (optional)
-     * @return TestResultsStatisticsResponse
+     * @param testResultsFilterApiModel  (optional)
+     * @return TestResultsStatisticsApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -754,11 +754,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsStatisticsFilterPost(testResultsFilterRequest: TestResultsFilterRequest? = null) : TestResultsStatisticsResponse {
-        val localVarResponse = apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterRequest = testResultsFilterRequest)
+    fun apiV2TestResultsStatisticsFilterPost(testResultsFilterApiModel: TestResultsFilterApiModel? = null) : TestResultsStatisticsApiResult {
+        val localVarResponse = apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterApiModel = testResultsFilterApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultsStatisticsResponse
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestResultsStatisticsApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -775,17 +775,17 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * Search for test results and extract statistics
      * 
-     * @param testResultsFilterRequest  (optional)
-     * @return ApiResponse<TestResultsStatisticsResponse?>
+     * @param testResultsFilterApiModel  (optional)
+     * @return ApiResponse<TestResultsStatisticsApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterRequest: TestResultsFilterRequest?) : ApiResponse<TestResultsStatisticsResponse?> {
-        val localVariableConfig = apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterRequest = testResultsFilterRequest)
+    fun apiV2TestResultsStatisticsFilterPostWithHttpInfo(testResultsFilterApiModel: TestResultsFilterApiModel?) : ApiResponse<TestResultsStatisticsApiResult?> {
+        val localVariableConfig = apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterApiModel = testResultsFilterApiModel)
 
-        return request<TestResultsFilterRequest, TestResultsStatisticsResponse>(
+        return request<TestResultsFilterApiModel, TestResultsStatisticsApiResult>(
             localVariableConfig
         )
     }
@@ -793,11 +793,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * To obtain the request config of the operation apiV2TestResultsStatisticsFilterPost
      *
-     * @param testResultsFilterRequest  (optional)
+     * @param testResultsFilterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterRequest: TestResultsFilterRequest?) : RequestConfig<TestResultsFilterRequest> {
-        val localVariableBody = testResultsFilterRequest
+    fun apiV2TestResultsStatisticsFilterPostRequestConfig(testResultsFilterApiModel: TestResultsFilterApiModel?) : RequestConfig<TestResultsFilterApiModel> {
+        val localVariableBody = testResultsFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

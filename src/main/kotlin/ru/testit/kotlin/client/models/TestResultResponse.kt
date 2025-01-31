@@ -23,7 +23,7 @@ import ru.testit.kotlin.client.models.StepComment
 import ru.testit.kotlin.client.models.StepResult
 import ru.testit.kotlin.client.models.TestPoint
 import ru.testit.kotlin.client.models.TestResultOutcome
-import ru.testit.kotlin.client.models.TestStatus
+import ru.testit.kotlin.client.models.TestStatusApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -108,7 +108,7 @@ data class TestResultResponse (
     val outcome: TestResultOutcome? = null,
 
     @Json(name = "status")
-    val status: TestStatus? = null,
+    val status: TestStatusApiResult? = null,
 
     @Json(name = "comment")
     val comment: kotlin.String? = null,

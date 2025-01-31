@@ -18,7 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.Attachment
 import ru.testit.kotlin.client.models.AutoTestResultReasonShort
 import ru.testit.kotlin.client.models.LinkShort
-import ru.testit.kotlin.client.models.TestStatus
+import ru.testit.kotlin.client.models.TestStatusApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -105,7 +105,7 @@ data class TestResultShortResponse (
     val outcome: kotlin.String? = null,
 
     @Json(name = "status")
-    val status: TestStatus? = null,
+    val status: TestStatusApiResult? = null,
 
     /* Comment to the test result */
     @Json(name = "comment")

@@ -20,9 +20,9 @@ import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.TestPointFilterModel
-import ru.testit.kotlin.client.models.TestPointShortGetModel
-import ru.testit.kotlin.client.models.TestRunModel
+import ru.testit.kotlin.client.models.TestPointFilterRequestModel
+import ru.testit.kotlin.client.models.TestPointShortResponseModel
+import ru.testit.kotlin.client.models.TestRunApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemModel
 
@@ -54,7 +54,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get all test runs which use test point
      * 
      * @param id Test point unique ID
-     * @return kotlin.collections.List<TestRunModel>
+     * @return kotlin.collections.List<TestRunApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -63,11 +63,11 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestPointsIdTestRunsGet(id: java.util.UUID) : kotlin.collections.List<TestRunModel> {
+    fun apiV2TestPointsIdTestRunsGet(id: java.util.UUID) : kotlin.collections.List<TestRunApiResult> {
         val localVarResponse = apiV2TestPointsIdTestRunsGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,16 +85,16 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get all test runs which use test point
      * 
      * @param id Test point unique ID
-     * @return ApiResponse<kotlin.collections.List<TestRunModel>?>
+     * @return ApiResponse<kotlin.collections.List<TestRunApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestPointsIdTestRunsGetWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<TestRunModel>?> {
+    fun apiV2TestPointsIdTestRunsGetWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<TestRunApiResult>?> {
         val localVariableConfig = apiV2TestPointsIdTestRunsGetRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<TestRunModel>>(
+        return request<Unit, kotlin.collections.List<TestRunApiResult>>(
             localVariableConfig
         )
     }
@@ -200,7 +200,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testPointFilterModel  (optional)
+     * @param testPointFilterRequestModel  (optional)
      * @return kotlin.collections.List<java.util.UUID>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -210,8 +210,8 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestPointsSearchIdPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testPointFilterModel: TestPointFilterModel? = null) : kotlin.collections.List<java.util.UUID> {
-        val localVarResponse = apiV2TestPointsSearchIdPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterModel = testPointFilterModel)
+    fun apiV2TestPointsSearchIdPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testPointFilterRequestModel: TestPointFilterRequestModel? = null) : kotlin.collections.List<java.util.UUID> {
+        val localVarResponse = apiV2TestPointsSearchIdPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterRequestModel = testPointFilterRequestModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.util.UUID>
@@ -236,17 +236,17 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testPointFilterModel  (optional)
+     * @param testPointFilterRequestModel  (optional)
      * @return ApiResponse<kotlin.collections.List<java.util.UUID>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestPointsSearchIdPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterModel: TestPointFilterModel?) : ApiResponse<kotlin.collections.List<java.util.UUID>?> {
-        val localVariableConfig = apiV2TestPointsSearchIdPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterModel = testPointFilterModel)
+    fun apiV2TestPointsSearchIdPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterRequestModel: TestPointFilterRequestModel?) : ApiResponse<kotlin.collections.List<java.util.UUID>?> {
+        val localVariableConfig = apiV2TestPointsSearchIdPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterRequestModel = testPointFilterRequestModel)
 
-        return request<TestPointFilterModel, kotlin.collections.List<java.util.UUID>>(
+        return request<TestPointFilterRequestModel, kotlin.collections.List<java.util.UUID>>(
             localVariableConfig
         )
     }
@@ -259,11 +259,11 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testPointFilterModel  (optional)
+     * @param testPointFilterRequestModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestPointsSearchIdPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterModel: TestPointFilterModel?) : RequestConfig<TestPointFilterModel> {
-        val localVariableBody = testPointFilterModel
+    fun apiV2TestPointsSearchIdPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterRequestModel: TestPointFilterRequestModel?) : RequestConfig<TestPointFilterRequestModel> {
+        val localVariableBody = testPointFilterRequestModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -304,8 +304,8 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testPointFilterModel  (optional)
-     * @return kotlin.collections.List<TestPointShortGetModel>
+     * @param testPointFilterRequestModel  (optional)
+     * @return kotlin.collections.List<TestPointShortResponseModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -314,11 +314,11 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestPointsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testPointFilterModel: TestPointFilterModel? = null) : kotlin.collections.List<TestPointShortGetModel> {
-        val localVarResponse = apiV2TestPointsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterModel = testPointFilterModel)
+    fun apiV2TestPointsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, testPointFilterRequestModel: TestPointFilterRequestModel? = null) : kotlin.collections.List<TestPointShortResponseModel> {
+        val localVarResponse = apiV2TestPointsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterRequestModel = testPointFilterRequestModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestPointShortGetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestPointShortResponseModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -340,17 +340,17 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testPointFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<TestPointShortGetModel>?>
+     * @param testPointFilterRequestModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<TestPointShortResponseModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestPointsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterModel: TestPointFilterModel?) : ApiResponse<kotlin.collections.List<TestPointShortGetModel>?> {
-        val localVariableConfig = apiV2TestPointsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterModel = testPointFilterModel)
+    fun apiV2TestPointsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterRequestModel: TestPointFilterRequestModel?) : ApiResponse<kotlin.collections.List<TestPointShortResponseModel>?> {
+        val localVariableConfig = apiV2TestPointsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, testPointFilterRequestModel = testPointFilterRequestModel)
 
-        return request<TestPointFilterModel, kotlin.collections.List<TestPointShortGetModel>>(
+        return request<TestPointFilterRequestModel, kotlin.collections.List<TestPointShortResponseModel>>(
             localVariableConfig
         )
     }
@@ -363,11 +363,11 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param testPointFilterModel  (optional)
+     * @param testPointFilterRequestModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestPointsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterModel: TestPointFilterModel?) : RequestConfig<TestPointFilterModel> {
-        val localVariableBody = testPointFilterModel
+    fun apiV2TestPointsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, testPointFilterRequestModel: TestPointFilterRequestModel?) : RequestConfig<TestPointFilterRequestModel> {
+        val localVariableBody = testPointFilterRequestModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {

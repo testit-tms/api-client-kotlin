@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiV2TestPointsIdTestRunsGet"></a>
 # **apiV2TestPointsIdTestRunsGet**
-> kotlin.collections.List&lt;TestRunModel&gt; apiV2TestPointsIdTestRunsGet(id)
+> kotlin.collections.List&lt;TestRunApiResult&gt; apiV2TestPointsIdTestRunsGet(id)
 
 Get all test runs which use test point
 
@@ -25,7 +25,7 @@ Get all test runs which use test point
 val apiInstance = TestPointsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test point unique ID
 try {
-    val result : kotlin.collections.List<TestRunModel> = apiInstance.apiV2TestPointsIdTestRunsGet(id)
+    val result : kotlin.collections.List<TestRunApiResult> = apiInstance.apiV2TestPointsIdTestRunsGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestPointsApi#apiV2TestPointsIdTestRunsGet")
@@ -43,7 +43,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**kotlin.collections.List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestPointsSearchIdPost"></a>
 # **apiV2TestPointsSearchIdPost**
-> kotlin.collections.List&lt;java.util.UUID&gt; apiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, testPointFilterModel)
+> kotlin.collections.List&lt;java.util.UUID&gt; apiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel)
 
 Search for test points and extract IDs only
 
@@ -122,9 +122,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val testPointFilterModel : TestPointFilterModel =  // TestPointFilterModel | 
+val testPointFilterRequestModel : TestPointFilterRequestModel =  // TestPointFilterRequestModel | 
 try {
-    val result : kotlin.collections.List<java.util.UUID> = apiInstance.apiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, testPointFilterModel)
+    val result : kotlin.collections.List<java.util.UUID> = apiInstance.apiV2TestPointsSearchIdPost(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestPointsApi#apiV2TestPointsSearchIdPost")
@@ -143,7 +143,7 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testPointFilterModel** | [**TestPointFilterModel**](TestPointFilterModel.md)|  | [optional] |
+| **testPointFilterRequestModel** | [**TestPointFilterRequestModel**](TestPointFilterRequestModel.md)|  | [optional] |
 
 ### Return type
 
@@ -163,7 +163,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestPointsSearchPost"></a>
 # **apiV2TestPointsSearchPost**
-> kotlin.collections.List&lt;TestPointShortGetModel&gt; apiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, testPointFilterModel)
+> kotlin.collections.List&lt;TestPointShortResponseModel&gt; apiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel)
 
 Search for test points
 
@@ -179,9 +179,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val testPointFilterModel : TestPointFilterModel =  // TestPointFilterModel | 
+val testPointFilterRequestModel : TestPointFilterRequestModel =  // TestPointFilterRequestModel | 
 try {
-    val result : kotlin.collections.List<TestPointShortGetModel> = apiInstance.apiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, testPointFilterModel)
+    val result : kotlin.collections.List<TestPointShortResponseModel> = apiInstance.apiV2TestPointsSearchPost(skip, take, orderBy, searchField, searchValue, testPointFilterRequestModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestPointsApi#apiV2TestPointsSearchPost")
@@ -200,11 +200,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testPointFilterModel** | [**TestPointFilterModel**](TestPointFilterModel.md)|  | [optional] |
+| **testPointFilterRequestModel** | [**TestPointFilterRequestModel**](TestPointFilterRequestModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestPointShortGetModel&gt;**](TestPointShortGetModel.md)
+[**kotlin.collections.List&lt;TestPointShortResponseModel&gt;**](TestPointShortResponseModel.md)
 
 ### Authorization
 

@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.TestStatusType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,7 +25,11 @@ import com.squareup.moshi.JsonClass
  *
  * @param id 
  * @param name 
+ * @param type 
+ * @param isBased 
+ * @param isDefault 
  * @param code 
+ * @param description 
  */
 
 
@@ -36,8 +41,20 @@ data class TestStatusModel (
     @Json(name = "name")
     val name: kotlin.String,
 
+    @Json(name = "type")
+    val type: TestStatusType,
+
+    @Json(name = "isBased")
+    val isBased: kotlin.Boolean,
+
+    @Json(name = "isDefault")
+    val isDefault: kotlin.Boolean,
+
     @Json(name = "code")
-    val code: kotlin.String
+    val code: kotlin.String,
+
+    @Json(name = "description")
+    val description: kotlin.String? = null
 
 ) {
 

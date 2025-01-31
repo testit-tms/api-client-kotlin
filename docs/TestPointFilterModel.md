@@ -10,6 +10,7 @@
 | **workItemMedianDuration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a test point work item median duration range to search for |  [optional] |
 | **workItemIsDeleted** | **kotlin.Boolean** | Specifies a test point work item is deleted flag to search for |  [optional] |
 | **statuses** | [**kotlin.collections.List&lt;TestPointStatus&gt;**](TestPointStatus.md) | Specifies a test point statuses to search for |  [optional] |
+| **statusCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | Specifies a test point status codes to search for |  [optional] |
 | **priorities** | [**kotlin.collections.List&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Specifies a test point priorities to search for |  [optional] |
 | **isAutomated** | **kotlin.Boolean** | Specifies a test point automation status to search for |  [optional] |
 | **name** | **kotlin.String** | Specifies a test point name to search for |  [optional] |

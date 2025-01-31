@@ -605,7 +605,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestPlansIdTestPointsLastResultsGet"></a>
 # **apiV2TestPlansIdTestPointsLastResultsGet**
-> kotlin.collections.List&lt;TestPointWithLastResultModel&gt; apiV2TestPlansIdTestPointsLastResultsGet(id, testerId, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;TestPointWithLastResultResponseModel&gt; apiV2TestPlansIdTestPointsLastResultsGet(id, testerId, skip, take, orderBy, searchField, searchValue)
 
 Get TestPoints with last result from TestPlan
 
@@ -626,7 +626,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<TestPointWithLastResultModel> = apiInstance.apiV2TestPlansIdTestPointsLastResultsGet(id, testerId, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<TestPointWithLastResultResponseModel> = apiInstance.apiV2TestPlansIdTestPointsLastResultsGet(id, testerId, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestPlansApi#apiV2TestPlansIdTestPointsLastResultsGet")
@@ -650,7 +650,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestPointWithLastResultModel&gt;**](TestPointWithLastResultModel.md)
+[**kotlin.collections.List&lt;TestPointWithLastResultResponseModel&gt;**](TestPointWithLastResultResponseModel.md)
 
 ### Authorization
 
@@ -816,7 +816,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestPlansIdTestRunsGet"></a>
 # **apiV2TestPlansIdTestRunsGet**
-> kotlin.collections.List&lt;TestRunModel&gt; apiV2TestPlansIdTestRunsGet(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;TestRunApiResult&gt; apiV2TestPlansIdTestRunsGet(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue)
 
 Get TestRuns of TestPlan
 
@@ -840,7 +840,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<TestRunModel> = apiInstance.apiV2TestPlansIdTestRunsGet(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<TestRunApiResult> = apiInstance.apiV2TestPlansIdTestRunsGet(id, notStarted, inProgress, stopped, completed, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestPlansApi#apiV2TestPlansIdTestRunsGet")
@@ -867,7 +867,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**kotlin.collections.List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 
@@ -883,7 +883,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestPlansIdTestRunsSearchPost"></a>
 # **apiV2TestPlansIdTestRunsSearchPost**
-> kotlin.collections.List&lt;TestRunModel&gt; apiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, testRunSearchQueryModel)
+> kotlin.collections.List&lt;TestRunApiResult&gt; apiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, searchTestRunsApiModel)
 
 Search TestRuns of TestPlan
 
@@ -902,9 +902,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val testRunSearchQueryModel : TestRunSearchQueryModel =  // TestRunSearchQueryModel | 
+val searchTestRunsApiModel : SearchTestRunsApiModel =  // SearchTestRunsApiModel | 
 try {
-    val result : kotlin.collections.List<TestRunModel> = apiInstance.apiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, testRunSearchQueryModel)
+    val result : kotlin.collections.List<TestRunApiResult> = apiInstance.apiV2TestPlansIdTestRunsSearchPost(id, skip, take, orderBy, searchField, searchValue, searchTestRunsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestPlansApi#apiV2TestPlansIdTestRunsSearchPost")
@@ -924,11 +924,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunSearchQueryModel** | [**TestRunSearchQueryModel**](TestRunSearchQueryModel.md)|  | [optional] |
+| **searchTestRunsApiModel** | [**SearchTestRunsApiModel**](SearchTestRunsApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**kotlin.collections.List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 
@@ -1186,7 +1186,7 @@ Configure Bearer or PrivateToken:
 
 <a id="createTestPlan"></a>
 # **createTestPlan**
-> TestPlanModel createTestPlan(testPlanPostModel)
+> TestPlanModel createTestPlan(createTestPlanApiModel)
 
 Create TestPlan
 
@@ -1199,9 +1199,9 @@ Create TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val testPlanPostModel : TestPlanPostModel =  // TestPlanPostModel | 
+val createTestPlanApiModel : CreateTestPlanApiModel =  // CreateTestPlanApiModel | 
 try {
-    val result : TestPlanModel = apiInstance.createTestPlan(testPlanPostModel)
+    val result : TestPlanModel = apiInstance.createTestPlan(createTestPlanApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestPlansApi#createTestPlan")
@@ -1215,7 +1215,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testPlanPostModel** | [**TestPlanPostModel**](TestPlanPostModel.md)|  | [optional] |
+| **createTestPlanApiModel** | [**CreateTestPlanApiModel**](CreateTestPlanApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -1571,7 +1571,7 @@ Configure Bearer or PrivateToken:
 
 <a id="updateTestPlan"></a>
 # **updateTestPlan**
-> updateTestPlan(testPlanPutModel)
+> updateTestPlan(updateTestPlanApiModel)
 
 Update TestPlan
 
@@ -1584,9 +1584,9 @@ Update TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val testPlanPutModel : TestPlanPutModel =  // TestPlanPutModel | 
+val updateTestPlanApiModel : UpdateTestPlanApiModel =  // UpdateTestPlanApiModel | 
 try {
-    apiInstance.updateTestPlan(testPlanPutModel)
+    apiInstance.updateTestPlan(updateTestPlanApiModel)
 } catch (e: ClientException) {
     println("4xx response calling TestPlansApi#updateTestPlan")
     e.printStackTrace()
@@ -1599,7 +1599,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testPlanPutModel** | [**TestPlanPutModel**](TestPlanPutModel.md)|  | [optional] |
+| **updateTestPlanApiModel** | [**UpdateTestPlanApiModel**](UpdateTestPlanApiModel.md)|  | [optional] |
 
 ### Return type
 

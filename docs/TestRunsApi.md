@@ -32,7 +32,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiV2TestRunsDelete"></a>
 # **apiV2TestRunsDelete**
-> kotlin.Int apiV2TestRunsDelete(testRunSelectModel)
+> kotlin.Int apiV2TestRunsDelete(testRunSelectApiModel)
 
 Delete multiple test runs
 
@@ -45,9 +45,9 @@ Delete multiple test runs
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunSelectModel : TestRunSelectModel =  // TestRunSelectModel | 
+val testRunSelectApiModel : TestRunSelectApiModel =  // TestRunSelectApiModel | 
 try {
-    val result : kotlin.Int = apiInstance.apiV2TestRunsDelete(testRunSelectModel)
+    val result : kotlin.Int = apiInstance.apiV2TestRunsDelete(testRunSelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsDelete")
@@ -61,7 +61,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunSelectModel** | [**TestRunSelectModel**](TestRunSelectModel.md)|  | [optional] |
+| **testRunSelectApiModel** | [**TestRunSelectApiModel**](TestRunSelectApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -224,7 +224,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsIdRerunsPost"></a>
 # **apiV2TestRunsIdRerunsPost**
-> ManualRerunResultModel apiV2TestRunsIdRerunsPost(id, manualRerunSelectModel)
+> ManualRerunApiResult apiV2TestRunsIdRerunsPost(id, manualRerunSelectApiModel)
 
 Manual autotests rerun in test run
 
@@ -236,9 +236,9 @@ Manual autotests rerun in test run
 
 val apiInstance = TestRunsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
-val manualRerunSelectModel : ManualRerunSelectModel =  // ManualRerunSelectModel | 
+val manualRerunSelectApiModel : ManualRerunSelectApiModel =  // ManualRerunSelectApiModel | 
 try {
-    val result : ManualRerunResultModel = apiInstance.apiV2TestRunsIdRerunsPost(id, manualRerunSelectModel)
+    val result : ManualRerunApiResult = apiInstance.apiV2TestRunsIdRerunsPost(id, manualRerunSelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsIdRerunsPost")
@@ -253,11 +253,11 @@ try {
 | **id** | **java.util.UUID**|  | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **manualRerunSelectModel** | [**ManualRerunSelectModel**](ManualRerunSelectModel.md)|  | [optional] |
+| **manualRerunSelectApiModel** | [**ManualRerunSelectApiModel**](ManualRerunSelectApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**ManualRerunResultModel**](ManualRerunResultModel.md)
+[**ManualRerunApiResult**](ManualRerunApiResult.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsIdStatisticsFilterPost"></a>
 # **apiV2TestRunsIdStatisticsFilterPost**
-> TestResultsStatisticsGetModel apiV2TestRunsIdStatisticsFilterPost(id, testResultsLocalFilterModel)
+> TestResultsStatisticsApiResult apiV2TestRunsIdStatisticsFilterPost(id, testRunStatisticsFilterApiModel)
 
 Search for the test run test results and build statistics
 
@@ -333,9 +333,9 @@ Search for the test run test results and build statistics
 
 val apiInstance = TestRunsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test run unique ID
-val testResultsLocalFilterModel : TestResultsLocalFilterModel =  // TestResultsLocalFilterModel | 
+val testRunStatisticsFilterApiModel : TestRunStatisticsFilterApiModel =  // TestRunStatisticsFilterApiModel | 
 try {
-    val result : TestResultsStatisticsGetModel = apiInstance.apiV2TestRunsIdStatisticsFilterPost(id, testResultsLocalFilterModel)
+    val result : TestResultsStatisticsApiResult = apiInstance.apiV2TestRunsIdStatisticsFilterPost(id, testRunStatisticsFilterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsIdStatisticsFilterPost")
@@ -350,11 +350,11 @@ try {
 | **id** | **java.util.UUID**| Test run unique ID | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testResultsLocalFilterModel** | [**TestResultsLocalFilterModel**](TestResultsLocalFilterModel.md)|  | [optional] |
+| **testRunStatisticsFilterApiModel** | [**TestRunStatisticsFilterApiModel**](TestRunStatisticsFilterApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**TestResultsStatisticsGetModel**](TestResultsStatisticsGetModel.md)
+[**TestResultsStatisticsApiResult**](TestResultsStatisticsApiResult.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsPurgeBulkPost"></a>
 # **apiV2TestRunsPurgeBulkPost**
-> kotlin.Int apiV2TestRunsPurgeBulkPost(testRunSelectModel)
+> kotlin.Int apiV2TestRunsPurgeBulkPost(testRunSelectApiModel)
 
 Permanently delete multiple test runs from archive
 
@@ -525,9 +525,9 @@ Permanently delete multiple test runs from archive
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunSelectModel : TestRunSelectModel =  // TestRunSelectModel | 
+val testRunSelectApiModel : TestRunSelectApiModel =  // TestRunSelectApiModel | 
 try {
-    val result : kotlin.Int = apiInstance.apiV2TestRunsPurgeBulkPost(testRunSelectModel)
+    val result : kotlin.Int = apiInstance.apiV2TestRunsPurgeBulkPost(testRunSelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsPurgeBulkPost")
@@ -541,7 +541,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunSelectModel** | [**TestRunSelectModel**](TestRunSelectModel.md)|  | [optional] |
+| **testRunSelectApiModel** | [**TestRunSelectApiModel**](TestRunSelectApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -561,7 +561,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsRestoreBulkPost"></a>
 # **apiV2TestRunsRestoreBulkPost**
-> kotlin.Int apiV2TestRunsRestoreBulkPost(testRunSelectModel)
+> kotlin.Int apiV2TestRunsRestoreBulkPost(testRunSelectApiModel)
 
 Restore multiple test runs from the archive
 
@@ -574,9 +574,9 @@ Restore multiple test runs from the archive
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunSelectModel : TestRunSelectModel =  // TestRunSelectModel | 
+val testRunSelectApiModel : TestRunSelectApiModel =  // TestRunSelectApiModel | 
 try {
-    val result : kotlin.Int = apiInstance.apiV2TestRunsRestoreBulkPost(testRunSelectModel)
+    val result : kotlin.Int = apiInstance.apiV2TestRunsRestoreBulkPost(testRunSelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsRestoreBulkPost")
@@ -590,7 +590,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunSelectModel** | [**TestRunSelectModel**](TestRunSelectModel.md)|  | [optional] |
+| **testRunSelectApiModel** | [**TestRunSelectApiModel**](TestRunSelectApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -610,7 +610,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsSearchPost"></a>
 # **apiV2TestRunsSearchPost**
-> kotlin.collections.List&lt;TestRunShortGetModel&gt; apiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, testRunFilterModel)
+> kotlin.collections.List&lt;TestRunShortApiResult&gt; apiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, testRunFilterApiModel)
 
 Search for test runs
 
@@ -626,9 +626,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val testRunFilterModel : TestRunFilterModel =  // TestRunFilterModel | 
+val testRunFilterApiModel : TestRunFilterApiModel =  // TestRunFilterApiModel | 
 try {
-    val result : kotlin.collections.List<TestRunShortGetModel> = apiInstance.apiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, testRunFilterModel)
+    val result : kotlin.collections.List<TestRunShortApiResult> = apiInstance.apiV2TestRunsSearchPost(skip, take, orderBy, searchField, searchValue, testRunFilterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsSearchPost")
@@ -647,11 +647,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunFilterModel** | [**TestRunFilterModel**](TestRunFilterModel.md)|  | [optional] |
+| **testRunFilterApiModel** | [**TestRunFilterApiModel**](TestRunFilterApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestRunShortGetModel&gt;**](TestRunShortGetModel.md)
+[**kotlin.collections.List&lt;TestRunShortApiResult&gt;**](TestRunShortApiResult.md)
 
 ### Authorization
 
@@ -667,7 +667,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsUpdateMultiplePost"></a>
 # **apiV2TestRunsUpdateMultiplePost**
-> apiV2TestRunsUpdateMultiplePost(testRunUpdateMultipleModel)
+> apiV2TestRunsUpdateMultiplePost(updateMultipleTestRunsApiModel)
 
 Update multiple test runs
 
@@ -678,9 +678,9 @@ Update multiple test runs
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunUpdateMultipleModel : TestRunUpdateMultipleModel =  // TestRunUpdateMultipleModel | 
+val updateMultipleTestRunsApiModel : UpdateMultipleTestRunsApiModel =  // UpdateMultipleTestRunsApiModel | 
 try {
-    apiInstance.apiV2TestRunsUpdateMultiplePost(testRunUpdateMultipleModel)
+    apiInstance.apiV2TestRunsUpdateMultiplePost(updateMultipleTestRunsApiModel)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsUpdateMultiplePost")
     e.printStackTrace()
@@ -693,7 +693,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunUpdateMultipleModel** | [**TestRunUpdateMultipleModel**](TestRunUpdateMultipleModel.md)|  | [optional] |
+| **updateMultipleTestRunsApiModel** | [**UpdateMultipleTestRunsApiModel**](UpdateMultipleTestRunsApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -761,7 +761,7 @@ Configure Bearer or PrivateToken:
 
 <a id="createAndFillByAutoTests"></a>
 # **createAndFillByAutoTests**
-> TestRunV2GetModel createAndFillByAutoTests(testRunFillByAutoTestsPostModel)
+> TestRunV2ApiResult createAndFillByAutoTests(createTestRunAndFillByAutoTestsApiModel)
 
 Create test runs based on autotests and configurations
 
@@ -774,9 +774,9 @@ This method creates a test run based on an autotest and a configuration.  The di
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunFillByAutoTestsPostModel : TestRunFillByAutoTestsPostModel =  // TestRunFillByAutoTestsPostModel | 
+val createTestRunAndFillByAutoTestsApiModel : CreateTestRunAndFillByAutoTestsApiModel =  // CreateTestRunAndFillByAutoTestsApiModel | 
 try {
-    val result : TestRunV2GetModel = apiInstance.createAndFillByAutoTests(testRunFillByAutoTestsPostModel)
+    val result : TestRunV2ApiResult = apiInstance.createAndFillByAutoTests(createTestRunAndFillByAutoTestsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#createAndFillByAutoTests")
@@ -790,11 +790,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunFillByAutoTestsPostModel** | [**TestRunFillByAutoTestsPostModel**](TestRunFillByAutoTestsPostModel.md)|  | [optional] |
+| **createTestRunAndFillByAutoTestsApiModel** | [**CreateTestRunAndFillByAutoTestsApiModel**](CreateTestRunAndFillByAutoTestsApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -810,7 +810,7 @@ Configure Bearer or PrivateToken:
 
 <a id="createAndFillByConfigurations"></a>
 # **createAndFillByConfigurations**
-> TestRunV2GetModel createAndFillByConfigurations(testRunFillByConfigurationsPostModel)
+> TestRunV2ApiResult createAndFillByConfigurations(createTestRunAndFillByConfigurationsApiModel)
 
 Create test runs picking the needed test points
 
@@ -823,9 +823,9 @@ This method creates a test run based on a combination of a configuration and a w
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunFillByConfigurationsPostModel : TestRunFillByConfigurationsPostModel =  // TestRunFillByConfigurationsPostModel | 
+val createTestRunAndFillByConfigurationsApiModel : CreateTestRunAndFillByConfigurationsApiModel =  // CreateTestRunAndFillByConfigurationsApiModel | 
 try {
-    val result : TestRunV2GetModel = apiInstance.createAndFillByConfigurations(testRunFillByConfigurationsPostModel)
+    val result : TestRunV2ApiResult = apiInstance.createAndFillByConfigurations(createTestRunAndFillByConfigurationsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#createAndFillByConfigurations")
@@ -839,11 +839,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunFillByConfigurationsPostModel** | [**TestRunFillByConfigurationsPostModel**](TestRunFillByConfigurationsPostModel.md)|  | [optional] |
+| **createTestRunAndFillByConfigurationsApiModel** | [**CreateTestRunAndFillByConfigurationsApiModel**](CreateTestRunAndFillByConfigurationsApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -859,7 +859,7 @@ Configure Bearer or PrivateToken:
 
 <a id="createAndFillByWorkItems"></a>
 # **createAndFillByWorkItems**
-> TestRunV2GetModel createAndFillByWorkItems(testRunFillByWorkItemsPostModel)
+> TestRunV2ApiResult createAndFillByWorkItems(createTestRunAndFillByWorkItemsApiModel)
 
 Create test run based on configurations and work items
 
@@ -872,9 +872,9 @@ This method creates a test run based on a combination of configuration and work 
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunFillByWorkItemsPostModel : TestRunFillByWorkItemsPostModel =  // TestRunFillByWorkItemsPostModel | 
+val createTestRunAndFillByWorkItemsApiModel : CreateTestRunAndFillByWorkItemsApiModel =  // CreateTestRunAndFillByWorkItemsApiModel | 
 try {
-    val result : TestRunV2GetModel = apiInstance.createAndFillByWorkItems(testRunFillByWorkItemsPostModel)
+    val result : TestRunV2ApiResult = apiInstance.createAndFillByWorkItems(createTestRunAndFillByWorkItemsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#createAndFillByWorkItems")
@@ -888,11 +888,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunFillByWorkItemsPostModel** | [**TestRunFillByWorkItemsPostModel**](TestRunFillByWorkItemsPostModel.md)|  | [optional] |
+| **createTestRunAndFillByWorkItemsApiModel** | [**CreateTestRunAndFillByWorkItemsApiModel**](CreateTestRunAndFillByWorkItemsApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -908,7 +908,7 @@ Configure Bearer or PrivateToken:
 
 <a id="createEmpty"></a>
 # **createEmpty**
-> TestRunV2GetModel createEmpty(testRunV2PostShortModel)
+> TestRunV2ApiResult createEmpty(createEmptyTestRunApiModel)
 
 Create empty TestRun
 
@@ -921,9 +921,9 @@ Create empty TestRun
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunV2PostShortModel : TestRunV2PostShortModel =  // TestRunV2PostShortModel | 
+val createEmptyTestRunApiModel : CreateEmptyTestRunApiModel =  // CreateEmptyTestRunApiModel | 
 try {
-    val result : TestRunV2GetModel = apiInstance.createEmpty(testRunV2PostShortModel)
+    val result : TestRunV2ApiResult = apiInstance.createEmpty(createEmptyTestRunApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#createEmpty")
@@ -937,11 +937,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunV2PostShortModel** | [**TestRunV2PostShortModel**](TestRunV2PostShortModel.md)|  | [optional] |
+| **createEmptyTestRunApiModel** | [**CreateEmptyTestRunApiModel**](CreateEmptyTestRunApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -957,7 +957,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getTestRunById"></a>
 # **getTestRunById**
-> TestRunV2GetModel getTestRunById(id)
+> TestRunV2ApiResult getTestRunById(id)
 
 Get TestRun by Id
 
@@ -972,7 +972,7 @@ Get TestRun by Id
 val apiInstance = TestRunsApi()
 val id : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | Test Run internal identifier (GUID format)
 try {
-    val result : TestRunV2GetModel = apiInstance.getTestRunById(id)
+    val result : TestRunV2ApiResult = apiInstance.getTestRunById(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#getTestRunById")
@@ -990,7 +990,7 @@ try {
 
 ### Return type
 
-[**TestRunV2GetModel**](TestRunV2GetModel.md)
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
 
 ### Authorization
 
@@ -1153,7 +1153,7 @@ Configure Bearer or PrivateToken:
 
 <a id="updateEmpty"></a>
 # **updateEmpty**
-> updateEmpty(testRunV2PutModel)
+> updateEmpty(updateEmptyTestRunApiModel)
 
 Update empty TestRun
 
@@ -1166,9 +1166,9 @@ Update empty TestRun
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestRunsApi()
-val testRunV2PutModel : TestRunV2PutModel =  // TestRunV2PutModel | 
+val updateEmptyTestRunApiModel : UpdateEmptyTestRunApiModel =  // UpdateEmptyTestRunApiModel | 
 try {
-    apiInstance.updateEmpty(testRunV2PutModel)
+    apiInstance.updateEmpty(updateEmptyTestRunApiModel)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#updateEmpty")
     e.printStackTrace()
@@ -1181,7 +1181,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testRunV2PutModel** | [**TestRunV2PutModel**](TestRunV2PutModel.md)|  | [optional] |
+| **updateEmptyTestRunApiModel** | [**UpdateEmptyTestRunApiModel**](UpdateEmptyTestRunApiModel.md)|  | [optional] |
 
 ### Return type
 

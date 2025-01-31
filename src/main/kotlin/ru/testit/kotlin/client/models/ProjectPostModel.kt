@@ -25,7 +25,6 @@ import com.squareup.moshi.JsonClass
  * @param name Name of the project
  * @param description Description of the project
  * @param isFavorite Indicates if the project is marked as favorite
- * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" sets automatically
  */
 
 
@@ -41,12 +40,7 @@ data class ProjectPostModel (
 
     /* Indicates if the project is marked as favorite */
     @Json(name = "isFavorite")
-    val isFavorite: kotlin.Boolean? = null,
-
-    /* Indicates if the status \"Flaky/Stable\" sets automatically */
-    @Json(name = "isFlakyAuto")
-    @Deprecated(message = "This property is deprecated.")
-    val isFlakyAuto: kotlin.Boolean? = null
+    val isFavorite: kotlin.Boolean? = null
 
 ) {
 

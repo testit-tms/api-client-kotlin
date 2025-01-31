@@ -611,7 +611,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsIdTestRunsFullGet"></a>
 # **apiV2ProjectsIdTestRunsFullGet**
-> kotlin.collections.List&lt;TestRunModel&gt; apiV2ProjectsIdTestRunsFullGet(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;TestRunApiResult&gt; apiV2ProjectsIdTestRunsFullGet(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
 
 Get Project TestRuns full models
 
@@ -640,7 +640,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<TestRunModel> = apiInstance.apiV2ProjectsIdTestRunsFullGet(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<TestRunApiResult> = apiInstance.apiV2ProjectsIdTestRunsFullGet(id, includeTestResults, mustAggregateTestResults, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#apiV2ProjectsIdTestRunsFullGet")
@@ -653,8 +653,8 @@ try {
 
 ### Parameters
 | **id** | **kotlin.String**| Project internal (UUID) or global (integer) identifier | |
-| **includeTestResults** | **kotlin.Boolean**|  | [optional] [default to false] |
-| **mustAggregateTestResults** | **kotlin.Boolean**|  | [optional] [default to true] |
+| **includeTestResults** | **kotlin.Boolean**|  | [optional] |
+| **mustAggregateTestResults** | **kotlin.Boolean**|  | [optional] |
 | **notStarted** | **kotlin.Boolean**|  | [optional] |
 | **inProgress** | **kotlin.Boolean**|  | [optional] |
 | **stopped** | **kotlin.Boolean**|  | [optional] |
@@ -672,7 +672,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestRunModel&gt;**](TestRunModel.md)
+[**kotlin.collections.List&lt;TestRunApiResult&gt;**](TestRunApiResult.md)
 
 ### Authorization
 
@@ -1191,7 +1191,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getTestRunsByProjectId"></a>
 # **getTestRunsByProjectId**
-> kotlin.collections.List&lt;TestRunV2GetModel&gt; getTestRunsByProjectId(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;TestRunV2ApiResult&gt; getTestRunsByProjectId(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
 
 Get project test runs
 
@@ -1218,7 +1218,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<TestRunV2GetModel> = apiInstance.getTestRunsByProjectId(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<TestRunV2ApiResult> = apiInstance.getTestRunsByProjectId(id, notStarted, inProgress, stopped, completed, createdDateFrom, createdDateTo, testPlanId, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#getTestRunsByProjectId")
@@ -1231,10 +1231,10 @@ try {
 
 ### Parameters
 | **id** | **kotlin.String**| Project internal (UUID) or global (integer) identifier | |
-| **notStarted** | **kotlin.Boolean**|  | [optional] |
-| **inProgress** | **kotlin.Boolean**|  | [optional] |
-| **stopped** | **kotlin.Boolean**|  | [optional] |
-| **completed** | **kotlin.Boolean**|  | [optional] |
+| **notStarted** | **kotlin.Boolean**|  | |
+| **inProgress** | **kotlin.Boolean**|  | |
+| **stopped** | **kotlin.Boolean**|  | |
+| **completed** | **kotlin.Boolean**|  | |
 | **createdDateFrom** | **java.time.OffsetDateTime**|  | [optional] |
 | **createdDateTo** | **java.time.OffsetDateTime**|  | [optional] |
 | **testPlanId** | **java.util.UUID**|  | [optional] |
@@ -1248,7 +1248,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestRunV2GetModel&gt;**](TestRunV2GetModel.md)
+[**kotlin.collections.List&lt;TestRunV2ApiResult&gt;**](TestRunV2ApiResult.md)
 
 ### Authorization
 

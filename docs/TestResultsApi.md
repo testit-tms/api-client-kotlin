@@ -405,7 +405,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestResultsSearchPost"></a>
 # **apiV2TestResultsSearchPost**
-> kotlin.collections.List&lt;TestResultShortResponse&gt; apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterRequest)
+> kotlin.collections.List&lt;TestResultShortResponse&gt; apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterApiModel)
 
 Search for test results
 
@@ -421,9 +421,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val testResultsFilterRequest : TestResultsFilterRequest =  // TestResultsFilterRequest | 
+val testResultsFilterApiModel : TestResultsFilterApiModel =  // TestResultsFilterApiModel | 
 try {
-    val result : kotlin.collections.List<TestResultShortResponse> = apiInstance.apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterRequest)
+    val result : kotlin.collections.List<TestResultShortResponse> = apiInstance.apiV2TestResultsSearchPost(skip, take, orderBy, searchField, searchValue, testResultsFilterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsSearchPost")
@@ -442,7 +442,7 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testResultsFilterRequest** | [**TestResultsFilterRequest**](TestResultsFilterRequest.md)|  | [optional] |
+| **testResultsFilterApiModel** | [**TestResultsFilterApiModel**](TestResultsFilterApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -462,7 +462,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestResultsStatisticsFilterPost"></a>
 # **apiV2TestResultsStatisticsFilterPost**
-> TestResultsStatisticsResponse apiV2TestResultsStatisticsFilterPost(testResultsFilterRequest)
+> TestResultsStatisticsApiResult apiV2TestResultsStatisticsFilterPost(testResultsFilterApiModel)
 
 Search for test results and extract statistics
 
@@ -473,9 +473,9 @@ Search for test results and extract statistics
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestResultsApi()
-val testResultsFilterRequest : TestResultsFilterRequest =  // TestResultsFilterRequest | 
+val testResultsFilterApiModel : TestResultsFilterApiModel =  // TestResultsFilterApiModel | 
 try {
-    val result : TestResultsStatisticsResponse = apiInstance.apiV2TestResultsStatisticsFilterPost(testResultsFilterRequest)
+    val result : TestResultsStatisticsApiResult = apiInstance.apiV2TestResultsStatisticsFilterPost(testResultsFilterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsStatisticsFilterPost")
@@ -489,11 +489,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testResultsFilterRequest** | [**TestResultsFilterRequest**](TestResultsFilterRequest.md)|  | [optional] |
+| **testResultsFilterApiModel** | [**TestResultsFilterApiModel**](TestResultsFilterApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**TestResultsStatisticsResponse**](TestResultsStatisticsResponse.md)
+[**TestResultsStatisticsApiResult**](TestResultsStatisticsApiResult.md)
 
 ### Authorization
 

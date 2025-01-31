@@ -51,6 +51,7 @@ data class TestResultUpdateV2Request (
     val failureClassIds: kotlin.collections.List<java.util.UUID>? = null,
 
     @Json(name = "outcome")
+    @Deprecated(message = "This property is deprecated.")
     val outcome: TestResultOutcome? = null,
 
     @Json(name = "statusCode")

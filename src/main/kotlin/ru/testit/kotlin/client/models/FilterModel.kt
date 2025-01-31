@@ -25,13 +25,13 @@ import com.squareup.moshi.JsonClass
  *
  * @param createdDate 
  * @param createdById 
- * @param `data` 
  * @param projectId 
  * @param name 
  * @param id Unique ID of the entity
  * @param isDeleted Indicates if the entity is deleted
  * @param modifiedDate 
  * @param modifiedById 
+ * @param `data` 
  * @param fieldsToShow 
  */
 
@@ -43,9 +43,6 @@ data class FilterModel (
 
     @Json(name = "createdById")
     val createdById: java.util.UUID,
-
-    @Json(name = "data")
-    val `data`: WorkItemSearchQueryModel,
 
     @Json(name = "projectId")
     val projectId: java.util.UUID,
@@ -66,6 +63,9 @@ data class FilterModel (
 
     @Json(name = "modifiedById")
     val modifiedById: java.util.UUID? = null,
+
+    @Json(name = "data")
+    val `data`: WorkItemSearchQueryModel? = null,
 
     @Json(name = "fieldsToShow")
     val fieldsToShow: kotlin.Any? = null
