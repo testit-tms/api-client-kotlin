@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiV2WebhooksDelete"></a>
 # **apiV2WebhooksDelete**
-> apiV2WebhooksDelete(webhooksDeleteRequest)
+> apiV2WebhooksDelete(webhooksDeleteApiModel)
 
 
 
@@ -29,9 +29,9 @@ All URIs are relative to *http://localhost*
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WebhooksApi()
-val webhooksDeleteRequest : WebhooksDeleteRequest =  // WebhooksDeleteRequest | 
+val webhooksDeleteApiModel : WebhooksDeleteApiModel =  // WebhooksDeleteApiModel | 
 try {
-    apiInstance.apiV2WebhooksDelete(webhooksDeleteRequest)
+    apiInstance.apiV2WebhooksDelete(webhooksDeleteApiModel)
 } catch (e: ClientException) {
     println("4xx response calling WebhooksApi#apiV2WebhooksDelete")
     e.printStackTrace()
@@ -44,7 +44,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **webhooksDeleteRequest** | [**WebhooksDeleteRequest**](WebhooksDeleteRequest.md)|  | [optional] |
+| **webhooksDeleteApiModel** | [**WebhooksDeleteApiModel**](WebhooksDeleteApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -300,7 +300,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WebhooksPut"></a>
 # **apiV2WebhooksPut**
-> WebhooksUpdateResponse apiV2WebhooksPut(webhooksUpdateRequest)
+> WebhooksUpdateApiResult apiV2WebhooksPut(webhooksUpdateApiModel)
 
 
 
@@ -311,9 +311,9 @@ Configure Bearer or PrivateToken:
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WebhooksApi()
-val webhooksUpdateRequest : WebhooksUpdateRequest =  // WebhooksUpdateRequest | 
+val webhooksUpdateApiModel : WebhooksUpdateApiModel =  // WebhooksUpdateApiModel | 
 try {
-    val result : WebhooksUpdateResponse = apiInstance.apiV2WebhooksPut(webhooksUpdateRequest)
+    val result : WebhooksUpdateApiResult = apiInstance.apiV2WebhooksPut(webhooksUpdateApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebhooksApi#apiV2WebhooksPut")
@@ -327,11 +327,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **webhooksUpdateRequest** | [**WebhooksUpdateRequest**](WebhooksUpdateRequest.md)|  | [optional] |
+| **webhooksUpdateApiModel** | [**WebhooksUpdateApiModel**](WebhooksUpdateApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**WebhooksUpdateResponse**](WebhooksUpdateResponse.md)
+[**WebhooksUpdateApiResult**](WebhooksUpdateApiResult.md)
 
 ### Authorization
 

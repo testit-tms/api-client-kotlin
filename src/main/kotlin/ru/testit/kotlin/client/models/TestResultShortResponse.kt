@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.Attachment
+import ru.testit.kotlin.client.models.AttachmentApiResult
 import ru.testit.kotlin.client.models.AutoTestResultReasonShort
 import ru.testit.kotlin.client.models.LinkShort
 import ru.testit.kotlin.client.models.TestStatusApiResult
@@ -93,7 +93,7 @@ data class TestResultShortResponse (
 
     /* Collection of files attached to the test result */
     @Json(name = "attachments")
-    val attachments: kotlin.collections.List<Attachment>,
+    val attachments: kotlin.collections.List<AttachmentApiResult>,
 
     /* Run count */
     @Json(name = "rerunCompletedCount")

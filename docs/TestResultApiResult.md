@@ -26,13 +26,13 @@
 | **autoTestId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **testPointId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **testPoint** | [**TestPointShortApiResult**](TestPointShortApiResult.md) |  |  [optional] |
-| **autoTest** | [**AutoTestModel**](AutoTestModel.md) |  |  [optional] |
+| **autoTest** | [**AutoTestApiResult**](AutoTestApiResult.md) |  |  [optional] |
 | **autoTestStepResults** | [**kotlin.collections.List&lt;AutoTestStepResultsApiResult&gt;**](AutoTestStepResultsApiResult.md) |  |  [optional] |
 | **setupResults** | [**kotlin.collections.List&lt;AutoTestStepResultsApiResult&gt;**](AutoTestStepResultsApiResult.md) |  |  [optional] |
 | **teardownResults** | [**kotlin.collections.List&lt;AutoTestStepResultsApiResult&gt;**](AutoTestStepResultsApiResult.md) |  |  [optional] |
 | **workItemVersionId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **workItemVersionNumber** | **kotlin.Int** |  |  [optional] |
-| **stepComments** | [**kotlin.collections.List&lt;StepCommentApiResult&gt;**](StepCommentApiResult.md) |  |  [optional] |
+| **stepComments** | [**kotlin.collections.List&lt;StepCommentApiModel&gt;**](StepCommentApiModel.md) |  |  [optional] |
 | **parameters** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  |  [optional] |
 | **properties** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** |  |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |

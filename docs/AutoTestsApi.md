@@ -183,7 +183,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2AutoTestsIdTestResultsSearchPost"></a>
 # **apiV2AutoTestsIdTestResultsSearchPost**
-> kotlin.collections.List&lt;AutotestResultHistoricalGetModel&gt; apiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel)
+> kotlin.collections.List&lt;AutoTestResultHistoryApiResult&gt; apiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel)
 
 Get test results history for autotest
 
@@ -202,9 +202,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val autotestHistoricalResultSelectModel : AutotestHistoricalResultSelectModel =  // AutotestHistoricalResultSelectModel | 
+val autoTestResultHistorySelectApiModel : AutoTestResultHistorySelectApiModel =  // AutoTestResultHistorySelectApiModel | 
 try {
-    val result : kotlin.collections.List<AutotestResultHistoricalGetModel> = apiInstance.apiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autotestHistoricalResultSelectModel)
+    val result : kotlin.collections.List<AutoTestResultHistoryApiResult> = apiInstance.apiV2AutoTestsIdTestResultsSearchPost(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AutoTestsApi#apiV2AutoTestsIdTestResultsSearchPost")
@@ -224,11 +224,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **autotestHistoricalResultSelectModel** | [**AutotestHistoricalResultSelectModel**](AutotestHistoricalResultSelectModel.md)|  | [optional] |
+| **autoTestResultHistorySelectApiModel** | [**AutoTestResultHistorySelectApiModel**](AutoTestResultHistorySelectApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;AutotestResultHistoricalGetModel&gt;**](AutotestResultHistoricalGetModel.md)
+[**kotlin.collections.List&lt;AutoTestResultHistoryApiResult&gt;**](AutoTestResultHistoryApiResult.md)
 
 ### Authorization
 
@@ -840,7 +840,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getTestRuns"></a>
 # **getTestRuns**
-> kotlin.collections.List&lt;TestRunShortModel&gt; getTestRuns(id)
+> kotlin.collections.List&lt;TestRunByAutoTestApiResult&gt; getTestRuns(id)
 
 Get completed tests runs for autotests
 
@@ -855,7 +855,7 @@ Get completed tests runs for autotests
 val apiInstance = AutoTestsApi()
 val id : kotlin.String = id_example // kotlin.String | Autotest internal (UUID) or global (integer) identifier
 try {
-    val result : kotlin.collections.List<TestRunShortModel> = apiInstance.getTestRuns(id)
+    val result : kotlin.collections.List<TestRunByAutoTestApiResult> = apiInstance.getTestRuns(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AutoTestsApi#getTestRuns")
@@ -873,7 +873,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestRunShortModel&gt;**](TestRunShortModel.md)
+[**kotlin.collections.List&lt;TestRunByAutoTestApiResult&gt;**](TestRunByAutoTestApiResult.md)
 
 ### Authorization
 

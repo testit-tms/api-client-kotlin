@@ -16,10 +16,10 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AttachmentApiResult
-import ru.testit.kotlin.client.models.AutoTestModel
+import ru.testit.kotlin.client.models.AutoTestApiResult
 import ru.testit.kotlin.client.models.AutoTestStepResultsApiResult
 import ru.testit.kotlin.client.models.LinkApiResult
-import ru.testit.kotlin.client.models.StepCommentApiResult
+import ru.testit.kotlin.client.models.StepCommentApiModel
 import ru.testit.kotlin.client.models.TestPointShortApiResult
 import ru.testit.kotlin.client.models.TestResultFailureClassApiResult
 import ru.testit.kotlin.client.models.TestStatusApiResult
@@ -135,7 +135,7 @@ data class TestResultApiResult (
     val testPoint: TestPointShortApiResult? = null,
 
     @Json(name = "autoTest")
-    val autoTest: AutoTestModel? = null,
+    val autoTest: AutoTestApiResult? = null,
 
     @Json(name = "autoTestStepResults")
     val autoTestStepResults: kotlin.collections.List<AutoTestStepResultsApiResult>? = null,
@@ -153,7 +153,7 @@ data class TestResultApiResult (
     val workItemVersionNumber: kotlin.Int? = null,
 
     @Json(name = "stepComments")
-    val stepComments: kotlin.collections.List<StepCommentApiResult>? = null,
+    val stepComments: kotlin.collections.List<StepCommentApiModel>? = null,
 
     @Json(name = "parameters")
     val parameters: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,

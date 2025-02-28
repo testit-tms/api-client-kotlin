@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Test point unique internal identifier |  |
+| **isDeleted** | **kotlin.Boolean** | Indicates if the entity is deleted |  |
 | **statusModel** | [**TestStatusApiResult**](TestStatusApiResult.md) | Test point status |  |
 | **iterationId** | [**java.util.UUID**](java.util.UUID.md) | Iteration unique identifier |  |
 | **testSuiteId** | [**java.util.UUID**](java.util.UUID.md) | Test suite to which test point relates unique identifier |  |

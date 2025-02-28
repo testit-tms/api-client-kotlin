@@ -224,7 +224,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsIdRerunsPost"></a>
 # **apiV2TestRunsIdRerunsPost**
-> ManualRerunApiResult apiV2TestRunsIdRerunsPost(id, manualRerunSelectApiModel)
+> ManualRerunApiResult apiV2TestRunsIdRerunsPost(id, manualRerunSelectTestResultsApiModel)
 
 Manual autotests rerun in test run
 
@@ -236,9 +236,9 @@ Manual autotests rerun in test run
 
 val apiInstance = TestRunsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
-val manualRerunSelectApiModel : ManualRerunSelectApiModel =  // ManualRerunSelectApiModel | 
+val manualRerunSelectTestResultsApiModel : ManualRerunSelectTestResultsApiModel =  // ManualRerunSelectTestResultsApiModel | 
 try {
-    val result : ManualRerunApiResult = apiInstance.apiV2TestRunsIdRerunsPost(id, manualRerunSelectApiModel)
+    val result : ManualRerunApiResult = apiInstance.apiV2TestRunsIdRerunsPost(id, manualRerunSelectTestResultsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsIdRerunsPost")
@@ -253,7 +253,7 @@ try {
 | **id** | **java.util.UUID**|  | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **manualRerunSelectApiModel** | [**ManualRerunSelectApiModel**](ManualRerunSelectApiModel.md)|  | [optional] |
+| **manualRerunSelectTestResultsApiModel** | [**ManualRerunSelectTestResultsApiModel**](ManualRerunSelectTestResultsApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -370,7 +370,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestRunsIdTestPointsResultsGet"></a>
 # **apiV2TestRunsIdTestPointsResultsGet**
-> kotlin.collections.List&lt;TestPointResultModel&gt; apiV2TestRunsIdTestPointsResultsGet(id)
+> kotlin.collections.List&lt;TestPointResultApiResult&gt; apiV2TestRunsIdTestPointsResultsGet(id)
 
 Get test results from the test run grouped by test points
 
@@ -383,7 +383,7 @@ Get test results from the test run grouped by test points
 val apiInstance = TestRunsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test run unique ID
 try {
-    val result : kotlin.collections.List<TestPointResultModel> = apiInstance.apiV2TestRunsIdTestPointsResultsGet(id)
+    val result : kotlin.collections.List<TestPointResultApiResult> = apiInstance.apiV2TestRunsIdTestPointsResultsGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestRunsApi#apiV2TestRunsIdTestPointsResultsGet")
@@ -401,7 +401,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestPointResultModel&gt;**](TestPointResultModel.md)
+[**kotlin.collections.List&lt;TestPointResultApiResult&gt;**](TestPointResultApiResult.md)
 
 ### Authorization
 

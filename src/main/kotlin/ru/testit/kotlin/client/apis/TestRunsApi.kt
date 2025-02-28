@@ -26,9 +26,9 @@ import ru.testit.kotlin.client.models.CreateTestRunAndFillByAutoTestsApiModel
 import ru.testit.kotlin.client.models.CreateTestRunAndFillByConfigurationsApiModel
 import ru.testit.kotlin.client.models.CreateTestRunAndFillByWorkItemsApiModel
 import ru.testit.kotlin.client.models.ManualRerunApiResult
-import ru.testit.kotlin.client.models.ManualRerunSelectApiModel
+import ru.testit.kotlin.client.models.ManualRerunSelectTestResultsApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.TestPointResultModel
+import ru.testit.kotlin.client.models.TestPointResultApiResult
 import ru.testit.kotlin.client.models.TestResultsStatisticsApiResult
 import ru.testit.kotlin.client.models.TestRunFilterApiModel
 import ru.testit.kotlin.client.models.TestRunSelectApiModel
@@ -349,7 +349,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Manual autotests rerun in test run
      * 
      * @param id 
-     * @param manualRerunSelectApiModel  (optional)
+     * @param manualRerunSelectTestResultsApiModel  (optional)
      * @return ManualRerunApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -359,8 +359,8 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsIdRerunsPost(id: java.util.UUID, manualRerunSelectApiModel: ManualRerunSelectApiModel? = null) : ManualRerunApiResult {
-        val localVarResponse = apiV2TestRunsIdRerunsPostWithHttpInfo(id = id, manualRerunSelectApiModel = manualRerunSelectApiModel)
+    fun apiV2TestRunsIdRerunsPost(id: java.util.UUID, manualRerunSelectTestResultsApiModel: ManualRerunSelectTestResultsApiModel? = null) : ManualRerunApiResult {
+        val localVarResponse = apiV2TestRunsIdRerunsPostWithHttpInfo(id = id, manualRerunSelectTestResultsApiModel = manualRerunSelectTestResultsApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ManualRerunApiResult
@@ -381,17 +381,17 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Manual autotests rerun in test run
      * 
      * @param id 
-     * @param manualRerunSelectApiModel  (optional)
+     * @param manualRerunSelectTestResultsApiModel  (optional)
      * @return ApiResponse<ManualRerunApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsIdRerunsPostWithHttpInfo(id: java.util.UUID, manualRerunSelectApiModel: ManualRerunSelectApiModel?) : ApiResponse<ManualRerunApiResult?> {
-        val localVariableConfig = apiV2TestRunsIdRerunsPostRequestConfig(id = id, manualRerunSelectApiModel = manualRerunSelectApiModel)
+    fun apiV2TestRunsIdRerunsPostWithHttpInfo(id: java.util.UUID, manualRerunSelectTestResultsApiModel: ManualRerunSelectTestResultsApiModel?) : ApiResponse<ManualRerunApiResult?> {
+        val localVariableConfig = apiV2TestRunsIdRerunsPostRequestConfig(id = id, manualRerunSelectTestResultsApiModel = manualRerunSelectTestResultsApiModel)
 
-        return request<ManualRerunSelectApiModel, ManualRerunApiResult>(
+        return request<ManualRerunSelectTestResultsApiModel, ManualRerunApiResult>(
             localVariableConfig
         )
     }
@@ -400,11 +400,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation apiV2TestRunsIdRerunsPost
      *
      * @param id 
-     * @param manualRerunSelectApiModel  (optional)
+     * @param manualRerunSelectTestResultsApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestRunsIdRerunsPostRequestConfig(id: java.util.UUID, manualRerunSelectApiModel: ManualRerunSelectApiModel?) : RequestConfig<ManualRerunSelectApiModel> {
-        val localVariableBody = manualRerunSelectApiModel
+    fun apiV2TestRunsIdRerunsPostRequestConfig(id: java.util.UUID, manualRerunSelectTestResultsApiModel: ManualRerunSelectTestResultsApiModel?) : RequestConfig<ManualRerunSelectTestResultsApiModel> {
+        val localVariableBody = manualRerunSelectTestResultsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -568,7 +568,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get test results from the test run grouped by test points
      * 
      * @param id Test run unique ID
-     * @return kotlin.collections.List<TestPointResultModel>
+     * @return kotlin.collections.List<TestPointResultApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -577,11 +577,11 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestRunsIdTestPointsResultsGet(id: java.util.UUID) : kotlin.collections.List<TestPointResultModel> {
+    fun apiV2TestRunsIdTestPointsResultsGet(id: java.util.UUID) : kotlin.collections.List<TestPointResultApiResult> {
         val localVarResponse = apiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestPointResultModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestPointResultApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -599,16 +599,16 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Get test results from the test run grouped by test points
      * 
      * @param id Test run unique ID
-     * @return ApiResponse<kotlin.collections.List<TestPointResultModel>?>
+     * @return ApiResponse<kotlin.collections.List<TestPointResultApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<TestPointResultModel>?> {
+    fun apiV2TestRunsIdTestPointsResultsGetWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<TestPointResultApiResult>?> {
         val localVariableConfig = apiV2TestRunsIdTestPointsResultsGetRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<TestPointResultModel>>(
+        return request<Unit, kotlin.collections.List<TestPointResultApiResult>>(
             localVariableConfig
         )
     }

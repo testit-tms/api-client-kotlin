@@ -14,7 +14,7 @@
 | **date** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result was completed or started or created |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result has been created |  |
 | **links** | [**kotlin.collections.List&lt;LinkShort&gt;**](LinkShort.md) | Collection of links attached to the test result |  |
-| **attachments** | [**kotlin.collections.List&lt;Attachment&gt;**](Attachment.md) | Collection of files attached to the test result |  |
+| **attachments** | [**kotlin.collections.List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) | Collection of files attached to the test result |  |
 | **rerunCompletedCount** | **kotlin.Int** | Run count |  |
 | **outcome** | **kotlin.String** | Outcome of the test result |  [optional] |
 | **status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |

@@ -24,7 +24,9 @@ import ru.testit.kotlin.client.models.TagShortModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemGroupGetModel
 import ru.testit.kotlin.client.models.WorkItemGroupModel
+import ru.testit.kotlin.client.models.WorkItemSelectApiModel
 import ru.testit.kotlin.client.models.WorkItemSelectModel
+import ru.testit.kotlin.client.models.WorkItemShortApiResult
 import ru.testit.kotlin.client.models.WorkItemShortModel
 
 import com.squareup.moshi.Json
@@ -274,8 +276,8 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param workItemSelectModel  (optional)
-     * @return kotlin.collections.List<WorkItemShortModel>
+     * @param workItemSelectApiModel  (optional)
+     * @return kotlin.collections.List<WorkItemShortApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -284,11 +286,11 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ProjectsProjectIdWorkItemsSearchPost(projectId: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, workItemSelectModel: WorkItemSelectModel? = null) : kotlin.collections.List<WorkItemShortModel> {
-        val localVarResponse = apiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectModel = workItemSelectModel)
+    fun apiV2ProjectsProjectIdWorkItemsSearchPost(projectId: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, workItemSelectApiModel: WorkItemSelectApiModel? = null) : kotlin.collections.List<WorkItemShortApiResult> {
+        val localVarResponse = apiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectApiModel = workItemSelectApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemShortModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemShortApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -311,17 +313,17 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param workItemSelectModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<WorkItemShortModel>?>
+     * @param workItemSelectApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<WorkItemShortApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectModel: WorkItemSelectModel?) : ApiResponse<kotlin.collections.List<WorkItemShortModel>?> {
-        val localVariableConfig = apiV2ProjectsProjectIdWorkItemsSearchPostRequestConfig(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectModel = workItemSelectModel)
+    fun apiV2ProjectsProjectIdWorkItemsSearchPostWithHttpInfo(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectApiModel: WorkItemSelectApiModel?) : ApiResponse<kotlin.collections.List<WorkItemShortApiResult>?> {
+        val localVariableConfig = apiV2ProjectsProjectIdWorkItemsSearchPostRequestConfig(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectApiModel = workItemSelectApiModel)
 
-        return request<WorkItemSelectModel, kotlin.collections.List<WorkItemShortModel>>(
+        return request<WorkItemSelectApiModel, kotlin.collections.List<WorkItemShortApiResult>>(
             localVariableConfig
         )
     }
@@ -335,11 +337,11 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param workItemSelectModel  (optional)
+     * @param workItemSelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ProjectsProjectIdWorkItemsSearchPostRequestConfig(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectModel: WorkItemSelectModel?) : RequestConfig<WorkItemSelectModel> {
-        val localVariableBody = workItemSelectModel
+    fun apiV2ProjectsProjectIdWorkItemsSearchPostRequestConfig(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectApiModel: WorkItemSelectApiModel?) : RequestConfig<WorkItemSelectApiModel> {
+        val localVariableBody = workItemSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {

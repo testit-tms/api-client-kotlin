@@ -27,13 +27,13 @@ import ru.testit.kotlin.client.models.AutoTestFlakyBulkApiModel
 import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.AutoTestPostModel
 import ru.testit.kotlin.client.models.AutoTestPutModel
+import ru.testit.kotlin.client.models.AutoTestResultHistoryApiResult
+import ru.testit.kotlin.client.models.AutoTestResultHistorySelectApiModel
 import ru.testit.kotlin.client.models.AutoTestSearchApiModel
-import ru.testit.kotlin.client.models.AutotestHistoricalResultSelectModel
-import ru.testit.kotlin.client.models.AutotestResultHistoricalGetModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TestResultChronologyModel
-import ru.testit.kotlin.client.models.TestRunShortModel
+import ru.testit.kotlin.client.models.TestRunByAutoTestApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemIdModel
 import ru.testit.kotlin.client.models.WorkItemIdentifierModel
@@ -318,8 +318,8 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param autotestHistoricalResultSelectModel  (optional)
-     * @return kotlin.collections.List<AutotestResultHistoricalGetModel>
+     * @param autoTestResultHistorySelectApiModel  (optional)
+     * @return kotlin.collections.List<AutoTestResultHistoryApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -328,11 +328,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2AutoTestsIdTestResultsSearchPost(id: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, autotestHistoricalResultSelectModel: AutotestHistoricalResultSelectModel? = null) : kotlin.collections.List<AutotestResultHistoricalGetModel> {
-        val localVarResponse = apiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id = id, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autotestHistoricalResultSelectModel = autotestHistoricalResultSelectModel)
+    fun apiV2AutoTestsIdTestResultsSearchPost(id: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, autoTestResultHistorySelectApiModel: AutoTestResultHistorySelectApiModel? = null) : kotlin.collections.List<AutoTestResultHistoryApiResult> {
+        val localVarResponse = apiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id = id, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autoTestResultHistorySelectApiModel = autoTestResultHistorySelectApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AutotestResultHistoricalGetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AutoTestResultHistoryApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -355,17 +355,17 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param autotestHistoricalResultSelectModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<AutotestResultHistoricalGetModel>?>
+     * @param autoTestResultHistorySelectApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<AutoTestResultHistoryApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autotestHistoricalResultSelectModel: AutotestHistoricalResultSelectModel?) : ApiResponse<kotlin.collections.List<AutotestResultHistoricalGetModel>?> {
-        val localVariableConfig = apiV2AutoTestsIdTestResultsSearchPostRequestConfig(id = id, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autotestHistoricalResultSelectModel = autotestHistoricalResultSelectModel)
+    fun apiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autoTestResultHistorySelectApiModel: AutoTestResultHistorySelectApiModel?) : ApiResponse<kotlin.collections.List<AutoTestResultHistoryApiResult>?> {
+        val localVariableConfig = apiV2AutoTestsIdTestResultsSearchPostRequestConfig(id = id, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, autoTestResultHistorySelectApiModel = autoTestResultHistorySelectApiModel)
 
-        return request<AutotestHistoricalResultSelectModel, kotlin.collections.List<AutotestResultHistoricalGetModel>>(
+        return request<AutoTestResultHistorySelectApiModel, kotlin.collections.List<AutoTestResultHistoryApiResult>>(
             localVariableConfig
         )
     }
@@ -379,11 +379,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param autotestHistoricalResultSelectModel  (optional)
+     * @param autoTestResultHistorySelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2AutoTestsIdTestResultsSearchPostRequestConfig(id: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autotestHistoricalResultSelectModel: AutotestHistoricalResultSelectModel?) : RequestConfig<AutotestHistoricalResultSelectModel> {
-        val localVariableBody = autotestHistoricalResultSelectModel
+    fun apiV2AutoTestsIdTestResultsSearchPostRequestConfig(id: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, autoTestResultHistorySelectApiModel: AutoTestResultHistorySelectApiModel?) : RequestConfig<AutoTestResultHistorySelectApiModel> {
+        val localVariableBody = autoTestResultHistorySelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -1401,7 +1401,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get completed tests runs for autotests
      *  Use case   User sets autotest internal (guid format) or global (integer format) identifier   User runs method execution   System search for all test runs related to the autotest   System returns the enumeration of test runs
      * @param id Autotest internal (UUID) or global (integer) identifier
-     * @return kotlin.collections.List<TestRunShortModel>
+     * @return kotlin.collections.List<TestRunByAutoTestApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1410,11 +1410,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getTestRuns(id: kotlin.String) : kotlin.collections.List<TestRunShortModel> {
+    fun getTestRuns(id: kotlin.String) : kotlin.collections.List<TestRunByAutoTestApiResult> {
         val localVarResponse = getTestRunsWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunShortModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestRunByAutoTestApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1432,16 +1432,16 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get completed tests runs for autotests
      *  Use case   User sets autotest internal (guid format) or global (integer format) identifier   User runs method execution   System search for all test runs related to the autotest   System returns the enumeration of test runs
      * @param id Autotest internal (UUID) or global (integer) identifier
-     * @return ApiResponse<kotlin.collections.List<TestRunShortModel>?>
+     * @return ApiResponse<kotlin.collections.List<TestRunByAutoTestApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getTestRunsWithHttpInfo(id: kotlin.String) : ApiResponse<kotlin.collections.List<TestRunShortModel>?> {
+    fun getTestRunsWithHttpInfo(id: kotlin.String) : ApiResponse<kotlin.collections.List<TestRunByAutoTestApiResult>?> {
         val localVariableConfig = getTestRunsRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<TestRunShortModel>>(
+        return request<Unit, kotlin.collections.List<TestRunByAutoTestApiResult>>(
             localVariableConfig
         )
     }

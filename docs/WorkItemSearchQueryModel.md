@@ -5,6 +5,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **projectIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of project identifiers |  [optional] |
+| **links** | [**WorkItemLinkFilterModel**](WorkItemLinkFilterModel.md) | Specifies a work item filter by its links |  [optional] |
 | **name** | **kotlin.String** | Name of work item |  [optional] |
 | **ids** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a work item unique IDs to search for |  [optional] |
 | **globalIds** | **kotlin.collections.Set&lt;kotlin.Long&gt;** | Collection of global (integer) identifiers |  [optional] |

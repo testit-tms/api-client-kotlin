@@ -14,13 +14,13 @@
 | **workItemVersionId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
-| **stepComments** | [**kotlin.collections.List&lt;StepComment&gt;**](StepComment.md) |  |  [optional] |
+| **stepComments** | [**kotlin.collections.List&lt;StepCommentApiModel&gt;**](StepCommentApiModel.md) |  |  [optional] |
 | **outcome** | [**TestResultOutcome**](TestResultOutcome.md) |  |  [optional] |
 | **status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |
 | **comment** | **kotlin.String** |  |  [optional] |
 | **links** | [**kotlin.collections.List&lt;Link&gt;**](Link.md) |  |  [optional] |
-| **stepResults** | [**kotlin.collections.List&lt;StepResult&gt;**](StepResult.md) |  |  [optional] |
-| **attachments** | [**kotlin.collections.List&lt;Attachment&gt;**](Attachment.md) |  |  [optional] |
+| **stepResults** | [**kotlin.collections.List&lt;StepResultApiModel&gt;**](StepResultApiModel.md) |  |  [optional] |
+| **attachments** | [**kotlin.collections.List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) |  |  [optional] |
 | **autoTestId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **startedOn** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **completedOn** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
