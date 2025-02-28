@@ -15,12 +15,12 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.Attachment
+import ru.testit.kotlin.client.models.AttachmentApiResult
 import ru.testit.kotlin.client.models.AutoTest
 import ru.testit.kotlin.client.models.AutoTestStepResult
 import ru.testit.kotlin.client.models.Link
-import ru.testit.kotlin.client.models.StepComment
-import ru.testit.kotlin.client.models.StepResult
+import ru.testit.kotlin.client.models.StepCommentApiModel
+import ru.testit.kotlin.client.models.StepResultApiModel
 import ru.testit.kotlin.client.models.TestPoint
 import ru.testit.kotlin.client.models.TestResultOutcome
 import ru.testit.kotlin.client.models.TestStatusApiResult
@@ -101,7 +101,7 @@ data class TestResultResponse (
     val modifiedById: java.util.UUID? = null,
 
     @Json(name = "stepComments")
-    val stepComments: kotlin.collections.List<StepComment>? = null,
+    val stepComments: kotlin.collections.List<StepCommentApiModel>? = null,
 
     @Json(name = "outcome")
     @Deprecated(message = "This property is deprecated.")
@@ -117,10 +117,10 @@ data class TestResultResponse (
     val links: kotlin.collections.List<Link>? = null,
 
     @Json(name = "stepResults")
-    val stepResults: kotlin.collections.List<StepResult>? = null,
+    val stepResults: kotlin.collections.List<StepResultApiModel>? = null,
 
     @Json(name = "attachments")
-    val attachments: kotlin.collections.List<Attachment>? = null,
+    val attachments: kotlin.collections.List<AttachmentApiResult>? = null,
 
     @Json(name = "autoTestId")
     val autoTestId: java.util.UUID? = null,

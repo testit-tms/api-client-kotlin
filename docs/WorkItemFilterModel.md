@@ -8,6 +8,7 @@
 | **includeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be included in result regardless of filtering |  [optional] |
 | **excludeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be excluded from result regardless of filtering |  [optional] |
 | **projectIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of project identifiers |  [optional] |
+| **links** | [**WorkItemLinkFilterModel**](WorkItemLinkFilterModel.md) | Specifies a work item filter by its links |  [optional] |
 | **name** | **kotlin.String** | Name of work item |  [optional] |
 | **ids** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a work item unique IDs to search for |  [optional] |
 | **globalIds** | **kotlin.collections.Set&lt;kotlin.Long&gt;** | Collection of global (integer) identifiers |  [optional] |

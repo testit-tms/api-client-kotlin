@@ -22,20 +22,23 @@ import okhttp3.HttpUrl
 import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.IterationModel
 import ru.testit.kotlin.client.models.ProblemDetails
+import ru.testit.kotlin.client.models.SearchWorkItemLinkUrlsApiResult
 import ru.testit.kotlin.client.models.SharedStepReferenceModel
 import ru.testit.kotlin.client.models.SharedStepReferenceSectionModel
 import ru.testit.kotlin.client.models.SharedStepReferenceSectionsQueryFilterModel
 import ru.testit.kotlin.client.models.SharedStepReferencesQueryFilterModel
 import ru.testit.kotlin.client.models.TestResultChronologyModel
-import ru.testit.kotlin.client.models.TestResultHistoryResponse
+import ru.testit.kotlin.client.models.TestResultHistoryReportApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemChangeModel
 import ru.testit.kotlin.client.models.WorkItemLikeModel
+import ru.testit.kotlin.client.models.WorkItemLinkUrlApiModel
 import ru.testit.kotlin.client.models.WorkItemModel
 import ru.testit.kotlin.client.models.WorkItemMovePostModel
 import ru.testit.kotlin.client.models.WorkItemPostModel
 import ru.testit.kotlin.client.models.WorkItemPutModel
-import ru.testit.kotlin.client.models.WorkItemSelectModel
+import ru.testit.kotlin.client.models.WorkItemSelectApiModel
+import ru.testit.kotlin.client.models.WorkItemShortApiResult
 import ru.testit.kotlin.client.models.WorkItemShortModel
 import ru.testit.kotlin.client.models.WorkItemVersionModel
 
@@ -600,6 +603,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param testPlanIds Identifiers of test plans which contain test results (optional)
      * @param userIds Identifiers of users who set test results (optional)
      * @param outcomes List of outcomes of test results (optional)
+     * @param statusCodes List of status codes of test results (optional)
      * @param isAutomated OBSOLETE: Use &#x60;Automated&#x60; instead (optional)
      * @param automated If result must consist of only manual/automated test results (optional)
      * @param testRunIds Identifiers of test runs which contain test results (optional)
@@ -608,7 +612,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<TestResultHistoryResponse>
+     * @return kotlin.collections.List<TestResultHistoryReportApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -617,11 +621,11 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WorkItemsIdTestResultsHistoryGet(id: java.util.UUID, from: java.time.OffsetDateTime? = null, to: java.time.OffsetDateTime? = null, configurationIds: kotlin.collections.List<java.util.UUID>? = null, testPlanIds: kotlin.collections.List<java.util.UUID>? = null, userIds: kotlin.collections.List<java.util.UUID>? = null, outcomes: kotlin.collections.List<kotlin.String>? = null, isAutomated: kotlin.Boolean? = null, automated: kotlin.Boolean? = null, testRunIds: kotlin.collections.List<java.util.UUID>? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestResultHistoryResponse> {
-        val localVarResponse = apiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id = id, from = from, to = to, configurationIds = configurationIds, testPlanIds = testPlanIds, userIds = userIds, outcomes = outcomes, isAutomated = isAutomated, automated = automated, testRunIds = testRunIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2WorkItemsIdTestResultsHistoryGet(id: java.util.UUID, from: java.time.OffsetDateTime? = null, to: java.time.OffsetDateTime? = null, configurationIds: kotlin.collections.List<java.util.UUID>? = null, testPlanIds: kotlin.collections.List<java.util.UUID>? = null, userIds: kotlin.collections.List<java.util.UUID>? = null, outcomes: kotlin.collections.List<kotlin.String>? = null, statusCodes: kotlin.collections.List<kotlin.String>? = null, isAutomated: kotlin.Boolean? = null, automated: kotlin.Boolean? = null, testRunIds: kotlin.collections.List<java.util.UUID>? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestResultHistoryReportApiResult> {
+        val localVarResponse = apiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id = id, from = from, to = to, configurationIds = configurationIds, testPlanIds = testPlanIds, userIds = userIds, outcomes = outcomes, statusCodes = statusCodes, isAutomated = isAutomated, automated = automated, testRunIds = testRunIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestResultHistoryResponse>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestResultHistoryReportApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -645,6 +649,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param testPlanIds Identifiers of test plans which contain test results (optional)
      * @param userIds Identifiers of users who set test results (optional)
      * @param outcomes List of outcomes of test results (optional)
+     * @param statusCodes List of status codes of test results (optional)
      * @param isAutomated OBSOLETE: Use &#x60;Automated&#x60; instead (optional)
      * @param automated If result must consist of only manual/automated test results (optional)
      * @param testRunIds Identifiers of test runs which contain test results (optional)
@@ -653,16 +658,16 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<TestResultHistoryResponse>?>
+     * @return ApiResponse<kotlin.collections.List<TestResultHistoryReportApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id: java.util.UUID, from: java.time.OffsetDateTime?, to: java.time.OffsetDateTime?, configurationIds: kotlin.collections.List<java.util.UUID>?, testPlanIds: kotlin.collections.List<java.util.UUID>?, userIds: kotlin.collections.List<java.util.UUID>?, outcomes: kotlin.collections.List<kotlin.String>?, isAutomated: kotlin.Boolean?, automated: kotlin.Boolean?, testRunIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestResultHistoryResponse>?> {
-        val localVariableConfig = apiV2WorkItemsIdTestResultsHistoryGetRequestConfig(id = id, from = from, to = to, configurationIds = configurationIds, testPlanIds = testPlanIds, userIds = userIds, outcomes = outcomes, isAutomated = isAutomated, automated = automated, testRunIds = testRunIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2WorkItemsIdTestResultsHistoryGetWithHttpInfo(id: java.util.UUID, from: java.time.OffsetDateTime?, to: java.time.OffsetDateTime?, configurationIds: kotlin.collections.List<java.util.UUID>?, testPlanIds: kotlin.collections.List<java.util.UUID>?, userIds: kotlin.collections.List<java.util.UUID>?, outcomes: kotlin.collections.List<kotlin.String>?, statusCodes: kotlin.collections.List<kotlin.String>?, isAutomated: kotlin.Boolean?, automated: kotlin.Boolean?, testRunIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestResultHistoryReportApiResult>?> {
+        val localVariableConfig = apiV2WorkItemsIdTestResultsHistoryGetRequestConfig(id = id, from = from, to = to, configurationIds = configurationIds, testPlanIds = testPlanIds, userIds = userIds, outcomes = outcomes, statusCodes = statusCodes, isAutomated = isAutomated, automated = automated, testRunIds = testRunIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<TestResultHistoryResponse>>(
+        return request<Unit, kotlin.collections.List<TestResultHistoryReportApiResult>>(
             localVariableConfig
         )
     }
@@ -677,6 +682,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param testPlanIds Identifiers of test plans which contain test results (optional)
      * @param userIds Identifiers of users who set test results (optional)
      * @param outcomes List of outcomes of test results (optional)
+     * @param statusCodes List of status codes of test results (optional)
      * @param isAutomated OBSOLETE: Use &#x60;Automated&#x60; instead (optional)
      * @param automated If result must consist of only manual/automated test results (optional)
      * @param testRunIds Identifiers of test runs which contain test results (optional)
@@ -687,7 +693,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
-    fun apiV2WorkItemsIdTestResultsHistoryGetRequestConfig(id: java.util.UUID, from: java.time.OffsetDateTime?, to: java.time.OffsetDateTime?, configurationIds: kotlin.collections.List<java.util.UUID>?, testPlanIds: kotlin.collections.List<java.util.UUID>?, userIds: kotlin.collections.List<java.util.UUID>?, outcomes: kotlin.collections.List<kotlin.String>?, isAutomated: kotlin.Boolean?, automated: kotlin.Boolean?, testRunIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
+    fun apiV2WorkItemsIdTestResultsHistoryGetRequestConfig(id: java.util.UUID, from: java.time.OffsetDateTime?, to: java.time.OffsetDateTime?, configurationIds: kotlin.collections.List<java.util.UUID>?, testPlanIds: kotlin.collections.List<java.util.UUID>?, userIds: kotlin.collections.List<java.util.UUID>?, outcomes: kotlin.collections.List<kotlin.String>?, statusCodes: kotlin.collections.List<kotlin.String>?, isAutomated: kotlin.Boolean?, automated: kotlin.Boolean?, testRunIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -708,6 +714,9 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
                 }
                 if (outcomes != null) {
                     put("outcomes", toMultiValue(outcomes.toList(), "multi"))
+                }
+                if (statusCodes != null) {
+                    put("statusCodes", toMultiValue(statusCodes.toList(), "multi"))
                 }
                 if (isAutomated != null) {
                     put("isAutomated", listOf(isAutomated.toString()))
@@ -822,6 +831,110 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * 
+     * 
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
+     * @param workItemLinkUrlApiModel  (optional)
+     * @return SearchWorkItemLinkUrlsApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkItemsLinksUrlsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, workItemLinkUrlApiModel: WorkItemLinkUrlApiModel? = null) : SearchWorkItemLinkUrlsApiResult {
+        val localVarResponse = apiV2WorkItemsLinksUrlsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemLinkUrlApiModel = workItemLinkUrlApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as SearchWorkItemLinkUrlsApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * 
+     * 
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
+     * @param workItemLinkUrlApiModel  (optional)
+     * @return ApiResponse<SearchWorkItemLinkUrlsApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkItemsLinksUrlsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemLinkUrlApiModel: WorkItemLinkUrlApiModel?) : ApiResponse<SearchWorkItemLinkUrlsApiResult?> {
+        val localVariableConfig = apiV2WorkItemsLinksUrlsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemLinkUrlApiModel = workItemLinkUrlApiModel)
+
+        return request<WorkItemLinkUrlApiModel, SearchWorkItemLinkUrlsApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkItemsLinksUrlsSearchPost
+     *
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
+     * @param workItemLinkUrlApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WorkItemsLinksUrlsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemLinkUrlApiModel: WorkItemLinkUrlApiModel?) : RequestConfig<WorkItemLinkUrlApiModel> {
+        val localVariableBody = workItemLinkUrlApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                if (skip != null) {
+                    put("Skip", listOf(skip.toString()))
+                }
+                if (take != null) {
+                    put("Take", listOf(take.toString()))
+                }
+                if (orderBy != null) {
+                    put("OrderBy", listOf(orderBy.toString()))
+                }
+                if (searchField != null) {
+                    put("SearchField", listOf(searchField.toString()))
+                }
+                if (searchValue != null) {
+                    put("SearchValue", listOf(searchValue.toString()))
+                }
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/workItems/links/urls/search",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * Move WorkItem to another section
      *  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
      * @param workItemMovePostModel  (optional)
@@ -901,8 +1014,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param workItemSelectModel  (optional)
-     * @return kotlin.collections.List<WorkItemShortModel>
+     * @param workItemSelectApiModel  (optional)
+     * @return kotlin.collections.List<WorkItemShortApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -911,11 +1024,11 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WorkItemsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, workItemSelectModel: WorkItemSelectModel? = null) : kotlin.collections.List<WorkItemShortModel> {
-        val localVarResponse = apiV2WorkItemsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectModel = workItemSelectModel)
+    fun apiV2WorkItemsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, workItemSelectApiModel: WorkItemSelectApiModel? = null) : kotlin.collections.List<WorkItemShortApiResult> {
+        val localVarResponse = apiV2WorkItemsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectApiModel = workItemSelectApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemShortModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemShortApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -937,17 +1050,17 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param workItemSelectModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<WorkItemShortModel>?>
+     * @param workItemSelectApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<WorkItemShortApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WorkItemsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectModel: WorkItemSelectModel?) : ApiResponse<kotlin.collections.List<WorkItemShortModel>?> {
-        val localVariableConfig = apiV2WorkItemsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectModel = workItemSelectModel)
+    fun apiV2WorkItemsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectApiModel: WorkItemSelectApiModel?) : ApiResponse<kotlin.collections.List<WorkItemShortApiResult>?> {
+        val localVariableConfig = apiV2WorkItemsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectApiModel = workItemSelectApiModel)
 
-        return request<WorkItemSelectModel, kotlin.collections.List<WorkItemShortModel>>(
+        return request<WorkItemSelectApiModel, kotlin.collections.List<WorkItemShortApiResult>>(
             localVariableConfig
         )
     }
@@ -960,11 +1073,11 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param workItemSelectModel  (optional)
+     * @param workItemSelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2WorkItemsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectModel: WorkItemSelectModel?) : RequestConfig<WorkItemSelectModel> {
-        val localVariableBody = workItemSelectModel
+    fun apiV2WorkItemsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectApiModel: WorkItemSelectApiModel?) : RequestConfig<WorkItemSelectApiModel> {
+        val localVariableBody = workItemSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {

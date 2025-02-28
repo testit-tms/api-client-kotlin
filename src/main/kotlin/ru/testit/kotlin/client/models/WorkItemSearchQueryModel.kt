@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
+import ru.testit.kotlin.client.models.WorkItemLinkFilterModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemStates
 
@@ -29,6 +30,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param projectIds Collection of project identifiers
+ * @param links Specifies a work item filter by its links
  * @param name Name of work item
  * @param ids Specifies a work item unique IDs to search for
  * @param globalIds Collection of global (integer) identifiers
@@ -56,6 +58,10 @@ data class WorkItemSearchQueryModel (
     /* Collection of project identifiers */
     @Json(name = "projectIds")
     val projectIds: kotlin.collections.Set<java.util.UUID>? = null,
+
+    /* Specifies a work item filter by its links */
+    @Json(name = "links")
+    val links: WorkItemLinkFilterModel? = null,
 
     /* Name of work item */
     @Json(name = "name")

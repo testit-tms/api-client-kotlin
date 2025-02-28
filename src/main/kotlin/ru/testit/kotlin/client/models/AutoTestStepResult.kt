@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.Attachment
+import ru.testit.kotlin.client.models.AttachmentApiResult
 import ru.testit.kotlin.client.models.AvailableTestResultOutcome
 
 import com.squareup.moshi.Json
@@ -73,7 +73,7 @@ data class AutoTestStepResult (
 
     /* /// <summary>  Specifies an attachment GUID. Multiple values can be sent.  </summary> */
     @Json(name = "attachments")
-    val attachments: kotlin.collections.List<Attachment>? = null,
+    val attachments: kotlin.collections.List<AttachmentApiResult>? = null,
 
     /* \"<b>parameter</b>\": \"<b>value</b>\" pair with arbitrary custom parameters. Multiple parameters can be sent. */
     @Json(name = "parameters")

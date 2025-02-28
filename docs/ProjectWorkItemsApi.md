@@ -131,7 +131,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsProjectIdWorkItemsSearchPost"></a>
 # **apiV2ProjectsProjectIdWorkItemsSearchPost**
-> kotlin.collections.List&lt;WorkItemShortModel&gt; apiV2ProjectsProjectIdWorkItemsSearchPost(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel)
+> kotlin.collections.List&lt;WorkItemShortApiResult&gt; apiV2ProjectsProjectIdWorkItemsSearchPost(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel)
 
 Search for work items
 
@@ -148,9 +148,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val workItemSelectModel : WorkItemSelectModel =  // WorkItemSelectModel | 
+val workItemSelectApiModel : WorkItemSelectApiModel =  // WorkItemSelectApiModel | 
 try {
-    val result : kotlin.collections.List<WorkItemShortModel> = apiInstance.apiV2ProjectsProjectIdWorkItemsSearchPost(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectModel)
+    val result : kotlin.collections.List<WorkItemShortApiResult> = apiInstance.apiV2ProjectsProjectIdWorkItemsSearchPost(projectId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsSearchPost")
@@ -170,11 +170,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md)|  | [optional] |
+| **workItemSelectApiModel** | [**WorkItemSelectApiModel**](WorkItemSelectApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;WorkItemShortModel&gt;**](WorkItemShortModel.md)
+[**kotlin.collections.List&lt;WorkItemShortApiResult&gt;**](WorkItemShortApiResult.md)
 
 ### Authorization
 

@@ -12,6 +12,7 @@
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project creator |  |
 | **globalId** | **kotlin.Long** | Global ID of the project |  |
 | **type** | [**ProjectTypeModel**](ProjectTypeModel.md) | Type of the project |  |
+| **isFlakyAuto** | **kotlin.Boolean** | Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically |  |
 | **description** | **kotlin.String** | Description of the project |  [optional] |
 | **testCasesCount** | **kotlin.Int** | Number of test cases in the project |  [optional] |
 | **sharedStepsCount** | **kotlin.Int** | Number of shared steps in the project |  [optional] |

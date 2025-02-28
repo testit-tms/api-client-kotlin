@@ -24,6 +24,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param id Test point unique internal identifier
+ * @param isDeleted Indicates if the entity is deleted
  * @param statusModel Test point status
  * @param iterationId Iteration unique identifier
  * @param testSuiteId Test suite to which test point relates unique identifier
@@ -41,6 +42,10 @@ data class TestPointShortApiResult (
     /* Test point unique internal identifier */
     @Json(name = "id")
     val id: java.util.UUID,
+
+    /* Indicates if the entity is deleted */
+    @Json(name = "isDeleted")
+    val isDeleted: kotlin.Boolean,
 
     /* Test point status */
     @Json(name = "statusModel")

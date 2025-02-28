@@ -32,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param createdById Unique ID of the project creator
  * @param globalId Global ID of the project
  * @param type Type of the project
+ * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" sets automatically
  * @param description Description of the project
  * @param attributesScheme Collection of the project attributes
  * @param testPlansAttributesScheme Collection of the project test plans attributes
@@ -77,6 +78,11 @@ data class ProjectModel (
     /* Type of the project */
     @Json(name = "type")
     val type: ProjectTypeModel,
+
+    /* Indicates if the status \"Flaky/Stable\" sets automatically */
+    @Json(name = "isFlakyAuto")
+    @Deprecated(message = "This property is deprecated.")
+    val isFlakyAuto: kotlin.Boolean,
 
     /* Description of the project */
     @Json(name = "description")

@@ -13,6 +13,7 @@ All URIs are relative to *http://localhost*
 | [**apiV2WorkItemsIdLikesGet**](WorkItemsApi.md#apiV2WorkItemsIdLikesGet) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem |
 | [**apiV2WorkItemsIdTestResultsHistoryGet**](WorkItemsApi.md#apiV2WorkItemsIdTestResultsHistoryGet) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem |
 | [**apiV2WorkItemsIdVersionVersionIdActualPost**](WorkItemsApi.md#apiV2WorkItemsIdVersionVersionIdActualPost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual |
+| [**apiV2WorkItemsLinksUrlsSearchPost**](WorkItemsApi.md#apiV2WorkItemsLinksUrlsSearchPost) | **POST** /api/v2/workItems/links/urls/search |  |
 | [**apiV2WorkItemsMovePost**](WorkItemsApi.md#apiV2WorkItemsMovePost) | **POST** /api/v2/workItems/move | Move WorkItem to another section |
 | [**apiV2WorkItemsSearchPost**](WorkItemsApi.md#apiV2WorkItemsSearchPost) | **POST** /api/v2/workItems/search | Search for work items |
 | [**apiV2WorkItemsSharedStepIdReferencesSectionsPost**](WorkItemsApi.md#apiV2WorkItemsSharedStepIdReferencesSectionsPost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections |
@@ -385,7 +386,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkItemsIdTestResultsHistoryGet"></a>
 # **apiV2WorkItemsIdTestResultsHistoryGet**
-> kotlin.collections.List&lt;TestResultHistoryResponse&gt; apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;TestResultHistoryReportApiResult&gt; apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, statusCodes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
 
 Get test results history of WorkItem
 
@@ -405,6 +406,7 @@ val configurationIds : kotlin.collections.List<java.util.UUID> =  // kotlin.coll
 val testPlanIds : kotlin.collections.List<java.util.UUID> =  // kotlin.collections.List<java.util.UUID> | Identifiers of test plans which contain test results
 val userIds : kotlin.collections.List<java.util.UUID> =  // kotlin.collections.List<java.util.UUID> | Identifiers of users who set test results
 val outcomes : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | List of outcomes of test results
+val statusCodes : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | List of status codes of test results
 val isAutomated : kotlin.Boolean = true // kotlin.Boolean | OBSOLETE: Use `Automated` instead
 val automated : kotlin.Boolean = true // kotlin.Boolean | If result must consist of only manual/automated test results
 val testRunIds : kotlin.collections.List<java.util.UUID> =  // kotlin.collections.List<java.util.UUID> | Identifiers of test runs which contain test results
@@ -414,7 +416,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<TestResultHistoryResponse> = apiInstance.apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<TestResultHistoryReportApiResult> = apiInstance.apiV2WorkItemsIdTestResultsHistoryGet(id, from, to, configurationIds, testPlanIds, userIds, outcomes, statusCodes, isAutomated, automated, testRunIds, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkItemsApi#apiV2WorkItemsIdTestResultsHistoryGet")
@@ -433,6 +435,7 @@ try {
 | **testPlanIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md)| Identifiers of test plans which contain test results | [optional] |
 | **userIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md)| Identifiers of users who set test results | [optional] |
 | **outcomes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| List of outcomes of test results | [optional] |
+| **statusCodes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| List of status codes of test results | [optional] |
 | **isAutomated** | **kotlin.Boolean**| OBSOLETE: Use &#x60;Automated&#x60; instead | [optional] |
 | **automated** | **kotlin.Boolean**| If result must consist of only manual/automated test results | [optional] |
 | **testRunIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md)| Identifiers of test runs which contain test results | [optional] |
@@ -446,7 +449,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TestResultHistoryResponse&gt;**](TestResultHistoryResponse.md)
+[**kotlin.collections.List&lt;TestResultHistoryReportApiResult&gt;**](TestResultHistoryReportApiResult.md)
 
 ### Authorization
 
@@ -511,6 +514,63 @@ Configure Bearer or PrivateToken:
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a id="apiV2WorkItemsLinksUrlsSearchPost"></a>
+# **apiV2WorkItemsLinksUrlsSearchPost**
+> SearchWorkItemLinkUrlsApiResult apiV2WorkItemsLinksUrlsSearchPost(skip, take, orderBy, searchField, searchValue, workItemLinkUrlApiModel)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = WorkItemsApi()
+val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
+val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
+val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
+val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
+val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
+val workItemLinkUrlApiModel : WorkItemLinkUrlApiModel =  // WorkItemLinkUrlApiModel | 
+try {
+    val result : SearchWorkItemLinkUrlsApiResult = apiInstance.apiV2WorkItemsLinksUrlsSearchPost(skip, take, orderBy, searchField, searchValue, workItemLinkUrlApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling WorkItemsApi#apiV2WorkItemsLinksUrlsSearchPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WorkItemsApi#apiV2WorkItemsLinksUrlsSearchPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
+| **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
+| **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
+| **searchField** | **kotlin.String**| Property name for searching | [optional] |
+| **searchValue** | **kotlin.String**| Value for searching | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **workItemLinkUrlApiModel** | [**WorkItemLinkUrlApiModel**](WorkItemLinkUrlApiModel.md)|  | [optional] |
+
+### Return type
+
+[**SearchWorkItemLinkUrlsApiResult**](SearchWorkItemLinkUrlsApiResult.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a id="apiV2WorkItemsMovePost"></a>
 # **apiV2WorkItemsMovePost**
 > WorkItemShortModel apiV2WorkItemsMovePost(workItemMovePostModel)
@@ -562,7 +622,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkItemsSearchPost"></a>
 # **apiV2WorkItemsSearchPost**
-> kotlin.collections.List&lt;WorkItemShortModel&gt; apiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectModel)
+> kotlin.collections.List&lt;WorkItemShortApiResult&gt; apiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectApiModel)
 
 Search for work items
 
@@ -578,9 +638,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val workItemSelectModel : WorkItemSelectModel =  // WorkItemSelectModel | 
+val workItemSelectApiModel : WorkItemSelectApiModel =  // WorkItemSelectApiModel | 
 try {
-    val result : kotlin.collections.List<WorkItemShortModel> = apiInstance.apiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectModel)
+    val result : kotlin.collections.List<WorkItemShortApiResult> = apiInstance.apiV2WorkItemsSearchPost(skip, take, orderBy, searchField, searchValue, workItemSelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkItemsApi#apiV2WorkItemsSearchPost")
@@ -599,11 +659,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md)|  | [optional] |
+| **workItemSelectApiModel** | [**WorkItemSelectApiModel**](WorkItemSelectApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;WorkItemShortModel&gt;**](WorkItemShortModel.md)
+[**kotlin.collections.List&lt;WorkItemShortApiResult&gt;**](WorkItemShortApiResult.md)
 
 ### Authorization
 
