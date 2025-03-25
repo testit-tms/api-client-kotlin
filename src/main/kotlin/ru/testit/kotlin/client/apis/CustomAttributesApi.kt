@@ -52,6 +52,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/customAttributes/exists
      * 
      * 
      * @param name  (optional)
@@ -84,6 +85,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/customAttributes/exists
      * 
      * 
      * @param name  (optional)
@@ -134,6 +136,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * DELETE /api/v2/customAttributes/global/{id}
      * Delete global attribute
      * 
      * @param id Unique ID of attribute
@@ -164,6 +167,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * DELETE /api/v2/customAttributes/global/{id}
      * Delete global attribute
      * 
      * @param id Unique ID of attribute
@@ -203,6 +207,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * PUT /api/v2/customAttributes/global/{id}
      * Edit global attribute
      * 
      * @param id Unique ID of attribute
@@ -235,6 +240,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * PUT /api/v2/customAttributes/global/{id}
      * Edit global attribute
      * 
      * @param id Unique ID of attribute
@@ -278,6 +284,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/customAttributes/global
      * Create global attribute
      * 
      * @param globalCustomAttributePostModel  (optional)
@@ -309,6 +316,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/customAttributes/global
      * Create global attribute
      * 
      * @param globalCustomAttributePostModel  (optional)
@@ -350,6 +358,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/customAttributes/{id}
      * Get attribute
      * 
      * @param id Unique ID of attribute
@@ -381,6 +390,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/customAttributes/{id}
      * Get attribute
      * 
      * @param id Unique ID of attribute
@@ -421,6 +431,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/customAttributes/search
      * Search for attributes
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -457,6 +468,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/customAttributes/search
      * Search for attributes
      * 
      * @param skip Amount of items to be skipped (offset) (optional)

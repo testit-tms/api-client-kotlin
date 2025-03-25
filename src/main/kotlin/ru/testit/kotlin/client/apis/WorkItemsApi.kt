@@ -67,6 +67,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/attachments
      * Upload and link attachment to WorkItem
      *  Use case   User sets workItemId   User attaches a file   System creates attachment and links it to the work item   System returns attachment identifier
      * @param id Work item internal identifier (guid format)
@@ -98,6 +99,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/attachments
      * Upload and link attachment to WorkItem
      *  Use case   User sets workItemId   User attaches a file   System creates attachment and links it to the work item   System returns attachment identifier
      * @param id Work item internal identifier (guid format)
@@ -140,6 +142,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/checkList/transformTo/testCase
      * Transform CheckList to TestCase
      *  Use case   User sets checklist identifier   User runs method execution   System transform CheckList to TestCase
      * @param id 
@@ -171,6 +174,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/checkList/transformTo/testCase
      * Transform CheckList to TestCase
      *  Use case   User sets checklist identifier   User runs method execution   System transform CheckList to TestCase
      * @param id 
@@ -211,6 +215,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/history
      * Get change history of WorkItem
      *  Use case   User sets work item identifier   User runs method execution   System return change history of WorkItem
      * @param id 
@@ -247,6 +252,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/history
      * Get change history of WorkItem
      *  Use case   User sets work item identifier   User runs method execution   System return change history of WorkItem
      * @param id 
@@ -314,6 +320,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/workItems/{id}/like
      * Delete like from WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System delete like from WorkItem
      * @param id 
@@ -344,6 +351,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/workItems/{id}/like
      * Delete like from WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System delete like from WorkItem
      * @param id 
@@ -383,6 +391,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/like
      * Set like to WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System set like to WorkItem
      * @param id 
@@ -413,6 +422,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/like
      * Set like to WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System set like to WorkItem
      * @param id 
@@ -452,6 +462,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/likes/count
      * Get likes count of WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System return likes count of WorkItem
      * @param id 
@@ -483,6 +494,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/likes/count
      * Get likes count of WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System return likes count of WorkItem
      * @param id 
@@ -523,6 +535,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/likes
      * Get likes of WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System return likes of WorkItem
      * @param id 
@@ -554,6 +567,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/likes
      * Get likes of WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System return likes of WorkItem
      * @param id 
@@ -594,6 +608,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/testResults/history
      * Get test results history of WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System return test results history of WorkItem
      * @param id 
@@ -640,6 +655,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/testResults/history
      * Get test results history of WorkItem
      *  Use case   User sets WorkItem identifier   User runs method execution   System return test results history of WorkItem
      * @param id 
@@ -757,6 +773,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/version/{versionId}/actual
      * Set WorkItem as actual
      *  Use case   User sets work item identifier   User runs method execution   System set WorkItem as actual
      * @param id 
@@ -789,6 +806,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/version/{versionId}/actual
      * Set WorkItem as actual
      *  Use case   User sets work item identifier   User runs method execution   System set WorkItem as actual
      * @param id 
@@ -831,6 +849,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/links/urls/search
      * 
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -867,6 +886,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/links/urls/search
      * 
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -935,6 +955,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/move
      * Move WorkItem to another section
      *  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
      * @param workItemMovePostModel  (optional)
@@ -966,6 +987,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/move
      * Move WorkItem to another section
      *  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
      * @param workItemMovePostModel  (optional)
@@ -1007,6 +1029,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/search
      * Search for work items
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -1043,6 +1066,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/search
      * Search for work items
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -1111,6 +1135,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{sharedStepId}/references/sections
      * Get SharedStep references in sections
      *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
      * @param sharedStepId 
@@ -1148,6 +1173,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{sharedStepId}/references/sections
      * Get SharedStep references in sections
      *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
      * @param sharedStepId 
@@ -1218,6 +1244,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{sharedStepId}/references/workItems
      * Get SharedStep references in work items
      *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
      * @param sharedStepId 
@@ -1255,6 +1282,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{sharedStepId}/references/workItems
      * Get SharedStep references in work items
      *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
      * @param sharedStepId 
@@ -1325,6 +1353,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/sharedSteps/{sharedStepId}/references
      * Get SharedStep references
      *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
      * @param sharedStepId 
@@ -1358,6 +1387,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/sharedSteps/{sharedStepId}/references
      * Get SharedStep references
      *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
      * @param sharedStepId 
@@ -1401,6 +1431,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems
      * Create Test Case, Checklist or Shared Step
      *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
      * @param workItemPostModel  (optional)
@@ -1432,6 +1463,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems
      * Create Test Case, Checklist or Shared Step
      *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
      * @param workItemPostModel  (optional)
@@ -1473,6 +1505,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/workItems/{id}/autoTests
      * Delete all links AutoTests from WorkItem by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search and delete all autotests, related to found work item   System returns no content response
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1503,6 +1536,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/workItems/{id}/autoTests
      * Delete all links AutoTests from WorkItem by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search and delete all autotests, related to found work item   System returns no content response
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1542,6 +1576,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/workItems/{id}
      * Delete Test Case, Checklist or Shared Step by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System deletes work item   System returns no content response
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1572,6 +1607,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/workItems/{id}
      * Delete Test Case, Checklist or Shared Step by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System deletes work item   System returns no content response
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1611,6 +1647,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/autoTests
      * Get all AutoTests linked to WorkItem by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search all autotests, related to found work item   System returns list of found autotests
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1642,6 +1679,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/autoTests
      * Get all AutoTests linked to WorkItem by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search all autotests, related to found work item   System returns list of found autotests
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1682,6 +1720,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/iterations
      * Get iterations by work item Id or GlobalId
      * 
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1715,6 +1754,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/iterations
      * Get iterations by work item Id or GlobalId
      * 
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1767,6 +1807,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}
      * Get Test Case, Checklist or Shared Step by Id or GlobalId
      *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   [Optional] User sets work item version number   User runs method execution   System search work item by identifier   [Optional] if User sets work item version identifier, system search work item version by identifier.   [Optional] if user sets work item version number, system search work item version by number   Otherwise, system search last work item version   System returns work item 
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1800,6 +1841,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}
      * Get Test Case, Checklist or Shared Step by Id or GlobalId
      *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   [Optional] User sets work item version number   User runs method execution   System search work item by identifier   [Optional] if User sets work item version identifier, system search work item version by identifier.   [Optional] if user sets work item version number, system search work item version by number   Otherwise, system search last work item version   System returns work item 
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1852,6 +1894,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/chronology
      * Get WorkItem chronology by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search test results of all autotests, related to found work item   System sort results by CompletedOn ascending, then by CreatedDate ascending   System returns sorted collection of test results
      * @param id 
@@ -1883,6 +1926,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/chronology
      * Get WorkItem chronology by Id or GlobalId
      *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search test results of all autotests, related to found work item   System sort results by CompletedOn ascending, then by CreatedDate ascending   System returns sorted collection of test results
      * @param id 
@@ -1923,6 +1967,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/versions
      * Get WorkItem versions
      *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   User runs method execution   System search work item by identifier                         [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                     System returns array of work item version models (listed in response example)
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -1956,6 +2001,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/workItems/{id}/versions
      * Get WorkItem versions
      *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   User runs method execution   System search work item by identifier                         [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                     System returns array of work item version models (listed in response example)
      * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
@@ -2008,6 +2054,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/purge
      * Permanently delete test case, checklist or shared steps from archive
      * 
      * @param id Unique or global ID of the work item
@@ -2038,6 +2085,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/purge
      * Permanently delete test case, checklist or shared steps from archive
      * 
      * @param id Unique or global ID of the work item
@@ -2077,6 +2125,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/restore
      * Restore test case, checklist or shared steps from archive
      * 
      * @param id Unique or global ID of the work item
@@ -2107,6 +2156,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems/{id}/restore
      * Restore test case, checklist or shared steps from archive
      * 
      * @param id Unique or global ID of the work item
@@ -2146,6 +2196,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * PUT /api/v2/workItems
      * Update Test Case, Checklist or Shared Step
      *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
      * @param workItemPutModel  (optional)
@@ -2176,6 +2227,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * PUT /api/v2/workItems
      * Update Test Case, Checklist or Shared Step
      *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
      * @param workItemPutModel  (optional)

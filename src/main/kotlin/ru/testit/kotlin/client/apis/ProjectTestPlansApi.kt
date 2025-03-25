@@ -50,6 +50,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/testPlans/analytics
      * Get TestPlans analytics
      *  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
      * @param projectId Project internal (UUID) identifier
@@ -88,6 +89,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/testPlans/analytics
      * Get TestPlans analytics
      *  Use case   User sets project internal identifier   User sets query params   User runs method execution   System return analytics
      * @param projectId Project internal (UUID) identifier
@@ -165,6 +167,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/delete/bulk
      * Delete multiple test plans
      * 
      * @param projectId Unique or global ID of the project
@@ -197,6 +200,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/delete/bulk
      * Delete multiple test plans
      * 
      * @param projectId Unique or global ID of the project
@@ -240,6 +244,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/testPlans/{name}/exists
      * Checks if TestPlan exists with the specified name exists for the project
      *  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -272,6 +277,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/testPlans/{name}/exists
      * Checks if TestPlan exists with the specified name exists for the project
      *  Use case   User sets project internal or global identifier    User runs method execution   System purge delete project workitems
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -314,6 +320,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/purge/bulk
      * Permanently delete multiple archived test plans
      * 
      * @param projectId Unique or global ID of the project
@@ -345,6 +352,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/purge/bulk
      * Permanently delete multiple archived test plans
      * 
      * @param projectId Unique or global ID of the project
@@ -387,6 +395,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/restore/bulk
      * Restore multiple test plans
      * 
      * @param projectId Unique or global ID of the project
@@ -419,6 +428,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/restore/bulk
      * Restore multiple test plans
      * 
      * @param projectId Unique or global ID of the project
@@ -462,6 +472,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/search
      * Get Project TestPlans with analytics
      *  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -500,6 +511,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/search
      * Get Project TestPlans with analytics
      *  Use case   User sets project internal or global identifier    User sets request body    User runs method execution   System returns project testplans with analytics
      * @param projectId Project internal (UUID) or global (integer) identifier

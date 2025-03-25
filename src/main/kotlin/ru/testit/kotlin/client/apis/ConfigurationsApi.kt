@@ -54,6 +54,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/createByParameters
      * Create configurations by parameters
      * 
      * @param configurationByParametersModel  (optional)
@@ -85,6 +86,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/createByParameters
      * Create configurations by parameters
      * 
      * @param configurationByParametersModel  (optional)
@@ -126,6 +128,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/delete/bulk
      * Delete multiple configurations
      * 
      * @param configurationSelectModel  (optional)
@@ -157,6 +160,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/delete/bulk
      * Delete multiple configurations
      * 
      * @param configurationSelectModel  (optional)
@@ -198,6 +202,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * DELETE /api/v2/configurations/{id}
      * Delete configuration
      * 
      * @param id Unique or global ID of the configuration
@@ -228,6 +233,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * DELETE /api/v2/configurations/{id}
      * Delete configuration
      * 
      * @param id Unique or global ID of the configuration
@@ -267,6 +273,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * PATCH /api/v2/configurations/{id}
      * Patch configuration
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Unique ID of the configuration
@@ -298,6 +305,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * PATCH /api/v2/configurations/{id}
      * Patch configuration
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Unique ID of the configuration
@@ -340,6 +348,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/{id}/purge
      * Permanently delete configuration from archive
      * 
      * @param id Unique or global ID of the configuration
@@ -370,6 +379,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/{id}/purge
      * Permanently delete configuration from archive
      * 
      * @param id Unique or global ID of the configuration
@@ -409,6 +419,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/{id}/restore
      * Restore configuration from the archive
      * 
      * @param id Unique or global ID of the configuration
@@ -439,6 +450,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/{id}/restore
      * Restore configuration from the archive
      * 
      * @param id Unique or global ID of the configuration
@@ -478,6 +490,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/purge/bulk
      * Permanently delete multiple archived configurations
      * 
      * @param configurationSelectModel  (optional)
@@ -508,6 +521,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/purge/bulk
      * Permanently delete multiple archived configurations
      * 
      * @param configurationSelectModel  (optional)
@@ -548,6 +562,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * PUT /api/v2/configurations
      * Edit configuration
      * 
      * @param configurationPutModel  (optional)
@@ -578,6 +593,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * PUT /api/v2/configurations
      * Edit configuration
      * 
      * @param configurationPutModel  (optional)
@@ -618,6 +634,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/restore/bulk
      * Restore multiple configurations from the archive
      * 
      * @param configurationSelectModel  (optional)
@@ -649,6 +666,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/restore/bulk
      * Restore multiple configurations from the archive
      * 
      * @param configurationSelectModel  (optional)
@@ -690,6 +708,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/search
      * Search for configurations
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -726,6 +745,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations/search
      * Search for configurations
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -794,6 +814,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations
      * Create Configuration
      *  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
@@ -825,6 +846,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/configurations
      * Create Configuration
      *  Use case   User sets configuration model (listed in the request example)   User runs method execution   System creates configuration   System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
@@ -866,6 +888,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
      *  Use case   User sets configuration internal (guid format) or global (integer format) identifier   User runs method execution   System search configuration using the identifier   System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier
@@ -897,6 +920,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
      *  Use case   User sets configuration internal (guid format) or global (integer format) identifier   User runs method execution   System search configuration using the identifier   System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier

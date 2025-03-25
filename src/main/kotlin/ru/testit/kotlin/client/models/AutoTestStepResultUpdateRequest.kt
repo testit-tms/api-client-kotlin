@@ -15,7 +15,6 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.AttachmentPutModelAutoTestStepResultsModel
 import ru.testit.kotlin.client.models.AttachmentUpdateRequest
 import ru.testit.kotlin.client.models.AvailableTestResultOutcome
 
@@ -70,7 +69,7 @@ data class AutoTestStepResultUpdateRequest (
 
     /* Nested step results. The maximum nesting level is 15. */
     @Json(name = "stepResults")
-    val stepResults: kotlin.collections.List<AttachmentPutModelAutoTestStepResultsModel>? = null,
+    val stepResults: kotlin.collections.List<AutoTestStepResultUpdateRequest>? = null,
 
     /* /// <summary>  Specifies an attachment GUID. Multiple values can be sent.  </summary> */
     @Json(name = "attachments")

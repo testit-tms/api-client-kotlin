@@ -49,6 +49,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * DELETE /api/v2/attachments/{id}
      * Delete attachment file
      * 
      * @param id 
@@ -79,6 +80,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * DELETE /api/v2/attachments/{id}
      * Delete attachment file
      * 
      * @param id 
@@ -118,6 +120,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/attachments/{id}
      * Download attachment file
      * 
      * @param id 
@@ -153,6 +156,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/attachments/{id}
      * Download attachment file
      * 
      * @param id 
@@ -219,6 +223,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/attachments/{id}/metadata
      * Get attachment metadata
      * 
      * @param id 
@@ -250,6 +255,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/attachments/{id}/metadata
      * Get attachment metadata
      * 
      * @param id 
@@ -290,6 +296,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/attachments/occupiedFileStorageSize
      * Get size of attachments storage in bytes
      * 
      * @return kotlin.Long
@@ -320,6 +327,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/attachments/occupiedFileStorageSize
      * Get size of attachments storage in bytes
      * 
      * @return ApiResponse<kotlin.Long?>
@@ -358,6 +366,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/attachments
      * Upload new attachment file
      * File size is restricted to 50 MB (52 428 800 bytes)
      * @param file  (optional)
@@ -389,6 +398,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/attachments
      * Upload new attachment file
      * File size is restricted to 50 MB (52 428 800 bytes)
      * @param file  (optional)

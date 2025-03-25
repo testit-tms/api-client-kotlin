@@ -53,6 +53,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * GET /api/v2/customAttributes/templates/exists
      * 
      * 
      * @param name  (optional)
@@ -84,6 +85,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * GET /api/v2/customAttributes/templates/exists
      * 
      * 
      * @param name  (optional)
@@ -129,6 +131,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates/{id}/customAttributes/exclude
      * Exclude CustomAttributes from CustomAttributeTemplate
      *  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
      * @param id Attribute template internal (UUID) identifier
@@ -160,6 +163,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates/{id}/customAttributes/exclude
      * Exclude CustomAttributes from CustomAttributeTemplate
      *  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System delete attributes from attributes tempalte
      * @param id Attribute template internal (UUID) identifier
@@ -202,6 +206,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates/{id}/customAttributes/include
      * Include CustomAttributes to CustomAttributeTemplate
      *  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
      * @param id Attribute template internal (UUID) identifier
@@ -233,6 +238,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates/{id}/customAttributes/include
      * Include CustomAttributes to CustomAttributeTemplate
      *  Use case   User sets attribute template internal identifier   User sets attribute internal identifiers    User runs method execution   System add attributes to attributes tempalte
      * @param id Attribute template internal (UUID) identifier
@@ -275,6 +281,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * DELETE /api/v2/customAttributes/templates/{id}
      * Delete CustomAttributeTemplate
      *  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
      * @param id Attribute template internal (UUID) identifier
@@ -305,6 +312,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * DELETE /api/v2/customAttributes/templates/{id}
      * Delete CustomAttributeTemplate
      *  Use case   User sets attribute template internal identifier   User runs method execution   System search and delete attribute template   System returns no content response
      * @param id Attribute template internal (UUID) identifier
@@ -344,6 +352,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * GET /api/v2/customAttributes/templates/{id}
      * Get CustomAttributeTemplate by ID
      *  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
      * @param id CustomAttributeTemplate internal (UUID) identifier
@@ -375,6 +384,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * GET /api/v2/customAttributes/templates/{id}
      * Get CustomAttributeTemplate by ID
      *  Use case   User sets attribute template internal identifier    User runs method execution   System return attribute template (listed in response example)
      * @param id CustomAttributeTemplate internal (UUID) identifier
@@ -415,6 +425,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * GET /api/v2/customAttributes/templates/{name}
      * Get CustomAttributeTemplate by name
      *  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
      * @param name CustomAttributeTemplate name for search
@@ -446,6 +457,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * GET /api/v2/customAttributes/templates/{name}
      * Get CustomAttributeTemplate by name
      *  Use case   User sets attribute template name   User runs method execution   System search and return list of attribute templates (listed in response example)
      * @param name CustomAttributeTemplate name for search
@@ -486,6 +498,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates
      * Create CustomAttributeTemplate
      *  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
      * @param customAttributeTemplatePostModel  (optional)
@@ -517,6 +530,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates
      * Create CustomAttributeTemplate
      *  Use case   User sets attribute template parameters (listed in request example)   User runs method execution   System creates attribute template   System returns attribute template model (example listed in response parameters)
      * @param customAttributeTemplatePostModel  (optional)
@@ -558,6 +572,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * PUT /api/v2/customAttributes/templates
      * Update custom attributes template
      * 
      * @param customAttributeTemplatePutModel  (optional)
@@ -588,6 +603,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * PUT /api/v2/customAttributes/templates
      * Update custom attributes template
      * 
      * @param customAttributeTemplatePutModel  (optional)
@@ -628,6 +644,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates/search
      * Search CustomAttributeTemplates
      *  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -664,6 +681,7 @@ class CustomAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cli
     }
 
     /**
+     * POST /api/v2/customAttributes/templates/search
      * Search CustomAttributeTemplates
      *  Use case   User sets search params model (listed in request example)   User runs method execution   System return attribute templates (listed in response example)
      * @param skip Amount of items to be skipped (offset) (optional)

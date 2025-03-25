@@ -50,6 +50,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * DELETE /api/v2/workItems/comments/{commentId}
      * Delete WorkItem comment
      *  Use case   User sets comment identifier   User runs method execution   System delete comment    System returns success status code
      * @param commentId Comment internal (guid format) identifier
@@ -80,6 +81,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * DELETE /api/v2/workItems/comments/{commentId}
      * Delete WorkItem comment
      *  Use case   User sets comment identifier   User runs method execution   System delete comment    System returns success status code
      * @param commentId Comment internal (guid format) identifier
@@ -119,6 +121,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * POST /api/v2/workItems/comments
      * Create WorkItem comment
      *  Use case   User sets comment properties (listed in request parameters)   User runs method execution   System creates comment    System returns comment model (listed in response parameters)
      * @param workItemCommentPostModel  (optional)
@@ -150,6 +153,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * POST /api/v2/workItems/comments
      * Create WorkItem comment
      *  Use case   User sets comment properties (listed in request parameters)   User runs method execution   System creates comment    System returns comment model (listed in response parameters)
      * @param workItemCommentPostModel  (optional)
@@ -191,6 +195,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * PUT /api/v2/workItems/comments
      * Update work item comment
      * 
      * @param workItemCommentPutModel  (optional)
@@ -221,6 +226,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * PUT /api/v2/workItems/comments
      * Update work item comment
      * 
      * @param workItemCommentPutModel  (optional)
@@ -261,6 +267,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * GET /api/v2/workItems/{id}/comments/count
      * Get work item comments count
      * 
      * @param id Unique or global ID of the work item
@@ -292,6 +299,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * GET /api/v2/workItems/{id}/comments/count
      * Get work item comments count
      * 
      * @param id Unique or global ID of the work item
@@ -332,6 +340,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * GET /api/v2/workItems/{id}/comments
      * Get work item comments
      * 
      * @param id Unique or global ID of the work item
@@ -363,6 +372,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     }
 
     /**
+     * GET /api/v2/workItems/{id}/comments
      * Get work item comments
      * 
      * @param id Unique or global ID of the work item

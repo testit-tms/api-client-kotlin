@@ -51,6 +51,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testPoints/{id}/testRuns
      * Get all test runs which use test point
      * 
      * @param id Test point unique ID
@@ -82,6 +83,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testPoints/{id}/testRuns
      * Get all test runs which use test point
      * 
      * @param id Test point unique ID
@@ -122,6 +124,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testPoints/{id}/workItem
      * Get work item represented by test point
      * 
      * @param id Test point unique ID
@@ -153,6 +156,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testPoints/{id}/workItem
      * Get work item represented by test point
      * 
      * @param id Test point unique ID
@@ -193,6 +197,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testPoints/search/id
      * Search for test points and extract IDs only
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -229,6 +234,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testPoints/search/id
      * Search for test points and extract IDs only
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -297,6 +303,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testPoints/search
      * Search for test points
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -333,6 +340,7 @@ class TestPointsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testPoints/search
      * Search for test points
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
