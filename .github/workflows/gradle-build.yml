@@ -24,6 +24,18 @@ jobs:
       uses: gradle/wrapper-validation-action@v1
     - name: Add permission
       run: chmod +x ./gradlew
+    - name: Check is apiClient is not broken
+      id: check-line
+      run: |
+        FILE_PATH="src/main/kotlin/ru/testit/kotlin/client/infrastructure/ApiClient.kt"
+        REQUIRED_LINE="var apiKey: MutableMap<String, String> = mutableMapOf()"
+        
+        if grep -Fq "$REQUIRED_LINE" "$FILE_PATH"; then
+          echo "Required line found in file."
+        else
+          echo "Error: Required line not found in file."
+          exit 1
+        fi
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
       with:
