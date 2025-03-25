@@ -55,6 +55,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PATCH /api/v2/sections/{id}
      * Patch section
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Section internal (UUID) identifier
@@ -86,6 +87,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PATCH /api/v2/sections/{id}
      * Patch section
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Section internal (UUID) identifier
@@ -128,6 +130,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/sections
      * Create section
      *  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
      * @param sectionPostModel  (optional)
@@ -159,6 +162,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/sections
      * Create section
      *  Use case   User sets section properties (listed in request example)   User runs method execution   System creates section property values   System returns section (listed in response example)
      * @param sectionPostModel  (optional)
@@ -200,6 +204,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/sections/{id}
      * Delete section
      *  Use case   User sets section identifier   User runs method execution   System search section by the identifier   System search and delete nested sections of the found section   System search and delete workitems related to the found nested sections   System deletes initial section and related workitem   System returns no content response
      * @param id Section internal (UUID) identifier
@@ -230,6 +235,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/sections/{id}
      * Delete section
      *  Use case   User sets section identifier   User runs method execution   System search section by the identifier   System search and delete nested sections of the found section   System search and delete workitems related to the found nested sections   System deletes initial section and related workitem   System returns no content response
      * @param id Section internal (UUID) identifier
@@ -269,6 +275,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/sections/{id}
      * Get section
      *  Use case   User sets section internal (guid format) identifier   User runs method execution   System search section by the section identifier                 [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                 System returns section
      * @param id Section internal (UUID) identifier
@@ -301,6 +308,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/sections/{id}
      * Get section
      *  Use case   User sets section internal (guid format) identifier   User runs method execution   System search section by the section identifier                 [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                 System returns section
      * @param id Section internal (UUID) identifier
@@ -348,6 +356,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/sections/{id}/workItems
      * Get section work items
      *  Use case   User sets section identifier   User runs method execution   System search section by the identifier   System search work items related to the section                 [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                 System returns work item collection
      * @param id Section internal (UUID) identifier
@@ -389,6 +398,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/sections/{id}/workItems
      * Get section work items
      *  Use case   User sets section identifier   User runs method execution   System search section by the identifier   System search work items related to the section                 [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.                 System returns work item collection
      * @param id Section internal (UUID) identifier
@@ -474,6 +484,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/sections/move
      * Move section with all work items into another section
      * 
      * @param sectionMoveModel  (optional)
@@ -504,6 +515,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/sections/move
      * Move section with all work items into another section
      * 
      * @param sectionMoveModel  (optional)
@@ -544,6 +556,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/sections/rename
      * Rename section
      *  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
      * @param sectionRenameModel  (optional)
@@ -574,6 +587,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/sections/rename
      * Rename section
      *  Use case   User sets section identifier and new name (listed in request example)   User runs method execution   System search section by the identifier   System updates section name using the new name   System returns no content response
      * @param sectionRenameModel  (optional)
@@ -614,6 +628,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/sections
      * Update section
      *  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
      * @param sectionPutModel  (optional)
@@ -644,6 +659,7 @@ class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/sections
      * Update section
      *  Use case   User sets section properties (listed in request example)   User runs method execution   System search section by the identifier   System updates section using the property values   System returns no content response
      * @param sectionPutModel  (optional)

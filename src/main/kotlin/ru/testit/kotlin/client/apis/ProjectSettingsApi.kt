@@ -49,6 +49,7 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/settings/autotests
      * Set autotest project settings.
      * 
      * @param projectId 
@@ -80,6 +81,7 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/settings/autotests
      * Set autotest project settings.
      * 
      * @param projectId 
@@ -122,6 +124,7 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/settings/autotests
      * Get autotest project settings.
      * 
      * @param projectId 
@@ -153,6 +156,7 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/settings/autotests
      * Get autotest project settings.
      * 
      * @param projectId 

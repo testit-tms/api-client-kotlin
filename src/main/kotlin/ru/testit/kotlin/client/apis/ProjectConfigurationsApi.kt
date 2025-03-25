@@ -48,6 +48,7 @@ class ProjectConfigurationsApi(basePath: kotlin.String = defaultBasePath, client
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/configurations
      * Get project configurations
      *  Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all configurations related to project   System returns array of found configurations (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -79,6 +80,7 @@ class ProjectConfigurationsApi(basePath: kotlin.String = defaultBasePath, client
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/configurations
      * Get project configurations
      *  Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all configurations related to project   System returns array of found configurations (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier

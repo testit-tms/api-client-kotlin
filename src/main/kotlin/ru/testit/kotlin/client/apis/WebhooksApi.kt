@@ -57,6 +57,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/webhooks
      * 
      * 
      * @param webhooksDeleteApiModel  (optional)
@@ -87,6 +88,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/webhooks
      * 
      * 
      * @param webhooksDeleteApiModel  (optional)
@@ -127,6 +129,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/webhooks
      * Get all webhooks
      * 
      * @param projectId Project unique ID (optional)
@@ -158,6 +161,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/webhooks
      * Get all webhooks
      * 
      * @param projectId Project unique ID (optional)
@@ -203,6 +207,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/webhooks/{id}
      * Delete webhook by ID
      * 
      * @param id Webhook unique ID
@@ -233,6 +238,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/webhooks/{id}
      * Delete webhook by ID
      * 
      * @param id Webhook unique ID
@@ -272,6 +278,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/webhooks/{id}
      * Get webhook by ID
      * 
      * @param id Webhook unique ID
@@ -303,6 +310,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/webhooks/{id}
      * Get webhook by ID
      * 
      * @param id Webhook unique ID
@@ -343,6 +351,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/webhooks/{id}
      * Edit webhook by ID
      * 
      * @param id Webhook unique ID
@@ -375,6 +384,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/webhooks/{id}
      * Edit webhook by ID
      * 
      * @param id Webhook unique ID
@@ -418,6 +428,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/webhooks
      * Create webhook
      * 
      * @param webHookPostModel  (optional)
@@ -449,6 +460,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/webhooks
      * Create webhook
      * 
      * @param webHookPostModel  (optional)
@@ -490,6 +502,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/webhooks
      * 
      * 
      * @param webhooksUpdateApiModel  (optional)
@@ -521,6 +534,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/webhooks
      * 
      * 
      * @param webhooksUpdateApiModel  (optional)
@@ -562,6 +576,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/webhooks/search
      * Search for webhooks
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -598,6 +613,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/webhooks/search
      * Search for webhooks
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -666,6 +682,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/webhooks/specialVariables
      * Get special variables for webhook event type
      * 
      * @param eventType Webhook event type (optional)
@@ -698,6 +715,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/webhooks/specialVariables
      * Get special variables for webhook event type
      * 
      * @param eventType Webhook event type (optional)
@@ -748,6 +766,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/webhooks/test
      * Test webhook&#39;s url
      * 
      * @param webHookTestModel  (optional)
@@ -779,6 +798,7 @@ class WebhooksApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/webhooks/test
      * Test webhook&#39;s url
      * 
      * @param webHookTestModel  (optional)

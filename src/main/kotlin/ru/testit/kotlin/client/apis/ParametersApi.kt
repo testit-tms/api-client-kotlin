@@ -52,6 +52,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters/bulk
      * Create multiple parameters
      *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
      * @param parameterPostModel  (optional)
@@ -83,6 +84,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters/bulk
      * Create multiple parameters
      *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
      * @param parameterPostModel  (optional)
@@ -124,6 +126,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PUT /api/v2/parameters/bulk
      * Update multiple parameters
      *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
      * @param parameterPutModel  (optional)
@@ -154,6 +157,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PUT /api/v2/parameters/bulk
      * Update multiple parameters
      *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
      * @param parameterPutModel  (optional)
@@ -194,6 +198,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/groups
      * Get parameters as group
      *  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
      * @param isDeleted  (optional)
@@ -231,6 +236,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/groups
      * Get parameters as group
      *  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
      * @param isDeleted  (optional)
@@ -306,6 +312,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/key/name/{name}/exists
      * Check existence parameter key in system
      *  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
      * @param name 
@@ -337,6 +344,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/key/name/{name}/exists
      * Check existence parameter key in system
      *  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
      * @param name 
@@ -377,6 +385,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/{key}/values
      * Get all parameter key values
      *  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
      * @param key Parameter key (string format)
@@ -408,6 +417,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/{key}/values
      * Get all parameter key values
      *  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
      * @param key Parameter key (string format)
@@ -448,6 +458,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/keys
      * Get all parameter keys
      *  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
      * @return kotlin.collections.List<kotlin.String>
@@ -478,6 +489,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/keys
      * Get all parameter keys
      *  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
      * @return ApiResponse<kotlin.collections.List<kotlin.String>?>
@@ -516,6 +528,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters/search/groups
      * Search for parameters as group
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -552,6 +565,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters/search/groups
      * Search for parameters as group
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -620,6 +634,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters/search
      * Search for parameters
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -656,6 +671,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters/search
      * Search for parameters
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -724,6 +740,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters
      * Create parameter
      *  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
      * @param parameterPostModel  (optional)
@@ -755,6 +772,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/parameters
      * Create parameter
      *  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
      * @param parameterPostModel  (optional)
@@ -796,6 +814,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/parameters/name/{name}
      * Delete parameter by name
      * Deletes parameter and all it&#39;s values
      * @param name Name of the parameter
@@ -826,6 +845,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/parameters/name/{name}
      * Delete parameter by name
      * Deletes parameter and all it&#39;s values
      * @param name Name of the parameter
@@ -865,6 +885,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/parameters/keyId/{keyId}
      * Delete parameters by parameter key identifier
      * Deletes parameter and all it&#39;s values by parameter key identifier
      * @param keyId Identifier of the parameter key
@@ -895,6 +916,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/parameters/keyId/{keyId}
      * Delete parameters by parameter key identifier
      * Deletes parameter and all it&#39;s values by parameter key identifier
      * @param keyId Identifier of the parameter key
@@ -934,6 +956,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/parameters/{id}
      * Delete parameter
      *  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
      * @param id Parameter internal (UUID) identifier
@@ -964,6 +987,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/parameters/{id}
      * Delete parameter
      *  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
      * @param id Parameter internal (UUID) identifier
@@ -1003,6 +1027,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters
      * Get all parameters
      *  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
      * @param isDeleted If result must consist of only actual/deleted parameters (optional)
@@ -1039,6 +1064,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters
      * Get all parameters
      *  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
      * @param isDeleted If result must consist of only actual/deleted parameters (optional)
@@ -1109,6 +1135,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/{id}
      * Get parameter by ID
      *  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
      * @param id Parameter internal (UUID) identifier
@@ -1140,6 +1167,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/parameters/{id}
      * Get parameter by ID
      *  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
      * @param id Parameter internal (UUID) identifier
@@ -1180,6 +1208,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PUT /api/v2/parameters
      * Update parameter
      *  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
      * @param parameterPutModel  (optional)
@@ -1210,6 +1239,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PUT /api/v2/parameters
      * Update parameter
      *  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
      * @param parameterPutModel  (optional)

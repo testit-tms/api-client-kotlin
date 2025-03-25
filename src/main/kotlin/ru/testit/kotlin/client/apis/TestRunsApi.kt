@@ -65,6 +65,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/testRuns
      * Delete multiple test runs
      *  Use case   User sets selection parameters of test runs   System search and delete collection of test runs   System returns the number of deleted test runs
      * @param testRunSelectApiModel  (optional)
@@ -96,6 +97,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/testRuns
      * Delete multiple test runs
      *  Use case   User sets selection parameters of test runs   System search and delete collection of test runs   System returns the number of deleted test runs
      * @param testRunSelectApiModel  (optional)
@@ -137,6 +139,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}/autoTestsNamespaces
      * Get autotest classes and namespaces in test run
      * 
      * @param id 
@@ -168,6 +171,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}/autoTestsNamespaces
      * Get autotest classes and namespaces in test run
      * 
      * @param id 
@@ -208,6 +212,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/testRuns/{id}
      * Delete test run
      *  Use case   User sets test run internal (guid format) identifier   System search and delete test run
      * @param id Test run internal (UUID) identifier
@@ -238,6 +243,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * DELETE /api/v2/testRuns/{id}
      * Delete test run
      *  Use case   User sets test run internal (guid format) identifier   System search and delete test run
      * @param id Test run internal (UUID) identifier
@@ -277,6 +283,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/purge
      * Permanently delete test run from archive
      *  Use case   User sets archived test run internal (guid format) identifier   System search and purge archived test run
      * @param id Test run internal (UUID) identifier
@@ -307,6 +314,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/purge
      * Permanently delete test run from archive
      *  Use case   User sets archived test run internal (guid format) identifier   System search and purge archived test run
      * @param id Test run internal (UUID) identifier
@@ -346,6 +354,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/reruns
      * Manual autotests rerun in test run
      * 
      * @param id 
@@ -378,6 +387,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/reruns
      * Manual autotests rerun in test run
      * 
      * @param id 
@@ -421,6 +431,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/restore
      * Restore test run from the archive
      *  Use case   User sets archived test run internal (guid format) identifier   System search and restore test run
      * @param id Unique ID of the test run
@@ -451,6 +462,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/restore
      * Restore test run from the archive
      *  Use case   User sets archived test run internal (guid format) identifier   System search and restore test run
      * @param id Unique ID of the test run
@@ -490,6 +502,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/statistics/filter
      * Search for the test run test results and build statistics
      * 
      * @param id Test run unique ID
@@ -522,6 +535,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/statistics/filter
      * Search for the test run test results and build statistics
      * 
      * @param id Test run unique ID
@@ -565,6 +579,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}/testPoints/results
      * Get test results from the test run grouped by test points
      * 
      * @param id Test run unique ID
@@ -596,6 +611,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}/testPoints/results
      * Get test results from the test run grouped by test points
      * 
      * @param id Test run unique ID
@@ -636,6 +652,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/testRuns/{id}/testResults/bulk
      * Partial edit of multiple test results in the test run
      * 
      * @param id Test run unique ID
@@ -667,6 +684,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/testRuns/{id}/testResults/bulk
      * Partial edit of multiple test results in the test run
      * 
      * @param id Test run unique ID
@@ -709,6 +727,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}/testResults/lastModified/modificationDate
      * Get modification date of last test result of the test run
      * 
      * @param id Test run unique ID
@@ -740,6 +759,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}/testResults/lastModified/modificationDate
      * Get modification date of last test result of the test run
      * 
      * @param id Test run unique ID
@@ -780,6 +800,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/purge/bulk
      * Permanently delete multiple test runs from archive
      *  Use case   User sets selection parameters of archived test runs   System search and delete collection of archived test runs   System returns the number of deleted archived test runs
      * @param testRunSelectApiModel  (optional)
@@ -811,6 +832,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/purge/bulk
      * Permanently delete multiple test runs from archive
      *  Use case   User sets selection parameters of archived test runs   System search and delete collection of archived test runs   System returns the number of deleted archived test runs
      * @param testRunSelectApiModel  (optional)
@@ -852,6 +874,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/restore/bulk
      * Restore multiple test runs from the archive
      *  Use case   User sets selection parameters of archived test runs   System search and restore collection of archived test runs   System returns the number of restored test runs
      * @param testRunSelectApiModel  (optional)
@@ -883,6 +906,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/restore/bulk
      * Restore multiple test runs from the archive
      *  Use case   User sets selection parameters of archived test runs   System search and restore collection of archived test runs   System returns the number of restored test runs
      * @param testRunSelectApiModel  (optional)
@@ -924,6 +948,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/search
      * Search for test runs
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -960,6 +985,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/search
      * Search for test runs
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -1028,6 +1054,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/updateMultiple
      * Update multiple test runs
      * 
      * @param updateMultipleTestRunsApiModel  (optional)
@@ -1058,6 +1085,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/updateMultiple
      * Update multiple test runs
      * 
      * @param updateMultipleTestRunsApiModel  (optional)
@@ -1098,6 +1126,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/complete
      * Complete TestRun
      *  Use case   User sets test run identifier   User runs method execution   System completes test run   System returns no content response
      * @param id Test Run internal identifier (GUID format)
@@ -1128,6 +1157,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/complete
      * Complete TestRun
      *  Use case   User sets test run identifier   User runs method execution   System completes test run   System returns no content response
      * @param id Test Run internal identifier (GUID format)
@@ -1167,6 +1197,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/byAutoTests
      * Create test runs based on autotests and configurations
      * This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
      * @param createTestRunAndFillByAutoTestsApiModel  (optional)
@@ -1198,6 +1229,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/byAutoTests
      * Create test runs based on autotests and configurations
      * This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
      * @param createTestRunAndFillByAutoTestsApiModel  (optional)
@@ -1239,6 +1271,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/byConfigurations
      * Create test runs picking the needed test points
      * This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
      * @param createTestRunAndFillByConfigurationsApiModel  (optional)
@@ -1270,6 +1303,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/byConfigurations
      * Create test runs picking the needed test points
      * This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
      * @param createTestRunAndFillByConfigurationsApiModel  (optional)
@@ -1311,6 +1345,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/byWorkItems
      * Create test run based on configurations and work items
      * This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
      * @param createTestRunAndFillByWorkItemsApiModel  (optional)
@@ -1342,6 +1377,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/byWorkItems
      * Create test run based on configurations and work items
      * This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
      * @param createTestRunAndFillByWorkItemsApiModel  (optional)
@@ -1383,6 +1419,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns
      * Create empty TestRun
      *  Use case   User sets test run model (listed in the request example)   User runs method execution   System creates test run   System returns test run model
      * @param createEmptyTestRunApiModel  (optional)
@@ -1414,6 +1451,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns
      * Create empty TestRun
      *  Use case   User sets test run model (listed in the request example)   User runs method execution   System creates test run   System returns test run model
      * @param createEmptyTestRunApiModel  (optional)
@@ -1455,6 +1493,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}
      * Get TestRun by Id
      *  Use case   User sets test run identifier   User runs method execution   System finds test run   System returns test run
      * @param id Test Run internal identifier (GUID format)
@@ -1486,6 +1525,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * GET /api/v2/testRuns/{id}
      * Get TestRun by Id
      *  Use case   User sets test run identifier   User runs method execution   System finds test run   System returns test run
      * @param id Test Run internal identifier (GUID format)
@@ -1526,6 +1566,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/testResults
      * Send test results to the test runs in the system
      * This method sends test results to the test management system.
      * @param id Test Run internal identifier (GUID format)
@@ -1558,6 +1599,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/testResults
      * Send test results to the test runs in the system
      * This method sends test results to the test management system.
      * @param id Test Run internal identifier (GUID format)
@@ -1601,6 +1643,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/start
      * Start TestRun
      *  Use case   User sets test run identifier   User runs method execution   System starts test run   System returns no content response
      * @param id Test Run internal identifier (GUID format)
@@ -1631,6 +1674,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/start
      * Start TestRun
      *  Use case   User sets test run identifier   User runs method execution   System starts test run   System returns no content response
      * @param id Test Run internal identifier (GUID format)
@@ -1670,6 +1714,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/stop
      * Stop TestRun
      *  Use case   User sets test run identifier   User runs method execution   System stops test run   System returns no content response
      * @param id Test Run internal identifier (GUID format)
@@ -1700,6 +1745,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * POST /api/v2/testRuns/{id}/stop
      * Stop TestRun
      *  Use case   User sets test run identifier   User runs method execution   System stops test run   System returns no content response
      * @param id Test Run internal identifier (GUID format)
@@ -1739,6 +1785,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/testRuns
      * Update empty TestRun
      *  Use case   User sets test run properties (listed in the request example)   User runs method execution   System updates test run   System returns returns no content response
      * @param updateEmptyTestRunApiModel  (optional)
@@ -1769,6 +1816,7 @@ class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     }
 
     /**
+     * PUT /api/v2/testRuns
      * Update empty TestRun
      *  Use case   User sets test run properties (listed in the request example)   User runs method execution   System updates test run   System returns returns no content response
      * @param updateEmptyTestRunApiModel  (optional)

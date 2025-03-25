@@ -65,6 +65,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/test-points/withSections
      * Add test-points to TestPlan with sections
      * 
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -96,6 +97,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/test-points/withSections
      * Add test-points to TestPlan with sections
      * 
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -138,6 +140,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/workItems/withSections
      * Add WorkItems to TestPlan with Sections as TestSuites
      *  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -169,6 +172,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/workItems/withSections
      * Add WorkItems to TestPlan with Sections as TestSuites
      *  Use case   User sets TestPlan identifier   User sets WorkItem identifiers (listed in request example)   User runs method execution   System added WorkItems and Sections to TestPlan   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -211,6 +215,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/analytics
      * Get analytics by TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -242,6 +247,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/analytics
      * Get analytics by TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System returns analytics by test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -282,6 +288,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/autobalance
      * Distribute test points between the users
      * 
      * @param id Test plan unique or global ID
@@ -314,6 +321,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/autobalance
      * Distribute test points between the users
      * 
      * @param id Test plan unique or global ID
@@ -361,6 +369,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/configurations
      * Get TestPlan configurations
      *  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -392,6 +401,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/configurations
      * Get TestPlan configurations
      *  Use case   User sets test plan identifier   User runs method execution   System return test plan configurations
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -432,6 +442,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/export/testPoints/xlsx
      * Export TestPoints from TestPlan in xls format
      *  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -464,6 +475,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/export/testPoints/xlsx
      * Export TestPoints from TestPlan in xls format
      *  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -509,6 +521,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/export/testResultHistory/xlsx
      * Export TestResults history from TestPlan in xls format
      *  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -543,6 +556,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/export/testResultHistory/xlsx
      * Export TestResults history from TestPlan in xls format
      *  Use case   User sets test plan identifier   User sets filter model (listed in request example)   User runs method execution   System return export xlsx file
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -602,6 +616,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/history
      * Get TestPlan history
      *  Use case   User sets test plan identifier   User runs method execution   System return test plan history
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -638,6 +653,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/history
      * Get TestPlan history
      *  Use case   User sets test plan identifier   User runs method execution   System return test plan history
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -705,6 +721,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/links
      * Get Links of TestPlan
      *  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -739,6 +756,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/links
      * Get Links of TestPlan
      *  Use case   User sets test plan identifier   User sets pagination filter (listed in request example)   User runs method execution   System returns links of TestPlan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -796,6 +814,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * PATCH /api/v2/testPlans/{id}
      * Patch test plan
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Unique ID of the test plan
@@ -827,6 +846,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * PATCH /api/v2/testPlans/{id}
      * Patch test plan
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Unique ID of the test plan
@@ -869,6 +889,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/summaries
      * Get summary by TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -900,6 +921,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/summaries
      * Get summary by TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System returns summary by test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -940,6 +962,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testPoints/lastResults
      * Get TestPoints with last result from TestPlan
      *  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -977,6 +1000,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testPoints/lastResults
      * Get TestPoints with last result from TestPlan
      *  Use case   User sets test plan identifier   User sets filter (listed in request example)   User runs method execution   System return test points with last result from test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1049,6 +1073,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/testPoints/reset
      * Reset TestPoints status of TestPlan
      *  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1080,6 +1105,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/testPoints/reset
      * Reset TestPoints status of TestPlan
      *  Use case   User sets test plan identifier   User sets test points identifiers   User runs method execution   System reset test points statuses of test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1122,6 +1148,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/testPlans/{id}/testPoints/tester
      * Unassign users from multiple test points
      * 
      * @param id Unique or global ID of the test plan
@@ -1154,6 +1181,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/testPlans/{id}/testPoints/tester
      * Unassign users from multiple test points
      * 
      * @param id Unique or global ID of the test plan
@@ -1197,6 +1225,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/testPoints/tester/{userId}
      * Assign user as a tester to multiple test points
      * 
      * @param id Unique or global ID of the test plan
@@ -1230,6 +1259,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/testPoints/tester/{userId}
      * Assign user as a tester to multiple test points
      * 
      * @param id Unique or global ID of the test plan
@@ -1275,6 +1305,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testRuns
      * Get TestRuns of TestPlan
      *  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1315,6 +1346,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testRuns
      * Get TestRuns of TestPlan
      *  Use case   User sets test plan identifier   User sets TestRun status filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1402,6 +1434,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/testRuns/search
      * Search TestRuns of TestPlan
      *  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1439,6 +1472,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/testRuns/search
      * Search TestRuns of TestPlan
      *  Use case   User sets test plan identifier   User sets TestRuns filter (listed in request example)   User runs method execution   System returns TestRuns for TestPlan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1509,6 +1543,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate
      * Get last modification date of test plan&#39;s test results
      * 
      * @param id Test plan unique or global ID
@@ -1539,6 +1574,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate
      * Get last modification date of test plan&#39;s test results
      * 
      * @param id Test plan unique or global ID
@@ -1578,6 +1614,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/unlock/request
      * Send unlock TestPlan notification
      *  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1608,6 +1645,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/unlock/request
      * Send unlock TestPlan notification
      *  Use case   User sets test plan identifier   User runs method execution   System send unlock test plan notification
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1647,6 +1685,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/shorts
      * Get TestPlans short models by Project identifiers
      *  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
      * @param isDeleted  (optional)
@@ -1679,6 +1718,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/shorts
      * Get TestPlans short models by Project identifiers
      *  Use case   User sets projects identifiers   User runs method execution   System return test plans short models (listed in response example)
      * @param isDeleted  (optional)
@@ -1727,6 +1767,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/clone
      * Clone TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1758,6 +1799,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/clone
      * Clone TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System clones test plan   System returns test plan (listed in response example)
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1798,6 +1840,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/complete
      * Complete TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1828,6 +1871,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/complete
      * Complete TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System completes the test plan and updates test plan status   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1867,6 +1911,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans
      * Create TestPlan
      *  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
      * @param createTestPlanApiModel  (optional)
@@ -1898,6 +1943,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans
      * Create TestPlan
      *  Use case   User sets test plan properties (listed in request example)   User runs method execution   System creates test plan   System returns test plan (listed in response example)
      * @param createTestPlanApiModel  (optional)
@@ -1939,6 +1985,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/testPlans/{id}
      * Delete TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -1969,6 +2016,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * DELETE /api/v2/testPlans/{id}
      * Delete TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System delete test plan   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2008,6 +2056,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}
      * Get TestPlan by Id
      *  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2039,6 +2088,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}
      * Get TestPlan by Id
      *  Use case   User sets test plan identifier   User runs method execution   System search  test plan by the identifier   System returns test plan
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2079,6 +2129,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testSuites
      * Get TestSuites Tree By Id
      *  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2110,6 +2161,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * GET /api/v2/testPlans/{id}/testSuites
      * Get TestSuites Tree By Id
      *  Use case   User sets test plan identifier   User runs method execution   System finds test suites related to the test plan   System returns test suites as a tree model (listed in response example)
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2150,6 +2202,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/pause
      * Pause TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2180,6 +2233,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/pause
      * Pause TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System pauses the test plan and updates test plan status   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2219,6 +2273,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/purge
      * Permanently delete test plan from archive
      * 
      * @param id Unique or global ID of the test plan
@@ -2249,6 +2304,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/purge
      * Permanently delete test plan from archive
      * 
      * @param id Unique or global ID of the test plan
@@ -2288,6 +2344,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/restore
      * Restore TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2318,6 +2375,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/restore
      * Restore TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System restores test plan   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2357,6 +2415,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/start
      * Start TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2387,6 +2446,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/testPlans/{id}/start
      * Start TestPlan
      *  Use case   User sets test plan identifier   User runs method execution   System starts the test plan and updates test plan status   System returns no content response
      * @param id Test plan internal (guid format) or global (int  format) identifier
@@ -2426,6 +2486,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * PUT /api/v2/testPlans
      * Update TestPlan
      *  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
      * @param updateTestPlanApiModel  (optional)
@@ -2456,6 +2517,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * PUT /api/v2/testPlans
      * Update TestPlan
      *  Use case   User sets test plan properties(listed in request example)   User runs method execution   System updates test plan   System returns no content response
      * @param updateTestPlanApiModel  (optional)

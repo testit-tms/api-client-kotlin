@@ -51,6 +51,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/attributes
      * Add attributes to project&#39;s test plans
      *  Use case   User sets project internal or global identifier and attributes identifiers   User runs method execution   System updates project and add attributes to project for test plans   System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -82,6 +83,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/attributes
      * Add attributes to project&#39;s test plans
      *  Use case   User sets project internal or global identifier and attributes identifiers   User runs method execution   System updates project and add attributes to project for test plans   System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -124,6 +126,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * DELETE /api/v2/projects/{projectId}/testPlans/attributes/{attributeId}
      * Delete attribute from project&#39;s test plans
      *  Use case   User sets project internal or global identifier and attribute identifier   User runs method execution   System updates project and delete attribute from project for test plans   System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -155,6 +158,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * DELETE /api/v2/projects/{projectId}/testPlans/attributes/{attributeId}
      * Delete attribute from project&#39;s test plans
      *  Use case   User sets project internal or global identifier and attribute identifier   User runs method execution   System updates project and delete attribute from project for test plans   System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -196,6 +200,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/testPlans/attributes
      * Get project&#39;s test plan attributes
      *  Use case   User runs method execution   System returns project for test plans attributes by project identifier
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -227,6 +232,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * GET /api/v2/projects/{projectId}/testPlans/attributes
      * Get project&#39;s test plan attributes
      *  Use case   User runs method execution   System returns project for test plans attributes by project identifier
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -267,6 +273,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/attributes/search
      * Search for attributes used in the project test plans
      * 
      * @param projectId Unique or global project ID
@@ -304,6 +311,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/testPlans/attributes/search
      * Search for attributes used in the project test plans
      * 
      * @param projectId Unique or global project ID
@@ -374,6 +382,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * PUT /api/v2/projects/{projectId}/testPlans/attributes
      * Update attribute of project&#39;s test plans
      *  Use case   User sets project internal or global identifier and attribute model   User runs method execution   System updates project and project attribute for test plan   System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
@@ -405,6 +414,7 @@ class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePath, cl
     }
 
     /**
+     * PUT /api/v2/projects/{projectId}/testPlans/attributes
      * Update attribute of project&#39;s test plans
      *  Use case   User sets project internal or global identifier and attribute model   User runs method execution   System updates project and project attribute for test plan   System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier

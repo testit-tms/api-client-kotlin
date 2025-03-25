@@ -57,6 +57,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/test-points
      * Add test-points to test suite
      * 
      * @param id Test suite internal identifier
@@ -88,6 +89,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/test-points
      * Add test-points to test suite
      * 
      * @param id Test suite internal identifier
@@ -130,6 +132,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PATCH /api/v2/testSuites/{id}
      * Patch test suite
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Test Suite internal (UUID) identifier
@@ -161,6 +164,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PATCH /api/v2/testSuites/{id}
      * Patch test suite
      * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
      * @param id Test Suite internal (UUID) identifier
@@ -203,6 +207,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/refresh
      * Refresh test suite. Only dynamic test suites are supported by this method
      * 
      * @param id Test Suite internal (UUID) identifier
@@ -233,6 +238,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/refresh
      * Refresh test suite. Only dynamic test suites are supported by this method
      * 
      * @param id Test Suite internal (UUID) identifier
@@ -272,6 +278,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/workItems
      * Set work items for test suite
      * 
      * @param id Unique ID of the test suite
@@ -303,6 +310,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/workItems
      * Set work items for test suite
      * 
      * @param id Unique ID of the test suite
@@ -345,6 +353,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites
      * Create test suite
      * 
      * @param testSuiteV2PostModel  (optional)
@@ -376,6 +385,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites
      * Create test suite
      * 
      * @param testSuiteV2PostModel  (optional)
@@ -417,6 +427,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PUT /api/v2/testSuites
      * Edit test suite
      * 
      * @param testSuiteV2PutModel  (optional)
@@ -447,6 +458,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * PUT /api/v2/testSuites
      * Edit test suite
      * 
      * @param testSuiteV2PutModel  (optional)
@@ -487,6 +499,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/testSuites/{id}
      * Delete TestSuite
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -517,6 +530,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * DELETE /api/v2/testSuites/{id}
      * Delete TestSuite
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -556,6 +570,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}/configurations
      * Get Configurations By Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -587,6 +602,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}/configurations
      * Get Configurations By Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -627,6 +643,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}/testPoints
      * Get TestPoints By Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -658,6 +675,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}/testPoints
      * Get TestPoints By Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -698,6 +716,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}/testResults
      * Get TestResults By Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -729,6 +748,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}/testResults
      * Get TestResults By Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -769,6 +789,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}
      * Get TestSuite by Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -800,6 +821,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * GET /api/v2/testSuites/{id}
      * Get TestSuite by Id
      *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -840,6 +862,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/workItems/search
      * Search WorkItems
      *  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -879,6 +902,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/workItems/search
      * Search WorkItems
      *  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -952,6 +976,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/configurations
      * Set Configurations By TestSuite Id
      *  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;
@@ -983,6 +1008,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     }
 
     /**
+     * POST /api/v2/testSuites/{id}/configurations
      * Set Configurations By TestSuite Id
      *  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;

@@ -48,6 +48,7 @@ class UsersApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     }
 
     /**
+     * GET /api/v2/users/exists
      * 
      * 
      * @param userName  (optional)
@@ -79,6 +80,7 @@ class UsersApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     }
 
     /**
+     * GET /api/v2/users/exists
      * 
      * 
      * @param userName  (optional)

@@ -59,6 +59,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/external-projects/{externalProjectId}/defects/external-forms
      * 
      * 
      * @param externalProjectId 
@@ -91,6 +92,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/external-projects/{externalProjectId}/defects/external-forms
      * 
      * 
      * @param externalProjectId 
@@ -134,6 +136,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/external-projects/{externalProjectId}/defects
      * 
      * 
      * @param externalProjectId 
@@ -166,6 +169,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/external-projects/{externalProjectId}/defects
      * 
      * 
      * @param externalProjectId 
@@ -209,6 +213,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/aggregated
      * Get test result by ID aggregated with previous results
      * 
      * @param id Test result unique ID
@@ -221,7 +226,9 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsIdAggregatedGet(id: java.util.UUID) : TestResultResponse {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2TestResultsIdAggregatedGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
@@ -240,6 +247,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/aggregated
      * Get test result by ID aggregated with previous results
      * 
      * @param id Test result unique ID
@@ -249,7 +257,9 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsIdAggregatedGetWithHttpInfo(id: java.util.UUID) : ApiResponse<TestResultResponse?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2TestResultsIdAggregatedGetRequestConfig(id = id)
 
         return request<Unit, TestResultResponse>(
@@ -263,6 +273,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * @param id Test result unique ID
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsIdAggregatedGetRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -280,6 +291,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * PUT /api/v2/testResults/{id}/attachments/{attachmentId}
      * Attach file to the test result
      * 
      * @param id Test result unique ID
@@ -311,6 +323,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * PUT /api/v2/testResults/{id}/attachments/{attachmentId}
      * Attach file to the test result
      * 
      * @param id Test result unique ID
@@ -352,6 +365,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments/info
      * Get test result attachments meta-information
      * 
      * @param id Test result unique ID
@@ -383,6 +397,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments/info
      * Get test result attachments meta-information
      * 
      * @param id Test result unique ID
@@ -423,6 +438,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}
      * Get test result by ID
      * 
      * @param id Test result unique ID
@@ -454,6 +470,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}
      * Get test result by ID
      * 
      * @param id Test result unique ID
@@ -494,6 +511,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * PUT /api/v2/testResults/{id}
      * Edit test result by ID
      * 
      * @param id Test result unique ID
@@ -525,6 +543,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * PUT /api/v2/testResults/{id}
      * Edit test result by ID
      * 
      * @param id Test result unique ID
@@ -567,6 +586,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/reruns
      * Get reruns
      * 
      * @param id Test result unique ID
@@ -598,6 +618,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/reruns
      * Get reruns
      * 
      * @param id Test result unique ID
@@ -638,6 +659,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/search
      * Search for test results
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -674,6 +696,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/search
      * Search for test results
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -742,6 +765,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/statistics/filter
      * Search for test results and extract statistics
      * 
      * @param testResultsFilterApiModel  (optional)
@@ -773,6 +797,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/statistics/filter
      * Search for test results and extract statistics
      * 
      * @param testResultsFilterApiModel  (optional)
@@ -814,6 +839,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/{id}/attachments
      * Upload and link attachment to TestResult
      *  Use case   User sets testResultId   User attaches a file   System creates attachment and links it to the test result   System returns attachment identifier
      * @param id Test result internal identifier (guid format)
@@ -845,6 +871,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * POST /api/v2/testResults/{id}/attachments
      * Upload and link attachment to TestResult
      *  Use case   User sets testResultId   User attaches a file   System creates attachment and links it to the test result   System returns attachment identifier
      * @param id Test result internal identifier (guid format)
@@ -887,6 +914,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * DELETE /api/v2/testResults/{id}/attachments/{attachmentId}
      * Remove attachment and unlink from TestResult
      *  Use case   User sets testResultId and attachmentId   User attaches a file   User runs method execution   System deletes attachment and unlinks it from the test result   System returns attachment identifier
      * @param id Test result internal identifier (guid format)
@@ -918,6 +946,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * DELETE /api/v2/testResults/{id}/attachments/{attachmentId}
      * Remove attachment and unlink from TestResult
      *  Use case   User sets testResultId and attachmentId   User attaches a file   User runs method execution   System deletes attachment and unlinks it from the test result   System returns attachment identifier
      * @param id Test result internal identifier (guid format)
@@ -959,6 +988,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments/{attachmentId}
      * Get attachment of TestResult
      *  Use case   User sets attachmentId and testResultId   [Optional] User sets resize configuration   User runs method execution   System search attachments by the attachmentId and the testResultId                         [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                     [Optional] Otherwise, System does not resize the attachment   System returns attachment as a file
      * @param attachmentId Attachment internal identifier (guid format)
@@ -995,6 +1025,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments/{attachmentId}
      * Get attachment of TestResult
      *  Use case   User sets attachmentId and testResultId   [Optional] User sets resize configuration   User runs method execution   System search attachments by the attachmentId and the testResultId                         [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration                     [Optional] Otherwise, System does not resize the attachment   System returns attachment as a file
      * @param attachmentId Attachment internal identifier (guid format)
@@ -1063,6 +1094,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments/{attachmentId}/info
      * Get Metadata of TestResult&#39;s attachment
      *  Use case   User sets attachmentId and testResultId   User runs method execution   System search attachment by the attachmentId and the testResultId   System returns attachment data
      * @param id Test result internal identifier (guid format)
@@ -1095,6 +1127,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments/{attachmentId}/info
      * Get Metadata of TestResult&#39;s attachment
      *  Use case   User sets attachmentId and testResultId   User runs method execution   System search attachment by the attachmentId and the testResultId   System returns attachment data
      * @param id Test result internal identifier (guid format)
@@ -1137,6 +1170,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments
      * Get all attachments of TestResult
      *  Use case   User sets testResultId   User runs method execution   System search all attachments of the test result   System returns attachments enumeration
      * @param id Test result internal identifier (guid format)
@@ -1168,6 +1202,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     }
 
     /**
+     * GET /api/v2/testResults/{id}/attachments
      * Get all attachments of TestResult
      *  Use case   User sets testResultId   User runs method execution   System search all attachments of the test result   System returns attachments enumeration
      * @param id Test result internal identifier (guid format)

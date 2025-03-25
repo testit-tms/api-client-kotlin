@@ -14,8 +14,8 @@
 | **durationInMs** | **kotlin.Long** |  |  [optional] |
 | **duration** | **kotlin.Long** |  |  [optional] |
 | **stepComments** | [**kotlin.collections.List&lt;TestResultStepCommentUpdateRequest&gt;**](TestResultStepCommentUpdateRequest.md) |  |  [optional] |
-| **setupResults** | [**kotlin.collections.List&lt;AttachmentPutModelAutoTestStepResultsModel&gt;**](AttachmentPutModelAutoTestStepResultsModel.md) |  |  [optional] |
-| **teardownResults** | [**kotlin.collections.List&lt;AttachmentPutModelAutoTestStepResultsModel&gt;**](AttachmentPutModelAutoTestStepResultsModel.md) |  |  [optional] |
+| **setupResults** | [**kotlin.collections.List&lt;AutoTestStepResultUpdateRequest&gt;**](AutoTestStepResultUpdateRequest.md) |  |  [optional] |
+| **teardownResults** | [**kotlin.collections.List&lt;AutoTestStepResultUpdateRequest&gt;**](AutoTestStepResultUpdateRequest.md) |  |  [optional] |
 | **message** | **kotlin.String** |  |  [optional] |
 | **trace** | **kotlin.String** |  |  [optional] |
 

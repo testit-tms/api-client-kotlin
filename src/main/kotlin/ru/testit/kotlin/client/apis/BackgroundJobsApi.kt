@@ -50,6 +50,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * DELETE /api/v2/backgroundJobs/completed
      * Delete all completed background jobs
      * 
      * @return void
@@ -79,6 +80,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * DELETE /api/v2/backgroundJobs/completed
      * Delete all completed background jobs
      * 
      * @return ApiResponse<Unit?>
@@ -116,6 +118,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/backgroundJobs
      * 
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -153,6 +156,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/backgroundJobs
      * 
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -221,6 +225,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/backgroundJobs/{id}/cancel
      * Cancel current user background job
      * 
      * @param id 
@@ -251,6 +256,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/backgroundJobs/{id}/cancel
      * Cancel current user background job
      * 
      * @param id 
@@ -290,6 +296,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/backgroundJobs/{id}
      * Get background job by ID
      * 
      * @param id Unique ID of the background job
@@ -321,6 +328,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/backgroundJobs/{id}
      * Get background job by ID
      * 
      * @param id Unique ID of the background job
@@ -361,6 +369,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/backgroundJobs/{id}/status
      * Get background job status by job ID
      * 
      * @param id Unique ID of the background job
@@ -392,6 +401,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * GET /api/v2/backgroundJobs/{id}/status
      * Get background job status by job ID
      * 
      * @param id Unique ID of the background job
@@ -432,6 +442,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/backgroundJobs/search
      * Search for user background jobs
      * 
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -468,6 +479,7 @@ class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * POST /api/v2/backgroundJobs/search
      * Search for user background jobs
      * 
      * @param skip Amount of items to be skipped (offset) (optional)

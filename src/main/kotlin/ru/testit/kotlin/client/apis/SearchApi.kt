@@ -49,6 +49,7 @@ class SearchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
     }
 
     /**
+     * POST /api/v2/search/globalSearch
      * 
      * 
      * @param globalSearchRequest  (optional)
@@ -80,6 +81,7 @@ class SearchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
     }
 
     /**
+     * POST /api/v2/search/globalSearch
      * 
      * 
      * @param globalSearchRequest  (optional)

@@ -48,6 +48,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
+     * GET /api/v2/webhooks/logs
      * Get all webhook logs
      * 
      * @param projectId Project unique ID (optional)
@@ -84,6 +85,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
+     * GET /api/v2/webhooks/logs
      * Get all webhook logs
      * 
      * @param projectId Project unique ID (optional)
@@ -154,6 +156,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
+     * DELETE /api/v2/webhooks/logs/{id}
      * Delete webhook log by ID
      * 
      * @param id Webhook log unique ID
@@ -184,6 +187,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
+     * DELETE /api/v2/webhooks/logs/{id}
      * Delete webhook log by ID
      * 
      * @param id Webhook log unique ID
@@ -223,6 +227,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
+     * GET /api/v2/webhooks/logs/{id}
      * Get webhook log by ID
      * 
      * @param id Webhook log unique ID
@@ -254,6 +259,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     }
 
     /**
+     * GET /api/v2/webhooks/logs/{id}
      * Get webhook log by ID
      * 
      * @param id Webhook log unique ID

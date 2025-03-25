@@ -15,7 +15,6 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.TestStatusType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,34 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
  * @param name 
- * @param type 
- * @param isSystem 
- * @param code 
- * @param description 
+ * @param action 
+ * @param expected 
  */
 
 
-data class TestStatusApiResult (
-
-    @Json(name = "id")
-    val id: java.util.UUID,
+data class WorkItemPreviewApiModel (
 
     @Json(name = "name")
     val name: kotlin.String,
 
-    @Json(name = "type")
-    val type: TestStatusType,
+    @Json(name = "action")
+    val action: kotlin.String,
 
-    @Json(name = "isSystem")
-    val isSystem: kotlin.Boolean,
-
-    @Json(name = "code")
-    val code: kotlin.String,
-
-    @Json(name = "description")
-    val description: kotlin.String? = null
+    @Json(name = "expected")
+    val expected: kotlin.String
 
 ) {
 
