@@ -9,8 +9,12 @@
 ```
 2. 
 ```
-openapi-generator-cli generate -i  https://team-okp8.testit.software/swagger/v2/swagger.json -g kotlin --skip-validate-spec -o 
-($PWD).path --additional-properties=groupId=ru.testit,packageName=ru.testit.kotlin.client
+mkdir .idea/new
+cd .idea/new 
+openapi-generator-cli generate -i .\master-swagger.json  -g kotlin --skip-validate-spec -o  ($PWD).path --additional-properties=packageName=ru.testit.kotlin.client 
+rm src/main
+cp .idea/new/src/main src/main
+# Validate changes in ApiClient.kt 
 ```
 
 

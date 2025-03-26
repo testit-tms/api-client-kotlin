@@ -25,10 +25,11 @@ import com.squareup.moshi.JsonClass
  * @param name Name of the project
  * @param description Description of the project
  * @param isFavorite Indicates if the project is marked as favorite
+ * @param workflowId Identifier of the workflow project should use
  */
 
 
-data class ProjectPostModel (
+data class CreateProjectApiModel (
 
     /* Name of the project */
     @Json(name = "name")
@@ -40,7 +41,11 @@ data class ProjectPostModel (
 
     /* Indicates if the project is marked as favorite */
     @Json(name = "isFavorite")
-    val isFavorite: kotlin.Boolean? = null
+    val isFavorite: kotlin.Boolean? = null,
+
+    /* Identifier of the workflow project should use */
+    @Json(name = "workflowId")
+    val workflowId: java.util.UUID? = null
 
 ) {
 

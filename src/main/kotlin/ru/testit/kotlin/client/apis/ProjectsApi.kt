@@ -20,14 +20,14 @@ import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.AutoTestNamespaceModel
+import ru.testit.kotlin.client.models.CreateProjectApiModel
 import ru.testit.kotlin.client.models.CustomAttributeTestPlanProjectRelationPutModel
+import ru.testit.kotlin.client.models.DemoProjectApiResult
 import ru.testit.kotlin.client.models.FailureClassModel
 import ru.testit.kotlin.client.models.FilterModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.ProjectModel
-import ru.testit.kotlin.client.models.ProjectPostModel
-import ru.testit.kotlin.client.models.ProjectPutModel
 import ru.testit.kotlin.client.models.ProjectSelectModel
 import ru.testit.kotlin.client.models.ProjectShortModel
 import ru.testit.kotlin.client.models.ProjectsFilterModel
@@ -35,6 +35,7 @@ import ru.testit.kotlin.client.models.PublicTestRunModel
 import ru.testit.kotlin.client.models.TestPlanModel
 import ru.testit.kotlin.client.models.TestRunApiResult
 import ru.testit.kotlin.client.models.TestRunV2ApiResult
+import ru.testit.kotlin.client.models.UpdateProjectApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -140,8 +141,8 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * POST /api/v2/projects/demo
      * 
      * 
-     * @param projectPostModel  (optional)
-     * @return ProjectModel
+     * @param createProjectApiModel  (optional)
+     * @return DemoProjectApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -150,11 +151,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ProjectsDemoPost(projectPostModel: ProjectPostModel? = null) : ProjectModel {
-        val localVarResponse = apiV2ProjectsDemoPostWithHttpInfo(projectPostModel = projectPostModel)
+    fun apiV2ProjectsDemoPost(createProjectApiModel: CreateProjectApiModel? = null) : DemoProjectApiResult {
+        val localVarResponse = apiV2ProjectsDemoPostWithHttpInfo(createProjectApiModel = createProjectApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ProjectModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as DemoProjectApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -172,17 +173,17 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * POST /api/v2/projects/demo
      * 
      * 
-     * @param projectPostModel  (optional)
-     * @return ApiResponse<ProjectModel?>
+     * @param createProjectApiModel  (optional)
+     * @return ApiResponse<DemoProjectApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ProjectsDemoPostWithHttpInfo(projectPostModel: ProjectPostModel?) : ApiResponse<ProjectModel?> {
-        val localVariableConfig = apiV2ProjectsDemoPostRequestConfig(projectPostModel = projectPostModel)
+    fun apiV2ProjectsDemoPostWithHttpInfo(createProjectApiModel: CreateProjectApiModel?) : ApiResponse<DemoProjectApiResult?> {
+        val localVariableConfig = apiV2ProjectsDemoPostRequestConfig(createProjectApiModel = createProjectApiModel)
 
-        return request<ProjectPostModel, ProjectModel>(
+        return request<CreateProjectApiModel, DemoProjectApiResult>(
             localVariableConfig
         )
     }
@@ -190,11 +191,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation apiV2ProjectsDemoPost
      *
-     * @param projectPostModel  (optional)
+     * @param createProjectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ProjectsDemoPostRequestConfig(projectPostModel: ProjectPostModel?) : RequestConfig<ProjectPostModel> {
-        val localVariableBody = projectPostModel
+    fun apiV2ProjectsDemoPostRequestConfig(createProjectApiModel: CreateProjectApiModel?) : RequestConfig<CreateProjectApiModel> {
+        val localVariableBody = createProjectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1445,7 +1446,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * POST /api/v2/projects
      * Create project
      *  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
-     * @param projectPostModel  (optional)
+     * @param createProjectApiModel  (optional)
      * @return ProjectModel
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1455,8 +1456,8 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createProject(projectPostModel: ProjectPostModel? = null) : ProjectModel {
-        val localVarResponse = createProjectWithHttpInfo(projectPostModel = projectPostModel)
+    fun createProject(createProjectApiModel: CreateProjectApiModel? = null) : ProjectModel {
+        val localVarResponse = createProjectWithHttpInfo(createProjectApiModel = createProjectApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProjectModel
@@ -1477,17 +1478,17 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * POST /api/v2/projects
      * Create project
      *  Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
-     * @param projectPostModel  (optional)
+     * @param createProjectApiModel  (optional)
      * @return ApiResponse<ProjectModel?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createProjectWithHttpInfo(projectPostModel: ProjectPostModel?) : ApiResponse<ProjectModel?> {
-        val localVariableConfig = createProjectRequestConfig(projectPostModel = projectPostModel)
+    fun createProjectWithHttpInfo(createProjectApiModel: CreateProjectApiModel?) : ApiResponse<ProjectModel?> {
+        val localVariableConfig = createProjectRequestConfig(createProjectApiModel = createProjectApiModel)
 
-        return request<ProjectPostModel, ProjectModel>(
+        return request<CreateProjectApiModel, ProjectModel>(
             localVariableConfig
         )
     }
@@ -1495,11 +1496,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation createProject
      *
-     * @param projectPostModel  (optional)
+     * @param createProjectApiModel  (optional)
      * @return RequestConfig
      */
-    fun createProjectRequestConfig(projectPostModel: ProjectPostModel?) : RequestConfig<ProjectPostModel> {
-        val localVariableBody = projectPostModel
+    fun createProjectRequestConfig(createProjectApiModel: CreateProjectApiModel?) : RequestConfig<CreateProjectApiModel> {
+        val localVariableBody = createProjectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -2075,7 +2076,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * PUT /api/v2/projects
      * Update project
      *  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
-     * @param projectPutModel  (optional)
+     * @param updateProjectApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2084,8 +2085,8 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateProject(projectPutModel: ProjectPutModel? = null) : Unit {
-        val localVarResponse = updateProjectWithHttpInfo(projectPutModel = projectPutModel)
+    fun updateProject(updateProjectApiModel: UpdateProjectApiModel? = null) : Unit {
+        val localVarResponse = updateProjectWithHttpInfo(updateProjectApiModel = updateProjectApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -2106,16 +2107,16 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * PUT /api/v2/projects
      * Update project
      *  Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
-     * @param projectPutModel  (optional)
+     * @param updateProjectApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun updateProjectWithHttpInfo(projectPutModel: ProjectPutModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateProjectRequestConfig(projectPutModel = projectPutModel)
+    fun updateProjectWithHttpInfo(updateProjectApiModel: UpdateProjectApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = updateProjectRequestConfig(updateProjectApiModel = updateProjectApiModel)
 
-        return request<ProjectPutModel, Unit>(
+        return request<UpdateProjectApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -2123,11 +2124,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation updateProject
      *
-     * @param projectPutModel  (optional)
+     * @param updateProjectApiModel  (optional)
      * @return RequestConfig
      */
-    fun updateProjectRequestConfig(projectPutModel: ProjectPutModel?) : RequestConfig<ProjectPutModel> {
-        val localVariableBody = projectPutModel
+    fun updateProjectRequestConfig(updateProjectApiModel: UpdateProjectApiModel?) : RequestConfig<UpdateProjectApiModel> {
+        val localVariableBody = updateProjectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
