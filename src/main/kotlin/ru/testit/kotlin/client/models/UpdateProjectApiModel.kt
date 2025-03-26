@@ -15,7 +15,6 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.ProjectTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -25,13 +24,13 @@ import com.squareup.moshi.JsonClass
  *
  * @param id Unique ID of the project
  * @param name Name of the project
- * @param type Type of the project
  * @param description Description of the project
  * @param isFavorite Indicates if the project is marked as favorite
+ * @param workflowId Identifier of the workflow project should use
  */
 
 
-data class ProjectPutModel (
+data class UpdateProjectApiModel (
 
     /* Unique ID of the project */
     @Json(name = "id")
@@ -41,17 +40,17 @@ data class ProjectPutModel (
     @Json(name = "name")
     val name: kotlin.String,
 
-    /* Type of the project */
-    @Json(name = "type")
-    val type: ProjectTypeModel,
-
     /* Description of the project */
     @Json(name = "description")
     val description: kotlin.String? = null,
 
     /* Indicates if the project is marked as favorite */
     @Json(name = "isFavorite")
-    val isFavorite: kotlin.Boolean? = null
+    val isFavorite: kotlin.Boolean? = null,
+
+    /* Identifier of the workflow project should use */
+    @Json(name = "workflowId")
+    val workflowId: java.util.UUID? = null
 
 ) {
 
