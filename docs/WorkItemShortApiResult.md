@@ -18,6 +18,7 @@
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique identifier of user who created Work Item |  |
 | **state** | [**WorkItemStates**](WorkItemStates.md) | The current state of Work Item |  |
 | **priority** | [**WorkItemPriorityModel**](WorkItemPriorityModel.md) | Work Item priority level |  |
+| **sourceType** | [**WorkItemSourceTypeModel**](WorkItemSourceTypeModel.md) | Work Item priority level |  |
 | **isDeleted** | **kotlin.Boolean** | Flag determining whether Work Item is deleted |  |
 | **iterations** | [**kotlin.collections.List&lt;IterationApiResult&gt;**](IterationApiResult.md) | Set of iterations related to Work Item |  |
 | **links** | [**kotlin.collections.List&lt;LinkShortApiResult&gt;**](LinkShortApiResult.md) | Set of links related to Work Item |  |

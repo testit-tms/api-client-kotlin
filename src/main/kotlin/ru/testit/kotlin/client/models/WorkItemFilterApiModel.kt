@@ -21,6 +21,7 @@ import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemLinkFilterApiModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
 
 import com.squareup.moshi.Json
@@ -43,6 +44,7 @@ import com.squareup.moshi.JsonClass
  * @param modifiedByIds Collection of identifiers of users who applied last modification to work item
  * @param states Collection of states of work item
  * @param priorities Collection of priorities of work item
+ * @param sourceTypes Source type of work item (manual creation or AI generated)
  * @param types Collection of types of work item
  * @param createdDate Specifies a work item range of creation date to search for
  * @param modifiedDate Specifies a work item range of last modification date to search for
@@ -113,6 +115,10 @@ data class WorkItemFilterApiModel (
     /* Collection of priorities of work item */
     @Json(name = "priorities")
     val priorities: kotlin.collections.Set<WorkItemPriorityModel>? = null,
+
+    /* Source type of work item (manual creation or AI generated) */
+    @Json(name = "sourceTypes")
+    val sourceTypes: kotlin.collections.Set<WorkItemSourceTypeModel>? = null,
 
     /* Collection of types of work item */
     @Json(name = "types")

@@ -20,7 +20,7 @@
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **lockedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **lockedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
-| **tags** | [**kotlin.collections.List&lt;TagPostModel&gt;**](TagPostModel.md) |  |  [optional] |
+| **tags** | [**kotlin.collections.List&lt;TagModel&gt;**](TagModel.md) |  |  [optional] |
 | **startDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Used for analytics |  [optional] |
 | **endDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Used for analytics |  [optional] |
 | **description** | **kotlin.String** |  |  [optional] |

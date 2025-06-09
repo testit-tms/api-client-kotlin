@@ -6,9 +6,10 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **configurationId** | [**java.util.UUID**](java.util.UUID.md) | Specifies the GUID of the autotest configuration, which was specified when the test run was created. |  |
 | **autoTestExternalId** | **kotlin.String** | Specifies the external ID of the autotest, which was specified when the test run was created. |  |
-| **outcome** | [**AvailableTestResultOutcome**](AvailableTestResultOutcome.md) | Specifies the result of the autotest execution. |  |
 | **links** | [**kotlin.collections.List&lt;LinkPostModel&gt;**](LinkPostModel.md) | Specifies the links in the autotest. |  [optional] |
 | **failureReasonNames** | [**kotlin.collections.List&lt;FailureCategoryModel&gt;**](FailureCategoryModel.md) | Specifies the cause of autotest failure. |  [optional] |
+| **outcome** | [**AvailableTestResultOutcome**](AvailableTestResultOutcome.md) | Specifies the result of the autotest execution. |  [optional] |
+| **statusCode** | **kotlin.String** | Specifies the result of the autotest execution. |  [optional] |
 | **message** | **kotlin.String** | A comment for the result. |  [optional] |
 | **traces** | **kotlin.String** | An extended comment or a stack trace. |  [optional] |
 | **startedOn** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Test run start date. |  [optional] |

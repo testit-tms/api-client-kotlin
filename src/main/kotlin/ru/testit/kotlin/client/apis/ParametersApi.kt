@@ -19,12 +19,13 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.ParameterFilterModel
-import ru.testit.kotlin.client.models.ParameterGroupModel
-import ru.testit.kotlin.client.models.ParameterModel
-import ru.testit.kotlin.client.models.ParameterPostModel
-import ru.testit.kotlin.client.models.ParameterPutModel
+import ru.testit.kotlin.client.models.CreateParameterApiModel
+import ru.testit.kotlin.client.models.ParameterApiResult
+import ru.testit.kotlin.client.models.ParameterGroupApiResult
+import ru.testit.kotlin.client.models.ParameterGroupsFilterApiModel
+import ru.testit.kotlin.client.models.ParametersFilterApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
+import ru.testit.kotlin.client.models.UpdateParameterApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -54,9 +55,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/parameters/bulk
      * Create multiple parameters
-     *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
-     * @param parameterPostModel  (optional)
-     * @return kotlin.collections.List<ParameterModel>
+     *  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+     * @param createParameterApiModel  (optional)
+     * @return kotlin.collections.List<ParameterApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -65,11 +66,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersBulkPost(parameterPostModel: kotlin.collections.List<ParameterPostModel>? = null) : kotlin.collections.List<ParameterModel> {
-        val localVarResponse = apiV2ParametersBulkPostWithHttpInfo(parameterPostModel = parameterPostModel)
+    fun apiV2ParametersBulkPost(createParameterApiModel: kotlin.collections.List<CreateParameterApiModel>? = null) : kotlin.collections.List<ParameterApiResult> {
+        val localVarResponse = apiV2ParametersBulkPostWithHttpInfo(createParameterApiModel = createParameterApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -86,18 +87,18 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/parameters/bulk
      * Create multiple parameters
-     *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
-     * @param parameterPostModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<ParameterModel>?>
+     *  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+     * @param createParameterApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<ParameterApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersBulkPostWithHttpInfo(parameterPostModel: kotlin.collections.List<ParameterPostModel>?) : ApiResponse<kotlin.collections.List<ParameterModel>?> {
-        val localVariableConfig = apiV2ParametersBulkPostRequestConfig(parameterPostModel = parameterPostModel)
+    fun apiV2ParametersBulkPostWithHttpInfo(createParameterApiModel: kotlin.collections.List<CreateParameterApiModel>?) : ApiResponse<kotlin.collections.List<ParameterApiResult>?> {
+        val localVariableConfig = apiV2ParametersBulkPostRequestConfig(createParameterApiModel = createParameterApiModel)
 
-        return request<kotlin.collections.List<ParameterPostModel>, kotlin.collections.List<ParameterModel>>(
+        return request<kotlin.collections.List<CreateParameterApiModel>, kotlin.collections.List<ParameterApiResult>>(
             localVariableConfig
         )
     }
@@ -105,11 +106,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * To obtain the request config of the operation apiV2ParametersBulkPost
      *
-     * @param parameterPostModel  (optional)
+     * @param createParameterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersBulkPostRequestConfig(parameterPostModel: kotlin.collections.List<ParameterPostModel>?) : RequestConfig<kotlin.collections.List<ParameterPostModel>> {
-        val localVariableBody = parameterPostModel
+    fun apiV2ParametersBulkPostRequestConfig(createParameterApiModel: kotlin.collections.List<CreateParameterApiModel>?) : RequestConfig<kotlin.collections.List<CreateParameterApiModel>> {
+        val localVariableBody = createParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -128,8 +129,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * PUT /api/v2/parameters/bulk
      * Update multiple parameters
-     *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
-     * @param parameterPutModel  (optional)
+     *  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+     * @param updateParameterApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -138,8 +139,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersBulkPut(parameterPutModel: kotlin.collections.List<ParameterPutModel>? = null) : Unit {
-        val localVarResponse = apiV2ParametersBulkPutWithHttpInfo(parameterPutModel = parameterPutModel)
+    fun apiV2ParametersBulkPut(updateParameterApiModel: kotlin.collections.List<UpdateParameterApiModel>? = null) : Unit {
+        val localVarResponse = apiV2ParametersBulkPutWithHttpInfo(updateParameterApiModel = updateParameterApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -159,17 +160,17 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * PUT /api/v2/parameters/bulk
      * Update multiple parameters
-     *  Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
-     * @param parameterPutModel  (optional)
+     *  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+     * @param updateParameterApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersBulkPutWithHttpInfo(parameterPutModel: kotlin.collections.List<ParameterPutModel>?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2ParametersBulkPutRequestConfig(parameterPutModel = parameterPutModel)
+    fun apiV2ParametersBulkPutWithHttpInfo(updateParameterApiModel: kotlin.collections.List<UpdateParameterApiModel>?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2ParametersBulkPutRequestConfig(updateParameterApiModel = updateParameterApiModel)
 
-        return request<kotlin.collections.List<ParameterPutModel>, Unit>(
+        return request<kotlin.collections.List<UpdateParameterApiModel>, Unit>(
             localVariableConfig
         )
     }
@@ -177,11 +178,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * To obtain the request config of the operation apiV2ParametersBulkPut
      *
-     * @param parameterPutModel  (optional)
+     * @param updateParameterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersBulkPutRequestConfig(parameterPutModel: kotlin.collections.List<ParameterPutModel>?) : RequestConfig<kotlin.collections.List<ParameterPutModel>> {
-        val localVariableBody = parameterPutModel
+    fun apiV2ParametersBulkPutRequestConfig(updateParameterApiModel: kotlin.collections.List<UpdateParameterApiModel>?) : RequestConfig<kotlin.collections.List<UpdateParameterApiModel>> {
+        val localVariableBody = updateParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -200,15 +201,16 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/groups
      * Get parameters as group
-     *  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
-     * @param isDeleted  (optional)
+     *  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
      * @param parameterKeyIds  (optional)
+     * @param name  (optional)
+     * @param isDeleted  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<ParameterGroupModel>
+     * @return kotlin.collections.List<ParameterGroupApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -217,11 +219,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersGroupsGet(isDeleted: kotlin.Boolean? = null, parameterKeyIds: kotlin.collections.Set<java.util.UUID>? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterGroupModel> {
-        val localVarResponse = apiV2ParametersGroupsGetWithHttpInfo(isDeleted = isDeleted, parameterKeyIds = parameterKeyIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2ParametersGroupsGet(parameterKeyIds: kotlin.collections.Set<java.util.UUID>? = null, name: kotlin.String? = null, isDeleted: kotlin.Boolean? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterGroupApiResult> {
+        val localVarResponse = apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterGroupModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterGroupApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -238,24 +240,25 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/groups
      * Get parameters as group
-     *  Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
-     * @param isDeleted  (optional)
+     *  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
      * @param parameterKeyIds  (optional)
+     * @param name  (optional)
+     * @param isDeleted  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<ParameterGroupModel>?>
+     * @return ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersGroupsGetWithHttpInfo(isDeleted: kotlin.Boolean?, parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterGroupModel>?> {
-        val localVariableConfig = apiV2ParametersGroupsGetRequestConfig(isDeleted = isDeleted, parameterKeyIds = parameterKeyIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?> {
+        val localVariableConfig = apiV2ParametersGroupsGetRequestConfig(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<ParameterGroupModel>>(
+        return request<Unit, kotlin.collections.List<ParameterGroupApiResult>>(
             localVariableConfig
         )
     }
@@ -263,8 +266,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * To obtain the request config of the operation apiV2ParametersGroupsGet
      *
-     * @param isDeleted  (optional)
      * @param parameterKeyIds  (optional)
+     * @param name  (optional)
+     * @param isDeleted  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -272,15 +276,18 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersGroupsGetRequestConfig(isDeleted: kotlin.Boolean?, parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
+    fun apiV2ParametersGroupsGetRequestConfig(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (isDeleted != null) {
-                    put("isDeleted", listOf(isDeleted.toString()))
-                }
                 if (parameterKeyIds != null) {
                     put("parameterKeyIds", toMultiValue(parameterKeyIds.toList(), "multi"))
+                }
+                if (name != null) {
+                    put("name", listOf(name.toString()))
+                }
+                if (isDeleted != null) {
+                    put("isDeleted", listOf(isDeleted.toString()))
                 }
                 if (skip != null) {
                     put("Skip", listOf(skip.toString()))
@@ -314,7 +321,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/key/name/{name}/exists
      * Check existence parameter key in system
-     *  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
+     *  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
      * @param name 
      * @return kotlin.Boolean
      * @throws IllegalStateException If the request is not correctly configured
@@ -346,7 +353,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/key/name/{name}/exists
      * Check existence parameter key in system
-     *  Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
+     *  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
      * @param name 
      * @return ApiResponse<kotlin.Boolean?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -387,7 +394,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/{key}/values
      * Get all parameter key values
-     *  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
+     *  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
      * @param key Parameter key (string format)
      * @return kotlin.collections.List<kotlin.String>
      * @throws IllegalStateException If the request is not correctly configured
@@ -419,7 +426,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/{key}/values
      * Get all parameter key values
-     *  Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
+     *  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
      * @param key Parameter key (string format)
      * @return ApiResponse<kotlin.collections.List<kotlin.String>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -460,7 +467,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/keys
      * Get all parameter keys
-     *  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
+     *  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
      * @return kotlin.collections.List<kotlin.String>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -491,7 +498,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/keys
      * Get all parameter keys
-     *  Use case   User runs method execution   System search all parameter keys   System returns parameter keys
+     *  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
      * @return ApiResponse<kotlin.collections.List<kotlin.String>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -536,8 +543,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param parameterFilterModel  (optional)
-     * @return kotlin.collections.List<ParameterGroupModel>
+     * @param parameterGroupsFilterApiModel  (optional)
+     * @return kotlin.collections.List<ParameterGroupApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -546,11 +553,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersSearchGroupsPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, parameterFilterModel: ParameterFilterModel? = null) : kotlin.collections.List<ParameterGroupModel> {
-        val localVarResponse = apiV2ParametersSearchGroupsPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterFilterModel = parameterFilterModel)
+    fun apiV2ParametersSearchGroupsPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, parameterGroupsFilterApiModel: ParameterGroupsFilterApiModel? = null) : kotlin.collections.List<ParameterGroupApiResult> {
+        val localVarResponse = apiV2ParametersSearchGroupsPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterGroupsFilterApiModel = parameterGroupsFilterApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterGroupModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterGroupApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -573,17 +580,17 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param parameterFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<ParameterGroupModel>?>
+     * @param parameterGroupsFilterApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersSearchGroupsPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterFilterModel: ParameterFilterModel?) : ApiResponse<kotlin.collections.List<ParameterGroupModel>?> {
-        val localVariableConfig = apiV2ParametersSearchGroupsPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterFilterModel = parameterFilterModel)
+    fun apiV2ParametersSearchGroupsPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterGroupsFilterApiModel: ParameterGroupsFilterApiModel?) : ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?> {
+        val localVariableConfig = apiV2ParametersSearchGroupsPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterGroupsFilterApiModel = parameterGroupsFilterApiModel)
 
-        return request<ParameterFilterModel, kotlin.collections.List<ParameterGroupModel>>(
+        return request<ParameterGroupsFilterApiModel, kotlin.collections.List<ParameterGroupApiResult>>(
             localVariableConfig
         )
     }
@@ -596,11 +603,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param parameterFilterModel  (optional)
+     * @param parameterGroupsFilterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersSearchGroupsPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterFilterModel: ParameterFilterModel?) : RequestConfig<ParameterFilterModel> {
-        val localVariableBody = parameterFilterModel
+    fun apiV2ParametersSearchGroupsPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterGroupsFilterApiModel: ParameterGroupsFilterApiModel?) : RequestConfig<ParameterGroupsFilterApiModel> {
+        val localVariableBody = parameterGroupsFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -642,8 +649,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param parameterFilterModel  (optional)
-     * @return kotlin.collections.List<ParameterModel>
+     * @param parametersFilterApiModel  (optional)
+     * @return kotlin.collections.List<ParameterApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -652,11 +659,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, parameterFilterModel: ParameterFilterModel? = null) : kotlin.collections.List<ParameterModel> {
-        val localVarResponse = apiV2ParametersSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterFilterModel = parameterFilterModel)
+    fun apiV2ParametersSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, parametersFilterApiModel: ParametersFilterApiModel? = null) : kotlin.collections.List<ParameterApiResult> {
+        val localVarResponse = apiV2ParametersSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parametersFilterApiModel = parametersFilterApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -679,17 +686,17 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param parameterFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<ParameterModel>?>
+     * @param parametersFilterApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<ParameterApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterFilterModel: ParameterFilterModel?) : ApiResponse<kotlin.collections.List<ParameterModel>?> {
-        val localVariableConfig = apiV2ParametersSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterFilterModel = parameterFilterModel)
+    fun apiV2ParametersSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parametersFilterApiModel: ParametersFilterApiModel?) : ApiResponse<kotlin.collections.List<ParameterApiResult>?> {
+        val localVariableConfig = apiV2ParametersSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parametersFilterApiModel = parametersFilterApiModel)
 
-        return request<ParameterFilterModel, kotlin.collections.List<ParameterModel>>(
+        return request<ParametersFilterApiModel, kotlin.collections.List<ParameterApiResult>>(
             localVariableConfig
         )
     }
@@ -702,11 +709,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @param parameterFilterModel  (optional)
+     * @param parametersFilterApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterFilterModel: ParameterFilterModel?) : RequestConfig<ParameterFilterModel> {
-        val localVariableBody = parameterFilterModel
+    fun apiV2ParametersSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parametersFilterApiModel: ParametersFilterApiModel?) : RequestConfig<ParametersFilterApiModel> {
+        val localVariableBody = parametersFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (skip != null) {
@@ -742,9 +749,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/parameters
      * Create parameter
-     *  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
-     * @param parameterPostModel  (optional)
-     * @return ParameterModel
+     *  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+     * @param createParameterApiModel  (optional)
+     * @return ParameterApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -753,11 +760,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createParameter(parameterPostModel: ParameterPostModel? = null) : ParameterModel {
-        val localVarResponse = createParameterWithHttpInfo(parameterPostModel = parameterPostModel)
+    fun createParameter(createParameterApiModel: CreateParameterApiModel? = null) : ParameterApiResult {
+        val localVarResponse = createParameterWithHttpInfo(createParameterApiModel = createParameterApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ParameterModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ParameterApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -774,18 +781,18 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/parameters
      * Create parameter
-     *  Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
-     * @param parameterPostModel  (optional)
-     * @return ApiResponse<ParameterModel?>
+     *  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+     * @param createParameterApiModel  (optional)
+     * @return ApiResponse<ParameterApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createParameterWithHttpInfo(parameterPostModel: ParameterPostModel?) : ApiResponse<ParameterModel?> {
-        val localVariableConfig = createParameterRequestConfig(parameterPostModel = parameterPostModel)
+    fun createParameterWithHttpInfo(createParameterApiModel: CreateParameterApiModel?) : ApiResponse<ParameterApiResult?> {
+        val localVariableConfig = createParameterRequestConfig(createParameterApiModel = createParameterApiModel)
 
-        return request<ParameterPostModel, ParameterModel>(
+        return request<CreateParameterApiModel, ParameterApiResult>(
             localVariableConfig
         )
     }
@@ -793,11 +800,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * To obtain the request config of the operation createParameter
      *
-     * @param parameterPostModel  (optional)
+     * @param createParameterApiModel  (optional)
      * @return RequestConfig
      */
-    fun createParameterRequestConfig(parameterPostModel: ParameterPostModel?) : RequestConfig<ParameterPostModel> {
-        val localVariableBody = parameterPostModel
+    fun createParameterRequestConfig(createParameterApiModel: CreateParameterApiModel?) : RequestConfig<CreateParameterApiModel> {
+        val localVariableBody = createParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -958,7 +965,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * DELETE /api/v2/parameters/{id}
      * Delete parameter
-     *  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
+     *  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
      * @param id Parameter internal (UUID) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -989,7 +996,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * DELETE /api/v2/parameters/{id}
      * Delete parameter
-     *  Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
+     *  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
      * @param id Parameter internal (UUID) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1029,14 +1036,14 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters
      * Get all parameters
-     *  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
+     *  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
      * @param isDeleted If result must consist of only actual/deleted parameters (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<ParameterModel>
+     * @return kotlin.collections.List<ParameterApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1045,11 +1052,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getAllParameters(isDeleted: kotlin.Boolean? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterModel> {
+    fun getAllParameters(isDeleted: kotlin.Boolean? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterApiResult> {
         val localVarResponse = getAllParametersWithHttpInfo(isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1066,23 +1073,23 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters
      * Get all parameters
-     *  Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
+     *  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
      * @param isDeleted If result must consist of only actual/deleted parameters (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<ParameterModel>?>
+     * @return ApiResponse<kotlin.collections.List<ParameterApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getAllParametersWithHttpInfo(isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterModel>?> {
+    fun getAllParametersWithHttpInfo(isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterApiResult>?> {
         val localVariableConfig = getAllParametersRequestConfig(isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<ParameterModel>>(
+        return request<Unit, kotlin.collections.List<ParameterApiResult>>(
             localVariableConfig
         )
     }
@@ -1137,9 +1144,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/{id}
      * Get parameter by ID
-     *  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
+     *  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
      * @param id Parameter internal (UUID) identifier
-     * @return ParameterModel
+     * @return ParameterApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1148,11 +1155,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getParameterById(id: java.util.UUID) : ParameterModel {
+    fun getParameterById(id: java.util.UUID) : ParameterApiResult {
         val localVarResponse = getParameterByIdWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ParameterModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ParameterApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1169,18 +1176,18 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/parameters/{id}
      * Get parameter by ID
-     *  Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
+     *  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
      * @param id Parameter internal (UUID) identifier
-     * @return ApiResponse<ParameterModel?>
+     * @return ApiResponse<ParameterApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getParameterByIdWithHttpInfo(id: java.util.UUID) : ApiResponse<ParameterModel?> {
+    fun getParameterByIdWithHttpInfo(id: java.util.UUID) : ApiResponse<ParameterApiResult?> {
         val localVariableConfig = getParameterByIdRequestConfig(id = id)
 
-        return request<Unit, ParameterModel>(
+        return request<Unit, ParameterApiResult>(
             localVariableConfig
         )
     }
@@ -1210,8 +1217,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * PUT /api/v2/parameters
      * Update parameter
-     *  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
-     * @param parameterPutModel  (optional)
+     *  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+     * @param updateParameterApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1220,8 +1227,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateParameter(parameterPutModel: ParameterPutModel? = null) : Unit {
-        val localVarResponse = updateParameterWithHttpInfo(parameterPutModel = parameterPutModel)
+    fun updateParameter(updateParameterApiModel: UpdateParameterApiModel? = null) : Unit {
+        val localVarResponse = updateParameterWithHttpInfo(updateParameterApiModel = updateParameterApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -1241,17 +1248,17 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * PUT /api/v2/parameters
      * Update parameter
-     *  Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
-     * @param parameterPutModel  (optional)
+     *  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+     * @param updateParameterApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun updateParameterWithHttpInfo(parameterPutModel: ParameterPutModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateParameterRequestConfig(parameterPutModel = parameterPutModel)
+    fun updateParameterWithHttpInfo(updateParameterApiModel: UpdateParameterApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = updateParameterRequestConfig(updateParameterApiModel = updateParameterApiModel)
 
-        return request<ParameterPutModel, Unit>(
+        return request<UpdateParameterApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -1259,11 +1266,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * To obtain the request config of the operation updateParameter
      *
-     * @param parameterPutModel  (optional)
+     * @param updateParameterApiModel  (optional)
      * @return RequestConfig
      */
-    fun updateParameterRequestConfig(parameterPutModel: ParameterPutModel?) : RequestConfig<ParameterPutModel> {
-        val localVariableBody = parameterPutModel
+    fun updateParameterRequestConfig(updateParameterApiModel: UpdateParameterApiModel?) : RequestConfig<UpdateParameterApiModel> {
+        val localVariableBody = updateParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

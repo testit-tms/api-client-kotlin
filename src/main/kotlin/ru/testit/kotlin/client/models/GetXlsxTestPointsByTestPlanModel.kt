@@ -25,6 +25,7 @@ import com.squareup.moshi.JsonClass
  * @param includeName 
  * @param includeSection 
  * @param includePriority 
+ * @param includeSourceType 
  * @param includeAutomated 
  * @param includeStatus 
  * @param includeDuration 
@@ -49,6 +50,9 @@ data class GetXlsxTestPointsByTestPlanModel (
 
     @Json(name = "includePriority")
     val includePriority: kotlin.Boolean,
+
+    @Json(name = "includeSourceType")
+    val includeSourceType: kotlin.Boolean,
 
     @Json(name = "includeAutomated")
     val includeAutomated: kotlin.Boolean,

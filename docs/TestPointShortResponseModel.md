@@ -19,6 +19,7 @@
 | **status** | [**TestPointStatus**](TestPointStatus.md) | Status of the test point |  |
 | **statusModel** | [**TestStatusApiResult**](TestStatusApiResult.md) | Status of the test point |  |
 | **priority** | [**WorkItemPriorityModel**](WorkItemPriorityModel.md) | Priority of the test point |  |
+| **sourceType** | [**WorkItemSourceTypeModel**](WorkItemSourceTypeModel.md) | Source type of the test point |  |
 | **isAutomated** | **kotlin.Boolean** | Indicates if the test point represents an autotest |  |
 | **name** | **kotlin.String** | Name of the test point |  |
 | **configurationId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the test point configuration |  |

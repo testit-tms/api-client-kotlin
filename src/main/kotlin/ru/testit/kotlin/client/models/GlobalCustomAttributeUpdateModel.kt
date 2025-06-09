@@ -24,7 +24,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param name Name of attribute
- * @param options Collection of attribute options     Available for attributes of type `options` and `multiple options` only
+ * @param options Collection of attribute options   Available for attributes of type `options` and `multiple options` only
  * @param isEnabled Indicates whether the attribute is available
  * @param isRequired Indicates whether the attribute value is mandatory to specify
  */
@@ -36,7 +36,7 @@ data class GlobalCustomAttributeUpdateModel (
     @Json(name = "name")
     val name: kotlin.String,
 
-    /* Collection of attribute options     Available for attributes of type `options` and `multiple options` only */
+    /* Collection of attribute options   Available for attributes of type `options` and `multiple options` only */
     @Json(name = "options")
     val options: kotlin.collections.List<CustomAttributeOptionModel>? = null,
 

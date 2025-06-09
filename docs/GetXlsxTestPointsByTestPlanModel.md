@@ -7,6 +7,7 @@
 | **includeName** | **kotlin.Boolean** |  |  |
 | **includeSection** | **kotlin.Boolean** |  |  |
 | **includePriority** | **kotlin.Boolean** |  |  |
+| **includeSourceType** | **kotlin.Boolean** |  |  |
 | **includeAutomated** | **kotlin.Boolean** |  |  |
 | **includeStatus** | **kotlin.Boolean** |  |  |
 | **includeDuration** | **kotlin.Boolean** |  |  |

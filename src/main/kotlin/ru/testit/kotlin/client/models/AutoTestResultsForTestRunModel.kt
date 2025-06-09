@@ -29,9 +29,10 @@ import com.squareup.moshi.JsonClass
  *
  * @param configurationId Specifies the GUID of the autotest configuration, which was specified when the test run was created.
  * @param autoTestExternalId Specifies the external ID of the autotest, which was specified when the test run was created.
- * @param outcome Specifies the result of the autotest execution.
  * @param links Specifies the links in the autotest.
  * @param failureReasonNames Specifies the cause of autotest failure.
+ * @param outcome Specifies the result of the autotest execution.
+ * @param statusCode Specifies the result of the autotest execution.
  * @param message A comment for the result.
  * @param traces An extended comment or a stack trace.
  * @param startedOn Test run start date.
@@ -56,10 +57,6 @@ data class AutoTestResultsForTestRunModel (
     @Json(name = "autoTestExternalId")
     val autoTestExternalId: kotlin.String,
 
-    /* Specifies the result of the autotest execution. */
-    @Json(name = "outcome")
-    val outcome: AvailableTestResultOutcome,
-
     /* Specifies the links in the autotest. */
     @Json(name = "links")
     val links: kotlin.collections.List<LinkPostModel>? = null,
@@ -67,6 +64,15 @@ data class AutoTestResultsForTestRunModel (
     /* Specifies the cause of autotest failure. */
     @Json(name = "failureReasonNames")
     val failureReasonNames: kotlin.collections.List<FailureCategoryModel>? = null,
+
+    /* Specifies the result of the autotest execution. */
+    @Json(name = "outcome")
+    @Deprecated(message = "This property is deprecated.")
+    val outcome: AvailableTestResultOutcome? = null,
+
+    /* Specifies the result of the autotest execution. */
+    @Json(name = "statusCode")
+    val statusCode: kotlin.String? = null,
 
     /* A comment for the result. */
     @Json(name = "message")

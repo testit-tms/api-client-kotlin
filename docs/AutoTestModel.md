@@ -10,6 +10,7 @@
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Creation date of the autotest |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project creator |  |
+| **lastTestResultStatus** | [**TestStatusModel**](TestStatusModel.md) | Status of the autotest last test result |  |
 | **externalId** | **kotlin.String** | External ID of the autotest |  |
 | **projectId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest project |  |
 | **name** | **kotlin.String** | Name of the autotest |  |

@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.ConfigurationModel
 import ru.testit.kotlin.client.models.PublicTestPointModel
+import ru.testit.kotlin.client.models.TestStatusModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -32,6 +33,7 @@ import com.squareup.moshi.JsonClass
  * @param autoTests 
  * @param testPoints 
  * @param status 
+ * @param statusModel 
  * @param testPlanId 
  * @param productName 
  * @param build 
@@ -61,7 +63,11 @@ data class PublicTestRunModel (
     val testPoints: kotlin.collections.List<PublicTestPointModel>,
 
     @Json(name = "status")
+    @Deprecated(message = "This property is deprecated.")
     val status: kotlin.String,
+
+    @Json(name = "statusModel")
+    val statusModel: TestStatusModel,
 
     @Json(name = "testPlanId")
     val testPlanId: java.util.UUID? = null,

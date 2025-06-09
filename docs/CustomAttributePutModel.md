@@ -11,7 +11,7 @@
 | **isEnabled** | **kotlin.Boolean** | Indicates if the attribute is enabled |  |
 | **isRequired** | **kotlin.Boolean** | Indicates if the attribute value is mandatory to specify |  |
 | **isGlobal** | **kotlin.Boolean** | Indicates if the attribute is available across all projects |  |
-| **options** | [**kotlin.collections.List&lt;CustomAttributeOptionModel&gt;**](CustomAttributeOptionModel.md) | Collection of the attribute options     Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only |  [optional] |
+| **options** | [**kotlin.collections.List&lt;CustomAttributeOptionModel&gt;**](CustomAttributeOptionModel.md) | Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only |  [optional] |
 
 
 

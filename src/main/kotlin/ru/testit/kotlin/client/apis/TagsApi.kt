@@ -19,11 +19,11 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
+import ru.testit.kotlin.client.models.CreateTagApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.TagModel
-import ru.testit.kotlin.client.models.TagPostModel
-import ru.testit.kotlin.client.models.TagPutModel
-import ru.testit.kotlin.client.models.TagSelectModel
+import ru.testit.kotlin.client.models.SelectTagsApiModel
+import ru.testit.kotlin.client.models.TagApiResult
+import ru.testit.kotlin.client.models.UpdateTagApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -53,8 +53,8 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * DELETE /api/v2/tags
      * Delete tags
-     *  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
-     * @param tagSelectModel  (optional)
+     *  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+     * @param selectTagsApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -63,8 +63,8 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TagsDelete(tagSelectModel: TagSelectModel? = null) : Unit {
-        val localVarResponse = apiV2TagsDeleteWithHttpInfo(tagSelectModel = tagSelectModel)
+    fun apiV2TagsDelete(selectTagsApiModel: SelectTagsApiModel? = null) : Unit {
+        val localVarResponse = apiV2TagsDeleteWithHttpInfo(selectTagsApiModel = selectTagsApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -84,17 +84,17 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * DELETE /api/v2/tags
      * Delete tags
-     *  Use case   User sets collection of tags internal (guid format) identifiers   System searches and deletes a collection of tags
-     * @param tagSelectModel  (optional)
+     *  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+     * @param selectTagsApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TagsDeleteWithHttpInfo(tagSelectModel: TagSelectModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2TagsDeleteRequestConfig(tagSelectModel = tagSelectModel)
+    fun apiV2TagsDeleteWithHttpInfo(selectTagsApiModel: SelectTagsApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TagsDeleteRequestConfig(selectTagsApiModel = selectTagsApiModel)
 
-        return request<TagSelectModel, Unit>(
+        return request<SelectTagsApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -102,11 +102,11 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation apiV2TagsDelete
      *
-     * @param tagSelectModel  (optional)
+     * @param selectTagsApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TagsDeleteRequestConfig(tagSelectModel: TagSelectModel?) : RequestConfig<TagSelectModel> {
-        val localVariableBody = tagSelectModel
+    fun apiV2TagsDeleteRequestConfig(selectTagsApiModel: SelectTagsApiModel?) : RequestConfig<SelectTagsApiModel> {
+        val localVariableBody = selectTagsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json-patch+json"
@@ -123,84 +123,9 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     }
 
     /**
-     * GET /api/v2/tags
-     * Get all Tags
-     *  Use case   User runs method execution   System returns tags (listed in the response example)
-     * @return kotlin.collections.List<TagModel>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun apiV2TagsGet() : kotlin.collections.List<TagModel> {
-        @Suppress("DEPRECATION")
-        val localVarResponse = apiV2TagsGetWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TagModel>
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /api/v2/tags
-     * Get all Tags
-     *  Use case   User runs method execution   System returns tags (listed in the response example)
-     * @return ApiResponse<kotlin.collections.List<TagModel>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun apiV2TagsGetWithHttpInfo() : ApiResponse<kotlin.collections.List<TagModel>?> {
-        @Suppress("DEPRECATION")
-        val localVariableConfig = apiV2TagsGetRequestConfig()
-
-        return request<Unit, kotlin.collections.List<TagModel>>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation apiV2TagsGet
-     *
-     * @return RequestConfig
-     */
-    @Deprecated(message = "This operation is deprecated.")
-    fun apiV2TagsGetRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/api/v2/tags",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
      * DELETE /api/v2/tags/{id}
      * Delete tag
-     *  Use case   User sets tag internal (guid format) identifier   System search and delete tag
+     *  Use case  User sets tag internal (guid format) identifier  System search and delete tag
      * @param id Tag internal (UUID) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -231,7 +156,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * DELETE /api/v2/tags/{id}
      * Delete tag
-     *  Use case   User sets tag internal (guid format) identifier   System search and delete tag
+     *  Use case  User sets tag internal (guid format) identifier  System search and delete tag
      * @param id Tag internal (UUID) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -271,9 +196,9 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * POST /api/v2/tags
      * Create tag
-     *  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
-     * @param tagPostModel  (optional)
-     * @return TagModel
+     *  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+     * @param createTagApiModel  (optional)
+     * @return TagApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -282,11 +207,11 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TagsPost(tagPostModel: TagPostModel? = null) : TagModel {
-        val localVarResponse = apiV2TagsPostWithHttpInfo(tagPostModel = tagPostModel)
+    fun apiV2TagsPost(createTagApiModel: CreateTagApiModel? = null) : TagApiResult {
+        val localVarResponse = apiV2TagsPostWithHttpInfo(createTagApiModel = createTagApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TagModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TagApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -303,18 +228,18 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * POST /api/v2/tags
      * Create tag
-     *  Use case   User sets tag model (listed in the request example)   User runs method execution   System creates tag   System returns tag model (listed in the response example)
-     * @param tagPostModel  (optional)
-     * @return ApiResponse<TagModel?>
+     *  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+     * @param createTagApiModel  (optional)
+     * @return ApiResponse<TagApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TagsPostWithHttpInfo(tagPostModel: TagPostModel?) : ApiResponse<TagModel?> {
-        val localVariableConfig = apiV2TagsPostRequestConfig(tagPostModel = tagPostModel)
+    fun apiV2TagsPostWithHttpInfo(createTagApiModel: CreateTagApiModel?) : ApiResponse<TagApiResult?> {
+        val localVariableConfig = apiV2TagsPostRequestConfig(createTagApiModel = createTagApiModel)
 
-        return request<TagPostModel, TagModel>(
+        return request<CreateTagApiModel, TagApiResult>(
             localVariableConfig
         )
     }
@@ -322,11 +247,11 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation apiV2TagsPost
      *
-     * @param tagPostModel  (optional)
+     * @param createTagApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TagsPostRequestConfig(tagPostModel: TagPostModel?) : RequestConfig<TagPostModel> {
-        val localVariableBody = tagPostModel
+    fun apiV2TagsPostRequestConfig(createTagApiModel: CreateTagApiModel?) : RequestConfig<CreateTagApiModel> {
+        val localVariableBody = createTagApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json-patch+json"
@@ -345,10 +270,10 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * PUT /api/v2/tags
      * Update tag
-     *  Use case   User sets tag ID and model (listed in the request example)   User runs method execution   System updates tag   System returns tag model (listed in the response example)
+     *  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
      * @param id  (optional)
-     * @param tagPutModel  (optional)
-     * @return TagModel
+     * @param updateTagApiModel  (optional)
+     * @return TagApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -357,11 +282,11 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TagsPut(id: java.util.UUID? = null, tagPutModel: TagPutModel? = null) : TagModel {
-        val localVarResponse = apiV2TagsPutWithHttpInfo(id = id, tagPutModel = tagPutModel)
+    fun apiV2TagsPut(id: java.util.UUID? = null, updateTagApiModel: UpdateTagApiModel? = null) : TagApiResult {
+        val localVarResponse = apiV2TagsPutWithHttpInfo(id = id, updateTagApiModel = updateTagApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TagModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TagApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -378,19 +303,19 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * PUT /api/v2/tags
      * Update tag
-     *  Use case   User sets tag ID and model (listed in the request example)   User runs method execution   System updates tag   System returns tag model (listed in the response example)
+     *  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
      * @param id  (optional)
-     * @param tagPutModel  (optional)
-     * @return ApiResponse<TagModel?>
+     * @param updateTagApiModel  (optional)
+     * @return ApiResponse<TagApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TagsPutWithHttpInfo(id: java.util.UUID?, tagPutModel: TagPutModel?) : ApiResponse<TagModel?> {
-        val localVariableConfig = apiV2TagsPutRequestConfig(id = id, tagPutModel = tagPutModel)
+    fun apiV2TagsPutWithHttpInfo(id: java.util.UUID?, updateTagApiModel: UpdateTagApiModel?) : ApiResponse<TagApiResult?> {
+        val localVariableConfig = apiV2TagsPutRequestConfig(id = id, updateTagApiModel = updateTagApiModel)
 
-        return request<TagPutModel, TagModel>(
+        return request<UpdateTagApiModel, TagApiResult>(
             localVariableConfig
         )
     }
@@ -399,11 +324,11 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * To obtain the request config of the operation apiV2TagsPut
      *
      * @param id  (optional)
-     * @param tagPutModel  (optional)
+     * @param updateTagApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TagsPutRequestConfig(id: java.util.UUID?, tagPutModel: TagPutModel?) : RequestConfig<TagPutModel> {
-        val localVariableBody = tagPutModel
+    fun apiV2TagsPutRequestConfig(id: java.util.UUID?, updateTagApiModel: UpdateTagApiModel?) : RequestConfig<UpdateTagApiModel> {
+        val localVariableBody = updateTagApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (id != null) {
@@ -427,13 +352,13 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/search
      * Search tags
-     *  Use case   User runs method execution   System returns collection of tags (listed in the response example)
+     *  Use case  User runs method execution  System returns collection of tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<TagModel>
+     * @return kotlin.collections.List<TagApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -442,11 +367,11 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TagsSearchGet(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TagModel> {
+    fun apiV2TagsSearchGet(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TagApiResult> {
         val localVarResponse = apiV2TagsSearchGetWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TagModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TagApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -463,22 +388,22 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/search
      * Search tags
-     *  Use case   User runs method execution   System returns collection of tags (listed in the response example)
+     *  Use case  User runs method execution  System returns collection of tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<TagModel>?>
+     * @return ApiResponse<kotlin.collections.List<TagApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TagsSearchGetWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TagModel>?> {
+    fun apiV2TagsSearchGetWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TagApiResult>?> {
         val localVariableConfig = apiV2TagsSearchGetRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<TagModel>>(
+        return request<Unit, kotlin.collections.List<TagApiResult>>(
             localVariableConfig
         )
     }
@@ -529,13 +454,13 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/testPlansTags
      * Get all Tags that are used in TestPlans
-     *  Use case   User runs method execution   System returns tags (listed in the response example)
+     *  Use case  User runs method execution  System returns tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<TagModel>
+     * @return kotlin.collections.List<TagApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -544,11 +469,11 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TagsTestPlansTagsGet(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TagModel> {
+    fun apiV2TagsTestPlansTagsGet(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TagApiResult> {
         val localVarResponse = apiV2TagsTestPlansTagsGetWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TagModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TagApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -565,22 +490,22 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/testPlansTags
      * Get all Tags that are used in TestPlans
-     *  Use case   User runs method execution   System returns tags (listed in the response example)
+     *  Use case  User runs method execution  System returns tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<TagModel>?>
+     * @return ApiResponse<kotlin.collections.List<TagApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TagsTestPlansTagsGetWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TagModel>?> {
+    fun apiV2TagsTestPlansTagsGetWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TagApiResult>?> {
         val localVariableConfig = apiV2TagsTestPlansTagsGetRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<TagModel>>(
+        return request<Unit, kotlin.collections.List<TagApiResult>>(
             localVariableConfig
         )
     }

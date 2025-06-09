@@ -20,6 +20,7 @@ import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.AutoTestModel
+import ru.testit.kotlin.client.models.CreateWorkItemApiModel
 import ru.testit.kotlin.client.models.IterationModel
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.SearchWorkItemLinkUrlsApiResult
@@ -29,14 +30,13 @@ import ru.testit.kotlin.client.models.SharedStepReferenceSectionsQueryFilterMode
 import ru.testit.kotlin.client.models.SharedStepReferencesQueryFilterModel
 import ru.testit.kotlin.client.models.TestResultChronologyModel
 import ru.testit.kotlin.client.models.TestResultHistoryReportApiResult
+import ru.testit.kotlin.client.models.UpdateWorkItemApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemChangeModel
 import ru.testit.kotlin.client.models.WorkItemLikeModel
 import ru.testit.kotlin.client.models.WorkItemLinkUrlApiModel
 import ru.testit.kotlin.client.models.WorkItemModel
 import ru.testit.kotlin.client.models.WorkItemMovePostModel
-import ru.testit.kotlin.client.models.WorkItemPostModel
-import ru.testit.kotlin.client.models.WorkItemPutModel
 import ru.testit.kotlin.client.models.WorkItemSelectApiModel
 import ru.testit.kotlin.client.models.WorkItemShortApiResult
 import ru.testit.kotlin.client.models.WorkItemShortModel
@@ -69,7 +69,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/attachments
      * Upload and link attachment to WorkItem
-     *  Use case   User sets workItemId   User attaches a file   System creates attachment and links it to the work item   System returns attachment identifier
+     *  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
      * @param id Work item internal identifier (guid format)
      * @param file Select file (optional)
      * @return void
@@ -101,7 +101,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/attachments
      * Upload and link attachment to WorkItem
-     *  Use case   User sets workItemId   User attaches a file   System creates attachment and links it to the work item   System returns attachment identifier
+     *  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
      * @param id Work item internal identifier (guid format)
      * @param file Select file (optional)
      * @return ApiResponse<Unit?>
@@ -144,7 +144,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/checkList/transformTo/testCase
      * Transform CheckList to TestCase
-     *  Use case   User sets checklist identifier   User runs method execution   System transform CheckList to TestCase
+     *  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
      * @param id 
      * @return WorkItemModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -176,7 +176,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/checkList/transformTo/testCase
      * Transform CheckList to TestCase
-     *  Use case   User sets checklist identifier   User runs method execution   System transform CheckList to TestCase
+     *  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
      * @param id 
      * @return ApiResponse<WorkItemModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -217,7 +217,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/history
      * Get change history of WorkItem
-     *  Use case   User sets work item identifier   User runs method execution   System return change history of WorkItem
+     *  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
      * @param id 
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -254,7 +254,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/history
      * Get change history of WorkItem
-     *  Use case   User sets work item identifier   User runs method execution   System return change history of WorkItem
+     *  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
      * @param id 
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -322,7 +322,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/workItems/{id}/like
      * Delete like from WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System delete like from WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
      * @param id 
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -353,7 +353,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/workItems/{id}/like
      * Delete like from WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System delete like from WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
      * @param id 
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -393,7 +393,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/like
      * Set like to WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System set like to WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
      * @param id 
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -424,7 +424,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/like
      * Set like to WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System set like to WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
      * @param id 
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -464,7 +464,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/likes/count
      * Get likes count of WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System return likes count of WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
      * @param id 
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
@@ -496,7 +496,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/likes/count
      * Get likes count of WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System return likes count of WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
      * @param id 
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -537,7 +537,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/likes
      * Get likes of WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System return likes of WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
      * @param id 
      * @return kotlin.collections.List<WorkItemLikeModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -569,7 +569,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/likes
      * Get likes of WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System return likes of WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
      * @param id 
      * @return ApiResponse<kotlin.collections.List<WorkItemLikeModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -610,7 +610,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/testResults/history
      * Get test results history of WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System return test results history of WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
      * @param id 
      * @param from Take results from this date (optional)
      * @param to Take results until this date (optional)
@@ -657,7 +657,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/testResults/history
      * Get test results history of WorkItem
-     *  Use case   User sets WorkItem identifier   User runs method execution   System return test results history of WorkItem
+     *  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
      * @param id 
      * @param from Take results from this date (optional)
      * @param to Take results until this date (optional)
@@ -775,7 +775,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/version/{versionId}/actual
      * Set WorkItem as actual
-     *  Use case   User sets work item identifier   User runs method execution   System set WorkItem as actual
+     *  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
      * @param id 
      * @param versionId 
      * @return WorkItemModel
@@ -808,7 +808,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{id}/version/{versionId}/actual
      * Set WorkItem as actual
-     *  Use case   User sets work item identifier   User runs method execution   System set WorkItem as actual
+     *  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
      * @param id 
      * @param versionId 
      * @return ApiResponse<WorkItemModel?>
@@ -957,7 +957,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/move
      * Move WorkItem to another section
-     *  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
+     *  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
      * @param workItemMovePostModel  (optional)
      * @return WorkItemShortModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -989,7 +989,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/move
      * Move WorkItem to another section
-     *  Use case   User sets WorkItem identifier   User runs method execution   System move WorkItem to another section
+     *  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
      * @param workItemMovePostModel  (optional)
      * @return ApiResponse<WorkItemShortModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1137,7 +1137,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{sharedStepId}/references/sections
      * Get SharedStep references in sections
-     *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+     *  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
      * @param sharedStepId 
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -1175,7 +1175,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{sharedStepId}/references/sections
      * Get SharedStep references in sections
-     *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+     *  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
      * @param sharedStepId 
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -1246,7 +1246,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{sharedStepId}/references/workItems
      * Get SharedStep references in work items
-     *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+     *  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
      * @param sharedStepId 
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -1284,7 +1284,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems/{sharedStepId}/references/workItems
      * Get SharedStep references in work items
-     *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+     *  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
      * @param sharedStepId 
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -1355,7 +1355,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/sharedSteps/{sharedStepId}/references
      * Get SharedStep references
-     *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+     *  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
      * @param sharedStepId 
      * @return kotlin.collections.List<SharedStepReferenceModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1389,7 +1389,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/sharedSteps/{sharedStepId}/references
      * Get SharedStep references
-     *  Use case   User sets SharedStep identifier   User runs method execution   System return SharedStep references
+     *  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
      * @param sharedStepId 
      * @return ApiResponse<kotlin.collections.List<SharedStepReferenceModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1433,8 +1433,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems
      * Create Test Case, Checklist or Shared Step
-     *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
-     * @param workItemPostModel  (optional)
+     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
+     * @param createWorkItemApiModel  (optional)
      * @return WorkItemModel
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1444,8 +1444,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createWorkItem(workItemPostModel: WorkItemPostModel? = null) : WorkItemModel {
-        val localVarResponse = createWorkItemWithHttpInfo(workItemPostModel = workItemPostModel)
+    fun createWorkItem(createWorkItemApiModel: CreateWorkItemApiModel? = null) : WorkItemModel {
+        val localVarResponse = createWorkItemWithHttpInfo(createWorkItemApiModel = createWorkItemApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemModel
@@ -1465,18 +1465,18 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/workItems
      * Create Test Case, Checklist or Shared Step
-     *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System creates work item by identifier   System returns work item model (listed in response parameters)
-     * @param workItemPostModel  (optional)
+     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
+     * @param createWorkItemApiModel  (optional)
      * @return ApiResponse<WorkItemModel?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createWorkItemWithHttpInfo(workItemPostModel: WorkItemPostModel?) : ApiResponse<WorkItemModel?> {
-        val localVariableConfig = createWorkItemRequestConfig(workItemPostModel = workItemPostModel)
+    fun createWorkItemWithHttpInfo(createWorkItemApiModel: CreateWorkItemApiModel?) : ApiResponse<WorkItemModel?> {
+        val localVariableConfig = createWorkItemRequestConfig(createWorkItemApiModel = createWorkItemApiModel)
 
-        return request<WorkItemPostModel, WorkItemModel>(
+        return request<CreateWorkItemApiModel, WorkItemModel>(
             localVariableConfig
         )
     }
@@ -1484,11 +1484,11 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation createWorkItem
      *
-     * @param workItemPostModel  (optional)
+     * @param createWorkItemApiModel  (optional)
      * @return RequestConfig
      */
-    fun createWorkItemRequestConfig(workItemPostModel: WorkItemPostModel?) : RequestConfig<WorkItemPostModel> {
-        val localVariableBody = workItemPostModel
+    fun createWorkItemRequestConfig(createWorkItemApiModel: CreateWorkItemApiModel?) : RequestConfig<CreateWorkItemApiModel> {
+        val localVariableBody = createWorkItemApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1507,8 +1507,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/workItems/{id}/autoTests
      * Delete all links AutoTests from WorkItem by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search and delete all autotests, related to found work item   System returns no content response
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1538,8 +1538,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/workItems/{id}/autoTests
      * Delete all links AutoTests from WorkItem by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search and delete all autotests, related to found work item   System returns no content response
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1556,7 +1556,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation deleteAllWorkItemsFromAutoTest
      *
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return RequestConfig
      */
     fun deleteAllWorkItemsFromAutoTestRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -1578,8 +1578,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/workItems/{id}
      * Delete Test Case, Checklist or Shared Step by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System deletes work item   System returns no content response
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1609,8 +1609,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/workItems/{id}
      * Delete Test Case, Checklist or Shared Step by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System deletes work item   System returns no content response
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1627,7 +1627,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation deleteWorkItem
      *
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return RequestConfig
      */
     fun deleteWorkItemRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -1649,8 +1649,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/autoTests
      * Get all AutoTests linked to WorkItem by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search all autotests, related to found work item   System returns list of found autotests
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return kotlin.collections.List<AutoTestModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1681,8 +1681,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/autoTests
      * Get all AutoTests linked to WorkItem by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search all autotests, related to found work item   System returns list of found autotests
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return ApiResponse<kotlin.collections.List<AutoTestModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1700,7 +1700,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation getAutoTestsForWorkItem
      *
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @return RequestConfig
      */
     fun getAutoTestsForWorkItemRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -1723,7 +1723,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * GET /api/v2/workItems/{id}/iterations
      * Get iterations by work item Id or GlobalId
      * 
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
      * @return kotlin.collections.List<IterationModel>
@@ -1757,7 +1757,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * GET /api/v2/workItems/{id}/iterations
      * Get iterations by work item Id or GlobalId
      * 
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
      * @return ApiResponse<kotlin.collections.List<IterationModel>?>
@@ -1777,7 +1777,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation getIterations
      *
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
      * @return RequestConfig
@@ -1809,8 +1809,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}
      * Get Test Case, Checklist or Shared Step by Id or GlobalId
-     *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   [Optional] User sets work item version number   User runs method execution   System search work item by identifier   [Optional] if User sets work item version identifier, system search work item version by identifier.   [Optional] if user sets work item version number, system search work item version by number   Otherwise, system search last work item version   System returns work item 
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier\&quot; (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
      * @return WorkItemModel
@@ -1843,8 +1843,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}
      * Get Test Case, Checklist or Shared Step by Id or GlobalId
-     *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   [Optional] User sets work item version number   User runs method execution   System search work item by identifier   [Optional] if User sets work item version identifier, system search work item version by identifier.   [Optional] if user sets work item version number, system search work item version by number   Otherwise, system search last work item version   System returns work item 
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     *  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier\&quot; (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
      * @return ApiResponse<WorkItemModel?>
@@ -1864,7 +1864,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation getWorkItemById
      *
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier\&quot; (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
      * @return RequestConfig
@@ -1896,7 +1896,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/chronology
      * Get WorkItem chronology by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search test results of all autotests, related to found work item   System sort results by CompletedOn ascending, then by CreatedDate ascending   System returns sorted collection of test results
+     *  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
      * @param id 
      * @return kotlin.collections.List<TestResultChronologyModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1907,7 +1907,9 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun getWorkItemChronology(id: kotlin.String) : kotlin.collections.List<TestResultChronologyModel> {
+        @Suppress("DEPRECATION")
         val localVarResponse = getWorkItemChronologyWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
@@ -1928,7 +1930,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/chronology
      * Get WorkItem chronology by Id or GlobalId
-     *  Use case   User sets work item identifier   User runs method execution   System search work item by identifier   System search test results of all autotests, related to found work item   System sort results by CompletedOn ascending, then by CreatedDate ascending   System returns sorted collection of test results
+     *  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
      * @param id 
      * @return ApiResponse<kotlin.collections.List<TestResultChronologyModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1936,7 +1938,9 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun getWorkItemChronologyWithHttpInfo(id: kotlin.String) : ApiResponse<kotlin.collections.List<TestResultChronologyModel>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = getWorkItemChronologyRequestConfig(id = id)
 
         return request<Unit, kotlin.collections.List<TestResultChronologyModel>>(
@@ -1950,6 +1954,7 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param id 
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun getWorkItemChronologyRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -1969,10 +1974,10 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/versions
      * Get WorkItem versions
-     *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   User runs method execution   System search work item by identifier                         [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                     System returns array of work item version models (listed in response example)
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
-     * @param workItemVersionId WorkItem version (guid format)  identifier\&quot; (optional)
-     * @param versionNumber WorkItem version (integer format)  number\&quot; (optional)
+     *  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
+     * @param workItemVersionId WorkItem version (guid format) identifier\&quot; (optional)
+     * @param versionNumber WorkItem version (integer format) number\&quot; (optional)
      * @return kotlin.collections.List<WorkItemVersionModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2003,10 +2008,10 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/workItems/{id}/versions
      * Get WorkItem versions
-     *  Use case   User sets work item identifier   [Optional] User sets work item version identifier   User runs method execution   System search work item by identifier                         [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item                     System returns array of work item version models (listed in response example)
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
-     * @param workItemVersionId WorkItem version (guid format)  identifier\&quot; (optional)
-     * @param versionNumber WorkItem version (integer format)  number\&quot; (optional)
+     *  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
+     * @param workItemVersionId WorkItem version (guid format) identifier\&quot; (optional)
+     * @param versionNumber WorkItem version (integer format) number\&quot; (optional)
      * @return ApiResponse<kotlin.collections.List<WorkItemVersionModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2024,9 +2029,9 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation getWorkItemVersions
      *
-     * @param id WorkItem internal (guid format) or  global(integer format) identifier\&quot;
-     * @param workItemVersionId WorkItem version (guid format)  identifier\&quot; (optional)
-     * @param versionNumber WorkItem version (integer format)  number\&quot; (optional)
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
+     * @param workItemVersionId WorkItem version (guid format) identifier\&quot; (optional)
+     * @param versionNumber WorkItem version (integer format) number\&quot; (optional)
      * @return RequestConfig
      */
     fun getWorkItemVersionsRequestConfig(id: kotlin.String, workItemVersionId: java.util.UUID?, versionNumber: kotlin.Int?) : RequestConfig<Unit> {
@@ -2198,8 +2203,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * PUT /api/v2/workItems
      * Update Test Case, Checklist or Shared Step
-     *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
-     * @param workItemPutModel  (optional)
+     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
+     * @param updateWorkItemApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2208,8 +2213,8 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateWorkItem(workItemPutModel: WorkItemPutModel? = null) : Unit {
-        val localVarResponse = updateWorkItemWithHttpInfo(workItemPutModel = workItemPutModel)
+    fun updateWorkItem(updateWorkItemApiModel: UpdateWorkItemApiModel? = null) : Unit {
+        val localVarResponse = updateWorkItemWithHttpInfo(updateWorkItemApiModel = updateWorkItemApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -2229,17 +2234,17 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * PUT /api/v2/workItems
      * Update Test Case, Checklist or Shared Step
-     *  Use case   User sets work item properties (listed in request parameters)   User runs method execution   System updates work item by identifier   System returns updated work item model (listed in response parameters)
-     * @param workItemPutModel  (optional)
+     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
+     * @param updateWorkItemApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun updateWorkItemWithHttpInfo(workItemPutModel: WorkItemPutModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateWorkItemRequestConfig(workItemPutModel = workItemPutModel)
+    fun updateWorkItemWithHttpInfo(updateWorkItemApiModel: UpdateWorkItemApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = updateWorkItemRequestConfig(updateWorkItemApiModel = updateWorkItemApiModel)
 
-        return request<WorkItemPutModel, Unit>(
+        return request<UpdateWorkItemApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -2247,11 +2252,11 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation updateWorkItem
      *
-     * @param workItemPutModel  (optional)
+     * @param updateWorkItemApiModel  (optional)
      * @return RequestConfig
      */
-    fun updateWorkItemRequestConfig(workItemPutModel: WorkItemPutModel?) : RequestConfig<WorkItemPutModel> {
-        val localVariableBody = workItemPutModel
+    fun updateWorkItemRequestConfig(updateWorkItemApiModel: UpdateWorkItemApiModel?) : RequestConfig<UpdateWorkItemApiModel> {
+        val localVariableBody = updateWorkItemApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

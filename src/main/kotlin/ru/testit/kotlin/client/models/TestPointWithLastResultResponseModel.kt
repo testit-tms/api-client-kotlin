@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.IterationModel
 import ru.testit.kotlin.client.models.LastTestResultModel
 import ru.testit.kotlin.client.models.TestStatusApiResult
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -34,6 +35,7 @@ import com.squareup.moshi.JsonClass
  * @param createdById 
  * @param duration 
  * @param priority 
+ * @param sourceType 
  * @param workItemName 
  * @param testerId 
  * @param configurationId 
@@ -79,6 +81,9 @@ data class TestPointWithLastResultResponseModel (
 
     @Json(name = "priority")
     val priority: WorkItemPriorityModel,
+
+    @Json(name = "sourceType")
+    val sourceType: WorkItemSourceTypeModel,
 
     @Json(name = "workItemName")
     val workItemName: kotlin.String? = null,

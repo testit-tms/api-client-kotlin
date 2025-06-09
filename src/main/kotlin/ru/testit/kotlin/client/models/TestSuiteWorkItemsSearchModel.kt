@@ -21,6 +21,7 @@ import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemLinkFilterModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
 
 import com.squareup.moshi.Json
@@ -30,7 +31,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param tagNames Collection of tags
- * @param entityTypes Collection of types of work item   Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
+ * @param entityTypes Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
  * @param nameOrId Name or identifier (UUID) of work item
  * @param includeIds Collection of identifiers of work items which need to be included in result regardless of filtering
  * @param excludeIds Collection of identifiers of work items which need to be excluded from result regardless of filtering
@@ -46,6 +47,7 @@ import com.squareup.moshi.JsonClass
  * @param modifiedByIds Collection of identifiers of users who applied last modification to work item
  * @param states Collection of states of work item
  * @param priorities Collection of priorities of work item
+ * @param sourceTypes Collection of priorities of work item
  * @param types Collection of types of work item
  * @param createdDate Specifies a work item range of creation date to search for
  * @param modifiedDate Specifies a work item range of last modification date to search for
@@ -65,7 +67,7 @@ data class TestSuiteWorkItemsSearchModel (
     @Deprecated(message = "This property is deprecated.")
     val tagNames: kotlin.collections.Set<kotlin.String>? = null,
 
-    /* Collection of types of work item   Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
+    /* Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
     @Json(name = "entityTypes")
     @Deprecated(message = "This property is deprecated.")
     val entityTypes: kotlin.collections.Set<WorkItemEntityTypes>? = null,
@@ -129,6 +131,10 @@ data class TestSuiteWorkItemsSearchModel (
     /* Collection of priorities of work item */
     @Json(name = "priorities")
     val priorities: kotlin.collections.Set<WorkItemPriorityModel>? = null,
+
+    /* Collection of priorities of work item */
+    @Json(name = "sourceTypes")
+    val sourceTypes: kotlin.collections.Set<WorkItemSourceTypeModel>? = null,
 
     /* Collection of types of work item */
     @Json(name = "types")

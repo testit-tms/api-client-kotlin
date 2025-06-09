@@ -12,6 +12,7 @@
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **duration** | **kotlin.Int** |  |  |
 | **priority** | [**WorkItemPriorityModel**](WorkItemPriorityModel.md) |  |  |
+| **sourceType** | [**WorkItemSourceTypeModel**](WorkItemSourceTypeModel.md) |  |  |
 | **workItemName** | **kotlin.String** |  |  [optional] |
 | **testerId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **configurationId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |

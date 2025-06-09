@@ -18,12 +18,13 @@
 | **sectionId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **state** | [**WorkItemStates**](WorkItemStates.md) |  |  |
 | **priority** | [**WorkItemPriorityModel**](WorkItemPriorityModel.md) |  |  |
+| **sourceType** | [**WorkItemSourceTypeModel**](WorkItemSourceTypeModel.md) |  |  |
 | **steps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  |
 | **preconditionSteps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  |
 | **postconditionSteps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  |
 | **duration** | **kotlin.Int** |  |  |
 | **attributes** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  |
-| **tags** | [**kotlin.collections.List&lt;TagPutModel&gt;**](TagPutModel.md) |  |  |
+| **tags** | [**kotlin.collections.List&lt;TagModel&gt;**](TagModel.md) |  |  |
 | **links** | [**kotlin.collections.List&lt;LinkModel&gt;**](LinkModel.md) |  |  |
 | **name** | **kotlin.String** |  |  |
 | **autoTests** | [**kotlin.collections.List&lt;AutoTestModel&gt;**](AutoTestModel.md) |  |  [optional] |

@@ -17,6 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -34,6 +35,7 @@ import com.squareup.moshi.JsonClass
  * @param createdById 
  * @param state 
  * @param priority 
+ * @param sourceType 
  * @param isDeleted 
  * @param versionId used for versioning changes in workitem
  * @param isAutomated 
@@ -76,6 +78,9 @@ data class SharedStepReferenceModel (
 
     @Json(name = "priority")
     val priority: WorkItemPriorityModel,
+
+    @Json(name = "sourceType")
+    val sourceType: WorkItemSourceTypeModel,
 
     @Json(name = "isDeleted")
     val isDeleted: kotlin.Boolean,

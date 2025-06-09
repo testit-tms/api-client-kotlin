@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.TagPostModel
+import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.TestPlanStatusModel
 import ru.testit.kotlin.client.models.TestPointAnalyticResult
 
@@ -105,7 +105,7 @@ data class TestPlanWithAnalyticModel (
     val lockedById: java.util.UUID? = null,
 
     @Json(name = "tags")
-    val tags: kotlin.collections.List<TagPostModel>? = null,
+    val tags: kotlin.collections.List<TagModel>? = null,
 
     /* Used for analytics */
     @Json(name = "startDate")

@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.TestPointStatus
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -34,6 +35,7 @@ import com.squareup.moshi.JsonClass
  * @param statuses Specifies a test point statuses to search for
  * @param statusCodes Specifies a test point status codes to search for
  * @param priorities Specifies a test point priorities to search for
+ * @param sourceTypes Specifies a test point source types to search for
  * @param isAutomated Specifies a test point automation status to search for
  * @param name Specifies a test point name to search for
  * @param configurationIds Specifies a test point configuration IDs to search for
@@ -87,6 +89,10 @@ data class TestPointFilterRequestModel (
     /* Specifies a test point priorities to search for */
     @Json(name = "priorities")
     val priorities: kotlin.collections.List<WorkItemPriorityModel>? = null,
+
+    /* Specifies a test point source types to search for */
+    @Json(name = "sourceTypes")
+    val sourceTypes: kotlin.collections.List<WorkItemSourceTypeModel>? = null,
 
     /* Specifies a test point automation status to search for */
     @Json(name = "isAutomated")

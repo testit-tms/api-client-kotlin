@@ -20,7 +20,7 @@ import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.TagShortModel
+import ru.testit.kotlin.client.models.TagShortApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemGroupGetModel
 import ru.testit.kotlin.client.models.WorkItemGroupModel
@@ -383,10 +383,10 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/workItems/tags
      * Get WorkItems Tags
-     *  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+     *  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
-     * @return kotlin.collections.List<TagShortModel>
+     * @return kotlin.collections.List<TagShortApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -395,11 +395,11 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ProjectsProjectIdWorkItemsTagsGet(projectId: java.util.UUID, isDeleted: kotlin.Boolean? = null) : kotlin.collections.List<TagShortModel> {
+    fun apiV2ProjectsProjectIdWorkItemsTagsGet(projectId: java.util.UUID, isDeleted: kotlin.Boolean? = null) : kotlin.collections.List<TagShortApiResult> {
         val localVarResponse = apiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId = projectId, isDeleted = isDeleted)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TagShortModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TagShortApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -416,19 +416,19 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/workItems/tags
      * Get WorkItems Tags
-     *  Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+     *  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
-     * @return ApiResponse<kotlin.collections.List<TagShortModel>?>
+     * @return ApiResponse<kotlin.collections.List<TagShortApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId: java.util.UUID, isDeleted: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<TagShortModel>?> {
+    fun apiV2ProjectsProjectIdWorkItemsTagsGetWithHttpInfo(projectId: java.util.UUID, isDeleted: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<TagShortApiResult>?> {
         val localVariableConfig = apiV2ProjectsProjectIdWorkItemsTagsGetRequestConfig(projectId = projectId, isDeleted = isDeleted)
 
-        return request<Unit, kotlin.collections.List<TagShortModel>>(
+        return request<Unit, kotlin.collections.List<TagShortApiResult>>(
             localVariableConfig
         )
     }
@@ -464,7 +464,7 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/workItems
      * Get project work items
-     *  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/deleted work items (optional, default to false)
      * @param tagNames List of tags to filter by (optional)
@@ -506,7 +506,7 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/workItems
      * Get project work items
-     *  Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/deleted work items (optional, default to false)
      * @param tagNames List of tags to filter by (optional)

@@ -190,11 +190,11 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsProjectIdWorkItemsTagsGet"></a>
 # **apiV2ProjectsProjectIdWorkItemsTagsGet**
-> kotlin.collections.List&lt;TagShortModel&gt; apiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted)
+> kotlin.collections.List&lt;TagShortApiResult&gt; apiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted)
 
 Get WorkItems Tags
 
- Use case   User sets project internal identifier    User runs method execution   System returns work items tags
+ Use case  User sets project internal identifier  User runs method execution  System returns work items tags
 
 ### Example
 ```kotlin
@@ -206,7 +206,7 @@ val apiInstance = ProjectWorkItemsApi()
 val projectId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Project internal (UUID) identifier
 val isDeleted : kotlin.Boolean = true // kotlin.Boolean | 
 try {
-    val result : kotlin.collections.List<TagShortModel> = apiInstance.apiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted)
+    val result : kotlin.collections.List<TagShortApiResult> = apiInstance.apiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsTagsGet")
@@ -225,7 +225,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TagShortModel&gt;**](TagShortModel.md)
+[**kotlin.collections.List&lt;TagShortApiResult&gt;**](TagShortApiResult.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ Configure Bearer or PrivateToken:
 
 Get project work items
 
- Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project   [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted   If User did not set isDeleted field value, System search all  workitems related to project   System returns array of found workitems (listed in response model)
+ Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
 
 ### Example
 ```kotlin

@@ -52,7 +52,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     /**
      * DELETE /api/v2/workItems/comments/{commentId}
      * Delete WorkItem comment
-     *  Use case   User sets comment identifier   User runs method execution   System delete comment    System returns success status code
+     *  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
      * @param commentId Comment internal (guid format) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -83,7 +83,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     /**
      * DELETE /api/v2/workItems/comments/{commentId}
      * Delete WorkItem comment
-     *  Use case   User sets comment identifier   User runs method execution   System delete comment    System returns success status code
+     *  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
      * @param commentId Comment internal (guid format) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -123,7 +123,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     /**
      * POST /api/v2/workItems/comments
      * Create WorkItem comment
-     *  Use case   User sets comment properties (listed in request parameters)   User runs method execution   System creates comment    System returns comment model (listed in response parameters)
+     *  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
      * @param workItemCommentPostModel  (optional)
      * @return WorkItemCommentModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -155,7 +155,7 @@ class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, client: Ca
     /**
      * POST /api/v2/workItems/comments
      * Create WorkItem comment
-     *  Use case   User sets comment properties (listed in request parameters)   User runs method execution   System creates comment    System returns comment model (listed in response parameters)
+     *  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
      * @param workItemCommentPostModel  (optional)
      * @return ApiResponse<WorkItemCommentModel?>
      * @throws IllegalStateException If the request is not correctly configured
