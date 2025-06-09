@@ -18,6 +18,7 @@
 | **modifiedByIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of users who applied last modification to work item |  [optional] |
 | **states** | [**kotlin.collections.Set&lt;WorkItemStates&gt;**](WorkItemStates.md) | Collection of states of work item |  [optional] |
 | **priorities** | [**kotlin.collections.Set&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Collection of priorities of work item |  [optional] |
+| **sourceTypes** | [**kotlin.collections.Set&lt;WorkItemSourceTypeModel&gt;**](WorkItemSourceTypeModel.md) | Source type of work item (manual creation or AI generated) |  [optional] |
 | **types** | [**kotlin.collections.Set&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item |  [optional] |
 | **createdDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for |  [optional] |
 | **modifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of last modification date to search for |  [optional] |

@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.IterationApiResult
 import ru.testit.kotlin.client.models.LinkShortApiResult
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
 
 import com.squareup.moshi.Json
@@ -40,6 +41,7 @@ import com.squareup.moshi.JsonClass
  * @param createdById Unique identifier of user who created Work Item
  * @param state The current state of Work Item
  * @param priority Work Item priority level
+ * @param sourceType Work Item priority level
  * @param isDeleted Flag determining whether Work Item is deleted
  * @param iterations Set of iterations related to Work Item
  * @param links Set of links related to Work Item
@@ -109,6 +111,10 @@ data class WorkItemShortApiResult (
     /* Work Item priority level */
     @Json(name = "priority")
     val priority: WorkItemPriorityModel,
+
+    /* Work Item priority level */
+    @Json(name = "sourceType")
+    val sourceType: WorkItemSourceTypeModel,
 
     /* Flag determining whether Work Item is deleted */
     @Json(name = "isDeleted")

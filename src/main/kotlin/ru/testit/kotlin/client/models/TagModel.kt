@@ -22,34 +22,14 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
  * @param name 
- * @param createdDate 
- * @param createdById 
- * @param modifiedDate 
- * @param modifiedById 
  */
 
 
 data class TagModel (
 
-    @Json(name = "id")
-    val id: java.util.UUID,
-
     @Json(name = "name")
-    val name: kotlin.String,
-
-    @Json(name = "createdDate")
-    val createdDate: java.time.OffsetDateTime,
-
-    @Json(name = "createdById")
-    val createdById: java.util.UUID,
-
-    @Json(name = "modifiedDate")
-    val modifiedDate: java.time.OffsetDateTime? = null,
-
-    @Json(name = "modifiedById")
-    val modifiedById: java.util.UUID? = null
+    val name: kotlin.String
 
 ) {
 

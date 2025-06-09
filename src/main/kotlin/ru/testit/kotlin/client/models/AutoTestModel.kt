@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.AutoTestStepModel
 import ru.testit.kotlin.client.models.ConfigurationShortModel
 import ru.testit.kotlin.client.models.LabelShortModel
 import ru.testit.kotlin.client.models.LinkPutModel
+import ru.testit.kotlin.client.models.TestStatusModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -32,6 +33,7 @@ import com.squareup.moshi.JsonClass
  * @param id Unique ID of the autotest
  * @param createdDate Creation date of the autotest
  * @param createdById Unique ID of the project creator
+ * @param lastTestResultStatus Status of the autotest last test result
  * @param externalId External ID of the autotest
  * @param projectId Unique ID of the autotest project
  * @param name Name of the autotest
@@ -83,6 +85,10 @@ data class AutoTestModel (
     @Json(name = "createdById")
     val createdById: java.util.UUID,
 
+    /* Status of the autotest last test result */
+    @Json(name = "lastTestResultStatus")
+    val lastTestResultStatus: TestStatusModel,
+
     /* External ID of the autotest */
     @Json(name = "externalId")
     val externalId: kotlin.String,
@@ -121,6 +127,7 @@ data class AutoTestModel (
 
     /* Outcome of the autotest last test result */
     @Json(name = "lastTestResultOutcome")
+    @Deprecated(message = "This property is deprecated.")
     val lastTestResultOutcome: kotlin.String? = null,
 
     /* Stability percentage of the autotest */

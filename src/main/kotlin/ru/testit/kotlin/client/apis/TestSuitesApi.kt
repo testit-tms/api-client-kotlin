@@ -501,7 +501,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * DELETE /api/v2/testSuites/{id}
      * Delete TestSuite
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System deletes test suite  System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -532,7 +532,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * DELETE /api/v2/testSuites/{id}
      * Delete TestSuite
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System deletes test suite   System returns no content response
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System deletes test suite  System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -572,7 +572,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}/configurations
      * Get Configurations By Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search configurations related to the test points  System returns configurations array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return kotlin.collections.List<ConfigurationModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -604,7 +604,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}/configurations
      * Get Configurations By Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configurations related to the test points   System returns configurations array
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search configurations related to the test points  System returns configurations array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return ApiResponse<kotlin.collections.List<ConfigurationModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -645,7 +645,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}/testPoints
      * Get TestPoints By Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System returns test points array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return kotlin.collections.List<TestPointByTestSuiteModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -677,7 +677,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}/testPoints
      * Get TestPoints By Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System returns test points array
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System returns test points array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return ApiResponse<kotlin.collections.List<TestPointByTestSuiteModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -718,7 +718,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}/testResults
      * Get TestResults By Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search test results related to the test points  System returns test results array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return kotlin.collections.List<TestResultV2ShortModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -750,7 +750,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}/testResults
      * Get TestResults By Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search test results related to the test points   System returns test results array
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search test results related to the test points  System returns test results array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return ApiResponse<kotlin.collections.List<TestResultV2ShortModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -791,7 +791,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}
      * Get TestSuite by Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System returns test suite
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return TestSuiteV2GetModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -823,7 +823,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /api/v2/testSuites/{id}
      * Get TestSuite by Id
-     *  Use case   User sets test suite identifier   User runs method execution   System search test suite by identifier   System returns test suite
+     *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System returns test suite
      * @param id Test suite internal (guid format) identifier\&quot;
      * @return ApiResponse<TestSuiteV2GetModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -864,7 +864,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/testSuites/{id}/workItems/search
      * Search WorkItems
-     *  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
+     *  Use case  User sets test suite identifier  [Optional] User sets filter  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search work items related to the test points  [Optional] User sets filter, system applies filter  System returns work items array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -904,7 +904,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/testSuites/{id}/workItems/search
      * Search WorkItems
-     *  Use case   User sets test suite identifier   [Optional] User sets filter   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search work items related to the test points                         [Optional] User sets filter, system applies filter                     System returns work items array
+     *  Use case  User sets test suite identifier  [Optional] User sets filter  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search work items related to the test points  [Optional] User sets filter, system applies filter  System returns work items array
      * @param id Test suite internal (guid format) identifier\&quot;
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -978,7 +978,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/testSuites/{id}/configurations
      * Set Configurations By TestSuite Id
-     *  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
+     *  Use case  User sets test suite identifier  User sets collection of configuration identifiers  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search configuration  System restores(if exist) or creates test points with listed configuration  System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;
      * @param javaUtilUUID Collection of configuration identifiers\&quot; (optional)
      * @return void
@@ -1010,7 +1010,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * POST /api/v2/testSuites/{id}/configurations
      * Set Configurations By TestSuite Id
-     *  Use case   User sets test suite identifier   User sets collection of configuration identifiers   User runs method execution   System search test suite by identifier   System search test points related to the test suite   System search configuration   System restores(if exist) or creates test points with listed configuration   System returns no content response
+     *  Use case  User sets test suite identifier  User sets collection of configuration identifiers  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search configuration  System restores(if exist) or creates test points with listed configuration  System returns no content response
      * @param id Test suite internal (guid format) identifier\&quot;
      * @param javaUtilUUID Collection of configuration identifiers\&quot; (optional)
      * @return ApiResponse<Unit?>

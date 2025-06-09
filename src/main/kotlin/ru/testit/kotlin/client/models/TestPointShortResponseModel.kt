@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.LastTestResultModel
 import ru.testit.kotlin.client.models.TestPointStatus
 import ru.testit.kotlin.client.models.TestStatusApiResult
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemState
 
 import com.squareup.moshi.Json
@@ -42,6 +43,7 @@ import com.squareup.moshi.JsonClass
  * @param status Status of the test point
  * @param statusModel Status of the test point
  * @param priority Priority of the test point
+ * @param sourceType Source type of the test point
  * @param isAutomated Indicates if the test point represents an autotest
  * @param name Name of the test point
  * @param configurationId Unique ID of the test point configuration
@@ -126,6 +128,10 @@ data class TestPointShortResponseModel (
     /* Priority of the test point */
     @Json(name = "priority")
     val priority: WorkItemPriorityModel,
+
+    /* Source type of the test point */
+    @Json(name = "sourceType")
+    val sourceType: WorkItemSourceTypeModel,
 
     /* Indicates if the test point represents an autotest */
     @Json(name = "isAutomated")

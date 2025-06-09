@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.TagPostModel
+import ru.testit.kotlin.client.models.TagApiModel
 import ru.testit.kotlin.client.models.TestSuiteTestPlanApiModel
 
 import com.squareup.moshi.Json
@@ -54,7 +54,7 @@ data class CreateTestPlanApiModel (
 
     /* Test plan tag names collection */
     @Json(name = "tags")
-    val tags: kotlin.collections.List<TagPostModel>? = null,
+    val tags: kotlin.collections.List<TagApiModel>? = null,
 
     /* Date and time of test plan start */
     @Json(name = "startDate")

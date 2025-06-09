@@ -14,6 +14,7 @@
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **state** | **kotlin.String** |  |  |
 | **priority** | [**WorkItemPriorityModel**](WorkItemPriorityModel.md) |  |  |
+| **sourceType** | [**WorkItemSourceTypeModel**](WorkItemSourceTypeModel.md) |  |  |
 | **isDeleted** | **kotlin.Boolean** |  |  |
 | **versionId** | [**java.util.UUID**](java.util.UUID.md) | used for versioning changes in workitem |  |
 | **isAutomated** | **kotlin.Boolean** |  |  |

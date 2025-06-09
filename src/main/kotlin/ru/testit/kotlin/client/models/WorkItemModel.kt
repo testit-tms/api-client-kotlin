@@ -20,9 +20,10 @@ import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.IterationModel
 import ru.testit.kotlin.client.models.LinkModel
 import ru.testit.kotlin.client.models.StepModel
-import ru.testit.kotlin.client.models.TagPutModel
+import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
+import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
 
 import com.squareup.moshi.Json
@@ -45,6 +46,7 @@ import com.squareup.moshi.JsonClass
  * @param sectionId 
  * @param state 
  * @param priority 
+ * @param sourceType 
  * @param steps 
  * @param preconditionSteps 
  * @param postconditionSteps 
@@ -111,6 +113,9 @@ data class WorkItemModel (
     @Json(name = "priority")
     val priority: WorkItemPriorityModel,
 
+    @Json(name = "sourceType")
+    val sourceType: WorkItemSourceTypeModel,
+
     @Json(name = "steps")
     val steps: kotlin.collections.List<StepModel>,
 
@@ -127,7 +132,7 @@ data class WorkItemModel (
     val attributes: kotlin.collections.Map<kotlin.String, kotlin.Any>,
 
     @Json(name = "tags")
-    val tags: kotlin.collections.List<TagPutModel>,
+    val tags: kotlin.collections.List<TagModel>,
 
     @Json(name = "links")
     val links: kotlin.collections.List<LinkModel>,

@@ -21,6 +21,7 @@ All URIs are relative to *http://localhost*
 | [**apiV2ProjectsPurgeBulkPost**](ProjectsApi.md#apiV2ProjectsPurgeBulkPost) | **POST** /api/v2/projects/purge/bulk | Purge multiple projects |
 | [**apiV2ProjectsRestoreBulkPost**](ProjectsApi.md#apiV2ProjectsRestoreBulkPost) | **POST** /api/v2/projects/restore/bulk | Restore multiple projects |
 | [**apiV2ProjectsSearchPost**](ProjectsApi.md#apiV2ProjectsSearchPost) | **POST** /api/v2/projects/search | Search for projects |
+| [**apiV2ProjectsShortsPost**](ProjectsApi.md#apiV2ProjectsShortsPost) | **POST** /api/v2/projects/shorts | Get projects short models |
 | [**createProject**](ProjectsApi.md#createProject) | **POST** /api/v2/projects | Create project |
 | [**deleteProjectAutoTests**](ProjectsApi.md#deleteProjectAutoTests) | **DELETE** /api/v2/projects/{id}/autoTests | Delete all autotests from project |
 | [**getAllProjects**](ProjectsApi.md#getAllProjects) | **GET** /api/v2/projects | Get all projects |
@@ -37,7 +38,7 @@ All URIs are relative to *http://localhost*
 
 Add global attributes to project
 
- Use case   User sets project internal or global identifier and attributes identifiers   System search project   System relates global attributes with project   System returns no content response
+ Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
 
 ### Example
 ```kotlin
@@ -83,7 +84,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsDemoPost"></a>
 # **apiV2ProjectsDemoPost**
-> ProjectModel apiV2ProjectsDemoPost(projectPostModel)
+> DemoProjectApiResult apiV2ProjectsDemoPost(createProjectApiModel)
 
 
 
@@ -94,9 +95,9 @@ Configure Bearer or PrivateToken:
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
-val projectPostModel : ProjectPostModel =  // ProjectPostModel | 
+val createProjectApiModel : CreateProjectApiModel =  // CreateProjectApiModel | 
 try {
-    val result : ProjectModel = apiInstance.apiV2ProjectsDemoPost(projectPostModel)
+    val result : DemoProjectApiResult = apiInstance.apiV2ProjectsDemoPost(createProjectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#apiV2ProjectsDemoPost")
@@ -110,11 +111,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **projectPostModel** | [**ProjectPostModel**](ProjectPostModel.md)|  | [optional] |
+| **createProjectApiModel** | [**CreateProjectApiModel**](CreateProjectApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**ProjectModel**](ProjectModel.md)
+[**DemoProjectApiResult**](DemoProjectApiResult.md)
 
 ### Authorization
 
@@ -275,7 +276,7 @@ Configure Bearer or PrivateToken:
 
 Get Project filters
 
- Use case   User sets project internal or global identifier    User runs method execution   System returns project filters
+ Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
 
 ### Example
 ```kotlin
@@ -466,7 +467,7 @@ Configure Bearer or PrivateToken:
 
 Delete attribute from project&#39;s test plans
 
- Use case   User sets project internal or global identifier and attribute identifier   User runs method execution   System updates project and delete attribute from project for test plans   System returns no content response
+ Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
 
 ### Example
 ```kotlin
@@ -516,7 +517,7 @@ Configure Bearer or PrivateToken:
 
 Update attribute of project&#39;s test plans
 
- Use case   User sets project internal or global identifier and attribute model   User runs method execution   System updates project and project attribute for test plan   System returns no content response
+ Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
 
 ### Example
 ```kotlin
@@ -566,7 +567,7 @@ Configure Bearer or PrivateToken:
 
 Get active Project TestRuns
 
- Use case   User sets project internal or global identifier    User runs method execution   System returns active testruns
+ Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
 
 ### Example
 ```kotlin
@@ -615,7 +616,7 @@ Configure Bearer or PrivateToken:
 
 Get Project TestRuns full models
 
- Use case   User sets project internal or global identifier    User sets query params    User runs method execution   System returns project test runs full models
+ Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
 
 ### Example
 ```kotlin
@@ -884,13 +885,13 @@ Configure Bearer or PrivateToken:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="createProject"></a>
-# **createProject**
-> ProjectModel createProject(projectPostModel)
+<a id="apiV2ProjectsShortsPost"></a>
+# **apiV2ProjectsShortsPost**
+> ProjectShortApiResultReply apiV2ProjectsShortsPost(getShortProjectsApiModel)
 
-Create project
+Get projects short models
 
- Use case   User sets project parameters (listed in request example) and runs method execution   System creates project   System returns project model (example listed in response parameters)
+ Use case  User sets query params  User runs method execution  System return projects short models
 
 ### Example
 ```kotlin
@@ -899,9 +900,58 @@ Create project
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
-val projectPostModel : ProjectPostModel =  // ProjectPostModel | 
+val getShortProjectsApiModel : GetShortProjectsApiModel =  // GetShortProjectsApiModel | 
 try {
-    val result : ProjectModel = apiInstance.createProject(projectPostModel)
+    val result : ProjectShortApiResultReply = apiInstance.apiV2ProjectsShortsPost(getShortProjectsApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProjectsApi#apiV2ProjectsShortsPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProjectsApi#apiV2ProjectsShortsPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **getShortProjectsApiModel** | [**GetShortProjectsApiModel**](GetShortProjectsApiModel.md)|  | [optional] |
+
+### Return type
+
+[**ProjectShortApiResultReply**](ProjectShortApiResultReply.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="createProject"></a>
+# **createProject**
+> ProjectModel createProject(createProjectApiModel)
+
+Create project
+
+ Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = ProjectsApi()
+val createProjectApiModel : CreateProjectApiModel =  // CreateProjectApiModel | 
+try {
+    val result : ProjectModel = apiInstance.createProject(createProjectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#createProject")
@@ -915,7 +965,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **projectPostModel** | [**ProjectPostModel**](ProjectPostModel.md)|  | [optional] |
+| **createProjectApiModel** | [**CreateProjectApiModel**](CreateProjectApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -985,7 +1035,7 @@ Configure Bearer or PrivateToken:
 
 Get all projects
 
- Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted projects   [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted   If User did not set isDeleted field value, System search all projects   System returns array of all found projects(listed in response model)
+ Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
 
 ### Example
 ```kotlin
@@ -1046,7 +1096,7 @@ Configure Bearer or PrivateToken:
 
 Get namespaces of autotests in project
 
- Use case   User sets project internal or global identifier and runs method execution   System search project   System search all autotest related to the project   System returns array of autotest with namespaces and classnames (listed in response)
+ Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
 
 ### Example
 ```kotlin
@@ -1095,7 +1145,7 @@ Configure Bearer or PrivateToken:
 
 Get project by ID
 
- Use case   User sets project internal or global identifier and runs method execution   System search project   System returns project (example listed in response parameters)
+ Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
 
 ### Example
 ```kotlin
@@ -1144,7 +1194,7 @@ Configure Bearer or PrivateToken:
 
 Get project test plans
 
- Use case   User sets project internal or global identifier   [Optional] User sets isDeleted field value   User runs method execution   System search project   [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project   [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted   [Optional] If User did not set isDeleted field value, System search all v related to project   System returns array of found test plans (listed in response model)
+ Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
 
 ### Example
 ```kotlin
@@ -1195,7 +1245,7 @@ Configure Bearer or PrivateToken:
 
 Get project test runs
 
- Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all test runs related to project   System returns array of found test runs (listed in response model)
+ Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
 
 ### Example
 ```kotlin
@@ -1264,11 +1314,11 @@ Configure Bearer or PrivateToken:
 
 <a id="updateProject"></a>
 # **updateProject**
-> updateProject(projectPutModel)
+> updateProject(updateProjectApiModel)
 
 Update project
 
- Use case   User sets project parameters (listed in request example) and runs method execution   System updates project   System returns updated project model (example listed in response parameters)
+ Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
 
 ### Example
 ```kotlin
@@ -1277,9 +1327,9 @@ Update project
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectsApi()
-val projectPutModel : ProjectPutModel =  // ProjectPutModel | 
+val updateProjectApiModel : UpdateProjectApiModel =  // UpdateProjectApiModel | 
 try {
-    apiInstance.updateProject(projectPutModel)
+    apiInstance.updateProject(updateProjectApiModel)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#updateProject")
     e.printStackTrace()
@@ -1292,7 +1342,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **projectPutModel** | [**ProjectPutModel**](ProjectPutModel.md)|  | [optional] |
+| **updateProjectApiModel** | [**UpdateProjectApiModel**](UpdateProjectApiModel.md)|  | [optional] |
 
 ### Return type
 

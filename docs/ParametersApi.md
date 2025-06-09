@@ -23,11 +23,11 @@ All URIs are relative to *http://localhost*
 
 <a id="apiV2ParametersBulkPost"></a>
 # **apiV2ParametersBulkPost**
-> kotlin.collections.List&lt;ParameterModel&gt; apiV2ParametersBulkPost(parameterPostModel)
+> kotlin.collections.List&lt;ParameterApiResult&gt; apiV2ParametersBulkPost(createParameterApiModel)
 
 Create multiple parameters
 
- Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System creates parameters   System returns list of parameter model (listed in the response example)
+ Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
 
 ### Example
 ```kotlin
@@ -36,9 +36,9 @@ Create multiple parameters
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
-val parameterPostModel : kotlin.collections.List<ParameterPostModel> =  // kotlin.collections.List<ParameterPostModel> | 
+val createParameterApiModel : kotlin.collections.List<CreateParameterApiModel> =  // kotlin.collections.List<CreateParameterApiModel> | 
 try {
-    val result : kotlin.collections.List<ParameterModel> = apiInstance.apiV2ParametersBulkPost(parameterPostModel)
+    val result : kotlin.collections.List<ParameterApiResult> = apiInstance.apiV2ParametersBulkPost(createParameterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#apiV2ParametersBulkPost")
@@ -52,11 +52,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **parameterPostModel** | [**kotlin.collections.List&lt;ParameterPostModel&gt;**](ParameterPostModel.md)|  | [optional] |
+| **createParameterApiModel** | [**kotlin.collections.List&lt;CreateParameterApiModel&gt;**](CreateParameterApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;ParameterModel&gt;**](ParameterModel.md)
+[**kotlin.collections.List&lt;ParameterApiResult&gt;**](ParameterApiResult.md)
 
 ### Authorization
 
@@ -72,11 +72,11 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ParametersBulkPut"></a>
 # **apiV2ParametersBulkPut**
-> apiV2ParametersBulkPut(parameterPutModel)
+> apiV2ParametersBulkPut(updateParameterApiModel)
 
 Update multiple parameters
 
- Use case   User sets list of parameter model (listed in the request example)   User runs method execution   System updates parameters
+ Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
 
 ### Example
 ```kotlin
@@ -85,9 +85,9 @@ Update multiple parameters
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
-val parameterPutModel : kotlin.collections.List<ParameterPutModel> =  // kotlin.collections.List<ParameterPutModel> | 
+val updateParameterApiModel : kotlin.collections.List<UpdateParameterApiModel> =  // kotlin.collections.List<UpdateParameterApiModel> | 
 try {
-    apiInstance.apiV2ParametersBulkPut(parameterPutModel)
+    apiInstance.apiV2ParametersBulkPut(updateParameterApiModel)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#apiV2ParametersBulkPut")
     e.printStackTrace()
@@ -100,7 +100,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **parameterPutModel** | [**kotlin.collections.List&lt;ParameterPutModel&gt;**](ParameterPutModel.md)|  | [optional] |
+| **updateParameterApiModel** | [**kotlin.collections.List&lt;UpdateParameterApiModel&gt;**](UpdateParameterApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -120,11 +120,11 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ParametersGroupsGet"></a>
 # **apiV2ParametersGroupsGet**
-> kotlin.collections.List&lt;ParameterGroupModel&gt; apiV2ParametersGroupsGet(isDeleted, parameterKeyIds, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;ParameterGroupApiResult&gt; apiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue)
 
 Get parameters as group
 
- Use case   User runs method execution   System search parameters   System returns parameters models as groups (listed in the response example)
+ Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
 
 ### Example
 ```kotlin
@@ -133,15 +133,16 @@ Get parameters as group
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
-val isDeleted : kotlin.Boolean = true // kotlin.Boolean | 
 val parameterKeyIds : kotlin.collections.Set<java.util.UUID> =  // kotlin.collections.Set<java.util.UUID> | 
+val name : kotlin.String = name_example // kotlin.String | 
+val isDeleted : kotlin.Boolean = true // kotlin.Boolean | 
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
 val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<ParameterGroupModel> = apiInstance.apiV2ParametersGroupsGet(isDeleted, parameterKeyIds, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<ParameterGroupApiResult> = apiInstance.apiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#apiV2ParametersGroupsGet")
@@ -153,8 +154,9 @@ try {
 ```
 
 ### Parameters
-| **isDeleted** | **kotlin.Boolean**|  | [optional] |
 | **parameterKeyIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md)|  | [optional] |
+| **name** | **kotlin.String**|  | [optional] |
+| **isDeleted** | **kotlin.Boolean**|  | [optional] |
 | **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
 | **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
 | **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
@@ -165,7 +167,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;ParameterGroupModel&gt;**](ParameterGroupModel.md)
+[**kotlin.collections.List&lt;ParameterGroupApiResult&gt;**](ParameterGroupApiResult.md)
 
 ### Authorization
 
@@ -185,7 +187,7 @@ Configure Bearer or PrivateToken:
 
 Check existence parameter key in system
 
- Use case   User sets name of parameter key   User runs method execution   System search parameter key   System returns the flag for the existence of the parameter key in the system
+ Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
 
 ### Example
 ```kotlin
@@ -234,7 +236,7 @@ Configure Bearer or PrivateToken:
 
 Get all parameter key values
 
- Use case   User sets parameter key (string format)   User runs method execution   System search parameter values using the key   System returns parameter
+ Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
 
 ### Example
 ```kotlin
@@ -283,7 +285,7 @@ Configure Bearer or PrivateToken:
 
 Get all parameter keys
 
- Use case   User runs method execution   System search all parameter keys   System returns parameter keys
+ Use case  User runs method execution  System search all parameter keys  System returns parameter keys
 
 ### Example
 ```kotlin
@@ -325,7 +327,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ParametersSearchGroupsPost"></a>
 # **apiV2ParametersSearchGroupsPost**
-> kotlin.collections.List&lt;ParameterGroupModel&gt; apiV2ParametersSearchGroupsPost(skip, take, orderBy, searchField, searchValue, parameterFilterModel)
+> kotlin.collections.List&lt;ParameterGroupApiResult&gt; apiV2ParametersSearchGroupsPost(skip, take, orderBy, searchField, searchValue, parameterGroupsFilterApiModel)
 
 Search for parameters as group
 
@@ -341,9 +343,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val parameterFilterModel : ParameterFilterModel =  // ParameterFilterModel | 
+val parameterGroupsFilterApiModel : ParameterGroupsFilterApiModel =  // ParameterGroupsFilterApiModel | 
 try {
-    val result : kotlin.collections.List<ParameterGroupModel> = apiInstance.apiV2ParametersSearchGroupsPost(skip, take, orderBy, searchField, searchValue, parameterFilterModel)
+    val result : kotlin.collections.List<ParameterGroupApiResult> = apiInstance.apiV2ParametersSearchGroupsPost(skip, take, orderBy, searchField, searchValue, parameterGroupsFilterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#apiV2ParametersSearchGroupsPost")
@@ -362,11 +364,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **parameterFilterModel** | [**ParameterFilterModel**](ParameterFilterModel.md)|  | [optional] |
+| **parameterGroupsFilterApiModel** | [**ParameterGroupsFilterApiModel**](ParameterGroupsFilterApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;ParameterGroupModel&gt;**](ParameterGroupModel.md)
+[**kotlin.collections.List&lt;ParameterGroupApiResult&gt;**](ParameterGroupApiResult.md)
 
 ### Authorization
 
@@ -382,7 +384,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ParametersSearchPost"></a>
 # **apiV2ParametersSearchPost**
-> kotlin.collections.List&lt;ParameterModel&gt; apiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, parameterFilterModel)
+> kotlin.collections.List&lt;ParameterApiResult&gt; apiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, parametersFilterApiModel)
 
 Search for parameters
 
@@ -398,9 +400,9 @@ val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
-val parameterFilterModel : ParameterFilterModel =  // ParameterFilterModel | 
+val parametersFilterApiModel : ParametersFilterApiModel =  // ParametersFilterApiModel | 
 try {
-    val result : kotlin.collections.List<ParameterModel> = apiInstance.apiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, parameterFilterModel)
+    val result : kotlin.collections.List<ParameterApiResult> = apiInstance.apiV2ParametersSearchPost(skip, take, orderBy, searchField, searchValue, parametersFilterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#apiV2ParametersSearchPost")
@@ -419,11 +421,11 @@ try {
 | **searchValue** | **kotlin.String**| Value for searching | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **parameterFilterModel** | [**ParameterFilterModel**](ParameterFilterModel.md)|  | [optional] |
+| **parametersFilterApiModel** | [**ParametersFilterApiModel**](ParametersFilterApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**kotlin.collections.List&lt;ParameterModel&gt;**](ParameterModel.md)
+[**kotlin.collections.List&lt;ParameterApiResult&gt;**](ParameterApiResult.md)
 
 ### Authorization
 
@@ -439,11 +441,11 @@ Configure Bearer or PrivateToken:
 
 <a id="createParameter"></a>
 # **createParameter**
-> ParameterModel createParameter(parameterPostModel)
+> ParameterApiResult createParameter(createParameterApiModel)
 
 Create parameter
 
- Use case   User sets parameter model (listed in the request example)   User runs method execution   System creates parameter   System returns parameter model
+ Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
 
 ### Example
 ```kotlin
@@ -452,9 +454,9 @@ Create parameter
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
-val parameterPostModel : ParameterPostModel =  // ParameterPostModel | 
+val createParameterApiModel : CreateParameterApiModel =  // CreateParameterApiModel | 
 try {
-    val result : ParameterModel = apiInstance.createParameter(parameterPostModel)
+    val result : ParameterApiResult = apiInstance.createParameter(createParameterApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#createParameter")
@@ -468,11 +470,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **parameterPostModel** | [**ParameterPostModel**](ParameterPostModel.md)|  | [optional] |
+| **createParameterApiModel** | [**CreateParameterApiModel**](CreateParameterApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**ParameterModel**](ParameterModel.md)
+[**ParameterApiResult**](ParameterApiResult.md)
 
 ### Authorization
 
@@ -588,7 +590,7 @@ Configure Bearer or PrivateToken:
 
 Delete parameter
 
- Use case   User sets parameter internal (guid format) identifier   System search and delete parameter   System returns deleted parameter
+ Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
 
 ### Example
 ```kotlin
@@ -632,11 +634,11 @@ Configure Bearer or PrivateToken:
 
 <a id="getAllParameters"></a>
 # **getAllParameters**
-> kotlin.collections.List&lt;ParameterModel&gt; getAllParameters(isDeleted, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;ParameterApiResult&gt; getAllParameters(isDeleted, skip, take, orderBy, searchField, searchValue)
 
 Get all parameters
 
- Use case   [Optional] User sets isDeleted field value   [Optional] If User sets isDeleted field value as true, System search all deleted parameters   [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted   If User did not set isDeleted field value, System search all parameters   System returns array of all found parameters(listed in response model)
+ Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
 
 ### Example
 ```kotlin
@@ -652,7 +654,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<ParameterModel> = apiInstance.getAllParameters(isDeleted, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<ParameterApiResult> = apiInstance.getAllParameters(isDeleted, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#getAllParameters")
@@ -675,7 +677,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;ParameterModel&gt;**](ParameterModel.md)
+[**kotlin.collections.List&lt;ParameterApiResult&gt;**](ParameterApiResult.md)
 
 ### Authorization
 
@@ -691,11 +693,11 @@ Configure Bearer or PrivateToken:
 
 <a id="getParameterById"></a>
 # **getParameterById**
-> ParameterModel getParameterById(id)
+> ParameterApiResult getParameterById(id)
 
 Get parameter by ID
 
- Use case   User sets parameter internal (guid format) identifier   User runs method execution   System search parameter using the identifier   System returns parameter
+ Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
 
 ### Example
 ```kotlin
@@ -706,7 +708,7 @@ Get parameter by ID
 val apiInstance = ParametersApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Parameter internal (UUID) identifier
 try {
-    val result : ParameterModel = apiInstance.getParameterById(id)
+    val result : ParameterApiResult = apiInstance.getParameterById(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#getParameterById")
@@ -724,7 +726,7 @@ try {
 
 ### Return type
 
-[**ParameterModel**](ParameterModel.md)
+[**ParameterApiResult**](ParameterApiResult.md)
 
 ### Authorization
 
@@ -740,11 +742,11 @@ Configure Bearer or PrivateToken:
 
 <a id="updateParameter"></a>
 # **updateParameter**
-> updateParameter(parameterPutModel)
+> updateParameter(updateParameterApiModel)
 
 Update parameter
 
- Use case   User sets parameter updated properties(listed in the request example)   User runs method execution   System updated parameter using updated properties   System returns no content response
+ Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
 
 ### Example
 ```kotlin
@@ -753,9 +755,9 @@ Update parameter
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
-val parameterPutModel : ParameterPutModel =  // ParameterPutModel | 
+val updateParameterApiModel : UpdateParameterApiModel =  // UpdateParameterApiModel | 
 try {
-    apiInstance.updateParameter(parameterPutModel)
+    apiInstance.updateParameter(updateParameterApiModel)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#updateParameter")
     e.printStackTrace()
@@ -768,7 +770,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **parameterPutModel** | [**ParameterPutModel**](ParameterPutModel.md)|  | [optional] |
+| **updateParameterApiModel** | [**UpdateParameterApiModel**](UpdateParameterApiModel.md)|  | [optional] |
 
 ### Return type
 

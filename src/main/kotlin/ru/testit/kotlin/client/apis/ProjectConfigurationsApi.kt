@@ -50,7 +50,7 @@ class ProjectConfigurationsApi(basePath: kotlin.String = defaultBasePath, client
     /**
      * GET /api/v2/projects/{projectId}/configurations
      * Get project configurations
-     *  Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all configurations related to project   System returns array of found configurations (listed in response model)
+     *  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @return kotlin.collections.List<ConfigurationModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -82,7 +82,7 @@ class ProjectConfigurationsApi(basePath: kotlin.String = defaultBasePath, client
     /**
      * GET /api/v2/projects/{projectId}/configurations
      * Get project configurations
-     *  Use case   User sets project internal or global identifier   User runs method execution   System search project   System search all configurations related to project   System returns array of found configurations (listed in response model)
+     *  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @return ApiResponse<kotlin.collections.List<ConfigurationModel>?>
      * @throws IllegalStateException If the request is not correctly configured

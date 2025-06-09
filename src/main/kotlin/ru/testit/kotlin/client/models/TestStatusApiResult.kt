@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.TestStatusType
+import ru.testit.kotlin.client.models.TestStatusApiType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -25,7 +25,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param id 
  * @param name 
- * @param type 
+ * @param type Collection of possible status types
  * @param isSystem 
  * @param code 
  * @param description 
@@ -40,8 +40,9 @@ data class TestStatusApiResult (
     @Json(name = "name")
     val name: kotlin.String,
 
+    /* Collection of possible status types */
     @Json(name = "type")
-    val type: TestStatusType,
+    val type: TestStatusApiType,
 
     @Json(name = "isSystem")
     val isSystem: kotlin.Boolean,

@@ -11,6 +11,7 @@
 | **autoTests** | [**kotlin.collections.List&lt;AutoTestModel&gt;**](AutoTestModel.md) |  |  |
 | **testPoints** | [**kotlin.collections.List&lt;PublicTestPointModel&gt;**](PublicTestPointModel.md) |  |  |
 | **status** | **kotlin.String** |  |  |
+| **statusModel** | [**TestStatusModel**](TestStatusModel.md) |  |  |
 | **testPlanId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 | **productName** | **kotlin.String** |  |  [optional] |
 | **build** | **kotlin.String** |  |  [optional] |

@@ -12,6 +12,7 @@
 | **statuses** | [**kotlin.collections.List&lt;TestPointStatus&gt;**](TestPointStatus.md) | Specifies a test point statuses to search for |  [optional] |
 | **statusCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** | Specifies a test point status codes to search for |  [optional] |
 | **priorities** | [**kotlin.collections.List&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Specifies a test point priorities to search for |  [optional] |
+| **sourceTypes** | [**kotlin.collections.List&lt;WorkItemSourceTypeModel&gt;**](WorkItemSourceTypeModel.md) | Specifies a test point source types to search for |  [optional] |
 | **isAutomated** | **kotlin.Boolean** | Specifies a test point automation status to search for |  [optional] |
 | **name** | **kotlin.String** | Specifies a test point name to search for |  [optional] |
 | **configurationIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a test point configuration IDs to search for |  [optional] |

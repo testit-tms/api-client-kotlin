@@ -16,9 +16,11 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.TestPlanGroupByStatus
+import ru.testit.kotlin.client.models.TestPlanGroupByStatusCode
 import ru.testit.kotlin.client.models.TestPlanGroupByTestSuite
 import ru.testit.kotlin.client.models.TestPlanGroupByTester
 import ru.testit.kotlin.client.models.TestPlanGroupByTesterAndStatus
+import ru.testit.kotlin.client.models.TestPlanGroupByTesterAndStatusCode
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -31,12 +33,15 @@ import com.squareup.moshi.JsonClass
  * @param countGroupByTester 
  * @param countGroupByTestSuite 
  * @param countGroupByTesterAndStatus 
+ * @param countGroupByStatusCode 
+ * @param countGroupByTesterAndStatusCode 
  */
 
 
 data class TestPointAnalyticResult (
 
     @Json(name = "countGroupByStatus")
+    @Deprecated(message = "This property is deprecated.")
     val countGroupByStatus: kotlin.collections.List<TestPlanGroupByStatus>,
 
     @Json(name = "sumGroupByTester")
@@ -49,7 +54,14 @@ data class TestPointAnalyticResult (
     val countGroupByTestSuite: kotlin.collections.List<TestPlanGroupByTestSuite>,
 
     @Json(name = "countGroupByTesterAndStatus")
-    val countGroupByTesterAndStatus: kotlin.collections.List<TestPlanGroupByTesterAndStatus>
+    @Deprecated(message = "This property is deprecated.")
+    val countGroupByTesterAndStatus: kotlin.collections.List<TestPlanGroupByTesterAndStatus>,
+
+    @Json(name = "countGroupByStatusCode")
+    val countGroupByStatusCode: kotlin.collections.List<TestPlanGroupByStatusCode>,
+
+    @Json(name = "countGroupByTesterAndStatusCode")
+    val countGroupByTesterAndStatusCode: kotlin.collections.List<TestPlanGroupByTesterAndStatusCode>
 
 ) {
 
