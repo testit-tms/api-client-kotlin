@@ -10,7 +10,7 @@
 | 5.2     | 0.2.0           |
 | 5.2.2   | 0.3.0           |
 | 5.3     | 0.6.1-TMS-5.3   |
-| Cloud   | 0.6.0-TMS-CLOUD |
+| Cloud   | 0.7.1-TMS-CLOUD |
 
 ### Installation
 
