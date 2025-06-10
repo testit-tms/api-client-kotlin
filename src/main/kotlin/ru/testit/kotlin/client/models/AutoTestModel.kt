@@ -86,8 +86,9 @@ data class AutoTestModel (
     val createdById: java.util.UUID,
 
     /* Status of the autotest last test result */
+    // set it manually to nullable
     @Json(name = "lastTestResultStatus")
-    val lastTestResultStatus: TestStatusModel,
+    val lastTestResultStatus: TestStatusModel? = null,
 
     /* External ID of the autotest */
     @Json(name = "externalId")
