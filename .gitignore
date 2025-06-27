@@ -74,3 +74,4 @@ bin/
 .DS_Store
 
 !gradle/wrapper/gradle-wrapper.jar
+.env
