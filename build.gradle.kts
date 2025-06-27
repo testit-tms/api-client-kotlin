@@ -31,29 +31,17 @@ dependencies {
     testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.2")
 }
 
-val sonaUsername = providers.gradleProperty("sonatypeAccessToken")
-val sonaPassword = providers.gradleProperty("sonatypeAccessPassword")
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-            username = sonaUsername.get()
-            password =  sonaPassword.get()
-        }
-    }
-}
 
 publishing {
     repositories {
+        // JReleaser staging repository
         maven {
-            url = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            credentials {
-                username = sonaUsername.get()
-                password =  sonaPassword.get()
-            }
+            name = "staging"
+            url = uri(layout.buildDirectory.dir("staging-deploy"))
         }
+        mavenLocal()
+        mavenCentral()
     }
     publications {
         create<MavenPublication>("maven") {
@@ -93,10 +81,6 @@ publishing {
     }
 }
 
-signing {
-    sign(publishing.publications["maven"])
-}
-
 tasks.withType<Sign>().configureEach {
     onlyIf { !version.toString().endsWith("-SNAPSHOT") }
 }
@@ -126,4 +110,23 @@ tasks.test {
 
 kotlin {
     jvmToolchain(11)
+}
+
+// JReleaser helper tasks
+tasks.register("jreleaserStage") {
+    group = "publishing"
+    description = "Stages all modules for JReleaser deployment"
+
+    // Depend on publishing tasks from all subprojects
+    dependsOn(":publishMavenPublicationToStagingRepository")
+
+    doLast {
+        println("✅ All modules staged for JReleaser deployment")
+        println("📁 Staging directories:")
+        val stagingDir = project.layout.buildDirectory.dir("staging-deploy").get().asFile
+        if (stagingDir.exists()) {
+            println("   ${project.name}: ${stagingDir.absolutePath}")
+        }
+        println("🚀 Run 'jreleaser deploy' to publish to Maven Central")
+    }
 }
