@@ -32,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param globalId Global ID of the project
  * @param type Type of the project
  * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" sets automatically
+ * @param workflowId 
  * @param description Description of the project
  * @param testCasesCount Number of test cases in the project
  * @param sharedStepsCount Number of shared steps in the project
@@ -80,6 +81,9 @@ data class ProjectShortModel (
     @Json(name = "isFlakyAuto")
     @Deprecated(message = "This property is deprecated.")
     val isFlakyAuto: kotlin.Boolean,
+
+    @Json(name = "workflowId")
+    val workflowId: java.util.UUID,
 
     /* Description of the project */
     @Json(name = "description")

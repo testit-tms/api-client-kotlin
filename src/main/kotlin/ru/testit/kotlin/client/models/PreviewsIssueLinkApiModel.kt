@@ -15,8 +15,6 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.PreviewsIssueLinkApiResult
-import ru.testit.kotlin.client.models.WorkItemPreviewApiModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,18 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param previews 
- * @param link 
+ * @param title 
+ * @param url 
  */
 
 
-data class GenerateWorkItemPreviewsApiResult (
+data class PreviewsIssueLinkApiModel (
 
-    @Json(name = "previews")
-    val previews: kotlin.collections.List<WorkItemPreviewApiModel>,
+    @Json(name = "title")
+    val title: kotlin.String,
 
-    @Json(name = "link")
-    val link: PreviewsIssueLinkApiResult? = null
+    @Json(name = "url")
+    val url: kotlin.String
 
 ) {
 
