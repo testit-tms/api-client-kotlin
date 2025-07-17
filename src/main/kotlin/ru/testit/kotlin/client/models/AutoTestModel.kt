@@ -33,7 +33,6 @@ import com.squareup.moshi.JsonClass
  * @param id Unique ID of the autotest
  * @param createdDate Creation date of the autotest
  * @param createdById Unique ID of the project creator
- * @param lastTestResultStatus Status of the autotest last test result
  * @param externalId External ID of the autotest
  * @param projectId Unique ID of the autotest project
  * @param name Name of the autotest
@@ -44,6 +43,7 @@ import com.squareup.moshi.JsonClass
  * @param lastTestResultId Unique ID of the autotest last test result
  * @param lastTestResultConfiguration Configuration of the autotest last test result
  * @param lastTestResultOutcome Outcome of the autotest last test result
+ * @param lastTestResultStatus Status of the autotest last test result
  * @param stabilityPercentage Stability percentage of the autotest
  * @param links Collection of the autotest links
  * @param namespace Name of the autotest namespace
@@ -85,11 +85,6 @@ data class AutoTestModel (
     @Json(name = "createdById")
     val createdById: java.util.UUID,
 
-    /* Status of the autotest last test result */
-    // set it manually to nullable
-    @Json(name = "lastTestResultStatus")
-    val lastTestResultStatus: TestStatusModel? = null,
-
     /* External ID of the autotest */
     @Json(name = "externalId")
     val externalId: kotlin.String,
@@ -130,6 +125,10 @@ data class AutoTestModel (
     @Json(name = "lastTestResultOutcome")
     @Deprecated(message = "This property is deprecated.")
     val lastTestResultOutcome: kotlin.String? = null,
+
+    /* Status of the autotest last test result */
+    @Json(name = "lastTestResultStatus")
+    val lastTestResultStatus: TestStatusModel? = null,
 
     /* Stability percentage of the autotest */
     @Json(name = "stabilityPercentage")

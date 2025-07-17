@@ -21,6 +21,7 @@ import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.CustomAttributeModel
 import ru.testit.kotlin.client.models.CustomAttributeSearchQueryModel
+import ru.testit.kotlin.client.models.CustomAttributeSearchResponseModel
 import ru.testit.kotlin.client.models.CustomAttributeValidationResult
 import ru.testit.kotlin.client.models.GlobalCustomAttributePostModel
 import ru.testit.kotlin.client.models.GlobalCustomAttributeUpdateModel
@@ -440,7 +441,7 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param customAttributeSearchQueryModel  (optional)
-     * @return kotlin.collections.List<CustomAttributeModel>
+     * @return kotlin.collections.List<CustomAttributeSearchResponseModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -449,11 +450,11 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2CustomAttributesSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, customAttributeSearchQueryModel: CustomAttributeSearchQueryModel? = null) : kotlin.collections.List<CustomAttributeModel> {
+    fun apiV2CustomAttributesSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, customAttributeSearchQueryModel: CustomAttributeSearchQueryModel? = null) : kotlin.collections.List<CustomAttributeSearchResponseModel> {
         val localVarResponse = apiV2CustomAttributesSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, customAttributeSearchQueryModel = customAttributeSearchQueryModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<CustomAttributeModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<CustomAttributeSearchResponseModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -477,16 +478,16 @@ class CustomAttributesApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param customAttributeSearchQueryModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<CustomAttributeModel>?>
+     * @return ApiResponse<kotlin.collections.List<CustomAttributeSearchResponseModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2CustomAttributesSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, customAttributeSearchQueryModel: CustomAttributeSearchQueryModel?) : ApiResponse<kotlin.collections.List<CustomAttributeModel>?> {
+    fun apiV2CustomAttributesSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, customAttributeSearchQueryModel: CustomAttributeSearchQueryModel?) : ApiResponse<kotlin.collections.List<CustomAttributeSearchResponseModel>?> {
         val localVariableConfig = apiV2CustomAttributesSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, customAttributeSearchQueryModel = customAttributeSearchQueryModel)
 
-        return request<CustomAttributeSearchQueryModel, kotlin.collections.List<CustomAttributeModel>>(
+        return request<CustomAttributeSearchQueryModel, kotlin.collections.List<CustomAttributeSearchResponseModel>>(
             localVariableConfig
         )
     }
