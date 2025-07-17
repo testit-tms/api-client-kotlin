@@ -25,6 +25,7 @@ import com.squareup.moshi.JsonClass
  * @param parameterKeyId 
  * @param name 
  * @param propertyValues 
+ * @param projectIds 
  */
 
 
@@ -37,7 +38,10 @@ data class ParameterGroupApiResult (
     val name: kotlin.String,
 
     @Json(name = "values")
-    val propertyValues: kotlin.collections.Map<kotlin.String, kotlin.String>
+    val propertyValues: kotlin.collections.Map<kotlin.String, kotlin.String>,
+
+    @Json(name = "projectIds")
+    val projectIds: kotlin.collections.List<java.util.UUID>
 
 ) {
 

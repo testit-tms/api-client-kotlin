@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param createdDate 
  * @param createdById 
  * @param isDeleted 
+ * @param projectIds 
  * @param modifiedDate 
  * @param modifiedById 
  */
@@ -56,6 +57,9 @@ data class ParameterApiResult (
 
     @Json(name = "isDeleted")
     val isDeleted: kotlin.Boolean,
+
+    @Json(name = "projectIds")
+    val projectIds: kotlin.collections.List<java.util.UUID>,
 
     @Json(name = "modifiedDate")
     val modifiedDate: java.time.OffsetDateTime? = null,

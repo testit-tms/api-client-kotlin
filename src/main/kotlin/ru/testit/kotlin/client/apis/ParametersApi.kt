@@ -205,6 +205,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param parameterKeyIds  (optional)
      * @param name  (optional)
      * @param isDeleted  (optional)
+     * @param projectIds  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -219,8 +220,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersGroupsGet(parameterKeyIds: kotlin.collections.Set<java.util.UUID>? = null, name: kotlin.String? = null, isDeleted: kotlin.Boolean? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterGroupApiResult> {
-        val localVarResponse = apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2ParametersGroupsGet(parameterKeyIds: kotlin.collections.Set<java.util.UUID>? = null, name: kotlin.String? = null, isDeleted: kotlin.Boolean? = null, projectIds: kotlin.collections.List<java.util.UUID>? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterGroupApiResult> {
+        val localVarResponse = apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, projectIds = projectIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ParameterGroupApiResult>
@@ -244,6 +245,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param parameterKeyIds  (optional)
      * @param name  (optional)
      * @param isDeleted  (optional)
+     * @param projectIds  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -255,8 +257,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?> {
-        val localVariableConfig = apiV2ParametersGroupsGetRequestConfig(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, projectIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?> {
+        val localVariableConfig = apiV2ParametersGroupsGetRequestConfig(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, projectIds = projectIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return request<Unit, kotlin.collections.List<ParameterGroupApiResult>>(
             localVariableConfig
@@ -269,6 +271,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param parameterKeyIds  (optional)
      * @param name  (optional)
      * @param isDeleted  (optional)
+     * @param projectIds  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -276,7 +279,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersGroupsGetRequestConfig(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
+    fun apiV2ParametersGroupsGetRequestConfig(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, projectIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -288,6 +291,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
                 }
                 if (isDeleted != null) {
                     put("isDeleted", listOf(isDeleted.toString()))
+                }
+                if (projectIds != null) {
+                    put("projectIds", toMultiValue(projectIds.toList(), "multi"))
                 }
                 if (skip != null) {
                     put("Skip", listOf(skip.toString()))
@@ -468,6 +474,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * GET /api/v2/parameters/keys
      * Get all parameter keys
      *  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+     * @param projectIds  (optional)
      * @return kotlin.collections.List<kotlin.String>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -477,8 +484,8 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersKeysGet() : kotlin.collections.List<kotlin.String> {
-        val localVarResponse = apiV2ParametersKeysGetWithHttpInfo()
+    fun apiV2ParametersKeysGet(projectIds: kotlin.collections.List<java.util.UUID>? = null) : kotlin.collections.List<kotlin.String> {
+        val localVarResponse = apiV2ParametersKeysGetWithHttpInfo(projectIds = projectIds)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<kotlin.String>
@@ -499,14 +506,15 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * GET /api/v2/parameters/keys
      * Get all parameter keys
      *  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+     * @param projectIds  (optional)
      * @return ApiResponse<kotlin.collections.List<kotlin.String>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersKeysGetWithHttpInfo() : ApiResponse<kotlin.collections.List<kotlin.String>?> {
-        val localVariableConfig = apiV2ParametersKeysGetRequestConfig()
+    fun apiV2ParametersKeysGetWithHttpInfo(projectIds: kotlin.collections.List<java.util.UUID>?) : ApiResponse<kotlin.collections.List<kotlin.String>?> {
+        val localVariableConfig = apiV2ParametersKeysGetRequestConfig(projectIds = projectIds)
 
         return request<Unit, kotlin.collections.List<kotlin.String>>(
             localVariableConfig
@@ -516,11 +524,17 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * To obtain the request config of the operation apiV2ParametersKeysGet
      *
+     * @param projectIds  (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersKeysGetRequestConfig() : RequestConfig<Unit> {
+    fun apiV2ParametersKeysGetRequestConfig(projectIds: kotlin.collections.List<java.util.UUID>?) : RequestConfig<Unit> {
         val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                if (projectIds != null) {
+                    put("projectIds", toMultiValue(projectIds.toList(), "multi"))
+                }
+            }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
 

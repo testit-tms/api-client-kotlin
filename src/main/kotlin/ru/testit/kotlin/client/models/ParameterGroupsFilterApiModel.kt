@@ -25,6 +25,7 @@ import com.squareup.moshi.JsonClass
  * @param parameterKeyIds 
  * @param name 
  * @param isDeleted 
+ * @param projectIds 
  */
 
 
@@ -37,7 +38,10 @@ data class ParameterGroupsFilterApiModel (
     val name: kotlin.String? = null,
 
     @Json(name = "isDeleted")
-    val isDeleted: kotlin.Boolean? = null
+    val isDeleted: kotlin.Boolean? = null,
+
+    @Json(name = "projectIds")
+    val projectIds: kotlin.collections.List<java.util.UUID>? = null
 
 ) {
 

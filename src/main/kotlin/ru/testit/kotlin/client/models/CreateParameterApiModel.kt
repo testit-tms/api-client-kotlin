@@ -24,6 +24,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param name Key of the parameter
  * @param `value` Value of the parameter
+ * @param projectIds List of projects where parameter should be available
  */
 
 
@@ -35,7 +36,11 @@ data class CreateParameterApiModel (
 
     /* Value of the parameter */
     @Json(name = "value")
-    val `value`: kotlin.String
+    val `value`: kotlin.String,
+
+    /* List of projects where parameter should be available */
+    @Json(name = "projectIds")
+    val projectIds: kotlin.collections.List<java.util.UUID>? = null
 
 ) {
 
