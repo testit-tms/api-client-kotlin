@@ -27,6 +27,7 @@ import ru.testit.kotlin.client.models.FilterModel
 import ru.testit.kotlin.client.models.GetShortProjectsApiModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
+import ru.testit.kotlin.client.models.ProjectApiResult
 import ru.testit.kotlin.client.models.ProjectModel
 import ru.testit.kotlin.client.models.ProjectSelectModel
 import ru.testit.kotlin.client.models.ProjectShortApiResultReply
@@ -1448,7 +1449,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Create project
      *  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
      * @param createProjectApiModel  (optional)
-     * @return ProjectModel
+     * @return ProjectApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1457,11 +1458,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createProject(createProjectApiModel: CreateProjectApiModel? = null) : ProjectModel {
+    fun createProject(createProjectApiModel: CreateProjectApiModel? = null) : ProjectApiResult {
         val localVarResponse = createProjectWithHttpInfo(createProjectApiModel = createProjectApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ProjectModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ProjectApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1480,16 +1481,16 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Create project
      *  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
      * @param createProjectApiModel  (optional)
-     * @return ApiResponse<ProjectModel?>
+     * @return ApiResponse<ProjectApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createProjectWithHttpInfo(createProjectApiModel: CreateProjectApiModel?) : ApiResponse<ProjectModel?> {
+    fun createProjectWithHttpInfo(createProjectApiModel: CreateProjectApiModel?) : ApiResponse<ProjectApiResult?> {
         val localVariableConfig = createProjectRequestConfig(createProjectApiModel = createProjectApiModel)
 
-        return request<CreateProjectApiModel, ProjectModel>(
+        return request<CreateProjectApiModel, ProjectApiResult>(
             localVariableConfig
         )
     }
