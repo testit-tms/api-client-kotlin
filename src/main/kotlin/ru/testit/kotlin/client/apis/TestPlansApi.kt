@@ -35,7 +35,7 @@ import ru.testit.kotlin.client.models.TestPointAnalyticResult
 import ru.testit.kotlin.client.models.TestPointSelectModel
 import ru.testit.kotlin.client.models.TestPointWithLastResultResponseModel
 import ru.testit.kotlin.client.models.TestRunApiResult
-import ru.testit.kotlin.client.models.TestSuiteV2TreeModel
+import ru.testit.kotlin.client.models.TestSuiteHierarchyApiResult
 import ru.testit.kotlin.client.models.UpdateTestPlanApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemSelectModel
@@ -1551,7 +1551,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * GET /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate
      * Get last modification date of test plan&#39;s test results
      * 
-     * @param id Test plan unique or global ID
+     * @param id 
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1582,7 +1582,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * GET /api/v2/testPlans/{id}/testRuns/testResults/lastModified/modifiedDate
      * Get last modification date of test plan&#39;s test results
      * 
-     * @param id Test plan unique or global ID
+     * @param id 
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1599,7 +1599,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation apiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGet
      *
-     * @param id Test plan unique or global ID
+     * @param id 
      * @return RequestConfig
      */
     fun apiV2TestPlansIdTestRunsTestResultsLastModifiedModifiedDateGetRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -2138,7 +2138,7 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get TestSuites Tree By Id
      *  Use case  User sets test plan identifier  User runs method execution  System finds test suites related to the test plan  System returns test suites as a tree model (listed in response example)
      * @param id Test plan internal (guid format) or global (int format) identifier
-     * @return kotlin.collections.List<TestSuiteV2TreeModel>
+     * @return kotlin.collections.List<TestSuiteHierarchyApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -2147,11 +2147,11 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getTestSuitesById(id: kotlin.String) : kotlin.collections.List<TestSuiteV2TreeModel> {
+    fun getTestSuitesById(id: kotlin.String) : kotlin.collections.List<TestSuiteHierarchyApiResult> {
         val localVarResponse = getTestSuitesByIdWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestSuiteV2TreeModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TestSuiteHierarchyApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -2170,16 +2170,16 @@ class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get TestSuites Tree By Id
      *  Use case  User sets test plan identifier  User runs method execution  System finds test suites related to the test plan  System returns test suites as a tree model (listed in response example)
      * @param id Test plan internal (guid format) or global (int format) identifier
-     * @return ApiResponse<kotlin.collections.List<TestSuiteV2TreeModel>?>
+     * @return ApiResponse<kotlin.collections.List<TestSuiteHierarchyApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getTestSuitesByIdWithHttpInfo(id: kotlin.String) : ApiResponse<kotlin.collections.List<TestSuiteV2TreeModel>?> {
+    fun getTestSuitesByIdWithHttpInfo(id: kotlin.String) : ApiResponse<kotlin.collections.List<TestSuiteHierarchyApiResult>?> {
         val localVariableConfig = getTestSuitesByIdRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<TestSuiteV2TreeModel>>(
+        return request<Unit, kotlin.collections.List<TestSuiteHierarchyApiResult>>(
             localVariableConfig
         )
     }

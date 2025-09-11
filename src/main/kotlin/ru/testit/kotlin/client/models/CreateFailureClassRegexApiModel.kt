@@ -22,15 +22,15 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param regexText Failure category regex
  */
 
 
-data class DemoProjectApiResult (
+data class CreateFailureClassRegexApiModel (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    /* Failure category regex */
+    @Json(name = "regexText")
+    val regexText: kotlin.String
 
 ) {
 

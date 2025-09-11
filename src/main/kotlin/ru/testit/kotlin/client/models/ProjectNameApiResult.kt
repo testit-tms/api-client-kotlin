@@ -22,15 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param id 
+ * @param name 
  */
 
 
-data class DemoProjectApiResult (
+data class ProjectNameApiResult (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    @Json(name = "id")
+    val id: java.util.UUID,
+
+    @Json(name = "name")
+    val name: kotlin.String
 
 ) {
 

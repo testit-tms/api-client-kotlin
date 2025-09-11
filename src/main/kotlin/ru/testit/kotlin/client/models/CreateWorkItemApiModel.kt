@@ -21,9 +21,9 @@ import ru.testit.kotlin.client.models.AutoTestIdModel
 import ru.testit.kotlin.client.models.CreateLinkApiModel
 import ru.testit.kotlin.client.models.CreateStepApiModel
 import ru.testit.kotlin.client.models.TagModel
-import ru.testit.kotlin.client.models.WorkItemEntityTypes
-import ru.testit.kotlin.client.models.WorkItemPriorityModel
-import ru.testit.kotlin.client.models.WorkItemStates
+import ru.testit.kotlin.client.models.WorkItemEntityTypeApiModel
+import ru.testit.kotlin.client.models.WorkItemPriorityApiModel
+import ru.testit.kotlin.client.models.WorkItemStateApiModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -31,92 +31,95 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param entityTypeName 
- * @param state 
- * @param priority 
- * @param steps Collection of workitem steps
- * @param preconditionSteps Collection of workitem precondition steps
- * @param postconditionSteps Collection of workitem postcondition steps
- * @param duration WorkItem duration in milliseconds, must be 0 for shared steps and greater than 0 for the other types of work items
- * @param attributes Key value pair of custom workitem attributes
- * @param tags Collection of workitem tags
- * @param links Collection of workitem links
- * @param name Workitem name
- * @param projectId Project unique identifier - used to link workitem with project
- * @param sectionId Internal identifier of section where workitem is located
- * @param description Workitem description
- * @param attachments Collection of workitem attachments
- * @param iterations Collection of parameter sets
- * @param autoTests Collection of autotest internal ids
+ * @param projectId Unique identifier of the project
+ * @param name Name of the work item
+ * @param entityTypeName Type of entity associated with this work item
+ * @param duration Duration of the work item in milliseconds
+ * @param state State of the work item
+ * @param priority Priority level of the work item
+ * @param attributes Set of custom attributes associated with the work item
+ * @param tags Set of tags applied to the work item
+ * @param preconditionSteps Set of precondition steps that need to be executed before starting the main steps
+ * @param steps Main steps or actions defined for the work item
+ * @param postconditionSteps Set of postcondition steps that are executed after completing the main steps
+ * @param links Set of links related to the work item
+ * @param sectionId Unique identifier of the section within a project
+ * @param description Description of the work item
+ * @param iterations Associated iterations linked to the work item
+ * @param autoTests Automated tests associated with the work item
+ * @param attachments Files attached to the work item
  */
 
 
 data class CreateWorkItemApiModel (
 
-    @Json(name = "entityTypeName")
-    val entityTypeName: WorkItemEntityTypes,
-
-    @Json(name = "state")
-    val state: WorkItemStates,
-
-    @Json(name = "priority")
-    val priority: WorkItemPriorityModel,
-
-    /* Collection of workitem steps */
-    @Json(name = "steps")
-    val steps: kotlin.collections.List<CreateStepApiModel>,
-
-    /* Collection of workitem precondition steps */
-    @Json(name = "preconditionSteps")
-    val preconditionSteps: kotlin.collections.List<CreateStepApiModel>,
-
-    /* Collection of workitem postcondition steps */
-    @Json(name = "postconditionSteps")
-    val postconditionSteps: kotlin.collections.List<CreateStepApiModel>,
-
-    /* WorkItem duration in milliseconds, must be 0 for shared steps and greater than 0 for the other types of work items */
-    @Json(name = "duration")
-    val duration: kotlin.Int,
-
-    /* Key value pair of custom workitem attributes */
-    @Json(name = "attributes")
-    val attributes: kotlin.collections.Map<kotlin.String, kotlin.Any>,
-
-    /* Collection of workitem tags */
-    @Json(name = "tags")
-    val tags: kotlin.collections.List<TagModel>,
-
-    /* Collection of workitem links */
-    @Json(name = "links")
-    val links: kotlin.collections.List<CreateLinkApiModel>,
-
-    /* Workitem name */
-    @Json(name = "name")
-    val name: kotlin.String,
-
-    /* Project unique identifier - used to link workitem with project */
+    /* Unique identifier of the project */
     @Json(name = "projectId")
     val projectId: java.util.UUID,
 
-    /* Internal identifier of section where workitem is located */
-    @Json(name = "sectionId")
-    val sectionId: java.util.UUID,
+    /* Name of the work item */
+    @Json(name = "name")
+    val name: kotlin.String,
 
-    /* Workitem description */
+    /* Type of entity associated with this work item */
+    @Json(name = "entityTypeName")
+    val entityTypeName: WorkItemEntityTypeApiModel,
+
+    /* Duration of the work item in milliseconds */
+    @Json(name = "duration")
+    val duration: kotlin.Int,
+
+    /* State of the work item */
+    @Json(name = "state")
+    val state: WorkItemStateApiModel,
+
+    /* Priority level of the work item */
+    @Json(name = "priority")
+    val priority: WorkItemPriorityApiModel,
+
+    /* Set of custom attributes associated with the work item */
+    @Json(name = "attributes")
+    val attributes: kotlin.collections.Map<kotlin.String, kotlin.Any>,
+
+    /* Set of tags applied to the work item */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<TagModel>,
+
+    /* Set of precondition steps that need to be executed before starting the main steps */
+    @Json(name = "preconditionSteps")
+    val preconditionSteps: kotlin.collections.List<CreateStepApiModel>,
+
+    /* Main steps or actions defined for the work item */
+    @Json(name = "steps")
+    val steps: kotlin.collections.List<CreateStepApiModel>,
+
+    /* Set of postcondition steps that are executed after completing the main steps */
+    @Json(name = "postconditionSteps")
+    val postconditionSteps: kotlin.collections.List<CreateStepApiModel>,
+
+    /* Set of links related to the work item */
+    @Json(name = "links")
+    val links: kotlin.collections.List<CreateLinkApiModel>,
+
+    /* Unique identifier of the section within a project */
+    @Json(name = "sectionId")
+    val sectionId: java.util.UUID? = null,
+
+    /* Description of the work item */
     @Json(name = "description")
     val description: kotlin.String? = null,
 
-    /* Collection of workitem attachments */
-    @Json(name = "attachments")
-    val attachments: kotlin.collections.List<AssignAttachmentApiModel>? = null,
-
-    /* Collection of parameter sets */
+    /* Associated iterations linked to the work item */
     @Json(name = "iterations")
     val iterations: kotlin.collections.List<AssignIterationApiModel>? = null,
 
-    /* Collection of autotest internal ids */
+    /* Automated tests associated with the work item */
     @Json(name = "autoTests")
-    val autoTests: kotlin.collections.List<AutoTestIdModel>? = null
+    val autoTests: kotlin.collections.List<AutoTestIdModel>? = null,
+
+    /* Files attached to the work item */
+    @Json(name = "attachments")
+    val attachments: kotlin.collections.List<AssignAttachmentApiModel>? = null
 
 ) {
 

@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.ProjectFailureCategoryGroupItemApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,15 +23,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param `data` 
+ * @param totalCount 
  */
 
 
-data class DemoProjectApiResult (
+data class ProjectFailureCategoryGroupItemApiResultReply (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    @Json(name = "data")
+    val `data`: kotlin.collections.List<ProjectFailureCategoryGroupItemApiResult>,
+
+    @Json(name = "totalCount")
+    val totalCount: kotlin.Int
 
 ) {
 

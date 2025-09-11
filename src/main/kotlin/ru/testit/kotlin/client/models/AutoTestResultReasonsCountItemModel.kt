@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.AvailableFailureCategory
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,15 +23,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param failureCategory 
+ * @param count 
  */
 
 
-data class DemoProjectApiResult (
+data class AutoTestResultReasonsCountItemModel (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    @Json(name = "failureCategory")
+    val failureCategory: AvailableFailureCategory,
+
+    @Json(name = "count")
+    val count: kotlin.Int
 
 ) {
 

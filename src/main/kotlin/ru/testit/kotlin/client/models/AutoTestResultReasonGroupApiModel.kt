@@ -22,15 +22,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param `field` Group field
+ * @param displayField Group display field
  */
 
 
-data class DemoProjectApiResult (
+data class AutoTestResultReasonGroupApiModel (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    /* Group field */
+    @Json(name = "field")
+    val `field`: kotlin.String,
+
+    /* Group display field */
+    @Json(name = "displayField")
+    val displayField: kotlin.String? = null
 
 ) {
 

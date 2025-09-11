@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.TestStatusType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,15 +23,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param statusType 
+ * @param `value` 
  */
 
 
-data class DemoProjectApiResult (
+data class TestPlanGroupByStatusType (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    @Json(name = "statusType")
+    val statusType: TestStatusType,
+
+    @Json(name = "value")
+    val `value`: kotlin.Long
 
 ) {
 

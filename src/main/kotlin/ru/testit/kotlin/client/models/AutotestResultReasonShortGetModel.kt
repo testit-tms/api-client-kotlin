@@ -15,8 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.FailureCategoryModel
-import ru.testit.kotlin.client.models.FailureClassRegexModel
+import ru.testit.kotlin.client.models.AvailableFailureCategory
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,36 +23,41 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param isDeleted 
  * @param failureCategory 
+ * @param failureCategoryId 
+ * @param regexCount 
+ * @param id 
  * @param createdDate 
  * @param createdById 
- * @param id Unique ID of the entity
- * @param isDeleted Indicates if the entity is deleted
  * @param name 
  * @param modifiedDate 
  * @param modifiedById 
- * @param failureClassRegexes 
  */
 
 
-data class FailureClassModel (
+data class AutotestResultReasonShortGetModel (
+
+    @Json(name = "isDeleted")
+    val isDeleted: kotlin.Boolean,
 
     @Json(name = "failureCategory")
-    val failureCategory: FailureCategoryModel,
+    val failureCategory: AvailableFailureCategory,
+
+    @Json(name = "failureCategoryId")
+    val failureCategoryId: kotlin.Int,
+
+    @Json(name = "regexCount")
+    val regexCount: kotlin.Int,
+
+    @Json(name = "id")
+    val id: java.util.UUID,
 
     @Json(name = "createdDate")
     val createdDate: java.time.OffsetDateTime,
 
     @Json(name = "createdById")
     val createdById: java.util.UUID,
-
-    /* Unique ID of the entity */
-    @Json(name = "id")
-    val id: java.util.UUID,
-
-    /* Indicates if the entity is deleted */
-    @Json(name = "isDeleted")
-    val isDeleted: kotlin.Boolean,
 
     @Json(name = "name")
     val name: kotlin.String? = null,
@@ -62,10 +66,7 @@ data class FailureClassModel (
     val modifiedDate: java.time.OffsetDateTime? = null,
 
     @Json(name = "modifiedById")
-    val modifiedById: java.util.UUID? = null,
-
-    @Json(name = "failureClassRegexes")
-    val failureClassRegexes: kotlin.collections.List<FailureClassRegexModel>? = null
+    val modifiedById: java.util.UUID? = null
 
 ) {
 

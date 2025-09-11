@@ -30,6 +30,7 @@ import com.squareup.moshi.JsonClass
  * @param name Name of the autotest
  * @param id Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId
  * @param workItemIdsForLinkWithAutoTest 
+ * @param workItemIds 
  * @param links Collection of the autotest links
  * @param namespace Name of the autotest namespace
  * @param classname Name of the autotest class
@@ -63,7 +64,11 @@ data class AutoTestPutModel (
     val id: java.util.UUID? = null,
 
     @Json(name = "workItemIdsForLinkWithAutoTest")
+    @Deprecated(message = "This property is deprecated.")
     val workItemIdsForLinkWithAutoTest: kotlin.collections.Set<java.util.UUID>? = null,
+
+    @Json(name = "workItemIds")
+    val workItemIds: kotlin.collections.List<java.util.UUID>? = null,
 
     /* Collection of the autotest links */
     @Json(name = "links")

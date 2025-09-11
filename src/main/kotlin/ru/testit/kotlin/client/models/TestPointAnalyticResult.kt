@@ -17,6 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.TestPlanGroupByStatus
 import ru.testit.kotlin.client.models.TestPlanGroupByStatusCode
+import ru.testit.kotlin.client.models.TestPlanGroupByStatusType
 import ru.testit.kotlin.client.models.TestPlanGroupByTestSuite
 import ru.testit.kotlin.client.models.TestPlanGroupByTester
 import ru.testit.kotlin.client.models.TestPlanGroupByTesterAndStatus
@@ -35,6 +36,7 @@ import com.squareup.moshi.JsonClass
  * @param countGroupByTesterAndStatus 
  * @param countGroupByStatusCode 
  * @param countGroupByTesterAndStatusCode 
+ * @param countGroupByStatusType 
  */
 
 
@@ -61,7 +63,10 @@ data class TestPointAnalyticResult (
     val countGroupByStatusCode: kotlin.collections.List<TestPlanGroupByStatusCode>,
 
     @Json(name = "countGroupByTesterAndStatusCode")
-    val countGroupByTesterAndStatusCode: kotlin.collections.List<TestPlanGroupByTesterAndStatusCode>
+    val countGroupByTesterAndStatusCode: kotlin.collections.List<TestPlanGroupByTesterAndStatusCode>,
+
+    @Json(name = "countGroupByStatusType")
+    val countGroupByStatusType: kotlin.collections.List<TestPlanGroupByStatusType>
 
 ) {
 

@@ -24,6 +24,7 @@ import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TestPointByTestSuiteModel
 import ru.testit.kotlin.client.models.TestResultV2ShortModel
+import ru.testit.kotlin.client.models.TestSuiteApiResult
 import ru.testit.kotlin.client.models.TestSuiteV2GetModel
 import ru.testit.kotlin.client.models.TestSuiteV2PostModel
 import ru.testit.kotlin.client.models.TestSuiteV2PutModel
@@ -793,7 +794,7 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get TestSuite by Id
      *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System returns test suite
      * @param id Test suite internal (guid format) identifier\&quot;
-     * @return TestSuiteV2GetModel
+     * @return TestSuiteApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -802,11 +803,11 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getTestSuiteById(id: java.util.UUID) : TestSuiteV2GetModel {
+    fun getTestSuiteById(id: java.util.UUID) : TestSuiteApiResult {
         val localVarResponse = getTestSuiteByIdWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestSuiteV2GetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestSuiteApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -825,16 +826,16 @@ class TestSuitesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get TestSuite by Id
      *  Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System returns test suite
      * @param id Test suite internal (guid format) identifier\&quot;
-     * @return ApiResponse<TestSuiteV2GetModel?>
+     * @return ApiResponse<TestSuiteApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getTestSuiteByIdWithHttpInfo(id: java.util.UUID) : ApiResponse<TestSuiteV2GetModel?> {
+    fun getTestSuiteByIdWithHttpInfo(id: java.util.UUID) : ApiResponse<TestSuiteApiResult?> {
         val localVariableConfig = getTestSuiteByIdRequestConfig(id = id)
 
-        return request<Unit, TestSuiteV2GetModel>(
+        return request<Unit, TestSuiteApiResult>(
             localVariableConfig
         )
     }
