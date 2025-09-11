@@ -66,7 +66,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersBulkPost(createParameterApiModel: kotlin.collections.List<CreateParameterApiModel>? = null) : kotlin.collections.List<ParameterApiResult> {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2ParametersBulkPostWithHttpInfo(createParameterApiModel = createParameterApiModel)
 
         return when (localVarResponse.responseType) {
@@ -95,7 +97,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersBulkPostWithHttpInfo(createParameterApiModel: kotlin.collections.List<CreateParameterApiModel>?) : ApiResponse<kotlin.collections.List<ParameterApiResult>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2ParametersBulkPostRequestConfig(createParameterApiModel = createParameterApiModel)
 
         return request<kotlin.collections.List<CreateParameterApiModel>, kotlin.collections.List<ParameterApiResult>>(
@@ -109,6 +113,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param createParameterApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersBulkPostRequestConfig(createParameterApiModel: kotlin.collections.List<CreateParameterApiModel>?) : RequestConfig<kotlin.collections.List<CreateParameterApiModel>> {
         val localVariableBody = createParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -139,7 +144,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersBulkPut(updateParameterApiModel: kotlin.collections.List<UpdateParameterApiModel>? = null) : Unit {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2ParametersBulkPutWithHttpInfo(updateParameterApiModel = updateParameterApiModel)
 
         return when (localVarResponse.responseType) {
@@ -167,7 +174,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersBulkPutWithHttpInfo(updateParameterApiModel: kotlin.collections.List<UpdateParameterApiModel>?) : ApiResponse<Unit?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2ParametersBulkPutRequestConfig(updateParameterApiModel = updateParameterApiModel)
 
         return request<kotlin.collections.List<UpdateParameterApiModel>, Unit>(
@@ -181,6 +190,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param updateParameterApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersBulkPutRequestConfig(updateParameterApiModel: kotlin.collections.List<UpdateParameterApiModel>?) : RequestConfig<kotlin.collections.List<UpdateParameterApiModel>> {
         val localVariableBody = updateParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -220,7 +230,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersGroupsGet(parameterKeyIds: kotlin.collections.Set<java.util.UUID>? = null, name: kotlin.String? = null, isDeleted: kotlin.Boolean? = null, projectIds: kotlin.collections.List<java.util.UUID>? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterGroupApiResult> {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, projectIds = projectIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
@@ -257,7 +269,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersGroupsGetWithHttpInfo(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, projectIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2ParametersGroupsGetRequestConfig(parameterKeyIds = parameterKeyIds, name = name, isDeleted = isDeleted, projectIds = projectIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return request<Unit, kotlin.collections.List<ParameterGroupApiResult>>(
@@ -279,6 +293,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersGroupsGetRequestConfig(parameterKeyIds: kotlin.collections.Set<java.util.UUID>?, name: kotlin.String?, isDeleted: kotlin.Boolean?, projectIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
@@ -338,7 +353,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersKeyNameNameExistsGet(name: kotlin.String) : kotlin.Boolean {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2ParametersKeyNameNameExistsGetWithHttpInfo(name = name)
 
         return when (localVarResponse.responseType) {
@@ -367,7 +384,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersKeyNameNameExistsGetWithHttpInfo(name: kotlin.String) : ApiResponse<kotlin.Boolean?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2ParametersKeyNameNameExistsGetRequestConfig(name = name)
 
         return request<Unit, kotlin.Boolean>(
@@ -381,6 +400,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param name 
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersKeyNameNameExistsGetRequestConfig(name: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -411,7 +431,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersKeyValuesGet(key: kotlin.String) : kotlin.collections.List<kotlin.String> {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2ParametersKeyValuesGetWithHttpInfo(key = key)
 
         return when (localVarResponse.responseType) {
@@ -440,7 +462,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersKeyValuesGetWithHttpInfo(key: kotlin.String) : ApiResponse<kotlin.collections.List<kotlin.String>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2ParametersKeyValuesGetRequestConfig(key = key)
 
         return request<Unit, kotlin.collections.List<kotlin.String>>(
@@ -454,6 +478,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param key Parameter key (string format)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersKeyValuesGetRequestConfig(key: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -475,6 +500,11 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get all parameter keys
      *  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
      * @param projectIds  (optional)
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
      * @return kotlin.collections.List<kotlin.String>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -484,8 +514,10 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ParametersKeysGet(projectIds: kotlin.collections.List<java.util.UUID>? = null) : kotlin.collections.List<kotlin.String> {
-        val localVarResponse = apiV2ParametersKeysGetWithHttpInfo(projectIds = projectIds)
+    @Deprecated(message = "This operation is deprecated.")
+    fun apiV2ParametersKeysGet(projectIds: kotlin.collections.List<java.util.UUID>? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<kotlin.String> {
+        @Suppress("DEPRECATION")
+        val localVarResponse = apiV2ParametersKeysGetWithHttpInfo(projectIds = projectIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<kotlin.String>
@@ -507,14 +539,21 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get all parameter keys
      *  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
      * @param projectIds  (optional)
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
      * @return ApiResponse<kotlin.collections.List<kotlin.String>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ParametersKeysGetWithHttpInfo(projectIds: kotlin.collections.List<java.util.UUID>?) : ApiResponse<kotlin.collections.List<kotlin.String>?> {
-        val localVariableConfig = apiV2ParametersKeysGetRequestConfig(projectIds = projectIds)
+    @Deprecated(message = "This operation is deprecated.")
+    fun apiV2ParametersKeysGetWithHttpInfo(projectIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<kotlin.String>?> {
+        @Suppress("DEPRECATION")
+        val localVariableConfig = apiV2ParametersKeysGetRequestConfig(projectIds = projectIds, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return request<Unit, kotlin.collections.List<kotlin.String>>(
             localVariableConfig
@@ -525,14 +564,35 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * To obtain the request config of the operation apiV2ParametersKeysGet
      *
      * @param projectIds  (optional)
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
-    fun apiV2ParametersKeysGetRequestConfig(projectIds: kotlin.collections.List<java.util.UUID>?) : RequestConfig<Unit> {
+    @Deprecated(message = "This operation is deprecated.")
+    fun apiV2ParametersKeysGetRequestConfig(projectIds: kotlin.collections.List<java.util.UUID>?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (projectIds != null) {
                     put("projectIds", toMultiValue(projectIds.toList(), "multi"))
+                }
+                if (skip != null) {
+                    put("Skip", listOf(skip.toString()))
+                }
+                if (take != null) {
+                    put("Take", listOf(take.toString()))
+                }
+                if (orderBy != null) {
+                    put("OrderBy", listOf(orderBy.toString()))
+                }
+                if (searchField != null) {
+                    put("SearchField", listOf(searchField.toString()))
+                }
+                if (searchValue != null) {
+                    put("SearchValue", listOf(searchValue.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -567,7 +627,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersSearchGroupsPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, parameterGroupsFilterApiModel: ParameterGroupsFilterApiModel? = null) : kotlin.collections.List<ParameterGroupApiResult> {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2ParametersSearchGroupsPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterGroupsFilterApiModel = parameterGroupsFilterApiModel)
 
         return when (localVarResponse.responseType) {
@@ -601,7 +663,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersSearchGroupsPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterGroupsFilterApiModel: ParameterGroupsFilterApiModel?) : ApiResponse<kotlin.collections.List<ParameterGroupApiResult>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2ParametersSearchGroupsPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parameterGroupsFilterApiModel = parameterGroupsFilterApiModel)
 
         return request<ParameterGroupsFilterApiModel, kotlin.collections.List<ParameterGroupApiResult>>(
@@ -620,6 +684,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param parameterGroupsFilterApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersSearchGroupsPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parameterGroupsFilterApiModel: ParameterGroupsFilterApiModel?) : RequestConfig<ParameterGroupsFilterApiModel> {
         val localVariableBody = parameterGroupsFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
@@ -673,7 +738,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, parametersFilterApiModel: ParametersFilterApiModel? = null) : kotlin.collections.List<ParameterApiResult> {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2ParametersSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parametersFilterApiModel = parametersFilterApiModel)
 
         return when (localVarResponse.responseType) {
@@ -707,7 +774,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parametersFilterApiModel: ParametersFilterApiModel?) : ApiResponse<kotlin.collections.List<ParameterApiResult>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2ParametersSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, parametersFilterApiModel = parametersFilterApiModel)
 
         return request<ParametersFilterApiModel, kotlin.collections.List<ParameterApiResult>>(
@@ -726,6 +795,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param parametersFilterApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2ParametersSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, parametersFilterApiModel: ParametersFilterApiModel?) : RequestConfig<ParametersFilterApiModel> {
         val localVariableBody = parametersFilterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
@@ -774,7 +844,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun createParameter(createParameterApiModel: CreateParameterApiModel? = null) : ParameterApiResult {
+        @Suppress("DEPRECATION")
         val localVarResponse = createParameterWithHttpInfo(createParameterApiModel = createParameterApiModel)
 
         return when (localVarResponse.responseType) {
@@ -803,7 +875,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun createParameterWithHttpInfo(createParameterApiModel: CreateParameterApiModel?) : ApiResponse<ParameterApiResult?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = createParameterRequestConfig(createParameterApiModel = createParameterApiModel)
 
         return request<CreateParameterApiModel, ParameterApiResult>(
@@ -817,6 +891,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param createParameterApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun createParameterRequestConfig(createParameterApiModel: CreateParameterApiModel?) : RequestConfig<CreateParameterApiModel> {
         val localVariableBody = createParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -847,7 +922,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteByName(name: kotlin.String) : Unit {
+        @Suppress("DEPRECATION")
         val localVarResponse = deleteByNameWithHttpInfo(name = name)
 
         return when (localVarResponse.responseType) {
@@ -875,7 +952,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteByNameWithHttpInfo(name: kotlin.String) : ApiResponse<Unit?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = deleteByNameRequestConfig(name = name)
 
         return request<Unit, Unit>(
@@ -889,6 +968,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param name Name of the parameter
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteByNameRequestConfig(name: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -918,7 +998,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteByParameterKeyId(keyId: java.util.UUID) : Unit {
+        @Suppress("DEPRECATION")
         val localVarResponse = deleteByParameterKeyIdWithHttpInfo(keyId = keyId)
 
         return when (localVarResponse.responseType) {
@@ -946,7 +1028,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteByParameterKeyIdWithHttpInfo(keyId: java.util.UUID) : ApiResponse<Unit?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = deleteByParameterKeyIdRequestConfig(keyId = keyId)
 
         return request<Unit, Unit>(
@@ -960,6 +1044,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param keyId Identifier of the parameter key
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteByParameterKeyIdRequestConfig(keyId: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -989,7 +1074,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteParameter(id: java.util.UUID) : Unit {
+        @Suppress("DEPRECATION")
         val localVarResponse = deleteParameterWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
@@ -1017,7 +1104,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteParameterWithHttpInfo(id: java.util.UUID) : ApiResponse<Unit?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = deleteParameterRequestConfig(id = id)
 
         return request<Unit, Unit>(
@@ -1031,6 +1120,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param id Parameter internal (UUID) identifier
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun deleteParameterRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -1066,7 +1156,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun getAllParameters(isDeleted: kotlin.Boolean? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<ParameterApiResult> {
+        @Suppress("DEPRECATION")
         val localVarResponse = getAllParametersWithHttpInfo(isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
@@ -1100,7 +1192,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun getAllParametersWithHttpInfo(isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<ParameterApiResult>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = getAllParametersRequestConfig(isDeleted = isDeleted, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return request<Unit, kotlin.collections.List<ParameterApiResult>>(
@@ -1119,6 +1213,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun getAllParametersRequestConfig(isDeleted: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
@@ -1169,7 +1264,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun getParameterById(id: java.util.UUID) : ParameterApiResult {
+        @Suppress("DEPRECATION")
         val localVarResponse = getParameterByIdWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
@@ -1198,7 +1295,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun getParameterByIdWithHttpInfo(id: java.util.UUID) : ApiResponse<ParameterApiResult?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = getParameterByIdRequestConfig(id = id)
 
         return request<Unit, ParameterApiResult>(
@@ -1212,6 +1311,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param id Parameter internal (UUID) identifier
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun getParameterByIdRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -1241,7 +1341,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun updateParameter(updateParameterApiModel: UpdateParameterApiModel? = null) : Unit {
+        @Suppress("DEPRECATION")
         val localVarResponse = updateParameterWithHttpInfo(updateParameterApiModel = updateParameterApiModel)
 
         return when (localVarResponse.responseType) {
@@ -1269,7 +1371,9 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun updateParameterWithHttpInfo(updateParameterApiModel: UpdateParameterApiModel?) : ApiResponse<Unit?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = updateParameterRequestConfig(updateParameterApiModel = updateParameterApiModel)
 
         return request<UpdateParameterApiModel, Unit>(
@@ -1283,6 +1387,7 @@ class ParametersApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param updateParameterApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun updateParameterRequestConfig(updateParameterApiModel: UpdateParameterApiModel?) : RequestConfig<UpdateParameterApiModel> {
         val localVariableBody = updateParameterApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()

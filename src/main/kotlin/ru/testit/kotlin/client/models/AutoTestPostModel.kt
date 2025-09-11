@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param projectId Unique ID of the autotest project
  * @param name Name of the autotest
  * @param workItemIdsForLinkWithAutoTest Specifies the IDs of work items to link your autotest to. You can specify several IDs.
+ * @param workItemIds Specifies the IDs of work items to link your autotest to. You can specify several IDs.
  * @param shouldCreateWorkItem Creates a test case linked to the autotest.
  * @param attributes Key value pair of custom work item attributes
  * @param links Collection of the autotest links
@@ -61,7 +62,12 @@ data class AutoTestPostModel (
 
     /* Specifies the IDs of work items to link your autotest to. You can specify several IDs. */
     @Json(name = "workItemIdsForLinkWithAutoTest")
+    @Deprecated(message = "This property is deprecated.")
     val workItemIdsForLinkWithAutoTest: kotlin.collections.Set<java.util.UUID>? = null,
+
+    /* Specifies the IDs of work items to link your autotest to. You can specify several IDs. */
+    @Json(name = "workItemIds")
+    val workItemIds: kotlin.collections.List<java.util.UUID>? = null,
 
     /* Creates a test case linked to the autotest. */
     @Json(name = "shouldCreateWorkItem")

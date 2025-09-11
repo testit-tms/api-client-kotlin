@@ -32,6 +32,7 @@ import ru.testit.kotlin.client.models.TestResultChronologyModel
 import ru.testit.kotlin.client.models.TestResultHistoryReportApiResult
 import ru.testit.kotlin.client.models.UpdateWorkItemApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
+import ru.testit.kotlin.client.models.WorkItemApiResult
 import ru.testit.kotlin.client.models.WorkItemChangeModel
 import ru.testit.kotlin.client.models.WorkItemLikeModel
 import ru.testit.kotlin.client.models.WorkItemLinkUrlApiModel
@@ -1029,6 +1030,80 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     }
 
     /**
+     * POST /api/v2/workItems
+     * Creates work item
+     * 
+     * @param createWorkItemApiModel  (optional)
+     * @return WorkItemApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkItemsPost(createWorkItemApiModel: CreateWorkItemApiModel? = null) : WorkItemApiResult {
+        val localVarResponse = apiV2WorkItemsPostWithHttpInfo(createWorkItemApiModel = createWorkItemApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/workItems
+     * Creates work item
+     * 
+     * @param createWorkItemApiModel  (optional)
+     * @return ApiResponse<WorkItemApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkItemsPostWithHttpInfo(createWorkItemApiModel: CreateWorkItemApiModel?) : ApiResponse<WorkItemApiResult?> {
+        val localVariableConfig = apiV2WorkItemsPostRequestConfig(createWorkItemApiModel = createWorkItemApiModel)
+
+        return request<CreateWorkItemApiModel, WorkItemApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkItemsPost
+     *
+     * @param createWorkItemApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WorkItemsPostRequestConfig(createWorkItemApiModel: CreateWorkItemApiModel?) : RequestConfig<CreateWorkItemApiModel> {
+        val localVariableBody = createWorkItemApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/workItems",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * POST /api/v2/workItems/search
      * Search for work items
      * 
@@ -1423,80 +1498,6 @@ class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/api/v2/workItems/sharedSteps/{sharedStepId}/references".replace("{"+"sharedStepId"+"}", encodeURIComponent(sharedStepId.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /api/v2/workItems
-     * Create Test Case, Checklist or Shared Step
-     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-     * @param createWorkItemApiModel  (optional)
-     * @return WorkItemModel
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createWorkItem(createWorkItemApiModel: CreateWorkItemApiModel? = null) : WorkItemModel {
-        val localVarResponse = createWorkItemWithHttpInfo(createWorkItemApiModel = createWorkItemApiModel)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemModel
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /api/v2/workItems
-     * Create Test Case, Checklist or Shared Step
-     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System creates work item by identifier  System returns work item model (listed in response parameters)
-     * @param createWorkItemApiModel  (optional)
-     * @return ApiResponse<WorkItemModel?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun createWorkItemWithHttpInfo(createWorkItemApiModel: CreateWorkItemApiModel?) : ApiResponse<WorkItemModel?> {
-        val localVariableConfig = createWorkItemRequestConfig(createWorkItemApiModel = createWorkItemApiModel)
-
-        return request<CreateWorkItemApiModel, WorkItemModel>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation createWorkItem
-     *
-     * @param createWorkItemApiModel  (optional)
-     * @return RequestConfig
-     */
-    fun createWorkItemRequestConfig(createWorkItemApiModel: CreateWorkItemApiModel?) : RequestConfig<CreateWorkItemApiModel> {
-        val localVariableBody = createWorkItemApiModel
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/workItems",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

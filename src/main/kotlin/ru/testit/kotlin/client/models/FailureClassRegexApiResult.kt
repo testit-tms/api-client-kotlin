@@ -22,19 +22,16 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param regexText 
- * @param id Unique ID of the entity
+ * @param id Regex unique identifier
  * @param isDeleted Indicates if the entity is deleted
- * @param failureClassId 
+ * @param regexText Regex value
+ * @param failureClassId Failure category identifier
  */
 
 
-data class FailureClassRegexModel (
+data class FailureClassRegexApiResult (
 
-    @Json(name = "regexText")
-    val regexText: kotlin.String,
-
-    /* Unique ID of the entity */
+    /* Regex unique identifier */
     @Json(name = "id")
     val id: java.util.UUID,
 
@@ -42,8 +39,13 @@ data class FailureClassRegexModel (
     @Json(name = "isDeleted")
     val isDeleted: kotlin.Boolean,
 
+    /* Regex value */
+    @Json(name = "regexText")
+    val regexText: kotlin.String,
+
+    /* Failure category identifier */
     @Json(name = "failureClassId")
-    val failureClassId: java.util.UUID? = null
+    val failureClassId: java.util.UUID
 
 ) {
 

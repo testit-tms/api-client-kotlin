@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.AutoTestResultReasonsCountItemModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,15 +23,14 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param `data` 
  */
 
 
-data class DemoProjectApiResult (
+data class AutoTestResultReasonsCountModel (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    @Json(name = "data")
+    val `data`: kotlin.collections.List<AutoTestResultReasonsCountItemModel>
 
 ) {
 

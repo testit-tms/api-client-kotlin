@@ -69,10 +69,10 @@ data class ExternalFormFieldModel (
     val controlType: kotlin.String? = null,
 
     @Json(name = "minLength")
-    val minLength: kotlin.Int? = null,
+    val minLength: kotlin.Double? = null,
 
     @Json(name = "maxLength")
-    val maxLength: kotlin.Int? = null,
+    val maxLength: kotlin.Double? = null,
 
     @Json(name = "isRequired")
     val isRequired: kotlin.Boolean? = null,
