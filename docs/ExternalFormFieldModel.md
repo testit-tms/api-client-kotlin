@@ -13,8 +13,8 @@
 | **defaultValue** | [**kotlin.Any**](.md) |  |  [optional] |
 | **autoCompleteUrl** | **kotlin.String** |  |  [optional] |
 | **controlType** | **kotlin.String** |  |  [optional] |
-| **minLength** | **kotlin.Int** |  |  [optional] |
-| **maxLength** | **kotlin.Int** |  |  [optional] |
+| **minLength** | **kotlin.Double** |  |  [optional] |
+| **maxLength** | **kotlin.Double** |  |  [optional] |
 | **isRequired** | **kotlin.Boolean** |  |  [optional] |
 | **min** | [**kotlin.Any**](.md) |  |  [optional] |
 | **max** | [**kotlin.Any**](.md) |  |  [optional] |

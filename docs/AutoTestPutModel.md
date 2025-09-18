@@ -9,6 +9,7 @@
 | **name** | **kotlin.String** | Name of the autotest |  |
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Used for search autotest. If value is null or equals Guid mask filled with zeros, search will be executed using ExternalId |  [optional] |
 | **workItemIdsForLinkWithAutoTest** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
+| **workItemIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
 | **links** | [**kotlin.collections.List&lt;LinkPutModel&gt;**](LinkPutModel.md) | Collection of the autotest links |  [optional] |
 | **namespace** | **kotlin.String** | Name of the autotest namespace |  [optional] |
 | **classname** | **kotlin.String** | Name of the autotest class |  [optional] |

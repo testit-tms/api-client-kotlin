@@ -24,6 +24,7 @@ import ru.testit.kotlin.client.models.TagShortApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemGroupGetModel
 import ru.testit.kotlin.client.models.WorkItemGroupModel
+import ru.testit.kotlin.client.models.WorkItemIndexApiResult
 import ru.testit.kotlin.client.models.WorkItemSelectApiModel
 import ru.testit.kotlin.client.models.WorkItemSelectModel
 import ru.testit.kotlin.client.models.WorkItemShortApiResult
@@ -381,9 +382,121 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     }
 
     /**
+     * POST /api/v2/projects/{projectId}/workItems/search/{workItemId}/index
+     * Get work item index (position) in a collection by its id.
+     * 
+     * @param projectId 
+     * @param workItemId 
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
+     * @param workItemSelectApiModel  (optional)
+     * @return WorkItemIndexApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost(projectId: kotlin.String, workItemId: java.util.UUID, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, workItemSelectApiModel: WorkItemSelectApiModel? = null) : WorkItemIndexApiResult {
+        val localVarResponse = apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfo(projectId = projectId, workItemId = workItemId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectApiModel = workItemSelectApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemIndexApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/workItems/search/{workItemId}/index
+     * Get work item index (position) in a collection by its id.
+     * 
+     * @param projectId 
+     * @param workItemId 
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
+     * @param workItemSelectApiModel  (optional)
+     * @return ApiResponse<WorkItemIndexApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostWithHttpInfo(projectId: kotlin.String, workItemId: java.util.UUID, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectApiModel: WorkItemSelectApiModel?) : ApiResponse<WorkItemIndexApiResult?> {
+        val localVariableConfig = apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostRequestConfig(projectId = projectId, workItemId = workItemId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, workItemSelectApiModel = workItemSelectApiModel)
+
+        return request<WorkItemSelectApiModel, WorkItemIndexApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost
+     *
+     * @param projectId 
+     * @param workItemId 
+     * @param skip Amount of items to be skipped (offset) (optional)
+     * @param take Amount of items to be taken (limit) (optional)
+     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
+     * @param searchField Property name for searching (optional)
+     * @param searchValue Value for searching (optional)
+     * @param workItemSelectApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPostRequestConfig(projectId: kotlin.String, workItemId: java.util.UUID, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, workItemSelectApiModel: WorkItemSelectApiModel?) : RequestConfig<WorkItemSelectApiModel> {
+        val localVariableBody = workItemSelectApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                if (skip != null) {
+                    put("Skip", listOf(skip.toString()))
+                }
+                if (take != null) {
+                    put("Take", listOf(take.toString()))
+                }
+                if (orderBy != null) {
+                    put("OrderBy", listOf(orderBy.toString()))
+                }
+                if (searchField != null) {
+                    put("SearchField", listOf(searchField.toString()))
+                }
+                if (searchValue != null) {
+                    put("SearchValue", listOf(searchValue.toString()))
+                }
+            }
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/projects/{projectId}/workItems/search/{workItemId}/index".replace("{"+"projectId"+"}", encodeURIComponent(projectId.toString())).replace("{"+"workItemId"+"}", encodeURIComponent(workItemId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * GET /api/v2/projects/{projectId}/workItems/tags
      * Get WorkItems Tags
-     *  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+     *   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
      * @return kotlin.collections.List<TagShortApiResult>
@@ -416,7 +529,7 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/workItems/tags
      * Get WorkItems Tags
-     *  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+     *   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
      * @return ApiResponse<kotlin.collections.List<TagShortApiResult>?>
@@ -464,7 +577,7 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/workItems
      * Get project work items
-     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+     *   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/deleted work items (optional, default to false)
      * @param tagNames List of tags to filter by (optional)
@@ -506,7 +619,7 @@ class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/workItems
      * Get project work items
-     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+     *   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/deleted work items (optional, default to false)
      * @param tagNames List of tags to filter by (optional)

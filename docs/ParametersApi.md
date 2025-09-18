@@ -27,7 +27,7 @@ All URIs are relative to *http://localhost*
 
 Create multiple parameters
 
- Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+  Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
 
 ### Example
 ```kotlin
@@ -76,7 +76,7 @@ Configure Bearer or PrivateToken:
 
 Update multiple parameters
 
- Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+  Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
 
 ### Example
 ```kotlin
@@ -120,11 +120,11 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ParametersGroupsGet"></a>
 # **apiV2ParametersGroupsGet**
-> kotlin.collections.List&lt;ParameterGroupApiResult&gt; apiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;ParameterGroupApiResult&gt; apiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, projectIds, skip, take, orderBy, searchField, searchValue)
 
 Get parameters as group
 
- Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+  Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
 
 ### Example
 ```kotlin
@@ -136,13 +136,14 @@ val apiInstance = ParametersApi()
 val parameterKeyIds : kotlin.collections.Set<java.util.UUID> =  // kotlin.collections.Set<java.util.UUID> | 
 val name : kotlin.String = name_example // kotlin.String | 
 val isDeleted : kotlin.Boolean = true // kotlin.Boolean | 
+val projectIds : kotlin.collections.List<java.util.UUID?> =  // kotlin.collections.List<java.util.UUID?> | 
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
 val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<ParameterGroupApiResult> = apiInstance.apiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<ParameterGroupApiResult> = apiInstance.apiV2ParametersGroupsGet(parameterKeyIds, name, isDeleted, projectIds, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#apiV2ParametersGroupsGet")
@@ -157,6 +158,7 @@ try {
 | **parameterKeyIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md)|  | [optional] |
 | **name** | **kotlin.String**|  | [optional] |
 | **isDeleted** | **kotlin.Boolean**|  | [optional] |
+| **projectIds** | [**kotlin.collections.List&lt;java.util.UUID?&gt;**](java.util.UUID.md)|  | [optional] |
 | **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
 | **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
 | **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
@@ -187,7 +189,7 @@ Configure Bearer or PrivateToken:
 
 Check existence parameter key in system
 
- Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+  Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
 
 ### Example
 ```kotlin
@@ -236,7 +238,7 @@ Configure Bearer or PrivateToken:
 
 Get all parameter key values
 
- Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+  Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
 
 ### Example
 ```kotlin
@@ -281,11 +283,11 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ParametersKeysGet"></a>
 # **apiV2ParametersKeysGet**
-> kotlin.collections.List&lt;kotlin.String&gt; apiV2ParametersKeysGet()
+> kotlin.collections.List&lt;kotlin.String&gt; apiV2ParametersKeysGet(projectIds, skip, take, orderBy, searchField, searchValue)
 
 Get all parameter keys
 
- Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+  Use case    User runs method execution    System search all parameter keys    System returns parameter keys
 
 ### Example
 ```kotlin
@@ -294,8 +296,14 @@ Get all parameter keys
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ParametersApi()
+val projectIds : kotlin.collections.List<java.util.UUID?> =  // kotlin.collections.List<java.util.UUID?> | 
+val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
+val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
+val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
+val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
+val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<kotlin.String> = apiInstance.apiV2ParametersKeysGet()
+    val result : kotlin.collections.List<kotlin.String> = apiInstance.apiV2ParametersKeysGet(projectIds, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ParametersApi#apiV2ParametersKeysGet")
@@ -307,7 +315,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+| **projectIds** | [**kotlin.collections.List&lt;java.util.UUID?&gt;**](java.util.UUID.md)|  | [optional] |
+| **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
+| **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
+| **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
+| **searchField** | **kotlin.String**| Property name for searching | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **searchValue** | **kotlin.String**| Value for searching | [optional] |
 
 ### Return type
 
@@ -445,7 +460,7 @@ Configure Bearer or PrivateToken:
 
 Create parameter
 
- Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+  Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
 
 ### Example
 ```kotlin
@@ -590,7 +605,7 @@ Configure Bearer or PrivateToken:
 
 Delete parameter
 
- Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+  Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
 
 ### Example
 ```kotlin
@@ -638,7 +653,7 @@ Configure Bearer or PrivateToken:
 
 Get all parameters
 
- Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+  Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
 
 ### Example
 ```kotlin
@@ -697,7 +712,7 @@ Configure Bearer or PrivateToken:
 
 Get parameter by ID
 
- Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+  Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
 
 ### Example
 ```kotlin
@@ -746,7 +761,7 @@ Configure Bearer or PrivateToken:
 
 Update parameter
 
- Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+  Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
 
 ### Example
 ```kotlin

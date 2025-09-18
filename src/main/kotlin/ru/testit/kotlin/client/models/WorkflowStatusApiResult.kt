@@ -27,9 +27,9 @@ import com.squareup.moshi.JsonClass
  * @param name 
  * @param code 
  * @param type Collection of possible status types
+ * @param description 
  * @param isSystem 
  * @param priority 
- * @param description 
  */
 
 
@@ -48,14 +48,14 @@ data class WorkflowStatusApiResult (
     @Json(name = "type")
     val type: TestStatusApiType,
 
+    @Json(name = "description")
+    val description: kotlin.String?,
+
     @Json(name = "isSystem")
     val isSystem: kotlin.Boolean,
 
     @Json(name = "priority")
-    val priority: kotlin.Int,
-
-    @Json(name = "description")
-    val description: kotlin.String? = null
+    val priority: kotlin.Int
 
 ) {
 

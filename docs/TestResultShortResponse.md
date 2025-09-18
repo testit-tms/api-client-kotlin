@@ -16,6 +16,7 @@
 | **links** | [**kotlin.collections.List&lt;LinkShort&gt;**](LinkShort.md) | Collection of links attached to the test result |  |
 | **attachments** | [**kotlin.collections.List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) | Collection of files attached to the test result |  |
 | **rerunCompletedCount** | **kotlin.Int** | Run count |  |
+| **autotestExternalId** | **kotlin.String** | External ID of autotest represented by the test result |  [optional] |
 | **outcome** | **kotlin.String** | Outcome of the test result |  [optional] |
 | **status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |
 | **comment** | **kotlin.String** | Comment to the test result |  [optional] |

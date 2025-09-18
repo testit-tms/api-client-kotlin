@@ -13,6 +13,7 @@
 | **globalId** | **kotlin.Long** | Global ID of the project |  |
 | **type** | [**ProjectTypeModel**](ProjectTypeModel.md) | Type of the project |  |
 | **isFlakyAuto** | **kotlin.Boolean** | Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically |  |
+| **workflowId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **description** | **kotlin.String** | Description of the project |  [optional] |
 | **attributesScheme** | [**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project attributes |  [optional] |
 | **testPlansAttributesScheme** | [**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project test plans attributes |  [optional] |

@@ -1,19 +1,19 @@
 
-# WebHookLogModel
+# WebhookLogApiResult
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **id** | [**java.util.UUID**](java.util.UUID.md) |  |  |
+| **isDeleted** | **kotlin.Boolean** |  |  |
 | **webHookName** | **kotlin.String** |  |  |
-| **eventType** | [**WebHookEventTypeModel**](WebHookEventTypeModel.md) |  |  |
+| **eventType** | [**WebHookEventType**](WebHookEventType.md) |  |  |
 | **webHookId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **responseStatusCode** | **kotlin.Int** |  |  |
 | **projectId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **url** | **kotlin.String** |  |  |
-| **requestType** | [**RequestTypeModel**](RequestTypeModel.md) |  |  |
+| **requestType** | [**RequestType**](RequestType.md) |  |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
-| **id** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the entity |  |
-| **isDeleted** | **kotlin.Boolean** | Indicates if the entity is deleted |  |
 | **requestBody** | **kotlin.String** |  |  [optional] |
 | **requestMeta** | **kotlin.String** |  |  [optional] |
 | **responseBody** | **kotlin.String** |  |  [optional] |

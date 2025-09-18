@@ -252,7 +252,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2CustomAttributesSearchPost"></a>
 # **apiV2CustomAttributesSearchPost**
-> kotlin.collections.List&lt;CustomAttributeModel&gt; apiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel)
+> kotlin.collections.List&lt;CustomAttributeSearchResponseModel&gt; apiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel)
 
 Search for attributes
 
@@ -270,7 +270,7 @@ val searchField : kotlin.String = searchField_example // kotlin.String | Propert
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 val customAttributeSearchQueryModel : CustomAttributeSearchQueryModel =  // CustomAttributeSearchQueryModel | 
 try {
-    val result : kotlin.collections.List<CustomAttributeModel> = apiInstance.apiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel)
+    val result : kotlin.collections.List<CustomAttributeSearchResponseModel> = apiInstance.apiV2CustomAttributesSearchPost(skip, take, orderBy, searchField, searchValue, customAttributeSearchQueryModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CustomAttributesApi#apiV2CustomAttributesSearchPost")
@@ -293,7 +293,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
+[**kotlin.collections.List&lt;CustomAttributeSearchResponseModel&gt;**](CustomAttributeSearchResponseModel.md)
 
 ### Authorization
 

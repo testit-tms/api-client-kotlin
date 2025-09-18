@@ -8,6 +8,7 @@
 | **name** | **kotlin.String** |  |  |
 | **isSystem** | **kotlin.Boolean** |  |  |
 | **isDefault** | **kotlin.Boolean** |  |  |
+| **projects** | [**WorkflowProjectApiResultApiCollectionPreview**](WorkflowProjectApiResultApiCollectionPreview.md) |  |  |
 
 
 

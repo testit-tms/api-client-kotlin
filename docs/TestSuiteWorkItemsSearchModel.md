@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **tagNames** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Collection of tags |  [optional] |
-| **entityTypes** | [**kotlin.collections.Set&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60; |  [optional] |
+| **entityTypes** | [**kotlin.collections.Set&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60; |  [optional] |
 | **nameOrId** | **kotlin.String** | Name or identifier (UUID) of work item |  [optional] |
 | **includeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be included in result regardless of filtering |  [optional] |
 | **excludeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be excluded from result regardless of filtering |  [optional] |

@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.WorkItemPreviewStepApiModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,8 +24,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param name 
- * @param action 
- * @param expected 
+ * @param description 
+ * @param steps 
  */
 
 
@@ -33,11 +34,11 @@ data class WorkItemPreviewApiModel (
     @Json(name = "name")
     val name: kotlin.String,
 
-    @Json(name = "action")
-    val action: kotlin.String,
+    @Json(name = "description")
+    val description: kotlin.String,
 
-    @Json(name = "expected")
-    val expected: kotlin.String
+    @Json(name = "steps")
+    val steps: kotlin.collections.List<WorkItemPreviewStepApiModel>
 
 ) {
 

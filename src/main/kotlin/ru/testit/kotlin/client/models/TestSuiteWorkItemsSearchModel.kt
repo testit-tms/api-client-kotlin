@@ -31,7 +31,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param tagNames Collection of tags
- * @param entityTypes Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
+ * @param entityTypes Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
  * @param nameOrId Name or identifier (UUID) of work item
  * @param includeIds Collection of identifiers of work items which need to be included in result regardless of filtering
  * @param excludeIds Collection of identifiers of work items which need to be excluded from result regardless of filtering
@@ -67,7 +67,7 @@ data class TestSuiteWorkItemsSearchModel (
     @Deprecated(message = "This property is deprecated.")
     val tagNames: kotlin.collections.Set<kotlin.String>? = null,
 
-    /* Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
+    /* Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
     @Json(name = "entityTypes")
     @Deprecated(message = "This property is deprecated.")
     val entityTypes: kotlin.collections.Set<WorkItemEntityTypes>? = null,

@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**apiV2WebhooksLogsGet**](WebhooksLogsApi.md#apiV2WebhooksLogsGet) | **GET** /api/v2/webhooks/logs | Get all webhook logs |
+| [**apiV2WebhooksLogsGet**](WebhooksLogsApi.md#apiV2WebhooksLogsGet) | **GET** /api/v2/webhooks/logs | Get last webhook logs |
 | [**apiV2WebhooksLogsIdDelete**](WebhooksLogsApi.md#apiV2WebhooksLogsIdDelete) | **DELETE** /api/v2/webhooks/logs/{id} | Delete webhook log by ID |
 | [**apiV2WebhooksLogsIdGet**](WebhooksLogsApi.md#apiV2WebhooksLogsIdGet) | **GET** /api/v2/webhooks/logs/{id} | Get webhook log by ID |
 
 
 <a id="apiV2WebhooksLogsGet"></a>
 # **apiV2WebhooksLogsGet**
-> kotlin.collections.List&lt;WebHookLogModel&gt; apiV2WebhooksLogsGet(projectId, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;WebhookLogApiResult&gt; apiV2WebhooksLogsGet(projectId, skip, take, orderBy, searchField, searchValue)
 
-Get all webhook logs
+Get last webhook logs
 
 ### Example
 ```kotlin
@@ -29,7 +29,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<WebHookLogModel> = apiInstance.apiV2WebhooksLogsGet(projectId, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<WebhookLogApiResult> = apiInstance.apiV2WebhooksLogsGet(projectId, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebhooksLogsApi#apiV2WebhooksLogsGet")
@@ -52,7 +52,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;WebHookLogModel&gt;**](WebHookLogModel.md)
+[**kotlin.collections.List&lt;WebhookLogApiResult&gt;**](WebhookLogApiResult.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WebhooksLogsIdGet"></a>
 # **apiV2WebhooksLogsIdGet**
-> WebHookLogModel apiV2WebhooksLogsIdGet(id)
+> WebhookLogApiResult apiV2WebhooksLogsIdGet(id)
 
 Get webhook log by ID
 
@@ -127,7 +127,7 @@ Get webhook log by ID
 val apiInstance = WebhooksLogsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Webhook log unique ID
 try {
-    val result : WebHookLogModel = apiInstance.apiV2WebhooksLogsIdGet(id)
+    val result : WebhookLogApiResult = apiInstance.apiV2WebhooksLogsIdGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebhooksLogsApi#apiV2WebhooksLogsIdGet")
@@ -145,7 +145,7 @@ try {
 
 ### Return type
 
-[**WebHookLogModel**](WebHookLogModel.md)
+[**WebhookLogApiResult**](WebhookLogApiResult.md)
 
 ### Authorization
 

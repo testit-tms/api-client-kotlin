@@ -16,7 +16,9 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.TestPlanTestPointsStatusGroupApiResult
+import ru.testit.kotlin.client.models.TestPlanTestPointsStatusTypeGroupApiResult
 import ru.testit.kotlin.client.models.TestPlanTestPointsTesterAndStatusGroupApiResult
+import ru.testit.kotlin.client.models.TestPlanTestPointsTesterAndStatusTypeGroupApiResult
 import ru.testit.kotlin.client.models.TestPlanTestPointsTesterGroupApiResult
 
 import com.squareup.moshi.Json
@@ -26,16 +28,23 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param countGroupByStatus 
+ * @param countGroupByTesterAndStatus 
  * @param sumGroupByTester 
  * @param countGroupByTester 
- * @param countGroupByTesterAndStatus 
+ * @param countGroupByStatusType 
+ * @param countGroupByTesterAndStatusType 
  */
 
 
 data class TestPlanTestPointsAnalyticsApiResult (
 
     @Json(name = "countGroupByStatus")
+    @Deprecated(message = "This property is deprecated.")
     val countGroupByStatus: kotlin.collections.List<TestPlanTestPointsStatusGroupApiResult>,
+
+    @Json(name = "countGroupByTesterAndStatus")
+    @Deprecated(message = "This property is deprecated.")
+    val countGroupByTesterAndStatus: kotlin.collections.List<TestPlanTestPointsTesterAndStatusGroupApiResult>,
 
     @Json(name = "sumGroupByTester")
     val sumGroupByTester: kotlin.collections.List<TestPlanTestPointsTesterGroupApiResult>,
@@ -43,8 +52,11 @@ data class TestPlanTestPointsAnalyticsApiResult (
     @Json(name = "countGroupByTester")
     val countGroupByTester: kotlin.collections.List<TestPlanTestPointsTesterGroupApiResult>,
 
-    @Json(name = "countGroupByTesterAndStatus")
-    val countGroupByTesterAndStatus: kotlin.collections.List<TestPlanTestPointsTesterAndStatusGroupApiResult>
+    @Json(name = "countGroupByStatusType")
+    val countGroupByStatusType: kotlin.collections.List<TestPlanTestPointsStatusTypeGroupApiResult>,
+
+    @Json(name = "countGroupByTesterAndStatusType")
+    val countGroupByTesterAndStatusType: kotlin.collections.List<TestPlanTestPointsTesterAndStatusTypeGroupApiResult>
 
 ) {
 

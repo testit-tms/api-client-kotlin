@@ -22,29 +22,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * Values: string,datetime,options,user,multipleOptions,checkbox
+ * Values: Post,Put,Delete
  */
 
 @JsonClass(generateAdapter = false)
-enum class CustomAttributeType(val value: kotlin.String) {
+enum class RequestType(val value: kotlin.String) {
 
-    @Json(name = "string")
-    string("string"),
+    @Json(name = "Post")
+    Post("Post"),
 
-    @Json(name = "datetime")
-    datetime("datetime"),
+    @Json(name = "Put")
+    Put("Put"),
 
-    @Json(name = "options")
-    options("options"),
-
-    @Json(name = "user")
-    user("user"),
-
-    @Json(name = "multipleOptions")
-    multipleOptions("multipleOptions"),
-
-    @Json(name = "checkbox")
-    checkbox("checkbox");
+    @Json(name = "Delete")
+    Delete("Delete");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
@@ -59,12 +50,12 @@ enum class CustomAttributeType(val value: kotlin.String) {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is CustomAttributeType) "$data" else null
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is RequestType) "$data" else null
 
         /**
-         * Returns a valid [CustomAttributeType] for [data], null otherwise.
+         * Returns a valid [RequestType] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): CustomAttributeType? = data?.let {
+        fun decode(data: kotlin.Any?): RequestType? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

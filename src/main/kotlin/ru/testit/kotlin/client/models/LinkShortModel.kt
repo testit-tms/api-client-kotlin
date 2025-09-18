@@ -25,6 +25,7 @@ import com.squareup.moshi.JsonClass
  * @param id 
  * @param title 
  * @param url 
+ * @param type 
  */
 
 
@@ -37,7 +38,10 @@ data class LinkShortModel (
     val title: kotlin.String,
 
     @Json(name = "url")
-    val url: kotlin.String
+    val url: kotlin.String,
+
+    @Json(name = "type")
+    val type: kotlin.String? = null
 
 ) {
 

@@ -5,7 +5,6 @@ All URIs are relative to *http://localhost*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**addGlobaAttributesToProject**](ProjectsApi.md#addGlobaAttributesToProject) | **POST** /api/v2/projects/{id}/globalAttributes | Add global attributes to project |
-| [**apiV2ProjectsDemoPost**](ProjectsApi.md#apiV2ProjectsDemoPost) | **POST** /api/v2/projects/demo |  |
 | [**apiV2ProjectsIdDelete**](ProjectsApi.md#apiV2ProjectsIdDelete) | **DELETE** /api/v2/projects/{id} | Archive project |
 | [**apiV2ProjectsIdFailureClassesGet**](ProjectsApi.md#apiV2ProjectsIdFailureClassesGet) | **GET** /api/v2/projects/{id}/failureClasses | Get failure classes |
 | [**apiV2ProjectsIdFavoritePut**](ProjectsApi.md#apiV2ProjectsIdFavoritePut) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite |
@@ -38,7 +37,7 @@ All URIs are relative to *http://localhost*
 
 Add global attributes to project
 
- Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+  Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
 
 ### Example
 ```kotlin
@@ -69,53 +68,6 @@ try {
 ### Return type
 
 null (empty response body)
-
-### Authorization
-
-
-Configure Bearer or PrivateToken:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="apiV2ProjectsDemoPost"></a>
-# **apiV2ProjectsDemoPost**
-> DemoProjectApiResult apiV2ProjectsDemoPost(createProjectApiModel)
-
-
-
-### Example
-```kotlin
-// Import classes:
-//import ru.testit.kotlin.client.infrastructure.*
-//import ru.testit.kotlin.client.models.*
-
-val apiInstance = ProjectsApi()
-val createProjectApiModel : CreateProjectApiModel =  // CreateProjectApiModel | 
-try {
-    val result : DemoProjectApiResult = apiInstance.apiV2ProjectsDemoPost(createProjectApiModel)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProjectsApi#apiV2ProjectsDemoPost")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProjectsApi#apiV2ProjectsDemoPost")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **createProjectApiModel** | [**CreateProjectApiModel**](CreateProjectApiModel.md)|  | [optional] |
-
-### Return type
-
-[**DemoProjectApiResult**](DemoProjectApiResult.md)
 
 ### Authorization
 
@@ -177,7 +129,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsIdFailureClassesGet"></a>
 # **apiV2ProjectsIdFailureClassesGet**
-> kotlin.collections.List&lt;FailureClassModel&gt; apiV2ProjectsIdFailureClassesGet(id, isDeleted)
+> kotlin.collections.List&lt;AutoTestResultReasonProjectApiResult&gt; apiV2ProjectsIdFailureClassesGet(id, isDeleted)
 
 Get failure classes
 
@@ -191,7 +143,7 @@ val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the project
 val isDeleted : kotlin.Boolean = true // kotlin.Boolean | 
 try {
-    val result : kotlin.collections.List<FailureClassModel> = apiInstance.apiV2ProjectsIdFailureClassesGet(id, isDeleted)
+    val result : kotlin.collections.List<AutoTestResultReasonProjectApiResult> = apiInstance.apiV2ProjectsIdFailureClassesGet(id, isDeleted)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#apiV2ProjectsIdFailureClassesGet")
@@ -210,7 +162,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;FailureClassModel&gt;**](FailureClassModel.md)
+[**kotlin.collections.List&lt;AutoTestResultReasonProjectApiResult&gt;**](AutoTestResultReasonProjectApiResult.md)
 
 ### Authorization
 
@@ -276,7 +228,7 @@ Configure Bearer or PrivateToken:
 
 Get Project filters
 
- Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+  Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
 
 ### Example
 ```kotlin
@@ -467,7 +419,7 @@ Configure Bearer or PrivateToken:
 
 Delete attribute from project&#39;s test plans
 
- Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+  Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
 
 ### Example
 ```kotlin
@@ -517,7 +469,7 @@ Configure Bearer or PrivateToken:
 
 Update attribute of project&#39;s test plans
 
- Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+  Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
 
 ### Example
 ```kotlin
@@ -567,7 +519,7 @@ Configure Bearer or PrivateToken:
 
 Get active Project TestRuns
 
- Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+  Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
 
 ### Example
 ```kotlin
@@ -616,7 +568,7 @@ Configure Bearer or PrivateToken:
 
 Get Project TestRuns full models
 
- Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+  Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
 
 ### Example
 ```kotlin
@@ -891,7 +843,7 @@ Configure Bearer or PrivateToken:
 
 Get projects short models
 
- Use case  User sets query params  User runs method execution  System return projects short models
+  Use case    User sets query params    User runs method execution    System return projects short models
 
 ### Example
 ```kotlin
@@ -940,7 +892,7 @@ Configure Bearer or PrivateToken:
 
 Create project
 
- Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+  Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
 
 ### Example
 ```kotlin
@@ -1035,7 +987,7 @@ Configure Bearer or PrivateToken:
 
 Get all projects
 
- Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+  Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
 
 ### Example
 ```kotlin
@@ -1096,7 +1048,7 @@ Configure Bearer or PrivateToken:
 
 Get namespaces of autotests in project
 
- Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+  Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
 
 ### Example
 ```kotlin
@@ -1145,7 +1097,7 @@ Configure Bearer or PrivateToken:
 
 Get project by ID
 
- Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+  Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
 
 ### Example
 ```kotlin
@@ -1194,7 +1146,7 @@ Configure Bearer or PrivateToken:
 
 Get project test plans
 
- Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+  Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
 
 ### Example
 ```kotlin
@@ -1245,7 +1197,7 @@ Configure Bearer or PrivateToken:
 
 Get project test runs
 
- Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+  Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
 
 ### Example
 ```kotlin
@@ -1318,7 +1270,7 @@ Configure Bearer or PrivateToken:
 
 Update project
 
- Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+  Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
 
 ### Example
 ```kotlin
