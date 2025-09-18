@@ -15,8 +15,8 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.RequestTypeModel
-import ru.testit.kotlin.client.models.WebHookEventTypeModel
+import ru.testit.kotlin.client.models.RequestType
+import ru.testit.kotlin.client.models.WebHookEventType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,6 +24,8 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param id 
+ * @param isDeleted 
  * @param webHookName 
  * @param eventType 
  * @param webHookId 
@@ -32,8 +34,6 @@ import com.squareup.moshi.JsonClass
  * @param url 
  * @param requestType 
  * @param createdById 
- * @param id Unique ID of the entity
- * @param isDeleted Indicates if the entity is deleted
  * @param requestBody 
  * @param requestMeta 
  * @param responseBody 
@@ -44,13 +44,19 @@ import com.squareup.moshi.JsonClass
  */
 
 
-data class WebHookLogModel (
+data class WebhookLogApiResult (
+
+    @Json(name = "id")
+    val id: java.util.UUID,
+
+    @Json(name = "isDeleted")
+    val isDeleted: kotlin.Boolean,
 
     @Json(name = "webHookName")
     val webHookName: kotlin.String,
 
     @Json(name = "eventType")
-    val eventType: WebHookEventTypeModel,
+    val eventType: WebHookEventType,
 
     @Json(name = "webHookId")
     val webHookId: java.util.UUID,
@@ -65,18 +71,10 @@ data class WebHookLogModel (
     val url: kotlin.String,
 
     @Json(name = "requestType")
-    val requestType: RequestTypeModel,
+    val requestType: RequestType,
 
     @Json(name = "createdById")
     val createdById: java.util.UUID,
-
-    /* Unique ID of the entity */
-    @Json(name = "id")
-    val id: java.util.UUID,
-
-    /* Indicates if the entity is deleted */
-    @Json(name = "isDeleted")
-    val isDeleted: kotlin.Boolean,
 
     @Json(name = "requestBody")
     val requestBody: kotlin.String? = null,

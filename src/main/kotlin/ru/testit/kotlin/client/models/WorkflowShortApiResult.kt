@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.WorkflowProjectApiResultApiCollectionPreview
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -26,6 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param name 
  * @param isSystem 
  * @param isDefault 
+ * @param projects 
  */
 
 
@@ -41,7 +43,10 @@ data class WorkflowShortApiResult (
     val isSystem: kotlin.Boolean,
 
     @Json(name = "isDefault")
-    val isDefault: kotlin.Boolean
+    val isDefault: kotlin.Boolean,
+
+    @Json(name = "projects")
+    val projects: WorkflowProjectApiResultApiCollectionPreview
 
 ) {
 

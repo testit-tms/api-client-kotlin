@@ -210,7 +210,7 @@ Configure Bearer or PrivateToken:
 
 Upload new attachment file
 
-File size is restricted to 50 MB (52 428 800 bytes)
+File size is restricted to 1 GB (1 073 741 824 bytes)
 
 ### Example
 ```kotlin

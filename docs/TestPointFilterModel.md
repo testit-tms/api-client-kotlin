@@ -16,7 +16,7 @@
 | **isAutomated** | **kotlin.Boolean** | Specifies a test point automation status to search for |  [optional] |
 | **name** | **kotlin.String** | Specifies a test point name to search for |  [optional] |
 | **configurationIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a test point configuration IDs to search for |  [optional] |
-| **testerIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a test point assigned user IDs to search for |  [optional] |
+| **testerIds** | [**kotlin.collections.List&lt;java.util.UUID?&gt;**](java.util.UUID.md) | Specifies a test point assigned user IDs to search for |  [optional] |
 | **duration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a test point range of duration to search for |  [optional] |
 | **sectionIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a test point work item section IDs to search for |  [optional] |
 | **createdDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test point range of creation date to search for |  [optional] |

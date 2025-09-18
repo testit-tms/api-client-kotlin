@@ -38,6 +38,7 @@ import com.squareup.moshi.JsonClass
  * @param links Collection of links attached to the test result
  * @param attachments Collection of files attached to the test result
  * @param rerunCompletedCount Run count
+ * @param autotestExternalId External ID of autotest represented by the test result
  * @param outcome Outcome of the test result
  * @param status 
  * @param comment Comment to the test result
@@ -98,6 +99,10 @@ data class TestResultShortResponse (
     /* Run count */
     @Json(name = "rerunCompletedCount")
     val rerunCompletedCount: kotlin.Int,
+
+    /* External ID of autotest represented by the test result */
+    @Json(name = "autotestExternalId")
+    val autotestExternalId: kotlin.String? = null,
 
     /* Outcome of the test result */
     @Json(name = "outcome")

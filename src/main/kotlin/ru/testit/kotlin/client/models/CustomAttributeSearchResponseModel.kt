@@ -28,7 +28,7 @@ import com.squareup.moshi.JsonClass
  * @param workItemUsage 
  * @param testPlanUsage 
  * @param id Unique ID of the attribute
- * @param options Collection of the attribute options   Available for attributes of type `options` and `multiple options` only
+ * @param options Collection of the attribute options      Available for attributes of type `options` and `multiple options` only
  * @param type Type of the attribute
  * @param isDeleted Indicates if the attribute is deleted
  * @param name Name of the attribute
@@ -50,7 +50,7 @@ data class CustomAttributeSearchResponseModel (
     @Json(name = "id")
     val id: java.util.UUID,
 
-    /* Collection of the attribute options   Available for attributes of type `options` and `multiple options` only */
+    /* Collection of the attribute options      Available for attributes of type `options` and `multiple options` only */
     @Json(name = "options")
     val options: kotlin.collections.List<CustomAttributeOptionModel>,
 

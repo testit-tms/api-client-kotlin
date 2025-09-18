@@ -53,7 +53,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * DELETE /api/v2/tags
      * Delete tags
-     *  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+     *   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
      * @param selectTagsApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -84,7 +84,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * DELETE /api/v2/tags
      * Delete tags
-     *  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+     *   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
      * @param selectTagsApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -125,7 +125,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * DELETE /api/v2/tags/{id}
      * Delete tag
-     *  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+     *   Use case    User sets tag internal (guid format) identifier    System search and delete tag
      * @param id Tag internal (UUID) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -156,7 +156,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * DELETE /api/v2/tags/{id}
      * Delete tag
-     *  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+     *   Use case    User sets tag internal (guid format) identifier    System search and delete tag
      * @param id Tag internal (UUID) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -196,7 +196,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * POST /api/v2/tags
      * Create tag
-     *  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+     *   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
      * @param createTagApiModel  (optional)
      * @return TagApiResult
      * @throws IllegalStateException If the request is not correctly configured
@@ -228,7 +228,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * POST /api/v2/tags
      * Create tag
-     *  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+     *   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
      * @param createTagApiModel  (optional)
      * @return ApiResponse<TagApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -270,7 +270,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * PUT /api/v2/tags
      * Update tag
-     *  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+     *   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
      * @param id  (optional)
      * @param updateTagApiModel  (optional)
      * @return TagApiResult
@@ -303,7 +303,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * PUT /api/v2/tags
      * Update tag
-     *  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+     *   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
      * @param id  (optional)
      * @param updateTagApiModel  (optional)
      * @return ApiResponse<TagApiResult?>
@@ -352,7 +352,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/search
      * Search tags
-     *  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+     *   Use case    User runs method execution    System returns collection of tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -388,7 +388,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/search
      * Search tags
-     *  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+     *   Use case    User runs method execution    System returns collection of tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -454,7 +454,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/testPlansTags
      * Get all Tags that are used in TestPlans
-     *  Use case  User runs method execution  System returns tags (listed in the response example)
+     *   Use case    User runs method execution    System returns tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -490,7 +490,7 @@ class TagsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * GET /api/v2/tags/testPlansTags
      * Get all Tags that are used in TestPlans
-     *  Use case  User runs method execution  System returns tags (listed in the response example)
+     *   Use case    User runs method execution    System returns tags (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)

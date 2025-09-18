@@ -10,7 +10,6 @@
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Creation date of the autotest |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project creator |  |
-| **lastTestResultStatus** | [**TestStatusModel**](TestStatusModel.md) | Status of the autotest last test result |  |
 | **externalId** | **kotlin.String** | External ID of the autotest |  |
 | **projectId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest project |  |
 | **name** | **kotlin.String** | Name of the autotest |  |
@@ -21,6 +20,7 @@
 | **lastTestResultId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest last test result |  [optional] |
 | **lastTestResultConfiguration** | [**ConfigurationShortModel**](ConfigurationShortModel.md) | Configuration of the autotest last test result |  [optional] |
 | **lastTestResultOutcome** | **kotlin.String** | Outcome of the autotest last test result |  [optional] |
+| **lastTestResultStatus** | [**TestStatusModel**](TestStatusModel.md) | Status of the autotest last test result |  [optional] |
 | **stabilityPercentage** | **kotlin.Int** | Stability percentage of the autotest |  [optional] |
 | **links** | [**kotlin.collections.List&lt;LinkPutModel&gt;**](LinkPutModel.md) | Collection of the autotest links |  [optional] |
 | **namespace** | **kotlin.String** | Name of the autotest namespace |  [optional] |

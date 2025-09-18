@@ -23,12 +23,10 @@ import ru.testit.kotlin.client.models.AutoTestNamespaceModel
 import ru.testit.kotlin.client.models.AutoTestResultReasonProjectApiResult
 import ru.testit.kotlin.client.models.CreateProjectApiModel
 import ru.testit.kotlin.client.models.CustomAttributeTestPlanProjectRelationPutModel
-import ru.testit.kotlin.client.models.DemoProjectApiResult
 import ru.testit.kotlin.client.models.FilterModel
 import ru.testit.kotlin.client.models.GetShortProjectsApiModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.ProjectApiResult
 import ru.testit.kotlin.client.models.ProjectModel
 import ru.testit.kotlin.client.models.ProjectSelectModel
 import ru.testit.kotlin.client.models.ProjectShortApiResultReply
@@ -68,7 +66,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * POST /api/v2/projects/{id}/globalAttributes
      * Add global attributes to project
-     *  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+     *   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
      * @param id Project internal (UUID) or global (integer) identifier
      * @param javaUtilUUID  (optional)
      * @return void
@@ -100,7 +98,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * POST /api/v2/projects/{id}/globalAttributes
      * Add global attributes to project
-     *  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+     *   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
      * @param id Project internal (UUID) or global (integer) identifier
      * @param javaUtilUUID  (optional)
      * @return ApiResponse<Unit?>
@@ -133,76 +131,6 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/v2/projects/{id}/globalAttributes".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /api/v2/projects/demo
-     * 
-     * 
-     * @return DemoProjectApiResult
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ProjectsDemoPost() : DemoProjectApiResult {
-        val localVarResponse = apiV2ProjectsDemoPostWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as DemoProjectApiResult
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /api/v2/projects/demo
-     * 
-     * 
-     * @return ApiResponse<DemoProjectApiResult?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ProjectsDemoPostWithHttpInfo() : ApiResponse<DemoProjectApiResult?> {
-        val localVariableConfig = apiV2ProjectsDemoPostRequestConfig()
-
-        return request<Unit, DemoProjectApiResult>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation apiV2ProjectsDemoPost
-     *
-     * @return RequestConfig
-     */
-    fun apiV2ProjectsDemoPostRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/projects/demo",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -436,7 +364,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/filters
      * Get Project filters
-     *  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+     *   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
      * @param id Project internal (UUID) or global (integer) identifier
      * @return kotlin.collections.List<FilterModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -468,7 +396,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/filters
      * Get Project filters
-     *  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+     *   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
      * @param id Project internal (UUID) or global (integer) identifier
      * @return ApiResponse<kotlin.collections.List<FilterModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -726,7 +654,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * DELETE /api/v2/projects/{id}/testPlans/attribute/{attributeId}
      * Delete attribute from project&#39;s test plans
-     *  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+     *   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
      * @param id Project internal (UUID) or global (integer) identifier
      * @param attributeId 
      * @return void
@@ -760,7 +688,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * DELETE /api/v2/projects/{id}/testPlans/attribute/{attributeId}
      * Delete attribute from project&#39;s test plans
-     *  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+     *   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
      * @param id Project internal (UUID) or global (integer) identifier
      * @param attributeId 
      * @return ApiResponse<Unit?>
@@ -805,7 +733,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * PUT /api/v2/projects/{id}/testPlans/attribute
      * Update attribute of project&#39;s test plans
-     *  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+     *   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
      * @param id Project internal (UUID) or global (integer) identifier
      * @param customAttributeTestPlanProjectRelationPutModel  (optional)
      * @return void
@@ -839,7 +767,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * PUT /api/v2/projects/{id}/testPlans/attribute
      * Update attribute of project&#39;s test plans
-     *  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+     *   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
      * @param id Project internal (UUID) or global (integer) identifier
      * @param customAttributeTestPlanProjectRelationPutModel  (optional)
      * @return ApiResponse<Unit?>
@@ -885,7 +813,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testRuns/active
      * Get active Project TestRuns
-     *  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+     *   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
      * @param id Project internal (UUID) or global (integer) identifier
      * @return kotlin.collections.List<PublicTestRunModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -917,7 +845,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testRuns/active
      * Get active Project TestRuns
-     *  Use case  User sets project internal or global identifier  User runs method execution  System returns active testruns
+     *   Use case    User sets project internal or global identifier    User runs method execution    System returns active testruns
      * @param id Project internal (UUID) or global (integer) identifier
      * @return ApiResponse<kotlin.collections.List<PublicTestRunModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -958,7 +886,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testRuns/full
      * Get Project TestRuns full models
-     *  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+     *   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
      * @param id Project internal (UUID) or global (integer) identifier
      * @param includeTestResults  (optional)
      * @param mustAggregateTestResults  (optional)
@@ -1004,7 +932,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testRuns/full
      * Get Project TestRuns full models
-     *  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+     *   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
      * @param id Project internal (UUID) or global (integer) identifier
      * @param includeTestResults  (optional)
      * @param mustAggregateTestResults  (optional)
@@ -1444,7 +1372,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * POST /api/v2/projects/shorts
      * Get projects short models
-     *  Use case  User sets query params  User runs method execution  System return projects short models
+     *   Use case    User sets query params    User runs method execution    System return projects short models
      * @param getShortProjectsApiModel  (optional)
      * @return ProjectShortApiResultReply
      * @throws IllegalStateException If the request is not correctly configured
@@ -1476,7 +1404,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * POST /api/v2/projects/shorts
      * Get projects short models
-     *  Use case  User sets query params  User runs method execution  System return projects short models
+     *   Use case    User sets query params    User runs method execution    System return projects short models
      * @param getShortProjectsApiModel  (optional)
      * @return ApiResponse<ProjectShortApiResultReply?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1518,9 +1446,9 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * POST /api/v2/projects
      * Create project
-     *  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+     *   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
      * @param createProjectApiModel  (optional)
-     * @return ProjectApiResult
+     * @return ProjectModel
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1529,11 +1457,11 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createProject(createProjectApiModel: CreateProjectApiModel? = null) : ProjectApiResult {
+    fun createProject(createProjectApiModel: CreateProjectApiModel? = null) : ProjectModel {
         val localVarResponse = createProjectWithHttpInfo(createProjectApiModel = createProjectApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ProjectApiResult
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ProjectModel
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1550,18 +1478,18 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * POST /api/v2/projects
      * Create project
-     *  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+     *   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
      * @param createProjectApiModel  (optional)
-     * @return ApiResponse<ProjectApiResult?>
+     * @return ApiResponse<ProjectModel?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createProjectWithHttpInfo(createProjectApiModel: CreateProjectApiModel?) : ApiResponse<ProjectApiResult?> {
+    fun createProjectWithHttpInfo(createProjectApiModel: CreateProjectApiModel?) : ApiResponse<ProjectModel?> {
         val localVariableConfig = createProjectRequestConfig(createProjectApiModel = createProjectApiModel)
 
-        return request<CreateProjectApiModel, ProjectApiResult>(
+        return request<CreateProjectApiModel, ProjectModel>(
             localVariableConfig
         )
     }
@@ -1663,7 +1591,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects
      * Get all projects
-     *  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+     *   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
      * @param isDeleted If result must consist of only actual/deleted parameters (optional)
      * @param projectName  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -1703,7 +1631,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects
      * Get all projects
-     *  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+     *   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
      * @param isDeleted If result must consist of only actual/deleted parameters (optional)
      * @param projectName  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -1782,7 +1710,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/autoTestsNamespaces
      * Get namespaces of autotests in project
-     *  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+     *   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
      * @param id Project internal (UUID) or global (integer) identifier
      * @return kotlin.collections.List<AutoTestNamespaceModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1814,7 +1742,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/autoTestsNamespaces
      * Get namespaces of autotests in project
-     *  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+     *   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
      * @param id Project internal (UUID) or global (integer) identifier
      * @return ApiResponse<kotlin.collections.List<AutoTestNamespaceModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1855,7 +1783,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}
      * Get project by ID
-     *  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+     *   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
      * @param id Project internal (UUID) or global (integer) identifier
      * @return ProjectModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -1887,7 +1815,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}
      * Get project by ID
-     *  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+     *   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
      * @param id Project internal (UUID) or global (integer) identifier
      * @return ApiResponse<ProjectModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1928,7 +1856,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testPlans
      * Get project test plans
-     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+     *   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
      * @param id Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/archived test plans (optional)
      * @return kotlin.collections.List<TestPlanModel>
@@ -1961,7 +1889,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testPlans
      * Get project test plans
-     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+     *   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
      * @param id Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/archived test plans (optional)
      * @return ApiResponse<kotlin.collections.List<TestPlanModel>?>
@@ -2009,7 +1937,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testRuns
      * Get project test runs
-     *  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+     *   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
      * @param id Project internal (UUID) or global (integer) identifier
      * @param notStarted 
      * @param inProgress 
@@ -2053,7 +1981,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * GET /api/v2/projects/{id}/testRuns
      * Get project test runs
-     *  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+     *   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
      * @param id Project internal (UUID) or global (integer) identifier
      * @param notStarted 
      * @param inProgress 
@@ -2148,7 +2076,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * PUT /api/v2/projects
      * Update project
-     *  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+     *   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
      * @param updateProjectApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -2179,7 +2107,7 @@ class ProjectsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * PUT /api/v2/projects
      * Update project
-     *  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+     *   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
      * @param updateProjectApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured

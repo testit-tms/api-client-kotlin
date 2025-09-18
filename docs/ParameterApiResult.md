@@ -11,6 +11,7 @@
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **isDeleted** | **kotlin.Boolean** |  |  |
+| **projectIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
 

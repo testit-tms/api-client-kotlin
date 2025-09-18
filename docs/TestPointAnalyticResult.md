@@ -11,6 +11,7 @@
 | **countGroupByTesterAndStatus** | [**kotlin.collections.List&lt;TestPlanGroupByTesterAndStatus&gt;**](TestPlanGroupByTesterAndStatus.md) |  |  |
 | **countGroupByStatusCode** | [**kotlin.collections.List&lt;TestPlanGroupByStatusCode&gt;**](TestPlanGroupByStatusCode.md) |  |  |
 | **countGroupByTesterAndStatusCode** | [**kotlin.collections.List&lt;TestPlanGroupByTesterAndStatusCode&gt;**](TestPlanGroupByTesterAndStatusCode.md) |  |  |
+| **countGroupByStatusType** | [**kotlin.collections.List&lt;TestPlanGroupByStatusType&gt;**](TestPlanGroupByStatusType.md) |  |  |
 
 
 

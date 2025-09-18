@@ -21,7 +21,7 @@ import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.ValidationProblemDetails
-import ru.testit.kotlin.client.models.WebHookLogModel
+import ru.testit.kotlin.client.models.WebhookLogApiResult
 
 import com.squareup.moshi.Json
 
@@ -49,7 +49,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
 
     /**
      * GET /api/v2/webhooks/logs
-     * Get all webhook logs
+     * Get last webhook logs
      * 
      * @param projectId Project unique ID (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -57,7 +57,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<WebHookLogModel>
+     * @return kotlin.collections.List<WebhookLogApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -66,11 +66,11 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WebhooksLogsGet(projectId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<WebHookLogModel> {
+    fun apiV2WebhooksLogsGet(projectId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<WebhookLogApiResult> {
         val localVarResponse = apiV2WebhooksLogsGetWithHttpInfo(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WebHookLogModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WebhookLogApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -86,7 +86,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
 
     /**
      * GET /api/v2/webhooks/logs
-     * Get all webhook logs
+     * Get last webhook logs
      * 
      * @param projectId Project unique ID (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -94,16 +94,16 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<WebHookLogModel>?>
+     * @return ApiResponse<kotlin.collections.List<WebhookLogApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WebhooksLogsGetWithHttpInfo(projectId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<WebHookLogModel>?> {
+    fun apiV2WebhooksLogsGetWithHttpInfo(projectId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<WebhookLogApiResult>?> {
         val localVariableConfig = apiV2WebhooksLogsGetRequestConfig(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
-        return request<Unit, kotlin.collections.List<WebHookLogModel>>(
+        return request<Unit, kotlin.collections.List<WebhookLogApiResult>>(
             localVariableConfig
         )
     }
@@ -231,7 +231,7 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Get webhook log by ID
      * 
      * @param id Webhook log unique ID
-     * @return WebHookLogModel
+     * @return WebhookLogApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -240,11 +240,11 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WebhooksLogsIdGet(id: java.util.UUID) : WebHookLogModel {
+    fun apiV2WebhooksLogsIdGet(id: java.util.UUID) : WebhookLogApiResult {
         val localVarResponse = apiV2WebhooksLogsIdGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as WebHookLogModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WebhookLogApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -263,16 +263,16 @@ class WebhooksLogsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Get webhook log by ID
      * 
      * @param id Webhook log unique ID
-     * @return ApiResponse<WebHookLogModel?>
+     * @return ApiResponse<WebhookLogApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WebhooksLogsIdGetWithHttpInfo(id: java.util.UUID) : ApiResponse<WebHookLogModel?> {
+    fun apiV2WebhooksLogsIdGetWithHttpInfo(id: java.util.UUID) : ApiResponse<WebhookLogApiResult?> {
         val localVariableConfig = apiV2WebhooksLogsIdGetRequestConfig(id = id)
 
-        return request<Unit, WebHookLogModel>(
+        return request<Unit, WebhookLogApiResult>(
             localVariableConfig
         )
     }

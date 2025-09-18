@@ -26,6 +26,7 @@ import com.squareup.moshi.JsonClass
  * @param name 
  * @param statuses 
  * @param isDefault 
+ * @param projectIds 
  */
 
 
@@ -38,7 +39,10 @@ data class CreateWorkflowApiModel (
     val statuses: kotlin.collections.List<WorkflowStatusApiModel>,
 
     @Json(name = "isDefault")
-    val isDefault: kotlin.Boolean? = null
+    val isDefault: kotlin.Boolean? = null,
+
+    @Json(name = "projectIds")
+    val projectIds: kotlin.collections.List<java.util.UUID>? = null
 
 ) {
 

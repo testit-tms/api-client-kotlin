@@ -32,7 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param modifiedByIds Collection of identifiers of users who applied last modification to work item
  * @param states Collection of states of work item
  * @param priorities Collection of priorities of work item
- * @param entityTypes Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
+ * @param entityTypes Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
  * @param createdDate Date and time of work item creation
  * @param modifiedDate Date and time of work item last modification
  * @param isAutomated Is result must consist of only manual/automated work items
@@ -70,7 +70,7 @@ data class SharedStepReferencesQueryFilterModel (
     @Json(name = "priorities")
     val priorities: kotlin.collections.Set<WorkItemPriorityModel>? = null,
 
-    /* Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
+    /* Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
     @Json(name = "entityTypes")
     val entityTypes: kotlin.collections.Set<kotlin.String>? = null,
 

@@ -12,7 +12,7 @@
 | **globalIds** | **kotlin.collections.Set&lt;kotlin.Long&gt;** |  |  [optional] |
 | **isLocked** | **kotlin.Boolean** |  |  [optional] |
 | **lockedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  |  [optional] |
-| **automaticDurationTimer** | **kotlin.collections.Set&lt;kotlin.Boolean&gt;** |  |  [optional] |
+| **automaticDurationTimer** | **kotlin.collections.Set&lt;kotlin.Boolean?&gt;** |  |  [optional] |
 | **createdByIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
 | **createdDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  |  [optional] |
 | **startDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  |  [optional] |

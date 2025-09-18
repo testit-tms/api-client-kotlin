@@ -24,18 +24,25 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param filter 
- * @param extractionModel 
+ * @param filter Test results filter.
+ * @param extractionModel Test results extraction model.
+ * @param webhookIds Webhook ids to rerun.
  */
 
 
 data class ManualRerunSelectTestResultsApiModel (
 
+    /* Test results filter. */
     @Json(name = "filter")
     val filter: TestResultsFilterApiModel? = null,
 
+    /* Test results extraction model. */
     @Json(name = "extractionModel")
-    val extractionModel: ManualRerunTestResultApiModel? = null
+    val extractionModel: ManualRerunTestResultApiModel? = null,
+
+    /* Webhook ids to rerun. */
+    @Json(name = "webhookIds")
+    val webhookIds: kotlin.collections.List<java.util.UUID>? = null
 
 ) {
 

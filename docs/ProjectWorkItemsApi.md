@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**apiV2ProjectsProjectIdWorkItemsSearchGroupedPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsSearchGroupedPost) | **POST** /api/v2/projects/{projectId}/workItems/search/grouped | Search for work items and group results by attribute |
 | [**apiV2ProjectsProjectIdWorkItemsSearchIdPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsSearchIdPost) | **POST** /api/v2/projects/{projectId}/workItems/search/id | Search for work items and extract IDs only |
 | [**apiV2ProjectsProjectIdWorkItemsSearchPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsSearchPost) | **POST** /api/v2/projects/{projectId}/workItems/search | Search for work items |
+| [**apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost) | **POST** /api/v2/projects/{projectId}/workItems/search/{workItemId}/index | Get work item index (position) in a collection by its id. |
 | [**apiV2ProjectsProjectIdWorkItemsTagsGet**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsTagsGet) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags |
 | [**getWorkItemsByProjectId**](ProjectWorkItemsApi.md#getWorkItemsByProjectId) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items |
 
@@ -188,13 +189,74 @@ Configure Bearer or PrivateToken:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a id="apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost"></a>
+# **apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost**
+> WorkItemIndexApiResult apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost(projectId, workItemId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel)
+
+Get work item index (position) in a collection by its id.
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = ProjectWorkItemsApi()
+val projectId : kotlin.String = projectId_example // kotlin.String | 
+val workItemId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
+val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
+val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
+val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
+val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
+val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
+val workItemSelectApiModel : WorkItemSelectApiModel =  // WorkItemSelectApiModel | 
+try {
+    val result : WorkItemIndexApiResult = apiInstance.apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost(projectId, workItemId, skip, take, orderBy, searchField, searchValue, workItemSelectApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **projectId** | **kotlin.String**|  | |
+| **workItemId** | **java.util.UUID**|  | |
+| **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
+| **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
+| **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
+| **searchField** | **kotlin.String**| Property name for searching | [optional] |
+| **searchValue** | **kotlin.String**| Value for searching | [optional] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **workItemSelectApiModel** | [**WorkItemSelectApiModel**](WorkItemSelectApiModel.md)|  | [optional] |
+
+### Return type
+
+[**WorkItemIndexApiResult**](WorkItemIndexApiResult.md)
+
+### Authorization
+
+
+Configure Bearer or PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a id="apiV2ProjectsProjectIdWorkItemsTagsGet"></a>
 # **apiV2ProjectsProjectIdWorkItemsTagsGet**
 > kotlin.collections.List&lt;TagShortApiResult&gt; apiV2ProjectsProjectIdWorkItemsTagsGet(projectId, isDeleted)
 
 Get WorkItems Tags
 
- Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+  Use case    User sets project internal identifier    User runs method execution    System returns work items tags
 
 ### Example
 ```kotlin
@@ -245,7 +307,7 @@ Configure Bearer or PrivateToken:
 
 Get project work items
 
- Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+  Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
 
 ### Example
 ```kotlin
