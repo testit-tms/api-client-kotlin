@@ -33,14 +33,6 @@ import com.squareup.moshi.adapter
 val EMPTY_REQUEST: RequestBody = ByteArray(0).toRequestBody()
 
 open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClient) {
-    // Required public accepted fields
-    var apiKey: MutableMap<String, String> = mutableMapOf()
-    var apiKeyPrefix: MutableMap<String, String> = mutableMapOf()
-    var verifyingSsl: Boolean = false
-    var username: String? = null
-    var password: String? = null
-    var accessToken: String? = null
-    // do not change
     companion object {
         protected const val ContentType: String = "Content-Type"
         protected const val Accept: String = "Accept"
@@ -52,6 +44,11 @@ open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClie
         protected const val OctetMediaType: String = "application/octet-stream"
         protected const val TextMediaType: String = "text/plain"
 
+        val apiKey: MutableMap<String, String> = mutableMapOf()
+        val apiKeyPrefix: MutableMap<String, String> = mutableMapOf()
+        var username: String? = null
+        var password: String? = null
+        var accessToken: String? = null
         const val baseUrlKey: String = "ru.testit.kotlin.client.baseUrl"
 
         @JvmStatic
@@ -358,11 +355,8 @@ open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClie
         null -> ""
         is Array<*> -> toMultiValue(value, "csv").toString()
         is Iterable<*> -> toMultiValue(value, "csv").toString()
-        is OffsetDateTime -> parseDateToQueryString(value)
-        is OffsetTime -> parseDateToQueryString(value)
-        is LocalDateTime -> parseDateToQueryString(value)
-        is LocalDate -> parseDateToQueryString(value)
-        is LocalTime -> parseDateToQueryString(value)
+        is OffsetDateTime, is OffsetTime, is LocalDateTime, is LocalDate, is LocalTime ->
+            parseDateToQueryString(value)
         else -> value.toString()
     }
 

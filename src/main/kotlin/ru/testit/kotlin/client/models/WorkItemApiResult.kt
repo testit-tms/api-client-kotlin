@@ -17,6 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AttachmentModel
 import ru.testit.kotlin.client.models.AutoTestModel
+import ru.testit.kotlin.client.models.ExternalIssueApiResult
 import ru.testit.kotlin.client.models.IterationModel
 import ru.testit.kotlin.client.models.LinkModel
 import ru.testit.kotlin.client.models.StepModel
@@ -57,6 +58,7 @@ import com.squareup.moshi.JsonClass
  * @param autoTests Automated tests associated with the work item
  * @param attachments Files attached to the work item
  * @param links Set of links related to the work item
+ * @param externalIssues Set of external issues related to the work item
  * @param createdDate Creation date of the work item
  * @param createdById Unique identifier of the work item creator
  * @param isDeleted Indicates whether the work item is marked as deleted
@@ -166,6 +168,10 @@ data class WorkItemApiResult (
     /* Set of links related to the work item */
     @Json(name = "links")
     val links: kotlin.collections.List<LinkModel>,
+
+    /* Set of external issues related to the work item */
+    @Json(name = "externalIssues")
+    val externalIssues: kotlin.collections.List<ExternalIssueApiResult>,
 
     /* Creation date of the work item */
     @Json(name = "createdDate")

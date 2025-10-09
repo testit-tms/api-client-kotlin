@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.ExternalIssueExternalServiceApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,14 +23,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param `value` 
+ * @param `value` Value of the external issue field
+ * @param externalService Associated external service with this value
  */
 
 
 data class ExternalIssueApiFieldSuggestion (
 
+    /* Value of the external issue field */
     @Json(name = "value")
-    val `value`: kotlin.String
+    val `value`: kotlin.String,
+
+    /* Associated external service with this value */
+    @Json(name = "externalService")
+    val externalService: ExternalIssueExternalServiceApiResult
 
 ) {
 

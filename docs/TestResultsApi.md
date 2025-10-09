@@ -513,7 +513,7 @@ Configure Bearer or PrivateToken:
 
 Upload and link attachment to TestResult
 
-  Use case    User sets testResultId    User attaches a file    System creates attachment and links it to the test result    System returns attachment identifier
+ Use case  User sets testResultId  User attaches a file  System creates attachment and links it to the test result  System returns attachment identifier
 
 ### Example
 ```kotlin
@@ -563,7 +563,7 @@ Configure Bearer or PrivateToken:
 
 Remove attachment and unlink from TestResult
 
-  Use case    User sets testResultId and attachmentId    User attaches a file    User runs method execution    System deletes attachment and unlinks it from the test result    System returns attachment identifier
+ Use case  User sets testResultId and attachmentId  User attaches a file  User runs method execution  System deletes attachment and unlinks it from the test result  System returns attachment identifier
 
 ### Example
 ```kotlin
@@ -613,7 +613,7 @@ Configure Bearer or PrivateToken:
 
 Get attachment of TestResult
 
-  Use case    User sets attachmentId and testResultId    [Optional] User sets resize configuration    User runs method execution    System search attachments by the attachmentId and the testResultId    [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration    [Optional] Otherwise, System does not resize the attachment    System returns attachment as a file
+ Use case  User sets attachmentId and testResultId  [Optional] User sets resize configuration  User runs method execution  System search attachments by the attachmentId and the testResultId  [Optional] If resize configuration is set, System resizes the attachment according to the resize                     configuration  [Optional] Otherwise, System does not resize the attachment  System returns attachment as a file
 
 ### Example
 ```kotlin
@@ -673,7 +673,7 @@ Configure Bearer or PrivateToken:
 
 Get Metadata of TestResult&#39;s attachment
 
-  Use case    User sets attachmentId and testResultId    User runs method execution    System search attachment by the attachmentId and the testResultId    System returns attachment data
+ Use case  User sets attachmentId and testResultId  User runs method execution  System search attachment by the attachmentId and the testResultId  System returns attachment data
 
 ### Example
 ```kotlin
@@ -724,7 +724,7 @@ Configure Bearer or PrivateToken:
 
 Get all attachments of TestResult
 
-  Use case    User sets testResultId    User runs method execution    System search all attachments of the test result    System returns attachments enumeration
+ Use case  User sets testResultId  User runs method execution  System search all attachments of the test result  System returns attachments enumeration
 
 ### Example
 ```kotlin

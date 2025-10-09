@@ -256,7 +256,7 @@ Configure Bearer or PrivateToken:
 
 Get WorkItems Tags
 
-  Use case    User sets project internal identifier    User runs method execution    System returns work items tags
+ Use case  User sets project internal identifier  User runs method execution  System returns work items tags
 
 ### Example
 ```kotlin
@@ -307,7 +307,7 @@ Configure Bearer or PrivateToken:
 
 Get project work items
 
-  Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
+ Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
 
 ### Example
 ```kotlin

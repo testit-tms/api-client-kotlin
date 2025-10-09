@@ -17,6 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AttachmentModel
 import ru.testit.kotlin.client.models.AutoTestModel
+import ru.testit.kotlin.client.models.ExternalIssueModel
 import ru.testit.kotlin.client.models.IterationModel
 import ru.testit.kotlin.client.models.LinkModel
 import ru.testit.kotlin.client.models.StepModel
@@ -42,6 +43,7 @@ import com.squareup.moshi.JsonClass
  * @param createdDate 
  * @param createdById 
  * @param globalId 
+ * @param externalIssues 
  * @param id 
  * @param sectionId 
  * @param state 
@@ -100,6 +102,9 @@ data class WorkItemModel (
 
     @Json(name = "globalId")
     val globalId: kotlin.Long,
+
+    @Json(name = "externalIssues")
+    val externalIssues: kotlin.collections.List<ExternalIssueModel>,
 
     @Json(name = "id")
     val id: java.util.UUID,

@@ -24,18 +24,25 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param `field` 
- * @param inquiry 
+ * @param `field` Field of external issue metadata to get
+ * @param projectIds List of project identifiers where external issue is available
+ * @param inquiry Inquiry
  */
 
 
 data class GetExternalIssueSuggestionsApiModel (
 
+    /* Field of external issue metadata to get */
     @Json(name = "field")
     val `field`: ExternalIssueApiField,
 
+    /* List of project identifiers where external issue is available */
+    @Json(name = "projectIds")
+    val projectIds: kotlin.collections.List<java.util.UUID>? = null,
+
+    /* Inquiry */
     @Json(name = "inquiry")
-    val inquiry: Inquiry?
+    val inquiry: Inquiry? = null
 
 ) {
 

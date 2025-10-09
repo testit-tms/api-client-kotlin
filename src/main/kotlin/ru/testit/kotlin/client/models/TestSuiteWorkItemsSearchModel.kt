@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
+import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterModel
 import ru.testit.kotlin.client.models.WorkItemLinkFilterModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
@@ -31,10 +32,11 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param tagNames Collection of tags
- * @param entityTypes Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
+ * @param entityTypes Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
  * @param nameOrId Name or identifier (UUID) of work item
  * @param includeIds Collection of identifiers of work items which need to be included in result regardless of filtering
  * @param excludeIds Collection of identifiers of work items which need to be excluded from result regardless of filtering
+ * @param externalMetadata Specifies work item filter by its external metadata
  * @param projectIds Collection of project identifiers
  * @param links Specifies a work item filter by its links
  * @param name Name of work item
@@ -67,7 +69,7 @@ data class TestSuiteWorkItemsSearchModel (
     @Deprecated(message = "This property is deprecated.")
     val tagNames: kotlin.collections.Set<kotlin.String>? = null,
 
-    /* Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
+    /* Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
     @Json(name = "entityTypes")
     @Deprecated(message = "This property is deprecated.")
     val entityTypes: kotlin.collections.Set<WorkItemEntityTypes>? = null,
@@ -83,6 +85,10 @@ data class TestSuiteWorkItemsSearchModel (
     /* Collection of identifiers of work items which need to be excluded from result regardless of filtering */
     @Json(name = "excludeIds")
     val excludeIds: kotlin.collections.Set<java.util.UUID>? = null,
+
+    /* Specifies work item filter by its external metadata */
+    @Json(name = "externalMetadata")
+    val externalMetadata: WorkItemExternalMetadataFilterModel? = null,
 
     /* Collection of project identifiers */
     @Json(name = "projectIds")
