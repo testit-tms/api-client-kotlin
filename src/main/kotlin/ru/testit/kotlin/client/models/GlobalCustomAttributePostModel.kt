@@ -28,7 +28,7 @@ import com.squareup.moshi.JsonClass
  * @param type Type of attribute
  * @param isEnabled Indicates whether the attribute is available
  * @param isRequired Indicates whether the attribute value is mandatory to specify
- * @param options Collection of attribute options      Available for attributes of type `options` and `multiple options` only
+ * @param options Collection of attribute options   Available for attributes of type `options` and `multiple options` only
  */
 
 
@@ -50,7 +50,7 @@ data class GlobalCustomAttributePostModel (
     @Json(name = "isRequired")
     val isRequired: kotlin.Boolean? = null,
 
-    /* Collection of attribute options      Available for attributes of type `options` and `multiple options` only */
+    /* Collection of attribute options   Available for attributes of type `options` and `multiple options` only */
     @Json(name = "options")
     val options: kotlin.collections.List<CustomAttributeOptionPostModel>? = null
 

@@ -23,16 +23,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param `data` 
- * @param totalCount 
+ * @param `data` Preview items
+ * @param totalCount Total count
  */
 
 
 data class WorkflowProjectApiResultApiCollectionPreview (
 
+    /* Preview items */
     @Json(name = "data")
     val `data`: kotlin.collections.List<WorkflowProjectApiResult>,
 
+    /* Total count */
     @Json(name = "totalCount")
     val totalCount: kotlin.Int
 

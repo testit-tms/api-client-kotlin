@@ -14,6 +14,7 @@
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **globalId** | **kotlin.Long** |  |  |
+| **externalIssues** | [**kotlin.collections.List&lt;ExternalIssueModel&gt;**](ExternalIssueModel.md) |  |  |
 | **id** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **sectionId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **state** | [**WorkItemStates**](WorkItemStates.md) |  |  |

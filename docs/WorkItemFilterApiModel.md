@@ -29,6 +29,7 @@
 | **autoTestIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of linked autotests |  [optional] |
 | **workItemVersionIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers work items versions. |  [optional] |
 | **links** | [**WorkItemLinkFilterApiModel**](WorkItemLinkFilterApiModel.md) | Specifies a work item filter by its links |  [optional] |
+| **externalMetadata** | [**WorkItemExternalMetadataFilterApiModel**](WorkItemExternalMetadataFilterApiModel.md) | Specifies work item filter by its external metadata |  [optional] |
 
 
 
