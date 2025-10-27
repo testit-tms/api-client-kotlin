@@ -28,7 +28,7 @@ import com.squareup.moshi.JsonClass
  */
 
 
-data class AutoTestResultReasonGroupApiResult (
+data class FailureCategoryGroupApiResult (
 
     /* Group entries count */
     @Json(name = "count")

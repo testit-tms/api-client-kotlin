@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.FilterOperator
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,20 +23,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param `field` Group field
- * @param displayField Group display field
+ * @param `operator` 
+ * @param `field` 
+ * @param `value` 
  */
 
 
-data class AutoTestResultReasonGroupApiModel (
+data class Filter (
 
-    /* Group field */
+    @Json(name = "operator")
+    val `operator`: FilterOperator,
+
     @Json(name = "field")
     val `field`: kotlin.String,
 
-    /* Group display field */
-    @Json(name = "displayField")
-    val displayField: kotlin.String? = null
+    @Json(name = "value")
+    val `value`: kotlin.String? = null
 
 ) {
 

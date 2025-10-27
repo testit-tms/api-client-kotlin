@@ -11,6 +11,8 @@
 | **skippedTestPoints** | **kotlin.Int** |  |  |
 | **blockedTestPoints** | **kotlin.Int** |  |  |
 | **levelAvatarEnabled** | **kotlin.Boolean** |  |  |
+| **succeededTestPoints** | **kotlin.Int** |  |  |
+| **incompleteTestPoints** | **kotlin.Int** |  |  |
 
 
 

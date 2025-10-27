@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.AutoTestProjectSettingsGetModel
-import ru.testit.kotlin.client.models.AutoTestProjectSettingsPostModel
+import ru.testit.kotlin.client.models.AutoTestProjectSettingsApiModel
+import ru.testit.kotlin.client.models.AutoTestProjectSettingsApiResult
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
@@ -52,8 +52,8 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/v2/projects/{projectId}/settings/autotests
      * Set autotest project settings.
      * 
-     * @param projectId 
-     * @param autoTestProjectSettingsPostModel  (optional)
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param autoTestProjectSettingsApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -62,8 +62,8 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ProjectsProjectIdSettingsAutotestsPost(projectId: kotlin.String, autoTestProjectSettingsPostModel: AutoTestProjectSettingsPostModel? = null) : Unit {
-        val localVarResponse = apiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId = projectId, autoTestProjectSettingsPostModel = autoTestProjectSettingsPostModel)
+    fun apiV2ProjectsProjectIdSettingsAutotestsPost(projectId: kotlin.String, autoTestProjectSettingsApiModel: AutoTestProjectSettingsApiModel? = null) : Unit {
+        val localVarResponse = apiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId = projectId, autoTestProjectSettingsApiModel = autoTestProjectSettingsApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -84,17 +84,17 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/v2/projects/{projectId}/settings/autotests
      * Set autotest project settings.
      * 
-     * @param projectId 
-     * @param autoTestProjectSettingsPostModel  (optional)
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param autoTestProjectSettingsApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId: kotlin.String, autoTestProjectSettingsPostModel: AutoTestProjectSettingsPostModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2ProjectsProjectIdSettingsAutotestsPostRequestConfig(projectId = projectId, autoTestProjectSettingsPostModel = autoTestProjectSettingsPostModel)
+    fun apiV2ProjectsProjectIdSettingsAutotestsPostWithHttpInfo(projectId: kotlin.String, autoTestProjectSettingsApiModel: AutoTestProjectSettingsApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2ProjectsProjectIdSettingsAutotestsPostRequestConfig(projectId = projectId, autoTestProjectSettingsApiModel = autoTestProjectSettingsApiModel)
 
-        return request<AutoTestProjectSettingsPostModel, Unit>(
+        return request<AutoTestProjectSettingsApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -102,12 +102,12 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
     /**
      * To obtain the request config of the operation apiV2ProjectsProjectIdSettingsAutotestsPost
      *
-     * @param projectId 
-     * @param autoTestProjectSettingsPostModel  (optional)
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param autoTestProjectSettingsApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ProjectsProjectIdSettingsAutotestsPostRequestConfig(projectId: kotlin.String, autoTestProjectSettingsPostModel: AutoTestProjectSettingsPostModel?) : RequestConfig<AutoTestProjectSettingsPostModel> {
-        val localVariableBody = autoTestProjectSettingsPostModel
+    fun apiV2ProjectsProjectIdSettingsAutotestsPostRequestConfig(projectId: kotlin.String, autoTestProjectSettingsApiModel: AutoTestProjectSettingsApiModel?) : RequestConfig<AutoTestProjectSettingsApiModel> {
+        val localVariableBody = autoTestProjectSettingsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -127,8 +127,8 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * GET /api/v2/projects/{projectId}/settings/autotests
      * Get autotest project settings.
      * 
-     * @param projectId 
-     * @return AutoTestProjectSettingsGetModel
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @return AutoTestProjectSettingsApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -137,11 +137,11 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getAutotestProjectSettings(projectId: kotlin.String) : AutoTestProjectSettingsGetModel {
+    fun getAutotestProjectSettings(projectId: kotlin.String) : AutoTestProjectSettingsApiResult {
         val localVarResponse = getAutotestProjectSettingsWithHttpInfo(projectId = projectId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestProjectSettingsGetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestProjectSettingsApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -159,17 +159,17 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * GET /api/v2/projects/{projectId}/settings/autotests
      * Get autotest project settings.
      * 
-     * @param projectId 
-     * @return ApiResponse<AutoTestProjectSettingsGetModel?>
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @return ApiResponse<AutoTestProjectSettingsApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getAutotestProjectSettingsWithHttpInfo(projectId: kotlin.String) : ApiResponse<AutoTestProjectSettingsGetModel?> {
+    fun getAutotestProjectSettingsWithHttpInfo(projectId: kotlin.String) : ApiResponse<AutoTestProjectSettingsApiResult?> {
         val localVariableConfig = getAutotestProjectSettingsRequestConfig(projectId = projectId)
 
-        return request<Unit, AutoTestProjectSettingsGetModel>(
+        return request<Unit, AutoTestProjectSettingsApiResult>(
             localVariableConfig
         )
     }
@@ -177,7 +177,7 @@ class ProjectSettingsApi(basePath: kotlin.String = defaultBasePath, client: Call
     /**
      * To obtain the request config of the operation getAutotestProjectSettings
      *
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @return RequestConfig
      */
     fun getAutotestProjectSettingsRequestConfig(projectId: kotlin.String) : RequestConfig<Unit> {

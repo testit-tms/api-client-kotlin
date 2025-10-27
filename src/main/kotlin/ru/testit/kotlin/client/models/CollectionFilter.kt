@@ -15,7 +15,8 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.AutoTestResultReasonGroupItemApiResult
+import ru.testit.kotlin.client.models.CollectionOperator
+import ru.testit.kotlin.client.models.IFilter
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,18 +24,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param `data` 
- * @param totalCount 
+ * @param `operator` 
+ * @param filter 
+ * @param `field` 
  */
 
 
-data class AutoTestResultReasonGroupItemApiResultReply (
+data class CollectionFilter (
 
-    @Json(name = "data")
-    val `data`: kotlin.collections.List<AutoTestResultReasonGroupItemApiResult>,
+    @Json(name = "operator")
+    val `operator`: CollectionOperator,
 
-    @Json(name = "totalCount")
-    val totalCount: kotlin.Int
+    @Json(name = "filter")
+    val filter: IFilter,
+
+    @Json(name = "field")
+    val `field`: kotlin.String
 
 ) {
 

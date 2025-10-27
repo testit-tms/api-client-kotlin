@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiV2ProjectsProjectIdSettingsAutotestsPost"></a>
 # **apiV2ProjectsProjectIdSettingsAutotestsPost**
-> apiV2ProjectsProjectIdSettingsAutotestsPost(projectId, autoTestProjectSettingsPostModel)
+> apiV2ProjectsProjectIdSettingsAutotestsPost(projectId, autoTestProjectSettingsApiModel)
 
 Set autotest project settings.
 
@@ -21,10 +21,10 @@ Set autotest project settings.
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectSettingsApi()
-val projectId : kotlin.String = projectId_example // kotlin.String | 
-val autoTestProjectSettingsPostModel : AutoTestProjectSettingsPostModel =  // AutoTestProjectSettingsPostModel | 
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
+val autoTestProjectSettingsApiModel : AutoTestProjectSettingsApiModel =  // AutoTestProjectSettingsApiModel | 
 try {
-    apiInstance.apiV2ProjectsProjectIdSettingsAutotestsPost(projectId, autoTestProjectSettingsPostModel)
+    apiInstance.apiV2ProjectsProjectIdSettingsAutotestsPost(projectId, autoTestProjectSettingsApiModel)
 } catch (e: ClientException) {
     println("4xx response calling ProjectSettingsApi#apiV2ProjectsProjectIdSettingsAutotestsPost")
     e.printStackTrace()
@@ -35,10 +35,10 @@ try {
 ```
 
 ### Parameters
-| **projectId** | **kotlin.String**|  | |
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **autoTestProjectSettingsPostModel** | [**AutoTestProjectSettingsPostModel**](AutoTestProjectSettingsPostModel.md)|  | [optional] |
+| **autoTestProjectSettingsApiModel** | [**AutoTestProjectSettingsApiModel**](AutoTestProjectSettingsApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -58,7 +58,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getAutotestProjectSettings"></a>
 # **getAutotestProjectSettings**
-> AutoTestProjectSettingsGetModel getAutotestProjectSettings(projectId)
+> AutoTestProjectSettingsApiResult getAutotestProjectSettings(projectId)
 
 Get autotest project settings.
 
@@ -69,9 +69,9 @@ Get autotest project settings.
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectSettingsApi()
-val projectId : kotlin.String = projectId_example // kotlin.String | 
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
 try {
-    val result : AutoTestProjectSettingsGetModel = apiInstance.getAutotestProjectSettings(projectId)
+    val result : AutoTestProjectSettingsApiResult = apiInstance.getAutotestProjectSettings(projectId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectSettingsApi#getAutotestProjectSettings")
@@ -85,11 +85,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **projectId** | **kotlin.String**|  | |
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
 
 ### Return type
 
-[**AutoTestProjectSettingsGetModel**](AutoTestProjectSettingsGetModel.md)
+[**AutoTestProjectSettingsApiResult**](AutoTestProjectSettingsApiResult.md)
 
 ### Authorization
 

@@ -15,8 +15,8 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.AutoTestResultReasonGroupApiModel
-import ru.testit.kotlin.client.models.Inquiry
+import ru.testit.kotlin.client.models.FailureCategoryGroupApiResult
+import ru.testit.kotlin.client.models.FailureCategoryItemApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,20 +24,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param inquiry Inquiry details
+ * @param items Group data
  * @param group Group details
  */
 
 
-data class AutoTestResultReasonGroupSearchApiModel (
+data class FailureCategoryGroupItemApiResult (
 
-    /* Inquiry details */
-    @Json(name = "inquiry")
-    val inquiry: Inquiry,
+    /* Group data */
+    @Json(name = "items")
+    val items: kotlin.collections.List<FailureCategoryItemApiResult>,
 
     /* Group details */
     @Json(name = "group")
-    val group: AutoTestResultReasonGroupApiModel? = null
+    val group: FailureCategoryGroupApiResult? = null
 
 ) {
 

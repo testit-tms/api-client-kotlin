@@ -43,6 +43,7 @@ import com.squareup.moshi.JsonClass
  * @param modifiedDate Specifies a test point range of last modification date to search for
  * @param modifiedByIds Specifies a test point last editor IDs to search for
  * @param tags Specifies a test point tags to search for
+ * @param excludeTags Specifies a test point tags to exclude to search for
  * @param attributes Specifies a test point attributes to search for
  * @param workItemCreatedDate Specifies a work item range of creation date to search for
  * @param workItemCreatedByIds Specifies a work item creator IDs to search for
@@ -121,6 +122,10 @@ data class TestPlanTestPointsSearchApiModel (
     /* Specifies a test point tags to search for */
     @Json(name = "tags")
     val tags: kotlin.collections.List<kotlin.String>? = null,
+
+    /* Specifies a test point tags to exclude to search for */
+    @Json(name = "excludeTags")
+    val excludeTags: kotlin.collections.List<kotlin.String>? = null,
 
     /* Specifies a test point attributes to search for */
     @Json(name = "attributes")

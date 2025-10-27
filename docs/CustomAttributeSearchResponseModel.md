@@ -7,7 +7,7 @@
 | **workItemUsage** | [**kotlin.collections.List&lt;ProjectShortestModel&gt;**](ProjectShortestModel.md) |  |  |
 | **testPlanUsage** | [**kotlin.collections.List&lt;ProjectShortestModel&gt;**](ProjectShortestModel.md) |  |  |
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the attribute |  |
-| **options** | [**kotlin.collections.List&lt;CustomAttributeOptionModel&gt;**](CustomAttributeOptionModel.md) | Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only |  |
+| **options** | [**kotlin.collections.List&lt;CustomAttributeOptionModel&gt;**](CustomAttributeOptionModel.md) | Collection of the attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only |  |
 | **type** | [**CustomAttributeTypesEnum**](CustomAttributeTypesEnum.md) | Type of the attribute |  |
 | **isDeleted** | **kotlin.Boolean** | Indicates if the attribute is deleted |  |
 | **name** | **kotlin.String** | Name of the attribute |  |

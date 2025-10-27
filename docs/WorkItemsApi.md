@@ -38,7 +38,7 @@ All URIs are relative to *http://localhost*
 
 Upload and link attachment to WorkItem
 
- Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+  Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
 
 ### Example
 ```kotlin
@@ -88,7 +88,7 @@ Configure Bearer or PrivateToken:
 
 Transform CheckList to TestCase
 
- Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+  Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
 
 ### Example
 ```kotlin
@@ -137,7 +137,7 @@ Configure Bearer or PrivateToken:
 
 Get change history of WorkItem
 
- Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+  Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
 
 ### Example
 ```kotlin
@@ -196,7 +196,7 @@ Configure Bearer or PrivateToken:
 
 Delete like from WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
 
 ### Example
 ```kotlin
@@ -244,7 +244,7 @@ Configure Bearer or PrivateToken:
 
 Set like to WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
 
 ### Example
 ```kotlin
@@ -292,7 +292,7 @@ Configure Bearer or PrivateToken:
 
 Get likes count of WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
 
 ### Example
 ```kotlin
@@ -341,7 +341,7 @@ Configure Bearer or PrivateToken:
 
 Get likes of WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
 
 ### Example
 ```kotlin
@@ -390,7 +390,7 @@ Configure Bearer or PrivateToken:
 
 Get test results history of WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
 
 ### Example
 ```kotlin
@@ -469,7 +469,7 @@ Configure Bearer or PrivateToken:
 
 Set WorkItem as actual
 
- Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+  Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
 
 ### Example
 ```kotlin
@@ -577,7 +577,7 @@ Configure Bearer or PrivateToken:
 
 Move WorkItem to another section
 
- Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+  Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
 
 ### Example
 ```kotlin
@@ -730,7 +730,7 @@ Configure Bearer or PrivateToken:
 
 Get SharedStep references in sections
 
- Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+  Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
 
 ### Example
 ```kotlin
@@ -791,7 +791,7 @@ Configure Bearer or PrivateToken:
 
 Get SharedStep references in work items
 
- Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+  Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
 
 ### Example
 ```kotlin
@@ -852,7 +852,7 @@ Configure Bearer or PrivateToken:
 
 Get SharedStep references
 
- Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+  Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
 
 ### Example
 ```kotlin
@@ -901,7 +901,7 @@ Configure Bearer or PrivateToken:
 
 Delete all links AutoTests from WorkItem by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+  Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
 
 ### Example
 ```kotlin
@@ -910,7 +910,7 @@ Delete all links AutoTests from WorkItem by Id or GlobalId
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or global(integer format) identifier\"
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or  global(integer format) identifier\"
 try {
     apiInstance.deleteAllWorkItemsFromAutoTest(id)
 } catch (e: ClientException) {
@@ -925,7 +925,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| WorkItem internal (guid format) or global(integer format) identifier\&quot; | |
+| **id** | **kotlin.String**| WorkItem internal (guid format) or  global(integer format) identifier\&quot; | |
 
 ### Return type
 
@@ -949,7 +949,7 @@ Configure Bearer or PrivateToken:
 
 Delete Test Case, Checklist or Shared Step by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+  Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
 
 ### Example
 ```kotlin
@@ -958,7 +958,7 @@ Delete Test Case, Checklist or Shared Step by Id or GlobalId
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or global(integer format) identifier\"
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or  global(integer format) identifier\"
 try {
     apiInstance.deleteWorkItem(id)
 } catch (e: ClientException) {
@@ -973,7 +973,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| WorkItem internal (guid format) or global(integer format) identifier\&quot; | |
+| **id** | **kotlin.String**| WorkItem internal (guid format) or  global(integer format) identifier\&quot; | |
 
 ### Return type
 
@@ -997,7 +997,7 @@ Configure Bearer or PrivateToken:
 
 Get all AutoTests linked to WorkItem by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+  Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
 
 ### Example
 ```kotlin
@@ -1006,7 +1006,7 @@ Get all AutoTests linked to WorkItem by Id or GlobalId
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or global(integer format) identifier\"
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or  global(integer format) identifier\"
 try {
     val result : kotlin.collections.List<AutoTestModel> = apiInstance.getAutoTestsForWorkItem(id)
     println(result)
@@ -1022,7 +1022,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| WorkItem internal (guid format) or global(integer format) identifier\&quot; | |
+| **id** | **kotlin.String**| WorkItem internal (guid format) or  global(integer format) identifier\&quot; | |
 
 ### Return type
 
@@ -1053,7 +1053,7 @@ Get iterations by work item Id or GlobalId
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or global(integer format) identifier\"
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or  global(integer format) identifier\"
 val versionId : java.util.UUID = 00000000-0000-0000-0000-000000000000 // java.util.UUID | WorkItem version (guid format) identifier
 val versionNumber : kotlin.Int = 0 // kotlin.Int | WorkItem version number (0 is the last version)\"
 try {
@@ -1069,7 +1069,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| WorkItem internal (guid format) or global(integer format) identifier\&quot; | |
+| **id** | **kotlin.String**| WorkItem internal (guid format) or  global(integer format) identifier\&quot; | |
 | **versionId** | **java.util.UUID**| WorkItem version (guid format) identifier | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
@@ -1097,7 +1097,7 @@ Configure Bearer or PrivateToken:
 
 Get Test Case, Checklist or Shared Step by Id or GlobalId
 
- Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+  Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
 
 ### Example
 ```kotlin
@@ -1106,7 +1106,7 @@ Get Test Case, Checklist or Shared Step by Id or GlobalId
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or global(integer format) identifier\"
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or  global(integer format) identifier\"
 val versionId : java.util.UUID = 00000000-0000-0000-0000-000000000000 // java.util.UUID | WorkItem version (guid format) identifier\"
 val versionNumber : kotlin.Int = 0 // kotlin.Int | WorkItem version number (0 is the last version)\"
 try {
@@ -1122,7 +1122,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| WorkItem internal (guid format) or global(integer format) identifier\&quot; | |
+| **id** | **kotlin.String**| WorkItem internal (guid format) or  global(integer format) identifier\&quot; | |
 | **versionId** | **java.util.UUID**| WorkItem version (guid format) identifier\&quot; | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
@@ -1150,7 +1150,7 @@ Configure Bearer or PrivateToken:
 
 Get WorkItem chronology by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+  Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
 
 ### Example
 ```kotlin
@@ -1159,7 +1159,7 @@ Get WorkItem chronology by Id or GlobalId
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsApi()
-val id : kotlin.String = id_example // kotlin.String | 
+val id : kotlin.String = id_example // kotlin.String | Internal (UUID) or global (integer) identifier
 try {
     val result : kotlin.collections.List<TestResultChronologyModel> = apiInstance.getWorkItemChronology(id)
     println(result)
@@ -1175,7 +1175,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**|  | |
+| **id** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
 
 ### Return type
 
@@ -1199,7 +1199,7 @@ Configure Bearer or PrivateToken:
 
 Get WorkItem versions
 
- Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+  Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
 
 ### Example
 ```kotlin
@@ -1208,9 +1208,9 @@ Get WorkItem versions
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or global(integer format) identifier\"
-val workItemVersionId : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | WorkItem version (guid format) identifier\"
-val versionNumber : kotlin.Int = 1 // kotlin.Int | WorkItem version (integer format) number\"
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or  global(integer format) identifier\"
+val workItemVersionId : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | WorkItem version (guid format)  identifier\"
+val versionNumber : kotlin.Int = 1 // kotlin.Int | WorkItem version (integer format)  number\"
 try {
     val result : kotlin.collections.List<WorkItemVersionModel> = apiInstance.getWorkItemVersions(id, workItemVersionId, versionNumber)
     println(result)
@@ -1224,11 +1224,11 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| WorkItem internal (guid format) or global(integer format) identifier\&quot; | |
-| **workItemVersionId** | **java.util.UUID**| WorkItem version (guid format) identifier\&quot; | [optional] |
+| **id** | **kotlin.String**| WorkItem internal (guid format) or  global(integer format) identifier\&quot; | |
+| **workItemVersionId** | **java.util.UUID**| WorkItem version (guid format)  identifier\&quot; | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **versionNumber** | **kotlin.Int**| WorkItem version (integer format) number\&quot; | [optional] |
+| **versionNumber** | **kotlin.Int**| WorkItem version (integer format)  number\&quot; | [optional] |
 
 ### Return type
 
@@ -1344,7 +1344,7 @@ Configure Bearer or PrivateToken:
 
 Update Test Case, Checklist or Shared Step
 
- Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
+  Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
 
 ### Example
 ```kotlin

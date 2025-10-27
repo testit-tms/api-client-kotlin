@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.AutoTestResultReasonGroupApiResult
+import ru.testit.kotlin.client.models.FailureCategoryGroupApiResult
 import ru.testit.kotlin.client.models.ProjectFailureCategoryApiResult
 
 import com.squareup.moshi.Json
@@ -37,7 +37,7 @@ data class ProjectFailureCategoryGroupItemApiResult (
 
     /* Group details */
     @Json(name = "group")
-    val group: AutoTestResultReasonGroupApiResult? = null
+    val group: FailureCategoryGroupApiResult? = null
 
 ) {
 

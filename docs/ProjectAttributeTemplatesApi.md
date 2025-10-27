@@ -22,7 +22,7 @@ Search for custom attributes templates
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectAttributeTemplatesApi()
-val projectId : kotlin.String = projectId_example // kotlin.String | 
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
 val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
@@ -42,7 +42,7 @@ try {
 ```
 
 ### Parameters
-| **projectId** | **kotlin.String**|  | |
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
 | **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
 | **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
 | **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
@@ -74,7 +74,7 @@ Configure Bearer or PrivateToken:
 
 Delete CustomAttributeTemplate from Project
 
- Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+  Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
 
 ### Example
 ```kotlin
@@ -124,7 +124,7 @@ Configure Bearer or PrivateToken:
 
 Add CustomAttributeTemplate to Project
 
- Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+  Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
 
 ### Example
 ```kotlin

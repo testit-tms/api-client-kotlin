@@ -32,7 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param name Test run name
  * @param stateName Test run state
  * @param status Test run status
- * @param projectId Project unique identifier              This property is used to link test run with project.
+ * @param projectId Project unique identifier                This property is used to link test run with project.
  * @param createdDate Date and time of test run creation
  * @param createdById Unique identifier of user who created test run
  * @param attachments Collection of attachments related to the test run
@@ -40,10 +40,10 @@ import com.squareup.moshi.JsonClass
  * @param webhooks Enabled webhooks
  * @param runCount Run count
  * @param description Test run description
- * @param launchSource Test run launch source              Once launch source is specified it cannot be updated.
+ * @param launchSource Test run launch source                Once launch source is specified it cannot be updated.
  * @param startedOn Date and time of test run start
  * @param completedOn Date and time of test run end
- * @param testPlanId Test plan unique identifier              This property is used to link test run with test plan.
+ * @param testPlanId Test plan unique identifier                This property is used to link test run with test plan.
  * @param testResults Enumeration of test results related to test run
  * @param modifiedDate Date and time of last test run  modification
  * @param modifiedById Unique identifier of user who applied last test run  modification
@@ -71,7 +71,7 @@ data class TestRunV2ApiResult (
     @Json(name = "status")
     val status: TestStatusApiResult,
 
-    /* Project unique identifier              This property is used to link test run with project. */
+    /* Project unique identifier                This property is used to link test run with project. */
     @Json(name = "projectId")
     val projectId: java.util.UUID,
 
@@ -103,7 +103,7 @@ data class TestRunV2ApiResult (
     @Json(name = "description")
     val description: kotlin.String? = null,
 
-    /* Test run launch source              Once launch source is specified it cannot be updated. */
+    /* Test run launch source                Once launch source is specified it cannot be updated. */
     @Json(name = "launchSource")
     val launchSource: kotlin.String? = null,
 
@@ -115,7 +115,7 @@ data class TestRunV2ApiResult (
     @Json(name = "completedOn")
     val completedOn: java.time.OffsetDateTime? = null,
 
-    /* Test plan unique identifier              This property is used to link test run with test plan. */
+    /* Test plan unique identifier                This property is used to link test run with test plan. */
     @Json(name = "testPlanId")
     val testPlanId: java.util.UUID? = null,
 

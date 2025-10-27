@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.IFilter
 import ru.testit.kotlin.client.models.LogicalOperator
 
 import com.squareup.moshi.Json
@@ -31,7 +32,7 @@ import com.squareup.moshi.JsonClass
 data class CompositeFilter (
 
     @Json(name = "filters")
-    val filters: kotlin.collections.List<kotlin.Any>,
+    val filters: kotlin.collections.List<IFilter>,
 
     @Json(name = "operator")
     val `operator`: LogicalOperator

@@ -22,15 +22,32 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param rerunEnabled Auto rerun enabled
- * @param rerunAttemptsCount Auto rerun attempt count
+ * @param projectId Unique ID of the project.
  * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" sets automatically
  * @param flakyStabilityPercentage Stability percentage for autotest flaky computing
  * @param flakyTestRunCount Last test run count for autotest flaky computing
+ * @param rerunEnabled Auto rerun enabled
+ * @param rerunAttemptsCount Auto rerun attempt count
  */
 
 
-data class AutoTestProjectSettingsPostModel (
+data class AutoTestProjectSettingsApiResult (
+
+    /* Unique ID of the project. */
+    @Json(name = "projectId")
+    val projectId: java.util.UUID,
+
+    /* Indicates if the status \"Flaky/Stable\" sets automatically */
+    @Json(name = "isFlakyAuto")
+    val isFlakyAuto: kotlin.Boolean,
+
+    /* Stability percentage for autotest flaky computing */
+    @Json(name = "flakyStabilityPercentage")
+    val flakyStabilityPercentage: kotlin.Int,
+
+    /* Last test run count for autotest flaky computing */
+    @Json(name = "flakyTestRunCount")
+    val flakyTestRunCount: kotlin.Int,
 
     /* Auto rerun enabled */
     @Json(name = "rerunEnabled")
@@ -38,19 +55,7 @@ data class AutoTestProjectSettingsPostModel (
 
     /* Auto rerun attempt count */
     @Json(name = "rerunAttemptsCount")
-    val rerunAttemptsCount: kotlin.Int,
-
-    /* Indicates if the status \"Flaky/Stable\" sets automatically */
-    @Json(name = "isFlakyAuto")
-    val isFlakyAuto: kotlin.Boolean? = false,
-
-    /* Stability percentage for autotest flaky computing */
-    @Json(name = "flakyStabilityPercentage")
-    val flakyStabilityPercentage: kotlin.Int? = 100,
-
-    /* Last test run count for autotest flaky computing */
-    @Json(name = "flakyTestRunCount")
-    val flakyTestRunCount: kotlin.Int? = 100
+    val rerunAttemptsCount: kotlin.Int
 
 ) {
 

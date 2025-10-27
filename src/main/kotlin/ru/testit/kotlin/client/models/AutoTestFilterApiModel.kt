@@ -42,7 +42,7 @@ import com.squareup.moshi.JsonClass
  * @param className Specifies an autotest class name to search for
  * @param isEmptyClassName Specifies an autotest class name presence status to search for
  * @param lastTestResultOutcome Specifies an autotest outcome of the last test result to search for
- * @param lastTestResultStatusCode Specifies an autotest status code of the last test result to search for
+ * @param lastTestResultStatusCodes Specifies an autotest status codes of the last test result to search for
  * @param externalKey Specifies an autotest external key to search for
  * @param lastTestResultConfigurationIds Specifies an autotest configuration IDs of the last test result to search for
  */
@@ -118,9 +118,9 @@ data class AutoTestFilterApiModel (
     @Json(name = "lastTestResultOutcome")
     val lastTestResultOutcome: AutotestResultOutcome? = null,
 
-    /* Specifies an autotest status code of the last test result to search for */
-    @Json(name = "lastTestResultStatusCode")
-    val lastTestResultStatusCode: kotlin.String? = null,
+    /* Specifies an autotest status codes of the last test result to search for */
+    @Json(name = "lastTestResultStatusCodes")
+    val lastTestResultStatusCodes: kotlin.collections.Set<kotlin.String>? = null,
 
     /* Specifies an autotest external key to search for */
     @Json(name = "externalKey")

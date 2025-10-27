@@ -52,7 +52,7 @@ class ProjectAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cl
      * POST /api/v2/projects/{projectId}/attributes/templates/search
      * Search for custom attributes templates
      * 
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -90,7 +90,7 @@ class ProjectAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cl
      * POST /api/v2/projects/{projectId}/attributes/templates/search
      * Search for custom attributes templates
      * 
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -114,7 +114,7 @@ class ProjectAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * To obtain the request config of the operation apiV2ProjectsProjectIdAttributesTemplatesSearchPost
      *
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -160,7 +160,7 @@ class ProjectAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * DELETE /api/v2/projects/{projectId}/attributes/templates/{templateId}
      * Delete CustomAttributeTemplate from Project
-     *  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+     *   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param templateId CustomAttributeTemplate internal (UUID) identifier
      * @return void
@@ -192,7 +192,7 @@ class ProjectAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * DELETE /api/v2/projects/{projectId}/attributes/templates/{templateId}
      * Delete CustomAttributeTemplate from Project
-     *  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+     *   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param templateId CustomAttributeTemplate internal (UUID) identifier
      * @return ApiResponse<Unit?>
@@ -234,7 +234,7 @@ class ProjectAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * POST /api/v2/projects/{projectId}/attributes/templates/{templateId}
      * Add CustomAttributeTemplate to Project
-     *  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+     *   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param templateId CustomAttributeTemplate internal (UUID) identifier
      * @return void
@@ -266,7 +266,7 @@ class ProjectAttributeTemplatesApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * POST /api/v2/projects/{projectId}/attributes/templates/{templateId}
      * Add CustomAttributeTemplate to Project
-     *  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+     *   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param templateId CustomAttributeTemplate internal (UUID) identifier
      * @return ApiResponse<Unit?>

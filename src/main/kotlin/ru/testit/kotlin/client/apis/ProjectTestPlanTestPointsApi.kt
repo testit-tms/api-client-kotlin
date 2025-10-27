@@ -53,7 +53,7 @@ class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePath, cl
      * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/rerun
      * Rerun autotests.
      * 
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param testPlanId 
      * @param testPlanTestPointsAutoTestsRerunApiModel  (optional)
      * @return void
@@ -86,7 +86,7 @@ class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePath, cl
      * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/rerun
      * Rerun autotests.
      * 
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param testPlanId 
      * @param testPlanTestPointsAutoTestsRerunApiModel  (optional)
      * @return ApiResponse<Unit?>
@@ -105,7 +105,7 @@ class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * To obtain the request config of the operation apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost
      *
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param testPlanId 
      * @param testPlanTestPointsAutoTestsRerunApiModel  (optional)
      * @return RequestConfig
@@ -131,7 +131,7 @@ class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePath, cl
      * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/run
      * Run autotests.
      * 
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param testPlanId 
      * @param testPlanTestPointsAutoTestsRunApiModel  (optional)
      * @return TestRunNameApiResult
@@ -165,7 +165,7 @@ class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePath, cl
      * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/run
      * Run autotests.
      * 
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param testPlanId 
      * @param testPlanTestPointsAutoTestsRunApiModel  (optional)
      * @return ApiResponse<TestRunNameApiResult?>
@@ -185,7 +185,7 @@ class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePath, cl
     /**
      * To obtain the request config of the operation apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost
      *
-     * @param projectId 
+     * @param projectId Internal (UUID) or global (integer) identifier
      * @param testPlanId 
      * @param testPlanTestPointsAutoTestsRunApiModel  (optional)
      * @return RequestConfig

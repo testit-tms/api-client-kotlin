@@ -12,7 +12,6 @@
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project creator |  |
 | **globalId** | **kotlin.Long** | Global ID of the project |  |
 | **type** | [**ProjectTypeModel**](ProjectTypeModel.md) | Type of the project |  |
-| **isFlakyAuto** | **kotlin.Boolean** | Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically |  |
 | **workflowId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **description** | **kotlin.String** | Description of the project |  [optional] |
 | **attributesScheme** | [**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project attributes |  [optional] |
@@ -23,6 +22,7 @@
 | **autoTestsCount** | **kotlin.Int** | Number of autotests in the project |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Last modification date of the project |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project last editor |  [optional] |
+| **isFlakyAuto** | **kotlin.Boolean** | Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically |  [optional] |
 
 
 

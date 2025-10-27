@@ -27,7 +27,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param id Internal test result identifier
  * @param createdDate Test result creation date
- * @param userId Internal identifier of user who stopped test run related to the test result or user who created the test result              If test run was stopped, this property equals identifier of user who stopped it. Otherwise, the property equals identifier of user who created the test result
+ * @param userId Internal identifier of user who stopped test run related to the test result or user who created the test result                If test run was stopped, this property equals identifier of user who stopped it.  Otherwise, the property equals identifier of user who created the test result
  * @param isAutomated Boolean flag defines if test point related to the test result is automated or not
  * @param status Status from test result with max modified date or from first created test result
  * @param createdById Unique identifier of user who created first test result in the test run
@@ -39,15 +39,15 @@ import com.squareup.moshi.JsonClass
  * @param testPlanId Internal identifier of test plan related to the test result's test run
  * @param testPlanGlobalId Global identifier of test plan related to the test result's test run
  * @param testPlanName Name of test plan related to the test result's test run
- * @param configurationName Configuration name of test point related to the test result or from test result itself              If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name
- * @param outcome Outcome from test result with max modified date or from first created test result              Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.              If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the test run.
- * @param comment Test result comment              If any test result related to the test run is linked with autotest, comment will have default value. Otherwise, the comment equals to the comment of first created test result in the test run
- * @param links Test result links              If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result. Otherwise, the links equals to the links of first created test result in the test run.
+ * @param configurationName Configuration name of test point related to the test result or from test result itself                If test point related to the test result has configuration, this property will be equal to the test point configuration name.  Otherwise, this property will be equal to the test result configuration name
+ * @param outcome Outcome from test result with max modified date or from first created test result                Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.                If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the  worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the  test run.
+ * @param comment Test result comment                If any test result related to the test run is linked with autotest, comment will have default value.  Otherwise, the comment equals to the comment of first created test result in the test run
+ * @param links Test result links                If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result.  Otherwise, the links equals to the links of first created test result in the test run.
  * @param startedOn Start date time from test result or from test run (if test run new state is Running or Completed state)
  * @param completedOn End date time from test result or from test run (if test run new state is In progress, Stopped or Completed)
  * @param duration Duration of first created test result in the test run
  * @param modifiedById Unique identifier of user who applied last modification of first test result in the test run
- * @param attachments Attachments related to the test result              If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified test result. Otherwise, the attachments equals to the attachments of first created test result in the test run.
+ * @param attachments Attachments related to the test result                If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified  test result. Otherwise, the attachments equals to the attachments of first created test result in the test run.
  * @param workItemVersionId Unique identifier of workitem version related to the first test result in the test run
  * @param workItemVersionNumber Number of workitem version related to the first test result in the test run
  * @param launchSource 
@@ -65,7 +65,7 @@ data class TestResultHistoryReportApiResult (
     @Json(name = "createdDate")
     val createdDate: java.time.OffsetDateTime,
 
-    /* Internal identifier of user who stopped test run related to the test result or user who created the test result              If test run was stopped, this property equals identifier of user who stopped it. Otherwise, the property equals identifier of user who created the test result */
+    /* Internal identifier of user who stopped test run related to the test result or user who created the test result                If test run was stopped, this property equals identifier of user who stopped it.  Otherwise, the property equals identifier of user who created the test result */
     @Json(name = "userId")
     val userId: java.util.UUID,
 
@@ -113,19 +113,19 @@ data class TestResultHistoryReportApiResult (
     @Json(name = "testPlanName")
     val testPlanName: kotlin.String? = null,
 
-    /* Configuration name of test point related to the test result or from test result itself              If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name */
+    /* Configuration name of test point related to the test result or from test result itself                If test point related to the test result has configuration, this property will be equal to the test point configuration name.  Otherwise, this property will be equal to the test result configuration name */
     @Json(name = "configurationName")
     val configurationName: kotlin.String? = null,
 
-    /* Outcome from test result with max modified date or from first created test result              Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.              If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the test run. */
+    /* Outcome from test result with max modified date or from first created test result                Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.                If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the  worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the  test run. */
     @Json(name = "outcome")
     val outcome: kotlin.String? = null,
 
-    /* Test result comment              If any test result related to the test run is linked with autotest, comment will have default value. Otherwise, the comment equals to the comment of first created test result in the test run */
+    /* Test result comment                If any test result related to the test run is linked with autotest, comment will have default value.  Otherwise, the comment equals to the comment of first created test result in the test run */
     @Json(name = "comment")
     val comment: kotlin.String? = null,
 
-    /* Test result links              If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result. Otherwise, the links equals to the links of first created test result in the test run. */
+    /* Test result links                If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result.  Otherwise, the links equals to the links of first created test result in the test run. */
     @Json(name = "links")
     val links: kotlin.collections.List<LinkApiResult>? = null,
 
@@ -145,7 +145,7 @@ data class TestResultHistoryReportApiResult (
     @Json(name = "modifiedById")
     val modifiedById: java.util.UUID? = null,
 
-    /* Attachments related to the test result              If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified test result. Otherwise, the attachments equals to the attachments of first created test result in the test run. */
+    /* Attachments related to the test result                If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified  test result. Otherwise, the attachments equals to the attachments of first created test result in the test run. */
     @Json(name = "attachments")
     val attachments: kotlin.collections.List<AttachmentApiResult>? = null,
 

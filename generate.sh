@@ -2,7 +2,7 @@ rm -r new
 mkdir new
 cd new 
 
-openapi-generator-cli generate -i ../source/swagger5_5_int_prod.json  -g kotlin --skip-validate-spec -o . --additional-properties=packageName=ru.testit.kotlin.client 
+openapi-generator-cli generate -i ../source/master-swagger-8cb0d44c-27.10.json  -g kotlin --skip-validate-spec -o . --additional-properties=packageName=ru.testit.kotlin.client 
 
 cd ..
 rm -r src/main
