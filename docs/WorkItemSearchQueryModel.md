@@ -24,6 +24,7 @@
 | **medianDuration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a work item median duration range to search for |  [optional] |
 | **isAutomated** | **kotlin.Boolean** | Is result must consist of only manual/automated work items |  [optional] |
 | **tags** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Collection of tags |  [optional] |
+| **excludeTags** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Collection of tags to exclude |  [optional] |
 | **autoTestIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of linked autotests |  [optional] |
 | **workItemVersionIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers work items versions. |  [optional] |
 

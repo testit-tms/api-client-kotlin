@@ -1,5 +1,5 @@
 
-# CreateAutoTestResultReasonProjectApiModel
+# CreateFailureCategoryApiModel
 
 ## Properties
 | Name | Type | Description | Notes |

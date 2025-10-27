@@ -55,6 +55,7 @@ import com.squareup.moshi.JsonClass
  * @param medianDuration Specifies a work item median duration range to search for
  * @param isAutomated Is result must consist of only manual/automated work items
  * @param tags Collection of tags
+ * @param excludeTags Collection of tags to exclude
  * @param autoTestIds Collection of identifiers of linked autotests
  * @param workItemVersionIds Collection of identifiers work items versions.
  */
@@ -157,6 +158,10 @@ data class WorkItemFilterModel (
     /* Collection of tags */
     @Json(name = "tags")
     val tags: kotlin.collections.Set<kotlin.String>? = null,
+
+    /* Collection of tags to exclude */
+    @Json(name = "excludeTags")
+    val excludeTags: kotlin.collections.Set<kotlin.String>? = null,
 
     /* Collection of identifiers of linked autotests */
     @Json(name = "autoTestIds")

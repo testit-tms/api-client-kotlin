@@ -21,7 +21,7 @@ Rerun autotests.
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlanTestPointsApi()
-val projectId : kotlin.String = projectId_example // kotlin.String | 
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
 val testPlanId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
 val testPlanTestPointsAutoTestsRerunApiModel : TestPlanTestPointsAutoTestsRerunApiModel =  // TestPlanTestPointsAutoTestsRerunApiModel | 
 try {
@@ -36,7 +36,7 @@ try {
 ```
 
 ### Parameters
-| **projectId** | **kotlin.String**|  | |
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
 | **testPlanId** | **java.util.UUID**|  | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
@@ -71,7 +71,7 @@ Run autotests.
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectTestPlanTestPointsApi()
-val projectId : kotlin.String = projectId_example // kotlin.String | 
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
 val testPlanId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
 val testPlanTestPointsAutoTestsRunApiModel : TestPlanTestPointsAutoTestsRunApiModel =  // TestPlanTestPointsAutoTestsRunApiModel | 
 try {
@@ -87,7 +87,7 @@ try {
 ```
 
 ### Parameters
-| **projectId** | **kotlin.String**|  | |
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
 | **testPlanId** | **java.util.UUID**|  | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |

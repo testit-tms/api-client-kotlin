@@ -494,19 +494,20 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * Permanently delete multiple archived configurations
      * 
      * @param configurationSelectModel  (optional)
-     * @return void
+     * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
      * @throws ClientException If the API returns a client error response
      * @throws ServerException If the API returns a server error response
      */
+    @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ConfigurationsPurgeBulkPost(configurationSelectModel: ConfigurationSelectModel? = null) : Unit {
+    fun apiV2ConfigurationsPurgeBulkPost(configurationSelectModel: ConfigurationSelectModel? = null) : kotlin.Int {
         val localVarResponse = apiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel = configurationSelectModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Int
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -525,15 +526,16 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * Permanently delete multiple archived configurations
      * 
      * @param configurationSelectModel  (optional)
-     * @return ApiResponse<Unit?>
+     * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
+    @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel: ConfigurationSelectModel?) : ApiResponse<Unit?> {
+    fun apiV2ConfigurationsPurgeBulkPostWithHttpInfo(configurationSelectModel: ConfigurationSelectModel?) : ApiResponse<kotlin.Int?> {
         val localVariableConfig = apiV2ConfigurationsPurgeBulkPostRequestConfig(configurationSelectModel = configurationSelectModel)
 
-        return request<ConfigurationSelectModel, Unit>(
+        return request<ConfigurationSelectModel, kotlin.Int>(
             localVariableConfig
         )
     }
@@ -816,7 +818,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/configurations
      * Create Configuration
-     *  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+     *   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
      * @return ConfigurationModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -848,7 +850,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/configurations
      * Create Configuration
-     *  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+     *   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
      * @return ApiResponse<ConfigurationModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -890,7 +892,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
-     *  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+     *   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier
      * @return ConfigurationModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -922,7 +924,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
-     *  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+     *   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier
      * @return ApiResponse<ConfigurationModel?>
      * @throws IllegalStateException If the request is not correctly configured

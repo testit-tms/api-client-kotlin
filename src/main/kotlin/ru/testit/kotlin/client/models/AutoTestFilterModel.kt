@@ -42,7 +42,7 @@ import com.squareup.moshi.JsonClass
  * @param className 
  * @param isEmptyClassName 
  * @param lastTestResultOutcome 
- * @param lastTestResultStatusCode 
+ * @param lastTestResultStatusCodes 
  * @param externalKey 
  * @param lastTestResultConfigurationIds 
  */
@@ -101,8 +101,8 @@ data class AutoTestFilterModel (
     @Json(name = "lastTestResultOutcome")
     val lastTestResultOutcome: AutotestResultOutcome? = null,
 
-    @Json(name = "lastTestResultStatusCode")
-    val lastTestResultStatusCode: kotlin.String? = null,
+    @Json(name = "lastTestResultStatusCodes")
+    val lastTestResultStatusCodes: kotlin.collections.List<kotlin.String>? = null,
 
     @Json(name = "externalKey")
     val externalKey: kotlin.String? = null,

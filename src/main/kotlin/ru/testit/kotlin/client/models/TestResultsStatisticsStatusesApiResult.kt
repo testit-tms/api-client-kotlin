@@ -24,6 +24,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param inProgress Number of test results which is running currently
  * @param passed Number of test results which successfully passed
+ * @param succeeded Number of successful test results
  * @param failed Number of test results which failed with an error
  * @param skipped Number of test results which did not run and were skipped
  * @param blocked Number of test results which cannot be launched
@@ -39,7 +40,12 @@ data class TestResultsStatisticsStatusesApiResult (
 
     /* Number of test results which successfully passed */
     @Json(name = "passed")
+    @Deprecated(message = "This property is deprecated.")
     val passed: kotlin.Int,
+
+    /* Number of successful test results */
+    @Json(name = "succeeded")
+    val succeeded: kotlin.Int,
 
     /* Number of test results which failed with an error */
     @Json(name = "failed")

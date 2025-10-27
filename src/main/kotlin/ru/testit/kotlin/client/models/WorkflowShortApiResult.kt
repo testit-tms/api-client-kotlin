@@ -27,6 +27,10 @@ import com.squareup.moshi.JsonClass
  * @param name 
  * @param isSystem 
  * @param isDefault 
+ * @param createdDate 
+ * @param createdById 
+ * @param modifiedDate 
+ * @param modifiedById 
  * @param projects 
  */
 
@@ -44,6 +48,18 @@ data class WorkflowShortApiResult (
 
     @Json(name = "isDefault")
     val isDefault: kotlin.Boolean,
+
+    @Json(name = "createdDate")
+    val createdDate: java.time.OffsetDateTime,
+
+    @Json(name = "createdById")
+    val createdById: java.util.UUID,
+
+    @Json(name = "modifiedDate")
+    val modifiedDate: java.time.OffsetDateTime,
+
+    @Json(name = "modifiedById")
+    val modifiedById: java.util.UUID,
 
     @Json(name = "projects")
     val projects: WorkflowProjectApiResultApiCollectionPreview

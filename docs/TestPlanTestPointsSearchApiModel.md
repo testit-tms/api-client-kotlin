@@ -21,6 +21,7 @@
 | **modifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test point range of last modification date to search for |  [optional] |
 | **modifiedByIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a test point last editor IDs to search for |  [optional] |
 | **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Specifies a test point tags to search for |  [optional] |
+| **excludeTags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Specifies a test point tags to exclude to search for |  [optional] |
 | **attributes** | **kotlin.collections.Map&lt;kotlin.String, kotlin.collections.Set&lt;kotlin.String&gt;&gt;** | Specifies a test point attributes to search for |  [optional] |
 | **workItemCreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for |  [optional] |
 | **workItemCreatedByIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a work item creator IDs to search for |  [optional] |

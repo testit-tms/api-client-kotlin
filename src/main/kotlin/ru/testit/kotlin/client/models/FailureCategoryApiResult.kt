@@ -38,7 +38,7 @@ import com.squareup.moshi.JsonClass
  */
 
 
-data class AutoTestResultReasonProjectApiResult (
+data class FailureCategoryApiResult (
 
     /* Failure category identifier */
     @Json(name = "id")

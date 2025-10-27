@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.FailureCategoryGroupItemApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,15 +23,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
+ * @param `data` 
+ * @param totalCount 
  */
 
 
-data class WorkItemIdModel (
+data class FailureCategoryGroupItemApiResultReply (
 
-    /* Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format */
-    @Json(name = "id")
-    val id: kotlin.String
+    @Json(name = "data")
+    val `data`: kotlin.collections.List<FailureCategoryGroupItemApiResult>,
+
+    @Json(name = "totalCount")
+    val totalCount: kotlin.Int
 
 ) {
 

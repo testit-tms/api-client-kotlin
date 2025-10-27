@@ -22,7 +22,6 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param projectId Unique ID of the project.
  * @param rerunEnabled Auto rerun enabled
  * @param rerunAttemptsCount Auto rerun attempt count
  * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" sets automatically
@@ -31,11 +30,7 @@ import com.squareup.moshi.JsonClass
  */
 
 
-data class AutoTestProjectSettingsGetModel (
-
-    /* Unique ID of the project. */
-    @Json(name = "projectId")
-    val projectId: java.util.UUID,
+data class AutoTestProjectSettingsApiModel (
 
     /* Auto rerun enabled */
     @Json(name = "rerunEnabled")

@@ -31,7 +31,7 @@ import com.squareup.moshi.JsonClass
  */
 
 
-data class CreateAutoTestResultReasonProjectApiModel (
+data class CreateFailureCategoryApiModel (
 
     /* Failure category name */
     @Json(name = "name")

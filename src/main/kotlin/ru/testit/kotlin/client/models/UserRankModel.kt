@@ -29,6 +29,8 @@ import com.squareup.moshi.JsonClass
  * @param skippedTestPoints 
  * @param blockedTestPoints 
  * @param levelAvatarEnabled 
+ * @param succeededTestPoints 
+ * @param incompleteTestPoints 
  */
 
 
@@ -41,19 +43,28 @@ data class UserRankModel (
     val workItemsCreated: kotlin.Int,
 
     @Json(name = "passedTestPoints")
+    @Deprecated(message = "This property is deprecated.")
     val passedTestPoints: kotlin.Int,
 
     @Json(name = "failedTestPoints")
     val failedTestPoints: kotlin.Int,
 
     @Json(name = "skippedTestPoints")
+    @Deprecated(message = "This property is deprecated.")
     val skippedTestPoints: kotlin.Int,
 
     @Json(name = "blockedTestPoints")
+    @Deprecated(message = "This property is deprecated.")
     val blockedTestPoints: kotlin.Int,
 
     @Json(name = "levelAvatarEnabled")
-    val levelAvatarEnabled: kotlin.Boolean
+    val levelAvatarEnabled: kotlin.Boolean,
+
+    @Json(name = "succeededTestPoints")
+    val succeededTestPoints: kotlin.Int,
+
+    @Json(name = "incompleteTestPoints")
+    val incompleteTestPoints: kotlin.Int
 
 ) {
 

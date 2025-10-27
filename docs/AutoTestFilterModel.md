@@ -21,7 +21,7 @@
 | **className** | **kotlin.String** |  |  [optional] |
 | **isEmptyClassName** | **kotlin.Boolean** |  |  [optional] |
 | **lastTestResultOutcome** | [**AutotestResultOutcome**](AutotestResultOutcome.md) |  |  [optional] |
-| **lastTestResultStatusCode** | **kotlin.String** |  |  [optional] |
+| **lastTestResultStatusCodes** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
 | **externalKey** | **kotlin.String** |  |  [optional] |
 | **lastTestResultConfigurationIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
 

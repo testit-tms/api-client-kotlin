@@ -32,7 +32,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param tagNames Collection of tags
- * @param entityTypes Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
+ * @param entityTypes Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
  * @param nameOrId Name or identifier (UUID) of work item
  * @param includeIds Collection of identifiers of work items which need to be included in result regardless of filtering
  * @param excludeIds Collection of identifiers of work items which need to be excluded from result regardless of filtering
@@ -57,6 +57,7 @@ import com.squareup.moshi.JsonClass
  * @param medianDuration Specifies a work item median duration range to search for
  * @param isAutomated Is result must consist of only manual/automated work items
  * @param tags Collection of tags
+ * @param excludeTags Collection of tags to exclude
  * @param autoTestIds Collection of identifiers of linked autotests
  * @param workItemVersionIds Collection of identifiers work items versions.
  */
@@ -66,12 +67,10 @@ data class TestSuiteWorkItemsSearchModel (
 
     /* Collection of tags */
     @Json(name = "tagNames")
-    @Deprecated(message = "This property is deprecated.")
     val tagNames: kotlin.collections.Set<kotlin.String>? = null,
 
-    /* Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
+    /* Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
     @Json(name = "entityTypes")
-    @Deprecated(message = "This property is deprecated.")
     val entityTypes: kotlin.collections.Set<WorkItemEntityTypes>? = null,
 
     /* Name or identifier (UUID) of work item */
@@ -169,6 +168,10 @@ data class TestSuiteWorkItemsSearchModel (
     /* Collection of tags */
     @Json(name = "tags")
     val tags: kotlin.collections.Set<kotlin.String>? = null,
+
+    /* Collection of tags to exclude */
+    @Json(name = "excludeTags")
+    val excludeTags: kotlin.collections.Set<kotlin.String>? = null,
 
     /* Collection of identifiers of linked autotests */
     @Json(name = "autoTestIds")

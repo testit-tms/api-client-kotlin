@@ -1,5 +1,5 @@
 
-# AutoTestResultReasonGroupApiModel
+# FailureCategoryGroupApiModel
 
 ## Properties
 | Name | Type | Description | Notes |

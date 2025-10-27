@@ -1,5 +1,5 @@
 
-# UpdateAutoTestResultReasonProjectApiModel
+# UpdateFailureCategoryApiModel
 
 ## Properties
 | Name | Type | Description | Notes |

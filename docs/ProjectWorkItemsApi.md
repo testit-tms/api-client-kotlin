@@ -202,7 +202,7 @@ Get work item index (position) in a collection by its id.
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ProjectWorkItemsApi()
-val projectId : kotlin.String = projectId_example // kotlin.String | 
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
 val workItemId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
 val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
@@ -223,7 +223,7 @@ try {
 ```
 
 ### Parameters
-| **projectId** | **kotlin.String**|  | |
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
 | **workItemId** | **java.util.UUID**|  | |
 | **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
 | **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
@@ -256,7 +256,7 @@ Configure Bearer or PrivateToken:
 
 Get WorkItems Tags
 
- Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+  Use case    User sets project internal identifier    User runs method execution    System returns work items tags
 
 ### Example
 ```kotlin
@@ -307,7 +307,7 @@ Configure Bearer or PrivateToken:
 
 Get project work items
 
- Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+  Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
 
 ### Example
 ```kotlin
