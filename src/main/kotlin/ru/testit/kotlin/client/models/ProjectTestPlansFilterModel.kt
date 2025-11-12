@@ -38,6 +38,7 @@ import com.squareup.moshi.JsonClass
  * @param startDate 
  * @param endDate 
  * @param tagNames 
+ * @param excludeTagNames 
  * @param attributes 
  * @param isDeleted 
  */
@@ -86,6 +87,9 @@ data class ProjectTestPlansFilterModel (
 
     @Json(name = "tagNames")
     val tagNames: kotlin.collections.Set<kotlin.String>? = null,
+
+    @Json(name = "excludeTagNames")
+    val excludeTagNames: kotlin.collections.Set<kotlin.String>? = null,
 
     @Json(name = "attributes")
     val attributes: kotlin.collections.Map<kotlin.String, kotlin.collections.Set<kotlin.String>>? = null,
