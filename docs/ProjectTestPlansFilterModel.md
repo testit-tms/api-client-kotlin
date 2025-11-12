@@ -18,6 +18,7 @@
 | **startDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  |  [optional] |
 | **endDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  |  [optional] |
 | **tagNames** | **kotlin.collections.Set&lt;kotlin.String&gt;** |  |  [optional] |
+| **excludeTagNames** | **kotlin.collections.Set&lt;kotlin.String&gt;** |  |  [optional] |
 | **attributes** | **kotlin.collections.Map&lt;kotlin.String, kotlin.collections.Set&lt;kotlin.String&gt;&gt;** |  |  [optional] |
 | **isDeleted** | **kotlin.Boolean** |  |  [optional] |
 

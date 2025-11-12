@@ -216,7 +216,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestResultsIdAttachmentsInfoGet"></a>
 # **apiV2TestResultsIdAttachmentsInfoGet**
-> kotlin.collections.List&lt;AttachmentModel&gt; apiV2TestResultsIdAttachmentsInfoGet(id)
+> kotlin.collections.List&lt;AttachmentApiResult&gt; apiV2TestResultsIdAttachmentsInfoGet(id)
 
 Get test result attachments meta-information
 
@@ -229,7 +229,7 @@ Get test result attachments meta-information
 val apiInstance = TestResultsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test result unique ID
 try {
-    val result : kotlin.collections.List<AttachmentModel> = apiInstance.apiV2TestResultsIdAttachmentsInfoGet(id)
+    val result : kotlin.collections.List<AttachmentApiResult> = apiInstance.apiV2TestResultsIdAttachmentsInfoGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsIdAttachmentsInfoGet")
@@ -247,7 +247,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;AttachmentModel&gt;**](AttachmentModel.md)
+[**kotlin.collections.List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md)
 
 ### Authorization
 
@@ -513,7 +513,7 @@ Configure Bearer or PrivateToken:
 
 Upload and link attachment to TestResult
 
-  Use case    User sets testResultId    User attaches a file    System creates attachment and links it to the test result    System returns attachment identifier
+ Use case  User sets testResultId  User attaches a file  System creates attachment and links it to the test result  System returns attachment identifier
 
 ### Example
 ```kotlin
@@ -563,7 +563,7 @@ Configure Bearer or PrivateToken:
 
 Remove attachment and unlink from TestResult
 
-  Use case    User sets testResultId and attachmentId    User attaches a file    User runs method execution    System deletes attachment and unlinks it from the test result    System returns attachment identifier
+ Use case  User sets testResultId and attachmentId  User attaches a file  User runs method execution  System deletes attachment and unlinks it from the test result  System returns attachment identifier
 
 ### Example
 ```kotlin
@@ -613,7 +613,7 @@ Configure Bearer or PrivateToken:
 
 Get attachment of TestResult
 
-  Use case    User sets attachmentId and testResultId    [Optional] User sets resize configuration    User runs method execution    System search attachments by the attachmentId and the testResultId    [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration    [Optional] Otherwise, System does not resize the attachment    System returns attachment as a file
+ Use case  User sets attachmentId and testResultId  [Optional] User sets resize configuration  User runs method execution  System search attachments by the attachmentId and the testResultId  [Optional] If resize configuration is set, System resizes the attachment according to the resize                     configuration  [Optional] Otherwise, System does not resize the attachment  System returns attachment as a file
 
 ### Example
 ```kotlin
@@ -669,11 +669,11 @@ Configure Bearer or PrivateToken:
 
 <a id="getAttachment"></a>
 # **getAttachment**
-> AttachmentModel getAttachment(id, attachmentId)
+> AttachmentApiResult getAttachment(id, attachmentId)
 
 Get Metadata of TestResult&#39;s attachment
 
-  Use case    User sets attachmentId and testResultId    User runs method execution    System search attachment by the attachmentId and the testResultId    System returns attachment data
+ Use case  User sets attachmentId and testResultId  User runs method execution  System search attachment by the attachmentId and the testResultId  System returns attachment data
 
 ### Example
 ```kotlin
@@ -685,7 +685,7 @@ val apiInstance = TestResultsApi()
 val id : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | Test result internal identifier (guid format)
 val attachmentId : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | Attachment internal identifier (guid format)
 try {
-    val result : AttachmentModel = apiInstance.getAttachment(id, attachmentId)
+    val result : AttachmentApiResult = apiInstance.getAttachment(id, attachmentId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#getAttachment")
@@ -704,7 +704,7 @@ try {
 
 ### Return type
 
-[**AttachmentModel**](AttachmentModel.md)
+[**AttachmentApiResult**](AttachmentApiResult.md)
 
 ### Authorization
 
@@ -720,11 +720,11 @@ Configure Bearer or PrivateToken:
 
 <a id="getAttachments"></a>
 # **getAttachments**
-> kotlin.collections.List&lt;AttachmentModel&gt; getAttachments(id)
+> kotlin.collections.List&lt;AttachmentApiResult&gt; getAttachments(id)
 
 Get all attachments of TestResult
 
-  Use case    User sets testResultId    User runs method execution    System search all attachments of the test result    System returns attachments enumeration
+ Use case  User sets testResultId  User runs method execution  System search all attachments of the test result  System returns attachments enumeration
 
 ### Example
 ```kotlin
@@ -735,7 +735,7 @@ Get all attachments of TestResult
 val apiInstance = TestResultsApi()
 val id : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | Test result internal identifier (guid format)
 try {
-    val result : kotlin.collections.List<AttachmentModel> = apiInstance.getAttachments(id)
+    val result : kotlin.collections.List<AttachmentApiResult> = apiInstance.getAttachments(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#getAttachments")
@@ -753,7 +753,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;AttachmentModel&gt;**](AttachmentModel.md)
+[**kotlin.collections.List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md)
 
 ### Authorization
 
