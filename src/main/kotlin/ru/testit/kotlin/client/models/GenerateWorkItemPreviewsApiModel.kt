@@ -25,6 +25,8 @@ import com.squareup.moshi.JsonClass
  * @param externalServiceId 
  * @param taskKey 
  * @param sectionId 
+ * @param temperature 
+ * @param previewLimit 
  */
 
 
@@ -37,7 +39,13 @@ data class GenerateWorkItemPreviewsApiModel (
     val taskKey: kotlin.String,
 
     @Json(name = "sectionId")
-    val sectionId: java.util.UUID
+    val sectionId: java.util.UUID,
+
+    @Json(name = "temperature")
+    val temperature: kotlin.Float,
+
+    @Json(name = "previewLimit")
+    val previewLimit: kotlin.Int
 
 ) {
 

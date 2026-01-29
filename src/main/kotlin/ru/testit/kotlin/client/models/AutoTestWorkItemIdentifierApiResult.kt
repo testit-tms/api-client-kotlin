@@ -22,17 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
- * @param globalId 
+ * @param id WorkItem unique internal identifier
+ * @param globalId WorkItem Global unique identifier
  */
 
 
-data class WorkItemIdentifierModel (
+data class AutoTestWorkItemIdentifierApiResult (
 
-    /* Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format */
+    /* WorkItem unique internal identifier */
     @Json(name = "id")
     val id: java.util.UUID,
 
+    /* WorkItem Global unique identifier */
     @Json(name = "globalId")
     val globalId: kotlin.Long
 

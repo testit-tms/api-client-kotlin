@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * Values: ExportXlsxTestResultsByTestPlan,ExportXlsxWorkItemsByProject,ExportXlsxTestPointsByTestPlan,ExportJsonProject,ExportZipProject,ExportJsonProjectWithTestPlans,ExportZipProjectWithTestPlans,ImportJsonProject,ImportZipProject,ImportXlsxProject,ImportTestRailXmlProject,PurgeProject,ExportProjects,ImportProjects,PurgeEntities,DeleteCompletedJobs
+ * Values: ExportXlsxTestResultsByTestPlan,ExportXlsxWorkItemsByProject,ExportXlsxTestPointsByTestPlan,ExportXlsxWorkItemLinks,ExportJsonProject,ExportZipProject,ExportJsonProjectWithTestPlans,ExportZipProjectWithTestPlans,ImportJsonProject,ImportZipProject,ImportXlsxProject,ImportTestRailXmlProject,PurgeProject,ExportProjects,ImportProjects,PurgeEntities,DeleteCompletedJobs,CopySections,DeleteSection
  */
 
 @JsonClass(generateAdapter = false)
@@ -36,6 +36,9 @@ enum class BackgroundJobType(val value: kotlin.String) {
 
     @Json(name = "ExportXlsxTestPointsByTestPlan")
     ExportXlsxTestPointsByTestPlan("ExportXlsxTestPointsByTestPlan"),
+
+    @Json(name = "ExportXlsxWorkItemLinks")
+    ExportXlsxWorkItemLinks("ExportXlsxWorkItemLinks"),
 
     @Json(name = "ExportJsonProject")
     ExportJsonProject("ExportJsonProject"),
@@ -74,7 +77,13 @@ enum class BackgroundJobType(val value: kotlin.String) {
     PurgeEntities("PurgeEntities"),
 
     @Json(name = "DeleteCompletedJobs")
-    DeleteCompletedJobs("DeleteCompletedJobs");
+    DeleteCompletedJobs("DeleteCompletedJobs"),
+
+    @Json(name = "CopySections")
+    CopySections("CopySections"),
+
+    @Json(name = "DeleteSection")
+    DeleteSection("DeleteSection");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

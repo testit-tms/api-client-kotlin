@@ -24,6 +24,7 @@ import ru.testit.kotlin.client.models.ConfigurationFilterModel
 import ru.testit.kotlin.client.models.ConfigurationModel
 import ru.testit.kotlin.client.models.ConfigurationPostModel
 import ru.testit.kotlin.client.models.ConfigurationPutModel
+import ru.testit.kotlin.client.models.ConfigurationSelectApiModel
 import ru.testit.kotlin.client.models.ConfigurationSelectModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
@@ -131,7 +132,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * POST /api/v2/configurations/delete/bulk
      * Delete multiple configurations
      * 
-     * @param configurationSelectModel  (optional)
+     * @param configurationSelectApiModel  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -141,8 +142,8 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ConfigurationsDeleteBulkPost(configurationSelectModel: ConfigurationSelectModel? = null) : kotlin.Int {
-        val localVarResponse = apiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectModel = configurationSelectModel)
+    fun apiV2ConfigurationsDeleteBulkPost(configurationSelectApiModel: ConfigurationSelectApiModel? = null) : kotlin.Int {
+        val localVarResponse = apiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectApiModel = configurationSelectApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Int
@@ -163,17 +164,17 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * POST /api/v2/configurations/delete/bulk
      * Delete multiple configurations
      * 
-     * @param configurationSelectModel  (optional)
+     * @param configurationSelectApiModel  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectModel: ConfigurationSelectModel?) : ApiResponse<kotlin.Int?> {
-        val localVariableConfig = apiV2ConfigurationsDeleteBulkPostRequestConfig(configurationSelectModel = configurationSelectModel)
+    fun apiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectApiModel: ConfigurationSelectApiModel?) : ApiResponse<kotlin.Int?> {
+        val localVariableConfig = apiV2ConfigurationsDeleteBulkPostRequestConfig(configurationSelectApiModel = configurationSelectApiModel)
 
-        return request<ConfigurationSelectModel, kotlin.Int>(
+        return request<ConfigurationSelectApiModel, kotlin.Int>(
             localVariableConfig
         )
     }
@@ -181,11 +182,11 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2ConfigurationsDeleteBulkPost
      *
-     * @param configurationSelectModel  (optional)
+     * @param configurationSelectApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2ConfigurationsDeleteBulkPostRequestConfig(configurationSelectModel: ConfigurationSelectModel?) : RequestConfig<ConfigurationSelectModel> {
-        val localVariableBody = configurationSelectModel
+    fun apiV2ConfigurationsDeleteBulkPostRequestConfig(configurationSelectApiModel: ConfigurationSelectApiModel?) : RequestConfig<ConfigurationSelectApiModel> {
+        val localVariableBody = configurationSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -818,7 +819,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/configurations
      * Create Configuration
-     *   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+     *  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
      * @return ConfigurationModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -850,7 +851,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/configurations
      * Create Configuration
-     *   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+     *  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
      * @return ApiResponse<ConfigurationModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -892,7 +893,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
-     *   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+     *  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier
      * @return ConfigurationModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -924,7 +925,7 @@ class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
-     *   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+     *  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier
      * @return ApiResponse<ConfigurationModel?>
      * @throws IllegalStateException If the request is not correctly configured

@@ -10,6 +10,7 @@
 | **testRunId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of test run where the test result is located |  |
 | **configurationId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of configuration which the test result uses |  |
 | **configurationName** | **kotlin.String** | Name of configuration which the test result uses |  |
+| **status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  |
 | **resultReasons** | [**kotlin.collections.List&lt;AutoTestResultReasonShort&gt;**](AutoTestResultReasonShort.md) | Collection of result reasons which the test result have |  |
 | **date** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result was completed or started or created |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result has been created |  |
@@ -18,7 +19,6 @@
 | **rerunCompletedCount** | **kotlin.Int** | Run count |  |
 | **autotestExternalId** | **kotlin.String** | External ID of autotest represented by the test result |  [optional] |
 | **outcome** | **kotlin.String** | Outcome of the test result |  [optional] |
-| **status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |
 | **comment** | **kotlin.String** | Comment to the test result |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result has been modified |  [optional] |
 | **startedOn** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result has been started |  [optional] |

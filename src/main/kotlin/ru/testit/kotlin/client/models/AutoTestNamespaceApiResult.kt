@@ -22,18 +22,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param name 
- * @param classes 
+ * @param classes Autotest classnames
+ * @param name Autotest namespace
  */
 
 
-data class AutoTestNamespaceModel (
+data class AutoTestNamespaceApiResult (
 
-    @Json(name = "name")
-    val name: kotlin.String? = null,
-
+    /* Autotest classnames */
     @Json(name = "classes")
-    val classes: kotlin.collections.Set<kotlin.String>? = null
+    val classes: kotlin.collections.List<kotlin.String>,
+
+    /* Autotest namespace */
+    @Json(name = "name")
+    val name: kotlin.String? = null
 
 ) {
 

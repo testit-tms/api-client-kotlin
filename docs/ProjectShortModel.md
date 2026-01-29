@@ -20,7 +20,6 @@
 | **autoTestsCount** | **kotlin.Int** | Number of autotests in the project |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Last modification date of the project |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project last editor |  [optional] |
-| **isFlakyAuto** | **kotlin.Boolean** | Indicates if the status \&quot;Flaky/Stable\&quot; sets automatically |  [optional] |
 
 
 

@@ -52,7 +52,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /api/v2/notifications/count
      * Get unread Notifications total in last 7 days
-     *   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+     *  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
      * @param isRead  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
@@ -84,7 +84,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /api/v2/notifications/count
      * Get unread Notifications total in last 7 days
-     *   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+     *  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
      * @param isRead  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -130,7 +130,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /api/v2/notifications
      * Get all Notifications for current User
-     *   Use case    User runs method execution    System returns notifications (listed in the response example)
+     *  Use case  User runs method execution  System returns notifications (listed in the response example)
      * @param notificationType  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -167,7 +167,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /api/v2/notifications
      * Get all Notifications for current User
-     *   Use case    User runs method execution    System returns notifications (listed in the response example)
+     *  Use case  User runs method execution  System returns notifications (listed in the response example)
      * @param notificationType  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -238,7 +238,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/notifications/{id}/read
      * Set Notification as read
-     *   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+     *  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
      * @param id 
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -269,7 +269,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/notifications/{id}/read
      * Set Notification as read
-     *   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+     *  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
      * @param id 
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -309,7 +309,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/notifications/read
      * Set all Notifications as read
-     *   Use case    User runs method execution    System set all notifications as read
+     *  Use case  User runs method execution  System set all notifications as read
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -339,7 +339,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/notifications/read
      * Set all Notifications as read
-     *   Use case    User runs method execution    System set all notifications as read
+     *  Use case  User runs method execution  System set all notifications as read
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -377,7 +377,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/notifications/search
      * Search Notifications for current User
-     *   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+     *  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -414,7 +414,7 @@ class NotificationsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/notifications/search
      * Search Notifications for current User
-     *   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+     *  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
