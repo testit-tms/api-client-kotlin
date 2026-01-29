@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.AttachmentModel
+import ru.testit.kotlin.client.models.AttachmentApiResult
 import ru.testit.kotlin.client.models.CreateDefectApiModel
 import ru.testit.kotlin.client.models.DefectApiModel
 import ru.testit.kotlin.client.models.GetExternalFormApiResult
@@ -369,7 +369,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * Get test result attachments meta-information
      * 
      * @param id Test result unique ID
-     * @return kotlin.collections.List<AttachmentModel>
+     * @return kotlin.collections.List<AttachmentApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -378,11 +378,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsIdAttachmentsInfoGet(id: java.util.UUID) : kotlin.collections.List<AttachmentModel> {
+    fun apiV2TestResultsIdAttachmentsInfoGet(id: java.util.UUID) : kotlin.collections.List<AttachmentApiResult> {
         val localVarResponse = apiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AttachmentModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AttachmentApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -401,16 +401,16 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      * Get test result attachments meta-information
      * 
      * @param id Test result unique ID
-     * @return ApiResponse<kotlin.collections.List<AttachmentModel>?>
+     * @return ApiResponse<kotlin.collections.List<AttachmentApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<AttachmentModel>?> {
+    fun apiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<AttachmentApiResult>?> {
         val localVariableConfig = apiV2TestResultsIdAttachmentsInfoGetRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<AttachmentModel>>(
+        return request<Unit, kotlin.collections.List<AttachmentApiResult>>(
             localVariableConfig
         )
     }
@@ -841,7 +841,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * POST /api/v2/testResults/{id}/attachments
      * Upload and link attachment to TestResult
-     *   Use case    User sets testResultId    User attaches a file    System creates attachment and links it to the test result    System returns attachment identifier
+     *  Use case  User sets testResultId  User attaches a file  System creates attachment and links it to the test result  System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param file Select file (optional)
      * @return void
@@ -873,7 +873,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * POST /api/v2/testResults/{id}/attachments
      * Upload and link attachment to TestResult
-     *   Use case    User sets testResultId    User attaches a file    System creates attachment and links it to the test result    System returns attachment identifier
+     *  Use case  User sets testResultId  User attaches a file  System creates attachment and links it to the test result  System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param file Select file (optional)
      * @return ApiResponse<Unit?>
@@ -916,7 +916,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * DELETE /api/v2/testResults/{id}/attachments/{attachmentId}
      * Remove attachment and unlink from TestResult
-     *   Use case    User sets testResultId and attachmentId    User attaches a file    User runs method execution    System deletes attachment and unlinks it from the test result    System returns attachment identifier
+     *  Use case  User sets testResultId and attachmentId  User attaches a file  User runs method execution  System deletes attachment and unlinks it from the test result  System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
      * @return void
@@ -948,7 +948,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * DELETE /api/v2/testResults/{id}/attachments/{attachmentId}
      * Remove attachment and unlink from TestResult
-     *   Use case    User sets testResultId and attachmentId    User attaches a file    User runs method execution    System deletes attachment and unlinks it from the test result    System returns attachment identifier
+     *  Use case  User sets testResultId and attachmentId  User attaches a file  User runs method execution  System deletes attachment and unlinks it from the test result  System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
      * @return ApiResponse<Unit?>
@@ -990,7 +990,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}
      * Get attachment of TestResult
-     *   Use case    User sets attachmentId and testResultId    [Optional] User sets resize configuration    User runs method execution    System search attachments by the attachmentId and the testResultId    [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration    [Optional] Otherwise, System does not resize the attachment    System returns attachment as a file
+     *  Use case  User sets attachmentId and testResultId  [Optional] User sets resize configuration  User runs method execution  System search attachments by the attachmentId and the testResultId  [Optional] If resize configuration is set, System resizes the attachment according to the resize                     configuration  [Optional] Otherwise, System does not resize the attachment  System returns attachment as a file
      * @param attachmentId Attachment internal identifier (guid format)
      * @param id Test result internal identifier (guid format)
      * @param width Width of the result image (optional)
@@ -1027,7 +1027,7 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}
      * Get attachment of TestResult
-     *   Use case    User sets attachmentId and testResultId    [Optional] User sets resize configuration    User runs method execution    System search attachments by the attachmentId and the testResultId    [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration    [Optional] Otherwise, System does not resize the attachment    System returns attachment as a file
+     *  Use case  User sets attachmentId and testResultId  [Optional] User sets resize configuration  User runs method execution  System search attachments by the attachmentId and the testResultId  [Optional] If resize configuration is set, System resizes the attachment according to the resize                     configuration  [Optional] Otherwise, System does not resize the attachment  System returns attachment as a file
      * @param attachmentId Attachment internal identifier (guid format)
      * @param id Test result internal identifier (guid format)
      * @param width Width of the result image (optional)
@@ -1096,10 +1096,10 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}/info
      * Get Metadata of TestResult&#39;s attachment
-     *   Use case    User sets attachmentId and testResultId    User runs method execution    System search attachment by the attachmentId and the testResultId    System returns attachment data
+     *  Use case  User sets attachmentId and testResultId  User runs method execution  System search attachment by the attachmentId and the testResultId  System returns attachment data
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
-     * @return AttachmentModel
+     * @return AttachmentApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1108,11 +1108,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getAttachment(id: java.util.UUID, attachmentId: java.util.UUID) : AttachmentModel {
+    fun getAttachment(id: java.util.UUID, attachmentId: java.util.UUID) : AttachmentApiResult {
         val localVarResponse = getAttachmentWithHttpInfo(id = id, attachmentId = attachmentId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AttachmentModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AttachmentApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1129,19 +1129,19 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}/info
      * Get Metadata of TestResult&#39;s attachment
-     *   Use case    User sets attachmentId and testResultId    User runs method execution    System search attachment by the attachmentId and the testResultId    System returns attachment data
+     *  Use case  User sets attachmentId and testResultId  User runs method execution  System search attachment by the attachmentId and the testResultId  System returns attachment data
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
-     * @return ApiResponse<AttachmentModel?>
+     * @return ApiResponse<AttachmentApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getAttachmentWithHttpInfo(id: java.util.UUID, attachmentId: java.util.UUID) : ApiResponse<AttachmentModel?> {
+    fun getAttachmentWithHttpInfo(id: java.util.UUID, attachmentId: java.util.UUID) : ApiResponse<AttachmentApiResult?> {
         val localVariableConfig = getAttachmentRequestConfig(id = id, attachmentId = attachmentId)
 
-        return request<Unit, AttachmentModel>(
+        return request<Unit, AttachmentApiResult>(
             localVariableConfig
         )
     }
@@ -1172,9 +1172,9 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * GET /api/v2/testResults/{id}/attachments
      * Get all attachments of TestResult
-     *   Use case    User sets testResultId    User runs method execution    System search all attachments of the test result    System returns attachments enumeration
+     *  Use case  User sets testResultId  User runs method execution  System search all attachments of the test result  System returns attachments enumeration
      * @param id Test result internal identifier (guid format)
-     * @return kotlin.collections.List<AttachmentModel>
+     * @return kotlin.collections.List<AttachmentApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1183,11 +1183,11 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getAttachments(id: java.util.UUID) : kotlin.collections.List<AttachmentModel> {
+    fun getAttachments(id: java.util.UUID) : kotlin.collections.List<AttachmentApiResult> {
         val localVarResponse = getAttachmentsWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AttachmentModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AttachmentApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1204,18 +1204,18 @@ class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * GET /api/v2/testResults/{id}/attachments
      * Get all attachments of TestResult
-     *   Use case    User sets testResultId    User runs method execution    System search all attachments of the test result    System returns attachments enumeration
+     *  Use case  User sets testResultId  User runs method execution  System search all attachments of the test result  System returns attachments enumeration
      * @param id Test result internal identifier (guid format)
-     * @return ApiResponse<kotlin.collections.List<AttachmentModel>?>
+     * @return ApiResponse<kotlin.collections.List<AttachmentApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getAttachmentsWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<AttachmentModel>?> {
+    fun getAttachmentsWithHttpInfo(id: java.util.UUID) : ApiResponse<kotlin.collections.List<AttachmentApiResult>?> {
         val localVariableConfig = getAttachmentsRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<AttachmentModel>>(
+        return request<Unit, kotlin.collections.List<AttachmentApiResult>>(
             localVariableConfig
         )
     }

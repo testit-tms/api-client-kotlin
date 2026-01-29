@@ -52,7 +52,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/testPlans/analytics
      * Get TestPlans analytics
-     *   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
+     *  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
      * @param mustUpdateCache  (optional, default to false)
@@ -91,7 +91,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/testPlans/analytics
      * Get TestPlans analytics
-     *   Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
+     *  Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
      * @param mustUpdateCache  (optional, default to false)
@@ -246,7 +246,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/testPlans/{name}/exists
      * Checks if TestPlan exists with the specified name exists for the project
-     *   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
+     *  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param name TestPlan name to check
      * @return kotlin.Boolean
@@ -279,7 +279,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/projects/{projectId}/testPlans/{name}/exists
      * Checks if TestPlan exists with the specified name exists for the project
-     *   Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
+     *  Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param name TestPlan name to check
      * @return ApiResponse<kotlin.Boolean?>
@@ -474,7 +474,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * POST /api/v2/projects/{projectId}/testPlans/search
      * Get Project TestPlans with analytics
-     *   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
+     *  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param mustUpdateCache  (optional, default to false)
      * @param skip Amount of items to be skipped (offset) (optional)
@@ -513,7 +513,7 @@ class ProjectTestPlansApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * POST /api/v2/projects/{projectId}/testPlans/search
      * Get Project TestPlans with analytics
-     *   Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
+     *  Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param mustUpdateCache  (optional, default to false)
      * @param skip Amount of items to be skipped (offset) (optional)

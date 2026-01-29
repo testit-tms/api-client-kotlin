@@ -20,23 +20,23 @@ import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.AutoTestApiResult
-import ru.testit.kotlin.client.models.AutoTestAverageDurationModel
+import ru.testit.kotlin.client.models.AutoTestAverageDurationApiResult
 import ru.testit.kotlin.client.models.AutoTestBulkDeleteApiModel
 import ru.testit.kotlin.client.models.AutoTestBulkDeleteApiResult
+import ru.testit.kotlin.client.models.AutoTestCreateApiModel
 import ru.testit.kotlin.client.models.AutoTestFlakyBulkApiModel
 import ru.testit.kotlin.client.models.AutoTestModel
-import ru.testit.kotlin.client.models.AutoTestPostModel
-import ru.testit.kotlin.client.models.AutoTestPutModel
 import ru.testit.kotlin.client.models.AutoTestResultHistoryApiResult
 import ru.testit.kotlin.client.models.AutoTestResultHistorySelectApiModel
 import ru.testit.kotlin.client.models.AutoTestSearchApiModel
+import ru.testit.kotlin.client.models.AutoTestUpdateApiModel
+import ru.testit.kotlin.client.models.AutoTestWorkItemIdentifierApiResult
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TestResultChronologyModel
 import ru.testit.kotlin.client.models.TestRunByAutoTestApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkItemIdApiModel
-import ru.testit.kotlin.client.models.WorkItemIdentifierModel
 
 import com.squareup.moshi.Json
 
@@ -139,7 +139,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/flaky/bulk
      * Set \&quot;Flaky\&quot; status for multiple autotests
-     * User permissions for project:  - Read only  - Execute  - Write  - Full control
+     * User permissions for project: - Read only - Execute - Write - Full control
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -175,7 +175,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/flaky/bulk
      * Set \&quot;Flaky\&quot; status for multiple autotests
-     * User permissions for project:  - Read only  - Execute  - Write  - Full control
+     * User permissions for project: - Read only - Execute - Write - Full control
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -318,7 +318,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/{id}/testResults/search
      * Get test results history for autotest
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
      * @param id Autotest identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -356,7 +356,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/{id}/testResults/search
      * Get test results history for autotest
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
      * @param id Autotest identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -427,7 +427,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/workItems/changed/id
      * Get identifiers of changed linked work items
-     * User permissions for project:  - Read only  - Execute  - Write  - Full control
+     * User permissions for project: - Read only - Execute - Write - Full control
      * @param id 
      * @return kotlin.collections.List<java.util.UUID>
      * @throws IllegalStateException If the request is not correctly configured
@@ -459,7 +459,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/workItems/changed/id
      * Get identifiers of changed linked work items
-     * User permissions for project:  - Read only  - Execute  - Write  - Full control
+     * User permissions for project: - Read only - Execute - Write - Full control
      * @param id 
      * @return ApiResponse<kotlin.collections.List<java.util.UUID>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -500,7 +500,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/{id}/workItems/changed/{workItemId}/approve
      * Approve changes to work items linked to autotest
-     * User permissions for project:  - Read only  - Execute  - Write  - Full control
+     * User permissions for project: - Read only - Execute - Write - Full control
      * @param id 
      * @param workItemId 
      * @return void
@@ -532,7 +532,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/{id}/workItems/changed/{workItemId}/approve
      * Approve changes to work items linked to autotest
-     * User permissions for project:  - Read only  - Execute  - Write  - Full control
+     * User permissions for project: - Read only - Execute - Write - Full control
      * @param id 
      * @param workItemId 
      * @return ApiResponse<Unit?>
@@ -680,9 +680,9 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests
      * Create autotest
-     *   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
-     * @param autoTestPostModel  (optional)
-     * @return AutoTestModel
+     *  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+     * @param autoTestCreateApiModel  (optional)
+     * @return AutoTestApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -691,11 +691,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createAutoTest(autoTestPostModel: AutoTestPostModel? = null) : AutoTestModel {
-        val localVarResponse = createAutoTestWithHttpInfo(autoTestPostModel = autoTestPostModel)
+    fun createAutoTest(autoTestCreateApiModel: AutoTestCreateApiModel? = null) : AutoTestApiResult {
+        val localVarResponse = createAutoTestWithHttpInfo(autoTestCreateApiModel = autoTestCreateApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -712,18 +712,18 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests
      * Create autotest
-     *   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
-     * @param autoTestPostModel  (optional)
-     * @return ApiResponse<AutoTestModel?>
+     *  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+     * @param autoTestCreateApiModel  (optional)
+     * @return ApiResponse<AutoTestApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createAutoTestWithHttpInfo(autoTestPostModel: AutoTestPostModel?) : ApiResponse<AutoTestModel?> {
-        val localVariableConfig = createAutoTestRequestConfig(autoTestPostModel = autoTestPostModel)
+    fun createAutoTestWithHttpInfo(autoTestCreateApiModel: AutoTestCreateApiModel?) : ApiResponse<AutoTestApiResult?> {
+        val localVariableConfig = createAutoTestRequestConfig(autoTestCreateApiModel = autoTestCreateApiModel)
 
-        return request<AutoTestPostModel, AutoTestModel>(
+        return request<AutoTestCreateApiModel, AutoTestApiResult>(
             localVariableConfig
         )
     }
@@ -731,11 +731,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation createAutoTest
      *
-     * @param autoTestPostModel  (optional)
+     * @param autoTestCreateApiModel  (optional)
      * @return RequestConfig
      */
-    fun createAutoTestRequestConfig(autoTestPostModel: AutoTestPostModel?) : RequestConfig<AutoTestPostModel> {
-        val localVariableBody = autoTestPostModel
+    fun createAutoTestRequestConfig(autoTestCreateApiModel: AutoTestCreateApiModel?) : RequestConfig<AutoTestCreateApiModel> {
+        val localVariableBody = autoTestCreateApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -754,9 +754,9 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/bulk
      * Create multiple autotests
-     *   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
-     * @param autoTestPostModel  (optional)
-     * @return kotlin.collections.List<AutoTestModel>
+     *  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
+     * @param autoTestCreateApiModel  (optional)
+     * @return kotlin.collections.List<AutoTestApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -765,11 +765,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createMultiple(autoTestPostModel: kotlin.collections.List<AutoTestPostModel>? = null) : kotlin.collections.List<AutoTestModel> {
-        val localVarResponse = createMultipleWithHttpInfo(autoTestPostModel = autoTestPostModel)
+    fun createMultiple(autoTestCreateApiModel: kotlin.collections.List<AutoTestCreateApiModel>? = null) : kotlin.collections.List<AutoTestApiResult> {
+        val localVarResponse = createMultipleWithHttpInfo(autoTestCreateApiModel = autoTestCreateApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AutoTestModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AutoTestApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -786,18 +786,18 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/bulk
      * Create multiple autotests
-     *   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
-     * @param autoTestPostModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<AutoTestModel>?>
+     *  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
+     * @param autoTestCreateApiModel  (optional)
+     * @return ApiResponse<kotlin.collections.List<AutoTestApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun createMultipleWithHttpInfo(autoTestPostModel: kotlin.collections.List<AutoTestPostModel>?) : ApiResponse<kotlin.collections.List<AutoTestModel>?> {
-        val localVariableConfig = createMultipleRequestConfig(autoTestPostModel = autoTestPostModel)
+    fun createMultipleWithHttpInfo(autoTestCreateApiModel: kotlin.collections.List<AutoTestCreateApiModel>?) : ApiResponse<kotlin.collections.List<AutoTestApiResult>?> {
+        val localVariableConfig = createMultipleRequestConfig(autoTestCreateApiModel = autoTestCreateApiModel)
 
-        return request<kotlin.collections.List<AutoTestPostModel>, kotlin.collections.List<AutoTestModel>>(
+        return request<kotlin.collections.List<AutoTestCreateApiModel>, kotlin.collections.List<AutoTestApiResult>>(
             localVariableConfig
         )
     }
@@ -805,11 +805,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation createMultiple
      *
-     * @param autoTestPostModel  (optional)
+     * @param autoTestCreateApiModel  (optional)
      * @return RequestConfig
      */
-    fun createMultipleRequestConfig(autoTestPostModel: kotlin.collections.List<AutoTestPostModel>?) : RequestConfig<kotlin.collections.List<AutoTestPostModel>> {
-        val localVariableBody = autoTestPostModel
+    fun createMultipleRequestConfig(autoTestCreateApiModel: kotlin.collections.List<AutoTestCreateApiModel>?) : RequestConfig<kotlin.collections.List<AutoTestCreateApiModel>> {
+        val localVariableBody = autoTestCreateApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -828,7 +828,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/autoTests/{id}
      * Delete autotest
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -859,7 +859,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/autoTests/{id}
      * Delete autotest
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -899,7 +899,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/autoTests/{id}/workItems
      * Unlink autotest from work item
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @param workItemId Work item internal (UUID) or global (integer) identifier (optional)
      * @return void
@@ -931,7 +931,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * DELETE /api/v2/autoTests/{id}/workItems
      * Unlink autotest from work item
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @param workItemId Work item internal (UUID) or global (integer) identifier (optional)
      * @return ApiResponse<Unit?>
@@ -1211,9 +1211,9 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/averageDuration
      * Get average autotest duration
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
      * @param id Autotest internal (UUID) or global (integer) identifier
-     * @return AutoTestAverageDurationModel
+     * @return AutoTestAverageDurationApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1222,11 +1222,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getAutoTestAverageDuration(id: kotlin.String) : AutoTestAverageDurationModel {
+    fun getAutoTestAverageDuration(id: kotlin.String) : AutoTestAverageDurationApiResult {
         val localVarResponse = getAutoTestAverageDurationWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestAverageDurationModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestAverageDurationApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1243,18 +1243,18 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/averageDuration
      * Get average autotest duration
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
      * @param id Autotest internal (UUID) or global (integer) identifier
-     * @return ApiResponse<AutoTestAverageDurationModel?>
+     * @return ApiResponse<AutoTestAverageDurationApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getAutoTestAverageDurationWithHttpInfo(id: kotlin.String) : ApiResponse<AutoTestAverageDurationModel?> {
+    fun getAutoTestAverageDurationWithHttpInfo(id: kotlin.String) : ApiResponse<AutoTestAverageDurationApiResult?> {
         val localVariableConfig = getAutoTestAverageDurationRequestConfig(id = id)
 
-        return request<Unit, AutoTestAverageDurationModel>(
+        return request<Unit, AutoTestAverageDurationApiResult>(
             localVariableConfig
         )
     }
@@ -1284,9 +1284,9 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}
      * Get autotest by internal or global ID
-     *   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+     *  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
      * @param id Autotest internal (UUID) or global (integer) identifier
-     * @return AutoTestModel
+     * @return AutoTestApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1295,11 +1295,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getAutoTestById(id: kotlin.String) : AutoTestModel {
+    fun getAutoTestById(id: kotlin.String) : AutoTestApiResult {
         val localVarResponse = getAutoTestByIdWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as AutoTestApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1316,18 +1316,18 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}
      * Get autotest by internal or global ID
-     *   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+     *  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
      * @param id Autotest internal (UUID) or global (integer) identifier
-     * @return ApiResponse<AutoTestModel?>
+     * @return ApiResponse<AutoTestApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getAutoTestByIdWithHttpInfo(id: kotlin.String) : ApiResponse<AutoTestModel?> {
+    fun getAutoTestByIdWithHttpInfo(id: kotlin.String) : ApiResponse<AutoTestApiResult?> {
         val localVariableConfig = getAutoTestByIdRequestConfig(id = id)
 
-        return request<Unit, AutoTestModel>(
+        return request<Unit, AutoTestApiResult>(
             localVariableConfig
         )
     }
@@ -1357,7 +1357,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/chronology
      * Get autotest chronology
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @return kotlin.collections.List<TestResultChronologyModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1391,7 +1391,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/chronology
      * Get autotest chronology
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @return ApiResponse<kotlin.collections.List<TestResultChronologyModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1435,7 +1435,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/testRuns
      * Get completed tests runs for autotests
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @return kotlin.collections.List<TestRunByAutoTestApiResult>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1467,7 +1467,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/testRuns
      * Get completed tests runs for autotests
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @return ApiResponse<kotlin.collections.List<TestRunByAutoTestApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1508,11 +1508,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/workItems
      * Get work items linked to autotest
-     *   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
-     * @param id Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.
+     *  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+     * @param id Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.
      * @param isDeleted Specifies that a test is deleted or still relevant. (optional)
      * @param isWorkItemDeleted OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)
-     * @return kotlin.collections.List<WorkItemIdentifierModel>
+     * @return kotlin.collections.List<AutoTestWorkItemIdentifierApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1521,11 +1521,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getWorkItemsLinkedToAutoTest(id: kotlin.String, isDeleted: kotlin.Boolean? = null, isWorkItemDeleted: kotlin.Boolean? = false) : kotlin.collections.List<WorkItemIdentifierModel> {
+    fun getWorkItemsLinkedToAutoTest(id: kotlin.String, isDeleted: kotlin.Boolean? = null, isWorkItemDeleted: kotlin.Boolean? = false) : kotlin.collections.List<AutoTestWorkItemIdentifierApiResult> {
         val localVarResponse = getWorkItemsLinkedToAutoTestWithHttpInfo(id = id, isDeleted = isDeleted, isWorkItemDeleted = isWorkItemDeleted)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemIdentifierModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AutoTestWorkItemIdentifierApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1542,20 +1542,20 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * GET /api/v2/autoTests/{id}/workItems
      * Get work items linked to autotest
-     *   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
-     * @param id Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.
+     *  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+     * @param id Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.
      * @param isDeleted Specifies that a test is deleted or still relevant. (optional)
      * @param isWorkItemDeleted OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)
-     * @return ApiResponse<kotlin.collections.List<WorkItemIdentifierModel>?>
+     * @return ApiResponse<kotlin.collections.List<AutoTestWorkItemIdentifierApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getWorkItemsLinkedToAutoTestWithHttpInfo(id: kotlin.String, isDeleted: kotlin.Boolean?, isWorkItemDeleted: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<WorkItemIdentifierModel>?> {
+    fun getWorkItemsLinkedToAutoTestWithHttpInfo(id: kotlin.String, isDeleted: kotlin.Boolean?, isWorkItemDeleted: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<AutoTestWorkItemIdentifierApiResult>?> {
         val localVariableConfig = getWorkItemsLinkedToAutoTestRequestConfig(id = id, isDeleted = isDeleted, isWorkItemDeleted = isWorkItemDeleted)
 
-        return request<Unit, kotlin.collections.List<WorkItemIdentifierModel>>(
+        return request<Unit, kotlin.collections.List<AutoTestWorkItemIdentifierApiResult>>(
             localVariableConfig
         )
     }
@@ -1563,7 +1563,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation getWorkItemsLinkedToAutoTest
      *
-     * @param id Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.
+     * @param id Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.
      * @param isDeleted Specifies that a test is deleted or still relevant. (optional)
      * @param isWorkItemDeleted OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)
      * @return RequestConfig
@@ -1595,7 +1595,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/{id}/workItems
      * Link autotest with work items
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @param workItemIdApiModel  (optional)
      * @return void
@@ -1627,7 +1627,7 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * POST /api/v2/autoTests/{id}/workItems
      * Link autotest with work items
-     *   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+     *  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
      * @param id Autotest internal (UUID) or global (integer) identifier
      * @param workItemIdApiModel  (optional)
      * @return ApiResponse<Unit?>
@@ -1670,8 +1670,8 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * PUT /api/v2/autoTests
      * Update autotest
-     *   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
-     * @param autoTestPutModel  (optional)
+     *  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
+     * @param autoTestUpdateApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1680,8 +1680,8 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateAutoTest(autoTestPutModel: AutoTestPutModel? = null) : Unit {
-        val localVarResponse = updateAutoTestWithHttpInfo(autoTestPutModel = autoTestPutModel)
+    fun updateAutoTest(autoTestUpdateApiModel: AutoTestUpdateApiModel? = null) : Unit {
+        val localVarResponse = updateAutoTestWithHttpInfo(autoTestUpdateApiModel = autoTestUpdateApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -1701,17 +1701,17 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * PUT /api/v2/autoTests
      * Update autotest
-     *   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
-     * @param autoTestPutModel  (optional)
+     *  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
+     * @param autoTestUpdateApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun updateAutoTestWithHttpInfo(autoTestPutModel: AutoTestPutModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateAutoTestRequestConfig(autoTestPutModel = autoTestPutModel)
+    fun updateAutoTestWithHttpInfo(autoTestUpdateApiModel: AutoTestUpdateApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = updateAutoTestRequestConfig(autoTestUpdateApiModel = autoTestUpdateApiModel)
 
-        return request<AutoTestPutModel, Unit>(
+        return request<AutoTestUpdateApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -1719,11 +1719,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation updateAutoTest
      *
-     * @param autoTestPutModel  (optional)
+     * @param autoTestUpdateApiModel  (optional)
      * @return RequestConfig
      */
-    fun updateAutoTestRequestConfig(autoTestPutModel: AutoTestPutModel?) : RequestConfig<AutoTestPutModel> {
-        val localVariableBody = autoTestPutModel
+    fun updateAutoTestRequestConfig(autoTestUpdateApiModel: AutoTestUpdateApiModel?) : RequestConfig<AutoTestUpdateApiModel> {
+        val localVariableBody = autoTestUpdateApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -1742,8 +1742,8 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * PUT /api/v2/autoTests/bulk
      * Update multiple autotests
-     *   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
-     * @param autoTestPutModel  (optional)
+     *  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
+     * @param autoTestUpdateApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1752,8 +1752,8 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateMultiple(autoTestPutModel: kotlin.collections.List<AutoTestPutModel>? = null) : Unit {
-        val localVarResponse = updateMultipleWithHttpInfo(autoTestPutModel = autoTestPutModel)
+    fun updateMultiple(autoTestUpdateApiModel: kotlin.collections.List<AutoTestUpdateApiModel>? = null) : Unit {
+        val localVarResponse = updateMultipleWithHttpInfo(autoTestUpdateApiModel = autoTestUpdateApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -1773,17 +1773,17 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * PUT /api/v2/autoTests/bulk
      * Update multiple autotests
-     *   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
-     * @param autoTestPutModel  (optional)
+     *  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
+     * @param autoTestUpdateApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun updateMultipleWithHttpInfo(autoTestPutModel: kotlin.collections.List<AutoTestPutModel>?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateMultipleRequestConfig(autoTestPutModel = autoTestPutModel)
+    fun updateMultipleWithHttpInfo(autoTestUpdateApiModel: kotlin.collections.List<AutoTestUpdateApiModel>?) : ApiResponse<Unit?> {
+        val localVariableConfig = updateMultipleRequestConfig(autoTestUpdateApiModel = autoTestUpdateApiModel)
 
-        return request<kotlin.collections.List<AutoTestPutModel>, Unit>(
+        return request<kotlin.collections.List<AutoTestUpdateApiModel>, Unit>(
             localVariableConfig
         )
     }
@@ -1791,11 +1791,11 @@ class AutoTestsApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
     /**
      * To obtain the request config of the operation updateMultiple
      *
-     * @param autoTestPutModel  (optional)
+     * @param autoTestUpdateApiModel  (optional)
      * @return RequestConfig
      */
-    fun updateMultipleRequestConfig(autoTestPutModel: kotlin.collections.List<AutoTestPutModel>?) : RequestConfig<kotlin.collections.List<AutoTestPutModel>> {
-        val localVariableBody = autoTestPutModel
+    fun updateMultipleRequestConfig(autoTestUpdateApiModel: kotlin.collections.List<AutoTestUpdateApiModel>?) : RequestConfig<kotlin.collections.List<AutoTestUpdateApiModel>> {
+        val localVariableBody = autoTestUpdateApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

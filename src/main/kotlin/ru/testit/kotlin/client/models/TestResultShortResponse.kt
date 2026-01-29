@@ -32,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param testRunId Unique ID of test run where the test result is located
  * @param configurationId Unique ID of configuration which the test result uses
  * @param configurationName Name of configuration which the test result uses
+ * @param status 
  * @param resultReasons Collection of result reasons which the test result have
  * @param date Date when the test result was completed or started or created
  * @param createdDate Date when the test result has been created
@@ -40,7 +41,6 @@ import com.squareup.moshi.JsonClass
  * @param rerunCompletedCount Run count
  * @param autotestExternalId External ID of autotest represented by the test result
  * @param outcome Outcome of the test result
- * @param status 
  * @param comment Comment to the test result
  * @param modifiedDate Date when the test result has been modified
  * @param startedOn Date when the test result has been started
@@ -75,6 +75,9 @@ data class TestResultShortResponse (
     @Json(name = "configurationName")
     val configurationName: kotlin.String,
 
+    @Json(name = "status")
+    val status: TestStatusApiResult,
+
     /* Collection of result reasons which the test result have */
     @Json(name = "resultReasons")
     val resultReasons: kotlin.collections.List<AutoTestResultReasonShort>,
@@ -108,9 +111,6 @@ data class TestResultShortResponse (
     @Json(name = "outcome")
     @Deprecated(message = "This property is deprecated.")
     val outcome: kotlin.String? = null,
-
-    @Json(name = "status")
-    val status: TestStatusApiResult? = null,
 
     /* Comment to the test result */
     @Json(name = "comment")

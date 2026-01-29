@@ -1,0 +1,16 @@
+packageName: "ru.testit.kotlin.client"
+artifactVersion: 0.8.0-TMS-5.6
+artifactId: "testit-api-client"
+artifactUrl: "https://github.com/testit-tms/api-client-java"
+
+developerEmail: "integrations@testit.software"
+developerName: "Integration Team"
+developerOrganization: "Test IT"
+developerOrganizationUrl: "https://testit.software/"
+groupId: "ru.testit"
+
+# hideGenerationTimestamp: true
+# enumUnknownDefaultCase: true
+# failOnUnknownProperties: false
+# sortModelPropertiesByRequiredFlag: true
+# sortParamsByRequiredFlag: true

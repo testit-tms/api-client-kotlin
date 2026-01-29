@@ -22,15 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param name Name of the label
+ * @param statusCode 
+ * @param statusName 
+ * @param `value` 
  */
 
 
-data class LabelPostModel (
+data class TestPlanTestPointsStatusCodeGroupApiResult (
 
-    /* Name of the label */
-    @Json(name = "name")
-    val name: kotlin.String
+    @Json(name = "statusCode")
+    val statusCode: kotlin.String,
+
+    @Json(name = "statusName")
+    val statusName: kotlin.String,
+
+    @Json(name = "value")
+    val `value`: kotlin.Long
 
 ) {
 

@@ -39,7 +39,6 @@ import com.squareup.moshi.JsonClass
  * @param autoTestsCount Number of autotests in the project
  * @param modifiedDate Last modification date of the project
  * @param modifiedById Unique ID of the project last editor
- * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" sets automatically
  */
 
 
@@ -106,12 +105,7 @@ data class ProjectShortModel (
 
     /* Unique ID of the project last editor */
     @Json(name = "modifiedById")
-    val modifiedById: java.util.UUID? = null,
-
-    /* Indicates if the status \"Flaky/Stable\" sets automatically */
-    @Json(name = "isFlakyAuto")
-    @Deprecated(message = "This property is deprecated.")
-    val isFlakyAuto: kotlin.Boolean? = null
+    val modifiedById: java.util.UUID? = null
 
 ) {
 

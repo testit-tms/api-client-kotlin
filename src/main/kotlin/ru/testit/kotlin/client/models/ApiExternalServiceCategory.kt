@@ -26,7 +26,7 @@ import com.squareup.moshi.JsonClass
  */
 
 @JsonClass(generateAdapter = false)
-enum class ExternalServiceCategoryApiResult(val value: kotlin.String) {
+enum class ApiExternalServiceCategory(val value: kotlin.String) {
 
     @Json(name = "AI")
     AI("AI"),
@@ -47,12 +47,12 @@ enum class ExternalServiceCategoryApiResult(val value: kotlin.String) {
         /**
          * Converts the provided [data] to a [String] on success, null otherwise.
          */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ExternalServiceCategoryApiResult) "$data" else null
+        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ApiExternalServiceCategory) "$data" else null
 
         /**
-         * Returns a valid [ExternalServiceCategoryApiResult] for [data], null otherwise.
+         * Returns a valid [ApiExternalServiceCategory] for [data], null otherwise.
          */
-        fun decode(data: kotlin.Any?): ExternalServiceCategoryApiResult? = data?.let {
+        fun decode(data: kotlin.Any?): ApiExternalServiceCategory? = data?.let {
           val normalizedData = "$it".lowercase()
           values().firstOrNull { value ->
             it == value || normalizedData == "$value".lowercase()

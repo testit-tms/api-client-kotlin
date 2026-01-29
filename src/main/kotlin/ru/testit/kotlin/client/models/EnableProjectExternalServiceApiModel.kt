@@ -30,7 +30,7 @@ data class EnableProjectExternalServiceApiModel (
 
     /* External service settings */
     @Json(name = "settings")
-    val settings: kotlin.Any? = null
+    val settings: kotlin.Any?
 
 ) {
 

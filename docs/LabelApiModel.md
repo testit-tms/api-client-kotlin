@@ -1,5 +1,5 @@
 
-# LabelPostModel
+# LabelApiModel
 
 ## Properties
 | Name | Type | Description | Notes |

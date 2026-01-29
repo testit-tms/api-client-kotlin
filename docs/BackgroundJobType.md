@@ -10,6 +10,8 @@
 
     * `ExportXlsxTestPointsByTestPlan` (value: `"ExportXlsxTestPointsByTestPlan"`)
 
+    * `ExportXlsxWorkItemLinks` (value: `"ExportXlsxWorkItemLinks"`)
+
     * `ExportJsonProject` (value: `"ExportJsonProject"`)
 
     * `ExportZipProject` (value: `"ExportZipProject"`)
@@ -35,6 +37,10 @@
     * `PurgeEntities` (value: `"PurgeEntities"`)
 
     * `DeleteCompletedJobs` (value: `"DeleteCompletedJobs"`)
+
+    * `CopySections` (value: `"CopySections"`)
+
+    * `DeleteSection` (value: `"DeleteSection"`)
 
 
 

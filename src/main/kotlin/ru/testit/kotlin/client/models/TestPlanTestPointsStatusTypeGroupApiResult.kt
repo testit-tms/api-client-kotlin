@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.TestPlanTestPointsStatusCodeGroupApiResult
 import ru.testit.kotlin.client.models.TestStatusApiType
 
 import com.squareup.moshi.Json
@@ -24,7 +25,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param statusType Collection of possible status types
- * @param `value` 
+ * @param statuses 
  */
 
 
@@ -34,8 +35,8 @@ data class TestPlanTestPointsStatusTypeGroupApiResult (
     @Json(name = "statusType")
     val statusType: TestStatusApiType,
 
-    @Json(name = "value")
-    val `value`: kotlin.Long
+    @Json(name = "statuses")
+    val statuses: kotlin.collections.List<TestPlanTestPointsStatusCodeGroupApiResult>
 
 ) {
 

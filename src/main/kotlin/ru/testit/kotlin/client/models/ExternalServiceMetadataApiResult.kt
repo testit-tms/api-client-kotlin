@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.ExternalServiceCategoryApiResult
+import ru.testit.kotlin.client.models.ApiExternalServiceCategory
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -46,7 +46,7 @@ data class ExternalServiceMetadataApiResult (
 
     /* The category of the external service */
     @Json(name = "category")
-    val category: ExternalServiceCategoryApiResult
+    val category: ApiExternalServiceCategory
 
 ) {
 

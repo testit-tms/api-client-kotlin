@@ -67,7 +67,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ConfigurationsDeleteBulkPost"></a>
 # **apiV2ConfigurationsDeleteBulkPost**
-> kotlin.Int apiV2ConfigurationsDeleteBulkPost(configurationSelectModel)
+> kotlin.Int apiV2ConfigurationsDeleteBulkPost(configurationSelectApiModel)
 
 Delete multiple configurations
 
@@ -78,9 +78,9 @@ Delete multiple configurations
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = ConfigurationsApi()
-val configurationSelectModel : ConfigurationSelectModel =  // ConfigurationSelectModel | 
+val configurationSelectApiModel : ConfigurationSelectApiModel =  // ConfigurationSelectApiModel | 
 try {
-    val result : kotlin.Int = apiInstance.apiV2ConfigurationsDeleteBulkPost(configurationSelectModel)
+    val result : kotlin.Int = apiInstance.apiV2ConfigurationsDeleteBulkPost(configurationSelectApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ConfigurationsApi#apiV2ConfigurationsDeleteBulkPost")
@@ -94,7 +94,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **configurationSelectModel** | [**ConfigurationSelectModel**](ConfigurationSelectModel.md)|  | [optional] |
+| **configurationSelectApiModel** | [**ConfigurationSelectApiModel**](ConfigurationSelectApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -503,7 +503,7 @@ Configure Bearer or PrivateToken:
 
 Create Configuration
 
-  Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+ Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
 
 ### Example
 ```kotlin
@@ -552,7 +552,7 @@ Configure Bearer or PrivateToken:
 
 Get configuration by internal or global ID
 
-  Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+ Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
 
 ### Example
 ```kotlin

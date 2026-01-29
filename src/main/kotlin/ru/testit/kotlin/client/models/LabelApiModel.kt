@@ -22,18 +22,15 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param passedAverageDuration 
- * @param failedAverageDuration 
+ * @param name Name of the label
  */
 
 
-data class AutoTestAverageDurationModel (
+data class LabelApiModel (
 
-    @Json(name = "passedAverageDuration")
-    val passedAverageDuration: kotlin.Double,
-
-    @Json(name = "failedAverageDuration")
-    val failedAverageDuration: kotlin.Double
+    /* Name of the label */
+    @Json(name = "name")
+    val name: kotlin.String
 
 ) {
 
