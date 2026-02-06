@@ -81,7 +81,7 @@ data class UpdateWorkItemApiModel (
 
     /* Workitem duration in milliseconds */
     @Json(name = "duration")
-    val duration: kotlin.Int,
+    val duration: kotlin.Long,
 
     /* Key value pair of custom workitem attributes */
     @Json(name = "attributes")

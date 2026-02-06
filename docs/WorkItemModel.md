@@ -23,7 +23,7 @@
 | **steps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  |
 | **preconditionSteps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  |
 | **postconditionSteps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  |
-| **duration** | **kotlin.Int** |  |  |
+| **duration** | **kotlin.Long** |  |  |
 | **attributes** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  |
 | **tags** | [**kotlin.collections.List&lt;TagModel&gt;**](TagModel.md) |  |  |
 | **links** | [**kotlin.collections.List&lt;LinkModel&gt;**](LinkModel.md) |  |  |

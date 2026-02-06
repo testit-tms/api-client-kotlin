@@ -7,7 +7,6 @@ secring.gpg
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 bin
@@ -43,7 +42,6 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-*.jar
 ### Kotlin ###
 .kotlin
 .idea

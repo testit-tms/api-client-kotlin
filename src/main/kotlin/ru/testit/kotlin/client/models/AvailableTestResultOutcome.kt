@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * Values: Passed,Failed,Blocked,Skipped
+ * Values: Passed,Failed,Blocked,Skipped,InProgress
  */
 
 @JsonClass(generateAdapter = false)
@@ -38,7 +38,10 @@ enum class AvailableTestResultOutcome(val value: kotlin.String) {
     Blocked("Blocked"),
 
     @Json(name = "Skipped")
-    Skipped("Skipped");
+    Skipped("Skipped"),
+
+    @Json(name = "InProgress")
+    InProgress("InProgress");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

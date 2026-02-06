@@ -67,7 +67,7 @@ data class CreateWorkItemApiModel (
 
     /* Duration of the work item in milliseconds */
     @Json(name = "duration")
-    val duration: kotlin.Int,
+    val duration: kotlin.Long,
 
     /* State of the work item */
     @Json(name = "state")

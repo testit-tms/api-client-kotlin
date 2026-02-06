@@ -45,6 +45,7 @@ import com.squareup.moshi.JsonClass
  * @param lastTestResultStatusCodes 
  * @param externalKey 
  * @param lastTestResultConfigurationIds 
+ * @param tags 
  */
 
 
@@ -108,7 +109,10 @@ data class AutoTestFilterModel (
     val externalKey: kotlin.String? = null,
 
     @Json(name = "lastTestResultConfigurationIds")
-    val lastTestResultConfigurationIds: kotlin.collections.List<java.util.UUID>? = null
+    val lastTestResultConfigurationIds: kotlin.collections.List<java.util.UUID>? = null,
+
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 

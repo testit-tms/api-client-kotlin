@@ -11,7 +11,7 @@
 | **steps** | [**kotlin.collections.List&lt;UpdateStepApiModel&gt;**](UpdateStepApiModel.md) | Collection of workitem steps |  |
 | **preconditionSteps** | [**kotlin.collections.List&lt;UpdateStepApiModel&gt;**](UpdateStepApiModel.md) | Collection of workitem precondtion steps |  |
 | **postconditionSteps** | [**kotlin.collections.List&lt;UpdateStepApiModel&gt;**](UpdateStepApiModel.md) | Collection of workitem postcondition steps |  |
-| **duration** | **kotlin.Int** | Workitem duration in milliseconds |  |
+| **duration** | **kotlin.Long** | Workitem duration in milliseconds |  |
 | **attributes** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) | Key value pair of custom workitem attributes |  |
 | **tags** | [**kotlin.collections.List&lt;TagModel&gt;**](TagModel.md) | Collection of workitem tags |  |
 | **links** | [**kotlin.collections.List&lt;UpdateLinkApiModel&gt;**](UpdateLinkApiModel.md) | Collection of workitem links |  |

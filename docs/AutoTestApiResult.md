@@ -33,6 +33,7 @@
 | **stabilityPercentage** | **kotlin.Long** |  |  [optional] |
 | **links** | [**kotlin.collections.List&lt;LinkApiResult&gt;**](LinkApiResult.md) |  |  [optional] |
 | **labels** | [**kotlin.collections.List&lt;LabelApiResult&gt;**](LabelApiResult.md) |  |  [optional] |
+| **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
 
 
 

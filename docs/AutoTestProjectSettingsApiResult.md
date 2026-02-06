@@ -10,6 +10,8 @@
 | **flakyTestRunCount** | **kotlin.Int** | Last test run count for autotest flaky computing |  |
 | **rerunEnabled** | **kotlin.Boolean** | Auto rerun enabled |  |
 | **rerunAttemptsCount** | **kotlin.Int** | Auto rerun attempt count |  |
+| **workItemUpdatingEnabled** | **kotlin.Boolean** | Autotest to work item updating enabled |  |
+| **workItemUpdatingFields** | [**WorkItemUpdatingFieldsApiResult**](WorkItemUpdatingFieldsApiResult.md) | Autotest to work item updating fields |  |
 
 
 
