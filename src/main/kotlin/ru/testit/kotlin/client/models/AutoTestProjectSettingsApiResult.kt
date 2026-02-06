@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.WorkItemUpdatingFieldsApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -28,6 +29,8 @@ import com.squareup.moshi.JsonClass
  * @param flakyTestRunCount Last test run count for autotest flaky computing
  * @param rerunEnabled Auto rerun enabled
  * @param rerunAttemptsCount Auto rerun attempt count
+ * @param workItemUpdatingEnabled Autotest to work item updating enabled
+ * @param workItemUpdatingFields Autotest to work item updating fields
  */
 
 
@@ -55,7 +58,15 @@ data class AutoTestProjectSettingsApiResult (
 
     /* Auto rerun attempt count */
     @Json(name = "rerunAttemptsCount")
-    val rerunAttemptsCount: kotlin.Int
+    val rerunAttemptsCount: kotlin.Int,
+
+    /* Autotest to work item updating enabled */
+    @Json(name = "workItemUpdatingEnabled")
+    val workItemUpdatingEnabled: kotlin.Boolean,
+
+    /* Autotest to work item updating fields */
+    @Json(name = "workItemUpdatingFields")
+    val workItemUpdatingFields: WorkItemUpdatingFieldsApiResult
 
 ) {
 

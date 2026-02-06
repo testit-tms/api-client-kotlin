@@ -131,7 +131,7 @@ data class WorkItemModel (
     val postconditionSteps: kotlin.collections.List<StepModel>,
 
     @Json(name = "duration")
-    val duration: kotlin.Int,
+    val duration: kotlin.Long,
 
     @Json(name = "attributes")
     val attributes: kotlin.collections.Map<kotlin.String, kotlin.Any>,

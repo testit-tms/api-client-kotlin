@@ -19,10 +19,12 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.BackgroundJobFilterModel
-import ru.testit.kotlin.client.models.BackgroundJobGetModel
-import ru.testit.kotlin.client.models.BackgroundJobState
+import ru.testit.kotlin.client.models.CreateTestStatusApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
+import ru.testit.kotlin.client.models.SearchTestStatusesApiModel
+import ru.testit.kotlin.client.models.TestStatusApiResult
+import ru.testit.kotlin.client.models.TestStatusApiResultReply
+import ru.testit.kotlin.client.models.UpdateTestStatusApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
 import com.squareup.moshi.Json
@@ -41,7 +43,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
+open class TestStatusesApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -50,9 +52,83 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * DELETE /api/v2/backgroundJobs/completed
-     * Delete all completed background jobs
+     * GET /api/v2/testStatuses/code/{code}/exists
      * 
+     * 
+     * @param code 
+     * @return kotlin.Boolean
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestStatusesCodeCodeExistsGet(code: kotlin.String) : kotlin.Boolean {
+        val localVarResponse = apiV2TestStatusesCodeCodeExistsGetWithHttpInfo(code = code)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Boolean
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /api/v2/testStatuses/code/{code}/exists
+     * 
+     * 
+     * @param code 
+     * @return ApiResponse<kotlin.Boolean?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestStatusesCodeCodeExistsGetWithHttpInfo(code: kotlin.String) : ApiResponse<kotlin.Boolean?> {
+        val localVariableConfig = apiV2TestStatusesCodeCodeExistsGetRequestConfig(code = code)
+
+        return request<Unit, kotlin.Boolean>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestStatusesCodeCodeExistsGet
+     *
+     * @param code 
+     * @return RequestConfig
+     */
+    fun apiV2TestStatusesCodeCodeExistsGetRequestConfig(code: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "text/plain, application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/api/v2/testStatuses/code/{code}/exists".replace("{"+"code"+"}", encodeURIComponent(code.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * DELETE /api/v2/testStatuses/{id}
+     * 
+     * 
+     * @param id 
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -61,8 +137,8 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2BackgroundJobsCompletedDelete() : Unit {
-        val localVarResponse = apiV2BackgroundJobsCompletedDeleteWithHttpInfo()
+    fun apiV2TestStatusesIdDelete(id: java.util.UUID) : Unit {
+        val localVarResponse = apiV2TestStatusesIdDeleteWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -80,16 +156,17 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * DELETE /api/v2/backgroundJobs/completed
-     * Delete all completed background jobs
+     * DELETE /api/v2/testStatuses/{id}
      * 
+     * 
+     * @param id 
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2BackgroundJobsCompletedDeleteWithHttpInfo() : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2BackgroundJobsCompletedDeleteRequestConfig()
+    fun apiV2TestStatusesIdDeleteWithHttpInfo(id: java.util.UUID) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestStatusesIdDeleteRequestConfig(id = id)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -97,11 +174,12 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * To obtain the request config of the operation apiV2BackgroundJobsCompletedDelete
+     * To obtain the request config of the operation apiV2TestStatusesIdDelete
      *
+     * @param id 
      * @return RequestConfig
      */
-    fun apiV2BackgroundJobsCompletedDeleteRequestConfig() : RequestConfig<Unit> {
+    fun apiV2TestStatusesIdDeleteRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -109,7 +187,7 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
 
         return RequestConfig(
             method = RequestMethod.DELETE,
-            path = "/api/v2/backgroundJobs/completed",
+            path = "/api/v2/testStatuses/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -118,15 +196,11 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * GET /api/v2/backgroundJobs
+     * GET /api/v2/testStatuses/{id}
      * 
      * 
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<BackgroundJobGetModel>
+     * @param id 
+     * @return TestStatusApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -135,13 +209,11 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun apiV2BackgroundJobsGet(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<BackgroundJobGetModel> {
-        @Suppress("DEPRECATION")
-        val localVarResponse = apiV2BackgroundJobsGetWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2TestStatusesIdGet(id: java.util.UUID) : TestStatusApiResult {
+        val localVarResponse = apiV2TestStatusesIdGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<BackgroundJobGetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestStatusApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -156,67 +228,39 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * GET /api/v2/backgroundJobs
+     * GET /api/v2/testStatuses/{id}
      * 
      * 
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<BackgroundJobGetModel>?>
+     * @param id 
+     * @return ApiResponse<TestStatusApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun apiV2BackgroundJobsGetWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<BackgroundJobGetModel>?> {
-        @Suppress("DEPRECATION")
-        val localVariableConfig = apiV2BackgroundJobsGetRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2TestStatusesIdGetWithHttpInfo(id: java.util.UUID) : ApiResponse<TestStatusApiResult?> {
+        val localVariableConfig = apiV2TestStatusesIdGetRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<BackgroundJobGetModel>>(
+        return request<Unit, TestStatusApiResult>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiV2BackgroundJobsGet
+     * To obtain the request config of the operation apiV2TestStatusesIdGet
      *
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
+     * @param id 
      * @return RequestConfig
      */
-    @Deprecated(message = "This operation is deprecated.")
-    fun apiV2BackgroundJobsGetRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
+    fun apiV2TestStatusesIdGetRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (skip != null) {
-                    put("Skip", listOf(skip.toString()))
-                }
-                if (take != null) {
-                    put("Take", listOf(take.toString()))
-                }
-                if (orderBy != null) {
-                    put("OrderBy", listOf(orderBy.toString()))
-                }
-                if (searchField != null) {
-                    put("SearchField", listOf(searchField.toString()))
-                }
-                if (searchValue != null) {
-                    put("SearchValue", listOf(searchValue.toString()))
-                }
-            }
+        val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
 
         return RequestConfig(
             method = RequestMethod.GET,
-            path = "/api/v2/backgroundJobs",
+            path = "/api/v2/testStatuses/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -225,10 +269,11 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * POST /api/v2/backgroundJobs/{id}/cancel
-     * Cancel current user background job
+     * PUT /api/v2/testStatuses/{id}
+     * 
      * 
      * @param id 
+     * @param updateTestStatusApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -237,8 +282,8 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2BackgroundJobsIdCancelPost(id: java.util.UUID) : Unit {
-        val localVarResponse = apiV2BackgroundJobsIdCancelPostWithHttpInfo(id = id)
+    fun apiV2TestStatusesIdPut(id: java.util.UUID, updateTestStatusApiModel: UpdateTestStatusApiModel? = null) : Unit {
+        val localVarResponse = apiV2TestStatusesIdPutWithHttpInfo(id = id, updateTestStatusApiModel = updateTestStatusApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -256,38 +301,41 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * POST /api/v2/backgroundJobs/{id}/cancel
-     * Cancel current user background job
+     * PUT /api/v2/testStatuses/{id}
+     * 
      * 
      * @param id 
+     * @param updateTestStatusApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2BackgroundJobsIdCancelPostWithHttpInfo(id: java.util.UUID) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2BackgroundJobsIdCancelPostRequestConfig(id = id)
+    fun apiV2TestStatusesIdPutWithHttpInfo(id: java.util.UUID, updateTestStatusApiModel: UpdateTestStatusApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestStatusesIdPutRequestConfig(id = id, updateTestStatusApiModel = updateTestStatusApiModel)
 
-        return request<Unit, Unit>(
+        return request<UpdateTestStatusApiModel, Unit>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiV2BackgroundJobsIdCancelPost
+     * To obtain the request config of the operation apiV2TestStatusesIdPut
      *
      * @param id 
+     * @param updateTestStatusApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2BackgroundJobsIdCancelPostRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
-        val localVariableBody = null
+    fun apiV2TestStatusesIdPutRequestConfig(id: java.util.UUID, updateTestStatusApiModel: UpdateTestStatusApiModel?) : RequestConfig<UpdateTestStatusApiModel> {
+        val localVariableBody = updateTestStatusApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
         localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/backgroundJobs/{id}/cancel".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            method = RequestMethod.PUT,
+            path = "/api/v2/testStatuses/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -296,11 +344,11 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * GET /api/v2/backgroundJobs/{id}
-     * Get background job by ID
+     * GET /api/v2/testStatuses/name/{name}/exists
      * 
-     * @param id Unique ID of the background job
-     * @return BackgroundJobGetModel
+     * 
+     * @param name 
+     * @return kotlin.Boolean
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -309,11 +357,11 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2BackgroundJobsIdGet(id: java.util.UUID) : BackgroundJobGetModel {
-        val localVarResponse = apiV2BackgroundJobsIdGetWithHttpInfo(id = id)
+    fun apiV2TestStatusesNameNameExistsGet(name: kotlin.String) : kotlin.Boolean {
+        val localVarResponse = apiV2TestStatusesNameNameExistsGetWithHttpInfo(name = name)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as BackgroundJobGetModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Boolean
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -328,39 +376,39 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * GET /api/v2/backgroundJobs/{id}
-     * Get background job by ID
+     * GET /api/v2/testStatuses/name/{name}/exists
      * 
-     * @param id Unique ID of the background job
-     * @return ApiResponse<BackgroundJobGetModel?>
+     * 
+     * @param name 
+     * @return ApiResponse<kotlin.Boolean?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2BackgroundJobsIdGetWithHttpInfo(id: java.util.UUID) : ApiResponse<BackgroundJobGetModel?> {
-        val localVariableConfig = apiV2BackgroundJobsIdGetRequestConfig(id = id)
+    fun apiV2TestStatusesNameNameExistsGetWithHttpInfo(name: kotlin.String) : ApiResponse<kotlin.Boolean?> {
+        val localVariableConfig = apiV2TestStatusesNameNameExistsGetRequestConfig(name = name)
 
-        return request<Unit, BackgroundJobGetModel>(
+        return request<Unit, kotlin.Boolean>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiV2BackgroundJobsIdGet
+     * To obtain the request config of the operation apiV2TestStatusesNameNameExistsGet
      *
-     * @param id Unique ID of the background job
+     * @param name 
      * @return RequestConfig
      */
-    fun apiV2BackgroundJobsIdGetRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
+    fun apiV2TestStatusesNameNameExistsGetRequestConfig(name: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
 
         return RequestConfig(
             method = RequestMethod.GET,
-            path = "/api/v2/backgroundJobs/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            path = "/api/v2/testStatuses/name/{name}/exists".replace("{"+"name"+"}", encodeURIComponent(name.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -369,11 +417,11 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * GET /api/v2/backgroundJobs/{id}/status
-     * Get background job status by job ID
+     * POST /api/v2/testStatuses
      * 
-     * @param id Unique ID of the background job
-     * @return BackgroundJobState
+     * 
+     * @param createTestStatusApiModel  (optional)
+     * @return TestStatusApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -382,11 +430,11 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2BackgroundJobsIdStatusGet(id: java.util.UUID) : BackgroundJobState {
-        val localVarResponse = apiV2BackgroundJobsIdStatusGetWithHttpInfo(id = id)
+    fun apiV2TestStatusesPost(createTestStatusApiModel: CreateTestStatusApiModel? = null) : TestStatusApiResult {
+        val localVarResponse = apiV2TestStatusesPostWithHttpInfo(createTestStatusApiModel = createTestStatusApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as BackgroundJobState
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestStatusApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -401,145 +449,114 @@ open class BackgroundJobsApi(basePath: kotlin.String = defaultBasePath, client: 
     }
 
     /**
-     * GET /api/v2/backgroundJobs/{id}/status
-     * Get background job status by job ID
+     * POST /api/v2/testStatuses
      * 
-     * @param id Unique ID of the background job
-     * @return ApiResponse<BackgroundJobState?>
+     * 
+     * @param createTestStatusApiModel  (optional)
+     * @return ApiResponse<TestStatusApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2BackgroundJobsIdStatusGetWithHttpInfo(id: java.util.UUID) : ApiResponse<BackgroundJobState?> {
-        val localVariableConfig = apiV2BackgroundJobsIdStatusGetRequestConfig(id = id)
+    fun apiV2TestStatusesPostWithHttpInfo(createTestStatusApiModel: CreateTestStatusApiModel?) : ApiResponse<TestStatusApiResult?> {
+        val localVariableConfig = apiV2TestStatusesPostRequestConfig(createTestStatusApiModel = createTestStatusApiModel)
 
-        return request<Unit, BackgroundJobState>(
+        return request<CreateTestStatusApiModel, TestStatusApiResult>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiV2BackgroundJobsIdStatusGet
+     * To obtain the request config of the operation apiV2TestStatusesPost
      *
-     * @param id Unique ID of the background job
+     * @param createTestStatusApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2BackgroundJobsIdStatusGetRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
-        val localVariableBody = null
+    fun apiV2TestStatusesPostRequestConfig(createTestStatusApiModel: CreateTestStatusApiModel?) : RequestConfig<CreateTestStatusApiModel> {
+        val localVariableBody = createTestStatusApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/api/v2/backgroundJobs/{id}/status".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /api/v2/backgroundJobs/search
-     * Search for user background jobs
-     * 
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @param backgroundJobFilterModel  (optional)
-     * @return kotlin.collections.List<BackgroundJobGetModel>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2BackgroundJobsSearchPost(skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, backgroundJobFilterModel: BackgroundJobFilterModel? = null) : kotlin.collections.List<BackgroundJobGetModel> {
-        val localVarResponse = apiV2BackgroundJobsSearchPostWithHttpInfo(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, backgroundJobFilterModel = backgroundJobFilterModel)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<BackgroundJobGetModel>
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /api/v2/backgroundJobs/search
-     * Search for user background jobs
-     * 
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @param backgroundJobFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<BackgroundJobGetModel>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2BackgroundJobsSearchPostWithHttpInfo(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, backgroundJobFilterModel: BackgroundJobFilterModel?) : ApiResponse<kotlin.collections.List<BackgroundJobGetModel>?> {
-        val localVariableConfig = apiV2BackgroundJobsSearchPostRequestConfig(skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, backgroundJobFilterModel = backgroundJobFilterModel)
-
-        return request<BackgroundJobFilterModel, kotlin.collections.List<BackgroundJobGetModel>>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation apiV2BackgroundJobsSearchPost
-     *
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @param backgroundJobFilterModel  (optional)
-     * @return RequestConfig
-     */
-    fun apiV2BackgroundJobsSearchPostRequestConfig(skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, backgroundJobFilterModel: BackgroundJobFilterModel?) : RequestConfig<BackgroundJobFilterModel> {
-        val localVariableBody = backgroundJobFilterModel
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (skip != null) {
-                    put("Skip", listOf(skip.toString()))
-                }
-                if (take != null) {
-                    put("Take", listOf(take.toString()))
-                }
-                if (orderBy != null) {
-                    put("OrderBy", listOf(orderBy.toString()))
-                }
-                if (searchField != null) {
-                    put("SearchField", listOf(searchField.toString()))
-                }
-                if (searchValue != null) {
-                    put("SearchValue", listOf(searchValue.toString()))
-                }
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
 
         return RequestConfig(
             method = RequestMethod.POST,
-            path = "/api/v2/backgroundJobs/search",
+            path = "/api/v2/testStatuses",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /api/v2/testStatuses/search
+     * 
+     * 
+     * @param searchTestStatusesApiModel  (optional)
+     * @return TestStatusApiResultReply
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestStatusesSearchPost(searchTestStatusesApiModel: SearchTestStatusesApiModel? = null) : TestStatusApiResultReply {
+        val localVarResponse = apiV2TestStatusesSearchPostWithHttpInfo(searchTestStatusesApiModel = searchTestStatusesApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestStatusApiResultReply
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/testStatuses/search
+     * 
+     * 
+     * @param searchTestStatusesApiModel  (optional)
+     * @return ApiResponse<TestStatusApiResultReply?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestStatusesSearchPostWithHttpInfo(searchTestStatusesApiModel: SearchTestStatusesApiModel?) : ApiResponse<TestStatusApiResultReply?> {
+        val localVariableConfig = apiV2TestStatusesSearchPostRequestConfig(searchTestStatusesApiModel = searchTestStatusesApiModel)
+
+        return request<SearchTestStatusesApiModel, TestStatusApiResultReply>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestStatusesSearchPost
+     *
+     * @param searchTestStatusesApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2TestStatusesSearchPostRequestConfig(searchTestStatusesApiModel: SearchTestStatusesApiModel?) : RequestConfig<SearchTestStatusesApiModel> {
+        val localVariableBody = searchTestStatusesApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/testStatuses/search",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

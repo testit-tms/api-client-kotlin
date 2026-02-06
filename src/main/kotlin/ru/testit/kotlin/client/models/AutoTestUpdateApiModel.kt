@@ -25,35 +25,36 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param externalId External ID of the autotest
  * @param projectId Unique ID of the autotest project
+ * @param externalId External ID of the autotest
  * @param name Name of the autotest
  * @param id Autotest unique internal identifier
  * @param externalKey External key of the autotest
  * @param namespace Name of the autotest namespace
  * @param classname Name of the autotest class
+ * @param title Name of the autotest in autotest's card
+ * @param description Description of the autotest in autotest's card
+ * @param isFlaky Indicates if the autotest is marked as flaky
  * @param steps Collection of the autotest steps
  * @param setup Collection of the autotest setup steps
  * @param teardown Collection of the autotest teardown steps
- * @param title Name of the autotest in autotest's card
- * @param description Description of the autotest in autotest's card
+ * @param workItemIds Specifies the IDs of work items to link your autotest to. You can specify several IDs.
+ * @param workItemIdsForLinkWithAutoTest Specifies the IDs of work items to link your autotest to. You can specify several IDs.
  * @param labels Collection of the autotest labels
  * @param links Collection of the autotest links
- * @param isFlaky Indicates if the autotest is marked as flaky
- * @param workItemIdsForLinkWithAutoTest Specifies the IDs of work items to link your autotest to. You can specify several IDs.
- * @param workItemIds Specifies the IDs of work items to link your autotest to. You can specify several IDs.
+ * @param tags Collection of the autotest tags
  */
 
 
 data class AutoTestUpdateApiModel (
 
-    /* External ID of the autotest */
-    @Json(name = "externalId")
-    val externalId: kotlin.String,
-
     /* Unique ID of the autotest project */
     @Json(name = "projectId")
     val projectId: java.util.UUID,
+
+    /* External ID of the autotest */
+    @Json(name = "externalId")
+    val externalId: kotlin.String,
 
     /* Name of the autotest */
     @Json(name = "name")
@@ -75,6 +76,18 @@ data class AutoTestUpdateApiModel (
     @Json(name = "classname")
     val classname: kotlin.String? = null,
 
+    /* Name of the autotest in autotest's card */
+    @Json(name = "title")
+    val title: kotlin.String? = null,
+
+    /* Description of the autotest in autotest's card */
+    @Json(name = "description")
+    val description: kotlin.String? = null,
+
+    /* Indicates if the autotest is marked as flaky */
+    @Json(name = "isFlaky")
+    val isFlaky: kotlin.Boolean? = null,
+
     /* Collection of the autotest steps */
     @Json(name = "steps")
     val steps: kotlin.collections.List<AutoTestStepApiModel>? = null,
@@ -87,13 +100,14 @@ data class AutoTestUpdateApiModel (
     @Json(name = "teardown")
     val teardown: kotlin.collections.List<AutoTestStepApiModel>? = null,
 
-    /* Name of the autotest in autotest's card */
-    @Json(name = "title")
-    val title: kotlin.String? = null,
+    /* Specifies the IDs of work items to link your autotest to. You can specify several IDs. */
+    @Json(name = "workItemIds")
+    val workItemIds: kotlin.collections.List<java.util.UUID>? = null,
 
-    /* Description of the autotest in autotest's card */
-    @Json(name = "description")
-    val description: kotlin.String? = null,
+    /* Specifies the IDs of work items to link your autotest to. You can specify several IDs. */
+    @Json(name = "workItemIdsForLinkWithAutoTest")
+    @Deprecated(message = "This property is deprecated.")
+    val workItemIdsForLinkWithAutoTest: kotlin.collections.List<java.util.UUID>? = null,
 
     /* Collection of the autotest labels */
     @Json(name = "labels")
@@ -103,18 +117,9 @@ data class AutoTestUpdateApiModel (
     @Json(name = "links")
     val links: kotlin.collections.List<LinkUpdateApiModel>? = null,
 
-    /* Indicates if the autotest is marked as flaky */
-    @Json(name = "isFlaky")
-    val isFlaky: kotlin.Boolean? = null,
-
-    /* Specifies the IDs of work items to link your autotest to. You can specify several IDs. */
-    @Json(name = "workItemIdsForLinkWithAutoTest")
-    @Deprecated(message = "This property is deprecated.")
-    val workItemIdsForLinkWithAutoTest: kotlin.collections.List<java.util.UUID>? = null,
-
-    /* Specifies the IDs of work items to link your autotest to. You can specify several IDs. */
-    @Json(name = "workItemIds")
-    val workItemIds: kotlin.collections.List<java.util.UUID>? = null
+    /* Collection of the autotest tags */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 

@@ -7,7 +7,7 @@
 | **projectId** | [**java.util.UUID**](java.util.UUID.md) | Unique identifier of the project |  |
 | **name** | **kotlin.String** | Name of the work item |  |
 | **entityTypeName** | [**WorkItemEntityTypeApiModel**](WorkItemEntityTypeApiModel.md) | Type of entity associated with this work item |  |
-| **duration** | **kotlin.Int** | Duration of the work item in milliseconds |  |
+| **duration** | **kotlin.Long** | Duration of the work item in milliseconds |  |
 | **state** | [**WorkItemStateApiModel**](WorkItemStateApiModel.md) | State of the work item |  |
 | **priority** | [**WorkItemPriorityApiModel**](WorkItemPriorityApiModel.md) | Priority level of the work item |  |
 | **attributes** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) | Set of custom attributes associated with the work item |  |

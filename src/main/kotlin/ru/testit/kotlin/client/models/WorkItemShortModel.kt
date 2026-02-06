@@ -98,7 +98,7 @@ data class WorkItemShortModel (
 
     /* Work Item duration */
     @Json(name = "duration")
-    val duration: kotlin.Int,
+    val duration: kotlin.Long,
 
     /* Unique identifier of user who created Work Item */
     @Json(name = "createdById")

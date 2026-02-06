@@ -4,9 +4,9 @@
 #npm install @openapitools/openapi-generator-cli -g
 
 # Настройка переменных
-FILE_NAME=swagger5.6.json
-NEW_VERSION="0.8.0-TMS-5.6"
-GENERATOR="openapi-generator-cli"
+FILE_NAME="cloud_swagger.json"
+NEW_VERSION="0.9.0"
+GENERATOR="openapi-generator-cli-7.18.0.jar"
 
 if [ ! -f ".swagger/$FILE_NAME" ]; then
     echo "Ошибка: .swagger/$FILE_NAME не найден!"
@@ -35,7 +35,7 @@ rm -rf new
 # Генерация Kotlin API клиента
 echo "Генерация Kotlin API клиента..."
 
-$GENERATOR generate \
+java -jar .vendor/$GENERATOR generate \
   -i .swagger/$FILE_NAME \
   -g kotlin \
   -o new \

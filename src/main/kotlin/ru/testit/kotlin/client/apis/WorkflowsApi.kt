@@ -19,16 +19,17 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.DeletionState
+import ru.testit.kotlin.client.models.CreateWorkflowApiModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.SectionMoveModel
-import ru.testit.kotlin.client.models.SectionPostModel
-import ru.testit.kotlin.client.models.SectionPutModel
-import ru.testit.kotlin.client.models.SectionRenameModel
-import ru.testit.kotlin.client.models.SectionWithStepsModel
+import ru.testit.kotlin.client.models.SearchWorkflowProjectsApiModel
+import ru.testit.kotlin.client.models.SearchWorkflowsApiModel
+import ru.testit.kotlin.client.models.UpdateWorkflowApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
-import ru.testit.kotlin.client.models.WorkItemShortModel
+import ru.testit.kotlin.client.models.WorkflowApiResult
+import ru.testit.kotlin.client.models.WorkflowExistsByNameApiResult
+import ru.testit.kotlin.client.models.WorkflowProjectApiResultReply
+import ru.testit.kotlin.client.models.WorkflowShortApiResultReply
 
 import com.squareup.moshi.Json
 
@@ -46,7 +47,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
+open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -55,11 +56,10 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * PATCH /api/v2/sections/{id}
-     * Patch section
-     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
-     * @param id Section internal (UUID) identifier
-     * @param operation  (optional)
+     * DELETE /api/v2/workflows/{id}
+     * 
+     * 
+     * @param id 
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -68,8 +68,8 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2SectionsIdPatch(id: java.util.UUID, operation: kotlin.collections.List<Operation>? = null) : Unit {
-        val localVarResponse = apiV2SectionsIdPatchWithHttpInfo(id = id, operation = operation)
+    fun apiV2WorkflowsIdDelete(id: java.util.UUID) : Unit {
+        val localVarResponse = apiV2WorkflowsIdDeleteWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -87,169 +87,17 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * PATCH /api/v2/sections/{id}
-     * Patch section
-     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
-     * @param id Section internal (UUID) identifier
-     * @param operation  (optional)
+     * DELETE /api/v2/workflows/{id}
+     * 
+     * 
+     * @param id 
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2SectionsIdPatchWithHttpInfo(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2SectionsIdPatchRequestConfig(id = id, operation = operation)
-
-        return request<kotlin.collections.List<Operation>, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation apiV2SectionsIdPatch
-     *
-     * @param id Section internal (UUID) identifier
-     * @param operation  (optional)
-     * @return RequestConfig
-     */
-    fun apiV2SectionsIdPatchRequestConfig(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : RequestConfig<kotlin.collections.List<Operation>> {
-        val localVariableBody = operation
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.PATCH,
-            path = "/api/v2/sections/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /api/v2/sections
-     * Create section
-     *  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
-     * @param sectionPostModel  (optional)
-     * @return SectionWithStepsModel
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun createSection(sectionPostModel: SectionPostModel? = null) : SectionWithStepsModel {
-        val localVarResponse = createSectionWithHttpInfo(sectionPostModel = sectionPostModel)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SectionWithStepsModel
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /api/v2/sections
-     * Create section
-     *  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
-     * @param sectionPostModel  (optional)
-     * @return ApiResponse<SectionWithStepsModel?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun createSectionWithHttpInfo(sectionPostModel: SectionPostModel?) : ApiResponse<SectionWithStepsModel?> {
-        val localVariableConfig = createSectionRequestConfig(sectionPostModel = sectionPostModel)
-
-        return request<SectionPostModel, SectionWithStepsModel>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation createSection
-     *
-     * @param sectionPostModel  (optional)
-     * @return RequestConfig
-     */
-    fun createSectionRequestConfig(sectionPostModel: SectionPostModel?) : RequestConfig<SectionPostModel> {
-        val localVariableBody = sectionPostModel
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/sections",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * DELETE /api/v2/sections/{id}
-     * Delete section
-     *  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
-     * @param id Section internal (UUID) identifier
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun deleteSection(id: java.util.UUID) : Unit {
-        @Suppress("DEPRECATION")
-        val localVarResponse = deleteSectionWithHttpInfo(id = id)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * DELETE /api/v2/sections/{id}
-     * Delete section
-     *  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
-     * @param id Section internal (UUID) identifier
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun deleteSectionWithHttpInfo(id: java.util.UUID) : ApiResponse<Unit?> {
-        @Suppress("DEPRECATION")
-        val localVariableConfig = deleteSectionRequestConfig(id = id)
+    fun apiV2WorkflowsIdDeleteWithHttpInfo(id: java.util.UUID) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2WorkflowsIdDeleteRequestConfig(id = id)
 
         return request<Unit, Unit>(
             localVariableConfig
@@ -257,13 +105,12 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * To obtain the request config of the operation deleteSection
+     * To obtain the request config of the operation apiV2WorkflowsIdDelete
      *
-     * @param id Section internal (UUID) identifier
+     * @param id 
      * @return RequestConfig
      */
-    @Deprecated(message = "This operation is deprecated.")
-    fun deleteSectionRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
+    fun apiV2WorkflowsIdDeleteRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -271,7 +118,7 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
 
         return RequestConfig(
             method = RequestMethod.DELETE,
-            path = "/api/v2/sections/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            path = "/api/v2/workflows/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -280,12 +127,11 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * GET /api/v2/sections/{id}
-     * Get section
-     *  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
-     * @param id Section internal (UUID) identifier
-     * @param isDeleted  (optional)
-     * @return SectionWithStepsModel
+     * GET /api/v2/workflows/{id}
+     * 
+     * 
+     * @param id 
+     * @return WorkflowApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -294,11 +140,11 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getSectionById(id: java.util.UUID, isDeleted: DeletionState? = null) : SectionWithStepsModel {
-        val localVarResponse = getSectionByIdWithHttpInfo(id = id, isDeleted = isDeleted)
+    fun apiV2WorkflowsIdGet(id: java.util.UUID) : WorkflowApiResult {
+        val localVarResponse = apiV2WorkflowsIdGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as SectionWithStepsModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -313,46 +159,39 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * GET /api/v2/sections/{id}
-     * Get section
-     *  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
-     * @param id Section internal (UUID) identifier
-     * @param isDeleted  (optional)
-     * @return ApiResponse<SectionWithStepsModel?>
+     * GET /api/v2/workflows/{id}
+     * 
+     * 
+     * @param id 
+     * @return ApiResponse<WorkflowApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getSectionByIdWithHttpInfo(id: java.util.UUID, isDeleted: DeletionState?) : ApiResponse<SectionWithStepsModel?> {
-        val localVariableConfig = getSectionByIdRequestConfig(id = id, isDeleted = isDeleted)
+    fun apiV2WorkflowsIdGetWithHttpInfo(id: java.util.UUID) : ApiResponse<WorkflowApiResult?> {
+        val localVariableConfig = apiV2WorkflowsIdGetRequestConfig(id = id)
 
-        return request<Unit, SectionWithStepsModel>(
+        return request<Unit, WorkflowApiResult>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation getSectionById
+     * To obtain the request config of the operation apiV2WorkflowsIdGet
      *
-     * @param id Section internal (UUID) identifier
-     * @param isDeleted  (optional)
+     * @param id 
      * @return RequestConfig
      */
-    fun getSectionByIdRequestConfig(id: java.util.UUID, isDeleted: DeletionState?) : RequestConfig<Unit> {
+    fun apiV2WorkflowsIdGetRequestConfig(id: java.util.UUID) : RequestConfig<Unit> {
         val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (isDeleted != null) {
-                    put("isDeleted", listOf(isDeleted.toString()))
-                }
-            }
+        val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
 
         return RequestConfig(
             method = RequestMethod.GET,
-            path = "/api/v2/sections/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            path = "/api/v2/workflows/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -361,19 +200,87 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * GET /api/v2/sections/{id}/workItems
-     * Get section work items
-     *  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
-     * @param id Section internal (UUID) identifier
-     * @param isDeleted Requested section is deleted (optional, default to false)
-     * @param tagNames List of work item tags (optional)
-     * @param includeIterations  (optional, default to true)
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @return kotlin.collections.List<WorkItemShortModel>
+     * PATCH /api/v2/workflows/{id}
+     * 
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id 
+     * @param operation  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkflowsIdPatch(id: java.util.UUID, operation: kotlin.collections.List<Operation>? = null) : Unit {
+        val localVarResponse = apiV2WorkflowsIdPatchWithHttpInfo(id = id, operation = operation)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * PATCH /api/v2/workflows/{id}
+     * 
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id 
+     * @param operation  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkflowsIdPatchWithHttpInfo(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2WorkflowsIdPatchRequestConfig(id = id, operation = operation)
+
+        return request<kotlin.collections.List<Operation>, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkflowsIdPatch
+     *
+     * @param id 
+     * @param operation  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WorkflowsIdPatchRequestConfig(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : RequestConfig<kotlin.collections.List<Operation>> {
+        val localVariableBody = operation
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PATCH,
+            path = "/api/v2/workflows/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /api/v2/workflows/{id}/projects/search
+     * 
+     * 
+     * @param id 
+     * @param searchWorkflowProjectsApiModel  (optional)
+     * @return WorkflowProjectApiResultReply
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -382,13 +289,11 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun getWorkItemsBySectionId(id: java.util.UUID, isDeleted: kotlin.Boolean? = false, tagNames: kotlin.collections.List<kotlin.String>? = null, includeIterations: kotlin.Boolean? = true, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<WorkItemShortModel> {
-        @Suppress("DEPRECATION")
-        val localVarResponse = getWorkItemsBySectionIdWithHttpInfo(id = id, isDeleted = isDeleted, tagNames = tagNames, includeIterations = includeIterations, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2WorkflowsIdProjectsSearchPost(id: java.util.UUID, searchWorkflowProjectsApiModel: SearchWorkflowProjectsApiModel? = null) : WorkflowProjectApiResultReply {
+        val localVarResponse = apiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id = id, searchWorkflowProjectsApiModel = searchWorkflowProjectsApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemShortModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowProjectApiResultReply
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -403,156 +308,42 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * GET /api/v2/sections/{id}/workItems
-     * Get section work items
-     *  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
-     * @param id Section internal (UUID) identifier
-     * @param isDeleted Requested section is deleted (optional, default to false)
-     * @param tagNames List of work item tags (optional)
-     * @param includeIterations  (optional, default to true)
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
-     * @return ApiResponse<kotlin.collections.List<WorkItemShortModel>?>
+     * POST /api/v2/workflows/{id}/projects/search
+     * 
+     * 
+     * @param id 
+     * @param searchWorkflowProjectsApiModel  (optional)
+     * @return ApiResponse<WorkflowProjectApiResultReply?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun getWorkItemsBySectionIdWithHttpInfo(id: java.util.UUID, isDeleted: kotlin.Boolean?, tagNames: kotlin.collections.List<kotlin.String>?, includeIterations: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<WorkItemShortModel>?> {
-        @Suppress("DEPRECATION")
-        val localVariableConfig = getWorkItemsBySectionIdRequestConfig(id = id, isDeleted = isDeleted, tagNames = tagNames, includeIterations = includeIterations, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
+    fun apiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id: java.util.UUID, searchWorkflowProjectsApiModel: SearchWorkflowProjectsApiModel?) : ApiResponse<WorkflowProjectApiResultReply?> {
+        val localVariableConfig = apiV2WorkflowsIdProjectsSearchPostRequestConfig(id = id, searchWorkflowProjectsApiModel = searchWorkflowProjectsApiModel)
 
-        return request<Unit, kotlin.collections.List<WorkItemShortModel>>(
+        return request<SearchWorkflowProjectsApiModel, WorkflowProjectApiResultReply>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation getWorkItemsBySectionId
+     * To obtain the request config of the operation apiV2WorkflowsIdProjectsSearchPost
      *
-     * @param id Section internal (UUID) identifier
-     * @param isDeleted Requested section is deleted (optional, default to false)
-     * @param tagNames List of work item tags (optional)
-     * @param includeIterations  (optional, default to true)
-     * @param skip Amount of items to be skipped (offset) (optional)
-     * @param take Amount of items to be taken (limit) (optional)
-     * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
-     * @param searchField Property name for searching (optional)
-     * @param searchValue Value for searching (optional)
+     * @param id 
+     * @param searchWorkflowProjectsApiModel  (optional)
      * @return RequestConfig
      */
-    @Deprecated(message = "This operation is deprecated.")
-    fun getWorkItemsBySectionIdRequestConfig(id: java.util.UUID, isDeleted: kotlin.Boolean?, tagNames: kotlin.collections.List<kotlin.String>?, includeIterations: kotlin.Boolean?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (isDeleted != null) {
-                    put("isDeleted", listOf(isDeleted.toString()))
-                }
-                if (tagNames != null) {
-                    put("tagNames", toMultiValue(tagNames.toList(), "multi"))
-                }
-                if (includeIterations != null) {
-                    put("includeIterations", listOf(includeIterations.toString()))
-                }
-                if (skip != null) {
-                    put("Skip", listOf(skip.toString()))
-                }
-                if (take != null) {
-                    put("Take", listOf(take.toString()))
-                }
-                if (orderBy != null) {
-                    put("OrderBy", listOf(orderBy.toString()))
-                }
-                if (searchField != null) {
-                    put("SearchField", listOf(searchField.toString()))
-                }
-                if (searchValue != null) {
-                    put("SearchValue", listOf(searchValue.toString()))
-                }
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/api/v2/sections/{id}/workItems".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * POST /api/v2/sections/move
-     * Move section with all work items into another section
-     * 
-     * @param sectionMoveModel  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun move(sectionMoveModel: SectionMoveModel? = null) : Unit {
-        val localVarResponse = moveWithHttpInfo(sectionMoveModel = sectionMoveModel)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * POST /api/v2/sections/move
-     * Move section with all work items into another section
-     * 
-     * @param sectionMoveModel  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    fun moveWithHttpInfo(sectionMoveModel: SectionMoveModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = moveRequestConfig(sectionMoveModel = sectionMoveModel)
-
-        return request<SectionMoveModel, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation move
-     *
-     * @param sectionMoveModel  (optional)
-     * @return RequestConfig
-     */
-    fun moveRequestConfig(sectionMoveModel: SectionMoveModel?) : RequestConfig<SectionMoveModel> {
-        val localVariableBody = sectionMoveModel
+    fun apiV2WorkflowsIdProjectsSearchPostRequestConfig(id: java.util.UUID, searchWorkflowProjectsApiModel: SearchWorkflowProjectsApiModel?) : RequestConfig<SearchWorkflowProjectsApiModel> {
+        val localVariableBody = searchWorkflowProjectsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
 
         return RequestConfig(
             method = RequestMethod.POST,
-            path = "/api/v2/sections/move",
+            path = "/api/v2/workflows/{id}/projects/search".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,
@@ -561,10 +352,11 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * POST /api/v2/sections/rename
-     * Rename section
-     *  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
-     * @param sectionRenameModel  (optional)
+     * PUT /api/v2/workflows/{id}
+     * 
+     * 
+     * @param id 
+     * @param updateWorkflowApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -573,8 +365,8 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun rename(sectionRenameModel: SectionRenameModel? = null) : Unit {
-        val localVarResponse = renameWithHttpInfo(sectionRenameModel = sectionRenameModel)
+    fun apiV2WorkflowsIdPut(id: java.util.UUID, updateWorkflowApiModel: UpdateWorkflowApiModel? = null) : Unit {
+        val localVarResponse = apiV2WorkflowsIdPutWithHttpInfo(id = id, updateWorkflowApiModel = updateWorkflowApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -592,111 +384,262 @@ open class SectionsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
-     * POST /api/v2/sections/rename
-     * Rename section
-     *  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
-     * @param sectionRenameModel  (optional)
+     * PUT /api/v2/workflows/{id}
+     * 
+     * 
+     * @param id 
+     * @param updateWorkflowApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun renameWithHttpInfo(sectionRenameModel: SectionRenameModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = renameRequestConfig(sectionRenameModel = sectionRenameModel)
+    fun apiV2WorkflowsIdPutWithHttpInfo(id: java.util.UUID, updateWorkflowApiModel: UpdateWorkflowApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2WorkflowsIdPutRequestConfig(id = id, updateWorkflowApiModel = updateWorkflowApiModel)
 
-        return request<SectionRenameModel, Unit>(
+        return request<UpdateWorkflowApiModel, Unit>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation rename
+     * To obtain the request config of the operation apiV2WorkflowsIdPut
      *
-     * @param sectionRenameModel  (optional)
+     * @param id 
+     * @param updateWorkflowApiModel  (optional)
      * @return RequestConfig
      */
-    fun renameRequestConfig(sectionRenameModel: SectionRenameModel?) : RequestConfig<SectionRenameModel> {
-        val localVariableBody = sectionRenameModel
+    fun apiV2WorkflowsIdPutRequestConfig(id: java.util.UUID, updateWorkflowApiModel: UpdateWorkflowApiModel?) : RequestConfig<UpdateWorkflowApiModel> {
+        val localVariableBody = updateWorkflowApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.POST,
-            path = "/api/v2/sections/rename",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * PUT /api/v2/sections
-     * Update section
-     *  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
-     * @param sectionPutModel  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateSection(sectionPutModel: SectionPutModel? = null) : Unit {
-        val localVarResponse = updateSectionWithHttpInfo(sectionPutModel = sectionPutModel)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * PUT /api/v2/sections
-     * Update section
-     *  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
-     * @param sectionPutModel  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    fun updateSectionWithHttpInfo(sectionPutModel: SectionPutModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateSectionRequestConfig(sectionPutModel = sectionPutModel)
-
-        return request<SectionPutModel, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation updateSection
-     *
-     * @param sectionPutModel  (optional)
-     * @return RequestConfig
-     */
-    fun updateSectionRequestConfig(sectionPutModel: SectionPutModel?) : RequestConfig<SectionPutModel> {
-        val localVariableBody = sectionPutModel
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
         localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
             method = RequestMethod.PUT,
-            path = "/api/v2/sections",
+            path = "/api/v2/workflows/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * GET /api/v2/workflows/name/{name}/exists
+     * 
+     * 
+     * @param name 
+     * @return WorkflowExistsByNameApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkflowsNameNameExistsGet(name: kotlin.String) : WorkflowExistsByNameApiResult {
+        val localVarResponse = apiV2WorkflowsNameNameExistsGetWithHttpInfo(name = name)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowExistsByNameApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * GET /api/v2/workflows/name/{name}/exists
+     * 
+     * 
+     * @param name 
+     * @return ApiResponse<WorkflowExistsByNameApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkflowsNameNameExistsGetWithHttpInfo(name: kotlin.String) : ApiResponse<WorkflowExistsByNameApiResult?> {
+        val localVariableConfig = apiV2WorkflowsNameNameExistsGetRequestConfig(name = name)
+
+        return request<Unit, WorkflowExistsByNameApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkflowsNameNameExistsGet
+     *
+     * @param name 
+     * @return RequestConfig
+     */
+    fun apiV2WorkflowsNameNameExistsGetRequestConfig(name: kotlin.String) : RequestConfig<Unit> {
+        val localVariableBody = null
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Accept"] = "text/plain, application/json"
+
+        return RequestConfig(
+            method = RequestMethod.GET,
+            path = "/api/v2/workflows/name/{name}/exists".replace("{"+"name"+"}", encodeURIComponent(name.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /api/v2/workflows
+     * 
+     * 
+     * @param createWorkflowApiModel  (optional)
+     * @return WorkflowApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkflowsPost(createWorkflowApiModel: CreateWorkflowApiModel? = null) : WorkflowApiResult {
+        val localVarResponse = apiV2WorkflowsPostWithHttpInfo(createWorkflowApiModel = createWorkflowApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/workflows
+     * 
+     * 
+     * @param createWorkflowApiModel  (optional)
+     * @return ApiResponse<WorkflowApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkflowsPostWithHttpInfo(createWorkflowApiModel: CreateWorkflowApiModel?) : ApiResponse<WorkflowApiResult?> {
+        val localVariableConfig = apiV2WorkflowsPostRequestConfig(createWorkflowApiModel = createWorkflowApiModel)
+
+        return request<CreateWorkflowApiModel, WorkflowApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkflowsPost
+     *
+     * @param createWorkflowApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WorkflowsPostRequestConfig(createWorkflowApiModel: CreateWorkflowApiModel?) : RequestConfig<CreateWorkflowApiModel> {
+        val localVariableBody = createWorkflowApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/workflows",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /api/v2/workflows/search
+     * 
+     * 
+     * @param searchWorkflowsApiModel  (optional)
+     * @return WorkflowShortApiResultReply
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkflowsSearchPost(searchWorkflowsApiModel: SearchWorkflowsApiModel? = null) : WorkflowShortApiResultReply {
+        val localVarResponse = apiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel = searchWorkflowsApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowShortApiResultReply
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/workflows/search
+     * 
+     * 
+     * @param searchWorkflowsApiModel  (optional)
+     * @return ApiResponse<WorkflowShortApiResultReply?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel: SearchWorkflowsApiModel?) : ApiResponse<WorkflowShortApiResultReply?> {
+        val localVariableConfig = apiV2WorkflowsSearchPostRequestConfig(searchWorkflowsApiModel = searchWorkflowsApiModel)
+
+        return request<SearchWorkflowsApiModel, WorkflowShortApiResultReply>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkflowsSearchPost
+     *
+     * @param searchWorkflowsApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WorkflowsSearchPostRequestConfig(searchWorkflowsApiModel: SearchWorkflowsApiModel?) : RequestConfig<SearchWorkflowsApiModel> {
+        val localVariableBody = searchWorkflowsApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Accept"] = "text/plain, application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/workflows/search",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

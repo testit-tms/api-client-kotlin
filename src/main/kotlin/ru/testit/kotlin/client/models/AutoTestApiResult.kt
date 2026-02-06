@@ -56,6 +56,7 @@ import com.squareup.moshi.JsonClass
  * @param stabilityPercentage 
  * @param links 
  * @param labels 
+ * @param tags 
  */
 
 
@@ -146,7 +147,10 @@ data class AutoTestApiResult (
     val links: kotlin.collections.List<LinkApiResult>? = null,
 
     @Json(name = "labels")
-    val labels: kotlin.collections.List<LabelApiResult>? = null
+    val labels: kotlin.collections.List<LabelApiResult>? = null,
+
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 

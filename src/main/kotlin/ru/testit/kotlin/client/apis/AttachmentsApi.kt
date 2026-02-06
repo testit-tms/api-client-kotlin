@@ -40,7 +40,7 @@ import ru.testit.kotlin.client.infrastructure.ResponseType
 import ru.testit.kotlin.client.infrastructure.Success
 import ru.testit.kotlin.client.infrastructure.toMultiValue
 
-class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
+open class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
@@ -368,7 +368,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * POST /api/v2/attachments
      * Upload new attachment file
-     * File size is restricted to 1 GB (1 073 741 824 bytes)
+     * File size is restricted to 50 MB (52 428 800 bytes)
      * @param file  (optional)
      * @return AttachmentModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -400,7 +400,7 @@ class AttachmentsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * POST /api/v2/attachments
      * Upload new attachment file
-     * File size is restricted to 1 GB (1 073 741 824 bytes)
+     * File size is restricted to 50 MB (52 428 800 bytes)
      * @param file  (optional)
      * @return ApiResponse<AttachmentModel?>
      * @throws IllegalStateException If the request is not correctly configured
