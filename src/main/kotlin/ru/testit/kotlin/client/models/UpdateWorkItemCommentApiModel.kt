@@ -15,7 +15,6 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.RerunTestResultModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,18 +22,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param rerunCount 
- * @param rerunTestResults 
+ * @param id ID of the comment
+ * @param text Text of the comment
  */
 
 
-data class RerunsModel (
+data class UpdateWorkItemCommentApiModel (
 
-    @Json(name = "rerunCount")
-    val rerunCount: kotlin.Int,
+    /* ID of the comment */
+    @Json(name = "id")
+    val id: java.util.UUID,
 
-    @Json(name = "rerunTestResults")
-    val rerunTestResults: kotlin.collections.List<RerunTestResultModel>
+    /* Text of the comment */
+    @Json(name = "text")
+    val text: kotlin.String
 
 ) {
 

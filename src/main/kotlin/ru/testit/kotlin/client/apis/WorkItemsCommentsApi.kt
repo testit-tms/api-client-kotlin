@@ -19,11 +19,11 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
+import ru.testit.kotlin.client.models.CreateWorkItemCommentApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
+import ru.testit.kotlin.client.models.UpdateWorkItemCommentApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
-import ru.testit.kotlin.client.models.WorkItemCommentModel
-import ru.testit.kotlin.client.models.WorkItemCommentPostModel
-import ru.testit.kotlin.client.models.WorkItemCommentPutModel
+import ru.testit.kotlin.client.models.WorkItemCommentApiResult
 
 import com.squareup.moshi.Json
 
@@ -124,8 +124,8 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      * POST /api/v2/workItems/comments
      * Create WorkItem comment
      *  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
-     * @param workItemCommentPostModel  (optional)
-     * @return WorkItemCommentModel
+     * @param createWorkItemCommentApiModel  (optional)
+     * @return WorkItemCommentApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -134,11 +134,11 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WorkItemsCommentsPost(workItemCommentPostModel: WorkItemCommentPostModel? = null) : WorkItemCommentModel {
-        val localVarResponse = apiV2WorkItemsCommentsPostWithHttpInfo(workItemCommentPostModel = workItemCommentPostModel)
+    fun apiV2WorkItemsCommentsPost(createWorkItemCommentApiModel: CreateWorkItemCommentApiModel? = null) : WorkItemCommentApiResult {
+        val localVarResponse = apiV2WorkItemsCommentsPostWithHttpInfo(createWorkItemCommentApiModel = createWorkItemCommentApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemCommentModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemCommentApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -156,17 +156,17 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      * POST /api/v2/workItems/comments
      * Create WorkItem comment
      *  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
-     * @param workItemCommentPostModel  (optional)
-     * @return ApiResponse<WorkItemCommentModel?>
+     * @param createWorkItemCommentApiModel  (optional)
+     * @return ApiResponse<WorkItemCommentApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WorkItemsCommentsPostWithHttpInfo(workItemCommentPostModel: WorkItemCommentPostModel?) : ApiResponse<WorkItemCommentModel?> {
-        val localVariableConfig = apiV2WorkItemsCommentsPostRequestConfig(workItemCommentPostModel = workItemCommentPostModel)
+    fun apiV2WorkItemsCommentsPostWithHttpInfo(createWorkItemCommentApiModel: CreateWorkItemCommentApiModel?) : ApiResponse<WorkItemCommentApiResult?> {
+        val localVariableConfig = apiV2WorkItemsCommentsPostRequestConfig(createWorkItemCommentApiModel = createWorkItemCommentApiModel)
 
-        return request<WorkItemCommentPostModel, WorkItemCommentModel>(
+        return request<CreateWorkItemCommentApiModel, WorkItemCommentApiResult>(
             localVariableConfig
         )
     }
@@ -174,11 +174,11 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
     /**
      * To obtain the request config of the operation apiV2WorkItemsCommentsPost
      *
-     * @param workItemCommentPostModel  (optional)
+     * @param createWorkItemCommentApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2WorkItemsCommentsPostRequestConfig(workItemCommentPostModel: WorkItemCommentPostModel?) : RequestConfig<WorkItemCommentPostModel> {
-        val localVariableBody = workItemCommentPostModel
+    fun apiV2WorkItemsCommentsPostRequestConfig(createWorkItemCommentApiModel: CreateWorkItemCommentApiModel?) : RequestConfig<CreateWorkItemCommentApiModel> {
+        val localVariableBody = createWorkItemCommentApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -198,7 +198,7 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      * PUT /api/v2/workItems/comments
      * Update work item comment
      * 
-     * @param workItemCommentPutModel  (optional)
+     * @param updateWorkItemCommentApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -207,8 +207,8 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WorkItemsCommentsPut(workItemCommentPutModel: WorkItemCommentPutModel? = null) : Unit {
-        val localVarResponse = apiV2WorkItemsCommentsPutWithHttpInfo(workItemCommentPutModel = workItemCommentPutModel)
+    fun apiV2WorkItemsCommentsPut(updateWorkItemCommentApiModel: UpdateWorkItemCommentApiModel? = null) : Unit {
+        val localVarResponse = apiV2WorkItemsCommentsPutWithHttpInfo(updateWorkItemCommentApiModel = updateWorkItemCommentApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -229,16 +229,16 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      * PUT /api/v2/workItems/comments
      * Update work item comment
      * 
-     * @param workItemCommentPutModel  (optional)
+     * @param updateWorkItemCommentApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WorkItemsCommentsPutWithHttpInfo(workItemCommentPutModel: WorkItemCommentPutModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2WorkItemsCommentsPutRequestConfig(workItemCommentPutModel = workItemCommentPutModel)
+    fun apiV2WorkItemsCommentsPutWithHttpInfo(updateWorkItemCommentApiModel: UpdateWorkItemCommentApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2WorkItemsCommentsPutRequestConfig(updateWorkItemCommentApiModel = updateWorkItemCommentApiModel)
 
-        return request<WorkItemCommentPutModel, Unit>(
+        return request<UpdateWorkItemCommentApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -246,11 +246,11 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
     /**
      * To obtain the request config of the operation apiV2WorkItemsCommentsPut
      *
-     * @param workItemCommentPutModel  (optional)
+     * @param updateWorkItemCommentApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2WorkItemsCommentsPutRequestConfig(workItemCommentPutModel: WorkItemCommentPutModel?) : RequestConfig<WorkItemCommentPutModel> {
-        val localVariableBody = workItemCommentPutModel
+    fun apiV2WorkItemsCommentsPutRequestConfig(updateWorkItemCommentApiModel: UpdateWorkItemCommentApiModel?) : RequestConfig<UpdateWorkItemCommentApiModel> {
+        val localVariableBody = updateWorkItemCommentApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -344,7 +344,7 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      * Get work item comments
      * 
      * @param id Unique or global ID of the work item
-     * @return kotlin.collections.List<WorkItemCommentModel>
+     * @return kotlin.collections.List<WorkItemCommentApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -353,11 +353,11 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WorkItemsIdCommentsGet(id: kotlin.String) : kotlin.collections.List<WorkItemCommentModel> {
+    fun apiV2WorkItemsIdCommentsGet(id: kotlin.String) : kotlin.collections.List<WorkItemCommentApiResult> {
         val localVarResponse = apiV2WorkItemsIdCommentsGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemCommentModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<WorkItemCommentApiResult>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -376,16 +376,16 @@ open class WorkItemsCommentsApi(basePath: kotlin.String = defaultBasePath, clien
      * Get work item comments
      * 
      * @param id Unique or global ID of the work item
-     * @return ApiResponse<kotlin.collections.List<WorkItemCommentModel>?>
+     * @return ApiResponse<kotlin.collections.List<WorkItemCommentApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WorkItemsIdCommentsGetWithHttpInfo(id: kotlin.String) : ApiResponse<kotlin.collections.List<WorkItemCommentModel>?> {
+    fun apiV2WorkItemsIdCommentsGetWithHttpInfo(id: kotlin.String) : ApiResponse<kotlin.collections.List<WorkItemCommentApiResult>?> {
         val localVariableConfig = apiV2WorkItemsIdCommentsGetRequestConfig(id = id)
 
-        return request<Unit, kotlin.collections.List<WorkItemCommentModel>>(
+        return request<Unit, kotlin.collections.List<WorkItemCommentApiResult>>(
             localVariableConfig
         )
     }

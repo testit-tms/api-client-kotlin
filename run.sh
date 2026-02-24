@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Using 7.19.0
-#npm install @openapitools/openapi-generator-cli -g
 
 # Настройка переменных
-FILE_NAME="cloud_swagger.json"
-NEW_VERSION="0.9.0"
+FILE_NAME="cloud-swagger.json"
+NEW_VERSION="0.9.1"
 GENERATOR="openapi-generator-cli-7.18.0.jar"
 
 if [ ! -f ".swagger/$FILE_NAME" ]; then

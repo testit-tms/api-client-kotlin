@@ -22,18 +22,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param text 
- * @param workItemId 
+ * @param workItemId ID of work item to comment
+ * @param text Text of the comment
  */
 
 
-data class WorkItemCommentPostModel (
+data class CreateWorkItemCommentApiModel (
 
-    @Json(name = "text")
-    val text: kotlin.String,
-
+    /* ID of work item to comment */
     @Json(name = "workItemId")
-    val workItemId: java.util.UUID
+    val workItemId: java.util.UUID,
+
+    /* Text of the comment */
+    @Json(name = "text")
+    val text: kotlin.String
 
 ) {
 

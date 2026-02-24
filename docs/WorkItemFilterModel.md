@@ -7,9 +7,7 @@
 | **nameOrId** | **kotlin.String** | Name or identifier (UUID) of work item |  [optional] |
 | **includeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be included in result regardless of filtering |  [optional] |
 | **excludeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be excluded from result regardless of filtering |  [optional] |
-| **externalMetadata** | [**WorkItemExternalMetadataFilterModel**](WorkItemExternalMetadataFilterModel.md) | Specifies work item filter by its external metadata |  [optional] |
 | **projectIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of project identifiers |  [optional] |
-| **links** | [**WorkItemLinkFilterModel**](WorkItemLinkFilterModel.md) | Specifies a work item filter by its links |  [optional] |
 | **name** | **kotlin.String** | Name of work item |  [optional] |
 | **ids** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies a work item unique IDs to search for |  [optional] |
 | **globalIds** | **kotlin.collections.Set&lt;kotlin.Long&gt;** | Collection of global (integer) identifiers |  [optional] |
@@ -31,6 +29,8 @@
 | **excludeTags** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Collection of tags to exclude |  [optional] |
 | **autoTestIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of linked autotests |  [optional] |
 | **workItemVersionIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers work items versions. |  [optional] |
+| **links** | [**WorkItemLinkFilterModel**](WorkItemLinkFilterModel.md) | Specifies a work item filter by its links |  [optional] |
+| **externalMetadata** | [**WorkItemExternalMetadataFilterModel**](WorkItemExternalMetadataFilterModel.md) | Specifies work item filter by its external metadata |  [optional] |
 
 
 

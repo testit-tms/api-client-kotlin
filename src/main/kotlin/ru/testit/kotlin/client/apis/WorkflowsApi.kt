@@ -187,7 +187,7 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "text/plain, application/json"
+        localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
             method = RequestMethod.GET,
@@ -261,7 +261,7 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = operation
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Content-Type"] = "application/json"
         localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
@@ -338,8 +338,8 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = searchWorkflowProjectsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json-patch+json"
-        localVariableHeaders["Accept"] = "text/plain, application/json"
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
             method = RequestMethod.POST,
@@ -413,7 +413,7 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = updateWorkflowApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json-patch+json"
+        localVariableHeaders["Content-Type"] = "application/json"
         localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
@@ -487,7 +487,7 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "text/plain, application/json"
+        localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
             method = RequestMethod.GET,
@@ -560,8 +560,8 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = createWorkflowApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json-patch+json"
-        localVariableHeaders["Accept"] = "text/plain, application/json"
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
             method = RequestMethod.POST,
@@ -634,8 +634,8 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = searchWorkflowsApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json-patch+json"
-        localVariableHeaders["Accept"] = "text/plain, application/json"
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
 
         return RequestConfig(
             method = RequestMethod.POST,

@@ -30,6 +30,8 @@ import com.squareup.moshi.JsonClass
  * @param workItemChangedFields 
  * @param createdById 
  * @param createdDate 
+ * @param modifiedById 
+ * @param modifiedDate 
  */
 
 
@@ -54,7 +56,13 @@ data class WorkItemChangeModel (
     val createdById: java.util.UUID,
 
     @Json(name = "createdDate")
-    val createdDate: java.time.OffsetDateTime? = null
+    val createdDate: java.time.OffsetDateTime,
+
+    @Json(name = "modifiedById")
+    val modifiedById: java.util.UUID? = null,
+
+    @Json(name = "modifiedDate")
+    val modifiedDate: java.time.OffsetDateTime? = null
 
 ) {
 

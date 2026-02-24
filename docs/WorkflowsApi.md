@@ -105,7 +105,7 @@ Configure Bearer or PrivateToken:
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json
+ - **Accept**: application/json
 
 <a id="apiV2WorkflowsIdPatch"></a>
 # **apiV2WorkflowsIdPatch**
@@ -154,7 +154,7 @@ Configure Bearer or PrivateToken:
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a id="apiV2WorkflowsIdProjectsSearchPost"></a>
@@ -203,8 +203,8 @@ Configure Bearer or PrivateToken:
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json
- - **Accept**: text/plain, application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a id="apiV2WorkflowsIdPut"></a>
 # **apiV2WorkflowsIdPut**
@@ -251,7 +251,7 @@ Configure Bearer or PrivateToken:
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a id="apiV2WorkflowsNameNameExistsGet"></a>
@@ -299,7 +299,7 @@ Configure Bearer or PrivateToken:
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json
+ - **Accept**: application/json
 
 <a id="apiV2WorkflowsPost"></a>
 # **apiV2WorkflowsPost**
@@ -345,8 +345,8 @@ Configure Bearer or PrivateToken:
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json
- - **Accept**: text/plain, application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a id="apiV2WorkflowsSearchPost"></a>
 # **apiV2WorkflowsSearchPost**
@@ -392,6 +392,6 @@ Configure Bearer or PrivateToken:
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json
- - **Accept**: text/plain, application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
