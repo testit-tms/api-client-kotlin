@@ -33,6 +33,8 @@ import com.squareup.moshi.JsonClass
  * @param namespace Specifies a test result namespace to search for
  * @param className Specifies a test result class name to search for
  * @param autoTestGlobalIds Specifies an autotest global IDs to search results for
+ * @param autoTestTags Specifies autotest tags to include in the search.
+ * @param excludeAutoTestTags Specifies autotest tags to exclude from the search.
  * @param name Specifies an autotest name to search results for
  * @param createdDate Specifies a test result creation date and time range to search for
  * @param modifiedDate Specifies a test result modified date and time range to search for
@@ -74,6 +76,14 @@ data class TestResultsFilterApiModel (
     /* Specifies an autotest global IDs to search results for */
     @Json(name = "autoTestGlobalIds")
     val autoTestGlobalIds: kotlin.collections.List<kotlin.Long>? = null,
+
+    /* Specifies autotest tags to include in the search. */
+    @Json(name = "autoTestTags")
+    val autoTestTags: kotlin.collections.List<kotlin.String>? = null,
+
+    /* Specifies autotest tags to exclude from the search. */
+    @Json(name = "excludeAutoTestTags")
+    val excludeAutoTestTags: kotlin.collections.List<kotlin.String>? = null,
 
     /* Specifies an autotest name to search results for */
     @Json(name = "name")

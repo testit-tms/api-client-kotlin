@@ -15,7 +15,6 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.UserWithRankModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,38 +22,40 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
- * @param text 
- * @param user 
- * @param createdById 
- * @param createdDate 
- * @param modifiedById 
- * @param modifiedDate 
+ * @param id ID of the comment
+ * @param text Text of the comment
+ * @param createdById ID of user created comment
+ * @param modifiedById ID of user modified comment
+ * @param createdDate Comment created date
+ * @param modifiedDate Comment modified date
  */
 
 
-data class WorkItemCommentModel (
+data class WorkItemCommentApiResult (
 
+    /* ID of the comment */
     @Json(name = "id")
     val id: java.util.UUID,
 
+    /* Text of the comment */
     @Json(name = "text")
     val text: kotlin.String,
 
-    @Json(name = "user")
-    val user: UserWithRankModel,
-
+    /* ID of user created comment */
     @Json(name = "createdById")
     val createdById: java.util.UUID,
 
+    /* ID of user modified comment */
+    @Json(name = "modifiedById")
+    val modifiedById: java.util.UUID,
+
+    /* Comment created date */
     @Json(name = "createdDate")
     val createdDate: java.time.OffsetDateTime,
 
-    @Json(name = "modifiedById")
-    val modifiedById: java.util.UUID? = null,
-
+    /* Comment modified date */
     @Json(name = "modifiedDate")
-    val modifiedDate: java.time.OffsetDateTime? = null
+    val modifiedDate: java.time.OffsetDateTime
 
 ) {
 

@@ -61,7 +61,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkItemsCommentsPost"></a>
 # **apiV2WorkItemsCommentsPost**
-> WorkItemCommentModel apiV2WorkItemsCommentsPost(workItemCommentPostModel)
+> WorkItemCommentApiResult apiV2WorkItemsCommentsPost(createWorkItemCommentApiModel)
 
 Create WorkItem comment
 
@@ -74,9 +74,9 @@ Create WorkItem comment
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsCommentsApi()
-val workItemCommentPostModel : WorkItemCommentPostModel =  // WorkItemCommentPostModel | 
+val createWorkItemCommentApiModel : CreateWorkItemCommentApiModel =  // CreateWorkItemCommentApiModel | 
 try {
-    val result : WorkItemCommentModel = apiInstance.apiV2WorkItemsCommentsPost(workItemCommentPostModel)
+    val result : WorkItemCommentApiResult = apiInstance.apiV2WorkItemsCommentsPost(createWorkItemCommentApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkItemsCommentsApi#apiV2WorkItemsCommentsPost")
@@ -90,11 +90,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workItemCommentPostModel** | [**WorkItemCommentPostModel**](WorkItemCommentPostModel.md)|  | [optional] |
+| **createWorkItemCommentApiModel** | [**CreateWorkItemCommentApiModel**](CreateWorkItemCommentApiModel.md)|  | [optional] |
 
 ### Return type
 
-[**WorkItemCommentModel**](WorkItemCommentModel.md)
+[**WorkItemCommentApiResult**](WorkItemCommentApiResult.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkItemsCommentsPut"></a>
 # **apiV2WorkItemsCommentsPut**
-> apiV2WorkItemsCommentsPut(workItemCommentPutModel)
+> apiV2WorkItemsCommentsPut(updateWorkItemCommentApiModel)
 
 Update work item comment
 
@@ -121,9 +121,9 @@ Update work item comment
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = WorkItemsCommentsApi()
-val workItemCommentPutModel : WorkItemCommentPutModel =  // WorkItemCommentPutModel | 
+val updateWorkItemCommentApiModel : UpdateWorkItemCommentApiModel =  // UpdateWorkItemCommentApiModel | 
 try {
-    apiInstance.apiV2WorkItemsCommentsPut(workItemCommentPutModel)
+    apiInstance.apiV2WorkItemsCommentsPut(updateWorkItemCommentApiModel)
 } catch (e: ClientException) {
     println("4xx response calling WorkItemsCommentsApi#apiV2WorkItemsCommentsPut")
     e.printStackTrace()
@@ -136,7 +136,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **workItemCommentPutModel** | [**WorkItemCommentPutModel**](WorkItemCommentPutModel.md)|  | [optional] |
+| **updateWorkItemCommentApiModel** | [**UpdateWorkItemCommentApiModel**](UpdateWorkItemCommentApiModel.md)|  | [optional] |
 
 ### Return type
 
@@ -203,7 +203,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkItemsIdCommentsGet"></a>
 # **apiV2WorkItemsIdCommentsGet**
-> kotlin.collections.List&lt;WorkItemCommentModel&gt; apiV2WorkItemsIdCommentsGet(id)
+> kotlin.collections.List&lt;WorkItemCommentApiResult&gt; apiV2WorkItemsIdCommentsGet(id)
 
 Get work item comments
 
@@ -216,7 +216,7 @@ Get work item comments
 val apiInstance = WorkItemsCommentsApi()
 val id : kotlin.String = id_example // kotlin.String | Unique or global ID of the work item
 try {
-    val result : kotlin.collections.List<WorkItemCommentModel> = apiInstance.apiV2WorkItemsIdCommentsGet(id)
+    val result : kotlin.collections.List<WorkItemCommentApiResult> = apiInstance.apiV2WorkItemsIdCommentsGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkItemsCommentsApi#apiV2WorkItemsIdCommentsGet")
@@ -234,7 +234,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;WorkItemCommentModel&gt;**](WorkItemCommentModel.md)
+[**kotlin.collections.List&lt;WorkItemCommentApiResult&gt;**](WorkItemCommentApiResult.md)
 
 ### Authorization
 

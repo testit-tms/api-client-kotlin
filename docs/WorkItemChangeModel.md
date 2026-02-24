@@ -10,7 +10,9 @@
 | **newVersionId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **workItemChangedFields** | [**WorkItemChangedFieldsViewModel**](WorkItemChangedFieldsViewModel.md) |  |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
-| **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
+| **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
+| **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
+| **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 
 
 

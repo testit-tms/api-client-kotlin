@@ -11,6 +11,8 @@
 | **namespace** | **kotlin.String** | Specifies a test result namespace to search for |  [optional] |
 | **className** | **kotlin.String** | Specifies a test result class name to search for |  [optional] |
 | **autoTestGlobalIds** | **kotlin.collections.List&lt;kotlin.Long&gt;** | Specifies an autotest global IDs to search results for |  [optional] |
+| **autoTestTags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Specifies autotest tags to include in the search. |  [optional] |
+| **excludeAutoTestTags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Specifies autotest tags to exclude from the search. |  [optional] |
 | **name** | **kotlin.String** | Specifies an autotest name to search results for |  [optional] |
 | **createdDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test result creation date and time range to search for |  [optional] |
 | **modifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test result modified date and time range to search for |  [optional] |

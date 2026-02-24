@@ -7,6 +7,7 @@
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the test result |  |
 | **name** | **kotlin.String** | Name of autotest represented by the test result |  |
 | **autotestGlobalId** | **kotlin.Long** | Global ID of autotest represented by the test result |  |
+| **autoTestTags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Tags of the autotest represented by the test result |  |
 | **testRunId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of test run where the test result is located |  |
 | **configurationId** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of configuration which the test result uses |  |
 | **configurationName** | **kotlin.String** | Name of configuration which the test result uses |  |

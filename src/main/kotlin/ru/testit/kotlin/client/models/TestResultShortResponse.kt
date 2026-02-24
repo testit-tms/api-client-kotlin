@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param id Unique ID of the test result
  * @param name Name of autotest represented by the test result
  * @param autotestGlobalId Global ID of autotest represented by the test result
+ * @param autoTestTags Tags of the autotest represented by the test result
  * @param testRunId Unique ID of test run where the test result is located
  * @param configurationId Unique ID of configuration which the test result uses
  * @param configurationName Name of configuration which the test result uses
@@ -62,6 +63,10 @@ data class TestResultShortResponse (
     /* Global ID of autotest represented by the test result */
     @Json(name = "autotestGlobalId")
     val autotestGlobalId: kotlin.Long,
+
+    /* Tags of the autotest represented by the test result */
+    @Json(name = "autoTestTags")
+    val autoTestTags: kotlin.collections.List<kotlin.String>,
 
     /* Unique ID of test run where the test result is located */
     @Json(name = "testRunId")

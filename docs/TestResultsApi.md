@@ -358,7 +358,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2TestResultsIdRerunsGet"></a>
 # **apiV2TestResultsIdRerunsGet**
-> RerunsModel apiV2TestResultsIdRerunsGet(id)
+> RerunsApiResult apiV2TestResultsIdRerunsGet(id)
 
 Get reruns
 
@@ -371,7 +371,7 @@ Get reruns
 val apiInstance = TestResultsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test result unique ID
 try {
-    val result : RerunsModel = apiInstance.apiV2TestResultsIdRerunsGet(id)
+    val result : RerunsApiResult = apiInstance.apiV2TestResultsIdRerunsGet(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling TestResultsApi#apiV2TestResultsIdRerunsGet")
@@ -389,7 +389,7 @@ try {
 
 ### Return type
 
-[**RerunsModel**](RerunsModel.md)
+[**RerunsApiResult**](RerunsApiResult.md)
 
 ### Authorization
 

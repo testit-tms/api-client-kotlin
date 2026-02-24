@@ -19,6 +19,8 @@ import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
+import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterModel
+import ru.testit.kotlin.client.models.WorkItemLinkFilterModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
@@ -50,6 +52,8 @@ import com.squareup.moshi.JsonClass
  * @param excludeTags Collection of tags to exclude
  * @param autoTestIds Collection of identifiers of linked autotests
  * @param workItemVersionIds Collection of identifiers work items versions.
+ * @param links Specifies a work item filter by its links
+ * @param externalMetadata Specifies work item filter by its external metadata
  */
 
 
@@ -137,7 +141,15 @@ data class WorkItemLocalFilterModel (
 
     /* Collection of identifiers work items versions. */
     @Json(name = "workItemVersionIds")
-    val workItemVersionIds: kotlin.collections.List<java.util.UUID>? = null
+    val workItemVersionIds: kotlin.collections.List<java.util.UUID>? = null,
+
+    /* Specifies a work item filter by its links */
+    @Json(name = "links")
+    val links: WorkItemLinkFilterModel? = null,
+
+    /* Specifies work item filter by its external metadata */
+    @Json(name = "externalMetadata")
+    val externalMetadata: WorkItemExternalMetadataFilterModel? = null
 
 ) {
 

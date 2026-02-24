@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
+import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterModel
 import ru.testit.kotlin.client.models.WorkItemLinkFilterModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
@@ -31,7 +32,6 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param projectIds Collection of project identifiers
- * @param links Specifies a work item filter by its links
  * @param name Name of work item
  * @param ids Specifies a work item unique IDs to search for
  * @param globalIds Collection of global (integer) identifiers
@@ -53,6 +53,8 @@ import com.squareup.moshi.JsonClass
  * @param excludeTags Collection of tags to exclude
  * @param autoTestIds Collection of identifiers of linked autotests
  * @param workItemVersionIds Collection of identifiers work items versions.
+ * @param links Specifies a work item filter by its links
+ * @param externalMetadata Specifies work item filter by its external metadata
  */
 
 
@@ -61,10 +63,6 @@ data class WorkItemSearchQueryModel (
     /* Collection of project identifiers */
     @Json(name = "projectIds")
     val projectIds: kotlin.collections.Set<java.util.UUID>? = null,
-
-    /* Specifies a work item filter by its links */
-    @Json(name = "links")
-    val links: WorkItemLinkFilterModel? = null,
 
     /* Name of work item */
     @Json(name = "name")
@@ -148,7 +146,15 @@ data class WorkItemSearchQueryModel (
 
     /* Collection of identifiers work items versions. */
     @Json(name = "workItemVersionIds")
-    val workItemVersionIds: kotlin.collections.List<java.util.UUID>? = null
+    val workItemVersionIds: kotlin.collections.List<java.util.UUID>? = null,
+
+    /* Specifies a work item filter by its links */
+    @Json(name = "links")
+    val links: WorkItemLinkFilterModel? = null,
+
+    /* Specifies work item filter by its external metadata */
+    @Json(name = "externalMetadata")
+    val externalMetadata: WorkItemExternalMetadataFilterModel? = null
 
 ) {
 

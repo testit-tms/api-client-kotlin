@@ -25,7 +25,7 @@ import ru.testit.kotlin.client.models.DefectApiModel
 import ru.testit.kotlin.client.models.GetExternalFormApiResult
 import ru.testit.kotlin.client.models.ImageResizeType
 import ru.testit.kotlin.client.models.ProblemDetails
-import ru.testit.kotlin.client.models.RerunsModel
+import ru.testit.kotlin.client.models.RerunsApiResult
 import ru.testit.kotlin.client.models.TestResultResponse
 import ru.testit.kotlin.client.models.TestResultShortResponse
 import ru.testit.kotlin.client.models.TestResultUpdateV2Request
@@ -590,7 +590,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * Get reruns
      * 
      * @param id Test result unique ID
-     * @return RerunsModel
+     * @return RerunsApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -599,11 +599,11 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestResultsIdRerunsGet(id: java.util.UUID) : RerunsModel {
+    fun apiV2TestResultsIdRerunsGet(id: java.util.UUID) : RerunsApiResult {
         val localVarResponse = apiV2TestResultsIdRerunsGetWithHttpInfo(id = id)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as RerunsModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as RerunsApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -622,16 +622,16 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * Get reruns
      * 
      * @param id Test result unique ID
-     * @return ApiResponse<RerunsModel?>
+     * @return ApiResponse<RerunsApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestResultsIdRerunsGetWithHttpInfo(id: java.util.UUID) : ApiResponse<RerunsModel?> {
+    fun apiV2TestResultsIdRerunsGetWithHttpInfo(id: java.util.UUID) : ApiResponse<RerunsApiResult?> {
         val localVariableConfig = apiV2TestResultsIdRerunsGetRequestConfig(id = id)
 
-        return request<Unit, RerunsModel>(
+        return request<Unit, RerunsApiResult>(
             localVariableConfig
         )
     }
