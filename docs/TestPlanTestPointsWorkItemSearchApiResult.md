@@ -8,7 +8,7 @@
 | **globalId** | **kotlin.Long** |  |  |
 | **versionId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **versionNumber** | **kotlin.Int** |  |  |
-| **duration** | **kotlin.Int** |  |  |
+| **duration** | **kotlin.Long** |  |  |
 | **state** | [**WorkItemState**](WorkItemState.md) |  |  |
 | **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  |
 | **attributes** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  |

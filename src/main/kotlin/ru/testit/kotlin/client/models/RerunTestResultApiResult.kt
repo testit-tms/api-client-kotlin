@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.TestStatusApiResult
+import ru.testit.kotlin.client.models.TestStatusShortApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,24 +23,28 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
- * @param outcome 
- * @param status 
- * @param runNumber 
+ * @param id Identifier of the rerun result.
+ * @param outcome Status of the autotest run.
+ * @param status Status of the autotest run.
+ * @param runNumber Number of the run (e.g., 1 for the first attempt).
  */
 
 
 data class RerunTestResultApiResult (
 
+    /* Identifier of the rerun result. */
     @Json(name = "id")
     val id: java.util.UUID,
 
+    /* Status of the autotest run. */
     @Json(name = "outcome")
     val outcome: kotlin.String,
 
+    /* Status of the autotest run. */
     @Json(name = "status")
-    val status: TestStatusApiResult,
+    val status: TestStatusShortApiResult,
 
+    /* Number of the run (e.g., 1 for the first attempt). */
     @Json(name = "runNumber")
     val runNumber: kotlin.Int
 

@@ -21,6 +21,7 @@ import ru.testit.kotlin.client.models.Link
 import ru.testit.kotlin.client.models.StepResultApiModel
 import ru.testit.kotlin.client.models.TestResultOutcome
 import ru.testit.kotlin.client.models.TestResultStepCommentUpdateRequest
+import ru.testit.kotlin.client.models.TestStatusType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -31,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param failureClassIds 
  * @param outcome 
  * @param statusCode 
+ * @param statusType 
  * @param comment 
  * @param links 
  * @param stepResults 
@@ -56,6 +58,9 @@ data class TestResultUpdateV2Request (
 
     @Json(name = "statusCode")
     val statusCode: kotlin.String? = null,
+
+    @Json(name = "statusType")
+    val statusType: TestStatusType? = null,
 
     @Json(name = "comment")
     val comment: kotlin.String? = null,

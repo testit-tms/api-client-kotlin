@@ -24,7 +24,7 @@
 | **types** | [**kotlin.collections.Set&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item |  [optional] |
 | **createdDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for |  [optional] |
 | **modifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of last modification date to search for |  [optional] |
-| **duration** | [**Int32RangeSelectorModel**](Int32RangeSelectorModel.md) | Specifies a work item duration range to search for |  [optional] |
+| **duration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a work item duration range to search for |  [optional] |
 | **medianDuration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a work item median duration range to search for |  [optional] |
 | **isAutomated** | **kotlin.Boolean** | Is result must consist of only manual/automated work items |  [optional] |
 | **tags** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Collection of tags |  [optional] |

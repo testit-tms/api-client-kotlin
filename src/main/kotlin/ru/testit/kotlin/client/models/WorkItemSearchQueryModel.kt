@@ -16,7 +16,6 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
-import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterModel
@@ -122,7 +121,7 @@ data class WorkItemSearchQueryModel (
 
     /* Specifies a work item duration range to search for */
     @Json(name = "duration")
-    val duration: Int32RangeSelectorModel? = null,
+    val duration: Int64RangeSelectorModel? = null,
 
     /* Specifies a work item median duration range to search for */
     @Json(name = "medianDuration")
