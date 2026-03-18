@@ -9,6 +9,7 @@
 | **filter** | [**TestPlanTestPointsSearchApiModel**](TestPlanTestPointsSearchApiModel.md) | Test points filters. |  [optional] |
 | **extractionModel** | [**TestPlanTestPointsExtractionApiModel**](TestPlanTestPointsExtractionApiModel.md) | Test points extraction model. |  [optional] |
 | **build** | **kotlin.String** | Specifies the test run build. |  [optional] |
+| **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Tags of the test run. |  [optional] |
 
 
 

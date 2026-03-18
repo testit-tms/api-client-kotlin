@@ -8,6 +8,7 @@
 | **description** | **kotlin.String** | Test run description |  [optional] |
 | **attachmentUpdateScheme** | [**UpdateMultipleAttachmentsApiModel**](UpdateMultipleAttachmentsApiModel.md) | Set of attachment ids |  [optional] |
 | **linkUpdateScheme** | [**UpdateMultipleLinksApiModel**](UpdateMultipleLinksApiModel.md) | Set of links |  [optional] |
+| **tagUpdateScheme** | [**UpdateMultipleTagsApiModel**](UpdateMultipleTagsApiModel.md) | Set of tags |  [optional] |
 
 
 

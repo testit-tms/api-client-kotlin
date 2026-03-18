@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.TestRunSelectApiModel
 import ru.testit.kotlin.client.models.UpdateMultipleAttachmentsApiModel
 import ru.testit.kotlin.client.models.UpdateMultipleLinksApiModel
+import ru.testit.kotlin.client.models.UpdateMultipleTagsApiModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -29,6 +30,7 @@ import com.squareup.moshi.JsonClass
  * @param description Test run description
  * @param attachmentUpdateScheme Set of attachment ids
  * @param linkUpdateScheme Set of links
+ * @param tagUpdateScheme Set of tags
  */
 
 
@@ -48,7 +50,11 @@ data class UpdateMultipleTestRunsApiModel (
 
     /* Set of links */
     @Json(name = "linkUpdateScheme")
-    val linkUpdateScheme: UpdateMultipleLinksApiModel? = null
+    val linkUpdateScheme: UpdateMultipleLinksApiModel? = null,
+
+    /* Set of tags */
+    @Json(name = "tagUpdateScheme")
+    val tagUpdateScheme: UpdateMultipleTagsApiModel? = null
 
 ) {
 

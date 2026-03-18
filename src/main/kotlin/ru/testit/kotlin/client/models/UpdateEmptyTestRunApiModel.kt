@@ -30,6 +30,7 @@ import com.squareup.moshi.JsonClass
  * @param launchSource Test run launch source              Once launch source is specified it cannot be updated
  * @param attachments Collection of attachments related to the test run
  * @param links Collection of links related to the test run
+ * @param tags Collection of tags to assign to the test run
  */
 
 
@@ -57,7 +58,11 @@ data class UpdateEmptyTestRunApiModel (
 
     /* Collection of links related to the test run */
     @Json(name = "links")
-    val links: kotlin.collections.List<UpdateLinkApiModel>? = null
+    val links: kotlin.collections.List<UpdateLinkApiModel>? = null,
+
+    /* Collection of tags to assign to the test run */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 

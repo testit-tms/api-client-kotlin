@@ -22,15 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param name Name of the tag
+ * @param authority 
+ * @param imageUrl 
  */
 
 
-data class TagApiModel (
+data class OpenIdConnectionSettingsShortClientModel (
 
-    /* Name of the tag */
-    @Json(name = "name")
-    val name: kotlin.String
+    @Json(name = "authority")
+    val authority: kotlin.String? = null,
+
+    @Json(name = "imageUrl")
+    val imageUrl: kotlin.String? = null
 
 ) {
 

@@ -31,6 +31,8 @@ import com.squareup.moshi.JsonClass
  * @param completedDate 
  * @param createdByIds 
  * @param modifiedByIds 
+ * @param tags 
+ * @param excludeTags 
  */
 
 
@@ -56,7 +58,13 @@ data class SearchTestRunsApiModel (
     val createdByIds: kotlin.collections.Set<java.util.UUID>? = null,
 
     @Json(name = "modifiedByIds")
-    val modifiedByIds: kotlin.collections.Set<java.util.UUID>? = null
+    val modifiedByIds: kotlin.collections.Set<java.util.UUID>? = null,
+
+    @Json(name = "tags")
+    val tags: kotlin.collections.Set<kotlin.String>? = null,
+
+    @Json(name = "excludeTags")
+    val excludeTags: kotlin.collections.Set<kotlin.String>? = null
 
 ) {
 

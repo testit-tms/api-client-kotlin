@@ -15,6 +15,7 @@
 | **links** | [**kotlin.collections.List&lt;LinkApiResult&gt;**](LinkApiResult.md) | Collection of links related to the test run |  |
 | **webhooks** | [**kotlin.collections.List&lt;NamedEntityApiModel&gt;**](NamedEntityApiModel.md) | Enabled webhooks |  |
 | **runCount** | **kotlin.Int** | Run count |  |
+| **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Collection of tags associated with the test run |  |
 | **description** | **kotlin.String** | Test run description |  [optional] |
 | **launchSource** | **kotlin.String** | Test run launch source              Once launch source is specified it cannot be updated. |  [optional] |
 | **startedOn** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date and time of test run start |  [optional] |

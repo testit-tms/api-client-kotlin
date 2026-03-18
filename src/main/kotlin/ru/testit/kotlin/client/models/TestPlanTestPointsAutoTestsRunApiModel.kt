@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param filter Test points filters.
  * @param extractionModel Test points extraction model.
  * @param build Specifies the test run build.
+ * @param tags Tags of the test run.
  */
 
 
@@ -52,7 +53,11 @@ data class TestPlanTestPointsAutoTestsRunApiModel (
 
     /* Specifies the test run build. */
     @Json(name = "build")
-    val build: kotlin.String? = null
+    val build: kotlin.String? = null,
+
+    /* Tags of the test run. */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 
