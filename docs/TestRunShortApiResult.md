@@ -14,6 +14,7 @@
 | **autoTestsCount** | **kotlin.Int** | Number of AutoTests run in the test run |  |
 | **statistics** | [**TestResultsStatisticsApiResult**](TestResultsStatisticsApiResult.md) | Statistics of the test run |  |
 | **testResultsConfigurations** | [**kotlin.collections.List&lt;ConfigurationShortApiResult&gt;**](ConfigurationShortApiResult.md) | Test results configurations |  |
+| **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** | Collection of tags associated with the test run |  |
 | **startedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test run was started |  [optional] |
 | **completedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Completion date of the test run |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of user who modified the test run last time |  [optional] |

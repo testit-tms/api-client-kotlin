@@ -11,6 +11,8 @@
 | **completedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  |  [optional] |
 | **createdByIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
 | **modifiedByIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
+| **tags** | **kotlin.collections.Set&lt;kotlin.String&gt;** |  |  [optional] |
+| **excludeTags** | **kotlin.collections.Set&lt;kotlin.String&gt;** |  |  [optional] |
 
 
 

@@ -36,6 +36,7 @@ import com.squareup.moshi.JsonClass
  * @param autoTestsCount Number of AutoTests run in the test run
  * @param statistics Statistics of the test run
  * @param testResultsConfigurations Test results configurations
+ * @param tags Collection of tags associated with the test run
  * @param startedDate Date when the test run was started
  * @param completedDate Completion date of the test run
  * @param modifiedById Unique ID of user who modified the test run last time
@@ -84,6 +85,10 @@ data class TestRunShortApiResult (
     /* Test results configurations */
     @Json(name = "testResultsConfigurations")
     val testResultsConfigurations: kotlin.collections.List<ConfigurationShortApiResult>,
+
+    /* Collection of tags associated with the test run */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>,
 
     /* Date when the test run was started */
     @Json(name = "startedDate")

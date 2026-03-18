@@ -32,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param launchSource Specifies the test run launch source.
  * @param attachments Collection of attachment ids to relate to the test run
  * @param links Collection of links to relate to the test run
+ * @param tags Collection of tags to assign to the test run
  */
 
 
@@ -67,7 +68,11 @@ data class CreateTestRunAndFillByAutoTestsApiModel (
 
     /* Collection of links to relate to the test run */
     @Json(name = "links")
-    val links: kotlin.collections.List<CreateLinkApiModel>? = null
+    val links: kotlin.collections.List<CreateLinkApiModel>? = null,
+
+    /* Collection of tags to assign to the test run */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 

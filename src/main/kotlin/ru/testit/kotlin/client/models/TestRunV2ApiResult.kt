@@ -39,6 +39,7 @@ import com.squareup.moshi.JsonClass
  * @param links Collection of links related to the test run
  * @param webhooks Enabled webhooks
  * @param runCount Run count
+ * @param tags Collection of tags associated with the test run
  * @param description Test run description
  * @param launchSource Test run launch source              Once launch source is specified it cannot be updated.
  * @param startedOn Date and time of test run start
@@ -98,6 +99,10 @@ data class TestRunV2ApiResult (
     /* Run count */
     @Json(name = "runCount")
     val runCount: kotlin.Int,
+
+    /* Collection of tags associated with the test run */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>,
 
     /* Test run description */
     @Json(name = "description")

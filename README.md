@@ -152,6 +152,7 @@ All URIs are relative to *http://localhost*
 | *NotificationsApi* | [**apiV2NotificationsIdReadPost**](docs/NotificationsApi.md#apiv2notificationsidreadpost) | **POST** /api/v2/notifications/{id}/read | Set Notification as read |
 | *NotificationsApi* | [**apiV2NotificationsReadPost**](docs/NotificationsApi.md#apiv2notificationsreadpost) | **POST** /api/v2/notifications/read | Set all Notifications as read |
 | *NotificationsApi* | [**apiV2NotificationsSearchPost**](docs/NotificationsApi.md#apiv2notificationssearchpost) | **POST** /api/v2/notifications/search | Search Notifications for current User |
+| *OpenIdConnectionsApi* | [**apiV2OpenidConnectionsGet**](docs/OpenIdConnectionsApi.md#apiv2openidconnectionsget) | **GET** /api/v2/openid-connections |  |
 | *ParametersApi* | [**apiV2ParametersBulkPost**](docs/ParametersApi.md#apiv2parametersbulkpost) | **POST** /api/v2/parameters/bulk | Create multiple parameters |
 | *ParametersApi* | [**apiV2ParametersBulkPut**](docs/ParametersApi.md#apiv2parametersbulkput) | **PUT** /api/v2/parameters/bulk | Update multiple parameters |
 | *ParametersApi* | [**apiV2ParametersGroupsGet**](docs/ParametersApi.md#apiv2parametersgroupsget) | **GET** /api/v2/parameters/groups | Get parameters as group |
@@ -602,6 +603,8 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.NotificationModel](docs/NotificationModel.md)
  - [ru.testit.kotlin.client.models.NotificationQueryFilterModel](docs/NotificationQueryFilterModel.md)
  - [ru.testit.kotlin.client.models.NotificationTypeModel](docs/NotificationTypeModel.md)
+ - [ru.testit.kotlin.client.models.OpenIdConnectionClientShortModel](docs/OpenIdConnectionClientShortModel.md)
+ - [ru.testit.kotlin.client.models.OpenIdConnectionSettingsShortClientModel](docs/OpenIdConnectionSettingsShortClientModel.md)
  - [ru.testit.kotlin.client.models.Operation](docs/Operation.md)
  - [ru.testit.kotlin.client.models.Order](docs/Order.md)
  - [ru.testit.kotlin.client.models.Page](docs/Page.md)
@@ -806,6 +809,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.UpdateLinkApiModel](docs/UpdateLinkApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateMultipleAttachmentsApiModel](docs/UpdateMultipleAttachmentsApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateMultipleLinksApiModel](docs/UpdateMultipleLinksApiModel.md)
+ - [ru.testit.kotlin.client.models.UpdateMultipleTagsApiModel](docs/UpdateMultipleTagsApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateMultipleTestRunsApiModel](docs/UpdateMultipleTestRunsApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateParameterApiModel](docs/UpdateParameterApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateProjectApiModel](docs/UpdateProjectApiModel.md)

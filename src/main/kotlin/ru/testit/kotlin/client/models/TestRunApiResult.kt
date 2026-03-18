@@ -42,6 +42,7 @@ import com.squareup.moshi.JsonClass
  * @param testResults 
  * @param createdDate 
  * @param createdById 
+ * @param tags 
  * @param startedDate 
  * @param completedDate 
  * @param description 
@@ -103,6 +104,9 @@ data class TestRunApiResult (
 
     @Json(name = "createdById")
     val createdById: java.util.UUID,
+
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>,
 
     @Json(name = "startedDate")
     val startedDate: java.time.OffsetDateTime? = null,

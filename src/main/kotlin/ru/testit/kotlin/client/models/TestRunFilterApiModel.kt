@@ -42,6 +42,8 @@ import com.squareup.moshi.JsonClass
  * @param failureCategory Specifies failure categories
  * @param completedDate Specifies a test run range of completed date to search for
  * @param testResultsConfigurationIds Specifies a test result configuration IDs to search for
+ * @param tags Specifies a test run tags to search for
+ * @param excludeTags Specifies a test run excluded tags to search for
  */
 
 
@@ -107,7 +109,15 @@ data class TestRunFilterApiModel (
 
     /* Specifies a test result configuration IDs to search for */
     @Json(name = "testResultsConfigurationIds")
-    val testResultsConfigurationIds: kotlin.collections.List<java.util.UUID>? = null
+    val testResultsConfigurationIds: kotlin.collections.List<java.util.UUID>? = null,
+
+    /* Specifies a test run tags to search for */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<kotlin.String>? = null,
+
+    /* Specifies a test run excluded tags to search for */
+    @Json(name = "excludeTags")
+    val excludeTags: kotlin.collections.List<kotlin.String>? = null
 
 ) {
 

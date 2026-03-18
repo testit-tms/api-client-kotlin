@@ -18,6 +18,7 @@
 | **testResults** | [**kotlin.collections.List&lt;TestResultApiResult&gt;**](TestResultApiResult.md) |  |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
+| **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  |
 | **startedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **completedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **description** | **kotlin.String** |  |  [optional] |
