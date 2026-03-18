@@ -15,7 +15,7 @@
 | **resultReasons** | [**kotlin.collections.List&lt;AutoTestResultReasonShort&gt;**](AutoTestResultReasonShort.md) | Collection of result reasons which the test result have |  |
 | **date** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result was completed or started or created |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date when the test result has been created |  |
-| **links** | [**kotlin.collections.List&lt;LinkShort&gt;**](LinkShort.md) | Collection of links attached to the test result |  |
+| **links** | [**kotlin.collections.List&lt;TestResultLinkApiResult&gt;**](TestResultLinkApiResult.md) | Collection of links attached to the test result |  |
 | **attachments** | [**kotlin.collections.List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) | Collection of files attached to the test result |  |
 | **rerunCompletedCount** | **kotlin.Int** | Run count |  |
 | **autotestExternalId** | **kotlin.String** | External ID of autotest represented by the test result |  [optional] |

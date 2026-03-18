@@ -17,7 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AttachmentApiResult
 import ru.testit.kotlin.client.models.AutoTestResultReasonShort
-import ru.testit.kotlin.client.models.LinkShort
+import ru.testit.kotlin.client.models.TestResultLinkApiResult
 import ru.testit.kotlin.client.models.TestStatusApiResult
 
 import com.squareup.moshi.Json
@@ -98,7 +98,7 @@ data class TestResultShortResponse (
 
     /* Collection of links attached to the test result */
     @Json(name = "links")
-    val links: kotlin.collections.List<LinkShort>,
+    val links: kotlin.collections.List<TestResultLinkApiResult>,
 
     /* Collection of files attached to the test result */
     @Json(name = "attachments")

@@ -7,6 +7,7 @@
 | **failureClassIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
 | **outcome** | [**TestResultOutcome**](TestResultOutcome.md) |  |  [optional] |
 | **statusCode** | **kotlin.String** |  |  [optional] |
+| **statusType** | [**TestStatusType**](TestStatusType.md) |  |  [optional] |
 | **comment** | **kotlin.String** |  |  [optional] |
 | **links** | [**kotlin.collections.List&lt;Link&gt;**](Link.md) |  |  [optional] |
 | **stepResults** | [**kotlin.collections.List&lt;StepResultApiModel&gt;**](StepResultApiModel.md) |  |  [optional] |

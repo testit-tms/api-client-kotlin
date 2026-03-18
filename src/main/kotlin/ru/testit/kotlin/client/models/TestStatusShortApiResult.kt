@@ -23,25 +23,28 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
- * @param name 
- * @param code 
- * @param type Collection of possible status types
+ * @param id Identifier of the test status.
+ * @param code Code representing the test status.
+ * @param name Name of the test status.
+ * @param type Type of the test status (e.g., Passed, Failed).
  */
 
 
 data class TestStatusShortApiResult (
 
+    /* Identifier of the test status. */
     @Json(name = "id")
     val id: java.util.UUID,
 
-    @Json(name = "name")
-    val name: kotlin.String,
-
+    /* Code representing the test status. */
     @Json(name = "code")
     val code: kotlin.String,
 
-    /* Collection of possible status types */
+    /* Name of the test status. */
+    @Json(name = "name")
+    val name: kotlin.String,
+
+    /* Type of the test status (e.g., Passed, Failed). */
     @Json(name = "type")
     val type: TestStatusApiType
 

@@ -20,6 +20,7 @@ import ru.testit.kotlin.client.models.AttachmentPutModelAutoTestStepResultsModel
 import ru.testit.kotlin.client.models.AvailableTestResultOutcome
 import ru.testit.kotlin.client.models.FailureCategoryModel
 import ru.testit.kotlin.client.models.LinkPostModel
+import ru.testit.kotlin.client.models.TestStatusType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -32,7 +33,8 @@ import com.squareup.moshi.JsonClass
  * @param links Specifies the links in the autotest.
  * @param failureReasonNames Specifies the cause of autotest failure.
  * @param outcome Specifies the result of the autotest execution.
- * @param statusCode Specifies the result of the autotest execution.
+ * @param statusCode Specifies code of result status of the autotest execution.
+ * @param statusType Specifies type of result status of the autotest execution.
  * @param message A comment for the result.
  * @param traces An extended comment or a stack trace.
  * @param startedOn Test run start date.
@@ -70,9 +72,13 @@ data class AutoTestResultsForTestRunModel (
     @Deprecated(message = "This property is deprecated.")
     val outcome: AvailableTestResultOutcome? = null,
 
-    /* Specifies the result of the autotest execution. */
+    /* Specifies code of result status of the autotest execution. */
     @Json(name = "statusCode")
     val statusCode: kotlin.String? = null,
+
+    /* Specifies type of result status of the autotest execution. */
+    @Json(name = "statusType")
+    val statusType: TestStatusType? = null,
 
     /* A comment for the result. */
     @Json(name = "message")

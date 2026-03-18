@@ -22,30 +22,41 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param externalServiceId 
- * @param taskKey 
- * @param sectionId 
- * @param temperature 
- * @param previewLimit 
+ * @param externalServiceId The ID of the external AI service to be used for generation.
+ * @param temperature Controls randomness of the AI model output.
+ * @param previewLimit Number of work item previews to generate.
+ * @param taskKey The key of the issue in an issue tracker (e.g., JIRA-123).
+ * @param issueKey The key of the issue in an issue tracker (e.g., JIRA-123).
+ * @param userContext Additional user context or description of the issue if no issue key is provided.
  */
 
 
 data class GenerateWorkItemPreviewsApiModel (
 
+    /* The ID of the external AI service to be used for generation. */
     @Json(name = "externalServiceId")
     val externalServiceId: java.util.UUID,
 
-    @Json(name = "taskKey")
-    val taskKey: kotlin.String,
-
-    @Json(name = "sectionId")
-    val sectionId: java.util.UUID,
-
+    /* Controls randomness of the AI model output. */
     @Json(name = "temperature")
     val temperature: kotlin.Float,
 
+    /* Number of work item previews to generate. */
     @Json(name = "previewLimit")
-    val previewLimit: kotlin.Int
+    val previewLimit: kotlin.Int,
+
+    /* The key of the issue in an issue tracker (e.g., JIRA-123). */
+    @Json(name = "taskKey")
+    @Deprecated(message = "This property is deprecated.")
+    val taskKey: kotlin.String? = null,
+
+    /* The key of the issue in an issue tracker (e.g., JIRA-123). */
+    @Json(name = "issueKey")
+    val issueKey: kotlin.String? = null,
+
+    /* Additional user context or description of the issue if no issue key is provided. */
+    @Json(name = "userContext")
+    val userContext: kotlin.String? = null
 
 ) {
 

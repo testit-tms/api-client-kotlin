@@ -61,7 +61,7 @@ data class TestPlanTestPointsWorkItemSearchApiResult (
     val versionNumber: kotlin.Int,
 
     @Json(name = "duration")
-    val duration: kotlin.Int,
+    val duration: kotlin.Long,
 
     @Json(name = "state")
     val state: WorkItemState,

@@ -14,7 +14,7 @@
 | **sectionName** | **kotlin.String** | Section name of Work Item |  |
 | **isAutomated** | **kotlin.Boolean** | Boolean flag determining whether Work Item is automated |  |
 | **globalId** | **kotlin.Long** | Work Item global identifier |  |
-| **duration** | **kotlin.Int** | Work Item duration |  |
+| **duration** | **kotlin.Long** | Work Item duration |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique identifier of user who created Work Item |  |
 | **state** | [**WorkItemStates**](WorkItemStates.md) | The current state of Work Item |  |
 | **priority** | [**WorkItemPriorityModel**](WorkItemPriorityModel.md) | Work Item priority level |  |

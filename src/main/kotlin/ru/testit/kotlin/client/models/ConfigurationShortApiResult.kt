@@ -22,16 +22,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
- * @param name 
+ * @param id Identifier of the configuration.
+ * @param name Name of the configuration.
  */
 
 
 data class ConfigurationShortApiResult (
 
+    /* Identifier of the configuration. */
     @Json(name = "id")
     val id: java.util.UUID,
 
+    /* Name of the configuration. */
     @Json(name = "name")
     val name: kotlin.String
 
