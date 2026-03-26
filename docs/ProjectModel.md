@@ -12,7 +12,7 @@
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project creator |  |
 | **globalId** | **kotlin.Long** | Global ID of the project |  |
 | **type** | [**ProjectTypeModel**](ProjectTypeModel.md) | Type of the project |  |
-| **workflowId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
+| **workflowId** | [**java.util.UUID**](java.util.UUID.md) | Identifier of current workflow |  |
 | **description** | **kotlin.String** | Description of the project |  [optional] |
 | **attributesScheme** | [**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project attributes |  [optional] |
 | **testPlansAttributesScheme** | [**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md) | Collection of the project test plans attributes |  [optional] |

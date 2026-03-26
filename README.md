@@ -14,7 +14,7 @@
 | 5.4.1   | 0.7.5-TMS-5.4.1 |
 | 5.5     | 0.7.8-TMS-5.5   |
 | 5.6     | 0.8.0-TMS-5.6   |
-| Cloud   | 0.9.0 +         |
+| Cloud   | 0.9.4 +         |
 
 1. For current versions, see the releases tab. 
 2. Starting with 5.2, we have added a TMS postscript, which means that the utility is compatible with a specific enterprise version. 
@@ -870,6 +870,9 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkItemLocalSelectModel](docs/WorkItemLocalSelectModel.md)
  - [ru.testit.kotlin.client.models.WorkItemModel](docs/WorkItemModel.md)
  - [ru.testit.kotlin.client.models.WorkItemMovePostModel](docs/WorkItemMovePostModel.md)
+ - [ru.testit.kotlin.client.models.WorkItemParameterKeyApiModel](docs/WorkItemParameterKeyApiModel.md)
+ - [ru.testit.kotlin.client.models.WorkItemParameterKeyApiResult](docs/WorkItemParameterKeyApiResult.md)
+ - [ru.testit.kotlin.client.models.WorkItemParameterKeyModel](docs/WorkItemParameterKeyModel.md)
  - [ru.testit.kotlin.client.models.WorkItemPreviewApiModel](docs/WorkItemPreviewApiModel.md)
  - [ru.testit.kotlin.client.models.WorkItemPreviewStepApiModel](docs/WorkItemPreviewStepApiModel.md)
  - [ru.testit.kotlin.client.models.WorkItemPriority](docs/WorkItemPriority.md)

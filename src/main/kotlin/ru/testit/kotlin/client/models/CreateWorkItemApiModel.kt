@@ -22,6 +22,7 @@ import ru.testit.kotlin.client.models.CreateLinkApiModel
 import ru.testit.kotlin.client.models.CreateStepApiModel
 import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypeApiModel
+import ru.testit.kotlin.client.models.WorkItemParameterKeyApiModel
 import ru.testit.kotlin.client.models.WorkItemPriorityApiModel
 import ru.testit.kotlin.client.models.WorkItemStateApiModel
 
@@ -48,6 +49,7 @@ import com.squareup.moshi.JsonClass
  * @param iterations Associated iterations linked to the work item
  * @param autoTests Automated tests associated with the work item
  * @param attachments Files attached to the work item
+ * @param parameters Set of parameter keys related to the work item
  */
 
 
@@ -119,7 +121,11 @@ data class CreateWorkItemApiModel (
 
     /* Files attached to the work item */
     @Json(name = "attachments")
-    val attachments: kotlin.collections.List<AssignAttachmentApiModel>? = null
+    val attachments: kotlin.collections.List<AssignAttachmentApiModel>? = null,
+
+    /* Set of parameter keys related to the work item */
+    @Json(name = "parameters")
+    val parameters: kotlin.collections.List<WorkItemParameterKeyApiModel>? = null
 
 ) {
 

@@ -23,6 +23,7 @@ import ru.testit.kotlin.client.models.LinkModel
 import ru.testit.kotlin.client.models.StepModel
 import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypeApiModel
+import ru.testit.kotlin.client.models.WorkItemParameterKeyApiResult
 import ru.testit.kotlin.client.models.WorkItemPriorityApiModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeApiModel
 import ru.testit.kotlin.client.models.WorkItemStateApiModel
@@ -59,6 +60,7 @@ import com.squareup.moshi.JsonClass
  * @param attachments Files attached to the work item
  * @param links Set of links related to the work item
  * @param externalIssues Set of external issues related to the work item
+ * @param parameters Set of parameters related to the work item
  * @param createdDate Creation date of the work item
  * @param createdById Unique identifier of the work item creator
  * @param isDeleted Indicates whether the work item is marked as deleted
@@ -172,6 +174,10 @@ data class WorkItemApiResult (
     /* Set of external issues related to the work item */
     @Json(name = "externalIssues")
     val externalIssues: kotlin.collections.List<ExternalIssueApiResult>,
+
+    /* Set of parameters related to the work item */
+    @Json(name = "parameters")
+    val parameters: kotlin.collections.List<WorkItemParameterKeyApiResult>,
 
     /* Creation date of the work item */
     @Json(name = "createdDate")

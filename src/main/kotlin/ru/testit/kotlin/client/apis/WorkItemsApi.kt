@@ -1814,7 +1814,7 @@ open class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier\&quot; (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
-     * @return WorkItemModel
+     * @return WorkItemApiResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1823,11 +1823,11 @@ open class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun getWorkItemById(id: kotlin.String, versionId: java.util.UUID? = null, versionNumber: kotlin.Int? = null) : WorkItemModel {
+    fun getWorkItemById(id: kotlin.String, versionId: java.util.UUID? = null, versionNumber: kotlin.Int? = null) : WorkItemApiResult {
         val localVarResponse = getWorkItemByIdWithHttpInfo(id = id, versionId = versionId, versionNumber = versionNumber)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemModel
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkItemApiResult
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1848,16 +1848,16 @@ open class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
      * @param versionId WorkItem version (guid format) identifier\&quot; (optional)
      * @param versionNumber WorkItem version number (0 is the last version)\&quot; (optional)
-     * @return ApiResponse<WorkItemModel?>
+     * @return ApiResponse<WorkItemApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun getWorkItemByIdWithHttpInfo(id: kotlin.String, versionId: java.util.UUID?, versionNumber: kotlin.Int?) : ApiResponse<WorkItemModel?> {
+    fun getWorkItemByIdWithHttpInfo(id: kotlin.String, versionId: java.util.UUID?, versionNumber: kotlin.Int?) : ApiResponse<WorkItemApiResult?> {
         val localVariableConfig = getWorkItemByIdRequestConfig(id = id, versionId = versionId, versionNumber = versionNumber)
 
-        return request<Unit, WorkItemModel>(
+        return request<Unit, WorkItemApiResult>(
             localVariableConfig
         )
     }

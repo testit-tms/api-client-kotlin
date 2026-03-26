@@ -1093,7 +1093,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getWorkItemById"></a>
 # **getWorkItemById**
-> WorkItemModel getWorkItemById(id, versionId, versionNumber)
+> WorkItemApiResult getWorkItemById(id, versionId, versionNumber)
 
 Get Test Case, Checklist or Shared Step by Id or GlobalId
 
@@ -1110,7 +1110,7 @@ val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String |
 val versionId : java.util.UUID = 00000000-0000-0000-0000-000000000000 // java.util.UUID | WorkItem version (guid format) identifier\"
 val versionNumber : kotlin.Int = 0 // kotlin.Int | WorkItem version number (0 is the last version)\"
 try {
-    val result : WorkItemModel = apiInstance.getWorkItemById(id, versionId, versionNumber)
+    val result : WorkItemApiResult = apiInstance.getWorkItemById(id, versionId, versionNumber)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkItemsApi#getWorkItemById")
@@ -1130,7 +1130,7 @@ try {
 
 ### Return type
 
-[**WorkItemModel**](WorkItemModel.md)
+[**WorkItemApiResult**](WorkItemApiResult.md)
 
 ### Authorization
 
