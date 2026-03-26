@@ -21,6 +21,7 @@ import ru.testit.kotlin.client.models.AutoTestIdModel
 import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.UpdateLinkApiModel
 import ru.testit.kotlin.client.models.UpdateStepApiModel
+import ru.testit.kotlin.client.models.WorkItemParameterKeyApiModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
@@ -48,6 +49,7 @@ import com.squareup.moshi.JsonClass
  * @param sourceType 
  * @param iterations Collection of parameter id sets
  * @param autoTests Collection of autotest internal ids
+ * @param parameters Set of parameter keys related to the work item
  */
 
 
@@ -115,7 +117,11 @@ data class UpdateWorkItemApiModel (
 
     /* Collection of autotest internal ids */
     @Json(name = "autoTests")
-    val autoTests: kotlin.collections.List<AutoTestIdModel>? = null
+    val autoTests: kotlin.collections.List<AutoTestIdModel>? = null,
+
+    /* Set of parameter keys related to the work item */
+    @Json(name = "parameters")
+    val parameters: kotlin.collections.List<WorkItemParameterKeyApiModel>? = null
 
 ) {
 

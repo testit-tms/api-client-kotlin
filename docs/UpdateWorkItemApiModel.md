@@ -21,6 +21,7 @@
 | **sourceType** | [**WorkItemSourceTypeModel**](WorkItemSourceTypeModel.md) |  |  [optional] |
 | **iterations** | [**kotlin.collections.List&lt;AssignIterationApiModel&gt;**](AssignIterationApiModel.md) | Collection of parameter id sets |  [optional] |
 | **autoTests** | [**kotlin.collections.List&lt;AutoTestIdModel&gt;**](AutoTestIdModel.md) | Collection of autotest internal ids |  [optional] |
+| **parameters** | [**kotlin.collections.List&lt;WorkItemParameterKeyApiModel&gt;**](WorkItemParameterKeyApiModel.md) | Set of parameter keys related to the work item |  [optional] |
 
 
 

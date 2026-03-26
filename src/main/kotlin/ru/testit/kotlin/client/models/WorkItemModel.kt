@@ -23,6 +23,7 @@ import ru.testit.kotlin.client.models.LinkModel
 import ru.testit.kotlin.client.models.StepModel
 import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypes
+import ru.testit.kotlin.client.models.WorkItemParameterKeyModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
@@ -44,6 +45,7 @@ import com.squareup.moshi.JsonClass
  * @param createdById 
  * @param globalId 
  * @param externalIssues 
+ * @param parameters 
  * @param id 
  * @param sectionId 
  * @param state 
@@ -105,6 +107,9 @@ data class WorkItemModel (
 
     @Json(name = "externalIssues")
     val externalIssues: kotlin.collections.List<ExternalIssueModel>,
+
+    @Json(name = "parameters")
+    val parameters: kotlin.collections.List<WorkItemParameterKeyModel>,
 
     @Json(name = "id")
     val id: java.util.UUID,

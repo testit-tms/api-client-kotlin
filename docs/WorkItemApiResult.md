@@ -30,6 +30,7 @@
 | **attachments** | [**kotlin.collections.List&lt;AttachmentModel&gt;**](AttachmentModel.md) | Files attached to the work item |  |
 | **links** | [**kotlin.collections.List&lt;LinkModel&gt;**](LinkModel.md) | Set of links related to the work item |  |
 | **externalIssues** | [**kotlin.collections.List&lt;ExternalIssueApiResult&gt;**](ExternalIssueApiResult.md) | Set of external issues related to the work item |  |
+| **parameters** | [**kotlin.collections.List&lt;WorkItemParameterKeyApiResult&gt;**](WorkItemParameterKeyApiResult.md) | Set of parameters related to the work item |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Creation date of the work item |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique identifier of the work item creator |  |
 | **isDeleted** | **kotlin.Boolean** | Indicates whether the work item is marked as deleted |  |

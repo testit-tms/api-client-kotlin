@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.FailureCategoryModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
 import ru.testit.kotlin.client.models.TestResultOutcome
+import ru.testit.kotlin.client.models.TestStatusApiType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -29,6 +30,7 @@ import com.squareup.moshi.JsonClass
  * @param configurationIds Specifies a test result configuration IDs to search for
  * @param outcomes Specifies a test result outcomes to search for
  * @param statusCodes Specifies a test result status codes to search for
+ * @param statusTypes Specifies a test result status types to search for
  * @param failureCategories Specifies a test result failure categories to search for
  * @param namespace Specifies a test result namespace to search for
  * @param className Specifies a test result class name to search for
@@ -60,6 +62,10 @@ data class TestResultsFilterApiModel (
     /* Specifies a test result status codes to search for */
     @Json(name = "statusCodes")
     val statusCodes: kotlin.collections.List<kotlin.String>? = null,
+
+    /* Specifies a test result status types to search for */
+    @Json(name = "statusTypes")
+    val statusTypes: kotlin.collections.List<TestStatusApiType>? = null,
 
     /* Specifies a test result failure categories to search for */
     @Json(name = "failureCategories")

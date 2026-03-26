@@ -21,6 +21,7 @@
 | **iterations** | [**kotlin.collections.List&lt;AssignIterationApiModel&gt;**](AssignIterationApiModel.md) | Associated iterations linked to the work item |  [optional] |
 | **autoTests** | [**kotlin.collections.List&lt;AutoTestIdModel&gt;**](AutoTestIdModel.md) | Automated tests associated with the work item |  [optional] |
 | **attachments** | [**kotlin.collections.List&lt;AssignAttachmentApiModel&gt;**](AssignAttachmentApiModel.md) | Files attached to the work item |  [optional] |
+| **parameters** | [**kotlin.collections.List&lt;WorkItemParameterKeyApiModel&gt;**](WorkItemParameterKeyApiModel.md) | Set of parameter keys related to the work item |  [optional] |
 
 
 

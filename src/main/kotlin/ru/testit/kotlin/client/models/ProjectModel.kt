@@ -32,7 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param createdById Unique ID of the project creator
  * @param globalId Global ID of the project
  * @param type Type of the project
- * @param workflowId 
+ * @param workflowId Identifier of current workflow
  * @param description Description of the project
  * @param attributesScheme Collection of the project attributes
  * @param testPlansAttributesScheme Collection of the project test plans attributes
@@ -79,6 +79,7 @@ data class ProjectModel (
     @Json(name = "type")
     val type: ProjectTypeModel,
 
+    /* Identifier of current workflow */
     @Json(name = "workflowId")
     val workflowId: java.util.UUID,
 
