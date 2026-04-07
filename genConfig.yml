@@ -1,5 +1,5 @@
 packageName: "ru.testit.kotlin.client"
-artifactVersion: 0.9.4
+artifactVersion: 0.9.4-TMS-5.7
 artifactId: "testit-api-client"
 artifactUrl: "https://github.com/testit-tms/api-client-java"
 

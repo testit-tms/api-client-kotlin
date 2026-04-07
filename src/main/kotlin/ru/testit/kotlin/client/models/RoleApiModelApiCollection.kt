@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.RoleApiModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -22,26 +23,20 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
- * @param url 
- * @param title 
- * @param type 
+ * @param `data` Items
+ * @param totalCount Total count
  */
 
 
-data class LinkShortModel (
+data class RoleApiModelApiCollection (
 
-    @Json(name = "id")
-    val id: java.util.UUID,
+    /* Items */
+    @Json(name = "data")
+    val `data`: kotlin.collections.List<RoleApiModel>,
 
-    @Json(name = "url")
-    val url: kotlin.String,
-
-    @Json(name = "title")
-    val title: kotlin.String? = null,
-
-    @Json(name = "type")
-    val type: kotlin.String? = null
+    /* Total count */
+    @Json(name = "totalCount")
+    val totalCount: kotlin.Long
 
 ) {
 

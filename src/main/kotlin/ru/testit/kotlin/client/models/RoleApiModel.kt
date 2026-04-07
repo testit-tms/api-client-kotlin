@@ -22,15 +22,22 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param jobId Job ID
+ * @param id 
+ * @param name 
+ * @param isSystem 
  */
 
 
-data class DemoProjectApiResult (
+data class RoleApiModel (
 
-    /* Job ID */
-    @Json(name = "jobId")
-    val jobId: java.util.UUID
+    @Json(name = "id")
+    val id: java.util.UUID,
+
+    @Json(name = "name")
+    val name: kotlin.String,
+
+    @Json(name = "isSystem")
+    val isSystem: kotlin.Boolean
 
 ) {
 

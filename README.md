@@ -14,6 +14,7 @@
 | 5.4.1   | 0.7.5-TMS-5.4.1 |
 | 5.5     | 0.7.8-TMS-5.5   |
 | 5.6     | 0.8.0-TMS-5.6   |
+| 5.7     | 0.9.4-TMS-5.7   |
 | Cloud   | 0.9.4 +         |
 
 1. For current versions, see the releases tab. 
@@ -201,7 +202,6 @@ All URIs are relative to *http://localhost*
 | *ProjectWorkItemsApi* | [**apiV2ProjectsProjectIdWorkItemsTagsGet**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemstagsget) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags |
 | *ProjectWorkItemsApi* | [**getWorkItemsByProjectId**](docs/ProjectWorkItemsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items |
 | *ProjectsApi* | [**addGlobalAttributesToProject**](docs/ProjectsApi.md#addglobalattributestoproject) | **POST** /api/v2/projects/{id}/globalAttributes | Add global attributes to project |
-| *ProjectsApi* | [**apiV2ProjectsDemoPost**](docs/ProjectsApi.md#apiv2projectsdemopost) | **POST** /api/v2/projects/demo |  |
 | *ProjectsApi* | [**apiV2ProjectsIdDelete**](docs/ProjectsApi.md#apiv2projectsiddelete) | **DELETE** /api/v2/projects/{id} | Archive project |
 | *ProjectsApi* | [**apiV2ProjectsIdFailureClassesGet**](docs/ProjectsApi.md#apiv2projectsidfailureclassesget) | **GET** /api/v2/projects/{id}/failureClasses | Get failure classes |
 | *ProjectsApi* | [**apiV2ProjectsIdFavoritePut**](docs/ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite |
@@ -225,6 +225,7 @@ All URIs are relative to *http://localhost*
 | *ProjectsApi* | [**getTestPlansByProjectId**](docs/ProjectsApi.md#gettestplansbyprojectid) | **GET** /api/v2/projects/{id}/testPlans | Get project test plans |
 | *ProjectsApi* | [**getTestRunsByProjectId**](docs/ProjectsApi.md#gettestrunsbyprojectid) | **GET** /api/v2/projects/{id}/testRuns | Get project test runs |
 | *ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateproject) | **PUT** /api/v2/projects | Update project |
+| *RolesApi* | [**apiV2RolesGet**](docs/RolesApi.md#apiv2rolesget) | **GET** /api/v2/roles |  |
 | *SearchApi* | [**apiV2SearchGlobalSearchPost**](docs/SearchApi.md#apiv2searchglobalsearchpost) | **POST** /api/v2/search/globalSearch |  |
 | *SectionsApi* | [**apiV2SectionsIdPatch**](docs/SectionsApi.md#apiv2sectionsidpatch) | **PATCH** /api/v2/sections/{id} | Patch section |
 | *SectionsApi* | [**createSection**](docs/SectionsApi.md#createsection) | **POST** /api/v2/sections | Create section |
@@ -334,7 +335,12 @@ All URIs are relative to *http://localhost*
 | *TestSuitesApi* | [**getTestSuiteById**](docs/TestSuitesApi.md#gettestsuitebyid) | **GET** /api/v2/testSuites/{id} | Get TestSuite by Id |
 | *TestSuitesApi* | [**searchWorkItems**](docs/TestSuitesApi.md#searchworkitems) | **POST** /api/v2/testSuites/{id}/workItems/search | Search WorkItems |
 | *TestSuitesApi* | [**setConfigurationsByTestSuiteId**](docs/TestSuitesApi.md#setconfigurationsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/configurations | Set Configurations By TestSuite Id |
+| *UserRoleAssignmentsApi* | [**apiV2UsersUserIdRolesRoleIdDelete**](docs/UserRoleAssignmentsApi.md#apiv2usersuseridrolesroleiddelete) | **DELETE** /api/v2/users/{userId}/roles/{roleId} |  |
+| *UserRoleAssignmentsApi* | [**apiV2UsersUserIdRolesRoleIdPost**](docs/UserRoleAssignmentsApi.md#apiv2usersuseridrolesroleidpost) | **POST** /api/v2/users/{userId}/roles/{roleId} |  |
 | *UsersApi* | [**apiV2UsersExistsGet**](docs/UsersApi.md#apiv2usersexistsget) | **GET** /api/v2/users/exists |  |
+| *UsersApi* | [**apiV2UsersPost**](docs/UsersApi.md#apiv2userspost) | **POST** /api/v2/users |  |
+| *UsersApi* | [**apiV2UsersUserIdDelete**](docs/UsersApi.md#apiv2usersuseriddelete) | **DELETE** /api/v2/users/{userId} |  |
+| *UsersApi* | [**apiV2UsersUserIdGet**](docs/UsersApi.md#apiv2usersuseridget) | **GET** /api/v2/users/{userId} |  |
 | *WebhooksApi* | [**apiV2WebhooksDelete**](docs/WebhooksApi.md#apiv2webhooksdelete) | **DELETE** /api/v2/webhooks |  |
 | *WebhooksApi* | [**apiV2WebhooksGet**](docs/WebhooksApi.md#apiv2webhooksget) | **GET** /api/v2/webhooks | Get all webhooks |
 | *WebhooksApi* | [**apiV2WebhooksIdDelete**](docs/WebhooksApi.md#apiv2webhooksiddelete) | **DELETE** /api/v2/webhooks/{id} | Delete webhook by ID |
@@ -490,6 +496,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.CreateTestRunAndFillByConfigurationsApiModel](docs/CreateTestRunAndFillByConfigurationsApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestRunAndFillByWorkItemsApiModel](docs/CreateTestRunAndFillByWorkItemsApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestStatusApiModel](docs/CreateTestStatusApiModel.md)
+ - [ru.testit.kotlin.client.models.CreateUserApiModel](docs/CreateUserApiModel.md)
  - [ru.testit.kotlin.client.models.CreateWorkItemApiModel](docs/CreateWorkItemApiModel.md)
  - [ru.testit.kotlin.client.models.CreateWorkItemCommentApiModel](docs/CreateWorkItemCommentApiModel.md)
  - [ru.testit.kotlin.client.models.CreateWorkItemPreviewsApiModel](docs/CreateWorkItemPreviewsApiModel.md)
@@ -517,7 +524,6 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.DateTimeRangeSelectorModel](docs/DateTimeRangeSelectorModel.md)
  - [ru.testit.kotlin.client.models.DefectApiModel](docs/DefectApiModel.md)
  - [ru.testit.kotlin.client.models.DeletionState](docs/DeletionState.md)
- - [ru.testit.kotlin.client.models.DemoProjectApiResult](docs/DemoProjectApiResult.md)
  - [ru.testit.kotlin.client.models.EnableProjectExternalServiceApiModel](docs/EnableProjectExternalServiceApiModel.md)
  - [ru.testit.kotlin.client.models.ExternalFormAllowedValueModel](docs/ExternalFormAllowedValueModel.md)
  - [ru.testit.kotlin.client.models.ExternalFormCreateModel](docs/ExternalFormCreateModel.md)
@@ -646,6 +652,8 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.RequestTypeModel](docs/RequestTypeModel.md)
  - [ru.testit.kotlin.client.models.RerunTestResultApiResult](docs/RerunTestResultApiResult.md)
  - [ru.testit.kotlin.client.models.RerunsApiResult](docs/RerunsApiResult.md)
+ - [ru.testit.kotlin.client.models.RoleApiModel](docs/RoleApiModel.md)
+ - [ru.testit.kotlin.client.models.RoleApiModelApiCollection](docs/RoleApiModelApiCollection.md)
  - [ru.testit.kotlin.client.models.SearchCustomAttributeTemplateGetModel](docs/SearchCustomAttributeTemplateGetModel.md)
  - [ru.testit.kotlin.client.models.SearchExternalIssuesApiModel](docs/SearchExternalIssuesApiModel.md)
  - [ru.testit.kotlin.client.models.SearchTestRunsApiModel](docs/SearchTestRunsApiModel.md)
@@ -818,6 +826,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.UpdateWorkItemApiModel](docs/UpdateWorkItemApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateWorkItemCommentApiModel](docs/UpdateWorkItemCommentApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateWorkflowApiModel](docs/UpdateWorkflowApiModel.md)
+ - [ru.testit.kotlin.client.models.UserApiModel](docs/UserApiModel.md)
  - [ru.testit.kotlin.client.models.UserCustomNameValidationResponse](docs/UserCustomNameValidationResponse.md)
  - [ru.testit.kotlin.client.models.UserNameApiResult](docs/UserNameApiResult.md)
  - [ru.testit.kotlin.client.models.ValidationProblemDetails](docs/ValidationProblemDetails.md)
