@@ -19,6 +19,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
+import ru.testit.kotlin.client.models.CreateWorkItemPreviewsApiModel
+import ru.testit.kotlin.client.models.GenerateWorkItemPreviewsApiModel
+import ru.testit.kotlin.client.models.GenerateWorkItemPreviewsApiResult
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.TagShortApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
@@ -52,6 +55,158 @@ open class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client
         val defaultBasePath: String by lazy {
             System.getProperties().getProperty(ApiClient.baseUrlKey, "http://localhost")
         }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/work-items/previews/bulk
+     * 
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param createWorkItemPreviewsApiModel  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost(projectId: kotlin.String, createWorkItemPreviewsApiModel: CreateWorkItemPreviewsApiModel? = null) : Unit {
+        val localVarResponse = apiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo(projectId = projectId, createWorkItemPreviewsApiModel = createWorkItemPreviewsApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/work-items/previews/bulk
+     * 
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param createWorkItemPreviewsApiModel  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo(projectId: kotlin.String, createWorkItemPreviewsApiModel: CreateWorkItemPreviewsApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2ProjectsProjectIdWorkItemsPreviewsBulkPostRequestConfig(projectId = projectId, createWorkItemPreviewsApiModel = createWorkItemPreviewsApiModel)
+
+        return request<CreateWorkItemPreviewsApiModel, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost
+     *
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param createWorkItemPreviewsApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2ProjectsProjectIdWorkItemsPreviewsBulkPostRequestConfig(projectId: kotlin.String, createWorkItemPreviewsApiModel: CreateWorkItemPreviewsApiModel?) : RequestConfig<CreateWorkItemPreviewsApiModel> {
+        val localVariableBody = createWorkItemPreviewsApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/projects/{projectId}/work-items/previews/bulk".replace("{"+"projectId"+"}", encodeURIComponent(projectId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/work-items/previews
+     * 
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param generateWorkItemPreviewsApiModel  (optional)
+     * @return GenerateWorkItemPreviewsApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2ProjectsProjectIdWorkItemsPreviewsPost(projectId: kotlin.String, generateWorkItemPreviewsApiModel: GenerateWorkItemPreviewsApiModel? = null) : GenerateWorkItemPreviewsApiResult {
+        val localVarResponse = apiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo(projectId = projectId, generateWorkItemPreviewsApiModel = generateWorkItemPreviewsApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as GenerateWorkItemPreviewsApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/work-items/previews
+     * 
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param generateWorkItemPreviewsApiModel  (optional)
+     * @return ApiResponse<GenerateWorkItemPreviewsApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo(projectId: kotlin.String, generateWorkItemPreviewsApiModel: GenerateWorkItemPreviewsApiModel?) : ApiResponse<GenerateWorkItemPreviewsApiResult?> {
+        val localVariableConfig = apiV2ProjectsProjectIdWorkItemsPreviewsPostRequestConfig(projectId = projectId, generateWorkItemPreviewsApiModel = generateWorkItemPreviewsApiModel)
+
+        return request<GenerateWorkItemPreviewsApiModel, GenerateWorkItemPreviewsApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2ProjectsProjectIdWorkItemsPreviewsPost
+     *
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param generateWorkItemPreviewsApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2ProjectsProjectIdWorkItemsPreviewsPostRequestConfig(projectId: kotlin.String, generateWorkItemPreviewsApiModel: GenerateWorkItemPreviewsApiModel?) : RequestConfig<GenerateWorkItemPreviewsApiModel> {
+        val localVariableBody = generateWorkItemPreviewsApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/projects/{projectId}/work-items/previews".replace("{"+"projectId"+"}", encodeURIComponent(projectId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
     }
 
     /**
@@ -496,7 +651,7 @@ open class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client
     /**
      * GET /api/v2/projects/{projectId}/workItems/tags
      * Get WorkItems Tags
-     *  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+     *   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
      * @return kotlin.collections.List<TagShortApiResult>
@@ -529,7 +684,7 @@ open class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client
     /**
      * GET /api/v2/projects/{projectId}/workItems/tags
      * Get WorkItems Tags
-     *  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+     *   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
      * @param projectId Project internal (UUID) identifier
      * @param isDeleted  (optional)
      * @return ApiResponse<kotlin.collections.List<TagShortApiResult>?>
@@ -577,7 +732,7 @@ open class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client
     /**
      * GET /api/v2/projects/{projectId}/workItems
      * Get project work items
-     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+     *   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/deleted work items (optional, default to false)
      * @param tagNames List of tags to filter by (optional)
@@ -619,7 +774,7 @@ open class ProjectWorkItemsApi(basePath: kotlin.String = defaultBasePath, client
     /**
      * GET /api/v2/projects/{projectId}/workItems
      * Get project work items
-     *  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+     *   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param isDeleted If result must consist of only actual/deleted work items (optional, default to false)
      * @param tagNames List of tags to filter by (optional)

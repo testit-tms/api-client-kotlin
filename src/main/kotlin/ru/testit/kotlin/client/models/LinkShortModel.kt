@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.LinkType
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,9 +24,9 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param id 
- * @param title 
- * @param url 
  * @param type 
+ * @param url 
+ * @param title 
  */
 
 
@@ -34,14 +35,14 @@ data class LinkShortModel (
     @Json(name = "id")
     val id: java.util.UUID,
 
-    @Json(name = "title")
-    val title: kotlin.String,
+    @Json(name = "type")
+    val type: LinkType,
 
     @Json(name = "url")
     val url: kotlin.String,
 
-    @Json(name = "type")
-    val type: kotlin.String? = null
+    @Json(name = "title")
+    val title: kotlin.String? = null
 
 ) {
 

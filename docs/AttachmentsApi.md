@@ -48,9 +48,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -104,9 +107,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -151,9 +157,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -195,9 +204,12 @@ This endpoint does not need any parameter.
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -210,7 +222,7 @@ Configure Bearer or PrivateToken:
 
 Upload new attachment file
 
-File size is restricted to 50 MB (52 428 800 bytes)
+File size is restricted to 1 GB (1 073 741 824 bytes)
 
 ### Example
 ```kotlin
@@ -244,9 +256,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 

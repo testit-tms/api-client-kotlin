@@ -5,7 +5,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **tagNames** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Collection of tags |  [optional] |
-| **entityTypes** | [**kotlin.collections.Set&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60; |  [optional] |
+| **entityTypes** | [**kotlin.collections.Set&lt;WorkItemTypeModel&gt;**](WorkItemTypeModel.md) | Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60; |  [optional] |
 | **nameOrId** | **kotlin.String** | Name or identifier (UUID) of work item |  [optional] |
 | **includeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be included in result regardless of filtering |  [optional] |
 | **excludeIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of work items which need to be excluded from result regardless of filtering |  [optional] |
@@ -21,7 +21,7 @@
 | **states** | [**kotlin.collections.Set&lt;WorkItemStates&gt;**](WorkItemStates.md) | Collection of states of work item |  [optional] |
 | **priorities** | [**kotlin.collections.Set&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Collection of priorities of work item |  [optional] |
 | **sourceTypes** | [**kotlin.collections.Set&lt;WorkItemSourceTypeModel&gt;**](WorkItemSourceTypeModel.md) | Collection of priorities of work item |  [optional] |
-| **types** | [**kotlin.collections.Set&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item |  [optional] |
+| **types** | [**kotlin.collections.Set&lt;WorkItemTypeModel&gt;**](WorkItemTypeModel.md) | Collection of types of work item |  [optional] |
 | **createdDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for |  [optional] |
 | **modifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of last modification date to search for |  [optional] |
 | **duration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a work item duration range to search for |  [optional] |

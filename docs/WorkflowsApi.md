@@ -51,9 +51,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -98,9 +101,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -148,9 +154,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -159,7 +168,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkflowsIdProjectsSearchPost"></a>
 # **apiV2WorkflowsIdProjectsSearchPost**
-> WorkflowProjectApiResultReply apiV2WorkflowsIdProjectsSearchPost(id, searchWorkflowProjectsApiModel)
+> WorkflowProjectApiResultIReply apiV2WorkflowsIdProjectsSearchPost(id, searchWorkflowProjectsApiModel)
 
 
 
@@ -173,7 +182,7 @@ val apiInstance = WorkflowsApi()
 val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
 val searchWorkflowProjectsApiModel : SearchWorkflowProjectsApiModel =  // SearchWorkflowProjectsApiModel | 
 try {
-    val result : WorkflowProjectApiResultReply = apiInstance.apiV2WorkflowsIdProjectsSearchPost(id, searchWorkflowProjectsApiModel)
+    val result : WorkflowProjectApiResultIReply = apiInstance.apiV2WorkflowsIdProjectsSearchPost(id, searchWorkflowProjectsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkflowsApi#apiV2WorkflowsIdProjectsSearchPost")
@@ -192,14 +201,17 @@ try {
 
 ### Return type
 
-[**WorkflowProjectApiResultReply**](WorkflowProjectApiResultReply.md)
+[**WorkflowProjectApiResultIReply**](WorkflowProjectApiResultIReply.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -245,9 +257,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -292,9 +307,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -339,9 +357,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -350,7 +371,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2WorkflowsSearchPost"></a>
 # **apiV2WorkflowsSearchPost**
-> WorkflowShortApiResultReply apiV2WorkflowsSearchPost(searchWorkflowsApiModel)
+> WorkflowShortApiResultIReply apiV2WorkflowsSearchPost(searchWorkflowsApiModel)
 
 
 
@@ -363,7 +384,7 @@ Configure Bearer or PrivateToken:
 val apiInstance = WorkflowsApi()
 val searchWorkflowsApiModel : SearchWorkflowsApiModel =  // SearchWorkflowsApiModel | 
 try {
-    val result : WorkflowShortApiResultReply = apiInstance.apiV2WorkflowsSearchPost(searchWorkflowsApiModel)
+    val result : WorkflowShortApiResultIReply = apiInstance.apiV2WorkflowsSearchPost(searchWorkflowsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WorkflowsApi#apiV2WorkflowsSearchPost")
@@ -381,14 +402,17 @@ try {
 
 ### Return type
 
-[**WorkflowShortApiResultReply**](WorkflowShortApiResultReply.md)
+[**WorkflowShortApiResultIReply**](WorkflowShortApiResultIReply.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 

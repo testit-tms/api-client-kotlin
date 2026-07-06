@@ -26,10 +26,14 @@ import com.squareup.moshi.JsonClass
  * @param rerunEnabled Auto rerun enabled
  * @param rerunAttemptsCount Auto rerun attempt count
  * @param workItemUpdatingFields Autotest to work item updating fields
+ * @param archiveOutdatedTestRunsEnabled Indicates whether archiving of outdated test runs is enabled for the project.
+ * @param testRunsArchiveLimitEnabled Indicates whether a limit is enforced on the number of archived test runs.
  * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" sets automatically
  * @param flakyStabilityPercentage Stability percentage for autotest flaky computing
  * @param flakyTestRunCount Last test run count for autotest flaky computing
  * @param workItemUpdatingEnabled Autotest to work item updating enabled
+ * @param testRunsRetentionPeriodDays  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings
+ * @param maxActiveTestRunsCount Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived
  */
 
 
@@ -47,6 +51,14 @@ data class AutoTestProjectSettingsApiModel (
     @Json(name = "workItemUpdatingFields")
     val workItemUpdatingFields: WorkItemUpdatingFieldsApiModel,
 
+    /* Indicates whether archiving of outdated test runs is enabled for the project. */
+    @Json(name = "archiveOutdatedTestRunsEnabled")
+    val archiveOutdatedTestRunsEnabled: kotlin.Boolean,
+
+    /* Indicates whether a limit is enforced on the number of archived test runs. */
+    @Json(name = "testRunsArchiveLimitEnabled")
+    val testRunsArchiveLimitEnabled: kotlin.Boolean,
+
     /* Indicates if the status \"Flaky/Stable\" sets automatically */
     @Json(name = "isFlakyAuto")
     val isFlakyAuto: kotlin.Boolean? = false,
@@ -61,7 +73,15 @@ data class AutoTestProjectSettingsApiModel (
 
     /* Autotest to work item updating enabled */
     @Json(name = "workItemUpdatingEnabled")
-    val workItemUpdatingEnabled: kotlin.Boolean? = false
+    val workItemUpdatingEnabled: kotlin.Boolean? = false,
+
+    /*  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings */
+    @Json(name = "testRunsRetentionPeriodDays")
+    val testRunsRetentionPeriodDays: kotlin.Int? = 180,
+
+    /* Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived */
+    @Json(name = "maxActiveTestRunsCount")
+    val maxActiveTestRunsCount: kotlin.Int? = 500
 
 ) {
 

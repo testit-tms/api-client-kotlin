@@ -15,6 +15,7 @@
 | 5.5     | 0.7.8-TMS-5.5   |
 | 5.6     | 0.8.0-TMS-5.6   |
 | 5.7     | 0.9.4-TMS-5.7   |
+| 5.8     | 0.10.0-TMS-5.8  |
 | Cloud   | 0.9.4 +         |
 
 1. For current versions, see the releases tab. 
@@ -89,6 +90,7 @@ All URIs are relative to *http://localhost*
 
 | Class | Method | HTTP request | Description |
 | ------------ | ------------- | ------------- | ------------- |
+| *AIServicesAPIApi* | [**apiV2ExternalServicesIdAiModelsPost**](docs/AIServicesAPIApi.md#apiv2externalservicesidaimodelspost) | **POST** /api/v2/external-services/{id}/ai/models | Ask for models with inquiry filter, cached |
 | *AttachmentsApi* | [**apiV2AttachmentsIdDelete**](docs/AttachmentsApi.md#apiv2attachmentsiddelete) | **DELETE** /api/v2/attachments/{id} | Delete attachment file |
 | *AttachmentsApi* | [**apiV2AttachmentsIdGet**](docs/AttachmentsApi.md#apiv2attachmentsidget) | **GET** /api/v2/attachments/{id} | Download attachment file |
 | *AttachmentsApi* | [**apiV2AttachmentsIdMetadataGet**](docs/AttachmentsApi.md#apiv2attachmentsidmetadataget) | **GET** /api/v2/attachments/{id}/metadata | Get attachment metadata |
@@ -148,6 +150,21 @@ All URIs are relative to *http://localhost*
 | *CustomAttributesApi* | [**apiV2CustomAttributesIdGet**](docs/CustomAttributesApi.md#apiv2customattributesidget) | **GET** /api/v2/customAttributes/{id} | Get attribute |
 | *CustomAttributesApi* | [**apiV2CustomAttributesSearchPost**](docs/CustomAttributesApi.md#apiv2customattributessearchpost) | **POST** /api/v2/customAttributes/search | Search for attributes |
 | *ExternalIssuesApi* | [**apiV2ExternalIssuesSuggestionsPost**](docs/ExternalIssuesApi.md#apiv2externalissuessuggestionspost) | **POST** /api/v2/external-issues/suggestions | Returns list of suggestions from available external issues |
+| *ExternalServicesApi* | [**apiV2ExternalServicesMetadataGet**](docs/ExternalServicesApi.md#apiv2externalservicesmetadataget) | **GET** /api/v2/external-services/metadata | Retrieves the metadata for all available external services |
+| *FailureCategoriesApi* | [**apiV2AutotestsFailureCategoriesGroupingSearchPost**](docs/FailureCategoriesApi.md#apiv2autotestsfailurecategoriesgroupingsearchpost) | **POST** /api/v2/autotests/failure-categories/grouping-search | Get failure categories with support for filtering, sorting and grouping |
+| *FailureCategoriesApi* | [**apiV2AutotestsFailureCategoriesIdDelete**](docs/FailureCategoriesApi.md#apiv2autotestsfailurecategoriesiddelete) | **DELETE** /api/v2/autotests/failure-categories/{id} | Delete failure category |
+| *FailureCategoriesApi* | [**apiV2AutotestsFailureCategoriesIdGet**](docs/FailureCategoriesApi.md#apiv2autotestsfailurecategoriesidget) | **GET** /api/v2/autotests/failure-categories/{id} | Get failure category by ID |
+| *FailureCategoriesApi* | [**apiV2AutotestsFailureCategoriesNameNameExistsGet**](docs/FailureCategoriesApi.md#apiv2autotestsfailurecategoriesnamenameexistsget) | **GET** /api/v2/autotests/failure-categories/name/{name}/exists | Check failure category with the specified name already exists |
+| *FailureCategoriesApi* | [**apiV2AutotestsFailureCategoriesPost**](docs/FailureCategoriesApi.md#apiv2autotestsfailurecategoriespost) | **POST** /api/v2/autotests/failure-categories | Create failure category |
+| *FailureCategoriesApi* | [**apiV2AutotestsFailureCategoriesPut**](docs/FailureCategoriesApi.md#apiv2autotestsfailurecategoriesput) | **PUT** /api/v2/autotests/failure-categories | Update failure category |
+| *FailureCategoriesApi* | [**apiV2AutotestsFailureCategoriesSearchPost**](docs/FailureCategoriesApi.md#apiv2autotestsfailurecategoriessearchpost) | **POST** /api/v2/autotests/failure-categories/search |  |
+| *FailureCategoriesApi* | [**apiV2AutotestsResultReasonsGroupingSearchPost**](docs/FailureCategoriesApi.md#apiv2autotestsresultreasonsgroupingsearchpost) | **POST** /api/v2/autotests/resultReasons/grouping-search | Get failure categories with support for filtering, sorting and grouping |
+| *FailureCategoriesApi* | [**apiV2AutotestsResultReasonsIdDelete**](docs/FailureCategoriesApi.md#apiv2autotestsresultreasonsiddelete) | **DELETE** /api/v2/autotests/resultReasons/{id} | Delete failure category |
+| *FailureCategoriesApi* | [**apiV2AutotestsResultReasonsIdGet**](docs/FailureCategoriesApi.md#apiv2autotestsresultreasonsidget) | **GET** /api/v2/autotests/resultReasons/{id} | Get failure category by ID |
+| *FailureCategoriesApi* | [**apiV2AutotestsResultReasonsNameNameExistsGet**](docs/FailureCategoriesApi.md#apiv2autotestsresultreasonsnamenameexistsget) | **GET** /api/v2/autotests/resultReasons/name/{name}/exists | Check failure category with the specified name already exists |
+| *FailureCategoriesApi* | [**apiV2AutotestsResultReasonsPost**](docs/FailureCategoriesApi.md#apiv2autotestsresultreasonspost) | **POST** /api/v2/autotests/resultReasons | Create failure category |
+| *FailureCategoriesApi* | [**apiV2AutotestsResultReasonsPut**](docs/FailureCategoriesApi.md#apiv2autotestsresultreasonsput) | **PUT** /api/v2/autotests/resultReasons | Update failure category |
+| *FailureCategoriesApi* | [**apiV2AutotestsResultReasonsSearchPost**](docs/FailureCategoriesApi.md#apiv2autotestsresultreasonssearchpost) | **POST** /api/v2/autotests/resultReasons/search |  |
 | *NotificationsApi* | [**apiV2NotificationsCountGet**](docs/NotificationsApi.md#apiv2notificationscountget) | **GET** /api/v2/notifications/count | Get unread Notifications total in last 7 days |
 | *NotificationsApi* | [**apiV2NotificationsGet**](docs/NotificationsApi.md#apiv2notificationsget) | **GET** /api/v2/notifications | Get all Notifications for current User |
 | *NotificationsApi* | [**apiV2NotificationsIdReadPost**](docs/NotificationsApi.md#apiv2notificationsidreadpost) | **POST** /api/v2/notifications/{id}/read | Set Notification as read |
@@ -179,6 +196,17 @@ All URIs are relative to *http://localhost*
 | *ProjectAttributesApi* | [**searchAttributesInProject**](docs/ProjectAttributesApi.md#searchattributesinproject) | **POST** /api/v2/projects/{projectId}/attributes/search | Search for attributes used in the project |
 | *ProjectAttributesApi* | [**updateProjectsAttribute**](docs/ProjectAttributesApi.md#updateprojectsattribute) | **PUT** /api/v2/projects/{projectId}/attributes | Edit attribute of the project |
 | *ProjectConfigurationsApi* | [**getConfigurationsByProjectId**](docs/ProjectConfigurationsApi.md#getconfigurationsbyprojectid) | **GET** /api/v2/projects/{projectId}/configurations | Get project configurations |
+| *ProjectExternalServicesApi* | [**apiV2ProjectsIdExternalServicesExternalServiceIdDelete**](docs/ProjectExternalServicesApi.md#apiv2projectsidexternalservicesexternalserviceiddelete) | **DELETE** /api/v2/projects/{id}/external-services/{externalServiceId} | Disable an external service |
+| *ProjectExternalServicesApi* | [**apiV2ProjectsIdExternalServicesExternalServiceIdGet**](docs/ProjectExternalServicesApi.md#apiv2projectsidexternalservicesexternalserviceidget) | **GET** /api/v2/projects/{id}/external-services/{externalServiceId} | Retrieves settings of an external service |
+| *ProjectExternalServicesApi* | [**apiV2ProjectsIdExternalServicesExternalServiceIdPatch**](docs/ProjectExternalServicesApi.md#apiv2projectsidexternalservicesexternalserviceidpatch) | **PATCH** /api/v2/projects/{id}/external-services/{externalServiceId} | Replaces one active external service with another |
+| *ProjectExternalServicesApi* | [**apiV2ProjectsIdExternalServicesExternalServiceIdPut**](docs/ProjectExternalServicesApi.md#apiv2projectsidexternalservicesexternalserviceidput) | **PUT** /api/v2/projects/{id}/external-services/{externalServiceId} | Enable an external service |
+| *ProjectExternalServicesApi* | [**apiV2ProjectsIdExternalServicesGet**](docs/ProjectExternalServicesApi.md#apiv2projectsidexternalservicesget) | **GET** /api/v2/projects/{id}/external-services | Retrieves information about external services, including their integration status (enabled or not) |
+| *ProjectExternalServicesApi* | [**apiV2ProjectsIdExternalServicesIssuesSearchPost**](docs/ProjectExternalServicesApi.md#apiv2projectsidexternalservicesissuessearchpost) | **POST** /api/v2/projects/{id}/external-services/issues/search | Searches for external issues using enabled external services in project |
+| *ProjectFailureCategoriesApi* | [**apiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPost**](docs/ProjectFailureCategoriesApi.md#apiv2projectsprojectidautotestsfailurecategoriesgroupingsearchpost) | **POST** /api/v2/projects/{projectId}/autotests/failure-categories/grouping-search | Get failure categories with support for filtering, sorting and grouping |
+| *ProjectFailureCategoriesApi* | [**apiV2ProjectsProjectIdAutotestsFailureCategoriesIdDelete**](docs/ProjectFailureCategoriesApi.md#apiv2projectsprojectidautotestsfailurecategoriesiddelete) | **DELETE** /api/v2/projects/{projectId}/autotests/failure-categories/{id} | Delete failure category |
+| *ProjectFailureCategoriesApi* | [**apiV2ProjectsProjectIdAutotestsFailureCategoriesIdGet**](docs/ProjectFailureCategoriesApi.md#apiv2projectsprojectidautotestsfailurecategoriesidget) | **GET** /api/v2/projects/{projectId}/autotests/failure-categories/{id} | Get failure category by ID |
+| *ProjectFailureCategoriesApi* | [**apiV2ProjectsProjectIdAutotestsFailureCategoriesPost**](docs/ProjectFailureCategoriesApi.md#apiv2projectsprojectidautotestsfailurecategoriespost) | **POST** /api/v2/projects/{projectId}/autotests/failure-categories | Create failure category |
+| *ProjectFailureCategoriesApi* | [**apiV2ProjectsProjectIdAutotestsFailureCategoriesPut**](docs/ProjectFailureCategoriesApi.md#apiv2projectsprojectidautotestsfailurecategoriesput) | **PUT** /api/v2/projects/{projectId}/autotests/failure-categories | Update failure category |
 | *ProjectSectionsApi* | [**getSectionsByProjectId**](docs/ProjectSectionsApi.md#getsectionsbyprojectid) | **GET** /api/v2/projects/{projectId}/sections | Get project sections |
 | *ProjectSettingsApi* | [**apiV2ProjectsProjectIdSettingsAutotestsPost**](docs/ProjectSettingsApi.md#apiv2projectsprojectidsettingsautotestspost) | **POST** /api/v2/projects/{projectId}/settings/autotests | Set autotest project settings. |
 | *ProjectSettingsApi* | [**getAutotestProjectSettings**](docs/ProjectSettingsApi.md#getautotestprojectsettings) | **GET** /api/v2/projects/{projectId}/settings/autotests | Get autotest project settings. |
@@ -187,14 +215,19 @@ All URIs are relative to *http://localhost*
 | *ProjectTestPlanAttributesApi* | [**getCustomAttributeTestPlanProjectRelations**](docs/ProjectTestPlanAttributesApi.md#getcustomattributetestplanprojectrelations) | **GET** /api/v2/projects/{projectId}/testPlans/attributes | Get project's test plan attributes |
 | *ProjectTestPlanAttributesApi* | [**searchTestPlanAttributesInProject**](docs/ProjectTestPlanAttributesApi.md#searchtestplanattributesinproject) | **POST** /api/v2/projects/{projectId}/testPlans/attributes/search | Search for attributes used in the project test plans |
 | *ProjectTestPlanAttributesApi* | [**updateCustomAttributeTestPlanProjectRelations**](docs/ProjectTestPlanAttributesApi.md#updatecustomattributetestplanprojectrelations) | **PUT** /api/v2/projects/{projectId}/testPlans/attributes | Update attribute of project's test plans |
+| *ProjectTestPlanTestPointsApi* | [**apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost**](docs/ProjectTestPlanTestPointsApi.md#apiv2projectsprojectidtestplanstestplanidtestpointsanalyticspost) | **POST** /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/analytics | Get test points analytics. |
 | *ProjectTestPlanTestPointsApi* | [**apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost**](docs/ProjectTestPlanTestPointsApi.md#apiv2projectsprojectidtestplanstestplanidtestpointsautotestsrerunpost) | **POST** /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/rerun | Rerun autotests. |
 | *ProjectTestPlanTestPointsApi* | [**apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost**](docs/ProjectTestPlanTestPointsApi.md#apiv2projectsprojectidtestplanstestplanidtestpointsautotestsrunpost) | **POST** /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/run | Run autotests. |
+| *ProjectTestPlanTestPointsApi* | [**apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost**](docs/ProjectTestPlanTestPointsApi.md#apiv2projectsprojectidtestplanstestplanidtestpointsgroupingsearchpost) | **POST** /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/grouping-search | Search test points in test plan. |
+| *ProjectTestPlanTestPointsApi* | [**apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost**](docs/ProjectTestPlanTestPointsApi.md#apiv2projectsprojectidtestplanstestplanidtestpointstesterspost) | **POST** /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/testers | Distribute test points between the users. |
 | *ProjectTestPlansApi* | [**apiV2ProjectsProjectIdTestPlansAnalyticsGet**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplansanalyticsget) | **GET** /api/v2/projects/{projectId}/testPlans/analytics | Get TestPlans analytics |
 | *ProjectTestPlansApi* | [**apiV2ProjectsProjectIdTestPlansDeleteBulkPost**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplansdeletebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/delete/bulk | Delete multiple test plans |
 | *ProjectTestPlansApi* | [**apiV2ProjectsProjectIdTestPlansNameExistsGet**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplansnameexistsget) | **GET** /api/v2/projects/{projectId}/testPlans/{name}/exists | Checks if TestPlan exists with the specified name exists for the project |
 | *ProjectTestPlansApi* | [**apiV2ProjectsProjectIdTestPlansPurgeBulkPost**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplanspurgebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/purge/bulk | Permanently delete multiple archived test plans |
 | *ProjectTestPlansApi* | [**apiV2ProjectsProjectIdTestPlansRestoreBulkPost**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplansrestorebulkpost) | **POST** /api/v2/projects/{projectId}/testPlans/restore/bulk | Restore multiple test plans |
 | *ProjectTestPlansApi* | [**apiV2ProjectsProjectIdTestPlansSearchPost**](docs/ProjectTestPlansApi.md#apiv2projectsprojectidtestplanssearchpost) | **POST** /api/v2/projects/{projectId}/testPlans/search | Get Project TestPlans with analytics |
+| *ProjectWorkItemsApi* | [**apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemspreviewsbulkpost) | **POST** /api/v2/projects/{projectId}/work-items/previews/bulk |  |
+| *ProjectWorkItemsApi* | [**apiV2ProjectsProjectIdWorkItemsPreviewsPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemspreviewspost) | **POST** /api/v2/projects/{projectId}/work-items/previews |  |
 | *ProjectWorkItemsApi* | [**apiV2ProjectsProjectIdWorkItemsSearchGroupedPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchgroupedpost) | **POST** /api/v2/projects/{projectId}/workItems/search/grouped | Search for work items and group results by attribute |
 | *ProjectWorkItemsApi* | [**apiV2ProjectsProjectIdWorkItemsSearchIdPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchidpost) | **POST** /api/v2/projects/{projectId}/workItems/search/id | Search for work items and extract IDs only |
 | *ProjectWorkItemsApi* | [**apiV2ProjectsProjectIdWorkItemsSearchPost**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchpost) | **POST** /api/v2/projects/{projectId}/workItems/search | Search for work items |
@@ -202,7 +235,6 @@ All URIs are relative to *http://localhost*
 | *ProjectWorkItemsApi* | [**apiV2ProjectsProjectIdWorkItemsTagsGet**](docs/ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemstagsget) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags |
 | *ProjectWorkItemsApi* | [**getWorkItemsByProjectId**](docs/ProjectWorkItemsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items |
 | *ProjectsApi* | [**addGlobalAttributesToProject**](docs/ProjectsApi.md#addglobalattributestoproject) | **POST** /api/v2/projects/{id}/globalAttributes | Add global attributes to project |
-| *ProjectsApi* | [**apiV2ProjectsDemoPost**](docs/ProjectsApi.md#apiv2projectsdemopost) | **POST** /api/v2/projects/demo |  |
 | *ProjectsApi* | [**apiV2ProjectsIdDelete**](docs/ProjectsApi.md#apiv2projectsiddelete) | **DELETE** /api/v2/projects/{id} | Archive project |
 | *ProjectsApi* | [**apiV2ProjectsIdFailureClassesGet**](docs/ProjectsApi.md#apiv2projectsidfailureclassesget) | **GET** /api/v2/projects/{id}/failureClasses | Get failure classes |
 | *ProjectsApi* | [**apiV2ProjectsIdFavoritePut**](docs/ProjectsApi.md#apiv2projectsidfavoriteput) | **PUT** /api/v2/projects/{id}/favorite | Mark Project as favorite |
@@ -226,7 +258,7 @@ All URIs are relative to *http://localhost*
 | *ProjectsApi* | [**getTestPlansByProjectId**](docs/ProjectsApi.md#gettestplansbyprojectid) | **GET** /api/v2/projects/{id}/testPlans | Get project test plans |
 | *ProjectsApi* | [**getTestRunsByProjectId**](docs/ProjectsApi.md#gettestrunsbyprojectid) | **GET** /api/v2/projects/{id}/testRuns | Get project test runs |
 | *ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateproject) | **PUT** /api/v2/projects | Update project |
-| *SearchApi* | [**apiV2SearchGlobalSearchPost**](docs/SearchApi.md#apiv2searchglobalsearchpost) | **POST** /api/v2/search/globalSearch |  |
+| *RolesApi* | [**apiV2RolesGet**](docs/RolesApi.md#apiv2rolesget) | **GET** /api/v2/roles |  |
 | *SectionsApi* | [**apiV2SectionsIdPatch**](docs/SectionsApi.md#apiv2sectionsidpatch) | **PATCH** /api/v2/sections/{id} | Patch section |
 | *SectionsApi* | [**createSection**](docs/SectionsApi.md#createsection) | **POST** /api/v2/sections | Create section |
 | *SectionsApi* | [**deleteSection**](docs/SectionsApi.md#deletesection) | **DELETE** /api/v2/sections/{id} | Delete section |
@@ -282,6 +314,7 @@ All URIs are relative to *http://localhost*
 | *TestResultsApi* | [**apiV2TestResultsIdAttachmentsAttachmentIdPut**](docs/TestResultsApi.md#apiv2testresultsidattachmentsattachmentidput) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} | Attach file to the test result |
 | *TestResultsApi* | [**apiV2TestResultsIdAttachmentsInfoGet**](docs/TestResultsApi.md#apiv2testresultsidattachmentsinfoget) | **GET** /api/v2/testResults/{id}/attachments/info | Get test result attachments meta-information |
 | *TestResultsApi* | [**apiV2TestResultsIdGet**](docs/TestResultsApi.md#apiv2testresultsidget) | **GET** /api/v2/testResults/{id} | Get test result by ID |
+| *TestResultsApi* | [**apiV2TestResultsIdPatch**](docs/TestResultsApi.md#apiv2testresultsidpatch) | **PATCH** /api/v2/testResults/{id} | Patch test result by ID |
 | *TestResultsApi* | [**apiV2TestResultsIdPut**](docs/TestResultsApi.md#apiv2testresultsidput) | **PUT** /api/v2/testResults/{id} | Edit test result by ID |
 | *TestResultsApi* | [**apiV2TestResultsIdRerunsGet**](docs/TestResultsApi.md#apiv2testresultsidrerunsget) | **GET** /api/v2/testResults/{id}/reruns | Get reruns |
 | *TestResultsApi* | [**apiV2TestResultsSearchPost**](docs/TestResultsApi.md#apiv2testresultssearchpost) | **POST** /api/v2/testResults/search | Search for test results |
@@ -294,6 +327,7 @@ All URIs are relative to *http://localhost*
 | *TestRunsApi* | [**apiV2TestRunsDelete**](docs/TestRunsApi.md#apiv2testrunsdelete) | **DELETE** /api/v2/testRuns | Delete multiple test runs |
 | *TestRunsApi* | [**apiV2TestRunsIdAutoTestsNamespacesGet**](docs/TestRunsApi.md#apiv2testrunsidautotestsnamespacesget) | **GET** /api/v2/testRuns/{id}/autoTestsNamespaces | Get autotest classes and namespaces in test run |
 | *TestRunsApi* | [**apiV2TestRunsIdDelete**](docs/TestRunsApi.md#apiv2testrunsiddelete) | **DELETE** /api/v2/testRuns/{id} | Delete test run |
+| *TestRunsApi* | [**apiV2TestRunsIdPatch**](docs/TestRunsApi.md#apiv2testrunsidpatch) | **PATCH** /api/v2/testRuns/{id} | Patch test run |
 | *TestRunsApi* | [**apiV2TestRunsIdPurgePost**](docs/TestRunsApi.md#apiv2testrunsidpurgepost) | **POST** /api/v2/testRuns/{id}/purge | Permanently delete test run from archive |
 | *TestRunsApi* | [**apiV2TestRunsIdRerunsPost**](docs/TestRunsApi.md#apiv2testrunsidrerunspost) | **POST** /api/v2/testRuns/{id}/reruns | Manual autotests rerun in test run |
 | *TestRunsApi* | [**apiV2TestRunsIdRestorePost**](docs/TestRunsApi.md#apiv2testrunsidrestorepost) | **POST** /api/v2/testRuns/{id}/restore | Restore test run from the archive |
@@ -335,7 +369,14 @@ All URIs are relative to *http://localhost*
 | *TestSuitesApi* | [**getTestSuiteById**](docs/TestSuitesApi.md#gettestsuitebyid) | **GET** /api/v2/testSuites/{id} | Get TestSuite by Id |
 | *TestSuitesApi* | [**searchWorkItems**](docs/TestSuitesApi.md#searchworkitems) | **POST** /api/v2/testSuites/{id}/workItems/search | Search WorkItems |
 | *TestSuitesApi* | [**setConfigurationsByTestSuiteId**](docs/TestSuitesApi.md#setconfigurationsbytestsuiteid) | **POST** /api/v2/testSuites/{id}/configurations | Set Configurations By TestSuite Id |
+| *UserRoleAssignmentsApi* | [**apiV2UsersUserIdRolesRoleIdDelete**](docs/UserRoleAssignmentsApi.md#apiv2usersuseridrolesroleiddelete) | **DELETE** /api/v2/users/{userId}/roles/{roleId} |  |
+| *UserRoleAssignmentsApi* | [**apiV2UsersUserIdRolesRoleIdPost**](docs/UserRoleAssignmentsApi.md#apiv2usersuseridrolesroleidpost) | **POST** /api/v2/users/{userId}/roles/{roleId} |  |
+| *UserStoragesApi* | [**apiV2UserStoragesResourceGet**](docs/UserStoragesApi.md#apiv2userstoragesresourceget) | **GET** /api/v2/user-storages/{resource} |  |
+| *UserStoragesApi* | [**apiV2UserStoragesResourcePost**](docs/UserStoragesApi.md#apiv2userstoragesresourcepost) | **POST** /api/v2/user-storages/{resource} |  |
 | *UsersApi* | [**apiV2UsersExistsGet**](docs/UsersApi.md#apiv2usersexistsget) | **GET** /api/v2/users/exists |  |
+| *UsersApi* | [**apiV2UsersPost**](docs/UsersApi.md#apiv2userspost) | **POST** /api/v2/users |  |
+| *UsersApi* | [**apiV2UsersUserIdDelete**](docs/UsersApi.md#apiv2usersuseriddelete) | **DELETE** /api/v2/users/{userId} |  |
+| *UsersApi* | [**apiV2UsersUserIdGet**](docs/UsersApi.md#apiv2usersuseridget) | **GET** /api/v2/users/{userId} |  |
 | *WebhooksApi* | [**apiV2WebhooksDelete**](docs/WebhooksApi.md#apiv2webhooksdelete) | **DELETE** /api/v2/webhooks |  |
 | *WebhooksApi* | [**apiV2WebhooksGet**](docs/WebhooksApi.md#apiv2webhooksget) | **GET** /api/v2/webhooks | Get all webhooks |
 | *WebhooksApi* | [**apiV2WebhooksIdDelete**](docs/WebhooksApi.md#apiv2webhooksiddelete) | **DELETE** /api/v2/webhooks/{id} | Delete webhook by ID |
@@ -356,11 +397,13 @@ All URIs are relative to *http://localhost*
 | *WorkItemsApi* | [**apiV2WorkItemsIdLikePost**](docs/WorkItemsApi.md#apiv2workitemsidlikepost) | **POST** /api/v2/workItems/{id}/like | Set like to WorkItem |
 | *WorkItemsApi* | [**apiV2WorkItemsIdLikesCountGet**](docs/WorkItemsApi.md#apiv2workitemsidlikescountget) | **GET** /api/v2/workItems/{id}/likes/count | Get likes count of WorkItem |
 | *WorkItemsApi* | [**apiV2WorkItemsIdLikesGet**](docs/WorkItemsApi.md#apiv2workitemsidlikesget) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem |
+| *WorkItemsApi* | [**apiV2WorkItemsIdPatch**](docs/WorkItemsApi.md#apiv2workitemsidpatch) | **PATCH** /api/v2/workItems/{id} | Patch Test Case, Checklist or Shared Step |
 | *WorkItemsApi* | [**apiV2WorkItemsIdTestResultsHistoryGet**](docs/WorkItemsApi.md#apiv2workitemsidtestresultshistoryget) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem |
 | *WorkItemsApi* | [**apiV2WorkItemsIdVersionVersionIdActualPost**](docs/WorkItemsApi.md#apiv2workitemsidversionversionidactualpost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual |
 | *WorkItemsApi* | [**apiV2WorkItemsLinksUrlsSearchPost**](docs/WorkItemsApi.md#apiv2workitemslinksurlssearchpost) | **POST** /api/v2/workItems/links/urls/search |  |
 | *WorkItemsApi* | [**apiV2WorkItemsMovePost**](docs/WorkItemsApi.md#apiv2workitemsmovepost) | **POST** /api/v2/workItems/move | Move WorkItem to another section |
 | *WorkItemsApi* | [**apiV2WorkItemsPost**](docs/WorkItemsApi.md#apiv2workitemspost) | **POST** /api/v2/workItems | Creates work item |
+| *WorkItemsApi* | [**apiV2WorkItemsPut**](docs/WorkItemsApi.md#apiv2workitemsput) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 | *WorkItemsApi* | [**apiV2WorkItemsSearchPost**](docs/WorkItemsApi.md#apiv2workitemssearchpost) | **POST** /api/v2/workItems/search | Search for work items |
 | *WorkItemsApi* | [**apiV2WorkItemsSharedStepIdReferencesSectionsPost**](docs/WorkItemsApi.md#apiv2workitemssharedstepidreferencessectionspost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections |
 | *WorkItemsApi* | [**apiV2WorkItemsSharedStepIdReferencesWorkItemsPost**](docs/WorkItemsApi.md#apiv2workitemssharedstepidreferencesworkitemspost) | **POST** /api/v2/workItems/{sharedStepId}/references/workItems | Get SharedStep references in work items |
@@ -374,7 +417,6 @@ All URIs are relative to *http://localhost*
 | *WorkItemsApi* | [**getWorkItemVersions**](docs/WorkItemsApi.md#getworkitemversions) | **GET** /api/v2/workItems/{id}/versions | Get WorkItem versions |
 | *WorkItemsApi* | [**purgeWorkItem**](docs/WorkItemsApi.md#purgeworkitem) | **POST** /api/v2/workItems/{id}/purge | Permanently delete test case, checklist or shared steps from archive |
 | *WorkItemsApi* | [**restoreWorkItem**](docs/WorkItemsApi.md#restoreworkitem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
-| *WorkItemsApi* | [**updateWorkItem**](docs/WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 | *WorkItemsCommentsApi* | [**apiV2WorkItemsCommentsCommentIdDelete**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentscommentiddelete) | **DELETE** /api/v2/workItems/comments/{commentId} | Delete WorkItem comment |
 | *WorkItemsCommentsApi* | [**apiV2WorkItemsCommentsPost**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentspost) | **POST** /api/v2/workItems/comments | Create WorkItem comment |
 | *WorkItemsCommentsApi* | [**apiV2WorkItemsCommentsPut**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment |
@@ -394,10 +436,14 @@ All URIs are relative to *http://localhost*
 ## Documentation for Models
 
  - [ru.testit.kotlin.client.models.AIServiceModelApiResult](docs/AIServiceModelApiResult.md)
+ - [ru.testit.kotlin.client.models.AIServiceModelApiResultGroup](docs/AIServiceModelApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.AIServiceModelApiResultGroupedReply](docs/AIServiceModelApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.AIServiceModelApiResultIReply](docs/AIServiceModelApiResultIReply.md)
  - [ru.testit.kotlin.client.models.AIServiceModelApiResultReply](docs/AIServiceModelApiResultReply.md)
  - [ru.testit.kotlin.client.models.ActionUpdate](docs/ActionUpdate.md)
  - [ru.testit.kotlin.client.models.ApiExternalServiceCategory](docs/ApiExternalServiceCategory.md)
  - [ru.testit.kotlin.client.models.AssignAttachmentApiModel](docs/AssignAttachmentApiModel.md)
+ - [ru.testit.kotlin.client.models.AssignAutoTestCaseIdApiModel](docs/AssignAutoTestCaseIdApiModel.md)
  - [ru.testit.kotlin.client.models.AssignIterationApiModel](docs/AssignIterationApiModel.md)
  - [ru.testit.kotlin.client.models.AttachmentApiResult](docs/AttachmentApiResult.md)
  - [ru.testit.kotlin.client.models.AttachmentChangeViewModel](docs/AttachmentChangeViewModel.md)
@@ -412,6 +458,8 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.AutoTestAverageDurationApiResult](docs/AutoTestAverageDurationApiResult.md)
  - [ru.testit.kotlin.client.models.AutoTestBulkDeleteApiModel](docs/AutoTestBulkDeleteApiModel.md)
  - [ru.testit.kotlin.client.models.AutoTestBulkDeleteApiResult](docs/AutoTestBulkDeleteApiResult.md)
+ - [ru.testit.kotlin.client.models.AutoTestCaseApiModel](docs/AutoTestCaseApiModel.md)
+ - [ru.testit.kotlin.client.models.AutoTestCaseModel](docs/AutoTestCaseModel.md)
  - [ru.testit.kotlin.client.models.AutoTestChangeViewModel](docs/AutoTestChangeViewModel.md)
  - [ru.testit.kotlin.client.models.AutoTestChangeViewModelArrayChangedFieldViewModel](docs/AutoTestChangeViewModelArrayChangedFieldViewModel.md)
  - [ru.testit.kotlin.client.models.AutoTestClassCountApiModel](docs/AutoTestClassCountApiModel.md)
@@ -491,6 +539,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.CreateTestRunAndFillByConfigurationsApiModel](docs/CreateTestRunAndFillByConfigurationsApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestRunAndFillByWorkItemsApiModel](docs/CreateTestRunAndFillByWorkItemsApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestStatusApiModel](docs/CreateTestStatusApiModel.md)
+ - [ru.testit.kotlin.client.models.CreateUserApiModel](docs/CreateUserApiModel.md)
  - [ru.testit.kotlin.client.models.CreateWorkItemApiModel](docs/CreateWorkItemApiModel.md)
  - [ru.testit.kotlin.client.models.CreateWorkItemCommentApiModel](docs/CreateWorkItemCommentApiModel.md)
  - [ru.testit.kotlin.client.models.CreateWorkItemPreviewsApiModel](docs/CreateWorkItemPreviewsApiModel.md)
@@ -518,7 +567,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.DateTimeRangeSelectorModel](docs/DateTimeRangeSelectorModel.md)
  - [ru.testit.kotlin.client.models.DefectApiModel](docs/DefectApiModel.md)
  - [ru.testit.kotlin.client.models.DeletionState](docs/DeletionState.md)
- - [ru.testit.kotlin.client.models.DemoProjectApiResult](docs/DemoProjectApiResult.md)
+ - [ru.testit.kotlin.client.models.DetailedProjectApiResult](docs/DetailedProjectApiResult.md)
  - [ru.testit.kotlin.client.models.EnableProjectExternalServiceApiModel](docs/EnableProjectExternalServiceApiModel.md)
  - [ru.testit.kotlin.client.models.ExternalFormAllowedValueModel](docs/ExternalFormAllowedValueModel.md)
  - [ru.testit.kotlin.client.models.ExternalFormCreateModel](docs/ExternalFormCreateModel.md)
@@ -527,6 +576,9 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.ExternalFormModel](docs/ExternalFormModel.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiField](docs/ExternalIssueApiField.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestion](docs/ExternalIssueApiFieldSuggestion.md)
+ - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionGroup](docs/ExternalIssueApiFieldSuggestionGroup.md)
+ - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionGroupedReply](docs/ExternalIssueApiFieldSuggestionGroupedReply.md)
+ - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionIReply](docs/ExternalIssueApiFieldSuggestionIReply.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionReply](docs/ExternalIssueApiFieldSuggestionReply.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiMetadata](docs/ExternalIssueApiMetadata.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiPriority](docs/ExternalIssueApiPriority.md)
@@ -559,14 +611,14 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.GetExternalFormApiResult](docs/GetExternalFormApiResult.md)
  - [ru.testit.kotlin.client.models.GetExternalIssueSuggestionsApiModel](docs/GetExternalIssueSuggestionsApiModel.md)
  - [ru.testit.kotlin.client.models.GetShortProjectsApiModel](docs/GetShortProjectsApiModel.md)
- - [ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanModel](docs/GetXlsxTestPointsByTestPlanModel.md)
+ - [ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanApiModel](docs/GetXlsxTestPointsByTestPlanApiModel.md)
  - [ru.testit.kotlin.client.models.GlobalCustomAttributePostModel](docs/GlobalCustomAttributePostModel.md)
  - [ru.testit.kotlin.client.models.GlobalCustomAttributeUpdateModel](docs/GlobalCustomAttributeUpdateModel.md)
- - [ru.testit.kotlin.client.models.GlobalSearchItemResult](docs/GlobalSearchItemResult.md)
- - [ru.testit.kotlin.client.models.GlobalSearchRequest](docs/GlobalSearchRequest.md)
- - [ru.testit.kotlin.client.models.GlobalSearchResponse](docs/GlobalSearchResponse.md)
+ - [ru.testit.kotlin.client.models.Group](docs/Group.md)
+ - [ru.testit.kotlin.client.models.GroupKey](docs/GroupKey.md)
  - [ru.testit.kotlin.client.models.GuidChangedFieldViewModel](docs/GuidChangedFieldViewModel.md)
  - [ru.testit.kotlin.client.models.GuidExtractionModel](docs/GuidExtractionModel.md)
+ - [ru.testit.kotlin.client.models.GuidNullableChangedFieldViewModel](docs/GuidNullableChangedFieldViewModel.md)
  - [ru.testit.kotlin.client.models.IFilter](docs/IFilter.md)
  - [ru.testit.kotlin.client.models.ImageResizeType](docs/ImageResizeType.md)
  - [ru.testit.kotlin.client.models.Inquiry](docs/Inquiry.md)
@@ -582,7 +634,6 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.LabelShortModel](docs/LabelShortModel.md)
  - [ru.testit.kotlin.client.models.LastTestResultApiResult](docs/LastTestResultApiResult.md)
  - [ru.testit.kotlin.client.models.LastTestResultModel](docs/LastTestResultModel.md)
- - [ru.testit.kotlin.client.models.Link](docs/Link.md)
  - [ru.testit.kotlin.client.models.LinkApiResult](docs/LinkApiResult.md)
  - [ru.testit.kotlin.client.models.LinkCreateApiModel](docs/LinkCreateApiModel.md)
  - [ru.testit.kotlin.client.models.LinkModel](docs/LinkModel.md)
@@ -630,12 +681,13 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.ProjectFailureCategoryApiResult](docs/ProjectFailureCategoryApiResult.md)
  - [ru.testit.kotlin.client.models.ProjectFailureCategoryGroupItemApiResult](docs/ProjectFailureCategoryGroupItemApiResult.md)
  - [ru.testit.kotlin.client.models.ProjectFailureCategoryGroupItemApiResultReply](docs/ProjectFailureCategoryGroupItemApiResultReply.md)
- - [ru.testit.kotlin.client.models.ProjectModel](docs/ProjectModel.md)
  - [ru.testit.kotlin.client.models.ProjectNameApiResult](docs/ProjectNameApiResult.md)
  - [ru.testit.kotlin.client.models.ProjectSelectModel](docs/ProjectSelectModel.md)
  - [ru.testit.kotlin.client.models.ProjectShortApiResult](docs/ProjectShortApiResult.md)
+ - [ru.testit.kotlin.client.models.ProjectShortApiResultGroup](docs/ProjectShortApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.ProjectShortApiResultGroupedReply](docs/ProjectShortApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.ProjectShortApiResultIReply](docs/ProjectShortApiResultIReply.md)
  - [ru.testit.kotlin.client.models.ProjectShortApiResultReply](docs/ProjectShortApiResultReply.md)
- - [ru.testit.kotlin.client.models.ProjectShortModel](docs/ProjectShortModel.md)
  - [ru.testit.kotlin.client.models.ProjectShortestModel](docs/ProjectShortestModel.md)
  - [ru.testit.kotlin.client.models.ProjectTestPlansFilterModel](docs/ProjectTestPlansFilterModel.md)
  - [ru.testit.kotlin.client.models.ProjectType](docs/ProjectType.md)
@@ -647,6 +699,8 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.RequestTypeModel](docs/RequestTypeModel.md)
  - [ru.testit.kotlin.client.models.RerunTestResultApiResult](docs/RerunTestResultApiResult.md)
  - [ru.testit.kotlin.client.models.RerunsApiResult](docs/RerunsApiResult.md)
+ - [ru.testit.kotlin.client.models.RoleApiModel](docs/RoleApiModel.md)
+ - [ru.testit.kotlin.client.models.RoleApiModelApiCollection](docs/RoleApiModelApiCollection.md)
  - [ru.testit.kotlin.client.models.SearchCustomAttributeTemplateGetModel](docs/SearchCustomAttributeTemplateGetModel.md)
  - [ru.testit.kotlin.client.models.SearchExternalIssuesApiModel](docs/SearchExternalIssuesApiModel.md)
  - [ru.testit.kotlin.client.models.SearchTestRunsApiModel](docs/SearchTestRunsApiModel.md)
@@ -784,6 +838,9 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.TestRunTestResultsSelectModel](docs/TestRunTestResultsSelectModel.md)
  - [ru.testit.kotlin.client.models.TestRunV2ApiResult](docs/TestRunV2ApiResult.md)
  - [ru.testit.kotlin.client.models.TestStatusApiResult](docs/TestStatusApiResult.md)
+ - [ru.testit.kotlin.client.models.TestStatusApiResultGroup](docs/TestStatusApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.TestStatusApiResultGroupedReply](docs/TestStatusApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.TestStatusApiResultIReply](docs/TestStatusApiResultIReply.md)
  - [ru.testit.kotlin.client.models.TestStatusApiResultReply](docs/TestStatusApiResultReply.md)
  - [ru.testit.kotlin.client.models.TestStatusApiType](docs/TestStatusApiType.md)
  - [ru.testit.kotlin.client.models.TestStatusModel](docs/TestStatusModel.md)
@@ -819,6 +876,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.UpdateWorkItemApiModel](docs/UpdateWorkItemApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateWorkItemCommentApiModel](docs/UpdateWorkItemCommentApiModel.md)
  - [ru.testit.kotlin.client.models.UpdateWorkflowApiModel](docs/UpdateWorkflowApiModel.md)
+ - [ru.testit.kotlin.client.models.UserApiModel](docs/UserApiModel.md)
  - [ru.testit.kotlin.client.models.UserCustomNameValidationResponse](docs/UserCustomNameValidationResponse.md)
  - [ru.testit.kotlin.client.models.UserNameApiResult](docs/UserNameApiResult.md)
  - [ru.testit.kotlin.client.models.ValidationProblemDetails](docs/ValidationProblemDetails.md)
@@ -844,7 +902,6 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkItemChangedFieldsViewModel](docs/WorkItemChangedFieldsViewModel.md)
  - [ru.testit.kotlin.client.models.WorkItemCommentApiResult](docs/WorkItemCommentApiResult.md)
  - [ru.testit.kotlin.client.models.WorkItemEntityTypeApiModel](docs/WorkItemEntityTypeApiModel.md)
- - [ru.testit.kotlin.client.models.WorkItemEntityTypes](docs/WorkItemEntityTypes.md)
  - [ru.testit.kotlin.client.models.WorkItemExternalMetadataFieldFilterApiModel](docs/WorkItemExternalMetadataFieldFilterApiModel.md)
  - [ru.testit.kotlin.client.models.WorkItemExternalMetadataFieldFilterModel](docs/WorkItemExternalMetadataFieldFilterModel.md)
  - [ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterApiModel](docs/WorkItemExternalMetadataFilterApiModel.md)
@@ -891,6 +948,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkItemStates](docs/WorkItemStates.md)
  - [ru.testit.kotlin.client.models.WorkItemStepChangeViewModel](docs/WorkItemStepChangeViewModel.md)
  - [ru.testit.kotlin.client.models.WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel](docs/WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel.md)
+ - [ru.testit.kotlin.client.models.WorkItemTypeModel](docs/WorkItemTypeModel.md)
  - [ru.testit.kotlin.client.models.WorkItemUpdatingFieldsApiModel](docs/WorkItemUpdatingFieldsApiModel.md)
  - [ru.testit.kotlin.client.models.WorkItemUpdatingFieldsApiResult](docs/WorkItemUpdatingFieldsApiResult.md)
  - [ru.testit.kotlin.client.models.WorkItemVersionModel](docs/WorkItemVersionModel.md)
@@ -898,8 +956,14 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkflowExistsByNameApiResult](docs/WorkflowExistsByNameApiResult.md)
  - [ru.testit.kotlin.client.models.WorkflowProjectApiResult](docs/WorkflowProjectApiResult.md)
  - [ru.testit.kotlin.client.models.WorkflowProjectApiResultApiCollectionPreview](docs/WorkflowProjectApiResultApiCollectionPreview.md)
+ - [ru.testit.kotlin.client.models.WorkflowProjectApiResultGroup](docs/WorkflowProjectApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.WorkflowProjectApiResultGroupedReply](docs/WorkflowProjectApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.WorkflowProjectApiResultIReply](docs/WorkflowProjectApiResultIReply.md)
  - [ru.testit.kotlin.client.models.WorkflowProjectApiResultReply](docs/WorkflowProjectApiResultReply.md)
  - [ru.testit.kotlin.client.models.WorkflowShortApiResult](docs/WorkflowShortApiResult.md)
+ - [ru.testit.kotlin.client.models.WorkflowShortApiResultGroup](docs/WorkflowShortApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.WorkflowShortApiResultGroupedReply](docs/WorkflowShortApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.WorkflowShortApiResultIReply](docs/WorkflowShortApiResultIReply.md)
  - [ru.testit.kotlin.client.models.WorkflowShortApiResultReply](docs/WorkflowShortApiResultReply.md)
  - [ru.testit.kotlin.client.models.WorkflowStatusApiModel](docs/WorkflowStatusApiModel.md)
  - [ru.testit.kotlin.client.models.WorkflowStatusApiResult](docs/WorkflowStatusApiResult.md)
@@ -910,10 +974,17 @@ All URIs are relative to *http://localhost*
 
 
 Authentication schemes defined for the API:
-<a id="Bearer or PrivateToken"></a>
-### Bearer or PrivateToken
+<a id="PrivateToken"></a>
+### PrivateToken
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+<a id="Cookies"></a>
+### Cookies
+
+- **Type**: API key
+- **API key parameter name**: session
+- **Location**: 
 

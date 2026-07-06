@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 
 Get project configurations
 
- Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
+  Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
 
 ### Example
 ```kotlin
@@ -47,9 +47,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 

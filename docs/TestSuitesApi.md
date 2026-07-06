@@ -58,9 +58,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -108,9 +111,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -154,9 +160,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -202,9 +211,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -249,9 +261,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -295,9 +310,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -310,7 +328,7 @@ Configure Bearer or PrivateToken:
 
 Delete TestSuite
 
- Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System deletes test suite  System returns no content response
+  Use case    User sets test suite identifier    User runs method execution    System search test suite by identifier    System deletes test suite    System returns no content response
 
 ### Example
 ```kotlin
@@ -343,9 +361,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -358,7 +379,7 @@ Configure Bearer or PrivateToken:
 
 Get Configurations By Id
 
- Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search configurations related to the test points  System returns configurations array
+  Use case    User sets test suite identifier    User runs method execution    System search test suite by identifier    System search test points related to the test suite    System search configurations related to the test points    System returns configurations array
 
 ### Example
 ```kotlin
@@ -392,9 +413,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -407,7 +431,7 @@ Configure Bearer or PrivateToken:
 
 Get TestPoints By Id
 
- Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System returns test points array
+  Use case    User sets test suite identifier    User runs method execution    System search test suite by identifier    System search test points related to the test suite    System returns test points array
 
 ### Example
 ```kotlin
@@ -441,9 +465,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -456,7 +483,7 @@ Configure Bearer or PrivateToken:
 
 Get TestResults By Id
 
- Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search test results related to the test points  System returns test results array
+  Use case    User sets test suite identifier    User runs method execution    System search test suite by identifier    System search test points related to the test suite    System search test results related to the test points    System returns test results array
 
 ### Example
 ```kotlin
@@ -490,9 +517,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -505,7 +535,7 @@ Configure Bearer or PrivateToken:
 
 Get TestSuite by Id
 
- Use case  User sets test suite identifier  User runs method execution  System search test suite by identifier  System returns test suite
+  Use case    User sets test suite identifier    User runs method execution    System search test suite by identifier    System returns test suite
 
 ### Example
 ```kotlin
@@ -539,9 +569,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -554,7 +587,7 @@ Configure Bearer or PrivateToken:
 
 Search WorkItems
 
- Use case  User sets test suite identifier  [Optional] User sets filter  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search work items related to the test points  [Optional] User sets filter, system applies filter  System returns work items array
+  Use case    User sets test suite identifier    [Optional] User sets filter    User runs method execution    System search test suite by identifier    System search test points related to the test suite    System search work items related to the test points    [Optional] User sets filter, system applies filter    System returns work items array
 
 ### Example
 ```kotlin
@@ -600,9 +633,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -615,7 +651,7 @@ Configure Bearer or PrivateToken:
 
 Set Configurations By TestSuite Id
 
- Use case  User sets test suite identifier  User sets collection of configuration identifiers  User runs method execution  System search test suite by identifier  System search test points related to the test suite  System search configuration  System restores(if exist) or creates test points with listed configuration  System returns no content response
+  Use case    User sets test suite identifier    User sets collection of configuration identifiers    User runs method execution    System search test suite by identifier    System search test points related to the test suite    System search configuration    System restores(if exist) or creates test points with listed configuration    System returns no content response
 
 ### Example
 ```kotlin
@@ -650,9 +686,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 

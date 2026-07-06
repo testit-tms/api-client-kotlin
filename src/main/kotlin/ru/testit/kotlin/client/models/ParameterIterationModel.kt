@@ -23,13 +23,17 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param id 
+ * @param sharedStepId 
  */
 
 
 data class ParameterIterationModel (
 
     @Json(name = "id")
-    val id: java.util.UUID
+    val id: java.util.UUID,
+
+    @Json(name = "sharedStepId")
+    val sharedStepId: java.util.UUID? = null
 
 ) {
 

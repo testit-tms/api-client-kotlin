@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost*
 
 Delete tags
 
- Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+  Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
 
 ### Example
 ```kotlin
@@ -51,9 +51,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -66,7 +69,7 @@ Configure Bearer or PrivateToken:
 
 Delete tag
 
- Use case  User sets tag internal (guid format) identifier  System search and delete tag
+  Use case    User sets tag internal (guid format) identifier    System search and delete tag
 
 ### Example
 ```kotlin
@@ -99,9 +102,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -114,7 +120,7 @@ Configure Bearer or PrivateToken:
 
 Create tag
 
- Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+  Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
 
 ### Example
 ```kotlin
@@ -148,9 +154,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -163,7 +172,7 @@ Configure Bearer or PrivateToken:
 
 Update tag
 
- Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+  Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
 
 ### Example
 ```kotlin
@@ -199,9 +208,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -214,7 +226,7 @@ Configure Bearer or PrivateToken:
 
 Search tags
 
- Use case  User runs method execution  System returns collection of tags (listed in the response example)
+  Use case    User runs method execution    System returns collection of tags (listed in the response example)
 
 ### Example
 ```kotlin
@@ -256,9 +268,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -271,7 +286,7 @@ Configure Bearer or PrivateToken:
 
 Get all Tags that are used in TestPlans
 
- Use case  User runs method execution  System returns tags (listed in the response example)
+  Use case    User runs method execution    System returns tags (listed in the response example)
 
 ### Example
 ```kotlin
@@ -313,9 +328,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 

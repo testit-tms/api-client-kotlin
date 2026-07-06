@@ -819,7 +819,7 @@ open class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: 
     /**
      * POST /api/v2/configurations
      * Create Configuration
-     *  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+     *   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
      * @return ConfigurationModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -851,7 +851,7 @@ open class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: 
     /**
      * POST /api/v2/configurations
      * Create Configuration
-     *  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+     *   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
      * @param configurationPostModel  (optional)
      * @return ApiResponse<ConfigurationModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -893,7 +893,7 @@ open class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: 
     /**
      * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
-     *  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+     *   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier
      * @return ConfigurationModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -925,7 +925,7 @@ open class ConfigurationsApi(basePath: kotlin.String = defaultBasePath, client: 
     /**
      * GET /api/v2/configurations/{id}
      * Get configuration by internal or global ID
-     *  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+     *   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
      * @param id Configuration internal (guid format) or global (integer format) identifier
      * @return ApiResponse<ConfigurationModel?>
      * @throws IllegalStateException If the request is not correctly configured

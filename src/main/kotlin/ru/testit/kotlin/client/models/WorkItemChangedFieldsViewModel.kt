@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.AttachmentChangeViewModelArrayChangedField
 import ru.testit.kotlin.client.models.AutoTestChangeViewModelArrayChangedFieldViewModel
 import ru.testit.kotlin.client.models.BooleanChangedFieldViewModel
 import ru.testit.kotlin.client.models.GuidChangedFieldViewModel
+import ru.testit.kotlin.client.models.GuidNullableChangedFieldViewModel
 import ru.testit.kotlin.client.models.Int32ChangedFieldViewModel
 import ru.testit.kotlin.client.models.Int64ChangedFieldViewModel
 import ru.testit.kotlin.client.models.StringArrayChangedFieldViewModel
@@ -52,6 +53,7 @@ import com.squareup.moshi.JsonClass
  * @param globalId 
  * @param versionNumber 
  * @param entityTypeName 
+ * @param parentId 
  * @param name 
  * @param description 
  */
@@ -112,6 +114,9 @@ data class WorkItemChangedFieldsViewModel (
 
     @Json(name = "entityTypeName")
     val entityTypeName: StringChangedFieldViewModel,
+
+    @Json(name = "parentId")
+    val parentId: GuidNullableChangedFieldViewModel,
 
     @Json(name = "name")
     val name: StringChangedFieldWithDiffsViewModel? = null,

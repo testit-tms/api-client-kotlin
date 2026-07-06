@@ -18,12 +18,12 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
-import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterApiModel
 import ru.testit.kotlin.client.models.WorkItemLinkFilterApiModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
+import ru.testit.kotlin.client.models.WorkItemTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -125,7 +125,7 @@ data class WorkItemFilterApiModel (
 
     /* Collection of types of work item */
     @Json(name = "types")
-    val types: kotlin.collections.Set<WorkItemEntityTypes>? = null,
+    val types: kotlin.collections.Set<WorkItemTypeModel>? = null,
 
     /* Specifies a work item range of creation date to search for */
     @Json(name = "createdDate")

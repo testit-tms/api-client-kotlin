@@ -15,7 +15,6 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.CustomAttributeApiResult
 import ru.testit.kotlin.client.models.ProjectType
 
 import com.squareup.moshi.Json
@@ -27,6 +26,7 @@ import com.squareup.moshi.JsonClass
  * @param id Unique ID of the project
  * @param name Name of the project
  * @param isFavorite Indicates if the project is marked as favorite
+ * @param workItemsCount Number of work items in the project
  * @param isDeleted Indicates if the project is deleted
  * @param createdDate Creation date of the project
  * @param createdById Unique ID of the project creator
@@ -34,15 +34,12 @@ import com.squareup.moshi.JsonClass
  * @param type Type of the project
  * @param workflowId ID of the workflow used in project
  * @param description Description of the project
- * @param attributesScheme Collection of the project attributes
- * @param testPlansAttributesScheme Collection of the project test plans attributes
  * @param testCasesCount Number of test cases in the project
  * @param sharedStepsCount Number of shared steps in the project
  * @param checkListsCount Number of checklists in the project
  * @param autoTestsCount Number of autotests in the project
  * @param modifiedDate Last modification date of the project
  * @param modifiedById Unique ID of the project last editor
- * @param isFlakyAuto Indicates if the status \"Flaky/Stable\" inits automatically
  */
 
 
@@ -59,6 +56,10 @@ data class ProjectApiResult (
     /* Indicates if the project is marked as favorite */
     @Json(name = "isFavorite")
     val isFavorite: kotlin.Boolean,
+
+    /* Number of work items in the project */
+    @Json(name = "workItemsCount")
+    val workItemsCount: kotlin.Int,
 
     /* Indicates if the project is deleted */
     @Json(name = "isDeleted")
@@ -88,14 +89,6 @@ data class ProjectApiResult (
     @Json(name = "description")
     val description: kotlin.String? = null,
 
-    /* Collection of the project attributes */
-    @Json(name = "attributesScheme")
-    val attributesScheme: kotlin.collections.List<CustomAttributeApiResult>? = null,
-
-    /* Collection of the project test plans attributes */
-    @Json(name = "testPlansAttributesScheme")
-    val testPlansAttributesScheme: kotlin.collections.List<CustomAttributeApiResult>? = null,
-
     /* Number of test cases in the project */
     @Json(name = "testCasesCount")
     val testCasesCount: kotlin.Int? = null,
@@ -118,12 +111,7 @@ data class ProjectApiResult (
 
     /* Unique ID of the project last editor */
     @Json(name = "modifiedById")
-    val modifiedById: java.util.UUID? = null,
-
-    /* Indicates if the status \"Flaky/Stable\" inits automatically */
-    @Json(name = "isFlakyAuto")
-    @Deprecated(message = "This property is deprecated.")
-    val isFlakyAuto: kotlin.Boolean? = null
+    val modifiedById: java.util.UUID? = null
 
 ) {
 

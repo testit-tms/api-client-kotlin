@@ -25,7 +25,6 @@ import com.squareup.moshi.JsonClass
  * @param externalServiceId The ID of the external AI service to be used for generation.
  * @param temperature Controls randomness of the AI model output.
  * @param previewLimit Number of work item previews to generate.
- * @param taskKey The key of the issue in an issue tracker (e.g., JIRA-123).
  * @param issueKey The key of the issue in an issue tracker (e.g., JIRA-123).
  * @param userContext Additional user context or description of the issue if no issue key is provided.
  */
@@ -44,11 +43,6 @@ data class GenerateWorkItemPreviewsApiModel (
     /* Number of work item previews to generate. */
     @Json(name = "previewLimit")
     val previewLimit: kotlin.Int,
-
-    /* The key of the issue in an issue tracker (e.g., JIRA-123). */
-    @Json(name = "taskKey")
-    @Deprecated(message = "This property is deprecated.")
-    val taskKey: kotlin.String? = null,
 
     /* The key of the issue in an issue tracker (e.g., JIRA-123). */
     @Json(name = "issueKey")

@@ -4,6 +4,8 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost) | **POST** /api/v2/projects/{projectId}/work-items/previews/bulk |  |
+| [**apiV2ProjectsProjectIdWorkItemsPreviewsPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsPreviewsPost) | **POST** /api/v2/projects/{projectId}/work-items/previews |  |
 | [**apiV2ProjectsProjectIdWorkItemsSearchGroupedPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsSearchGroupedPost) | **POST** /api/v2/projects/{projectId}/workItems/search/grouped | Search for work items and group results by attribute |
 | [**apiV2ProjectsProjectIdWorkItemsSearchIdPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsSearchIdPost) | **POST** /api/v2/projects/{projectId}/workItems/search/id | Search for work items and extract IDs only |
 | [**apiV2ProjectsProjectIdWorkItemsSearchPost**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsSearchPost) | **POST** /api/v2/projects/{projectId}/workItems/search | Search for work items |
@@ -11,6 +13,109 @@ All URIs are relative to *http://localhost*
 | [**apiV2ProjectsProjectIdWorkItemsTagsGet**](ProjectWorkItemsApi.md#apiV2ProjectsProjectIdWorkItemsTagsGet) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags |
 | [**getWorkItemsByProjectId**](ProjectWorkItemsApi.md#getWorkItemsByProjectId) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items |
 
+
+<a id="apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost"></a>
+# **apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost**
+> apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost(projectId, createWorkItemPreviewsApiModel)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = ProjectWorkItemsApi()
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
+val createWorkItemPreviewsApiModel : CreateWorkItemPreviewsApiModel =  // CreateWorkItemPreviewsApiModel | 
+try {
+    apiInstance.apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost(projectId, createWorkItemPreviewsApiModel)
+} catch (e: ClientException) {
+    println("4xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsPreviewsBulkPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createWorkItemPreviewsApiModel** | [**CreateWorkItemPreviewsApiModel**](CreateWorkItemPreviewsApiModel.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="apiV2ProjectsProjectIdWorkItemsPreviewsPost"></a>
+# **apiV2ProjectsProjectIdWorkItemsPreviewsPost**
+> GenerateWorkItemPreviewsApiResult apiV2ProjectsProjectIdWorkItemsPreviewsPost(projectId, generateWorkItemPreviewsApiModel)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = ProjectWorkItemsApi()
+val projectId : kotlin.String = projectId_example // kotlin.String | Internal (UUID) or global (integer) identifier
+val generateWorkItemPreviewsApiModel : GenerateWorkItemPreviewsApiModel =  // GenerateWorkItemPreviewsApiModel | 
+try {
+    val result : GenerateWorkItemPreviewsApiResult = apiInstance.apiV2ProjectsProjectIdWorkItemsPreviewsPost(projectId, generateWorkItemPreviewsApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsPreviewsPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling ProjectWorkItemsApi#apiV2ProjectsProjectIdWorkItemsPreviewsPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **projectId** | **kotlin.String**| Internal (UUID) or global (integer) identifier | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generateWorkItemPreviewsApiModel** | [**GenerateWorkItemPreviewsApiModel**](GenerateWorkItemPreviewsApiModel.md)|  | [optional] |
+
+### Return type
+
+[**GenerateWorkItemPreviewsApiResult**](GenerateWorkItemPreviewsApiResult.md)
+
+### Authorization
+
+
+Configure PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a id="apiV2ProjectsProjectIdWorkItemsSearchGroupedPost"></a>
 # **apiV2ProjectsProjectIdWorkItemsSearchGroupedPost**
@@ -62,9 +167,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -121,9 +229,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -180,9 +291,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -241,9 +355,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -256,7 +373,7 @@ Configure Bearer or PrivateToken:
 
 Get WorkItems Tags
 
- Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+  Use case    User sets project internal identifier    User runs method execution    System returns work items tags
 
 ### Example
 ```kotlin
@@ -292,9 +409,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -307,7 +427,7 @@ Configure Bearer or PrivateToken:
 
 Get project work items
 
- Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+  Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
 
 ### Example
 ```kotlin
@@ -357,9 +477,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 

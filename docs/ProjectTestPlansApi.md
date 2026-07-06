@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost*
 
 Get TestPlans analytics
 
- Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
+  Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
 
 ### Example
 ```kotlin
@@ -66,9 +66,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -115,9 +118,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -130,7 +136,7 @@ Configure Bearer or PrivateToken:
 
 Checks if TestPlan exists with the specified name exists for the project
 
- Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
+  Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
 
 ### Example
 ```kotlin
@@ -166,9 +172,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -214,9 +223,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -263,9 +275,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
@@ -278,7 +293,7 @@ Configure Bearer or PrivateToken:
 
 Get Project TestPlans with analytics
 
- Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
+  Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
 
 ### Example
 ```kotlin
@@ -326,9 +341,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 

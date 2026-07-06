@@ -21,7 +21,7 @@ import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ConfigurationModel
 import ru.testit.kotlin.client.models.CreateTestPlanApiModel
-import ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanModel
+import ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanApiModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.SearchTestRunsApiModel
@@ -68,7 +68,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * POST /api/v2/testPlans/{id}/test-points/withSections
      * Add test-points to TestPlan with sections
      * 
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param workItemSelectModel Filter object to retrieve work items for test-suite&#39;s project (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -100,7 +100,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * POST /api/v2/testPlans/{id}/test-points/withSections
      * Add test-points to TestPlan with sections
      * 
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param workItemSelectModel Filter object to retrieve work items for test-suite&#39;s project (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -118,7 +118,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation addTestPointsWithSections
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param workItemSelectModel Filter object to retrieve work items for test-suite&#39;s project (optional)
      * @return RequestConfig
      */
@@ -142,8 +142,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/workItems/withSections
      * Add WorkItems to TestPlan with Sections as TestSuites
-     *  Use case  User sets TestPlan identifier  User sets WorkItem identifiers (listed in request example)  User runs method execution  System added WorkItems and Sections to TestPlan  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets TestPlan identifier    User sets WorkItem identifiers (listed in request example)    User runs method execution    System added WorkItems and Sections to TestPlan    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param javaUtilUUID  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -174,8 +174,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/workItems/withSections
      * Add WorkItems to TestPlan with Sections as TestSuites
-     *  Use case  User sets TestPlan identifier  User sets WorkItem identifiers (listed in request example)  User runs method execution  System added WorkItems and Sections to TestPlan  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets TestPlan identifier    User sets WorkItem identifiers (listed in request example)    User runs method execution    System added WorkItems and Sections to TestPlan    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param javaUtilUUID  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -193,7 +193,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation addWorkItemsWithSections
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param javaUtilUUID  (optional)
      * @return RequestConfig
      */
@@ -217,8 +217,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/analytics
      * Get analytics by TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System returns analytics by test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System returns analytics by test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return TestPointAnalyticResult
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -249,8 +249,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/analytics
      * Get analytics by TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System returns analytics by test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System returns analytics by test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<TestPointAnalyticResult?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -268,7 +268,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdAnalyticsGet
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun apiV2TestPlansIdAnalyticsGetRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -376,8 +376,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/configurations
      * Get TestPlan configurations
-     *  Use case  User sets test plan identifier  User runs method execution  System return test plan configurations
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System return test plan configurations
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return kotlin.collections.List<ConfigurationModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -408,8 +408,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/configurations
      * Get TestPlan configurations
-     *  Use case  User sets test plan identifier  User runs method execution  System return test plan configurations
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System return test plan configurations
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<kotlin.collections.List<ConfigurationModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -427,7 +427,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdConfigurationsGet
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun apiV2TestPlansIdConfigurationsGetRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -449,10 +449,10 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/export/testPoints/xlsx
      * Export TestPoints from TestPlan in xls format
-     *  Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param timeZoneOffsetInMinutes  (optional)
-     * @param getXlsxTestPointsByTestPlanModel  (optional)
+     * @param getXlsxTestPointsByTestPlanApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -461,8 +461,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestPlansIdExportTestPointsXlsxPost(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long? = null, getXlsxTestPointsByTestPlanModel: GetXlsxTestPointsByTestPlanModel? = null) : Unit {
-        val localVarResponse = apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel = getXlsxTestPointsByTestPlanModel)
+    fun apiV2TestPlansIdExportTestPointsXlsxPost(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long? = null, getXlsxTestPointsByTestPlanApiModel: GetXlsxTestPointsByTestPlanApiModel? = null) : Unit {
+        val localVarResponse = apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanApiModel = getXlsxTestPointsByTestPlanApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -482,19 +482,19 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/export/testPoints/xlsx
      * Export TestPoints from TestPlan in xls format
-     *  Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param timeZoneOffsetInMinutes  (optional)
-     * @param getXlsxTestPointsByTestPlanModel  (optional)
+     * @param getXlsxTestPointsByTestPlanApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanModel: GetXlsxTestPointsByTestPlanModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel = getXlsxTestPointsByTestPlanModel)
+    fun apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanApiModel: GetXlsxTestPointsByTestPlanApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanApiModel = getXlsxTestPointsByTestPlanApiModel)
 
-        return request<GetXlsxTestPointsByTestPlanModel, Unit>(
+        return request<GetXlsxTestPointsByTestPlanApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -502,13 +502,13 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdExportTestPointsXlsxPost
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param timeZoneOffsetInMinutes  (optional)
-     * @param getXlsxTestPointsByTestPlanModel  (optional)
+     * @param getXlsxTestPointsByTestPlanApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanModel: GetXlsxTestPointsByTestPlanModel?) : RequestConfig<GetXlsxTestPointsByTestPlanModel> {
-        val localVariableBody = getXlsxTestPointsByTestPlanModel
+    fun apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanApiModel: GetXlsxTestPointsByTestPlanApiModel?) : RequestConfig<GetXlsxTestPointsByTestPlanApiModel> {
+        val localVariableBody = getXlsxTestPointsByTestPlanApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         timeZoneOffsetInMinutes?.apply { localVariableHeaders["time-Zone-Offset-In-Minutes"] = this.toString() }
@@ -528,8 +528,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/export/testResultHistory/xlsx
      * Export TestResults history from TestPlan in xls format
-     *  Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param mustReturnOnlyLastTestResult  (optional)
      * @param includeSteps  (optional)
      * @param includeDeletedTestSuites  (optional)
@@ -563,8 +563,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/export/testResultHistory/xlsx
      * Export TestResults history from TestPlan in xls format
-     *  Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param mustReturnOnlyLastTestResult  (optional)
      * @param includeSteps  (optional)
      * @param includeDeletedTestSuites  (optional)
@@ -585,7 +585,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdExportTestResultHistoryXlsxPost
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param mustReturnOnlyLastTestResult  (optional)
      * @param includeSteps  (optional)
      * @param includeDeletedTestSuites  (optional)
@@ -623,8 +623,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/history
      * Get TestPlan history
-     *  Use case  User sets test plan identifier  User runs method execution  System return test plan history
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System return test plan history
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -660,8 +660,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/history
      * Get TestPlan history
-     *  Use case  User sets test plan identifier  User runs method execution  System return test plan history
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System return test plan history
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -684,7 +684,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdHistoryGet
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -728,8 +728,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/links
      * Get Links of TestPlan
-     *  Use case  User sets test plan identifier  User sets pagination filter (listed in request example)  User runs method execution  System returns links of TestPlan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets pagination filter (listed in request example)    User runs method execution    System returns links of TestPlan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip  (optional)
      * @param take  (optional)
      * @param orderBy  (optional)
@@ -763,8 +763,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/links
      * Get Links of TestPlan
-     *  Use case  User sets test plan identifier  User sets pagination filter (listed in request example)  User runs method execution  System returns links of TestPlan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets pagination filter (listed in request example)    User runs method execution    System returns links of TestPlan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip  (optional)
      * @param take  (optional)
      * @param orderBy  (optional)
@@ -785,7 +785,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdLinksGet
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip  (optional)
      * @param take  (optional)
      * @param orderBy  (optional)
@@ -896,8 +896,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/summaries
      * Get summary by TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System returns summary by test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System returns summary by test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return TestPlanSummaryModel
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -928,8 +928,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/summaries
      * Get summary by TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System returns summary by test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System returns summary by test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<TestPlanSummaryModel?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -947,7 +947,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdSummariesGet
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun apiV2TestPlansIdSummariesGetRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -969,8 +969,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/testPoints/lastResults
      * Get TestPoints with last result from TestPlan
-     *  Use case  User sets test plan identifier  User sets filter (listed in request example)  User runs method execution  System return test points with last result from test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets filter (listed in request example)    User runs method execution    System return test points with last result from test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param testerId  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -986,7 +986,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestPlansIdTestPointsLastResultsGet(id: kotlin.String, testerId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestPointWithLastResultResponseModel> {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id = id, testerId = testerId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
@@ -1007,8 +1009,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/testPoints/lastResults
      * Get TestPoints with last result from TestPlan
-     *  Use case  User sets test plan identifier  User sets filter (listed in request example)  User runs method execution  System return test points with last result from test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets filter (listed in request example)    User runs method execution    System return test points with last result from test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param testerId  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -1021,7 +1023,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id: kotlin.String, testerId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestPointWithLastResultResponseModel>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2TestPlansIdTestPointsLastResultsGetRequestConfig(id = id, testerId = testerId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return request<Unit, kotlin.collections.List<TestPointWithLastResultResponseModel>>(
@@ -1032,7 +1036,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdTestPointsLastResultsGet
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param testerId  (optional)
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
@@ -1041,6 +1045,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestPlansIdTestPointsLastResultsGetRequestConfig(id: kotlin.String, testerId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
@@ -1080,8 +1085,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/testPoints/reset
      * Reset TestPoints status of TestPlan
-     *  Use case  User sets test plan identifier  User sets test points identifiers  User runs method execution  System reset test points statuses of test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets test points identifiers    User runs method execution    System reset test points statuses of test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param javaUtilUUID  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -1112,8 +1117,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/testPoints/reset
      * Reset TestPoints status of TestPlan
-     *  Use case  User sets test plan identifier  User sets test points identifiers  User runs method execution  System reset test points statuses of test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets test points identifiers    User runs method execution    System reset test points statuses of test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param javaUtilUUID  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1131,7 +1136,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdTestPointsResetPost
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param javaUtilUUID  (optional)
      * @return RequestConfig
      */
@@ -1312,8 +1317,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/testRuns
      * Get TestRuns of TestPlan
-     *  Use case  User sets test plan identifier  User sets TestRun status filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets TestRun status filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param notStarted  (optional)
      * @param inProgress  (optional)
      * @param stopped  (optional)
@@ -1353,8 +1358,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/testRuns
      * Get TestRuns of TestPlan
-     *  Use case  User sets test plan identifier  User sets TestRun status filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets TestRun status filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param notStarted  (optional)
      * @param inProgress  (optional)
      * @param stopped  (optional)
@@ -1381,7 +1386,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdTestRunsGet
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param notStarted  (optional)
      * @param inProgress  (optional)
      * @param stopped  (optional)
@@ -1441,8 +1446,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/testRuns/search
      * Search TestRuns of TestPlan
-     *  Use case  User sets test plan identifier  User sets TestRuns filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets TestRuns filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -1479,8 +1484,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/testRuns/search
      * Search TestRuns of TestPlan
-     *  Use case  User sets test plan identifier  User sets TestRuns filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User sets TestRuns filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -1504,7 +1509,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdTestRunsSearchPost
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @param skip Amount of items to be skipped (offset) (optional)
      * @param take Amount of items to be taken (limit) (optional)
      * @param orderBy SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)
@@ -1621,8 +1626,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/unlock/request
      * Send unlock TestPlan notification
-     *  Use case  User sets test plan identifier  User runs method execution  System send unlock test plan notification
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System send unlock test plan notification
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1652,8 +1657,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/unlock/request
      * Send unlock TestPlan notification
-     *  Use case  User sets test plan identifier  User runs method execution  System send unlock test plan notification
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System send unlock test plan notification
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1670,7 +1675,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation apiV2TestPlansIdUnlockRequestPost
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun apiV2TestPlansIdUnlockRequestPostRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -1692,7 +1697,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/shorts
      * Get TestPlans short models by Project identifiers
-     *  Use case  User sets projects identifiers  User runs method execution  System return test plans short models (listed in response example)
+     *   Use case    User sets projects identifiers    User runs method execution    System return test plans short models (listed in response example)
      * @param isDeleted  (optional)
      * @param javaUtilUUID  (optional)
      * @return kotlin.collections.List<TestPlanShortModel>
@@ -1725,7 +1730,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/shorts
      * Get TestPlans short models by Project identifiers
-     *  Use case  User sets projects identifiers  User runs method execution  System return test plans short models (listed in response example)
+     *   Use case    User sets projects identifiers    User runs method execution    System return test plans short models (listed in response example)
      * @param isDeleted  (optional)
      * @param javaUtilUUID  (optional)
      * @return ApiResponse<kotlin.collections.List<TestPlanShortModel>?>
@@ -1774,8 +1779,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/clone
      * Clone TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System clones test plan  System returns test plan (listed in response example)
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System clones test plan    System returns test plan (listed in response example)
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return TestPlanModel
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1806,8 +1811,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/clone
      * Clone TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System clones test plan  System returns test plan (listed in response example)
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System clones test plan    System returns test plan (listed in response example)
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<TestPlanModel?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1825,7 +1830,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation clone
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun cloneRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -1847,8 +1852,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/complete
      * Complete TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System completes the test plan and updates test plan status  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System completes the test plan and updates test plan status    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1878,8 +1883,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/complete
      * Complete TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System completes the test plan and updates test plan status  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System completes the test plan and updates test plan status    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1896,7 +1901,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation complete
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun completeRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -1918,7 +1923,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans
      * Create TestPlan
-     *  Use case  User sets test plan properties (listed in request example)  User runs method execution  System creates test plan  System returns test plan (listed in response example)
+     *   Use case    User sets test plan properties (listed in request example)    User runs method execution    System creates test plan    System returns test plan (listed in response example)
      * @param createTestPlanApiModel  (optional)
      * @return TestPlanModel
      * @throws IllegalStateException If the request is not correctly configured
@@ -1950,7 +1955,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans
      * Create TestPlan
-     *  Use case  User sets test plan properties (listed in request example)  User runs method execution  System creates test plan  System returns test plan (listed in response example)
+     *   Use case    User sets test plan properties (listed in request example)    User runs method execution    System creates test plan    System returns test plan (listed in response example)
      * @param createTestPlanApiModel  (optional)
      * @return ApiResponse<TestPlanModel?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1992,8 +1997,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * DELETE /api/v2/testPlans/{id}
      * Delete TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System delete test plan  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System delete test plan    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2023,8 +2028,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * DELETE /api/v2/testPlans/{id}
      * Delete TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System delete test plan  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System delete test plan    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2041,7 +2046,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation deleteTestPlan
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun deleteTestPlanRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -2063,8 +2068,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}
      * Get TestPlan by Id
-     *  Use case  User sets test plan identifier  User runs method execution  System search  test plan by the identifier  System returns test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System search  test plan by the identifier    System returns test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return TestPlanModel
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2095,8 +2100,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}
      * Get TestPlan by Id
-     *  Use case  User sets test plan identifier  User runs method execution  System search  test plan by the identifier  System returns test plan
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System search  test plan by the identifier    System returns test plan
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<TestPlanModel?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2114,7 +2119,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation getTestPlanById
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun getTestPlanByIdRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -2136,8 +2141,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/testSuites
      * Get TestSuites Tree By Id
-     *  Use case  User sets test plan identifier  User runs method execution  System finds test suites related to the test plan  System returns test suites as a tree model (listed in response example)
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System finds test suites related to the test plan    System returns test suites as a tree model (listed in response example)
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return kotlin.collections.List<TestSuiteHierarchyApiResult>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2168,8 +2173,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /api/v2/testPlans/{id}/testSuites
      * Get TestSuites Tree By Id
-     *  Use case  User sets test plan identifier  User runs method execution  System finds test suites related to the test plan  System returns test suites as a tree model (listed in response example)
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System finds test suites related to the test plan    System returns test suites as a tree model (listed in response example)
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<kotlin.collections.List<TestSuiteHierarchyApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2187,7 +2192,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation getTestSuitesById
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun getTestSuitesByIdRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -2209,8 +2214,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/pause
      * Pause TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System pauses the test plan and updates test plan status  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System pauses the test plan and updates test plan status    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2240,8 +2245,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/pause
      * Pause TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System pauses the test plan and updates test plan status  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System pauses the test plan and updates test plan status    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2258,7 +2263,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation pause
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun pauseRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -2351,8 +2356,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/restore
      * Restore TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System restores test plan  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System restores test plan    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2382,8 +2387,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/restore
      * Restore TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System restores test plan  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System restores test plan    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2400,7 +2405,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation restoreTestPlan
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun restoreTestPlanRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -2422,8 +2427,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/start
      * Start TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System starts the test plan and updates test plan status  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System starts the test plan and updates test plan status    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2453,8 +2458,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * POST /api/v2/testPlans/{id}/start
      * Start TestPlan
-     *  Use case  User sets test plan identifier  User runs method execution  System starts the test plan and updates test plan status  System returns no content response
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     *   Use case    User sets test plan identifier    User runs method execution    System starts the test plan and updates test plan status    System returns no content response
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2471,7 +2476,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation start
      *
-     * @param id Test plan internal (guid format) or global (int format) identifier
+     * @param id Test plan internal (guid format) or global (int  format) identifier
      * @return RequestConfig
      */
     fun startRequestConfig(id: kotlin.String) : RequestConfig<Unit> {
@@ -2493,7 +2498,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * PUT /api/v2/testPlans
      * Update TestPlan
-     *  Use case  User sets test plan properties(listed in request example)  User runs method execution  System updates test plan  System returns no content response
+     *   Use case    User sets test plan properties(listed in request example)    User runs method execution    System updates test plan    System returns no content response
      * @param updateTestPlanApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -2524,7 +2529,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * PUT /api/v2/testPlans
      * Update TestPlan
-     *  Use case  User sets test plan properties(listed in request example)  User runs method execution  System updates test plan  System returns no content response
+     *   Use case    User sets test plan properties(listed in request example)    User runs method execution    System updates test plan    System returns no content response
      * @param updateTestPlanApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured

@@ -8,14 +8,14 @@
 | **medianDuration** | **kotlin.Long** | used for getting a median duration of all autotests related to this workitem |  |
 | **isDeleted** | **kotlin.Boolean** |  |  |
 | **projectId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
-| **entityTypeName** | [**WorkItemEntityTypes**](WorkItemEntityTypes.md) |  |  |
+| **entityTypeName** | [**WorkItemTypeModel**](WorkItemTypeModel.md) |  |  |
 | **isAutomated** | **kotlin.Boolean** |  |  |
 | **versionNumber** | **kotlin.Int** | used for define chronology of workitem state in each version |  |
+| **externalIssues** | [**kotlin.collections.List&lt;ExternalIssueModel&gt;**](ExternalIssueModel.md) |  |  |
+| **parameters** | [**kotlin.collections.List&lt;WorkItemParameterKeyModel&gt;**](WorkItemParameterKeyModel.md) |  |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **globalId** | **kotlin.Long** |  |  |
-| **externalIssues** | [**kotlin.collections.List&lt;ExternalIssueModel&gt;**](ExternalIssueModel.md) |  |  |
-| **parameters** | [**kotlin.collections.List&lt;WorkItemParameterKeyModel&gt;**](WorkItemParameterKeyModel.md) |  |  |
 | **id** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **sectionId** | [**java.util.UUID**](java.util.UUID.md) |  |  |
 | **state** | [**WorkItemStates**](WorkItemStates.md) |  |  |

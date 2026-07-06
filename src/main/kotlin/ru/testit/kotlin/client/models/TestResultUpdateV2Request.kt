@@ -17,7 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AttachmentUpdateRequest
 import ru.testit.kotlin.client.models.AutoTestStepResultUpdateRequest
-import ru.testit.kotlin.client.models.Link
+import ru.testit.kotlin.client.models.CreateLinkApiModel
 import ru.testit.kotlin.client.models.StepResultApiModel
 import ru.testit.kotlin.client.models.TestResultOutcome
 import ru.testit.kotlin.client.models.TestResultStepCommentUpdateRequest
@@ -66,7 +66,7 @@ data class TestResultUpdateV2Request (
     val comment: kotlin.String? = null,
 
     @Json(name = "links")
-    val links: kotlin.collections.List<Link>? = null,
+    val links: kotlin.collections.List<CreateLinkApiModel>? = null,
 
     @Json(name = "stepResults")
     val stepResults: kotlin.collections.List<StepResultApiModel>? = null,

@@ -24,6 +24,7 @@ import ru.testit.kotlin.client.models.CreateDefectApiModel
 import ru.testit.kotlin.client.models.DefectApiModel
 import ru.testit.kotlin.client.models.GetExternalFormApiResult
 import ru.testit.kotlin.client.models.ImageResizeType
+import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.RerunsApiResult
 import ru.testit.kotlin.client.models.TestResultResponse
@@ -73,7 +74,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel? = null) : GetExternalFormApiResult {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId = externalProjectId, testResultsSelectApiModel = testResultsSelectApiModel)
 
         return when (localVarResponse.responseType) {
@@ -103,7 +106,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel?) : ApiResponse<GetExternalFormApiResult?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequestConfig(externalProjectId = externalProjectId, testResultsSelectApiModel = testResultsSelectApiModel)
 
         return request<TestResultsSelectApiModel, GetExternalFormApiResult>(
@@ -118,6 +123,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param testResultsSelectApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequestConfig(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel?) : RequestConfig<TestResultsSelectApiModel> {
         val localVariableBody = testResultsSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -150,7 +156,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel? = null) : DefectApiModel {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId = externalProjectId, createDefectApiModel = createDefectApiModel)
 
         return when (localVarResponse.responseType) {
@@ -180,7 +188,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel?) : ApiResponse<DefectApiModel?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequestConfig(externalProjectId = externalProjectId, createDefectApiModel = createDefectApiModel)
 
         return request<CreateDefectApiModel, DefectApiModel>(
@@ -195,6 +205,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param createDefectApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequestConfig(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel?) : RequestConfig<CreateDefectApiModel> {
         val localVariableBody = createDefectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -502,6 +513,81 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
 
         return RequestConfig(
             method = RequestMethod.GET,
+            path = "/api/v2/testResults/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * PATCH /api/v2/testResults/{id}
+     * Patch test result by ID
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id Test result unique ID
+     * @param operation  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestResultsIdPatch(id: java.util.UUID, operation: kotlin.collections.List<Operation>? = null) : Unit {
+        val localVarResponse = apiV2TestResultsIdPatchWithHttpInfo(id = id, operation = operation)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * PATCH /api/v2/testResults/{id}
+     * Patch test result by ID
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id Test result unique ID
+     * @param operation  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestResultsIdPatchWithHttpInfo(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestResultsIdPatchRequestConfig(id = id, operation = operation)
+
+        return request<kotlin.collections.List<Operation>, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestResultsIdPatch
+     *
+     * @param id Test result unique ID
+     * @param operation  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2TestResultsIdPatchRequestConfig(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : RequestConfig<kotlin.collections.List<Operation>> {
+        val localVariableBody = operation
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PATCH,
             path = "/api/v2/testResults/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
@@ -841,7 +927,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * POST /api/v2/testResults/{id}/attachments
      * Upload and link attachment to TestResult
-     *  Use case  User sets testResultId  User attaches a file  System creates attachment and links it to the test result  System returns attachment identifier
+     *   Use case    User sets testResultId    User attaches a file    System creates attachment and links it to the test result    System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param file Select file (optional)
      * @return void
@@ -873,7 +959,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * POST /api/v2/testResults/{id}/attachments
      * Upload and link attachment to TestResult
-     *  Use case  User sets testResultId  User attaches a file  System creates attachment and links it to the test result  System returns attachment identifier
+     *   Use case    User sets testResultId    User attaches a file    System creates attachment and links it to the test result    System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param file Select file (optional)
      * @return ApiResponse<Unit?>
@@ -916,7 +1002,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * DELETE /api/v2/testResults/{id}/attachments/{attachmentId}
      * Remove attachment and unlink from TestResult
-     *  Use case  User sets testResultId and attachmentId  User attaches a file  User runs method execution  System deletes attachment and unlinks it from the test result  System returns attachment identifier
+     *   Use case    User sets testResultId and attachmentId    User attaches a file    User runs method execution    System deletes attachment and unlinks it from the test result    System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
      * @return void
@@ -948,7 +1034,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * DELETE /api/v2/testResults/{id}/attachments/{attachmentId}
      * Remove attachment and unlink from TestResult
-     *  Use case  User sets testResultId and attachmentId  User attaches a file  User runs method execution  System deletes attachment and unlinks it from the test result  System returns attachment identifier
+     *   Use case    User sets testResultId and attachmentId    User attaches a file    User runs method execution    System deletes attachment and unlinks it from the test result    System returns attachment identifier
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
      * @return ApiResponse<Unit?>
@@ -990,7 +1076,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}
      * Get attachment of TestResult
-     *  Use case  User sets attachmentId and testResultId  [Optional] User sets resize configuration  User runs method execution  System search attachments by the attachmentId and the testResultId  [Optional] If resize configuration is set, System resizes the attachment according to the resize                     configuration  [Optional] Otherwise, System does not resize the attachment  System returns attachment as a file
+     *   Use case    User sets attachmentId and testResultId    [Optional] User sets resize configuration    User runs method execution    System search attachments by the attachmentId and the testResultId    [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration    [Optional] Otherwise, System does not resize the attachment    System returns attachment as a file
      * @param attachmentId Attachment internal identifier (guid format)
      * @param id Test result internal identifier (guid format)
      * @param width Width of the result image (optional)
@@ -1027,7 +1113,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}
      * Get attachment of TestResult
-     *  Use case  User sets attachmentId and testResultId  [Optional] User sets resize configuration  User runs method execution  System search attachments by the attachmentId and the testResultId  [Optional] If resize configuration is set, System resizes the attachment according to the resize                     configuration  [Optional] Otherwise, System does not resize the attachment  System returns attachment as a file
+     *   Use case    User sets attachmentId and testResultId    [Optional] User sets resize configuration    User runs method execution    System search attachments by the attachmentId and the testResultId    [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration    [Optional] Otherwise, System does not resize the attachment    System returns attachment as a file
      * @param attachmentId Attachment internal identifier (guid format)
      * @param id Test result internal identifier (guid format)
      * @param width Width of the result image (optional)
@@ -1096,7 +1182,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}/info
      * Get Metadata of TestResult&#39;s attachment
-     *  Use case  User sets attachmentId and testResultId  User runs method execution  System search attachment by the attachmentId and the testResultId  System returns attachment data
+     *   Use case    User sets attachmentId and testResultId    User runs method execution    System search attachment by the attachmentId and the testResultId    System returns attachment data
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
      * @return AttachmentApiResult
@@ -1129,7 +1215,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/testResults/{id}/attachments/{attachmentId}/info
      * Get Metadata of TestResult&#39;s attachment
-     *  Use case  User sets attachmentId and testResultId  User runs method execution  System search attachment by the attachmentId and the testResultId  System returns attachment data
+     *   Use case    User sets attachmentId and testResultId    User runs method execution    System search attachment by the attachmentId and the testResultId    System returns attachment data
      * @param id Test result internal identifier (guid format)
      * @param attachmentId Attachment internal identifier (guid format)
      * @return ApiResponse<AttachmentApiResult?>
@@ -1172,7 +1258,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/testResults/{id}/attachments
      * Get all attachments of TestResult
-     *  Use case  User sets testResultId  User runs method execution  System search all attachments of the test result  System returns attachments enumeration
+     *   Use case    User sets testResultId    User runs method execution    System search all attachments of the test result    System returns attachments enumeration
      * @param id Test result internal identifier (guid format)
      * @return kotlin.collections.List<AttachmentApiResult>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1204,7 +1290,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /api/v2/testResults/{id}/attachments
      * Get all attachments of TestResult
-     *  Use case  User sets testResultId  User runs method execution  System search all attachments of the test result  System returns attachments enumeration
+     *   Use case    User sets testResultId    User runs method execution    System search all attachments of the test result    System returns attachments enumeration
      * @param id Test result internal identifier (guid format)
      * @return ApiResponse<kotlin.collections.List<AttachmentApiResult>?>
      * @throws IllegalStateException If the request is not correctly configured

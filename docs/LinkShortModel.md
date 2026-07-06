@@ -5,9 +5,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | [**java.util.UUID**](java.util.UUID.md) |  |  |
-| **title** | **kotlin.String** |  |  |
+| **type** | [**LinkType**](LinkType.md) |  |  |
 | **url** | **kotlin.String** |  |  |
-| **type** | **kotlin.String** |  |  [optional] |
+| **title** | **kotlin.String** |  |  [optional] |
 
 
 

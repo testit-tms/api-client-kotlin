@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionReply
+import ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionIReply
 import ru.testit.kotlin.client.models.GetExternalIssueSuggestionsApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.ValidationProblemDetails
@@ -53,7 +53,7 @@ open class ExternalIssuesApi(basePath: kotlin.String = defaultBasePath, client: 
      * Returns list of suggestions from available external issues
      * 
      * @param getExternalIssueSuggestionsApiModel  (optional)
-     * @return ExternalIssueApiFieldSuggestionReply
+     * @return ExternalIssueApiFieldSuggestionIReply
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ open class ExternalIssuesApi(basePath: kotlin.String = defaultBasePath, client: 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel: GetExternalIssueSuggestionsApiModel? = null) : ExternalIssueApiFieldSuggestionReply {
+    fun apiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel: GetExternalIssueSuggestionsApiModel? = null) : ExternalIssueApiFieldSuggestionIReply {
         val localVarResponse = apiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel = getExternalIssueSuggestionsApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as ExternalIssueApiFieldSuggestionReply
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ExternalIssueApiFieldSuggestionIReply
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,16 +85,16 @@ open class ExternalIssuesApi(basePath: kotlin.String = defaultBasePath, client: 
      * Returns list of suggestions from available external issues
      * 
      * @param getExternalIssueSuggestionsApiModel  (optional)
-     * @return ApiResponse<ExternalIssueApiFieldSuggestionReply?>
+     * @return ApiResponse<ExternalIssueApiFieldSuggestionIReply?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel: GetExternalIssueSuggestionsApiModel?) : ApiResponse<ExternalIssueApiFieldSuggestionReply?> {
+    fun apiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel: GetExternalIssueSuggestionsApiModel?) : ApiResponse<ExternalIssueApiFieldSuggestionIReply?> {
         val localVariableConfig = apiV2ExternalIssuesSuggestionsPostRequestConfig(getExternalIssueSuggestionsApiModel = getExternalIssueSuggestionsApiModel)
 
-        return request<GetExternalIssueSuggestionsApiModel, ExternalIssueApiFieldSuggestionReply>(
+        return request<GetExternalIssueSuggestionsApiModel, ExternalIssueApiFieldSuggestionIReply>(
             localVariableConfig
         )
     }

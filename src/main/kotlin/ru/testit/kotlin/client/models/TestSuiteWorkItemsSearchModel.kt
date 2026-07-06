@@ -17,12 +17,12 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
-import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterModel
 import ru.testit.kotlin.client.models.WorkItemLinkFilterModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
+import ru.testit.kotlin.client.models.WorkItemTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -31,7 +31,7 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param tagNames Collection of tags
- * @param entityTypes Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
+ * @param entityTypes Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps`
  * @param nameOrId Name or identifier (UUID) of work item
  * @param includeIds Collection of identifiers of work items which need to be included in result regardless of filtering
  * @param excludeIds Collection of identifiers of work items which need to be excluded from result regardless of filtering
@@ -68,9 +68,9 @@ data class TestSuiteWorkItemsSearchModel (
     @Json(name = "tagNames")
     val tagNames: kotlin.collections.Set<kotlin.String>? = null,
 
-    /* Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
+    /* Collection of types of work item    Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
     @Json(name = "entityTypes")
-    val entityTypes: kotlin.collections.Set<WorkItemEntityTypes>? = null,
+    val entityTypes: kotlin.collections.Set<WorkItemTypeModel>? = null,
 
     /* Name or identifier (UUID) of work item */
     @Json(name = "nameOrId")
@@ -134,7 +134,7 @@ data class TestSuiteWorkItemsSearchModel (
 
     /* Collection of types of work item */
     @Json(name = "types")
-    val types: kotlin.collections.Set<WorkItemEntityTypes>? = null,
+    val types: kotlin.collections.Set<WorkItemTypeModel>? = null,
 
     /* Specifies a work item range of creation date to search for */
     @Json(name = "createdDate")

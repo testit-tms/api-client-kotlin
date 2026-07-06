@@ -20,6 +20,7 @@ import ru.testit.kotlin.client.models.LinkShortModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
+import ru.testit.kotlin.client.models.WorkItemTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -74,7 +75,7 @@ data class WorkItemShortModel (
 
     /* Work Item type. Possible values: CheckLists, SharedSteps, TestCases */
     @Json(name = "entityTypeName")
-    val entityTypeName: kotlin.String,
+    val entityTypeName: WorkItemTypeModel,
 
     /* Project unique identifier */
     @Json(name = "projectId")

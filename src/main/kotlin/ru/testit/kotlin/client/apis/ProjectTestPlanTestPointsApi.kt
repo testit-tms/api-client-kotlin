@@ -20,8 +20,13 @@ import okhttp3.Call
 import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ProblemDetails
+import ru.testit.kotlin.client.models.TestPlanTestPointsAnalyticsApiModel
+import ru.testit.kotlin.client.models.TestPlanTestPointsAnalyticsApiResult
+import ru.testit.kotlin.client.models.TestPlanTestPointsApiModel
 import ru.testit.kotlin.client.models.TestPlanTestPointsAutoTestsRerunApiModel
 import ru.testit.kotlin.client.models.TestPlanTestPointsAutoTestsRunApiModel
+import ru.testit.kotlin.client.models.TestPlanTestPointsGroupSearchApiResult
+import ru.testit.kotlin.client.models.TestPlanTestPointsSetTestersApiModel
 import ru.testit.kotlin.client.models.TestRunNameApiResult
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
@@ -47,6 +52,86 @@ open class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePat
         val defaultBasePath: String by lazy {
             System.getProperties().getProperty(ApiClient.baseUrlKey, "http://localhost")
         }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/analytics
+     * Get test points analytics.
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsAnalyticsApiModel  (optional)
+     * @return TestPlanTestPointsAnalyticsApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsAnalyticsApiModel: TestPlanTestPointsAnalyticsApiModel? = null) : TestPlanTestPointsAnalyticsApiResult {
+        val localVarResponse = apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfo(projectId = projectId, testPlanId = testPlanId, testPlanTestPointsAnalyticsApiModel = testPlanTestPointsAnalyticsApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestPlanTestPointsAnalyticsApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/analytics
+     * Get test points analytics.
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsAnalyticsApiModel  (optional)
+     * @return ApiResponse<TestPlanTestPointsAnalyticsApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfo(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsAnalyticsApiModel: TestPlanTestPointsAnalyticsApiModel?) : ApiResponse<TestPlanTestPointsAnalyticsApiResult?> {
+        val localVariableConfig = apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostRequestConfig(projectId = projectId, testPlanId = testPlanId, testPlanTestPointsAnalyticsApiModel = testPlanTestPointsAnalyticsApiModel)
+
+        return request<TestPlanTestPointsAnalyticsApiModel, TestPlanTestPointsAnalyticsApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost
+     *
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsAnalyticsApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostRequestConfig(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsAnalyticsApiModel: TestPlanTestPointsAnalyticsApiModel?) : RequestConfig<TestPlanTestPointsAnalyticsApiModel> {
+        val localVariableBody = testPlanTestPointsAnalyticsApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/analytics".replace("{"+"projectId"+"}", encodeURIComponent(projectId.toString())).replace("{"+"testPlanId"+"}", encodeURIComponent(testPlanId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
     }
 
     /**
@@ -200,6 +285,164 @@ open class ProjectTestPlanTestPointsApi(basePath: kotlin.String = defaultBasePat
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/run".replace("{"+"projectId"+"}", encodeURIComponent(projectId.toString())).replace("{"+"testPlanId"+"}", encodeURIComponent(testPlanId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/grouping-search
+     * Search test points in test plan.
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsApiModel  (optional)
+     * @return TestPlanTestPointsGroupSearchApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsApiModel: TestPlanTestPointsApiModel? = null) : TestPlanTestPointsGroupSearchApiResult {
+        val localVarResponse = apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfo(projectId = projectId, testPlanId = testPlanId, testPlanTestPointsApiModel = testPlanTestPointsApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestPlanTestPointsGroupSearchApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/grouping-search
+     * Search test points in test plan.
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsApiModel  (optional)
+     * @return ApiResponse<TestPlanTestPointsGroupSearchApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfo(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsApiModel: TestPlanTestPointsApiModel?) : ApiResponse<TestPlanTestPointsGroupSearchApiResult?> {
+        val localVariableConfig = apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostRequestConfig(projectId = projectId, testPlanId = testPlanId, testPlanTestPointsApiModel = testPlanTestPointsApiModel)
+
+        return request<TestPlanTestPointsApiModel, TestPlanTestPointsGroupSearchApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost
+     *
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostRequestConfig(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsApiModel: TestPlanTestPointsApiModel?) : RequestConfig<TestPlanTestPointsApiModel> {
+        val localVariableBody = testPlanTestPointsApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/grouping-search".replace("{"+"projectId"+"}", encodeURIComponent(projectId.toString())).replace("{"+"testPlanId"+"}", encodeURIComponent(testPlanId.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/testers
+     * Distribute test points between the users.
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsSetTestersApiModel  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsSetTestersApiModel: TestPlanTestPointsSetTestersApiModel? = null) : Unit {
+        val localVarResponse = apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfo(projectId = projectId, testPlanId = testPlanId, testPlanTestPointsSetTestersApiModel = testPlanTestPointsSetTestersApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/testers
+     * Distribute test points between the users.
+     * 
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsSetTestersApiModel  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfo(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsSetTestersApiModel: TestPlanTestPointsSetTestersApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostRequestConfig(projectId = projectId, testPlanId = testPlanId, testPlanTestPointsSetTestersApiModel = testPlanTestPointsSetTestersApiModel)
+
+        return request<TestPlanTestPointsSetTestersApiModel, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost
+     *
+     * @param projectId Internal (UUID) or global (integer) identifier
+     * @param testPlanId 
+     * @param testPlanTestPointsSetTestersApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostRequestConfig(projectId: kotlin.String, testPlanId: java.util.UUID, testPlanTestPointsSetTestersApiModel: TestPlanTestPointsSetTestersApiModel?) : RequestConfig<TestPlanTestPointsSetTestersApiModel> {
+        val localVariableBody = testPlanTestPointsSetTestersApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/testers".replace("{"+"projectId"+"}", encodeURIComponent(projectId.toString())).replace("{"+"testPlanId"+"}", encodeURIComponent(testPlanId.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

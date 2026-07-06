@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiV2ExternalIssuesSuggestionsPost"></a>
 # **apiV2ExternalIssuesSuggestionsPost**
-> ExternalIssueApiFieldSuggestionReply apiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel)
+> ExternalIssueApiFieldSuggestionIReply apiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel)
 
 Returns list of suggestions from available external issues
 
@@ -22,7 +22,7 @@ Returns list of suggestions from available external issues
 val apiInstance = ExternalIssuesApi()
 val getExternalIssueSuggestionsApiModel : GetExternalIssueSuggestionsApiModel =  // GetExternalIssueSuggestionsApiModel | 
 try {
-    val result : ExternalIssueApiFieldSuggestionReply = apiInstance.apiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel)
+    val result : ExternalIssueApiFieldSuggestionIReply = apiInstance.apiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ExternalIssuesApi#apiV2ExternalIssuesSuggestionsPost")
@@ -40,14 +40,17 @@ try {
 
 ### Return type
 
-[**ExternalIssueApiFieldSuggestionReply**](ExternalIssueApiFieldSuggestionReply.md)
+[**ExternalIssueApiFieldSuggestionIReply**](ExternalIssueApiFieldSuggestionIReply.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
 
 ### HTTP request headers
 
