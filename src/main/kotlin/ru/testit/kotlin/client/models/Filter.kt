@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.FilterOperator
+import ru.testit.kotlin.client.models.JsonElement
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,8 +25,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param `operator` 
- * @param `field` 
  * @param `value` 
+ * @param `field` 
  */
 
 
@@ -34,11 +35,11 @@ data class Filter (
     @Json(name = "operator")
     val `operator`: FilterOperator,
 
-    @Json(name = "field")
-    val `field`: kotlin.String,
-
     @Json(name = "value")
-    val `value`: kotlin.String? = null
+    val `value`: JsonElement,
+
+    @Json(name = "field")
+    val `field`: kotlin.String
 
 ) {
 

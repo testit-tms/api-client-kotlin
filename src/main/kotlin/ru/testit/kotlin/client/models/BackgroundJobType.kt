@@ -22,7 +22,7 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * Values: ExportXlsxTestResultsByTestPlan,ExportXlsxWorkItemsByProject,ExportXlsxTestPointsByTestPlan,ExportXlsxWorkItemLinks,ExportJsonProject,ExportZipProject,ExportJsonProjectWithTestPlans,ExportZipProjectWithTestPlans,ImportJsonProject,ImportZipProject,ImportXlsxProject,ImportTestRailXmlProject,PurgeProject,ExportProjects,ImportProjects,PurgeEntities,DeleteCompletedJobs,CopySections,DeleteSection
+ * Values: ExportXlsxTestResultsByTestPlan,ExportXlsxWorkItemsByProject,ExportXlsxTestPointsByTestPlan,ExportXlsxWorkItemLinks,ExportJsonProject,ExportZipProject,ExportJsonProjectWithTestPlans,ExportZipProjectWithTestPlans,ImportJsonProject,ImportZipProject,ImportXlsxProject,ImportTestRailXmlProject,PurgeProject,ExportProjects,ImportProjects,PurgeEntities,DeleteCompletedJobs,CopySections,DeleteSection,ImportAutoTestsReport
  */
 
 @JsonClass(generateAdapter = false)
@@ -83,7 +83,10 @@ enum class BackgroundJobType(val value: kotlin.String) {
     CopySections("CopySections"),
 
     @Json(name = "DeleteSection")
-    DeleteSection("DeleteSection");
+    DeleteSection("DeleteSection"),
+
+    @Json(name = "ImportAutoTestsReport")
+    ImportAutoTestsReport("ImportAutoTestsReport");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

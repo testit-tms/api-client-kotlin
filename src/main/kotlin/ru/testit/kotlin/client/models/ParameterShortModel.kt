@@ -27,6 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param `value` Value of the parameter
  * @param name Key of the parameter
  * @param projectIds 
+ * @param sharedStepId 
  */
 
 
@@ -47,7 +48,10 @@ data class ParameterShortModel (
     val name: kotlin.String,
 
     @Json(name = "projectIds")
-    val projectIds: kotlin.collections.List<java.util.UUID>
+    val projectIds: kotlin.collections.List<java.util.UUID>,
+
+    @Json(name = "sharedStepId")
+    val sharedStepId: java.util.UUID? = null
 
 ) {
 

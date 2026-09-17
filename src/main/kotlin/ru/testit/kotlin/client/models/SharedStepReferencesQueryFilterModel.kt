@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemStates
+import ru.testit.kotlin.client.models.WorkItemTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -72,7 +73,7 @@ data class SharedStepReferencesQueryFilterModel (
 
     /* Collection of types of work item  Allowed values: `TestCases`, `CheckLists`, `SharedSteps` */
     @Json(name = "entityTypes")
-    val entityTypes: kotlin.collections.Set<kotlin.String>? = null,
+    val entityTypes: kotlin.collections.Set<WorkItemTypeModel>? = null,
 
     /* Date and time of work item creation */
     @Json(name = "createdDate")

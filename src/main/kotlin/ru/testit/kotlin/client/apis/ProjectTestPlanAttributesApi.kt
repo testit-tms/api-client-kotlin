@@ -19,7 +19,6 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.CustomAttributeGetModel
 import ru.testit.kotlin.client.models.CustomAttributeModel
 import ru.testit.kotlin.client.models.CustomAttributeTestPlanProjectRelationPutModel
 import ru.testit.kotlin.client.models.ProblemDetails
@@ -283,7 +282,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param projectAttributesFilterModel  (optional)
-     * @return kotlin.collections.List<CustomAttributeGetModel>
+     * @return kotlin.collections.List<CustomAttributeModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -292,11 +291,11 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchTestPlanAttributesInProject(projectId: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, projectAttributesFilterModel: ProjectAttributesFilterModel? = null) : kotlin.collections.List<CustomAttributeGetModel> {
+    fun searchTestPlanAttributesInProject(projectId: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, projectAttributesFilterModel: ProjectAttributesFilterModel? = null) : kotlin.collections.List<CustomAttributeModel> {
         val localVarResponse = searchTestPlanAttributesInProjectWithHttpInfo(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, projectAttributesFilterModel = projectAttributesFilterModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<CustomAttributeGetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<CustomAttributeModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -321,16 +320,16 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param projectAttributesFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<CustomAttributeGetModel>?>
+     * @return ApiResponse<kotlin.collections.List<CustomAttributeModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchTestPlanAttributesInProjectWithHttpInfo(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, projectAttributesFilterModel: ProjectAttributesFilterModel?) : ApiResponse<kotlin.collections.List<CustomAttributeGetModel>?> {
+    fun searchTestPlanAttributesInProjectWithHttpInfo(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, projectAttributesFilterModel: ProjectAttributesFilterModel?) : ApiResponse<kotlin.collections.List<CustomAttributeModel>?> {
         val localVariableConfig = searchTestPlanAttributesInProjectRequestConfig(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, projectAttributesFilterModel = projectAttributesFilterModel)
 
-        return request<ProjectAttributesFilterModel, kotlin.collections.List<CustomAttributeGetModel>>(
+        return request<ProjectAttributesFilterModel, kotlin.collections.List<CustomAttributeModel>>(
             localVariableConfig
         )
     }

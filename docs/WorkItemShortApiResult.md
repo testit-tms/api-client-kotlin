@@ -28,6 +28,7 @@
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date and time of Work Item creation |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Date and time of the latest modification of Work Item |  [optional] |
 | **tagNames** | **kotlin.collections.List&lt;kotlin.String&gt;** | Array of tag names of Work Item |  [optional] |
+| **layer** | [**WorkItemLayerApiResult**](WorkItemLayerApiResult.md) | Test pyramid layer of Work Item |  [optional] |
 
 
 

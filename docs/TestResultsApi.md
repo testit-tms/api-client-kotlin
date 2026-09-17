@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost*
 | [**apiV2TestResultsIdAttachmentsAttachmentIdPut**](TestResultsApi.md#apiV2TestResultsIdAttachmentsAttachmentIdPut) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} | Attach file to the test result |
 | [**apiV2TestResultsIdAttachmentsInfoGet**](TestResultsApi.md#apiV2TestResultsIdAttachmentsInfoGet) | **GET** /api/v2/testResults/{id}/attachments/info | Get test result attachments meta-information |
 | [**apiV2TestResultsIdGet**](TestResultsApi.md#apiV2TestResultsIdGet) | **GET** /api/v2/testResults/{id} | Get test result by ID |
+| [**apiV2TestResultsIdPatch**](TestResultsApi.md#apiV2TestResultsIdPatch) | **PATCH** /api/v2/testResults/{id} | Patch test result by ID |
 | [**apiV2TestResultsIdPut**](TestResultsApi.md#apiV2TestResultsIdPut) | **PUT** /api/v2/testResults/{id} | Edit test result by ID |
 | [**apiV2TestResultsIdRerunsGet**](TestResultsApi.md#apiV2TestResultsIdRerunsGet) | **GET** /api/v2/testResults/{id}/reruns | Get reruns |
 | [**apiV2TestResultsSearchPost**](TestResultsApi.md#apiV2TestResultsSearchPost) | **POST** /api/v2/testResults/search | Search for test results |
@@ -61,9 +62,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -110,9 +114,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -157,9 +164,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -205,9 +215,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -252,9 +265,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -299,13 +315,69 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="apiV2TestResultsIdPatch"></a>
+# **apiV2TestResultsIdPatch**
+> apiV2TestResultsIdPatch(id, operation)
+
+Patch test result by ID
+
+See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestResultsApi()
+val id : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | Test result unique ID
+val operation : kotlin.collections.List<Operation> =  // kotlin.collections.List<Operation> | 
+try {
+    apiInstance.apiV2TestResultsIdPatch(id, operation)
+} catch (e: ClientException) {
+    println("4xx response calling TestResultsApi#apiV2TestResultsIdPatch")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestResultsApi#apiV2TestResultsIdPatch")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **id** | **java.util.UUID**| Test result unique ID | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **operation** | [**kotlin.collections.List&lt;Operation&gt;**](Operation.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a id="apiV2TestResultsIdPut"></a>
@@ -347,9 +419,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -394,9 +469,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -451,9 +529,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -498,9 +579,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -548,9 +632,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -598,9 +685,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -658,9 +748,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -709,9 +802,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -758,9 +854,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 

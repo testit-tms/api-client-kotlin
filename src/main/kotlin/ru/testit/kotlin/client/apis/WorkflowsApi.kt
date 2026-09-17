@@ -28,8 +28,8 @@ import ru.testit.kotlin.client.models.UpdateWorkflowApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 import ru.testit.kotlin.client.models.WorkflowApiResult
 import ru.testit.kotlin.client.models.WorkflowExistsByNameApiResult
-import ru.testit.kotlin.client.models.WorkflowProjectApiResultReply
-import ru.testit.kotlin.client.models.WorkflowShortApiResultReply
+import ru.testit.kotlin.client.models.WorkflowProjectApiResultIReply
+import ru.testit.kotlin.client.models.WorkflowShortApiResultIReply
 
 import com.squareup.moshi.Json
 
@@ -280,7 +280,7 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param id 
      * @param searchWorkflowProjectsApiModel  (optional)
-     * @return WorkflowProjectApiResultReply
+     * @return WorkflowProjectApiResultIReply
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -289,11 +289,11 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WorkflowsIdProjectsSearchPost(id: java.util.UUID, searchWorkflowProjectsApiModel: SearchWorkflowProjectsApiModel? = null) : WorkflowProjectApiResultReply {
+    fun apiV2WorkflowsIdProjectsSearchPost(id: java.util.UUID, searchWorkflowProjectsApiModel: SearchWorkflowProjectsApiModel? = null) : WorkflowProjectApiResultIReply {
         val localVarResponse = apiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id = id, searchWorkflowProjectsApiModel = searchWorkflowProjectsApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowProjectApiResultReply
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowProjectApiResultIReply
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -313,16 +313,16 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param id 
      * @param searchWorkflowProjectsApiModel  (optional)
-     * @return ApiResponse<WorkflowProjectApiResultReply?>
+     * @return ApiResponse<WorkflowProjectApiResultIReply?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id: java.util.UUID, searchWorkflowProjectsApiModel: SearchWorkflowProjectsApiModel?) : ApiResponse<WorkflowProjectApiResultReply?> {
+    fun apiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id: java.util.UUID, searchWorkflowProjectsApiModel: SearchWorkflowProjectsApiModel?) : ApiResponse<WorkflowProjectApiResultIReply?> {
         val localVariableConfig = apiV2WorkflowsIdProjectsSearchPostRequestConfig(id = id, searchWorkflowProjectsApiModel = searchWorkflowProjectsApiModel)
 
-        return request<SearchWorkflowProjectsApiModel, WorkflowProjectApiResultReply>(
+        return request<SearchWorkflowProjectsApiModel, WorkflowProjectApiResultIReply>(
             localVariableConfig
         )
     }
@@ -578,7 +578,7 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * 
      * @param searchWorkflowsApiModel  (optional)
-     * @return WorkflowShortApiResultReply
+     * @return WorkflowShortApiResultIReply
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -587,11 +587,11 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2WorkflowsSearchPost(searchWorkflowsApiModel: SearchWorkflowsApiModel? = null) : WorkflowShortApiResultReply {
+    fun apiV2WorkflowsSearchPost(searchWorkflowsApiModel: SearchWorkflowsApiModel? = null) : WorkflowShortApiResultIReply {
         val localVarResponse = apiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel = searchWorkflowsApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowShortApiResultReply
+            ResponseType.Success -> (localVarResponse as Success<*>).data as WorkflowShortApiResultIReply
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -610,16 +610,16 @@ open class WorkflowsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * 
      * @param searchWorkflowsApiModel  (optional)
-     * @return ApiResponse<WorkflowShortApiResultReply?>
+     * @return ApiResponse<WorkflowShortApiResultIReply?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel: SearchWorkflowsApiModel?) : ApiResponse<WorkflowShortApiResultReply?> {
+    fun apiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel: SearchWorkflowsApiModel?) : ApiResponse<WorkflowShortApiResultIReply?> {
         val localVariableConfig = apiV2WorkflowsSearchPostRequestConfig(searchWorkflowsApiModel = searchWorkflowsApiModel)
 
-        return request<SearchWorkflowsApiModel, WorkflowShortApiResultReply>(
+        return request<SearchWorkflowsApiModel, WorkflowShortApiResultIReply>(
             localVariableConfig
         )
     }

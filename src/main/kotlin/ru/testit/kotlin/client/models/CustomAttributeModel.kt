@@ -24,34 +24,50 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id Unique ID of the attribute
- * @param options Collection of the attribute options   Available for attributes of type `options` and `multiple options` only
- * @param type Type of the attribute
- * @param isDeleted Indicates if the attribute is deleted
+ * @param id Unique ID of the attribute.
+ * @param type Type of the attribute.
+ * @param options Collection of the attribute options.
+ * @param targets Collection of the attribute targets.   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans).
+ * @param isReadOnly Indicates if the attribute is read-only.
+ * @param isDeleted Indicates if the attribute is deleted.
+ * @param isSystem Indicates if the attribute is system.
  * @param name Name of the attribute
  * @param isEnabled Indicates if the attribute is enabled
  * @param isRequired Indicates if the attribute value is mandatory to specify
  * @param isGlobal Indicates if the attribute is available across all projects
+ * @param code Optional code identifier for the attribute.
  */
 
 
 data class CustomAttributeModel (
 
-    /* Unique ID of the attribute */
+    /* Unique ID of the attribute. */
     @Json(name = "id")
     val id: java.util.UUID,
 
-    /* Collection of the attribute options   Available for attributes of type `options` and `multiple options` only */
-    @Json(name = "options")
-    val options: kotlin.collections.List<CustomAttributeOptionModel>,
-
-    /* Type of the attribute */
+    /* Type of the attribute. */
     @Json(name = "type")
     val type: CustomAttributeTypesEnum,
 
-    /* Indicates if the attribute is deleted */
+    /* Collection of the attribute options. */
+    @Json(name = "options")
+    val options: kotlin.collections.List<CustomAttributeOptionModel>,
+
+    /* Collection of the attribute targets.   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans). */
+    @Json(name = "targets")
+    val targets: kotlin.collections.List<kotlin.String>,
+
+    /* Indicates if the attribute is read-only. */
+    @Json(name = "isReadOnly")
+    val isReadOnly: kotlin.Boolean,
+
+    /* Indicates if the attribute is deleted. */
     @Json(name = "isDeleted")
     val isDeleted: kotlin.Boolean,
+
+    /* Indicates if the attribute is system. */
+    @Json(name = "isSystem")
+    val isSystem: kotlin.Boolean,
 
     /* Name of the attribute */
     @Json(name = "name")
@@ -67,7 +83,11 @@ data class CustomAttributeModel (
 
     /* Indicates if the attribute is available across all projects */
     @Json(name = "isGlobal")
-    val isGlobal: kotlin.Boolean
+    val isGlobal: kotlin.Boolean,
+
+    /* Optional code identifier for the attribute. */
+    @Json(name = "code")
+    val code: kotlin.String? = null
 
 ) {
 

@@ -13,7 +13,7 @@
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the autotest |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Creation date of the autotest |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project creator |  |
-| **links** | [**kotlin.collections.List&lt;Link&gt;**](Link.md) | Collection of the autotest links |  [optional] |
+| **links** | [**kotlin.collections.List&lt;LinkApiResult&gt;**](LinkApiResult.md) | Collection of the autotest links |  [optional] |
 | **namespace** | **kotlin.String** | Name of the autotest namespace |  [optional] |
 | **classname** | **kotlin.String** | Name of the autotest class |  [optional] |
 | **steps** | [**kotlin.collections.List&lt;AutoTestStep&gt;**](AutoTestStep.md) | Collection of the autotest steps |  [optional] |

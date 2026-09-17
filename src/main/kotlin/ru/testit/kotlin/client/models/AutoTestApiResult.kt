@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.AutoTestStepApiResult
 import ru.testit.kotlin.client.models.ConfigurationShortApiResult
 import ru.testit.kotlin.client.models.LabelApiResult
+import ru.testit.kotlin.client.models.LayerApiResult
 import ru.testit.kotlin.client.models.LinkApiResult
 import ru.testit.kotlin.client.models.TestStatusApiResult
 
@@ -54,6 +55,7 @@ import com.squareup.moshi.JsonClass
  * @param lastTestResultOutcome 
  * @param lastTestResultStatus 
  * @param stabilityPercentage 
+ * @param layer Model of auto test layer for use in responses.
  * @param links 
  * @param labels 
  * @param tags 
@@ -142,6 +144,10 @@ data class AutoTestApiResult (
 
     @Json(name = "stabilityPercentage")
     val stabilityPercentage: kotlin.Long? = null,
+
+    /* Model of auto test layer for use in responses. */
+    @Json(name = "layer")
+    val layer: LayerApiResult? = null,
 
     @Json(name = "links")
     val links: kotlin.collections.List<LinkApiResult>? = null,

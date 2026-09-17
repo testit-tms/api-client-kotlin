@@ -36,20 +36,20 @@ import com.squareup.moshi.JsonClass
  * @param name Name of the work item
  * @param entityTypeName Type of entity associated with this work item
  * @param duration Duration of the work item in milliseconds
- * @param state State of the work item
- * @param priority Priority level of the work item
- * @param attributes Set of custom attributes associated with the work item
- * @param tags Set of tags applied to the work item
- * @param preconditionSteps Set of precondition steps that need to be executed before starting the main steps
- * @param steps Main steps or actions defined for the work item
- * @param postconditionSteps Set of postcondition steps that are executed after completing the main steps
- * @param links Set of links related to the work item
+ * @param state Current state of the work item
+ * @param priority Priority level assigned to the work item
  * @param sectionId Unique identifier of the section within a project
  * @param description Description of the work item
- * @param iterations Associated iterations linked to the work item
- * @param autoTests Automated tests associated with the work item
- * @param attachments Files attached to the work item
- * @param parameters Set of parameter keys related to the work item
+ * @param attributes Set of custom attributes associated with the work item
+ * @param tags Set of tags applied to the work item
+ * @param preconditionSteps Set of precondition steps that must be executed before the main steps
+ * @param steps Set of main steps or actions defined for the work item
+ * @param postconditionSteps Set of postcondition steps that are executed after completing the main steps
+ * @param iterations Set of iterations associated with the work item
+ * @param autoTests Set of automated tests linked to the work item
+ * @param attachments Set of files attached to the work item
+ * @param links Set of links related to the work item
+ * @param parameters Set of parameter keys associated with the work item
  */
 
 
@@ -71,37 +71,13 @@ data class CreateWorkItemApiModel (
     @Json(name = "duration")
     val duration: kotlin.Long,
 
-    /* State of the work item */
+    /* Current state of the work item */
     @Json(name = "state")
     val state: WorkItemStateApiModel,
 
-    /* Priority level of the work item */
+    /* Priority level assigned to the work item */
     @Json(name = "priority")
     val priority: WorkItemPriorityApiModel,
-
-    /* Set of custom attributes associated with the work item */
-    @Json(name = "attributes")
-    val attributes: kotlin.collections.Map<kotlin.String, kotlin.Any>,
-
-    /* Set of tags applied to the work item */
-    @Json(name = "tags")
-    val tags: kotlin.collections.List<TagModel>,
-
-    /* Set of precondition steps that need to be executed before starting the main steps */
-    @Json(name = "preconditionSteps")
-    val preconditionSteps: kotlin.collections.List<CreateStepApiModel>,
-
-    /* Main steps or actions defined for the work item */
-    @Json(name = "steps")
-    val steps: kotlin.collections.List<CreateStepApiModel>,
-
-    /* Set of postcondition steps that are executed after completing the main steps */
-    @Json(name = "postconditionSteps")
-    val postconditionSteps: kotlin.collections.List<CreateStepApiModel>,
-
-    /* Set of links related to the work item */
-    @Json(name = "links")
-    val links: kotlin.collections.List<CreateLinkApiModel>,
 
     /* Unique identifier of the section within a project */
     @Json(name = "sectionId")
@@ -111,19 +87,43 @@ data class CreateWorkItemApiModel (
     @Json(name = "description")
     val description: kotlin.String? = null,
 
-    /* Associated iterations linked to the work item */
+    /* Set of custom attributes associated with the work item */
+    @Json(name = "attributes")
+    val attributes: kotlin.collections.Map<kotlin.String, kotlin.Any>? = null,
+
+    /* Set of tags applied to the work item */
+    @Json(name = "tags")
+    val tags: kotlin.collections.List<TagModel>? = null,
+
+    /* Set of precondition steps that must be executed before the main steps */
+    @Json(name = "preconditionSteps")
+    val preconditionSteps: kotlin.collections.List<CreateStepApiModel>? = null,
+
+    /* Set of main steps or actions defined for the work item */
+    @Json(name = "steps")
+    val steps: kotlin.collections.List<CreateStepApiModel>? = null,
+
+    /* Set of postcondition steps that are executed after completing the main steps */
+    @Json(name = "postconditionSteps")
+    val postconditionSteps: kotlin.collections.List<CreateStepApiModel>? = null,
+
+    /* Set of iterations associated with the work item */
     @Json(name = "iterations")
     val iterations: kotlin.collections.List<AssignIterationApiModel>? = null,
 
-    /* Automated tests associated with the work item */
+    /* Set of automated tests linked to the work item */
     @Json(name = "autoTests")
     val autoTests: kotlin.collections.List<AutoTestIdModel>? = null,
 
-    /* Files attached to the work item */
+    /* Set of files attached to the work item */
     @Json(name = "attachments")
     val attachments: kotlin.collections.List<AssignAttachmentApiModel>? = null,
 
-    /* Set of parameter keys related to the work item */
+    /* Set of links related to the work item */
+    @Json(name = "links")
+    val links: kotlin.collections.List<CreateLinkApiModel>? = null,
+
+    /* Set of parameter keys associated with the work item */
     @Json(name = "parameters")
     val parameters: kotlin.collections.List<WorkItemParameterKeyApiModel>? = null
 

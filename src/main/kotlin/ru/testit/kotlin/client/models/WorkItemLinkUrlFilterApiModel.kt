@@ -15,7 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
-import ru.testit.kotlin.client.models.WorkItemEntityTypes
+import ru.testit.kotlin.client.models.WorkItemTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -31,7 +31,7 @@ import com.squareup.moshi.JsonClass
 data class WorkItemLinkUrlFilterApiModel (
 
     @Json(name = "types")
-    val types: kotlin.collections.Set<WorkItemEntityTypes>? = null,
+    val types: kotlin.collections.Set<WorkItemTypeModel>? = null,
 
     @Json(name = "searchUrl")
     val searchUrl: kotlin.String? = null

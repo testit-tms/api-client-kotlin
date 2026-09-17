@@ -23,7 +23,7 @@ import ru.testit.kotlin.client.models.CreateTestStatusApiModel
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.SearchTestStatusesApiModel
 import ru.testit.kotlin.client.models.TestStatusApiResult
-import ru.testit.kotlin.client.models.TestStatusApiResultReply
+import ru.testit.kotlin.client.models.TestStatusApiResultIReply
 import ru.testit.kotlin.client.models.UpdateTestStatusApiModel
 import ru.testit.kotlin.client.models.ValidationProblemDetails
 
@@ -495,7 +495,7 @@ open class TestStatusesApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * 
      * 
      * @param searchTestStatusesApiModel  (optional)
-     * @return TestStatusApiResultReply
+     * @return TestStatusApiResultIReply
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -504,11 +504,11 @@ open class TestStatusesApi(basePath: kotlin.String = defaultBasePath, client: Ca
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestStatusesSearchPost(searchTestStatusesApiModel: SearchTestStatusesApiModel? = null) : TestStatusApiResultReply {
+    fun apiV2TestStatusesSearchPost(searchTestStatusesApiModel: SearchTestStatusesApiModel? = null) : TestStatusApiResultIReply {
         val localVarResponse = apiV2TestStatusesSearchPostWithHttpInfo(searchTestStatusesApiModel = searchTestStatusesApiModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as TestStatusApiResultReply
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestStatusApiResultIReply
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -527,16 +527,16 @@ open class TestStatusesApi(basePath: kotlin.String = defaultBasePath, client: Ca
      * 
      * 
      * @param searchTestStatusesApiModel  (optional)
-     * @return ApiResponse<TestStatusApiResultReply?>
+     * @return ApiResponse<TestStatusApiResultIReply?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestStatusesSearchPostWithHttpInfo(searchTestStatusesApiModel: SearchTestStatusesApiModel?) : ApiResponse<TestStatusApiResultReply?> {
+    fun apiV2TestStatusesSearchPostWithHttpInfo(searchTestStatusesApiModel: SearchTestStatusesApiModel?) : ApiResponse<TestStatusApiResultIReply?> {
         val localVariableConfig = apiV2TestStatusesSearchPostRequestConfig(searchTestStatusesApiModel = searchTestStatusesApiModel)
 
-        return request<SearchTestStatusesApiModel, TestStatusApiResultReply>(
+        return request<SearchTestStatusesApiModel, TestStatusApiResultIReply>(
             localVariableConfig
         )
     }

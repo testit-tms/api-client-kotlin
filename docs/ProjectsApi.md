@@ -72,9 +72,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -116,9 +119,12 @@ This endpoint does not need any parameter.
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -162,9 +168,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -211,9 +220,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -257,9 +269,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -306,9 +321,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -356,9 +374,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -402,9 +423,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -448,9 +472,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -498,9 +525,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -548,9 +578,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -625,9 +658,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -672,9 +708,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -719,9 +758,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -766,9 +808,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -777,7 +822,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsSearchPost"></a>
 # **apiV2ProjectsSearchPost**
-> kotlin.collections.List&lt;ProjectShortModel&gt; apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
+> kotlin.collections.List&lt;ProjectApiResult&gt; apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
 
 Search for projects
 
@@ -795,7 +840,7 @@ val searchField : kotlin.String = searchField_example // kotlin.String | Propert
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 val projectsFilterModel : ProjectsFilterModel =  // ProjectsFilterModel | 
 try {
-    val result : kotlin.collections.List<ProjectShortModel> = apiInstance.apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
+    val result : kotlin.collections.List<ProjectApiResult> = apiInstance.apiV2ProjectsSearchPost(skip, take, orderBy, searchField, searchValue, projectsFilterModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#apiV2ProjectsSearchPost")
@@ -818,14 +863,17 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;ProjectShortModel&gt;**](ProjectShortModel.md)
+[**kotlin.collections.List&lt;ProjectApiResult&gt;**](ProjectApiResult.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -834,7 +882,7 @@ Configure Bearer or PrivateToken:
 
 <a id="apiV2ProjectsShortsPost"></a>
 # **apiV2ProjectsShortsPost**
-> ProjectShortApiResultReply apiV2ProjectsShortsPost(getShortProjectsApiModel)
+> ProjectShortApiResultIReply apiV2ProjectsShortsPost(getShortProjectsApiModel)
 
 Get projects short models
 
@@ -849,7 +897,7 @@ Get projects short models
 val apiInstance = ProjectsApi()
 val getShortProjectsApiModel : GetShortProjectsApiModel =  // GetShortProjectsApiModel | 
 try {
-    val result : ProjectShortApiResultReply = apiInstance.apiV2ProjectsShortsPost(getShortProjectsApiModel)
+    val result : ProjectShortApiResultIReply = apiInstance.apiV2ProjectsShortsPost(getShortProjectsApiModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#apiV2ProjectsShortsPost")
@@ -867,14 +915,17 @@ try {
 
 ### Return type
 
-[**ProjectShortApiResultReply**](ProjectShortApiResultReply.md)
+[**ProjectShortApiResultIReply**](ProjectShortApiResultIReply.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -921,9 +972,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -967,9 +1021,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -978,7 +1035,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getAllProjects"></a>
 # **getAllProjects**
-> kotlin.collections.List&lt;ProjectShortModel&gt; getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
+> kotlin.collections.List&lt;ProjectApiResult&gt; getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
 
 Get all projects
 
@@ -999,7 +1056,7 @@ val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER
 val searchField : kotlin.String = searchField_example // kotlin.String | Property name for searching
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 try {
-    val result : kotlin.collections.List<ProjectShortModel> = apiInstance.getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
+    val result : kotlin.collections.List<ProjectApiResult> = apiInstance.getAllProjects(isDeleted, projectName, skip, take, orderBy, searchField, searchValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#getAllProjects")
@@ -1023,14 +1080,17 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;ProjectShortModel&gt;**](ProjectShortModel.md)
+[**kotlin.collections.List&lt;ProjectApiResult&gt;**](ProjectApiResult.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1077,9 +1137,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1088,7 +1151,7 @@ Configure Bearer or PrivateToken:
 
 <a id="getProjectById"></a>
 # **getProjectById**
-> ProjectModel getProjectById(id)
+> DetailedProjectApiResult getProjectById(id)
 
 Get project by ID
 
@@ -1103,7 +1166,7 @@ Get project by ID
 val apiInstance = ProjectsApi()
 val id : kotlin.String = id_example // kotlin.String | Project internal (UUID) or global (integer) identifier
 try {
-    val result : ProjectModel = apiInstance.getProjectById(id)
+    val result : DetailedProjectApiResult = apiInstance.getProjectById(id)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectsApi#getProjectById")
@@ -1121,14 +1184,17 @@ try {
 
 ### Return type
 
-[**ProjectModel**](ProjectModel.md)
+[**DetailedProjectApiResult**](DetailedProjectApiResult.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1141,7 +1207,7 @@ Configure Bearer or PrivateToken:
 
 Get project test plans
 
- Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+ Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                     project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                     are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
 
 ### Example
 ```kotlin
@@ -1177,9 +1243,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1250,9 +1319,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1298,9 +1370,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 

@@ -52,9 +52,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -102,9 +105,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -151,9 +157,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -162,7 +171,7 @@ Configure Bearer or PrivateToken:
 
 <a id="searchTestPlanAttributesInProject"></a>
 # **searchTestPlanAttributesInProject**
-> kotlin.collections.List&lt;CustomAttributeGetModel&gt; searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
+> kotlin.collections.List&lt;CustomAttributeModel&gt; searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
 
 Search for attributes used in the project test plans
 
@@ -181,7 +190,7 @@ val searchField : kotlin.String = searchField_example // kotlin.String | Propert
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 val projectAttributesFilterModel : ProjectAttributesFilterModel =  // ProjectAttributesFilterModel | 
 try {
-    val result : kotlin.collections.List<CustomAttributeGetModel> = apiInstance.searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
+    val result : kotlin.collections.List<CustomAttributeModel> = apiInstance.searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectTestPlanAttributesApi#searchTestPlanAttributesInProject")
@@ -205,14 +214,17 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;CustomAttributeGetModel&gt;**](CustomAttributeGetModel.md)
+[**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
 
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -260,9 +272,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 

@@ -16,6 +16,8 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.CompositeFilter
+import ru.testit.kotlin.client.models.Group
+import ru.testit.kotlin.client.models.Mode
 import ru.testit.kotlin.client.models.Order
 import ru.testit.kotlin.client.models.Page
 
@@ -26,6 +28,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param order 
+ * @param mode 
+ * @param group 
  * @param filter 
  * @param page 
  */
@@ -35,6 +39,12 @@ data class Inquiry (
 
     @Json(name = "order")
     val order: kotlin.collections.List<Order>,
+
+    @Json(name = "mode")
+    val mode: Mode,
+
+    @Json(name = "group")
+    val group: Group? = null,
 
     @Json(name = "filter")
     val filter: CompositeFilter? = null,

@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param id 
- * @param title 
  * @param url 
+ * @param title 
  * @param type 
  */
 
@@ -34,14 +34,14 @@ data class LinkShortApiResult (
     @Json(name = "id")
     val id: java.util.UUID,
 
-    @Json(name = "title")
-    val title: kotlin.String,
-
     @Json(name = "url")
     val url: kotlin.String,
 
+    @Json(name = "title")
+    val title: kotlin.String? = null,
+
     @Json(name = "type")
-    val type: kotlin.String
+    val type: kotlin.String? = null
 
 ) {
 

@@ -14,6 +14,7 @@
 | **title** | **kotlin.String** | Name of the autotest in autotest&#39;s card |  [optional] |
 | **description** | **kotlin.String** | Description of the autotest in autotest&#39;s card |  [optional] |
 | **isFlaky** | **kotlin.Boolean** | Indicates if the autotest is marked as flaky |  [optional] |
+| **resetLayer** | **kotlin.Boolean** | Indicates if the autotest layer should be reset. |  [optional] |
 | **steps** | [**kotlin.collections.List&lt;AutoTestStepApiModel&gt;**](AutoTestStepApiModel.md) | Collection of the autotest steps |  [optional] |
 | **setup** | [**kotlin.collections.List&lt;AutoTestStepApiModel&gt;**](AutoTestStepApiModel.md) | Collection of the autotest setup steps |  [optional] |
 | **teardown** | [**kotlin.collections.List&lt;AutoTestStepApiModel&gt;**](AutoTestStepApiModel.md) | Collection of the autotest teardown steps |  [optional] |
