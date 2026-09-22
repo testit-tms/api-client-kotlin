@@ -24,6 +24,7 @@ import ru.testit.kotlin.client.models.CreateDefectApiModel
 import ru.testit.kotlin.client.models.DefectApiModel
 import ru.testit.kotlin.client.models.GetExternalFormApiResult
 import ru.testit.kotlin.client.models.ImageResizeType
+import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.RerunsApiResult
 import ru.testit.kotlin.client.models.TestResultResponse
@@ -73,7 +74,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPost(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel? = null) : GetExternalFormApiResult {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId = externalProjectId, testResultsSelectApiModel = testResultsSelectApiModel)
 
         return when (localVarResponse.responseType) {
@@ -103,7 +106,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostWithHttpInfo(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel?) : ApiResponse<GetExternalFormApiResult?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequestConfig(externalProjectId = externalProjectId, testResultsSelectApiModel = testResultsSelectApiModel)
 
         return request<TestResultsSelectApiModel, GetExternalFormApiResult>(
@@ -118,6 +123,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param testResultsSelectApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsExternalFormsPostRequestConfig(externalProjectId: java.util.UUID, testResultsSelectApiModel: TestResultsSelectApiModel?) : RequestConfig<TestResultsSelectApiModel> {
         val localVariableBody = testResultsSelectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -150,7 +156,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPost(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel? = null) : DefectApiModel {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId = externalProjectId, createDefectApiModel = createDefectApiModel)
 
         return when (localVarResponse.responseType) {
@@ -180,7 +188,9 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostWithHttpInfo(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel?) : ApiResponse<DefectApiModel?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequestConfig(externalProjectId = externalProjectId, createDefectApiModel = createDefectApiModel)
 
         return request<CreateDefectApiModel, DefectApiModel>(
@@ -195,6 +205,7 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
      * @param createDefectApiModel  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestResultsExternalProjectsExternalProjectIdDefectsPostRequestConfig(externalProjectId: java.util.UUID, createDefectApiModel: CreateDefectApiModel?) : RequestConfig<CreateDefectApiModel> {
         val localVariableBody = createDefectApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -502,6 +513,81 @@ open class TestResultsApi(basePath: kotlin.String = defaultBasePath, client: Cal
 
         return RequestConfig(
             method = RequestMethod.GET,
+            path = "/api/v2/testResults/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * PATCH /api/v2/testResults/{id}
+     * Patch test result by ID
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id Test result unique ID
+     * @param operation  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestResultsIdPatch(id: java.util.UUID, operation: kotlin.collections.List<Operation>? = null) : Unit {
+        val localVarResponse = apiV2TestResultsIdPatchWithHttpInfo(id = id, operation = operation)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * PATCH /api/v2/testResults/{id}
+     * Patch test result by ID
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id Test result unique ID
+     * @param operation  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestResultsIdPatchWithHttpInfo(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestResultsIdPatchRequestConfig(id = id, operation = operation)
+
+        return request<kotlin.collections.List<Operation>, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestResultsIdPatch
+     *
+     * @param id Test result unique ID
+     * @param operation  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2TestResultsIdPatchRequestConfig(id: java.util.UUID, operation: kotlin.collections.List<Operation>?) : RequestConfig<kotlin.collections.List<Operation>> {
+        val localVariableBody = operation
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PATCH,
             path = "/api/v2/testResults/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
             query = localVariableQuery,
             headers = localVariableHeaders,

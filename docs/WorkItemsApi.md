@@ -11,11 +11,13 @@ All URIs are relative to *http://localhost*
 | [**apiV2WorkItemsIdLikePost**](WorkItemsApi.md#apiV2WorkItemsIdLikePost) | **POST** /api/v2/workItems/{id}/like | Set like to WorkItem |
 | [**apiV2WorkItemsIdLikesCountGet**](WorkItemsApi.md#apiV2WorkItemsIdLikesCountGet) | **GET** /api/v2/workItems/{id}/likes/count | Get likes count of WorkItem |
 | [**apiV2WorkItemsIdLikesGet**](WorkItemsApi.md#apiV2WorkItemsIdLikesGet) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem |
+| [**apiV2WorkItemsIdPatch**](WorkItemsApi.md#apiV2WorkItemsIdPatch) | **PATCH** /api/v2/workItems/{id} | Patch Test Case, Checklist or Shared Step |
 | [**apiV2WorkItemsIdTestResultsHistoryGet**](WorkItemsApi.md#apiV2WorkItemsIdTestResultsHistoryGet) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem |
 | [**apiV2WorkItemsIdVersionVersionIdActualPost**](WorkItemsApi.md#apiV2WorkItemsIdVersionVersionIdActualPost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual |
 | [**apiV2WorkItemsLinksUrlsSearchPost**](WorkItemsApi.md#apiV2WorkItemsLinksUrlsSearchPost) | **POST** /api/v2/workItems/links/urls/search |  |
 | [**apiV2WorkItemsMovePost**](WorkItemsApi.md#apiV2WorkItemsMovePost) | **POST** /api/v2/workItems/move | Move WorkItem to another section |
 | [**apiV2WorkItemsPost**](WorkItemsApi.md#apiV2WorkItemsPost) | **POST** /api/v2/workItems | Creates work item |
+| [**apiV2WorkItemsPut**](WorkItemsApi.md#apiV2WorkItemsPut) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 | [**apiV2WorkItemsSearchPost**](WorkItemsApi.md#apiV2WorkItemsSearchPost) | **POST** /api/v2/workItems/search | Search for work items |
 | [**apiV2WorkItemsSharedStepIdReferencesSectionsPost**](WorkItemsApi.md#apiV2WorkItemsSharedStepIdReferencesSectionsPost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections |
 | [**apiV2WorkItemsSharedStepIdReferencesWorkItemsPost**](WorkItemsApi.md#apiV2WorkItemsSharedStepIdReferencesWorkItemsPost) | **POST** /api/v2/workItems/{sharedStepId}/references/workItems | Get SharedStep references in work items |
@@ -29,7 +31,6 @@ All URIs are relative to *http://localhost*
 | [**getWorkItemVersions**](WorkItemsApi.md#getWorkItemVersions) | **GET** /api/v2/workItems/{id}/versions | Get WorkItem versions |
 | [**purgeWorkItem**](WorkItemsApi.md#purgeWorkItem) | **POST** /api/v2/workItems/{id}/purge | Permanently delete test case, checklist or shared steps from archive |
 | [**restoreWorkItem**](WorkItemsApi.md#restoreWorkItem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
-| [**updateWorkItem**](WorkItemsApi.md#updateWorkItem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 
 
 <a id="apiV2WorkItemsIdAttachmentsPost"></a>
@@ -73,9 +74,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -122,9 +126,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -181,9 +188,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -229,9 +239,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -277,9 +290,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -326,9 +342,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -375,13 +394,69 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="apiV2WorkItemsIdPatch"></a>
+# **apiV2WorkItemsIdPatch**
+> apiV2WorkItemsIdPatch(id, operation)
+
+Patch Test Case, Checklist or Shared Step
+
+See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = WorkItemsApi()
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | WorkItem internal (guid format) or global(integer format) identifier\"
+val operation : kotlin.collections.List<Operation> =  // kotlin.collections.List<Operation> | 
+try {
+    apiInstance.apiV2WorkItemsIdPatch(id, operation)
+} catch (e: ClientException) {
+    println("4xx response calling WorkItemsApi#apiV2WorkItemsIdPatch")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WorkItemsApi#apiV2WorkItemsIdPatch")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **id** | **kotlin.String**| WorkItem internal (guid format) or global(integer format) identifier\&quot; | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **operation** | [**kotlin.collections.List&lt;Operation&gt;**](Operation.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a id="apiV2WorkItemsIdTestResultsHistoryGet"></a>
@@ -454,9 +529,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -505,9 +583,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -562,9 +643,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -611,9 +695,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -658,9 +745,63 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="apiV2WorkItemsPut"></a>
+# **apiV2WorkItemsPut**
+> apiV2WorkItemsPut(updateWorkItemApiModel)
+
+Update Test Case, Checklist or Shared Step
+
+ Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = WorkItemsApi()
+val updateWorkItemApiModel : UpdateWorkItemApiModel =  // UpdateWorkItemApiModel | 
+try {
+    apiInstance.apiV2WorkItemsPut(updateWorkItemApiModel)
+} catch (e: ClientException) {
+    println("4xx response calling WorkItemsApi#apiV2WorkItemsPut")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling WorkItemsApi#apiV2WorkItemsPut")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateWorkItemApiModel** | [**UpdateWorkItemApiModel**](UpdateWorkItemApiModel.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -715,9 +856,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -776,9 +920,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -837,9 +984,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -886,9 +1036,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -934,9 +1087,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -982,9 +1138,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1031,9 +1190,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1082,9 +1244,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1135,9 +1300,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1184,9 +1352,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1237,9 +1408,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1283,9 +1457,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1329,60 +1506,15 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="updateWorkItem"></a>
-# **updateWorkItem**
-> updateWorkItem(updateWorkItemApiModel)
-
-Update Test Case, Checklist or Shared Step
-
- Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-
-### Example
-```kotlin
-// Import classes:
-//import ru.testit.kotlin.client.infrastructure.*
-//import ru.testit.kotlin.client.models.*
-
-val apiInstance = WorkItemsApi()
-val updateWorkItemApiModel : UpdateWorkItemApiModel =  // UpdateWorkItemApiModel | 
-try {
-    apiInstance.updateWorkItem(updateWorkItemApiModel)
-} catch (e: ClientException) {
-    println("4xx response calling WorkItemsApi#updateWorkItem")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling WorkItemsApi#updateWorkItem")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **updateWorkItemApiModel** | [**UpdateWorkItemApiModel**](UpdateWorkItemApiModel.md)|  | [optional] |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-
-Configure Bearer or PrivateToken:
-    ApiClient.apiKey["Authorization"] = ""
-    ApiClient.apiKeyPrefix["Authorization"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 

@@ -31,6 +31,7 @@
 | **lastTestResultOutcome** | **kotlin.String** |  |  [optional] |
 | **lastTestResultStatus** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |
 | **stabilityPercentage** | **kotlin.Long** |  |  [optional] |
+| **layer** | [**LayerApiResult**](LayerApiResult.md) | Model of auto test layer for use in responses. |  [optional] |
 | **links** | [**kotlin.collections.List&lt;LinkApiResult&gt;**](LinkApiResult.md) |  |  [optional] |
 | **labels** | [**kotlin.collections.List&lt;LabelApiResult&gt;**](LabelApiResult.md) |  |  [optional] |
 | **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |

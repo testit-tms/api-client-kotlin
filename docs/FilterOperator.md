@@ -4,25 +4,29 @@
 ## Enum
 
 
-    * `Equal` (value: `"="`)
+    * `EqualTo` (value: `"EqualTo"`)
 
-    * `ExclamationEqual` (value: `"!="`)
+    * `NotEqualTo` (value: `"NotEqualTo"`)
 
-    * `Tilde` (value: `"~"`)
+    * `Contains` (value: `"Contains"`)
 
-    * `ExclamationTilde` (value: `"!~"`)
+    * `NotContains` (value: `"NotContains"`)
 
-    * `Less_Than` (value: `"<"`)
+    * `LessThan` (value: `"LessThan"`)
 
-    * `Less_ThanEqual` (value: `"<="`)
+    * `LessThanOrEqualTo` (value: `"LessThanOrEqualTo"`)
 
-    * `Greater_Than` (value: `">"`)
+    * `GreaterThan` (value: `"GreaterThan"`)
 
-    * `Greater_ThanEqual` (value: `">="`)
+    * `GreaterThanOrEqualTo` (value: `"GreaterThanOrEqualTo"`)
 
-    * `Star` (value: `"*"`)
+    * `Empty` (value: `"Empty"`)
 
-    * `ExclamationStar` (value: `"!*"`)
+    * `NotEmpty` (value: `"NotEmpty"`)
+
+    * `In` (value: `"In"`)
+
+    * `NotIn` (value: `"NotIn"`)
 
 
 

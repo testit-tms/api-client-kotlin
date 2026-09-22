@@ -35,6 +35,7 @@ import com.squareup.moshi.JsonClass
  * @param title Name of the autotest in autotest's card
  * @param description Description of the autotest in autotest's card
  * @param isFlaky Indicates if the autotest is marked as flaky
+ * @param resetLayer Indicates if the autotest layer should be reset.
  * @param steps Collection of the autotest steps
  * @param setup Collection of the autotest setup steps
  * @param teardown Collection of the autotest teardown steps
@@ -87,6 +88,10 @@ data class AutoTestUpdateApiModel (
     /* Indicates if the autotest is marked as flaky */
     @Json(name = "isFlaky")
     val isFlaky: kotlin.Boolean? = null,
+
+    /* Indicates if the autotest layer should be reset. */
+    @Json(name = "resetLayer")
+    val resetLayer: kotlin.Boolean? = null,
 
     /* Collection of the autotest steps */
     @Json(name = "steps")

@@ -18,7 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.AttachmentApiResult
 import ru.testit.kotlin.client.models.AutoTest
 import ru.testit.kotlin.client.models.AutoTestStepResult
-import ru.testit.kotlin.client.models.Link
+import ru.testit.kotlin.client.models.LinkApiResult
 import ru.testit.kotlin.client.models.StepCommentApiModel
 import ru.testit.kotlin.client.models.StepResultApiModel
 import ru.testit.kotlin.client.models.TestPoint
@@ -114,7 +114,7 @@ data class TestResultResponse (
     val comment: kotlin.String? = null,
 
     @Json(name = "links")
-    val links: kotlin.collections.List<Link>? = null,
+    val links: kotlin.collections.List<LinkApiResult>? = null,
 
     @Json(name = "stepResults")
     val stepResults: kotlin.collections.List<StepResultApiModel>? = null,

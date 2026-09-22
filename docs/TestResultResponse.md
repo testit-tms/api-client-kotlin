@@ -18,7 +18,7 @@
 | **outcome** | [**TestResultOutcome**](TestResultOutcome.md) |  |  [optional] |
 | **status** | [**TestStatusApiResult**](TestStatusApiResult.md) |  |  [optional] |
 | **comment** | **kotlin.String** |  |  [optional] |
-| **links** | [**kotlin.collections.List&lt;Link&gt;**](Link.md) |  |  [optional] |
+| **links** | [**kotlin.collections.List&lt;LinkApiResult&gt;**](LinkApiResult.md) |  |  [optional] |
 | **stepResults** | [**kotlin.collections.List&lt;StepResultApiModel&gt;**](StepResultApiModel.md) |  |  [optional] |
 | **attachments** | [**kotlin.collections.List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) |  |  [optional] |
 | **autoTestId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |

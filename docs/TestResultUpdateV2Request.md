@@ -9,7 +9,7 @@
 | **statusCode** | **kotlin.String** |  |  [optional] |
 | **statusType** | [**TestStatusType**](TestStatusType.md) |  |  [optional] |
 | **comment** | **kotlin.String** |  |  [optional] |
-| **links** | [**kotlin.collections.List&lt;Link&gt;**](Link.md) |  |  [optional] |
+| **links** | [**kotlin.collections.List&lt;CreateLinkApiModel&gt;**](CreateLinkApiModel.md) |  |  [optional] |
 | **stepResults** | [**kotlin.collections.List&lt;StepResultApiModel&gt;**](StepResultApiModel.md) |  |  [optional] |
 | **attachments** | [**kotlin.collections.List&lt;AttachmentUpdateRequest&gt;**](AttachmentUpdateRequest.md) |  |  [optional] |
 | **durationInMs** | **kotlin.Long** |  |  [optional] |

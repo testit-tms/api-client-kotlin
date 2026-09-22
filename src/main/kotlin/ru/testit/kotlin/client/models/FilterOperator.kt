@@ -22,41 +22,47 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * Values: Equal,ExclamationEqual,Tilde,ExclamationTilde,Less_Than,Less_ThanEqual,Greater_Than,Greater_ThanEqual,Star,ExclamationStar
+ * Values: EqualTo,NotEqualTo,Contains,NotContains,LessThan,LessThanOrEqualTo,GreaterThan,GreaterThanOrEqualTo,Empty,NotEmpty,In,NotIn
  */
 
 @JsonClass(generateAdapter = false)
 enum class FilterOperator(val value: kotlin.String) {
 
-    @Json(name = "=")
-    Equal("="),
+    @Json(name = "EqualTo")
+    EqualTo("EqualTo"),
 
-    @Json(name = "!=")
-    ExclamationEqual("!="),
+    @Json(name = "NotEqualTo")
+    NotEqualTo("NotEqualTo"),
 
-    @Json(name = "~")
-    Tilde("~"),
+    @Json(name = "Contains")
+    Contains("Contains"),
 
-    @Json(name = "!~")
-    ExclamationTilde("!~"),
+    @Json(name = "NotContains")
+    NotContains("NotContains"),
 
-    @Json(name = "<")
-    Less_Than("<"),
+    @Json(name = "LessThan")
+    LessThan("LessThan"),
 
-    @Json(name = "<=")
-    Less_ThanEqual("<="),
+    @Json(name = "LessThanOrEqualTo")
+    LessThanOrEqualTo("LessThanOrEqualTo"),
 
-    @Json(name = ">")
-    Greater_Than(">"),
+    @Json(name = "GreaterThan")
+    GreaterThan("GreaterThan"),
 
-    @Json(name = ">=")
-    Greater_ThanEqual(">="),
+    @Json(name = "GreaterThanOrEqualTo")
+    GreaterThanOrEqualTo("GreaterThanOrEqualTo"),
 
-    @Json(name = "*")
-    Star("*"),
+    @Json(name = "Empty")
+    Empty("Empty"),
 
-    @Json(name = "!*")
-    ExclamationStar("!*");
+    @Json(name = "NotEmpty")
+    NotEmpty("NotEmpty"),
+
+    @Json(name = "In")
+    In("In"),
+
+    @Json(name = "NotIn")
+    NotIn("NotIn");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

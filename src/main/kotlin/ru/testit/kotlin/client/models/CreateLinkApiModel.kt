@@ -24,10 +24,10 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param url Address can be specified without protocol, but necessarily with the domain.
+ * @param type Specifies the type of the link.
  * @param hasInfo Flag defines if link relates to integrated jira service
  * @param title Link name.
  * @param description Link description.
- * @param type Specifies the type of the link.
  */
 
 
@@ -36,6 +36,10 @@ data class CreateLinkApiModel (
     /* Address can be specified without protocol, but necessarily with the domain. */
     @Json(name = "url")
     val url: kotlin.String,
+
+    /* Specifies the type of the link. */
+    @Json(name = "type")
+    val type: LinkType,
 
     /* Flag defines if link relates to integrated jira service */
     @Json(name = "hasInfo")
@@ -47,11 +51,7 @@ data class CreateLinkApiModel (
 
     /* Link description. */
     @Json(name = "description")
-    val description: kotlin.String? = null,
-
-    /* Specifies the type of the link. */
-    @Json(name = "type")
-    val type: LinkType? = null
+    val description: kotlin.String? = null
 
 ) {
 

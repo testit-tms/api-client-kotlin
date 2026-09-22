@@ -18,12 +18,12 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
-import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterApiModel
 import ru.testit.kotlin.client.models.WorkItemLinkFilterApiModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
+import ru.testit.kotlin.client.models.WorkItemTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -58,6 +58,7 @@ import com.squareup.moshi.JsonClass
  * @param workItemVersionIds Collection of identifiers work items versions.
  * @param links Specifies a work item filter by its links
  * @param externalMetadata Specifies work item filter by its external metadata
+ * @param layers Specifies auto test case layers to search for
  */
 
 
@@ -125,7 +126,7 @@ data class WorkItemFilterApiModel (
 
     /* Collection of types of work item */
     @Json(name = "types")
-    val types: kotlin.collections.Set<WorkItemEntityTypes>? = null,
+    val types: kotlin.collections.Set<WorkItemTypeModel>? = null,
 
     /* Specifies a work item range of creation date to search for */
     @Json(name = "createdDate")
@@ -169,7 +170,11 @@ data class WorkItemFilterApiModel (
 
     /* Specifies work item filter by its external metadata */
     @Json(name = "externalMetadata")
-    val externalMetadata: WorkItemExternalMetadataFilterApiModel? = null
+    val externalMetadata: WorkItemExternalMetadataFilterApiModel? = null,
+
+    /* Specifies auto test case layers to search for */
+    @Json(name = "layers")
+    val layers: kotlin.collections.Set<kotlin.String>? = null
 
 ) {
 

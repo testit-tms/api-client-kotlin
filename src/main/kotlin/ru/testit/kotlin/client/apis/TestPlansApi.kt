@@ -21,7 +21,7 @@ import okhttp3.HttpUrl
 
 import ru.testit.kotlin.client.models.ConfigurationModel
 import ru.testit.kotlin.client.models.CreateTestPlanApiModel
-import ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanModel
+import ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanApiModel
 import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.SearchTestRunsApiModel
@@ -78,7 +78,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun addTestPointsWithSections(id: kotlin.String, workItemSelectModel: WorkItemSelectModel? = null) : Unit {
+        @Suppress("DEPRECATION")
         val localVarResponse = addTestPointsWithSectionsWithHttpInfo(id = id, workItemSelectModel = workItemSelectModel)
 
         return when (localVarResponse.responseType) {
@@ -107,7 +109,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun addTestPointsWithSectionsWithHttpInfo(id: kotlin.String, workItemSelectModel: WorkItemSelectModel?) : ApiResponse<Unit?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = addTestPointsWithSectionsRequestConfig(id = id, workItemSelectModel = workItemSelectModel)
 
         return request<WorkItemSelectModel, Unit>(
@@ -122,6 +126,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param workItemSelectModel Filter object to retrieve work items for test-suite&#39;s project (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun addTestPointsWithSectionsRequestConfig(id: kotlin.String, workItemSelectModel: WorkItemSelectModel?) : RequestConfig<WorkItemSelectModel> {
         val localVariableBody = workItemSelectModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -153,7 +158,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun addWorkItemsWithSections(id: kotlin.String, javaUtilUUID: kotlin.collections.Set<java.util.UUID>? = null) : Unit {
+        @Suppress("DEPRECATION")
         val localVarResponse = addWorkItemsWithSectionsWithHttpInfo(id = id, javaUtilUUID = javaUtilUUID)
 
         return when (localVarResponse.responseType) {
@@ -182,7 +189,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun addWorkItemsWithSectionsWithHttpInfo(id: kotlin.String, javaUtilUUID: kotlin.collections.Set<java.util.UUID>?) : ApiResponse<Unit?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = addWorkItemsWithSectionsRequestConfig(id = id, javaUtilUUID = javaUtilUUID)
 
         return request<kotlin.collections.Set<java.util.UUID>, Unit>(
@@ -197,6 +206,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param javaUtilUUID  (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun addWorkItemsWithSectionsRequestConfig(id: kotlin.String, javaUtilUUID: kotlin.collections.Set<java.util.UUID>?) : RequestConfig<kotlin.collections.Set<java.util.UUID>> {
         val localVariableBody = javaUtilUUID
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -452,7 +462,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      *  Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
      * @param id Test plan internal (guid format) or global (int format) identifier
      * @param timeZoneOffsetInMinutes  (optional)
-     * @param getXlsxTestPointsByTestPlanModel  (optional)
+     * @param getXlsxTestPointsByTestPlanApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -461,8 +471,8 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @throws ServerException If the API returns a server error response
      */
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiV2TestPlansIdExportTestPointsXlsxPost(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long? = null, getXlsxTestPointsByTestPlanModel: GetXlsxTestPointsByTestPlanModel? = null) : Unit {
-        val localVarResponse = apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel = getXlsxTestPointsByTestPlanModel)
+    fun apiV2TestPlansIdExportTestPointsXlsxPost(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long? = null, getXlsxTestPointsByTestPlanApiModel: GetXlsxTestPointsByTestPlanApiModel? = null) : Unit {
+        val localVarResponse = apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanApiModel = getXlsxTestPointsByTestPlanApiModel)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
@@ -485,16 +495,16 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      *  Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
      * @param id Test plan internal (guid format) or global (int format) identifier
      * @param timeZoneOffsetInMinutes  (optional)
-     * @param getXlsxTestPointsByTestPlanModel  (optional)
+     * @param getXlsxTestPointsByTestPlanApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanModel: GetXlsxTestPointsByTestPlanModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel = getXlsxTestPointsByTestPlanModel)
+    fun apiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanApiModel: GetXlsxTestPointsByTestPlanApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id = id, timeZoneOffsetInMinutes = timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanApiModel = getXlsxTestPointsByTestPlanApiModel)
 
-        return request<GetXlsxTestPointsByTestPlanModel, Unit>(
+        return request<GetXlsxTestPointsByTestPlanApiModel, Unit>(
             localVariableConfig
         )
     }
@@ -504,11 +514,11 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      *
      * @param id Test plan internal (guid format) or global (int format) identifier
      * @param timeZoneOffsetInMinutes  (optional)
-     * @param getXlsxTestPointsByTestPlanModel  (optional)
+     * @param getXlsxTestPointsByTestPlanApiModel  (optional)
      * @return RequestConfig
      */
-    fun apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanModel: GetXlsxTestPointsByTestPlanModel?) : RequestConfig<GetXlsxTestPointsByTestPlanModel> {
-        val localVariableBody = getXlsxTestPointsByTestPlanModel
+    fun apiV2TestPlansIdExportTestPointsXlsxPostRequestConfig(id: kotlin.String, timeZoneOffsetInMinutes: kotlin.Long?, getXlsxTestPointsByTestPlanApiModel: GetXlsxTestPointsByTestPlanApiModel?) : RequestConfig<GetXlsxTestPointsByTestPlanApiModel> {
+        val localVariableBody = getXlsxTestPointsByTestPlanApiModel
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         timeZoneOffsetInMinutes?.apply { localVariableHeaders["time-Zone-Offset-In-Minutes"] = this.toString() }
@@ -986,7 +996,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestPlansIdTestPointsLastResultsGet(id: kotlin.String, testerId: java.util.UUID? = null, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null) : kotlin.collections.List<TestPointWithLastResultResponseModel> {
+        @Suppress("DEPRECATION")
         val localVarResponse = apiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id = id, testerId = testerId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return when (localVarResponse.responseType) {
@@ -1021,7 +1033,9 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestPlansIdTestPointsLastResultsGetWithHttpInfo(id: kotlin.String, testerId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : ApiResponse<kotlin.collections.List<TestPointWithLastResultResponseModel>?> {
+        @Suppress("DEPRECATION")
         val localVariableConfig = apiV2TestPlansIdTestPointsLastResultsGetRequestConfig(id = id, testerId = testerId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue)
 
         return request<Unit, kotlin.collections.List<TestPointWithLastResultResponseModel>>(
@@ -1041,6 +1055,7 @@ open class TestPlansApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param searchValue Value for searching (optional)
      * @return RequestConfig
      */
+    @Deprecated(message = "This operation is deprecated.")
     fun apiV2TestPlansIdTestPointsLastResultsGetRequestConfig(id: kotlin.String, testerId: java.util.UUID?, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()

@@ -31,7 +31,10 @@ import com.squareup.moshi.JsonClass
  * @param name Name of the attribute
  * @param isEnabled Indicates if the attribute is enabled
  * @param isRequired Indicates if the attribute value is mandatory to specify
+ * @param isReadOnly Indicates if the attribute value is read-only
  * @param isGlobal Indicates if the attribute is available across all projects
+ * @param isSystem Indicates if the attribute is system
+ * @param targets Collection of the attribute targets   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans)
  */
 
 
@@ -65,9 +68,21 @@ data class CustomAttributeApiResult (
     @Json(name = "isRequired")
     val isRequired: kotlin.Boolean,
 
+    /* Indicates if the attribute value is read-only */
+    @Json(name = "isReadOnly")
+    val isReadOnly: kotlin.Boolean,
+
     /* Indicates if the attribute is available across all projects */
     @Json(name = "isGlobal")
-    val isGlobal: kotlin.Boolean
+    val isGlobal: kotlin.Boolean,
+
+    /* Indicates if the attribute is system */
+    @Json(name = "isSystem")
+    val isSystem: kotlin.Boolean,
+
+    /* Collection of the attribute targets   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans) */
+    @Json(name = "targets")
+    val targets: kotlin.collections.List<kotlin.String>
 
 ) {
 

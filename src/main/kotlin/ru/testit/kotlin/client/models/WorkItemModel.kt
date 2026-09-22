@@ -22,11 +22,11 @@ import ru.testit.kotlin.client.models.IterationModel
 import ru.testit.kotlin.client.models.LinkModel
 import ru.testit.kotlin.client.models.StepModel
 import ru.testit.kotlin.client.models.TagModel
-import ru.testit.kotlin.client.models.WorkItemEntityTypes
 import ru.testit.kotlin.client.models.WorkItemParameterKeyModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
+import ru.testit.kotlin.client.models.WorkItemTypeModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -41,11 +41,11 @@ import com.squareup.moshi.JsonClass
  * @param entityTypeName 
  * @param isAutomated 
  * @param versionNumber used for define chronology of workitem state in each version
+ * @param externalIssues 
+ * @param parameters 
  * @param createdDate 
  * @param createdById 
  * @param globalId 
- * @param externalIssues 
- * @param parameters 
  * @param id 
  * @param sectionId 
  * @param state 
@@ -87,7 +87,7 @@ data class WorkItemModel (
     val projectId: java.util.UUID,
 
     @Json(name = "entityTypeName")
-    val entityTypeName: WorkItemEntityTypes,
+    val entityTypeName: WorkItemTypeModel,
 
     @Json(name = "isAutomated")
     val isAutomated: kotlin.Boolean,
@@ -95,6 +95,12 @@ data class WorkItemModel (
     /* used for define chronology of workitem state in each version */
     @Json(name = "versionNumber")
     val versionNumber: kotlin.Int,
+
+    @Json(name = "externalIssues")
+    val externalIssues: kotlin.collections.List<ExternalIssueModel>,
+
+    @Json(name = "parameters")
+    val parameters: kotlin.collections.List<WorkItemParameterKeyModel>,
 
     @Json(name = "createdDate")
     val createdDate: java.time.OffsetDateTime,
@@ -104,12 +110,6 @@ data class WorkItemModel (
 
     @Json(name = "globalId")
     val globalId: kotlin.Long,
-
-    @Json(name = "externalIssues")
-    val externalIssues: kotlin.collections.List<ExternalIssueModel>,
-
-    @Json(name = "parameters")
-    val parameters: kotlin.collections.List<WorkItemParameterKeyModel>,
 
     @Json(name = "id")
     val id: java.util.UUID,

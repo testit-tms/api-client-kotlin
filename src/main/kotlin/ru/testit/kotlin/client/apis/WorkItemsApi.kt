@@ -22,6 +22,7 @@ import okhttp3.HttpUrl
 import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.CreateWorkItemApiModel
 import ru.testit.kotlin.client.models.IterationModel
+import ru.testit.kotlin.client.models.Operation
 import ru.testit.kotlin.client.models.ProblemDetails
 import ru.testit.kotlin.client.models.SearchWorkItemLinkUrlsApiResult
 import ru.testit.kotlin.client.models.SharedStepReferenceModel
@@ -609,6 +610,81 @@ open class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
+     * PATCH /api/v2/workItems/{id}
+     * Patch Test Case, Checklist or Shared Step
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
+     * @param operation  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkItemsIdPatch(id: kotlin.String, operation: kotlin.collections.List<Operation>? = null) : Unit {
+        val localVarResponse = apiV2WorkItemsIdPatchWithHttpInfo(id = id, operation = operation)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * PATCH /api/v2/workItems/{id}
+     * Patch Test Case, Checklist or Shared Step
+     * See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
+     * @param operation  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkItemsIdPatchWithHttpInfo(id: kotlin.String, operation: kotlin.collections.List<Operation>?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2WorkItemsIdPatchRequestConfig(id = id, operation = operation)
+
+        return request<kotlin.collections.List<Operation>, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkItemsIdPatch
+     *
+     * @param id WorkItem internal (guid format) or global(integer format) identifier\&quot;
+     * @param operation  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WorkItemsIdPatchRequestConfig(id: kotlin.String, operation: kotlin.collections.List<Operation>?) : RequestConfig<kotlin.collections.List<Operation>> {
+        val localVariableBody = operation
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PATCH,
+            path = "/api/v2/workItems/{id}".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * GET /api/v2/workItems/{id}/testResults/history
      * Get test results history of WorkItem
      *  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
@@ -1095,6 +1171,78 @@ open class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.
 
         return RequestConfig(
             method = RequestMethod.POST,
+            path = "/api/v2/workItems",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * PUT /api/v2/workItems
+     * Update Test Case, Checklist or Shared Step
+     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
+     * @param updateWorkItemApiModel  (optional)
+     * @return void
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2WorkItemsPut(updateWorkItemApiModel: UpdateWorkItemApiModel? = null) : Unit {
+        val localVarResponse = apiV2WorkItemsPutWithHttpInfo(updateWorkItemApiModel = updateWorkItemApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * PUT /api/v2/workItems
+     * Update Test Case, Checklist or Shared Step
+     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
+     * @param updateWorkItemApiModel  (optional)
+     * @return ApiResponse<Unit?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2WorkItemsPutWithHttpInfo(updateWorkItemApiModel: UpdateWorkItemApiModel?) : ApiResponse<Unit?> {
+        val localVariableConfig = apiV2WorkItemsPutRequestConfig(updateWorkItemApiModel = updateWorkItemApiModel)
+
+        return request<UpdateWorkItemApiModel, Unit>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2WorkItemsPut
+     *
+     * @param updateWorkItemApiModel  (optional)
+     * @return RequestConfig
+     */
+    fun apiV2WorkItemsPutRequestConfig(updateWorkItemApiModel: UpdateWorkItemApiModel?) : RequestConfig<UpdateWorkItemApiModel> {
+        val localVariableBody = updateWorkItemApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.PUT,
             path = "/api/v2/workItems",
             query = localVariableQuery,
             headers = localVariableHeaders,
@@ -2194,78 +2342,6 @@ open class WorkItemsApi(basePath: kotlin.String = defaultBasePath, client: Call.
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/api/v2/workItems/{id}/restore".replace("{"+"id"+"}", encodeURIComponent(id.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * PUT /api/v2/workItems
-     * Update Test Case, Checklist or Shared Step
-     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-     * @param updateWorkItemApiModel  (optional)
-     * @return void
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun updateWorkItem(updateWorkItemApiModel: UpdateWorkItemApiModel? = null) : Unit {
-        val localVarResponse = updateWorkItemWithHttpInfo(updateWorkItemApiModel = updateWorkItemApiModel)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> Unit
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * PUT /api/v2/workItems
-     * Update Test Case, Checklist or Shared Step
-     *  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-     * @param updateWorkItemApiModel  (optional)
-     * @return ApiResponse<Unit?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Throws(IllegalStateException::class, IOException::class)
-    fun updateWorkItemWithHttpInfo(updateWorkItemApiModel: UpdateWorkItemApiModel?) : ApiResponse<Unit?> {
-        val localVariableConfig = updateWorkItemRequestConfig(updateWorkItemApiModel = updateWorkItemApiModel)
-
-        return request<UpdateWorkItemApiModel, Unit>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation updateWorkItem
-     *
-     * @param updateWorkItemApiModel  (optional)
-     * @return RequestConfig
-     */
-    fun updateWorkItemRequestConfig(updateWorkItemApiModel: UpdateWorkItemApiModel?) : RequestConfig<UpdateWorkItemApiModel> {
-        val localVariableBody = updateWorkItemApiModel
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Content-Type"] = "application/json"
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.PUT,
-            path = "/api/v2/workItems",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

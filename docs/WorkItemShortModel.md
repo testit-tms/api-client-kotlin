@@ -8,7 +8,7 @@
 | **versionId** | [**java.util.UUID**](java.util.UUID.md) | Work Item version identifier |  |
 | **versionNumber** | **kotlin.Int** | Work Item version number |  |
 | **name** | **kotlin.String** | Work Item name |  |
-| **entityTypeName** | **kotlin.String** | Work Item type. Possible values: CheckLists, SharedSteps, TestCases |  |
+| **entityTypeName** | [**WorkItemTypeModel**](WorkItemTypeModel.md) | Work Item type. Possible values: CheckLists, SharedSteps, TestCases |  |
 | **projectId** | [**java.util.UUID**](java.util.UUID.md) | Project unique identifier |  |
 | **sectionId** | [**java.util.UUID**](java.util.UUID.md) | Identifier of Section where Work Item is located |  |
 | **sectionName** | **kotlin.String** | Section name of Work Item |  |

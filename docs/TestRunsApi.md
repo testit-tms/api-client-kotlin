@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**apiV2TestRunsDelete**](TestRunsApi.md#apiV2TestRunsDelete) | **DELETE** /api/v2/testRuns | Delete multiple test runs |
 | [**apiV2TestRunsIdAutoTestsNamespacesGet**](TestRunsApi.md#apiV2TestRunsIdAutoTestsNamespacesGet) | **GET** /api/v2/testRuns/{id}/autoTestsNamespaces | Get autotest classes and namespaces in test run |
 | [**apiV2TestRunsIdDelete**](TestRunsApi.md#apiV2TestRunsIdDelete) | **DELETE** /api/v2/testRuns/{id} | Delete test run |
+| [**apiV2TestRunsIdPatch**](TestRunsApi.md#apiV2TestRunsIdPatch) | **PATCH** /api/v2/testRuns/{id} | Patch test run |
 | [**apiV2TestRunsIdPurgePost**](TestRunsApi.md#apiV2TestRunsIdPurgePost) | **POST** /api/v2/testRuns/{id}/purge | Permanently delete test run from archive |
 | [**apiV2TestRunsIdRerunsPost**](TestRunsApi.md#apiV2TestRunsIdRerunsPost) | **POST** /api/v2/testRuns/{id}/reruns | Manual autotests rerun in test run |
 | [**apiV2TestRunsIdRestorePost**](TestRunsApi.md#apiV2TestRunsIdRestorePost) | **POST** /api/v2/testRuns/{id}/restore | Restore test run from the archive |
@@ -70,9 +71,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -117,9 +121,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -165,13 +172,69 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a id="apiV2TestRunsIdPatch"></a>
+# **apiV2TestRunsIdPatch**
+> apiV2TestRunsIdPatch(id, operation)
+
+Patch test run
+
+See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestRunsApi()
+val id : java.util.UUID = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // java.util.UUID | Test Run internal identifier (GUID format)
+val operation : kotlin.collections.List<Operation> =  // kotlin.collections.List<Operation> | 
+try {
+    apiInstance.apiV2TestRunsIdPatch(id, operation)
+} catch (e: ClientException) {
+    println("4xx response calling TestRunsApi#apiV2TestRunsIdPatch")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestRunsApi#apiV2TestRunsIdPatch")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **id** | **java.util.UUID**| Test Run internal identifier (GUID format) | |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **operation** | [**kotlin.collections.List&lt;Operation&gt;**](Operation.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+
+Configure PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a id="apiV2TestRunsIdPurgePost"></a>
@@ -213,9 +276,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -262,9 +328,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -310,9 +379,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -359,9 +431,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -406,9 +481,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -454,9 +532,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -501,9 +582,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -550,9 +634,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -599,9 +686,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -656,9 +746,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -702,9 +795,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -750,9 +846,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -799,9 +898,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -848,9 +950,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -897,9 +1002,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -946,9 +1054,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -995,9 +1106,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1046,9 +1160,12 @@ try {
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1094,9 +1211,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1142,9 +1262,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 
@@ -1190,9 +1313,12 @@ null (empty response body)
 ### Authorization
 
 
-Configure Bearer or PrivateToken:
+Configure PrivateToken:
     ApiClient.apiKey["Authorization"] = ""
     ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Identity.Application:
+    ApiClient.apiKey["backoffice"] = ""
+    ApiClient.apiKeyPrefix["backoffice"] = ""
 
 ### HTTP request headers
 

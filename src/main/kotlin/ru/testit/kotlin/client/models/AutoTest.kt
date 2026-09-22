@@ -18,7 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.AutoTestStep
 import ru.testit.kotlin.client.models.ConfigurationShort
 import ru.testit.kotlin.client.models.Label
-import ru.testit.kotlin.client.models.Link
+import ru.testit.kotlin.client.models.LinkApiResult
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -97,7 +97,7 @@ data class AutoTest (
 
     /* Collection of the autotest links */
     @Json(name = "links")
-    val links: kotlin.collections.List<Link>? = null,
+    val links: kotlin.collections.List<LinkApiResult>? = null,
 
     /* Name of the autotest namespace */
     @Json(name = "namespace")

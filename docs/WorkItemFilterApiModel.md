@@ -19,7 +19,7 @@
 | **states** | [**kotlin.collections.Set&lt;WorkItemStates&gt;**](WorkItemStates.md) | Collection of states of work item |  [optional] |
 | **priorities** | [**kotlin.collections.Set&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Collection of priorities of work item |  [optional] |
 | **sourceTypes** | [**kotlin.collections.Set&lt;WorkItemSourceTypeModel&gt;**](WorkItemSourceTypeModel.md) | Source type of work item (manual creation or AI generated) |  [optional] |
-| **types** | [**kotlin.collections.Set&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item |  [optional] |
+| **types** | [**kotlin.collections.Set&lt;WorkItemTypeModel&gt;**](WorkItemTypeModel.md) | Collection of types of work item |  [optional] |
 | **createdDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for |  [optional] |
 | **modifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of last modification date to search for |  [optional] |
 | **duration** | [**Int32RangeSelectorModel**](Int32RangeSelectorModel.md) | Specifies a work item duration range to search for |  [optional] |
@@ -31,6 +31,7 @@
 | **workItemVersionIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers work items versions. |  [optional] |
 | **links** | [**WorkItemLinkFilterApiModel**](WorkItemLinkFilterApiModel.md) | Specifies a work item filter by its links |  [optional] |
 | **externalMetadata** | [**WorkItemExternalMetadataFilterApiModel**](WorkItemExternalMetadataFilterApiModel.md) | Specifies work item filter by its external metadata |  [optional] |
+| **layers** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Specifies auto test case layers to search for |  [optional] |
 
 
 

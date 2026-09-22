@@ -121,6 +121,11 @@ All URIs are relative to *http://localhost*
 | *BackgroundJobsApi* | [**apiV2BackgroundJobsIdGet**](docs/BackgroundJobsApi.md#apiv2backgroundjobsidget) | **GET** /api/v2/backgroundJobs/{id} | Get background job by ID |
 | *BackgroundJobsApi* | [**apiV2BackgroundJobsIdStatusGet**](docs/BackgroundJobsApi.md#apiv2backgroundjobsidstatusget) | **GET** /api/v2/backgroundJobs/{id}/status | Get background job status by job ID |
 | *BackgroundJobsApi* | [**apiV2BackgroundJobsSearchPost**](docs/BackgroundJobsApi.md#apiv2backgroundjobssearchpost) | **POST** /api/v2/backgroundJobs/search | Search for user background jobs |
+| *ConfigurationParametersApi* | [**apiV2ConfigurationParametersConfigurationParameterIdDelete**](docs/ConfigurationParametersApi.md#apiv2configurationparametersconfigurationparameteriddelete) | **DELETE** /api/v2/configuration-parameters/{configurationParameterId} | Deletes configuration parameter |
+| *ConfigurationParametersApi* | [**apiV2ConfigurationParametersConfigurationParameterIdGet**](docs/ConfigurationParametersApi.md#apiv2configurationparametersconfigurationparameteridget) | **GET** /api/v2/configuration-parameters/{configurationParameterId} | Gets configuration parameter by its identifier |
+| *ConfigurationParametersApi* | [**apiV2ConfigurationParametersConfigurationParameterIdPut**](docs/ConfigurationParametersApi.md#apiv2configurationparametersconfigurationparameteridput) | **PUT** /api/v2/configuration-parameters/{configurationParameterId} | Updates configuration parameter |
+| *ConfigurationParametersApi* | [**apiV2ConfigurationParametersPost**](docs/ConfigurationParametersApi.md#apiv2configurationparameterspost) | **POST** /api/v2/configuration-parameters | Creates new configuration parameter |
+| *ConfigurationParametersApi* | [**apiV2ConfigurationParametersSearchPost**](docs/ConfigurationParametersApi.md#apiv2configurationparameterssearchpost) | **POST** /api/v2/configuration-parameters/search | Searches for configuration parameters |
 | *ConfigurationsApi* | [**apiV2ConfigurationsCreateByParametersPost**](docs/ConfigurationsApi.md#apiv2configurationscreatebyparameterspost) | **POST** /api/v2/configurations/createByParameters | Create configurations by parameters |
 | *ConfigurationsApi* | [**apiV2ConfigurationsDeleteBulkPost**](docs/ConfigurationsApi.md#apiv2configurationsdeletebulkpost) | **POST** /api/v2/configurations/delete/bulk | Delete multiple configurations |
 | *ConfigurationsApi* | [**apiV2ConfigurationsIdDelete**](docs/ConfigurationsApi.md#apiv2configurationsiddelete) | **DELETE** /api/v2/configurations/{id} | Delete configuration |
@@ -227,7 +232,6 @@ All URIs are relative to *http://localhost*
 | *ProjectsApi* | [**getTestPlansByProjectId**](docs/ProjectsApi.md#gettestplansbyprojectid) | **GET** /api/v2/projects/{id}/testPlans | Get project test plans |
 | *ProjectsApi* | [**getTestRunsByProjectId**](docs/ProjectsApi.md#gettestrunsbyprojectid) | **GET** /api/v2/projects/{id}/testRuns | Get project test runs |
 | *ProjectsApi* | [**updateProject**](docs/ProjectsApi.md#updateproject) | **PUT** /api/v2/projects | Update project |
-| *SearchApi* | [**apiV2SearchGlobalSearchPost**](docs/SearchApi.md#apiv2searchglobalsearchpost) | **POST** /api/v2/search/globalSearch |  |
 | *SectionsApi* | [**apiV2SectionsIdPatch**](docs/SectionsApi.md#apiv2sectionsidpatch) | **PATCH** /api/v2/sections/{id} | Patch section |
 | *SectionsApi* | [**createSection**](docs/SectionsApi.md#createsection) | **POST** /api/v2/sections | Create section |
 | *SectionsApi* | [**deleteSection**](docs/SectionsApi.md#deletesection) | **DELETE** /api/v2/sections/{id} | Delete section |
@@ -283,6 +287,7 @@ All URIs are relative to *http://localhost*
 | *TestResultsApi* | [**apiV2TestResultsIdAttachmentsAttachmentIdPut**](docs/TestResultsApi.md#apiv2testresultsidattachmentsattachmentidput) | **PUT** /api/v2/testResults/{id}/attachments/{attachmentId} | Attach file to the test result |
 | *TestResultsApi* | [**apiV2TestResultsIdAttachmentsInfoGet**](docs/TestResultsApi.md#apiv2testresultsidattachmentsinfoget) | **GET** /api/v2/testResults/{id}/attachments/info | Get test result attachments meta-information |
 | *TestResultsApi* | [**apiV2TestResultsIdGet**](docs/TestResultsApi.md#apiv2testresultsidget) | **GET** /api/v2/testResults/{id} | Get test result by ID |
+| *TestResultsApi* | [**apiV2TestResultsIdPatch**](docs/TestResultsApi.md#apiv2testresultsidpatch) | **PATCH** /api/v2/testResults/{id} | Patch test result by ID |
 | *TestResultsApi* | [**apiV2TestResultsIdPut**](docs/TestResultsApi.md#apiv2testresultsidput) | **PUT** /api/v2/testResults/{id} | Edit test result by ID |
 | *TestResultsApi* | [**apiV2TestResultsIdRerunsGet**](docs/TestResultsApi.md#apiv2testresultsidrerunsget) | **GET** /api/v2/testResults/{id}/reruns | Get reruns |
 | *TestResultsApi* | [**apiV2TestResultsSearchPost**](docs/TestResultsApi.md#apiv2testresultssearchpost) | **POST** /api/v2/testResults/search | Search for test results |
@@ -295,6 +300,7 @@ All URIs are relative to *http://localhost*
 | *TestRunsApi* | [**apiV2TestRunsDelete**](docs/TestRunsApi.md#apiv2testrunsdelete) | **DELETE** /api/v2/testRuns | Delete multiple test runs |
 | *TestRunsApi* | [**apiV2TestRunsIdAutoTestsNamespacesGet**](docs/TestRunsApi.md#apiv2testrunsidautotestsnamespacesget) | **GET** /api/v2/testRuns/{id}/autoTestsNamespaces | Get autotest classes and namespaces in test run |
 | *TestRunsApi* | [**apiV2TestRunsIdDelete**](docs/TestRunsApi.md#apiv2testrunsiddelete) | **DELETE** /api/v2/testRuns/{id} | Delete test run |
+| *TestRunsApi* | [**apiV2TestRunsIdPatch**](docs/TestRunsApi.md#apiv2testrunsidpatch) | **PATCH** /api/v2/testRuns/{id} | Patch test run |
 | *TestRunsApi* | [**apiV2TestRunsIdPurgePost**](docs/TestRunsApi.md#apiv2testrunsidpurgepost) | **POST** /api/v2/testRuns/{id}/purge | Permanently delete test run from archive |
 | *TestRunsApi* | [**apiV2TestRunsIdRerunsPost**](docs/TestRunsApi.md#apiv2testrunsidrerunspost) | **POST** /api/v2/testRuns/{id}/reruns | Manual autotests rerun in test run |
 | *TestRunsApi* | [**apiV2TestRunsIdRestorePost**](docs/TestRunsApi.md#apiv2testrunsidrestorepost) | **POST** /api/v2/testRuns/{id}/restore | Restore test run from the archive |
@@ -357,11 +363,13 @@ All URIs are relative to *http://localhost*
 | *WorkItemsApi* | [**apiV2WorkItemsIdLikePost**](docs/WorkItemsApi.md#apiv2workitemsidlikepost) | **POST** /api/v2/workItems/{id}/like | Set like to WorkItem |
 | *WorkItemsApi* | [**apiV2WorkItemsIdLikesCountGet**](docs/WorkItemsApi.md#apiv2workitemsidlikescountget) | **GET** /api/v2/workItems/{id}/likes/count | Get likes count of WorkItem |
 | *WorkItemsApi* | [**apiV2WorkItemsIdLikesGet**](docs/WorkItemsApi.md#apiv2workitemsidlikesget) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem |
+| *WorkItemsApi* | [**apiV2WorkItemsIdPatch**](docs/WorkItemsApi.md#apiv2workitemsidpatch) | **PATCH** /api/v2/workItems/{id} | Patch Test Case, Checklist or Shared Step |
 | *WorkItemsApi* | [**apiV2WorkItemsIdTestResultsHistoryGet**](docs/WorkItemsApi.md#apiv2workitemsidtestresultshistoryget) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem |
 | *WorkItemsApi* | [**apiV2WorkItemsIdVersionVersionIdActualPost**](docs/WorkItemsApi.md#apiv2workitemsidversionversionidactualpost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual |
 | *WorkItemsApi* | [**apiV2WorkItemsLinksUrlsSearchPost**](docs/WorkItemsApi.md#apiv2workitemslinksurlssearchpost) | **POST** /api/v2/workItems/links/urls/search |  |
 | *WorkItemsApi* | [**apiV2WorkItemsMovePost**](docs/WorkItemsApi.md#apiv2workitemsmovepost) | **POST** /api/v2/workItems/move | Move WorkItem to another section |
 | *WorkItemsApi* | [**apiV2WorkItemsPost**](docs/WorkItemsApi.md#apiv2workitemspost) | **POST** /api/v2/workItems | Creates work item |
+| *WorkItemsApi* | [**apiV2WorkItemsPut**](docs/WorkItemsApi.md#apiv2workitemsput) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 | *WorkItemsApi* | [**apiV2WorkItemsSearchPost**](docs/WorkItemsApi.md#apiv2workitemssearchpost) | **POST** /api/v2/workItems/search | Search for work items |
 | *WorkItemsApi* | [**apiV2WorkItemsSharedStepIdReferencesSectionsPost**](docs/WorkItemsApi.md#apiv2workitemssharedstepidreferencessectionspost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections |
 | *WorkItemsApi* | [**apiV2WorkItemsSharedStepIdReferencesWorkItemsPost**](docs/WorkItemsApi.md#apiv2workitemssharedstepidreferencesworkitemspost) | **POST** /api/v2/workItems/{sharedStepId}/references/workItems | Get SharedStep references in work items |
@@ -375,7 +383,6 @@ All URIs are relative to *http://localhost*
 | *WorkItemsApi* | [**getWorkItemVersions**](docs/WorkItemsApi.md#getworkitemversions) | **GET** /api/v2/workItems/{id}/versions | Get WorkItem versions |
 | *WorkItemsApi* | [**purgeWorkItem**](docs/WorkItemsApi.md#purgeworkitem) | **POST** /api/v2/workItems/{id}/purge | Permanently delete test case, checklist or shared steps from archive |
 | *WorkItemsApi* | [**restoreWorkItem**](docs/WorkItemsApi.md#restoreworkitem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
-| *WorkItemsApi* | [**updateWorkItem**](docs/WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 | *WorkItemsCommentsApi* | [**apiV2WorkItemsCommentsCommentIdDelete**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentscommentiddelete) | **DELETE** /api/v2/workItems/comments/{commentId} | Delete WorkItem comment |
 | *WorkItemsCommentsApi* | [**apiV2WorkItemsCommentsPost**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentspost) | **POST** /api/v2/workItems/comments | Create WorkItem comment |
 | *WorkItemsCommentsApi* | [**apiV2WorkItemsCommentsPut**](docs/WorkItemsCommentsApi.md#apiv2workitemscommentsput) | **PUT** /api/v2/workItems/comments | Update work item comment |
@@ -395,10 +402,15 @@ All URIs are relative to *http://localhost*
 ## Documentation for Models
 
  - [ru.testit.kotlin.client.models.AIServiceModelApiResult](docs/AIServiceModelApiResult.md)
+ - [ru.testit.kotlin.client.models.AIServiceModelApiResultCountReply](docs/AIServiceModelApiResultCountReply.md)
+ - [ru.testit.kotlin.client.models.AIServiceModelApiResultGroup](docs/AIServiceModelApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.AIServiceModelApiResultGroupedReply](docs/AIServiceModelApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.AIServiceModelApiResultIReply](docs/AIServiceModelApiResultIReply.md)
  - [ru.testit.kotlin.client.models.AIServiceModelApiResultReply](docs/AIServiceModelApiResultReply.md)
  - [ru.testit.kotlin.client.models.ActionUpdate](docs/ActionUpdate.md)
  - [ru.testit.kotlin.client.models.ApiExternalServiceCategory](docs/ApiExternalServiceCategory.md)
  - [ru.testit.kotlin.client.models.AssignAttachmentApiModel](docs/AssignAttachmentApiModel.md)
+ - [ru.testit.kotlin.client.models.AssignAutoTestCaseIdApiModel](docs/AssignAutoTestCaseIdApiModel.md)
  - [ru.testit.kotlin.client.models.AssignIterationApiModel](docs/AssignIterationApiModel.md)
  - [ru.testit.kotlin.client.models.AttachmentApiResult](docs/AttachmentApiResult.md)
  - [ru.testit.kotlin.client.models.AttachmentChangeViewModel](docs/AttachmentChangeViewModel.md)
@@ -413,6 +425,8 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.AutoTestAverageDurationApiResult](docs/AutoTestAverageDurationApiResult.md)
  - [ru.testit.kotlin.client.models.AutoTestBulkDeleteApiModel](docs/AutoTestBulkDeleteApiModel.md)
  - [ru.testit.kotlin.client.models.AutoTestBulkDeleteApiResult](docs/AutoTestBulkDeleteApiResult.md)
+ - [ru.testit.kotlin.client.models.AutoTestCaseApiModel](docs/AutoTestCaseApiModel.md)
+ - [ru.testit.kotlin.client.models.AutoTestCaseResult](docs/AutoTestCaseResult.md)
  - [ru.testit.kotlin.client.models.AutoTestChangeViewModel](docs/AutoTestChangeViewModel.md)
  - [ru.testit.kotlin.client.models.AutoTestChangeViewModelArrayChangedFieldViewModel](docs/AutoTestChangeViewModelArrayChangedFieldViewModel.md)
  - [ru.testit.kotlin.client.models.AutoTestClassCountApiModel](docs/AutoTestClassCountApiModel.md)
@@ -470,6 +484,18 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.ConfigurationFilterApiModel](docs/ConfigurationFilterApiModel.md)
  - [ru.testit.kotlin.client.models.ConfigurationFilterModel](docs/ConfigurationFilterModel.md)
  - [ru.testit.kotlin.client.models.ConfigurationModel](docs/ConfigurationModel.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterApiModel](docs/ConfigurationParameterApiModel.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterApiResult](docs/ConfigurationParameterApiResult.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterPreviewApiResult](docs/ConfigurationParameterPreviewApiResult.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterPreviewApiResultCountReply](docs/ConfigurationParameterPreviewApiResultCountReply.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterPreviewApiResultGroup](docs/ConfigurationParameterPreviewApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterPreviewApiResultGroupedReply](docs/ConfigurationParameterPreviewApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterPreviewApiResultIReply](docs/ConfigurationParameterPreviewApiResultIReply.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterPreviewApiResultReply](docs/ConfigurationParameterPreviewApiResultReply.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterProjectApiModel](docs/ConfigurationParameterProjectApiModel.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterValueApiModel](docs/ConfigurationParameterValueApiModel.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterValueApiResult](docs/ConfigurationParameterValueApiResult.md)
+ - [ru.testit.kotlin.client.models.ConfigurationParameterValueApiResultApiCollectionPreview](docs/ConfigurationParameterValueApiResultApiCollectionPreview.md)
  - [ru.testit.kotlin.client.models.ConfigurationPostModel](docs/ConfigurationPostModel.md)
  - [ru.testit.kotlin.client.models.ConfigurationPutModel](docs/ConfigurationPutModel.md)
  - [ru.testit.kotlin.client.models.ConfigurationSelectApiModel](docs/ConfigurationSelectApiModel.md)
@@ -488,6 +514,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.CreateStepApiModel](docs/CreateStepApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTagApiModel](docs/CreateTagApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestPlanApiModel](docs/CreateTestPlanApiModel.md)
+ - [ru.testit.kotlin.client.models.CreateTestRunAndFillByAutoTestCasesApiModel](docs/CreateTestRunAndFillByAutoTestCasesApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestRunAndFillByAutoTestsApiModel](docs/CreateTestRunAndFillByAutoTestsApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestRunAndFillByConfigurationsApiModel](docs/CreateTestRunAndFillByConfigurationsApiModel.md)
  - [ru.testit.kotlin.client.models.CreateTestRunAndFillByWorkItemsApiModel](docs/CreateTestRunAndFillByWorkItemsApiModel.md)
@@ -498,7 +525,6 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.CreateWorkflowApiModel](docs/CreateWorkflowApiModel.md)
  - [ru.testit.kotlin.client.models.CustomAttributeApiResult](docs/CustomAttributeApiResult.md)
  - [ru.testit.kotlin.client.models.CustomAttributeChangeModel](docs/CustomAttributeChangeModel.md)
- - [ru.testit.kotlin.client.models.CustomAttributeGetModel](docs/CustomAttributeGetModel.md)
  - [ru.testit.kotlin.client.models.CustomAttributeModel](docs/CustomAttributeModel.md)
  - [ru.testit.kotlin.client.models.CustomAttributeOptionApiResult](docs/CustomAttributeOptionApiResult.md)
  - [ru.testit.kotlin.client.models.CustomAttributeOptionModel](docs/CustomAttributeOptionModel.md)
@@ -520,6 +546,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.DefectApiModel](docs/DefectApiModel.md)
  - [ru.testit.kotlin.client.models.DeletionState](docs/DeletionState.md)
  - [ru.testit.kotlin.client.models.DemoProjectApiResult](docs/DemoProjectApiResult.md)
+ - [ru.testit.kotlin.client.models.DetailedProjectApiResult](docs/DetailedProjectApiResult.md)
  - [ru.testit.kotlin.client.models.EnableProjectExternalServiceApiModel](docs/EnableProjectExternalServiceApiModel.md)
  - [ru.testit.kotlin.client.models.ExternalFormAllowedValueModel](docs/ExternalFormAllowedValueModel.md)
  - [ru.testit.kotlin.client.models.ExternalFormCreateModel](docs/ExternalFormCreateModel.md)
@@ -528,6 +555,10 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.ExternalFormModel](docs/ExternalFormModel.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiField](docs/ExternalIssueApiField.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestion](docs/ExternalIssueApiFieldSuggestion.md)
+ - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionCountReply](docs/ExternalIssueApiFieldSuggestionCountReply.md)
+ - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionGroup](docs/ExternalIssueApiFieldSuggestionGroup.md)
+ - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionGroupedReply](docs/ExternalIssueApiFieldSuggestionGroupedReply.md)
+ - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionIReply](docs/ExternalIssueApiFieldSuggestionIReply.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionReply](docs/ExternalIssueApiFieldSuggestionReply.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiMetadata](docs/ExternalIssueApiMetadata.md)
  - [ru.testit.kotlin.client.models.ExternalIssueApiPriority](docs/ExternalIssueApiPriority.md)
@@ -551,6 +582,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.FailureCategoryItemApiResult](docs/FailureCategoryItemApiResult.md)
  - [ru.testit.kotlin.client.models.FailureCategoryModel](docs/FailureCategoryModel.md)
  - [ru.testit.kotlin.client.models.FailureClassRegexApiResult](docs/FailureClassRegexApiResult.md)
+ - [ru.testit.kotlin.client.models.FieldFilter](docs/FieldFilter.md)
  - [ru.testit.kotlin.client.models.Filter](docs/Filter.md)
  - [ru.testit.kotlin.client.models.FilterModel](docs/FilterModel.md)
  - [ru.testit.kotlin.client.models.FilterOperator](docs/FilterOperator.md)
@@ -560,14 +592,14 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.GetExternalFormApiResult](docs/GetExternalFormApiResult.md)
  - [ru.testit.kotlin.client.models.GetExternalIssueSuggestionsApiModel](docs/GetExternalIssueSuggestionsApiModel.md)
  - [ru.testit.kotlin.client.models.GetShortProjectsApiModel](docs/GetShortProjectsApiModel.md)
- - [ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanModel](docs/GetXlsxTestPointsByTestPlanModel.md)
+ - [ru.testit.kotlin.client.models.GetXlsxTestPointsByTestPlanApiModel](docs/GetXlsxTestPointsByTestPlanApiModel.md)
  - [ru.testit.kotlin.client.models.GlobalCustomAttributePostModel](docs/GlobalCustomAttributePostModel.md)
  - [ru.testit.kotlin.client.models.GlobalCustomAttributeUpdateModel](docs/GlobalCustomAttributeUpdateModel.md)
- - [ru.testit.kotlin.client.models.GlobalSearchItemResult](docs/GlobalSearchItemResult.md)
- - [ru.testit.kotlin.client.models.GlobalSearchRequest](docs/GlobalSearchRequest.md)
- - [ru.testit.kotlin.client.models.GlobalSearchResponse](docs/GlobalSearchResponse.md)
+ - [ru.testit.kotlin.client.models.Group](docs/Group.md)
+ - [ru.testit.kotlin.client.models.GroupKey](docs/GroupKey.md)
  - [ru.testit.kotlin.client.models.GuidChangedFieldViewModel](docs/GuidChangedFieldViewModel.md)
  - [ru.testit.kotlin.client.models.GuidExtractionModel](docs/GuidExtractionModel.md)
+ - [ru.testit.kotlin.client.models.GuidNullableChangedFieldViewModel](docs/GuidNullableChangedFieldViewModel.md)
  - [ru.testit.kotlin.client.models.IFilter](docs/IFilter.md)
  - [ru.testit.kotlin.client.models.ImageResizeType](docs/ImageResizeType.md)
  - [ru.testit.kotlin.client.models.Inquiry](docs/Inquiry.md)
@@ -577,13 +609,17 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.Int64RangeSelectorModel](docs/Int64RangeSelectorModel.md)
  - [ru.testit.kotlin.client.models.IterationApiResult](docs/IterationApiResult.md)
  - [ru.testit.kotlin.client.models.IterationModel](docs/IterationModel.md)
+ - [ru.testit.kotlin.client.models.JsonElement](docs/JsonElement.md)
+ - [ru.testit.kotlin.client.models.JsonValueKind](docs/JsonValueKind.md)
  - [ru.testit.kotlin.client.models.Label](docs/Label.md)
  - [ru.testit.kotlin.client.models.LabelApiModel](docs/LabelApiModel.md)
  - [ru.testit.kotlin.client.models.LabelApiResult](docs/LabelApiResult.md)
  - [ru.testit.kotlin.client.models.LabelShortModel](docs/LabelShortModel.md)
  - [ru.testit.kotlin.client.models.LastTestResultApiResult](docs/LastTestResultApiResult.md)
  - [ru.testit.kotlin.client.models.LastTestResultModel](docs/LastTestResultModel.md)
- - [ru.testit.kotlin.client.models.Link](docs/Link.md)
+ - [ru.testit.kotlin.client.models.LayerApiModel](docs/LayerApiModel.md)
+ - [ru.testit.kotlin.client.models.LayerApiResult](docs/LayerApiResult.md)
+ - [ru.testit.kotlin.client.models.LayerSource](docs/LayerSource.md)
  - [ru.testit.kotlin.client.models.LinkApiResult](docs/LinkApiResult.md)
  - [ru.testit.kotlin.client.models.LinkCreateApiModel](docs/LinkCreateApiModel.md)
  - [ru.testit.kotlin.client.models.LinkModel](docs/LinkModel.md)
@@ -598,6 +634,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.ManualRerunApiResult](docs/ManualRerunApiResult.md)
  - [ru.testit.kotlin.client.models.ManualRerunSelectTestResultsApiModel](docs/ManualRerunSelectTestResultsApiModel.md)
  - [ru.testit.kotlin.client.models.ManualRerunTestResultApiModel](docs/ManualRerunTestResultApiModel.md)
+ - [ru.testit.kotlin.client.models.Mode](docs/Mode.md)
  - [ru.testit.kotlin.client.models.NamedEntityApiModel](docs/NamedEntityApiModel.md)
  - [ru.testit.kotlin.client.models.NotificationModel](docs/NotificationModel.md)
  - [ru.testit.kotlin.client.models.NotificationQueryFilterModel](docs/NotificationQueryFilterModel.md)
@@ -631,12 +668,15 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.ProjectFailureCategoryApiResult](docs/ProjectFailureCategoryApiResult.md)
  - [ru.testit.kotlin.client.models.ProjectFailureCategoryGroupItemApiResult](docs/ProjectFailureCategoryGroupItemApiResult.md)
  - [ru.testit.kotlin.client.models.ProjectFailureCategoryGroupItemApiResultReply](docs/ProjectFailureCategoryGroupItemApiResultReply.md)
- - [ru.testit.kotlin.client.models.ProjectModel](docs/ProjectModel.md)
  - [ru.testit.kotlin.client.models.ProjectNameApiResult](docs/ProjectNameApiResult.md)
+ - [ru.testit.kotlin.client.models.ProjectNameApiResultApiCollectionPreview](docs/ProjectNameApiResultApiCollectionPreview.md)
  - [ru.testit.kotlin.client.models.ProjectSelectModel](docs/ProjectSelectModel.md)
  - [ru.testit.kotlin.client.models.ProjectShortApiResult](docs/ProjectShortApiResult.md)
+ - [ru.testit.kotlin.client.models.ProjectShortApiResultCountReply](docs/ProjectShortApiResultCountReply.md)
+ - [ru.testit.kotlin.client.models.ProjectShortApiResultGroup](docs/ProjectShortApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.ProjectShortApiResultGroupedReply](docs/ProjectShortApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.ProjectShortApiResultIReply](docs/ProjectShortApiResultIReply.md)
  - [ru.testit.kotlin.client.models.ProjectShortApiResultReply](docs/ProjectShortApiResultReply.md)
- - [ru.testit.kotlin.client.models.ProjectShortModel](docs/ProjectShortModel.md)
  - [ru.testit.kotlin.client.models.ProjectShortestModel](docs/ProjectShortestModel.md)
  - [ru.testit.kotlin.client.models.ProjectTestPlansFilterModel](docs/ProjectTestPlansFilterModel.md)
  - [ru.testit.kotlin.client.models.ProjectType](docs/ProjectType.md)
@@ -648,6 +688,9 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.RequestTypeModel](docs/RequestTypeModel.md)
  - [ru.testit.kotlin.client.models.RerunTestResultApiResult](docs/RerunTestResultApiResult.md)
  - [ru.testit.kotlin.client.models.RerunsApiResult](docs/RerunsApiResult.md)
+ - [ru.testit.kotlin.client.models.ScheduleAutoTestsReportImportApiModel](docs/ScheduleAutoTestsReportImportApiModel.md)
+ - [ru.testit.kotlin.client.models.ScheduleAutoTestsReportImportsApiModel](docs/ScheduleAutoTestsReportImportsApiModel.md)
+ - [ru.testit.kotlin.client.models.SearchConfigurationParametersApiModel](docs/SearchConfigurationParametersApiModel.md)
  - [ru.testit.kotlin.client.models.SearchCustomAttributeTemplateGetModel](docs/SearchCustomAttributeTemplateGetModel.md)
  - [ru.testit.kotlin.client.models.SearchExternalIssuesApiModel](docs/SearchExternalIssuesApiModel.md)
  - [ru.testit.kotlin.client.models.SearchTestRunsApiModel](docs/SearchTestRunsApiModel.md)
@@ -776,6 +819,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.TestRunGroupByFailureClassApiResult](docs/TestRunGroupByFailureClassApiResult.md)
  - [ru.testit.kotlin.client.models.TestRunGroupByStatusApiResult](docs/TestRunGroupByStatusApiResult.md)
  - [ru.testit.kotlin.client.models.TestRunGroupByStatusTypeApiResult](docs/TestRunGroupByStatusTypeApiResult.md)
+ - [ru.testit.kotlin.client.models.TestRunLaunchOptionApiModel](docs/TestRunLaunchOptionApiModel.md)
  - [ru.testit.kotlin.client.models.TestRunNameApiResult](docs/TestRunNameApiResult.md)
  - [ru.testit.kotlin.client.models.TestRunSelectApiModel](docs/TestRunSelectApiModel.md)
  - [ru.testit.kotlin.client.models.TestRunShortApiResult](docs/TestRunShortApiResult.md)
@@ -785,6 +829,10 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.TestRunTestResultsSelectModel](docs/TestRunTestResultsSelectModel.md)
  - [ru.testit.kotlin.client.models.TestRunV2ApiResult](docs/TestRunV2ApiResult.md)
  - [ru.testit.kotlin.client.models.TestStatusApiResult](docs/TestStatusApiResult.md)
+ - [ru.testit.kotlin.client.models.TestStatusApiResultCountReply](docs/TestStatusApiResultCountReply.md)
+ - [ru.testit.kotlin.client.models.TestStatusApiResultGroup](docs/TestStatusApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.TestStatusApiResultGroupedReply](docs/TestStatusApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.TestStatusApiResultIReply](docs/TestStatusApiResultIReply.md)
  - [ru.testit.kotlin.client.models.TestStatusApiResultReply](docs/TestStatusApiResultReply.md)
  - [ru.testit.kotlin.client.models.TestStatusApiType](docs/TestStatusApiType.md)
  - [ru.testit.kotlin.client.models.TestStatusModel](docs/TestStatusModel.md)
@@ -845,7 +893,6 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkItemChangedFieldsViewModel](docs/WorkItemChangedFieldsViewModel.md)
  - [ru.testit.kotlin.client.models.WorkItemCommentApiResult](docs/WorkItemCommentApiResult.md)
  - [ru.testit.kotlin.client.models.WorkItemEntityTypeApiModel](docs/WorkItemEntityTypeApiModel.md)
- - [ru.testit.kotlin.client.models.WorkItemEntityTypes](docs/WorkItemEntityTypes.md)
  - [ru.testit.kotlin.client.models.WorkItemExternalMetadataFieldFilterApiModel](docs/WorkItemExternalMetadataFieldFilterApiModel.md)
  - [ru.testit.kotlin.client.models.WorkItemExternalMetadataFieldFilterModel](docs/WorkItemExternalMetadataFieldFilterModel.md)
  - [ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterApiModel](docs/WorkItemExternalMetadataFilterApiModel.md)
@@ -859,6 +906,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkItemGroupType](docs/WorkItemGroupType.md)
  - [ru.testit.kotlin.client.models.WorkItemIdApiModel](docs/WorkItemIdApiModel.md)
  - [ru.testit.kotlin.client.models.WorkItemIndexApiResult](docs/WorkItemIndexApiResult.md)
+ - [ru.testit.kotlin.client.models.WorkItemLayerApiResult](docs/WorkItemLayerApiResult.md)
  - [ru.testit.kotlin.client.models.WorkItemLikeModel](docs/WorkItemLikeModel.md)
  - [ru.testit.kotlin.client.models.WorkItemLinkChangeViewModel](docs/WorkItemLinkChangeViewModel.md)
  - [ru.testit.kotlin.client.models.WorkItemLinkChangeViewModelArrayChangedFieldViewModel](docs/WorkItemLinkChangeViewModelArrayChangedFieldViewModel.md)
@@ -892,6 +940,7 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkItemStates](docs/WorkItemStates.md)
  - [ru.testit.kotlin.client.models.WorkItemStepChangeViewModel](docs/WorkItemStepChangeViewModel.md)
  - [ru.testit.kotlin.client.models.WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel](docs/WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel.md)
+ - [ru.testit.kotlin.client.models.WorkItemTypeModel](docs/WorkItemTypeModel.md)
  - [ru.testit.kotlin.client.models.WorkItemUpdatingFieldsApiModel](docs/WorkItemUpdatingFieldsApiModel.md)
  - [ru.testit.kotlin.client.models.WorkItemUpdatingFieldsApiResult](docs/WorkItemUpdatingFieldsApiResult.md)
  - [ru.testit.kotlin.client.models.WorkItemVersionModel](docs/WorkItemVersionModel.md)
@@ -899,8 +948,16 @@ All URIs are relative to *http://localhost*
  - [ru.testit.kotlin.client.models.WorkflowExistsByNameApiResult](docs/WorkflowExistsByNameApiResult.md)
  - [ru.testit.kotlin.client.models.WorkflowProjectApiResult](docs/WorkflowProjectApiResult.md)
  - [ru.testit.kotlin.client.models.WorkflowProjectApiResultApiCollectionPreview](docs/WorkflowProjectApiResultApiCollectionPreview.md)
+ - [ru.testit.kotlin.client.models.WorkflowProjectApiResultCountReply](docs/WorkflowProjectApiResultCountReply.md)
+ - [ru.testit.kotlin.client.models.WorkflowProjectApiResultGroup](docs/WorkflowProjectApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.WorkflowProjectApiResultGroupedReply](docs/WorkflowProjectApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.WorkflowProjectApiResultIReply](docs/WorkflowProjectApiResultIReply.md)
  - [ru.testit.kotlin.client.models.WorkflowProjectApiResultReply](docs/WorkflowProjectApiResultReply.md)
  - [ru.testit.kotlin.client.models.WorkflowShortApiResult](docs/WorkflowShortApiResult.md)
+ - [ru.testit.kotlin.client.models.WorkflowShortApiResultCountReply](docs/WorkflowShortApiResultCountReply.md)
+ - [ru.testit.kotlin.client.models.WorkflowShortApiResultGroup](docs/WorkflowShortApiResultGroup.md)
+ - [ru.testit.kotlin.client.models.WorkflowShortApiResultGroupedReply](docs/WorkflowShortApiResultGroupedReply.md)
+ - [ru.testit.kotlin.client.models.WorkflowShortApiResultIReply](docs/WorkflowShortApiResultIReply.md)
  - [ru.testit.kotlin.client.models.WorkflowShortApiResultReply](docs/WorkflowShortApiResultReply.md)
  - [ru.testit.kotlin.client.models.WorkflowStatusApiModel](docs/WorkflowStatusApiModel.md)
  - [ru.testit.kotlin.client.models.WorkflowStatusApiResult](docs/WorkflowStatusApiResult.md)
@@ -911,10 +968,17 @@ All URIs are relative to *http://localhost*
 
 
 Authentication schemes defined for the API:
-<a id="Bearer or PrivateToken"></a>
-### Bearer or PrivateToken
+<a id="PrivateToken"></a>
+### PrivateToken
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+<a id="Identity.Application"></a>
+### Identity.Application
+
+- **Type**: API key
+- **API key parameter name**: backoffice
+- **Location**: 
 
