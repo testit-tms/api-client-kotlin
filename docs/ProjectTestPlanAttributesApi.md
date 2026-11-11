@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 Add attributes to project&#39;s test plans
 
-  Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
+ Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
 
 ### Example
 ```kotlin
@@ -70,7 +70,7 @@ Configure Cookies:
 
 Delete attribute from project&#39;s test plans
 
-  Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
+ Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
 
 ### Example
 ```kotlin
@@ -123,7 +123,7 @@ Configure Cookies:
 
 Get project&#39;s test plan attributes
 
-  Use case    User runs method execution    System returns project for test plans attributes by project identifier
+ Use case  User runs method execution  System returns project for test plans attributes by project identifier
 
 ### Example
 ```kotlin
@@ -171,7 +171,7 @@ Configure Cookies:
 
 <a id="searchTestPlanAttributesInProject"></a>
 # **searchTestPlanAttributesInProject**
-> kotlin.collections.List&lt;CustomAttributeGetModel&gt; searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
+> kotlin.collections.List&lt;CustomAttributeModel&gt; searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
 
 Search for attributes used in the project test plans
 
@@ -190,7 +190,7 @@ val searchField : kotlin.String = searchField_example // kotlin.String | Propert
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 val projectAttributesFilterModel : ProjectAttributesFilterModel =  // ProjectAttributesFilterModel | 
 try {
-    val result : kotlin.collections.List<CustomAttributeGetModel> = apiInstance.searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
+    val result : kotlin.collections.List<CustomAttributeModel> = apiInstance.searchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectTestPlanAttributesApi#searchTestPlanAttributesInProject")
@@ -214,7 +214,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;CustomAttributeGetModel&gt;**](CustomAttributeGetModel.md)
+[**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Configure Cookies:
 
 Update attribute of project&#39;s test plans
 
-  Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
+ Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
 
 ### Example
 ```kotlin

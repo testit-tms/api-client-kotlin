@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.AutoTestCase
 import ru.testit.kotlin.client.models.AutoTestStep
 import ru.testit.kotlin.client.models.ConfigurationShort
 import ru.testit.kotlin.client.models.Label
@@ -54,6 +55,7 @@ import com.squareup.moshi.JsonClass
  * @param lastTestResultConfiguration Configuration of the autotest last test result
  * @param lastTestResultOutcome Outcome of the autotest last test result
  * @param stabilityPercentage Stability percentage of the autotest
+ * @param autoTestCase Auto test case linked with the autotest
  */
 
 
@@ -169,7 +171,11 @@ data class AutoTest (
 
     /* Stability percentage of the autotest */
     @Json(name = "stabilityPercentage")
-    val stabilityPercentage: kotlin.Int? = null
+    val stabilityPercentage: kotlin.Int? = null,
+
+    /* Auto test case linked with the autotest */
+    @Json(name = "autoTestCase")
+    val autoTestCase: AutoTestCase? = null
 
 ) {
 

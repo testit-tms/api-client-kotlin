@@ -14,6 +14,7 @@
 | **attributes** | **kotlin.collections.Map&lt;kotlin.String, kotlin.collections.Set&lt;kotlin.String&gt;&gt;** | Custom attributes of work item |  [optional] |
 | **isDeleted** | **kotlin.Boolean** | Is result must consist of only actual/deleted work items |  [optional] |
 | **sectionIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of section identifiers |  [optional] |
+| **namespaceIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of namespace identifiers |  [optional] |
 | **createdByIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of users who created work item |  [optional] |
 | **modifiedByIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers of users who applied last modification to work item |  [optional] |
 | **states** | [**kotlin.collections.Set&lt;WorkItemStates&gt;**](WorkItemStates.md) | Collection of states of work item |  [optional] |
@@ -31,6 +32,9 @@
 | **workItemVersionIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Collection of identifiers work items versions. |  [optional] |
 | **links** | [**WorkItemLinkFilterApiModel**](WorkItemLinkFilterApiModel.md) | Specifies a work item filter by its links |  [optional] |
 | **externalMetadata** | [**WorkItemExternalMetadataFilterApiModel**](WorkItemExternalMetadataFilterApiModel.md) | Specifies work item filter by its external metadata |  [optional] |
+| **layers** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Specifies auto test case layers to search for |  [optional] |
+| **layerSources** | [**kotlin.collections.Set&lt;LayerSource&gt;**](LayerSource.md) | Specifies list of auto test case layer sources to search for |  [optional] |
+| **externalId** | **kotlin.String** | External identifier of the work item |  [optional] |
 
 
 

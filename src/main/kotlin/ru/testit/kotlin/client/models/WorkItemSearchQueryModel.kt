@@ -37,6 +37,7 @@ import com.squareup.moshi.JsonClass
  * @param attributes Custom attributes of work item
  * @param isDeleted Is result must consist of only actual/deleted work items
  * @param sectionIds Collection of section identifiers
+ * @param namespaceIds Collection of namespace identifiers
  * @param createdByIds Collection of identifiers of users who created work item
  * @param modifiedByIds Collection of identifiers of users who applied last modification to work item
  * @param states Collection of states of work item
@@ -54,6 +55,7 @@ import com.squareup.moshi.JsonClass
  * @param workItemVersionIds Collection of identifiers work items versions.
  * @param links Specifies a work item filter by its links
  * @param externalMetadata Specifies work item filter by its external metadata
+ * @param externalId External identifier of the work item
  */
 
 
@@ -86,6 +88,10 @@ data class WorkItemSearchQueryModel (
     /* Collection of section identifiers */
     @Json(name = "sectionIds")
     val sectionIds: kotlin.collections.Set<java.util.UUID>? = null,
+
+    /* Collection of namespace identifiers */
+    @Json(name = "namespaceIds")
+    val namespaceIds: kotlin.collections.Set<java.util.UUID>? = null,
 
     /* Collection of identifiers of users who created work item */
     @Json(name = "createdByIds")
@@ -153,7 +159,11 @@ data class WorkItemSearchQueryModel (
 
     /* Specifies work item filter by its external metadata */
     @Json(name = "externalMetadata")
-    val externalMetadata: WorkItemExternalMetadataFilterModel? = null
+    val externalMetadata: WorkItemExternalMetadataFilterModel? = null,
+
+    /* External identifier of the work item */
+    @Json(name = "externalId")
+    val externalId: kotlin.String? = null
 
 ) {
 

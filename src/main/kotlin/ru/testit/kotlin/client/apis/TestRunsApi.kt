@@ -22,6 +22,7 @@ import okhttp3.HttpUrl
 import ru.testit.kotlin.client.models.AutoTestNamespacesCountResponse
 import ru.testit.kotlin.client.models.AutoTestResultsForTestRunModel
 import ru.testit.kotlin.client.models.CreateEmptyTestRunApiModel
+import ru.testit.kotlin.client.models.CreateTestRunAndFillByAutoTestCasesApiModel
 import ru.testit.kotlin.client.models.CreateTestRunAndFillByAutoTestsApiModel
 import ru.testit.kotlin.client.models.CreateTestRunAndFillByConfigurationsApiModel
 import ru.testit.kotlin.client.models.CreateTestRunAndFillByWorkItemsApiModel
@@ -66,9 +67,83 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     }
 
     /**
+     * POST /api/v2/testRuns/byAutoTestCases
+     * Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter
+     * 
+     * @param createTestRunAndFillByAutoTestCasesApiModel Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)
+     * @return TestRunV2ApiResult
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun apiV2TestRunsByAutoTestCasesPost(createTestRunAndFillByAutoTestCasesApiModel: CreateTestRunAndFillByAutoTestCasesApiModel? = null) : TestRunV2ApiResult {
+        val localVarResponse = apiV2TestRunsByAutoTestCasesPostWithHttpInfo(createTestRunAndFillByAutoTestCasesApiModel = createTestRunAndFillByAutoTestCasesApiModel)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as TestRunV2ApiResult
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * POST /api/v2/testRuns/byAutoTestCases
+     * Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter
+     * 
+     * @param createTestRunAndFillByAutoTestCasesApiModel Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)
+     * @return ApiResponse<TestRunV2ApiResult?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun apiV2TestRunsByAutoTestCasesPostWithHttpInfo(createTestRunAndFillByAutoTestCasesApiModel: CreateTestRunAndFillByAutoTestCasesApiModel?) : ApiResponse<TestRunV2ApiResult?> {
+        val localVariableConfig = apiV2TestRunsByAutoTestCasesPostRequestConfig(createTestRunAndFillByAutoTestCasesApiModel = createTestRunAndFillByAutoTestCasesApiModel)
+
+        return request<CreateTestRunAndFillByAutoTestCasesApiModel, TestRunV2ApiResult>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation apiV2TestRunsByAutoTestCasesPost
+     *
+     * @param createTestRunAndFillByAutoTestCasesApiModel Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)
+     * @return RequestConfig
+     */
+    fun apiV2TestRunsByAutoTestCasesPostRequestConfig(createTestRunAndFillByAutoTestCasesApiModel: CreateTestRunAndFillByAutoTestCasesApiModel?) : RequestConfig<CreateTestRunAndFillByAutoTestCasesApiModel> {
+        val localVariableBody = createTestRunAndFillByAutoTestCasesApiModel
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/api/v2/testRuns/byAutoTestCases",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
      * DELETE /api/v2/testRuns
      * Delete multiple test runs
-     *   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+     *  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
      * @param testRunSelectApiModel  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
@@ -100,7 +175,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * DELETE /api/v2/testRuns
      * Delete multiple test runs
-     *   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+     *  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
      * @param testRunSelectApiModel  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -215,7 +290,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * DELETE /api/v2/testRuns/{id}
      * Delete test run
-     *   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+     *  Use case  User sets test run internal (guid format) identifier  System search and delete test run
      * @param id Test run internal (UUID) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -246,7 +321,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * DELETE /api/v2/testRuns/{id}
      * Delete test run
-     *   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+     *  Use case  User sets test run internal (guid format) identifier  System search and delete test run
      * @param id Test run internal (UUID) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -361,7 +436,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/purge
      * Permanently delete test run from archive
-     *   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+     *  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
      * @param id Test run internal (UUID) identifier
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -392,7 +467,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/purge
      * Permanently delete test run from archive
-     *   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+     *  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
      * @param id Test run internal (UUID) identifier
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -509,7 +584,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/restore
      * Restore test run from the archive
-     *   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+     *  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
      * @param id Unique ID of the test run
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -540,7 +615,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/restore
      * Restore test run from the archive
-     *   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+     *  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
      * @param id Unique ID of the test run
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -878,7 +953,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/purge/bulk
      * Permanently delete multiple test runs from archive
-     *   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+     *  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
      * @param testRunSelectApiModel  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
@@ -910,7 +985,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/purge/bulk
      * Permanently delete multiple test runs from archive
-     *   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+     *  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
      * @param testRunSelectApiModel  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -952,7 +1027,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/restore/bulk
      * Restore multiple test runs from the archive
-     *   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+     *  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
      * @param testRunSelectApiModel  (optional)
      * @return kotlin.Int
      * @throws IllegalStateException If the request is not correctly configured
@@ -984,7 +1059,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/restore/bulk
      * Restore multiple test runs from the archive
-     *   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+     *  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
      * @param testRunSelectApiModel  (optional)
      * @return ApiResponse<kotlin.Int?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1204,7 +1279,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/complete
      * Complete TestRun
-     *   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+     *  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
      * @param id Test Run internal identifier (GUID format)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -1235,7 +1310,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/complete
      * Complete TestRun
-     *   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+     *  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
      * @param id Test Run internal identifier (GUID format)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1275,7 +1350,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/byAutoTests
      * Create test runs based on autotests and configurations
-     * This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+     * This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
      * @param createTestRunAndFillByAutoTestsApiModel  (optional)
      * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
@@ -1307,7 +1382,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/byAutoTests
      * Create test runs based on autotests and configurations
-     * This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+     * This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
      * @param createTestRunAndFillByAutoTestsApiModel  (optional)
      * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1349,7 +1424,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/byConfigurations
      * Create test runs picking the needed test points
-     * This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+     * This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
      * @param createTestRunAndFillByConfigurationsApiModel  (optional)
      * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
@@ -1381,7 +1456,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/byConfigurations
      * Create test runs picking the needed test points
-     * This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+     * This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
      * @param createTestRunAndFillByConfigurationsApiModel  (optional)
      * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1423,7 +1498,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/byWorkItems
      * Create test run based on configurations and work items
-     * This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+     * This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
      * @param createTestRunAndFillByWorkItemsApiModel  (optional)
      * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
@@ -1455,7 +1530,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/byWorkItems
      * Create test run based on configurations and work items
-     * This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+     * This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
      * @param createTestRunAndFillByWorkItemsApiModel  (optional)
      * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1497,7 +1572,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns
      * Create empty TestRun
-     *   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+     *  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
      * @param createEmptyTestRunApiModel  (optional)
      * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
@@ -1529,7 +1604,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns
      * Create empty TestRun
-     *   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+     *  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
      * @param createEmptyTestRunApiModel  (optional)
      * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1571,7 +1646,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /api/v2/testRuns/{id}
      * Get TestRun by Id
-     *   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+     *  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
      * @param id Test Run internal identifier (GUID format)
      * @return TestRunV2ApiResult
      * @throws IllegalStateException If the request is not correctly configured
@@ -1603,7 +1678,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /api/v2/testRuns/{id}
      * Get TestRun by Id
-     *   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+     *  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
      * @param id Test Run internal identifier (GUID format)
      * @return ApiResponse<TestRunV2ApiResult?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1721,7 +1796,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/start
      * Start TestRun
-     *   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+     *  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
      * @param id Test Run internal identifier (GUID format)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -1752,7 +1827,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/start
      * Start TestRun
-     *   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+     *  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
      * @param id Test Run internal identifier (GUID format)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1792,7 +1867,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/stop
      * Stop TestRun
-     *   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+     *  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
      * @param id Test Run internal identifier (GUID format)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -1823,7 +1898,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * POST /api/v2/testRuns/{id}/stop
      * Stop TestRun
-     *   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+     *  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
      * @param id Test Run internal identifier (GUID format)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1863,7 +1938,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * PUT /api/v2/testRuns
      * Update empty TestRun
-     *   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+     *  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
      * @param updateEmptyTestRunApiModel  (optional)
      * @return void
      * @throws IllegalStateException If the request is not correctly configured
@@ -1894,7 +1969,7 @@ open class TestRunsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * PUT /api/v2/testRuns
      * Update empty TestRun
-     *   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+     *  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
      * @param updateEmptyTestRunApiModel  (optional)
      * @return ApiResponse<Unit?>
      * @throws IllegalStateException If the request is not correctly configured

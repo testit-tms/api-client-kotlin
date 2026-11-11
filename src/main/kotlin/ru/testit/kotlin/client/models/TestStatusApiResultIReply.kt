@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.TestStatusApiResult
+import ru.testit.kotlin.client.models.TestStatusApiResultCountReply
 import ru.testit.kotlin.client.models.TestStatusApiResultGroup
 import ru.testit.kotlin.client.models.TestStatusApiResultGroupedReply
 import ru.testit.kotlin.client.models.TestStatusApiResultReply

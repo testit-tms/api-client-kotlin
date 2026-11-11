@@ -32,6 +32,7 @@
 | **lastTestResultConfiguration** | [**ConfigurationShort**](ConfigurationShort.md) | Configuration of the autotest last test result |  [optional] |
 | **lastTestResultOutcome** | **kotlin.String** | Outcome of the autotest last test result |  [optional] |
 | **stabilityPercentage** | **kotlin.Int** | Stability percentage of the autotest |  [optional] |
+| **autoTestCase** | [**AutoTestCase**](AutoTestCase.md) | Auto test case linked with the autotest |  [optional] |
 
 
 

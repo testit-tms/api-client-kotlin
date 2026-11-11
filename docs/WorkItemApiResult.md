@@ -27,6 +27,7 @@
 | **postconditionSteps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) | Set of postcondition steps that are executed after completing the main steps |  |
 | **iterations** | [**kotlin.collections.List&lt;IterationModel&gt;**](IterationModel.md) | Associated iterations linked to the work item |  |
 | **autoTests** | [**kotlin.collections.List&lt;AutoTestModel&gt;**](AutoTestModel.md) | Automated tests associated with the work item |  |
+| **autoTestCases** | [**kotlin.collections.List&lt;AutoTestCaseApiModel&gt;**](AutoTestCaseApiModel.md) | Set of automated test cases linked to the work item |  |
 | **attachments** | [**kotlin.collections.List&lt;AttachmentModel&gt;**](AttachmentModel.md) | Files attached to the work item |  |
 | **links** | [**kotlin.collections.List&lt;LinkModel&gt;**](LinkModel.md) | Set of links related to the work item |  |
 | **externalIssues** | [**kotlin.collections.List&lt;ExternalIssueApiResult&gt;**](ExternalIssueApiResult.md) | Set of external issues related to the work item |  |
@@ -35,6 +36,9 @@
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique identifier of the work item creator |  |
 | **isDeleted** | **kotlin.Boolean** | Indicates whether the work item is marked as deleted |  |
 | **description** | **kotlin.String** | Description of the work item |  [optional] |
+| **externalId** | **kotlin.String** | External identifier of the work item from external systems |  [optional] |
+| **manualTestId** | [**java.util.UUID**](java.util.UUID.md) | Identifier of the linked manual test |  [optional] |
+| **layer** | [**WorkItemLayerApiResult**](WorkItemLayerApiResult.md) | Test pyramid layer of the work item |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Modification date of the work item |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) | Unique identifier of the work item modifier |  [optional] |
 

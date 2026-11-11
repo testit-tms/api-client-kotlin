@@ -13,9 +13,11 @@
 | **title** | **kotlin.String** | Name of the autotest in autotest&#39;s card |  [optional] |
 | **description** | **kotlin.String** | Description of the autotest in autotest&#39;s card |  [optional] |
 | **isFlaky** | **kotlin.Boolean** | Indicates if the autotest is marked as flaky |  [optional] |
+| **layer** | [**LayerApiModel**](LayerApiModel.md) | Layer of the autotest. Assigns layer by rules if omitted. |  [optional] |
 | **steps** | [**kotlin.collections.List&lt;AutoTestStepApiModel&gt;**](AutoTestStepApiModel.md) | Collection of the autotest steps |  [optional] |
 | **setup** | [**kotlin.collections.List&lt;AutoTestStepApiModel&gt;**](AutoTestStepApiModel.md) | Collection of the autotest setup steps |  [optional] |
 | **teardown** | [**kotlin.collections.List&lt;AutoTestStepApiModel&gt;**](AutoTestStepApiModel.md) | Collection of the autotest teardown steps |  [optional] |
+| **manualTestId** | [**java.util.UUID**](java.util.UUID.md) | ID of the manual test to be linked with the autotest |  [optional] |
 | **shouldCreateWorkItem** | **kotlin.Boolean** | Creates a test case linked to the autotest. |  [optional] |
 | **workItemIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies the IDs of work items to link your autotest to. You can specify several IDs. |  [optional] |
 | **attributes** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) | Key value pair of custom work item attributes |  [optional] |

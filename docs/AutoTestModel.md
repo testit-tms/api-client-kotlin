@@ -22,6 +22,7 @@
 | **lastTestResultOutcome** | **kotlin.String** | Outcome of the autotest last test result |  [optional] |
 | **lastTestResultStatus** | [**TestStatusModel**](TestStatusModel.md) | Status of the autotest last test result |  [optional] |
 | **stabilityPercentage** | **kotlin.Int** | Stability percentage of the autotest |  [optional] |
+| **autoTestCase** | [**AutoTestCaseModel**](AutoTestCaseModel.md) | Auto test case linked with the autotest |  [optional] |
 | **links** | [**kotlin.collections.List&lt;LinkPutModel&gt;**](LinkPutModel.md) | Collection of the autotest links |  [optional] |
 | **namespace** | **kotlin.String** | Name of the autotest namespace |  [optional] |
 | **classname** | **kotlin.String** | Name of the autotest class |  [optional] |

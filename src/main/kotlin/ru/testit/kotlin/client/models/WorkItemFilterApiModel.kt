@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int32RangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
+import ru.testit.kotlin.client.models.LayerSource
 import ru.testit.kotlin.client.models.WorkItemExternalMetadataFilterApiModel
 import ru.testit.kotlin.client.models.WorkItemLinkFilterApiModel
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
@@ -41,6 +42,7 @@ import com.squareup.moshi.JsonClass
  * @param attributes Custom attributes of work item
  * @param isDeleted Is result must consist of only actual/deleted work items
  * @param sectionIds Collection of section identifiers
+ * @param namespaceIds Collection of namespace identifiers
  * @param createdByIds Collection of identifiers of users who created work item
  * @param modifiedByIds Collection of identifiers of users who applied last modification to work item
  * @param states Collection of states of work item
@@ -58,6 +60,9 @@ import com.squareup.moshi.JsonClass
  * @param workItemVersionIds Collection of identifiers work items versions.
  * @param links Specifies a work item filter by its links
  * @param externalMetadata Specifies work item filter by its external metadata
+ * @param layers Specifies auto test case layers to search for
+ * @param layerSources Specifies list of auto test case layer sources to search for
+ * @param externalId External identifier of the work item
  */
 
 
@@ -102,6 +107,10 @@ data class WorkItemFilterApiModel (
     /* Collection of section identifiers */
     @Json(name = "sectionIds")
     val sectionIds: kotlin.collections.Set<java.util.UUID>? = null,
+
+    /* Collection of namespace identifiers */
+    @Json(name = "namespaceIds")
+    val namespaceIds: kotlin.collections.Set<java.util.UUID>? = null,
 
     /* Collection of identifiers of users who created work item */
     @Json(name = "createdByIds")
@@ -169,7 +178,19 @@ data class WorkItemFilterApiModel (
 
     /* Specifies work item filter by its external metadata */
     @Json(name = "externalMetadata")
-    val externalMetadata: WorkItemExternalMetadataFilterApiModel? = null
+    val externalMetadata: WorkItemExternalMetadataFilterApiModel? = null,
+
+    /* Specifies auto test case layers to search for */
+    @Json(name = "layers")
+    val layers: kotlin.collections.Set<kotlin.String>? = null,
+
+    /* Specifies list of auto test case layer sources to search for */
+    @Json(name = "layerSources")
+    val layerSources: kotlin.collections.Set<LayerSource>? = null,
+
+    /* External identifier of the work item */
+    @Json(name = "externalId")
+    val externalId: kotlin.String? = null
 
 ) {
 

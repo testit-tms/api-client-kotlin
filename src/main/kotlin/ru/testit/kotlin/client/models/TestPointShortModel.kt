@@ -28,7 +28,7 @@ import com.squareup.moshi.JsonClass
  * @param testerId Tester who is responded for the test unique internal identifier
  * @param workItemId Workitem to which test point relates unique identifier
  * @param configurationId Configuration to which test point relates unique identifier
- * @param status Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed
+ * @param status Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed
  * @param lastTestResultId Last test result unique identifier
  * @param workItemMedianDuration Median duration of work item the test point represents
  */
@@ -59,7 +59,7 @@ data class TestPointShortModel (
     @Json(name = "configurationId")
     val configurationId: java.util.UUID? = null,
 
-    /* Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed */
+    /* Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed */
     @Json(name = "status")
     val status: kotlin.String? = null,
 

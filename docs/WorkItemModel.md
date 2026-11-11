@@ -30,12 +30,15 @@
 | **links** | [**kotlin.collections.List&lt;LinkModel&gt;**](LinkModel.md) |  |  |
 | **name** | **kotlin.String** |  |  |
 | **autoTests** | [**kotlin.collections.List&lt;AutoTestModel&gt;**](AutoTestModel.md) |  |  [optional] |
+| **manualTestId** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
+| **autoTestCases** | [**kotlin.collections.List&lt;AutoTestCaseResult&gt;**](AutoTestCaseResult.md) |  |  [optional] |
 | **attachments** | [**kotlin.collections.List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  |  [optional] |
 | **sectionPreconditionSteps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  [optional] |
 | **sectionPostconditionSteps** | [**kotlin.collections.List&lt;StepModel&gt;**](StepModel.md) |  |  [optional] |
 | **iterations** | [**kotlin.collections.List&lt;IterationModel&gt;**](IterationModel.md) |  |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) |  |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) |  |  [optional] |
+| **externalId** | **kotlin.String** |  |  [optional] |
 | **description** | **kotlin.String** |  |  [optional] |
 
 

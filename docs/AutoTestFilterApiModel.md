@@ -26,6 +26,8 @@
 | **lastTestResultConfigurationIds** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md) | Specifies an autotest configuration IDs of the last test result to search for |  [optional] |
 | **tags** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Specifies an autotest tags to search for |  [optional] |
 | **excludeTags** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Specifies an autotest tags to exclude |  [optional] |
+| **layers** | **kotlin.collections.Set&lt;kotlin.String&gt;** | Specifies auto test layers to search for |  [optional] |
+| **layerSources** | [**kotlin.collections.Set&lt;LayerSource&gt;**](LayerSource.md) | Specifies list of auto test layer sources to search for |  [optional] |
 
 
 

@@ -27,6 +27,7 @@ import com.squareup.moshi.JsonClass
  * @param code Code representing the test status.
  * @param name Name of the test status.
  * @param type Type of the test status (e.g., Passed, Failed).
+ * @param isSystem Identifies test status as system.
  */
 
 
@@ -46,7 +47,11 @@ data class TestStatusShortApiResult (
 
     /* Type of the test status (e.g., Passed, Failed). */
     @Json(name = "type")
-    val type: TestStatusApiType
+    val type: TestStatusApiType,
+
+    /* Identifies test status as system. */
+    @Json(name = "isSystem")
+    val isSystem: kotlin.Boolean
 
 ) {
 

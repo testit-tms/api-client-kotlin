@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AttachmentModel
+import ru.testit.kotlin.client.models.AutoTestCaseResult
 import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.ExternalIssueModel
 import ru.testit.kotlin.client.models.IterationModel
@@ -60,12 +61,15 @@ import com.squareup.moshi.JsonClass
  * @param links 
  * @param name 
  * @param autoTests 
+ * @param manualTestId 
+ * @param autoTestCases 
  * @param attachments 
  * @param sectionPreconditionSteps 
  * @param sectionPostconditionSteps 
  * @param iterations 
  * @param modifiedDate 
  * @param modifiedById 
+ * @param externalId 
  * @param description 
  */
 
@@ -153,6 +157,12 @@ data class WorkItemModel (
     @Json(name = "autoTests")
     val autoTests: kotlin.collections.List<AutoTestModel>? = null,
 
+    @Json(name = "manualTestId")
+    val manualTestId: java.util.UUID? = null,
+
+    @Json(name = "autoTestCases")
+    val autoTestCases: kotlin.collections.List<AutoTestCaseResult>? = null,
+
     @Json(name = "attachments")
     val attachments: kotlin.collections.List<AttachmentModel>? = null,
 
@@ -170,6 +180,9 @@ data class WorkItemModel (
 
     @Json(name = "modifiedById")
     val modifiedById: java.util.UUID? = null,
+
+    @Json(name = "externalId")
+    val externalId: kotlin.String? = null,
 
     @Json(name = "description")
     val description: kotlin.String? = null

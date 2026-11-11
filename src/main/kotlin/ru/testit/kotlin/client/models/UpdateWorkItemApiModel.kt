@@ -16,8 +16,10 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AssignAttachmentApiModel
+import ru.testit.kotlin.client.models.AssignAutoTestCaseIdApiModel
 import ru.testit.kotlin.client.models.AssignIterationApiModel
 import ru.testit.kotlin.client.models.AutoTestIdModel
+import ru.testit.kotlin.client.models.LayerSource
 import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.UpdateLinkApiModel
 import ru.testit.kotlin.client.models.UpdateStepApiModel
@@ -45,9 +47,14 @@ import com.squareup.moshi.JsonClass
  * @param postconditionSteps Set of postcondition steps that are executed after completing the main steps
  * @param iterations Set of iterations associated with the work item
  * @param autoTests Set of automated tests linked to the work item
+ * @param manualTestId Identifier of the linked manual test
+ * @param autoTestCases Set of automated test cases linked to the work item
  * @param attachments Set of files attached to the work item
  * @param links Set of links related to the work item
  * @param parameters Set of parameter keys associated with the work item
+ * @param layerName Name of test pyramid layer associated with the work item
+ * @param layerSource Source of test pyramid layer associated with the work item
+ * @param resetLayer Reset current test pyramid layer associated with the work item and re-evaluates it
  */
 
 
@@ -109,6 +116,14 @@ data class UpdateWorkItemApiModel (
     @Json(name = "autoTests")
     val autoTests: kotlin.collections.List<AutoTestIdModel>? = null,
 
+    /* Identifier of the linked manual test */
+    @Json(name = "manualTestId")
+    val manualTestId: java.util.UUID? = null,
+
+    /* Set of automated test cases linked to the work item */
+    @Json(name = "autoTestCases")
+    val autoTestCases: kotlin.collections.List<AssignAutoTestCaseIdApiModel>? = null,
+
     /* Set of files attached to the work item */
     @Json(name = "attachments")
     val attachments: kotlin.collections.List<AssignAttachmentApiModel>? = null,
@@ -119,7 +134,19 @@ data class UpdateWorkItemApiModel (
 
     /* Set of parameter keys associated with the work item */
     @Json(name = "parameters")
-    val parameters: kotlin.collections.List<WorkItemParameterKeyApiModel>? = null
+    val parameters: kotlin.collections.List<WorkItemParameterKeyApiModel>? = null,
+
+    /* Name of test pyramid layer associated with the work item */
+    @Json(name = "layerName")
+    val layerName: kotlin.String? = null,
+
+    /* Source of test pyramid layer associated with the work item */
+    @Json(name = "layerSource")
+    val layerSource: LayerSource? = null,
+
+    /* Reset current test pyramid layer associated with the work item and re-evaluates it */
+    @Json(name = "resetLayer")
+    val resetLayer: kotlin.Boolean? = null
 
 ) {
 

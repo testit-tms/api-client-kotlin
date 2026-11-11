@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AIServiceModelApiResult
+import ru.testit.kotlin.client.models.AIServiceModelApiResultCountReply
 import ru.testit.kotlin.client.models.AIServiceModelApiResultGroup
 import ru.testit.kotlin.client.models.AIServiceModelApiResultGroupedReply
 import ru.testit.kotlin.client.models.AIServiceModelApiResultReply

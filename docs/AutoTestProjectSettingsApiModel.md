@@ -13,8 +13,8 @@
 | **flakyStabilityPercentage** | **kotlin.Int** | Stability percentage for autotest flaky computing |  [optional] |
 | **flakyTestRunCount** | **kotlin.Int** | Last test run count for autotest flaky computing |  [optional] |
 | **workItemUpdatingEnabled** | **kotlin.Boolean** | Autotest to work item updating enabled |  [optional] |
-| **testRunsRetentionPeriodDays** | **kotlin.Int** |  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings |  [optional] |
-| **maxActiveTestRunsCount** | **kotlin.Int** | Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived |  [optional] |
+| **testRunsRetentionPeriodDays** | **kotlin.Int** |  The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings |  [optional] |
+| **maxActiveTestRunsCount** | **kotlin.Int** | Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived |  [optional] |
 
 
 

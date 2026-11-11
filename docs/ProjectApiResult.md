@@ -7,18 +7,20 @@
 | **id** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project |  |
 | **name** | **kotlin.String** | Name of the project |  |
 | **isFavorite** | **kotlin.Boolean** | Indicates if the project is marked as favorite |  |
-| **workItemsCount** | **kotlin.Int** | Number of work items in the project |  |
+| **workItemsCount** | **kotlin.Long** | Number of work items in the project |  |
 | **isDeleted** | **kotlin.Boolean** | Indicates if the project is deleted |  |
 | **createdDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Creation date of the project |  |
 | **createdById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project creator |  |
 | **globalId** | **kotlin.Long** | Global ID of the project |  |
 | **type** | [**ProjectType**](ProjectType.md) | Type of the project |  |
 | **workflowId** | [**java.util.UUID**](java.util.UUID.md) | ID of the workflow used in project |  |
+| **testStrategy** | [**TestStrategy**](TestStrategy.md) | Test strategy of the project |  |
+| **testCaseCoverageMode** | [**TestCaseCoverageMode**](TestCaseCoverageMode.md) | Coverage mode of test cases of the project |  |
 | **description** | **kotlin.String** | Description of the project |  [optional] |
-| **testCasesCount** | **kotlin.Int** | Number of test cases in the project |  [optional] |
-| **sharedStepsCount** | **kotlin.Int** | Number of shared steps in the project |  [optional] |
-| **checkListsCount** | **kotlin.Int** | Number of checklists in the project |  [optional] |
-| **autoTestsCount** | **kotlin.Int** | Number of autotests in the project |  [optional] |
+| **testCasesCount** | **kotlin.Long** | Number of test cases in the project |  [optional] |
+| **sharedStepsCount** | **kotlin.Long** | Number of shared steps in the project |  [optional] |
+| **checkListsCount** | **kotlin.Long** | Number of checklists in the project |  [optional] |
+| **autoTestsCount** | **kotlin.Long** | Number of autotests in the project |  [optional] |
 | **modifiedDate** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | Last modification date of the project |  [optional] |
 | **modifiedById** | [**java.util.UUID**](java.util.UUID.md) | Unique ID of the project last editor |  [optional] |
 

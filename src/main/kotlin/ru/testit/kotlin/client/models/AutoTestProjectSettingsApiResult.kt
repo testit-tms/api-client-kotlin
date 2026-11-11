@@ -33,8 +33,8 @@ import com.squareup.moshi.JsonClass
  * @param workItemUpdatingFields Autotest to work item updating fields
  * @param archiveOutdatedTestRunsEnabled Indicates whether archiving of outdated test runs is enabled for the project.
  * @param testRunsArchiveLimitEnabled Indicates whether a limit is enforced on the number of archived test runs.
- * @param testRunsRetentionPeriodDays  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings
- * @param maxActiveTestRunsCount Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived
+ * @param testRunsRetentionPeriodDays  The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings
+ * @param maxActiveTestRunsCount Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived
  */
 
 
@@ -80,11 +80,11 @@ data class AutoTestProjectSettingsApiResult (
     @Json(name = "testRunsArchiveLimitEnabled")
     val testRunsArchiveLimitEnabled: kotlin.Boolean,
 
-    /*  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings */
+    /*  The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings */
     @Json(name = "testRunsRetentionPeriodDays")
     val testRunsRetentionPeriodDays: kotlin.Int,
 
-    /* Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived */
+    /* Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived */
     @Json(name = "maxActiveTestRunsCount")
     val maxActiveTestRunsCount: kotlin.Int
 

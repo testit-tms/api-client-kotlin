@@ -19,6 +19,8 @@
 | **postconditionSteps** | [**kotlin.collections.List&lt;CreateStepApiModel&gt;**](CreateStepApiModel.md) | Set of postcondition steps that are executed after completing the main steps |  [optional] |
 | **iterations** | [**kotlin.collections.List&lt;AssignIterationApiModel&gt;**](AssignIterationApiModel.md) | Set of iterations associated with the work item |  [optional] |
 | **autoTests** | [**kotlin.collections.List&lt;AutoTestIdModel&gt;**](AutoTestIdModel.md) | Set of automated tests linked to the work item |  [optional] |
+| **manualTestId** | [**java.util.UUID**](java.util.UUID.md) | Identifier of the linked manual test |  [optional] |
+| **autoTestCases** | [**kotlin.collections.List&lt;AssignAutoTestCaseIdApiModel&gt;**](AssignAutoTestCaseIdApiModel.md) | Set of automated test cases linked to the work item |  [optional] |
 | **attachments** | [**kotlin.collections.List&lt;AssignAttachmentApiModel&gt;**](AssignAttachmentApiModel.md) | Set of files attached to the work item |  [optional] |
 | **links** | [**kotlin.collections.List&lt;CreateLinkApiModel&gt;**](CreateLinkApiModel.md) | Set of links related to the work item |  [optional] |
 | **parameters** | [**kotlin.collections.List&lt;WorkItemParameterKeyApiModel&gt;**](WorkItemParameterKeyApiModel.md) | Set of parameter keys associated with the work item |  [optional] |

@@ -15,6 +15,7 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.JsonElement
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -30,7 +31,7 @@ import com.squareup.moshi.JsonClass
 data class GroupKey (
 
     @Json(name = "value")
-    val `value`: kotlin.String?,
+    val `value`: JsonElement,
 
     @Json(name = "displayValue")
     val displayValue: kotlin.String? = null

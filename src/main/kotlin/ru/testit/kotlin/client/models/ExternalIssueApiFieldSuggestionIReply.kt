@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestion
+import ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionCountReply
 import ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionGroup
 import ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionGroupedReply
 import ru.testit.kotlin.client.models.ExternalIssueApiFieldSuggestionReply

@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.AutotestResultOutcome
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
+import ru.testit.kotlin.client.models.LayerSource
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -47,6 +48,8 @@ import com.squareup.moshi.JsonClass
  * @param lastTestResultConfigurationIds 
  * @param tags 
  * @param excludeTags 
+ * @param layers 
+ * @param layerSources 
  */
 
 
@@ -116,7 +119,13 @@ data class AutoTestFilterModel (
     val tags: kotlin.collections.List<kotlin.String>? = null,
 
     @Json(name = "excludeTags")
-    val excludeTags: kotlin.collections.List<kotlin.String>? = null
+    val excludeTags: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "layers")
+    val layers: kotlin.collections.List<kotlin.String>? = null,
+
+    @Json(name = "layerSources")
+    val layerSources: kotlin.collections.List<LayerSource>? = null
 
 ) {
 

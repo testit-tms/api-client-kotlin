@@ -73,7 +73,7 @@ Configure Cookies:
 
 Create section
 
-  Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+ Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
 
 ### Example
 ```kotlin
@@ -125,7 +125,7 @@ Configure Cookies:
 
 Delete section
 
-  Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+ Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
 
 ### Example
 ```kotlin
@@ -176,7 +176,7 @@ Configure Cookies:
 
 Get section
 
-  Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+ Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
 
 ### Example
 ```kotlin
@@ -230,7 +230,7 @@ Configure Cookies:
 
 Get section work items
 
-  Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+ Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
 
 ### Example
 ```kotlin
@@ -347,7 +347,7 @@ Configure Cookies:
 
 Rename section
 
-  Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+ Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
 
 ### Example
 ```kotlin
@@ -398,7 +398,7 @@ Configure Cookies:
 
 Update section
 
-  Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+ Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
 
 ### Example
 ```kotlin

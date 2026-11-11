@@ -10,5 +10,7 @@
 
     * `SharedSteps` (value: `"SharedSteps"`)
 
+    * `AutoTestCases` (value: `"AutoTestCases"`)
+
 
 

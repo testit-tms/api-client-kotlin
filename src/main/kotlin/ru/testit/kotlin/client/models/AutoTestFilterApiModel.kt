@@ -18,6 +18,7 @@ package ru.testit.kotlin.client.models
 import ru.testit.kotlin.client.models.AutotestResultOutcome
 import ru.testit.kotlin.client.models.DateTimeRangeSelectorModel
 import ru.testit.kotlin.client.models.Int64RangeSelectorModel
+import ru.testit.kotlin.client.models.LayerSource
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -47,6 +48,8 @@ import com.squareup.moshi.JsonClass
  * @param lastTestResultConfigurationIds Specifies an autotest configuration IDs of the last test result to search for
  * @param tags Specifies an autotest tags to search for
  * @param excludeTags Specifies an autotest tags to exclude
+ * @param layers Specifies auto test layers to search for
+ * @param layerSources Specifies list of auto test layer sources to search for
  */
 
 
@@ -138,7 +141,15 @@ data class AutoTestFilterApiModel (
 
     /* Specifies an autotest tags to exclude */
     @Json(name = "excludeTags")
-    val excludeTags: kotlin.collections.Set<kotlin.String>? = null
+    val excludeTags: kotlin.collections.Set<kotlin.String>? = null,
+
+    /* Specifies auto test layers to search for */
+    @Json(name = "layers")
+    val layers: kotlin.collections.Set<kotlin.String>? = null,
+
+    /* Specifies list of auto test layer sources to search for */
+    @Json(name = "layerSources")
+    val layerSources: kotlin.collections.Set<LayerSource>? = null
 
 ) {
 

@@ -16,5 +16,7 @@
 
     * `checkbox` (value: `"checkbox"`)
 
+    * `numeric` (value: `"numeric"`)
+
 
 

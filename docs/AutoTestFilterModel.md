@@ -26,6 +26,8 @@
 | **lastTestResultConfigurationIds** | [**kotlin.collections.List&lt;java.util.UUID&gt;**](java.util.UUID.md) |  |  [optional] |
 | **tags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
 | **excludeTags** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
+| **layers** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
+| **layerSources** | [**kotlin.collections.List&lt;LayerSource&gt;**](LayerSource.md) |  |  [optional] |
 
 
 

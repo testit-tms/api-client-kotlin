@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.ProjectShortApiResult
+import ru.testit.kotlin.client.models.ProjectShortApiResultCountReply
 import ru.testit.kotlin.client.models.ProjectShortApiResultGroup
 import ru.testit.kotlin.client.models.ProjectShortApiResultGroupedReply
 import ru.testit.kotlin.client.models.ProjectShortApiResultReply

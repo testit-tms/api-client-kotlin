@@ -17,6 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AutoTestStepApiModel
 import ru.testit.kotlin.client.models.LabelApiModel
+import ru.testit.kotlin.client.models.LayerApiModel
 import ru.testit.kotlin.client.models.LinkCreateApiModel
 
 import com.squareup.moshi.Json
@@ -34,9 +35,11 @@ import com.squareup.moshi.JsonClass
  * @param title Name of the autotest in autotest's card
  * @param description Description of the autotest in autotest's card
  * @param isFlaky Indicates if the autotest is marked as flaky
+ * @param layer Layer of the autotest. Assigns layer by rules if omitted.
  * @param steps Collection of the autotest steps
  * @param setup Collection of the autotest setup steps
  * @param teardown Collection of the autotest teardown steps
+ * @param manualTestId ID of the manual test to be linked with the autotest
  * @param shouldCreateWorkItem Creates a test case linked to the autotest.
  * @param workItemIds Specifies the IDs of work items to link your autotest to. You can specify several IDs.
  * @param attributes Key value pair of custom work item attributes
@@ -85,6 +88,10 @@ data class AutoTestCreateApiModel (
     @Json(name = "isFlaky")
     val isFlaky: kotlin.Boolean? = null,
 
+    /* Layer of the autotest. Assigns layer by rules if omitted. */
+    @Json(name = "layer")
+    val layer: LayerApiModel? = null,
+
     /* Collection of the autotest steps */
     @Json(name = "steps")
     val steps: kotlin.collections.List<AutoTestStepApiModel>? = null,
@@ -96,6 +103,10 @@ data class AutoTestCreateApiModel (
     /* Collection of the autotest teardown steps */
     @Json(name = "teardown")
     val teardown: kotlin.collections.List<AutoTestStepApiModel>? = null,
+
+    /* ID of the manual test to be linked with the autotest */
+    @Json(name = "manualTestId")
+    val manualTestId: java.util.UUID? = null,
 
     /* Creates a test case linked to the autotest. */
     @Json(name = "shouldCreateWorkItem")

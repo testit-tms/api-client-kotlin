@@ -19,6 +19,7 @@ import ru.testit.kotlin.client.models.CollectionFilter
 import ru.testit.kotlin.client.models.CollectionOperator
 import ru.testit.kotlin.client.models.CompositeFilter
 import ru.testit.kotlin.client.models.Filter
+import ru.testit.kotlin.client.models.JsonElement
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -28,9 +29,9 @@ import com.squareup.moshi.JsonClass
  *
  * @param filters 
  * @param `operator` 
+ * @param `value` 
  * @param `field` 
  * @param filter 
- * @param `value` 
  */
 
 
@@ -42,14 +43,14 @@ data class IFilter (
     @Json(name = "operator")
     val `operator`: CollectionOperator,
 
+    @Json(name = "value")
+    val `value`: JsonElement,
+
     @Json(name = "field")
     val `field`: kotlin.String,
 
     @Json(name = "filter")
-    val filter: IFilter,
-
-    @Json(name = "value")
-    val `value`: kotlin.String? = null
+    val filter: IFilter
 
 ) {
 

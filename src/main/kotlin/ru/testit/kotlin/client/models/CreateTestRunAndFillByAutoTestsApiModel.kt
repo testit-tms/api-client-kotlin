@@ -17,6 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AssignAttachmentApiModel
 import ru.testit.kotlin.client.models.CreateLinkApiModel
+import ru.testit.kotlin.client.models.TestRunLaunchOptionApiModel
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -33,6 +34,7 @@ import com.squareup.moshi.JsonClass
  * @param attachments Collection of attachment ids to relate to the test run
  * @param links Collection of links to relate to the test run
  * @param tags Collection of tags to assign to the test run
+ * @param option Test run launching options.
  */
 
 
@@ -72,7 +74,11 @@ data class CreateTestRunAndFillByAutoTestsApiModel (
 
     /* Collection of tags to assign to the test run */
     @Json(name = "tags")
-    val tags: kotlin.collections.List<kotlin.String>? = null
+    val tags: kotlin.collections.List<kotlin.String>? = null,
+
+    /* Test run launching options. */
+    @Json(name = "option")
+    val option: TestRunLaunchOptionApiModel? = null
 
 ) {
 

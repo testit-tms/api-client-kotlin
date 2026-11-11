@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.AttachmentModel
+import ru.testit.kotlin.client.models.AutoTestCaseApiModel
 import ru.testit.kotlin.client.models.AutoTestModel
 import ru.testit.kotlin.client.models.ExternalIssueApiResult
 import ru.testit.kotlin.client.models.IterationModel
@@ -23,6 +24,7 @@ import ru.testit.kotlin.client.models.LinkModel
 import ru.testit.kotlin.client.models.StepModel
 import ru.testit.kotlin.client.models.TagModel
 import ru.testit.kotlin.client.models.WorkItemEntityTypeApiModel
+import ru.testit.kotlin.client.models.WorkItemLayerApiResult
 import ru.testit.kotlin.client.models.WorkItemParameterKeyApiResult
 import ru.testit.kotlin.client.models.WorkItemPriorityApiModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeApiModel
@@ -57,6 +59,7 @@ import com.squareup.moshi.JsonClass
  * @param postconditionSteps Set of postcondition steps that are executed after completing the main steps
  * @param iterations Associated iterations linked to the work item
  * @param autoTests Automated tests associated with the work item
+ * @param autoTestCases Set of automated test cases linked to the work item
  * @param attachments Files attached to the work item
  * @param links Set of links related to the work item
  * @param externalIssues Set of external issues related to the work item
@@ -65,6 +68,9 @@ import com.squareup.moshi.JsonClass
  * @param createdById Unique identifier of the work item creator
  * @param isDeleted Indicates whether the work item is marked as deleted
  * @param description Description of the work item
+ * @param externalId External identifier of the work item from external systems
+ * @param manualTestId Identifier of the linked manual test
+ * @param layer Test pyramid layer of the work item
  * @param modifiedDate Modification date of the work item
  * @param modifiedById Unique identifier of the work item modifier
  */
@@ -163,6 +169,10 @@ data class WorkItemApiResult (
     @Json(name = "autoTests")
     val autoTests: kotlin.collections.List<AutoTestModel>,
 
+    /* Set of automated test cases linked to the work item */
+    @Json(name = "autoTestCases")
+    val autoTestCases: kotlin.collections.List<AutoTestCaseApiModel>,
+
     /* Files attached to the work item */
     @Json(name = "attachments")
     val attachments: kotlin.collections.List<AttachmentModel>,
@@ -194,6 +204,18 @@ data class WorkItemApiResult (
     /* Description of the work item */
     @Json(name = "description")
     val description: kotlin.String? = null,
+
+    /* External identifier of the work item from external systems */
+    @Json(name = "externalId")
+    val externalId: kotlin.String? = null,
+
+    /* Identifier of the linked manual test */
+    @Json(name = "manualTestId")
+    val manualTestId: java.util.UUID? = null,
+
+    /* Test pyramid layer of the work item */
+    @Json(name = "layer")
+    val layer: WorkItemLayerApiResult? = null,
 
     /* Modification date of the work item */
     @Json(name = "modifiedDate")

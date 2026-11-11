@@ -50,7 +50,7 @@ Add test-points to TestPlan with sections
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val workItemSelectModel : WorkItemSelectModel =  // WorkItemSelectModel | Filter object to retrieve work items for test-suite's project
 try {
     apiInstance.addTestPointsWithSections(id, workItemSelectModel)
@@ -64,7 +64,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md)| Filter object to retrieve work items for test-suite&#39;s project | [optional] |
@@ -94,7 +94,7 @@ Configure Cookies:
 
 Add WorkItems to TestPlan with Sections as TestSuites
 
-  Use case    User sets TestPlan identifier    User sets WorkItem identifiers (listed in request example)    User runs method execution    System added WorkItems and Sections to TestPlan    System returns no content response
+ Use case  User sets TestPlan identifier  User sets WorkItem identifiers (listed in request example)  User runs method execution  System added WorkItems and Sections to TestPlan  System returns no content response
 
 ### Example
 ```kotlin
@@ -103,7 +103,7 @@ Add WorkItems to TestPlan with Sections as TestSuites
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val javaUtilUUID : kotlin.collections.Set<java.util.UUID> =  // kotlin.collections.Set<java.util.UUID> | 
 try {
     apiInstance.addWorkItemsWithSections(id, javaUtilUUID)
@@ -117,7 +117,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **javaUtilUUID** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md)|  | [optional] |
@@ -147,7 +147,7 @@ Configure Cookies:
 
 Get analytics by TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System returns analytics by test plan
+ Use case  User sets test plan identifier  User runs method execution  System returns analytics by test plan
 
 ### Example
 ```kotlin
@@ -156,7 +156,7 @@ Get analytics by TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     val result : TestPointAnalyticResult = apiInstance.apiV2TestPlansIdAnalyticsGet(id)
     println(result)
@@ -172,7 +172,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -251,7 +251,7 @@ Configure Cookies:
 
 Get TestPlan configurations
 
-  Use case    User sets test plan identifier    User runs method execution    System return test plan configurations
+ Use case  User sets test plan identifier  User runs method execution  System return test plan configurations
 
 ### Example
 ```kotlin
@@ -260,7 +260,7 @@ Get TestPlan configurations
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     val result : kotlin.collections.List<ConfigurationModel> = apiInstance.apiV2TestPlansIdConfigurationsGet(id)
     println(result)
@@ -276,7 +276,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -303,7 +303,7 @@ Configure Cookies:
 
 Export TestPoints from TestPlan in xls format
 
-  Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
+ Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
 
 ### Example
 ```kotlin
@@ -312,7 +312,7 @@ Export TestPoints from TestPlan in xls format
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val timeZoneOffsetInMinutes : kotlin.Long = 789 // kotlin.Long | 
 val getXlsxTestPointsByTestPlanApiModel : GetXlsxTestPointsByTestPlanApiModel =  // GetXlsxTestPointsByTestPlanApiModel | 
 try {
@@ -327,7 +327,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | **timeZoneOffsetInMinutes** | **kotlin.Long**|  | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
@@ -358,7 +358,7 @@ Configure Cookies:
 
 Export TestResults history from TestPlan in xls format
 
-  Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
+ Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
 
 ### Example
 ```kotlin
@@ -367,7 +367,7 @@ Export TestResults history from TestPlan in xls format
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val mustReturnOnlyLastTestResult : kotlin.Boolean = true // kotlin.Boolean | 
 val includeSteps : kotlin.Boolean = true // kotlin.Boolean | 
 val includeDeletedTestSuites : kotlin.Boolean = true // kotlin.Boolean | 
@@ -384,7 +384,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | **mustReturnOnlyLastTestResult** | **kotlin.Boolean**|  | [optional] |
 | **includeSteps** | **kotlin.Boolean**|  | [optional] |
 | **includeDeletedTestSuites** | **kotlin.Boolean**|  | [optional] |
@@ -417,7 +417,7 @@ Configure Cookies:
 
 Get TestPlan history
 
-  Use case    User sets test plan identifier    User runs method execution    System return test plan history
+ Use case  User sets test plan identifier  User runs method execution  System return test plan history
 
 ### Example
 ```kotlin
@@ -426,7 +426,7 @@ Get TestPlan history
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
 val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
@@ -445,7 +445,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
 | **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
 | **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
@@ -479,7 +479,7 @@ Configure Cookies:
 
 Get Links of TestPlan
 
-  Use case    User sets test plan identifier    User sets pagination filter (listed in request example)    User runs method execution    System returns links of TestPlan
+ Use case  User sets test plan identifier  User sets pagination filter (listed in request example)  User runs method execution  System returns links of TestPlan
 
 ### Example
 ```kotlin
@@ -488,7 +488,7 @@ Get Links of TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val skip : kotlin.Int = 56 // kotlin.Int | 
 val take : kotlin.Int = 56 // kotlin.Int | 
 val orderBy : kotlin.String = orderBy_example // kotlin.String | 
@@ -505,7 +505,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | **skip** | **kotlin.Int**|  | [optional] |
 | **take** | **kotlin.Int**|  | [optional] |
 | Name | Type | Description  | Notes |
@@ -590,7 +590,7 @@ Configure Cookies:
 
 Get summary by TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System returns summary by test plan
+ Use case  User sets test plan identifier  User runs method execution  System returns summary by test plan
 
 ### Example
 ```kotlin
@@ -599,7 +599,7 @@ Get summary by TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     val result : TestPlanSummaryModel = apiInstance.apiV2TestPlansIdSummariesGet(id)
     println(result)
@@ -615,7 +615,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -642,7 +642,7 @@ Configure Cookies:
 
 Get TestPoints with last result from TestPlan
 
-  Use case    User sets test plan identifier    User sets filter (listed in request example)    User runs method execution    System return test points with last result from test plan
+ Use case  User sets test plan identifier  User sets filter (listed in request example)  User runs method execution  System return test points with last result from test plan
 
 ### Example
 ```kotlin
@@ -651,7 +651,7 @@ Get TestPoints with last result from TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val testerId : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
 val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
@@ -671,7 +671,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | **testerId** | **java.util.UUID**|  | [optional] |
 | **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
 | **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
@@ -706,7 +706,7 @@ Configure Cookies:
 
 Reset TestPoints status of TestPlan
 
-  Use case    User sets test plan identifier    User sets test points identifiers    User runs method execution    System reset test points statuses of test plan
+ Use case  User sets test plan identifier  User sets test points identifiers  User runs method execution  System reset test points statuses of test plan
 
 ### Example
 ```kotlin
@@ -715,7 +715,7 @@ Reset TestPoints status of TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val javaUtilUUID : kotlin.collections.Set<java.util.UUID> =  // kotlin.collections.Set<java.util.UUID> | 
 try {
     apiInstance.apiV2TestPlansIdTestPointsResetPost(id, javaUtilUUID)
@@ -729,7 +729,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **javaUtilUUID** | [**kotlin.collections.Set&lt;java.util.UUID&gt;**](java.util.UUID.md)|  | [optional] |
@@ -865,7 +865,7 @@ Configure Cookies:
 
 Get TestRuns of TestPlan
 
-  Use case    User sets test plan identifier    User sets TestRun status filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
+ Use case  User sets test plan identifier  User sets TestRun status filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
 
 ### Example
 ```kotlin
@@ -874,7 +874,7 @@ Get TestRuns of TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val notStarted : kotlin.Boolean = true // kotlin.Boolean | 
 val inProgress : kotlin.Boolean = true // kotlin.Boolean | 
 val stopped : kotlin.Boolean = true // kotlin.Boolean | 
@@ -897,7 +897,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | **notStarted** | **kotlin.Boolean**|  | [optional] |
 | **inProgress** | **kotlin.Boolean**|  | [optional] |
 | **stopped** | **kotlin.Boolean**|  | [optional] |
@@ -935,7 +935,7 @@ Configure Cookies:
 
 Search TestRuns of TestPlan
 
-  Use case    User sets test plan identifier    User sets TestRuns filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
+ Use case  User sets test plan identifier  User sets TestRuns filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
 
 ### Example
 ```kotlin
@@ -944,7 +944,7 @@ Search TestRuns of TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 val skip : kotlin.Int = 56 // kotlin.Int | Amount of items to be skipped (offset)
 val take : kotlin.Int = 56 // kotlin.Int | Amount of items to be taken (limit)
 val orderBy : kotlin.String = orderBy_example // kotlin.String | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC)
@@ -964,7 +964,7 @@ try {
 ```
 
 ### Parameters
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 | **skip** | **kotlin.Int**| Amount of items to be skipped (offset) | [optional] |
 | **take** | **kotlin.Int**| Amount of items to be taken (limit) | [optional] |
 | **orderBy** | **kotlin.String**| SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional] |
@@ -1048,7 +1048,7 @@ Configure Cookies:
 
 Send unlock TestPlan notification
 
-  Use case    User sets test plan identifier    User runs method execution    System send unlock test plan notification
+ Use case  User sets test plan identifier  User runs method execution  System send unlock test plan notification
 
 ### Example
 ```kotlin
@@ -1057,7 +1057,7 @@ Send unlock TestPlan notification
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     apiInstance.apiV2TestPlansIdUnlockRequestPost(id)
 } catch (e: ClientException) {
@@ -1072,7 +1072,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1099,7 +1099,7 @@ Configure Cookies:
 
 Get TestPlans short models by Project identifiers
 
-  Use case    User sets projects identifiers    User runs method execution    System return test plans short models (listed in response example)
+ Use case  User sets projects identifiers  User runs method execution  System return test plans short models (listed in response example)
 
 ### Example
 ```kotlin
@@ -1153,7 +1153,7 @@ Configure Cookies:
 
 Clone TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System clones test plan    System returns test plan (listed in response example)
+ Use case  User sets test plan identifier  User runs method execution  System clones test plan  System returns test plan (listed in response example)
 
 ### Example
 ```kotlin
@@ -1162,7 +1162,7 @@ Clone TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     val result : TestPlanModel = apiInstance.clone(id)
     println(result)
@@ -1178,7 +1178,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1205,7 +1205,7 @@ Configure Cookies:
 
 Complete TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System completes the test plan and updates test plan status    System returns no content response
+ Use case  User sets test plan identifier  User runs method execution  System completes the test plan and updates test plan status  System returns no content response
 
 ### Example
 ```kotlin
@@ -1214,7 +1214,7 @@ Complete TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     apiInstance.complete(id)
 } catch (e: ClientException) {
@@ -1229,7 +1229,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1256,7 +1256,7 @@ Configure Cookies:
 
 Create TestPlan
 
-  Use case    User sets test plan properties (listed in request example)    User runs method execution    System creates test plan    System returns test plan (listed in response example)
+ Use case  User sets test plan properties (listed in request example)  User runs method execution  System creates test plan  System returns test plan (listed in response example)
 
 ### Example
 ```kotlin
@@ -1308,7 +1308,7 @@ Configure Cookies:
 
 Delete TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System delete test plan    System returns no content response
+ Use case  User sets test plan identifier  User runs method execution  System delete test plan  System returns no content response
 
 ### Example
 ```kotlin
@@ -1317,7 +1317,7 @@ Delete TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     apiInstance.deleteTestPlan(id)
 } catch (e: ClientException) {
@@ -1332,7 +1332,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1359,7 +1359,7 @@ Configure Cookies:
 
 Get TestPlan by Id
 
-  Use case    User sets test plan identifier    User runs method execution    System search  test plan by the identifier    System returns test plan
+ Use case  User sets test plan identifier  User runs method execution  System search  test plan by the identifier  System returns test plan
 
 ### Example
 ```kotlin
@@ -1368,7 +1368,7 @@ Get TestPlan by Id
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     val result : TestPlanModel = apiInstance.getTestPlanById(id)
     println(result)
@@ -1384,7 +1384,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1411,7 +1411,7 @@ Configure Cookies:
 
 Get TestSuites Tree By Id
 
-  Use case    User sets test plan identifier    User runs method execution    System finds test suites related to the test plan    System returns test suites as a tree model (listed in response example)
+ Use case  User sets test plan identifier  User runs method execution  System finds test suites related to the test plan  System returns test suites as a tree model (listed in response example)
 
 ### Example
 ```kotlin
@@ -1420,7 +1420,7 @@ Get TestSuites Tree By Id
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     val result : kotlin.collections.List<TestSuiteHierarchyApiResult> = apiInstance.getTestSuitesById(id)
     println(result)
@@ -1436,7 +1436,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1463,7 +1463,7 @@ Configure Cookies:
 
 Pause TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System pauses the test plan and updates test plan status    System returns no content response
+ Use case  User sets test plan identifier  User runs method execution  System pauses the test plan and updates test plan status  System returns no content response
 
 ### Example
 ```kotlin
@@ -1472,7 +1472,7 @@ Pause TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     apiInstance.pause(id)
 } catch (e: ClientException) {
@@ -1487,7 +1487,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1563,7 +1563,7 @@ Configure Cookies:
 
 Restore TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System restores test plan    System returns no content response
+ Use case  User sets test plan identifier  User runs method execution  System restores test plan  System returns no content response
 
 ### Example
 ```kotlin
@@ -1572,7 +1572,7 @@ Restore TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     apiInstance.restoreTestPlan(id)
 } catch (e: ClientException) {
@@ -1587,7 +1587,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1614,7 +1614,7 @@ Configure Cookies:
 
 Start TestPlan
 
-  Use case    User sets test plan identifier    User runs method execution    System starts the test plan and updates test plan status    System returns no content response
+ Use case  User sets test plan identifier  User runs method execution  System starts the test plan and updates test plan status  System returns no content response
 
 ### Example
 ```kotlin
@@ -1623,7 +1623,7 @@ Start TestPlan
 //import ru.testit.kotlin.client.models.*
 
 val apiInstance = TestPlansApi()
-val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int  format) identifier
+val id : kotlin.String = 3fa85f64-5717-4562-b3fc-2c963f66afa6 // kotlin.String | Test plan internal (guid format) or global (int format) identifier
 try {
     apiInstance.start(id)
 } catch (e: ClientException) {
@@ -1638,7 +1638,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **id** | **kotlin.String**| Test plan internal (guid format) or global (int  format) identifier | |
+| **id** | **kotlin.String**| Test plan internal (guid format) or global (int format) identifier | |
 
 ### Return type
 
@@ -1665,7 +1665,7 @@ Configure Cookies:
 
 Update TestPlan
 
-  Use case    User sets test plan properties(listed in request example)    User runs method execution    System updates test plan    System returns no content response
+ Use case  User sets test plan properties(listed in request example)  User runs method execution  System updates test plan  System returns no content response
 
 ### Example
 ```kotlin

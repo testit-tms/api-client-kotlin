@@ -19,7 +19,6 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import ru.testit.kotlin.client.models.CustomAttributeGetModel
 import ru.testit.kotlin.client.models.CustomAttributeModel
 import ru.testit.kotlin.client.models.CustomAttributeTestPlanProjectRelationPutModel
 import ru.testit.kotlin.client.models.ProblemDetails
@@ -53,7 +52,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * POST /api/v2/projects/{projectId}/testPlans/attributes
      * Add attributes to project&#39;s test plans
-     *   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
+     *  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param javaUtilUUID  (optional)
      * @return void
@@ -85,7 +84,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * POST /api/v2/projects/{projectId}/testPlans/attributes
      * Add attributes to project&#39;s test plans
-     *   Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
+     *  Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param javaUtilUUID  (optional)
      * @return ApiResponse<Unit?>
@@ -128,7 +127,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * DELETE /api/v2/projects/{projectId}/testPlans/attributes/{attributeId}
      * Delete attribute from project&#39;s test plans
-     *   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
+     *  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param attributeId 
      * @return void
@@ -160,7 +159,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * DELETE /api/v2/projects/{projectId}/testPlans/attributes/{attributeId}
      * Delete attribute from project&#39;s test plans
-     *   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
+     *  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param attributeId 
      * @return ApiResponse<Unit?>
@@ -202,7 +201,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * GET /api/v2/projects/{projectId}/testPlans/attributes
      * Get project&#39;s test plan attributes
-     *   Use case    User runs method execution    System returns project for test plans attributes by project identifier
+     *  Use case  User runs method execution  System returns project for test plans attributes by project identifier
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @return kotlin.collections.List<CustomAttributeModel>
      * @throws IllegalStateException If the request is not correctly configured
@@ -234,7 +233,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * GET /api/v2/projects/{projectId}/testPlans/attributes
      * Get project&#39;s test plan attributes
-     *   Use case    User runs method execution    System returns project for test plans attributes by project identifier
+     *  Use case  User runs method execution  System returns project for test plans attributes by project identifier
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @return ApiResponse<kotlin.collections.List<CustomAttributeModel>?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -283,7 +282,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param projectAttributesFilterModel  (optional)
-     * @return kotlin.collections.List<CustomAttributeGetModel>
+     * @return kotlin.collections.List<CustomAttributeModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -292,11 +291,11 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun searchTestPlanAttributesInProject(projectId: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, projectAttributesFilterModel: ProjectAttributesFilterModel? = null) : kotlin.collections.List<CustomAttributeGetModel> {
+    fun searchTestPlanAttributesInProject(projectId: kotlin.String, skip: kotlin.Int? = null, take: kotlin.Int? = null, orderBy: kotlin.String? = null, searchField: kotlin.String? = null, searchValue: kotlin.String? = null, projectAttributesFilterModel: ProjectAttributesFilterModel? = null) : kotlin.collections.List<CustomAttributeModel> {
         val localVarResponse = searchTestPlanAttributesInProjectWithHttpInfo(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, projectAttributesFilterModel = projectAttributesFilterModel)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<CustomAttributeGetModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<CustomAttributeModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -321,16 +320,16 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
      * @param searchField Property name for searching (optional)
      * @param searchValue Value for searching (optional)
      * @param projectAttributesFilterModel  (optional)
-     * @return ApiResponse<kotlin.collections.List<CustomAttributeGetModel>?>
+     * @return ApiResponse<kotlin.collections.List<CustomAttributeModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun searchTestPlanAttributesInProjectWithHttpInfo(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, projectAttributesFilterModel: ProjectAttributesFilterModel?) : ApiResponse<kotlin.collections.List<CustomAttributeGetModel>?> {
+    fun searchTestPlanAttributesInProjectWithHttpInfo(projectId: kotlin.String, skip: kotlin.Int?, take: kotlin.Int?, orderBy: kotlin.String?, searchField: kotlin.String?, searchValue: kotlin.String?, projectAttributesFilterModel: ProjectAttributesFilterModel?) : ApiResponse<kotlin.collections.List<CustomAttributeModel>?> {
         val localVariableConfig = searchTestPlanAttributesInProjectRequestConfig(projectId = projectId, skip = skip, take = take, orderBy = orderBy, searchField = searchField, searchValue = searchValue, projectAttributesFilterModel = projectAttributesFilterModel)
 
-        return request<ProjectAttributesFilterModel, kotlin.collections.List<CustomAttributeGetModel>>(
+        return request<ProjectAttributesFilterModel, kotlin.collections.List<CustomAttributeModel>>(
             localVariableConfig
         )
     }
@@ -384,7 +383,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * PUT /api/v2/projects/{projectId}/testPlans/attributes
      * Update attribute of project&#39;s test plans
-     *   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
+     *  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param customAttributeTestPlanProjectRelationPutModel  (optional)
      * @return void
@@ -416,7 +415,7 @@ open class ProjectTestPlanAttributesApi(basePath: kotlin.String = defaultBasePat
     /**
      * PUT /api/v2/projects/{projectId}/testPlans/attributes
      * Update attribute of project&#39;s test plans
-     *   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
+     *  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
      * @param projectId Project internal (UUID) or global (integer) identifier
      * @param customAttributeTestPlanProjectRelationPutModel  (optional)
      * @return ApiResponse<Unit?>

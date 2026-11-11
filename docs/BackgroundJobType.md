@@ -42,5 +42,9 @@
 
     * `DeleteSection` (value: `"DeleteSection"`)
 
+    * `ImportAutoTestsReport` (value: `"ImportAutoTestsReport"`)
+
+    * `AnalyzeAutoTestLayers` (value: `"AnalyzeAutoTestLayers"`)
+
 
 

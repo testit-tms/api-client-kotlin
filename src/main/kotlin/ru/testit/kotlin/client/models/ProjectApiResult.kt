@@ -16,6 +16,8 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.ProjectType
+import ru.testit.kotlin.client.models.TestCaseCoverageMode
+import ru.testit.kotlin.client.models.TestStrategy
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -33,6 +35,8 @@ import com.squareup.moshi.JsonClass
  * @param globalId Global ID of the project
  * @param type Type of the project
  * @param workflowId ID of the workflow used in project
+ * @param testStrategy Test strategy of the project
+ * @param testCaseCoverageMode Coverage mode of test cases of the project
  * @param description Description of the project
  * @param testCasesCount Number of test cases in the project
  * @param sharedStepsCount Number of shared steps in the project
@@ -59,7 +63,7 @@ data class ProjectApiResult (
 
     /* Number of work items in the project */
     @Json(name = "workItemsCount")
-    val workItemsCount: kotlin.Int,
+    val workItemsCount: kotlin.Long,
 
     /* Indicates if the project is deleted */
     @Json(name = "isDeleted")
@@ -85,25 +89,33 @@ data class ProjectApiResult (
     @Json(name = "workflowId")
     val workflowId: java.util.UUID,
 
+    /* Test strategy of the project */
+    @Json(name = "testStrategy")
+    val testStrategy: TestStrategy,
+
+    /* Coverage mode of test cases of the project */
+    @Json(name = "testCaseCoverageMode")
+    val testCaseCoverageMode: TestCaseCoverageMode,
+
     /* Description of the project */
     @Json(name = "description")
     val description: kotlin.String? = null,
 
     /* Number of test cases in the project */
     @Json(name = "testCasesCount")
-    val testCasesCount: kotlin.Int? = null,
+    val testCasesCount: kotlin.Long? = null,
 
     /* Number of shared steps in the project */
     @Json(name = "sharedStepsCount")
-    val sharedStepsCount: kotlin.Int? = null,
+    val sharedStepsCount: kotlin.Long? = null,
 
     /* Number of checklists in the project */
     @Json(name = "checkListsCount")
-    val checkListsCount: kotlin.Int? = null,
+    val checkListsCount: kotlin.Long? = null,
 
     /* Number of autotests in the project */
     @Json(name = "autoTestsCount")
-    val autoTestsCount: kotlin.Int? = null,
+    val autoTestsCount: kotlin.Long? = null,
 
     /* Last modification date of the project */
     @Json(name = "modifiedDate")

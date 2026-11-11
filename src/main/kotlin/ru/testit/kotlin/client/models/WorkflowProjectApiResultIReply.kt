@@ -16,6 +16,7 @@
 package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.WorkflowProjectApiResult
+import ru.testit.kotlin.client.models.WorkflowProjectApiResultCountReply
 import ru.testit.kotlin.client.models.WorkflowProjectApiResultGroup
 import ru.testit.kotlin.client.models.WorkflowProjectApiResultGroupedReply
 import ru.testit.kotlin.client.models.WorkflowProjectApiResultReply

@@ -22,15 +22,19 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
+ * @param globalId 
  * @param id 
  * @param projectId 
- * @param name 
  * @param externalId 
- * @param globalId 
+ * @param name 
+ * @param autoTestCaseGlobalId 
  */
 
 
 data class AutoTestShortApiResult (
+
+    @Json(name = "globalId")
+    val globalId: kotlin.Long,
 
     @Json(name = "id")
     val id: java.util.UUID,
@@ -38,14 +42,14 @@ data class AutoTestShortApiResult (
     @Json(name = "projectId")
     val projectId: java.util.UUID,
 
-    @Json(name = "name")
-    val name: kotlin.String,
-
     @Json(name = "externalId")
     val externalId: kotlin.String,
 
-    @Json(name = "globalId")
-    val globalId: kotlin.Long
+    @Json(name = "name")
+    val name: kotlin.String,
+
+    @Json(name = "autoTestCaseGlobalId")
+    val autoTestCaseGlobalId: kotlin.Long? = null
 
 ) {
 

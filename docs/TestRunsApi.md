@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**apiV2TestRunsByAutoTestCasesPost**](TestRunsApi.md#apiV2TestRunsByAutoTestCasesPost) | **POST** /api/v2/testRuns/byAutoTestCases | Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter |
 | [**apiV2TestRunsDelete**](TestRunsApi.md#apiV2TestRunsDelete) | **DELETE** /api/v2/testRuns | Delete multiple test runs |
 | [**apiV2TestRunsIdAutoTestsNamespacesGet**](TestRunsApi.md#apiV2TestRunsIdAutoTestsNamespacesGet) | **GET** /api/v2/testRuns/{id}/autoTestsNamespaces | Get autotest classes and namespaces in test run |
 | [**apiV2TestRunsIdDelete**](TestRunsApi.md#apiV2TestRunsIdDelete) | **DELETE** /api/v2/testRuns/{id} | Delete test run |
@@ -31,13 +32,63 @@ All URIs are relative to *http://localhost*
 | [**updateEmpty**](TestRunsApi.md#updateEmpty) | **PUT** /api/v2/testRuns | Update empty TestRun |
 
 
+<a id="apiV2TestRunsByAutoTestCasesPost"></a>
+# **apiV2TestRunsByAutoTestCasesPost**
+> TestRunV2ApiResult apiV2TestRunsByAutoTestCasesPost(createTestRunAndFillByAutoTestCasesApiModel)
+
+Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter
+
+### Example
+```kotlin
+// Import classes:
+//import ru.testit.kotlin.client.infrastructure.*
+//import ru.testit.kotlin.client.models.*
+
+val apiInstance = TestRunsApi()
+val createTestRunAndFillByAutoTestCasesApiModel : CreateTestRunAndFillByAutoTestCasesApiModel =  // CreateTestRunAndFillByAutoTestCasesApiModel | Test run model with a filter for work items of type \"AutoTestCases\" and configuration IDs
+try {
+    val result : TestRunV2ApiResult = apiInstance.apiV2TestRunsByAutoTestCasesPost(createTestRunAndFillByAutoTestCasesApiModel)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling TestRunsApi#apiV2TestRunsByAutoTestCasesPost")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling TestRunsApi#apiV2TestRunsByAutoTestCasesPost")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **createTestRunAndFillByAutoTestCasesApiModel** | [**CreateTestRunAndFillByAutoTestCasesApiModel**](CreateTestRunAndFillByAutoTestCasesApiModel.md)| Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs | [optional] |
+
+### Return type
+
+[**TestRunV2ApiResult**](TestRunV2ApiResult.md)
+
+### Authorization
+
+
+Configure PrivateToken:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure Cookies:
+    ApiClient.apiKey["session"] = ""
+    ApiClient.apiKeyPrefix["session"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a id="apiV2TestRunsDelete"></a>
 # **apiV2TestRunsDelete**
 > kotlin.Int apiV2TestRunsDelete(testRunSelectApiModel)
 
 Delete multiple test runs
 
-  Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+ Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
 
 ### Example
 ```kotlin
@@ -139,7 +190,7 @@ Configure Cookies:
 
 Delete test run
 
-  Use case    User sets test run internal (guid format) identifier    System search and delete test run
+ Use case  User sets test run internal (guid format) identifier  System search and delete test run
 
 ### Example
 ```kotlin
@@ -243,7 +294,7 @@ Configure Cookies:
 
 Permanently delete test run from archive
 
-  Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+ Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
 
 ### Example
 ```kotlin
@@ -346,7 +397,7 @@ Configure Cookies:
 
 Restore test run from the archive
 
-  Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+ Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
 
 ### Example
 ```kotlin
@@ -600,7 +651,7 @@ Configure Cookies:
 
 Permanently delete multiple test runs from archive
 
-  Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+ Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
 
 ### Example
 ```kotlin
@@ -652,7 +703,7 @@ Configure Cookies:
 
 Restore multiple test runs from the archive
 
-  Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+ Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
 
 ### Example
 ```kotlin
@@ -813,7 +864,7 @@ Configure Cookies:
 
 Complete TestRun
 
-  Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+ Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
 
 ### Example
 ```kotlin
@@ -864,7 +915,7 @@ Configure Cookies:
 
 Create test runs based on autotests and configurations
 
-This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
 
 ### Example
 ```kotlin
@@ -916,7 +967,7 @@ Configure Cookies:
 
 Create test runs picking the needed test points
 
-This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
 
 ### Example
 ```kotlin
@@ -968,7 +1019,7 @@ Configure Cookies:
 
 Create test run based on configurations and work items
 
-This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
 
 ### Example
 ```kotlin
@@ -1020,7 +1071,7 @@ Configure Cookies:
 
 Create empty TestRun
 
-  Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+ Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
 
 ### Example
 ```kotlin
@@ -1072,7 +1123,7 @@ Configure Cookies:
 
 Get TestRun by Id
 
-  Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+ Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
 
 ### Example
 ```kotlin
@@ -1178,7 +1229,7 @@ Configure Cookies:
 
 Start TestRun
 
-  Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+ Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
 
 ### Example
 ```kotlin
@@ -1229,7 +1280,7 @@ Configure Cookies:
 
 Stop TestRun
 
-  Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+ Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
 
 ### Example
 ```kotlin
@@ -1280,7 +1331,7 @@ Configure Cookies:
 
 Update empty TestRun
 
-  Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+ Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
 
 ### Example
 ```kotlin

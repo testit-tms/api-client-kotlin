@@ -15,6 +15,8 @@
 
 package ru.testit.kotlin.client.models
 
+import ru.testit.kotlin.client.models.TestCaseCoverageMode
+import ru.testit.kotlin.client.models.TestStrategy
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -23,6 +25,8 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param name Name of the project
+ * @param testStrategy 
+ * @param testCaseCoverageMode 
  * @param description Description of the project
  * @param isFavorite Indicates if the project is marked as favorite
  * @param workflowId Identifier of the workflow project should use
@@ -34,6 +38,12 @@ data class CreateProjectApiModel (
     /* Name of the project */
     @Json(name = "name")
     val name: kotlin.String,
+
+    @Json(name = "testStrategy")
+    val testStrategy: TestStrategy,
+
+    @Json(name = "testCaseCoverageMode")
+    val testCaseCoverageMode: TestCaseCoverageMode,
 
     /* Description of the project */
     @Json(name = "description")

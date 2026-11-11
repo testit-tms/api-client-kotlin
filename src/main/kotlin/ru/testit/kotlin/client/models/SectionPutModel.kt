@@ -26,7 +26,6 @@ import com.squareup.moshi.JsonClass
  *
  * @param id 
  * @param name 
- * @param projectId 
  * @param attachments 
  * @param parentId 
  * @param preconditionSteps 
@@ -41,9 +40,6 @@ data class SectionPutModel (
 
     @Json(name = "name")
     val name: kotlin.String,
-
-    @Json(name = "projectId")
-    val projectId: java.util.UUID,
 
     @Json(name = "attachments")
     val attachments: kotlin.collections.List<AttachmentPutModel>,

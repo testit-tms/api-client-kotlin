@@ -22,14 +22,15 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param id 
+ * @param globalId Global ID of the auto test case
  */
 
 
 data class AutoTestCaseModel (
 
-    @Json(name = "id")
-    val id: java.util.UUID
+    /* Global ID of the auto test case */
+    @Json(name = "globalId")
+    val globalId: kotlin.Long
 
 ) {
 

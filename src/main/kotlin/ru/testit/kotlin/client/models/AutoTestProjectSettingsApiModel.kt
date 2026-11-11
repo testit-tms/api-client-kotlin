@@ -32,8 +32,8 @@ import com.squareup.moshi.JsonClass
  * @param flakyStabilityPercentage Stability percentage for autotest flaky computing
  * @param flakyTestRunCount Last test run count for autotest flaky computing
  * @param workItemUpdatingEnabled Autotest to work item updating enabled
- * @param testRunsRetentionPeriodDays  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings
- * @param maxActiveTestRunsCount Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived
+ * @param testRunsRetentionPeriodDays  The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings
+ * @param maxActiveTestRunsCount Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived
  */
 
 
@@ -75,11 +75,11 @@ data class AutoTestProjectSettingsApiModel (
     @Json(name = "workItemUpdatingEnabled")
     val workItemUpdatingEnabled: kotlin.Boolean? = false,
 
-    /*  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings */
+    /*  The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings */
     @Json(name = "testRunsRetentionPeriodDays")
     val testRunsRetentionPeriodDays: kotlin.Int? = 180,
 
-    /* Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived */
+    /* Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived */
     @Json(name = "maxActiveTestRunsCount")
     val maxActiveTestRunsCount: kotlin.Int? = 500
 

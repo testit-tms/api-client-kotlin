@@ -18,7 +18,7 @@ All URIs are relative to *http://localhost*
 
 Create project attribute
 
-  Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+ Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
 
 ### Example
 ```kotlin
@@ -72,7 +72,7 @@ Configure Cookies:
 
 Delete project attribute
 
-  Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+ Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
 
 ### Example
 ```kotlin
@@ -125,7 +125,7 @@ Configure Cookies:
 
 Get project attribute
 
-  Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+ Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
 
 ### Example
 ```kotlin
@@ -179,7 +179,7 @@ Configure Cookies:
 
 Get project attributes
 
-  Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+ Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
 
 ### Example
 ```kotlin
@@ -229,7 +229,7 @@ Configure Cookies:
 
 <a id="searchAttributesInProject"></a>
 # **searchAttributesInProject**
-> kotlin.collections.List&lt;CustomAttributeGetModel&gt; searchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
+> kotlin.collections.List&lt;CustomAttributeModel&gt; searchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
 
 Search for attributes used in the project
 
@@ -248,7 +248,7 @@ val searchField : kotlin.String = searchField_example // kotlin.String | Propert
 val searchValue : kotlin.String = searchValue_example // kotlin.String | Value for searching
 val projectAttributesFilterModel : ProjectAttributesFilterModel =  // ProjectAttributesFilterModel | 
 try {
-    val result : kotlin.collections.List<CustomAttributeGetModel> = apiInstance.searchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
+    val result : kotlin.collections.List<CustomAttributeModel> = apiInstance.searchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProjectAttributesApi#searchAttributesInProject")
@@ -272,7 +272,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;CustomAttributeGetModel&gt;**](CustomAttributeGetModel.md)
+[**kotlin.collections.List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
 
 ### Authorization
 

@@ -17,6 +17,7 @@ package ru.testit.kotlin.client.models
 
 import ru.testit.kotlin.client.models.IterationApiResult
 import ru.testit.kotlin.client.models.LinkShortApiResult
+import ru.testit.kotlin.client.models.WorkItemLayerApiResult
 import ru.testit.kotlin.client.models.WorkItemPriorityModel
 import ru.testit.kotlin.client.models.WorkItemSourceTypeModel
 import ru.testit.kotlin.client.models.WorkItemStates
@@ -51,6 +52,7 @@ import com.squareup.moshi.JsonClass
  * @param createdDate Date and time of Work Item creation
  * @param modifiedDate Date and time of the latest modification of Work Item
  * @param tagNames Array of tag names of Work Item
+ * @param layer Test pyramid layer of Work Item
  */
 
 
@@ -150,7 +152,11 @@ data class WorkItemShortApiResult (
 
     /* Array of tag names of Work Item */
     @Json(name = "tagNames")
-    val tagNames: kotlin.collections.List<kotlin.String>? = null
+    val tagNames: kotlin.collections.List<kotlin.String>? = null,
+
+    /* Test pyramid layer of Work Item */
+    @Json(name = "layer")
+    val layer: WorkItemLayerApiResult? = null
 
 ) {
 
