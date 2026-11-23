@@ -57,7 +57,7 @@ jobs:
     - name: Install JReleaser CLI (manual setup)
       run: |
         # Try to install a working version manually
-        JRELEASER_VERSION="1.18.0"
+        JRELEASER_VERSION="1.20.0"
         mkdir -p ~/.jreleaser/bin
         
         # Download the tar.gz version which usually contains all dependencies

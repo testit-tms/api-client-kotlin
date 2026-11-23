@@ -125,7 +125,7 @@ fi
 print_status "Deploying to Maven Central using JReleaser..."
 print_warning "This will publish version $VERSION to Maven Central Portal"
 
-jreleaser deploy
+jreleaser deploy --debug
 
 print_success "Successfully published version $VERSION to Maven Central!"
 print_status "Check the deployment status at: https://central.sonatype.com/"
